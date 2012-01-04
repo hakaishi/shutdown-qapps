@@ -1,0 +1,3 @@
+version=3
+
+https://launchpad.net/qt-shutdown-p/+download http://launchpad.net/qt-shutdown-p/.*/shutdown-qapps_([\d.]+).orig.tar.gz

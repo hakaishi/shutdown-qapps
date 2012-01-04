@@ -1,0 +1,378 @@
+shutdown-qapps (1.6.2-1) unstable; urgency=low
+
+  * qshutdown & qprogram-starter
+    - replaced all qDebug(), qWarning() and qCritical()
+    - added "About Qt"
+
+ -- Christian Metscher <hakaishi@web.de>  Fri, 30 Dec 2011 13:05:55 +0100
+
+
+shutdown-qapps (1.6.1-1) unstable; urgency=low
+
+  * qshutdown
+    - for first start fonts weren't correctly initialized -> fixed.
+  * qprogram-starter
+    - now compileable on Windows
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 28 Dec 2011 17:45:55 +0100
+
+
+shutdown-qapps (1.6.0-1) unstable; urgency=low
+
+  * qshutdown
+    - lockAll reworked
+    - new design
+    - new options (quit at close button clicked, keep window proportions)
+    - added: "About"
+    - new warning method: System tray icon message.
+    - removed spacers and LCD from the source code since it's more convenient
+      to leave this to the ui.
+    - more precise display of the time displayed with the LCD
+    - removed most global variables and thus restructured many
+      functions and classes
+    - removed qApp-quit() from Gui::finished_() -> shutdown works again under
+      Ubuntu Natty and so on. Added Gui::saveLog() instead to resolve the
+      problem from version 1.5.2 (instead of the solution from version 1.5.3)
+
+  * qprogram-starter
+    - rearranged design
+    - added: 'Show Logs' button
+
+ -- Christian Metscher <hakaishi@web.de>  Tue, 27 Dec 2011 00:13:52 +0100
+
+
+shutdown-qapps (1.5.6-1) unstable; urgency=low
+
+  * qshutdown
+    - bugfix: minimize and restore button didn't work correctly on all systems.
+    - added: more information about hotkeys (removed old ones)
+
+ -- Christian Metscher <hakaishi@web.de>  Sun, 23 Oct 2011 22:45:33 +0200
+
+
+shutdown-qapps (1.5.5-1) unstable; urgency=low
+
+  * qshutdown
+    - bugfix: autostart entry is written or deleted when confirming with OK.
+              (the function was called at the wrong place)
+
+ -- Christian Metscher <hakaishi@web.de>  Sat, 08 Oct 2011 15:38:40 +0200
+
+
+shutdown-qapps (1.5.4-1) unstable; urgency=low
+
+  * qshutdown
+    - added: restore and minimize Button to the system tray icon.
+
+ -- Christian Metscher <hakaishi@web.de>  Sun, 26 Sep 2011 10:04:00 +0200
+
+
+shutdown-qapps (1.5.3-1) unstable; urgency=low
+
+  * qshutdown
+    - fixed: No log entry for shutdown events (gui.cpp -> before_quit())
+    - fixed: When pressing Enter in the password prompt line Edit
+             the message box reappeared twice (passwd.cpp)
+
+ -- Christian Metscher <hakaishi@web.de>  Mon, 22 Aug 2011 09:06:25 +0200
+
+
+shutdown-qapps (1.5.2-1) unstable; urgency=low
+
+  * qshutdown
+    - fixed timer problem (minor issue)
+
+ -- Christian Metscher <hakaishi@web.de>  Mon, 27 Jun 2011 00:15:03 +0200
+
+
+shutdown-qapps (1.5.1-2) unstable; urgency=low
+
+  * qshutdown
+    - added information on the no-system-tray-icon issue in Ubuntu 11.04
+      to the README and qshutdown man files
+
+ -- Christian Metscher <hakaishi@web.de>  Tue, 14 Jun 2011 14:06:05 +0200
+
+
+shutdown-qapps (1.5.1-1) unstable; urgency=low
+
+  * qshutdown
+    - saving the edited configuration file will now also update the
+      preferences window.
+    - the editor got an additional button and won't quit after
+      saving, if Ok hasn't been clicked.
+    - the main window won't rise into the foreground if the calendar, the
+      password promt or the editor is open.
+    - removed line for minimizing Window after OK has been clicked
+    - corrected spelling-error-in-binary (writeable -> writable)
+
+ -- Christian Metscher <hakaishi@web.de>  Tue, 24 May 2011 07:14:36 +0200
+
+
+shutdown-qapps (1.5.0-1) unstable; urgency=low
+
+  * qshutdown
+    - added a password gui and editor to access qshutdown.conf, removing
+      a possible security vulnerability (in "admin mode" only).
+    - added a button in preferences to edit qshutdown.conf
+    - revised the way of how the autostart works and
+      added an option to the preferences.
+
+ -- Christian Metscher <hakaishi@web.de>  Sat, 07 May 2011 18:37:23 +0200
+
+
+shutdown-qapps (1.4.9-1) unstable; urgency=low
+
+  * qshutdown
+    - fixed translation (de) for info box:
+      qshutdown_script.sh -> qshutdown_script
+
+ -- Christian Metscher <hakaishi@web.de>  Sat, 30 Apr 2011 12:05:43 +0200
+
+
+shutdown-qapps (1.4.8-1) unstable; urgency=low
+
+  * qprogram-starter
+    - added start & abort buttons
+    - fixed date and time problems (timer)
+
+ -- Christian Metscher <hakaishi@web.de>  Sat, 22 Jan 2011 02:12:03 +0100
+
+
+shutdown-qapps (1.4.7-1) unstable; urgency=low
+
+  * fixed: missing line in power.cpp at hibernate()
+  * integrated dbus command for locking screen
+
+ -- Christian Metscher <hakaishi@web.de>  Sat, 08 Jan 2011 01:25:56 +0100
+
+
+shutdown-qapps (1.4.6-1) unstable; urgency=low
+
+  * Changes in qshutdown:
+    - simplified some calculations (gui.cpp)
+    - removed redundant funktion starter()
+    - added lock screen for suspend and hibernate
+    - added option to hide qshutdown at startup if
+      "Start countdown" is enabled.
+
+ -- Christian Metscher <hakaishi@web.de>  Sun, 10 Oct 2010 16:49:10 +0200
+
+
+shutdown-qapps (1.4.5-2) unstable; urgency=low
+
+  * fixed manpage(s) (qshutdown)
+
+ -- Christian Metscher <hakaishi@web.de>  Sun, 03 Oct 2010 12:32:10 +0200
+
+
+shutdown-qapps (1.4.5-1) unstable; urgency=low
+
+  * added "delete settings" in destructor (qprogram-starter)
+  * new path for .qm translation files
+  * implemented UPower (for suspend and hibernate in qshutdown)
+  * implemented shortcut Shift + E to edit ~/.qshutdown/qshutdown.conf
+    with gksu(do)/kdesu(do) (qshutdown)
+  * revised "admin mode" (Lock_all)
+  * made some code cleanups (qshutdown)
+  * new debian/rules
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 29 Sep 2010 13:43:43 +0200
+
+
+shutdown-qapps (1.4.4-1) unstable; urgency=low
+
+  * fixed: if no date was set and the clock turned 12:00 AM
+    qshutdown stopped working because the date was intern set to the
+    current day.
+  * minor changes in Gui::showCalendarBox()
+  * .ui files had wrong .qrc path (fixed)
+
+ -- Christian Metscher <hakaishi@web.de>  Sun, 12 Sep 2010 02:01:16 +0200
+
+
+shutdown-qapps (1.4.3-1) unstable; urgency=low
+
+  * corrected a spelling mistake in qprogram-starter
+  * added a new version control for qshutdown
+  * and some minor changes
+
+ -- Christian Metscher <hakaishi@web.de>  Sat, 04 Sep 2010 01:22:08 +0200
+
+
+shutdown-qapps (1.4.2-1) unstable; urgency=low
+
+  * a little modification for the file browser (qprogram-starter)
+
+ -- Christian Metscher <hakaishi@web.de>  Mon, 30 Aug 2010 02:58:25 +0200
+
+
+shutdown-qapps (1.4.1-1) unstable; urgency=low
+
+  * bug in time calculation fixed (qprogram-starter)
+
+ -- Christian Metscher <hakaishi@web.de>  Mon, 30 Aug 2010 01:56:58 +0200
+
+
+shutdown-qapps (1.4.0-1) unstable; urgency=low
+
+  * the DateTimeEdit from qprogram-starter was replaced through a
+    date and a time edit
+  * the date and time are now at minimum the current date and time
+  * there are now browse buttons to choose a program binary
+  * one can now save the command he/she wants to
+  * the output is now devided into four files: two output and two
+    error output files, because there are two processes
+
+ -- Christian Metscher <hakaishi@web.de>  Sun, 29 Aug 2010 23:05:08 +0200
+
+
+shutdown-qapps (1.3.7-1) unstable; urgency=low
+
+  * repacked "upstream" orig.tar.gz
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 25 Aug 2010 09:13:31 +0200
+
+
+shutdown-qapps (1.3.6-1) unstable; urgency=low
+
+  * the upload of version 1.3.5-1 was faulty
+
+ -- Christian Metscher <hakaishi@web.de>  Tue, 24 Aug 2010 02:04:01 +0200
+
+
+shutdown-qapps (1.3.5-1) unstable; urgency=low
+
+  * bugfix for timeEdit
+
+ -- Christian Metscher <hakaishi@web.de>  Tue, 24 Aug 2010 01:35:01 +0200
+
+
+shutdown-qapps (1.3.4-1) unstable; urgency=low
+
+  * fix for toolButton
+  * bugfix for spinBox
+
+ -- Christian Metscher <hakaishi@web.de>  Mon, 23 Aug 2010 13:03:15 +0200
+
+
+shutdown-qapps (1.3.3-1) unstable; urgency=low
+
+  * new design for preferences
+
+ -- Christian Metscher <hakaishi@web.de>  Sun, 22 Aug 2010 23:46:02 +0200
+
+
+shutdown-qapps (1.3.2-1) unstable; urgency=low
+
+  * fixed and modified many things
+
+ -- Christian Metscher <hakaishi@web.de>  Sun, 22 Aug 2010 17:16:01 +0200
+
+
+shutdown-qapps (1.3.1-1) unstable; urgency=low
+
+  * adjusted some things in the calendar widget
+  * corrected quite a lot things
+  * made some code cleanups
+
+ -- Christian Metscher <hakaishi@web.de>  Sun, 22 Aug 2010 12:54:00 +0200
+
+
+shutdown-qapps (1.3.0-1) unstable; urgency=low
+
+  * new Standards-Version 3.9.1
+  * new features: added a calendar and the changes of the font settings
+    take immediantly effect in the main window
+
+ -- Christian Metscher <hakaishi@web.de>  Sat, 21 Aug 2010 08:53:17 +0200
+
+
+shutdown-qapps (1.2.5-2) unstable; urgency=low
+
+  * new Standards-Version 3.9.0
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 30 Jun 2010 07:08:00 +0200
+
+
+shutdown-qapps (1.2.5-1) unstable; urgency=low
+
+   *bugfix: Programwindow didn't reappear when starting twice
+
+ -- Christian Metscher <hakaishi@web.de>  Sun, 20 Jun 2010 14:58:37 +0200
+
+
+shutdown-qapps (1.2.4-1) unstable; urgency=low
+
+  *new feature: start countdown at startup
+  *scrollable area for preferences
+
+ -- Christian Metscher <hakaishi@web.de>  Tue, 08 Jun 2010 16:28:49 +0200
+
+
+shutdown-qapps (1.2.3-1) unstable; urgency=low
+
+  * bugfix for "Lock_all" (gui.cpp -> loadSettings())
+  * the size of the log file is now adjustable
+
+ -- Christian Metscher <hakaishi@web.de>  Tue, 20 Apr 2010 12:16:54 +0200
+
+
+shutdown-qapps (1.2.2-1) unstable; urgency=low
+
+  * revised "Reset Settings" in preferences.cpp
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 07 Apr 2010 14:20:48 +0200
+
+
+shutdown-qapps (1.2.1-1) unstable; urgency=low
+
+  * bug fixed: Window was shifting down on hide and show events
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Christian Metscher <hakaishi@web.de>  Mon, 05 Apr 2010 12:12:11 +0200
+
+
+shutdown-qapps (1.2.0-1) unstable; urgency=low
+
+  * improved tray-icon-contextmenu in qshutdown
+  * replaced hints/info message box with an QPlainTextEdit object
+  * fixed shutdown/reboot/suspend/hibernate functions
+  * added a combo box and shortcuts to the qshutdown gui
+  * qshutdown now accepts arguments like --help
+  * added a preferences dialog for qshutdown
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 24 Mar 2010 16:12:18 +0100
+
+
+shutdown-qapps (1.1.0-1) unstable; urgency=low
+
+  * in qshutdown: Added tray-icon-contextmenus for
+    shutdown/reboot/standby/hibernate
+  * added DeviceKit in the shutdown option
+  * pixmaps now in .xpm format
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 17 Mar 2010 18:29:08 +0100
+
+
+shutdown-qapps (1.0.2-1) unstable; urgency=low
+
+  * added dh_installmenu in debian/rules
+  * bugfix in qshutdown (see NEWS)
+
+ -- Christian Metscher <hakaishi@web.de>  Thu, 11 Mar 2010 22:43:13 +0100
+
+
+shutdown-qapps (1.0.1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #572321)
+  * Added Debian menus and corrected descriptions in control file
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 03 Mar 2010 18:47:00 +0100
+
+
+shutdown-qapps (1.0.0-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Christian Metscher <hakaishi@web.de>  Fri, 26 Feb 2010 13:05:00 +0100

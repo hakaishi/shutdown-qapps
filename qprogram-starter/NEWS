@@ -1,0 +1,83 @@
+Changes in Release 1.6.2
+=========================
+
+ - replaced all qDebug(), qWarning() and qCritical()
+
+Changes in Release 1.6.1
+=========================
+
+ - now also compile-able for Windows
+
+Changes in Release 1.6.0
+=========================
+
+ - rearranged design
+ - new function for showing the logs
+
+Changes in Release 1.4.8
+=========================
+
+ - added start & abort buttons
+ - fixed date and time problems (timer)
+
+Changes in Release 1.4.5
+=========================
+ - added "delete settings" in destructor
+ - new path for .qm translation files
+
+Changes in Release 1.4.3
+=========================
+
+ - corrected a spelling mistake
+ - some minor changes
+
+Changes in Release 1.4.2
+=========================
+
+ - a little modification for the
+   file browser
+
+Changes in Release 1.4.1
+=========================
+
+ - bug in time calculation fixed
+
+Changes in Release 1.4.0
+=========================
+
+ - the dateTimeEdit was replaced
+   trough a date and a time edit
+ - the date and time are now at
+   minimum the current date and time
+ - there are now browse buttons to
+   choose a program binary
+ - one can now save the command
+   he/she wants to
+ - the output is now devided into
+   four files: two output and two
+   error output files, because
+   there are two processes
+
+Changes in Release 1.2.0
+=========================
+
+ - fixed shutdown function
+ - replaced hints message box
+   with a QPlainTextEdit Object
+
+Changes in Release 1.1.0
+=========================
+
+ - pixmap now in .xpm format
+ - added DeviceKit in the shutdown
+   option
+
+Changes in Release 1.0.2
+=========================
+
+ - nothing source relevant
+
+Changes in Release 1.0.1
+=========================
+
+ - Initial Release

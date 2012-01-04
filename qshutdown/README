@@ -1,0 +1,78 @@
+qshutdown
+
+
+INSTALL:
+========
+
+Depencies: libqt4-dev, libqt4-dbus, build-essential
+
+If you want to install from source, open a terminal and change into this folder.
+To install type:
+
+qmake
+make
+sudo make install distclean
+
+
+For admins:
+You can enable "parental lock" for every user if you do the following:
+
+sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/
+
+now add the following line to the sudoers (for example with "EDITOR=nano sudo -E visudo"):
+
+* ALL = NOPASSWD:/usr/bin/qshutdown
+
+the * replaces the username or %groupname (Don't forget the % if it's a group).
+
+And one more thing:
+Edit the /root/.qshutdown/qshutdown.conf (after starting qshutdown once as root) and set
+the option Lock_all to true.
+
+If you should ever forget your set password, just remove the whole line
+starting with "Password" manually from the qshutdown.conf.
+
+
+UNINSTALL:
+==========
+
+To uninstall type:
+
+qmake     (if the Makefile has been removed)
+sudo make deinstall
+
+(note that ~/.qshutdown/qshutdown.conf and
+ ~/.qshutdown/log.txt won't be removed)
+
+
+KNOWN ISSUES:
+=============
+
+There is no system tray icon for qshutdown in Ubuntu 11.04.
+SOLUTION: Type the following line in a terminal:
+
+gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"
+
+
+
+HINTS ON USAGE:
+===============
+
+One can not close qshutdown, but only quit it using the sytem tray icon (indicator) or
+the key combination Ctrl+Q (see shortcuts). If you want qshutdown to stop bugging you,
+just remove the hook from warnings on?
+
+
+HOTKEYS:
+==========
+
+Ctrl+I	information window
+Ctrl+Q	Quit
+Ctrl+P	Prefereces
+Ctrl+L	write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)
+Ctrl+S	set to shutdown
+Ctrl+R	set to restart
+Ctrl+U	set to suspend to RAM
+Ctrl+H	set to hibernate
+Ctrl+E	stop timer (only if the countdown has started and the admin didn't restrict the access)
+Shift+E	to edit the config file (for this a password is necessary. If you are a user, you can set an "empty password" (leave the password field empty)).

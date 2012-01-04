@@ -1,0 +1,22 @@
+qprogram-starter
+
+
+Depencies: libqt4-dev, libqt4-dbus, build-essential
+
+
+If you want to install from source, open a terminal and change into this folder.
+To install type:
+
+qmake
+make
+sudo make install distclean
+
+
+
+To uninstall type:
+
+qmake     (if the Makefile has been removed)
+sudo make deinstall
+
+(note that ~/.qprogram-starter/qprogram-starter.conf and
+ the log files won't be removed)

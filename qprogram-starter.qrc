@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="pix">qprogram-starter/src/pixmap/qprogram-starter.xpm</file>
+    </qresource>
+</RCC>

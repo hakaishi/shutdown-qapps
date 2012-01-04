@@ -1,0 +1,5 @@
+qshutdown/bin/* usr/bin
+qshutdown/src/translations/*.qm usr/share/qshutdown/translations
+qshutdown/src/pixmap/* usr/share/pixmaps
+qshutdown/autostart/qshutdown.desktop usr/share/applications
+qshutdown/autostart/99qshutdown usr/share/qshutdown/autostart

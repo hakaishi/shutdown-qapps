@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="version">version.txt</file>
+        <file alias="red_glasses">qshutdown/src/pixmap/red_glasses.xpm</file>
+        <file alias="red_glasses_image">qshutdown/src/pixmap/red_glasses.png</file>
+    </qresource>
+</RCC>

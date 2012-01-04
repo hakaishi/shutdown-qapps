@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=qprogram-starter
+Name[de_DE]=qprogram-starter
+Exec=qprogram-starter
+Terminal=false
+Type=Application
+Icon=qprogram-starter
+Categories=Utility;

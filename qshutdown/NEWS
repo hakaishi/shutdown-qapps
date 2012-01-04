@@ -1,0 +1,240 @@
+Changes in Release 1.6.2
+=========================
+
+ - replaced all qDebug(), qWarning() and qCritical()
+ - added "About Qt"
+
+Changes in Release 1.6.1
+=========================
+
+ - for first start fonts weren't correctly initialized -> fixed.
+
+Changes in Release 1.6.0
+=========================
+
+ - tool tips updated and new ones
+ - new design with more features
+ - added: "About"
+ - new warning method: System tray icon message.
+ - removed spacers and LCD from the source code
+   since it's more convenient to leave this to the ui.
+ - more precise display of the time displayed with the LCD
+ - removed most global variables and thus restructured many
+   functions and classes
+ - removed qApp-quit() from Gui::finished_() -> shutdown works again under
+   Ubuntu Natty and so on. Added Gui::saveLog() instead to resolve the
+   problem from version 1.5.2 (instead of the solution from version 1.5.3)
+
+Changes in Release 1.5.6
+=========================
+
+ - bugfix: minimize and restore button didn't work correctly on all systems.
+ - added: more information about hotkeys (removed old ones)
+
+Changes in Release 1.5.5
+=========================
+
+ - bugfix: autostart entry is written or deleted when confirming with OK.
+           (the function was called at the wrong place)
+
+Changes in Release 1.5.4
+=========================
+
+ - added: restore and minimize Button to the system tray icon
+          (also because the left click will not work with Unity on
+          Ubuntu).
+
+Changes in Release 1.5.3
+=========================
+
+ - fixed: No log entry for shutdown events (gui.cpp -> before_quit())
+ - fixed: When pressing Enter in the password prompt line Edit
+          the message box reappeared twice (passwd.cpp)
+
+Changes in Release 1.5.2
+=========================
+
+ - fixed timer problem (minor).
+
+Changes in Release 1.5.1
+=========================
+
+ - saving the edited configuration file will now
+   also update the preferences window.
+ - the editor got an additional button and won't quit
+   after saving, if Ok hasn't been clicked.
+ - the main window won't rise into the foreground if
+   the calendar, the password promt or the editor is
+   open.
+ - removed line for minimizing Window after OK has
+   been clicked.
+
+Changes in Release 1.5.0
+=========================
+
+ - added a password gui and editor to access
+   qshutdown.conf, removing a possible
+   security vulnerability (in "admin mode" only).
+ - added a button in preferences to
+   edit qshutdown.conf
+ - revised the way of how the autostart works and
+   added an option to the preferences.
+
+Changes in Release 1.4.9
+=========================
+
+ - fixed translation (de) for info box:
+   qshutdown_script.sh -> qshutdown_script
+
+Changes in Release 1.4.8
+=========================
+
+<no changes in qshutdown>
+
+Changes in Release 1.4.7
+=========================
+
+ - fixed: missing line in power.cpp at hibernate()
+ - integrated dbus command for locking screen
+
+Changes in Release 1.4.6
+=========================
+
+ - simplified some calculations (gui.cpp)
+ - removed redundant funktion starter()
+ - added lock screen for suspend and hibernate
+ - added option to hide qshutdown at startup if
+   "Start countdown" is enabled.
+
+Changes in Release 1.4.5
+=========================
+
+ - new path for .qm translation files
+ - implemented UPower (for suspend and
+   hibernate)
+ - implemented shortcut Shift + E
+   to edit ~/.qshutdown/qshutdown.conf
+   with gksu(do)/kdesu(do)
+ - revised "admin mode" (Lock_all)
+ - made some code cleanups
+
+Changes in Release 1.4.4
+=========================
+
+ - fixed: if no date was set and
+   the clock turned 12:00 AM
+   qshutdown stopped working because
+   the date was intern set to the current
+   day.
+ - .ui files had wrong .qrc path (fixed)
+
+Changes in Release 1.4.3
+=========================
+
+ - new version control
+ - and some minor changes
+
+Changes in Release 1.3.6
+=========================
+
+ - fix for timeEdit
+
+Changes in Release 1.3.4
+=========================
+
+ - fix for toolButton
+ - bugfix for spinBox
+
+Changes in Release 1.3.3
+=========================
+
+ - new layout for preferences
+
+Changes in Release 1.3.2
+=========================
+
+ - fixed and modified many things
+
+Changes in Release 1.3.1
+=========================
+
+ - adjusted some things in the calendar widget
+ - corrected quite a lot things
+ - made some code cleanups
+
+Changes in Release 1.3.0
+=========================
+
+ - new features: added a calendar and
+   the changes of the font settings
+   take immediantly effect in the main window
+
+Changes in Release 1.2.5
+=========================
+
+ - bugfix: Programwindow didn't reappear
+   when starting twice
+
+Changes in Release 1.2.4
+=========================
+
+ - new feature: start countdown at startup
+ - scrollable area for preferences
+
+Changes in Release 1.2.3
+=========================
+
+ - bugfix for "Lock_all": timeEdit was
+   not disabled at startup.
+ - other minor changes related to Lock_all
+ - the size of the log file is now adjustable
+
+Changes in Release 1.2.2
+=========================
+
+ - "Reset settings" won't save changes
+   directly anymore. The settings will
+   be loaded by each showEvent.
+
+Changes in Release 1.2.1
+=========================
+
+ - bug fixed: window shifted down by
+   each show and hide event
+
+Changes in Release 1.2.0
+=========================
+
+ - improved tray-icon-contextmenu
+ - fixed shutdown/reboot/suspend/hibernate
+   functions
+ - replaced info message box
+   with a QPlainTextEdit Object
+ - added a combo box and shortcuts
+ - qshutdown now accepts arguments
+ - added a preferences dialog
+
+Changes in Release 1.1.0
+=========================
+
+ - added tray-icon-contextmenus for
+   shutdown/reboot/standby/hibernate
+ - pixmap now in .xpm format
+ - added DeviceKit in the shutdown
+   option
+
+Changes in Release 1.0.2
+=========================
+
+ - bugfix: if local time is not
+   continual and skips certain
+   seconds, qshutdown might have
+   not shutdown the system or
+   shown it self 3 times even if 
+   there were less than 70
+   seconds left. *now fixed*
+
+Changes in Release 1.0.1
+=========================
+
+ - Initial Release

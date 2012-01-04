@@ -1,0 +1,102 @@
+.\"Created with GNOME Manpages Editor
+.TH qshutdown 1 "2011-10-23"
+.PP
+.SH NAME
+qshutdown \- An avanced shutdown tool
+.PP
+.SH SYNOPSIS
+.B qshutdown
+.RI [ options ]
+.br
+.PP
+.SH DESCRIPTION
+qshutdown  is  a simple tool to choose a time or a number of minutes to shutdown, reboot, suspend or hibernate after.
+.PP
+qshutdown will show itself 3 times as a warning if there are less  than 70  seconds  left.  (if  1 Minute or local time +1 Minute was set it'll appear only once.)
+.PP
+This program uses qdbus  to  send  a shutdown/reboot/suspend/hibernate request  to  either  the  gnome-  or  kde-session-manager,  to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command  'sudo shutdown'  will  be  used.
+.PP
+.SH OPTIONS
+.TP
+\fB\-h \-\-help\fP
+Prints options with description.
+.TP
+\fB\-i\fP
+Prints information about qshutdown.
+.TP
+\fB\-v\fP
+Prints all errors and warnings.
+.PP
+.SH NOTES
+When sending the request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot.
+.PP
+If nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following: 
+Post the following in a terminal:
+.PP
+\& $ EDITOR=nano sudo \-E visudo
+.PP
+and add this line:
+.PP
+\& * ALL = NOPASSWD:/sbin/shutdown
+.PP
+whereas * replaces the username or %groupname.
+.PP
+.SH For admins:
+If you want qshutdown to run with "parental lock" for every user, you can do
+.PP
+\& $ sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/
+.PP
+and set the option Lock_all in \fI/root/.qshutdown/qshutdown.conf\fR to \fBtrue\fR. Note that qshutdown has to start once  to generate the qshutdown.conf. Furthermore there is a need to do
+.PP
+\& $ EDITOR=nano sudo \-E visudo
+.PP
+and add the following line to the sudoers:
+.PP
+\& * ALL = NOPASSWD:/usr/bin/qshutdown
+.PP
+If you should ever forget your set password, just remove the whole line starting with \fBPassword\fR manually from the qshutdown.conf.
+.PP
+.SH FILES
+The configurationfile (and logfile) is located at \fI~/.qshutdown/\fR (under Linux/Unix).
+The maximum Number of countdown_minutes is 1440 (24 hours).
+.PP
+.SH KNOWN ISSUES
+.PP
+There is no system tray icon for qshutdown in Ubuntu 11.04.
+.br
+\fBSOLUTION:\fR Type the following line in a terminal:
+.PP
+\& $ gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"
+.PP
+.SH HINTS ON USAGE
+If you want qshutdown to stop "bugging" you, just remove the hook from "warnings on?".
+.PP
+.SH HOTKEYS
+.TP
+Ctrl+I	information window
+.TP
+Ctrl+Q	Quit
+.TP
+Ctrl+P	Prefereces
+.TP
+Ctrl+L	write the run time once into the logfile (works
+only if qshutdown quits. To make it permanent set
+it in the preferences.)
+.TP
+Ctrl+S	set to shutdown
+.TP
+Ctrl+R	set to restart
+.TP
+Ctrl+U	set to suspend to RAM
+.TP
+Ctrl+H	set to hibernate
+.TP
+Ctrl+E	stop timer (only if the countdown has started and
+the admin didn't restrict the access)
+.TP
+Shift+E	to edit the config file (for this a password is
+necessary. If you are a user, you can set an
+"empty password" (leave the password field empty)).
+.PP
+.SH AUTHOR
+Christian Metscher <hakaishi@web.de>
