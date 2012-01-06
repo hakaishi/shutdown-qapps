@@ -38,7 +38,6 @@ Gui::Gui(){
      elapsedTime.start();
 
      minimize = QString(tr("&Minimize"));
-     restore = QString(tr("Res&tore"));
 
    //Preferences
      pref = new Preferences(this);
@@ -138,8 +137,6 @@ Gui::Gui(){
      ti->start(30000); //gives every 30 seconds a timeout()-signal
 
    //Connect signals with slots (actions with funktions)
-     connect(radio1, SIGNAL(toggled(bool)), timeEdit, SLOT(setEnabled(bool)));
-     connect(radio2, SIGNAL(toggled(bool)), spin, SLOT(setEnabled(bool)));
      connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(power_action(int)));
      connect(ti, SIGNAL(timeout()), this, SLOT(showW())); //set window state for ti
      connect(ok, SIGNAL(clicked(bool)), this, SLOT(set())); //starts timers and time calculations
@@ -200,10 +197,8 @@ void Gui::tray_actions(){
        showNormal();
        minimize_restore_action->setText(minimize);
      }
-     else{
+     else
        hide();
-       minimize_restore_action->setText(restore);
-     }
 }
 
 void Gui::setInfoText(){ infoBox->setHtml(information); }
@@ -588,11 +583,14 @@ void Gui::finished_(){
      }
 }
 
+void Gui::hideEvent(QHideEvent* window_hide){
+     minimize_restore_action->setText(tr("Res&tore"));
+     QWidget::hideEvent(window_hide);
+}
+
 void Gui::closeEvent(QCloseEvent* window_close){
-     if(!pref->getQuitOnClose()){
+     if(!pref->getQuitOnClose())
        hide();
-       minimize_restore_action->setText(minimize);
-     }
      else if(!editor->getLockAll())
        qApp->quit();
      QWidget::closeEvent(window_close);
@@ -621,84 +619,68 @@ void Gui::loadSettings(){
        myOutput << "W: qshutdown.conf is not writable!" << endl;
      }
 
-     if(!QFile::exists(file) || !settings.contains("Lock_all"))
+     if(!QFile::exists(file)){
        settings.setValue("Lock_all", false);
-     if(!settings.contains("Quit_on_close"))
        settings.setValue("Quit_on_close", false);
-     if(!settings.contains("Time/time_hour"))
        settings.setValue("Time/time_hour", 22);
-     if(!settings.contains("Time/time_minute"))
        settings.setValue("Time/time_minute", 00);
-     if(!settings.contains("Time/countdown_minutes"))
        settings.setValue("Time/countdown_minutes", 60);
-     if(!settings.contains("Time/countdown_at_startup"))
        settings.setValue("Time/countdown_at_startup", false);
-     if(!settings.contains("Hide_at_startup"))
        settings.setValue("Hide_at_startup", false);
-     if(!settings.contains("MainWindow/size"))
        settings.setValue("MainWindow/size", QSize(290, 280));
-     if(!settings.contains("MainWindow/keep_proportions"))
        settings.setValue("MainWindow/keep_proportions", false);
-     if(!settings.contains("Fonts/font_type"))
        settings.setValue("Fonts/font_type", "Times New Roman");
-     if(!settings.contains("Fonts/font1"))
        settings.setValue("Fonts/font1", 13);
-     if(!settings.contains("Fonts/font2"))
        settings.setValue("Fonts/font2", 18);
-     if(!settings.contains("Fonts/font3"))
        settings.setValue("Fonts/font3", 11);
-     if(!settings.contains("CheckBoxes/target_time"))
        settings.setValue("CheckBoxes/target_time", false);
-     if(!settings.contains("CheckBoxes/countdown"))
        settings.setValue("CheckBoxes/countdown", true);
-     if(!settings.contains("heckBoxes/lock"))
        settings.setValue("CheckBoxes/lock", true);
-     if(!settings.contains("CheckBoxes/warnings"))
        settings.setValue("CheckBoxes/warnings", true);
-     if(!settings.contains("Power/comboBox"))
        settings.setValue("Power/comboBox", 0);
-     if(!settings.contains("Logfile/logging"))
        settings.setValue("Logfile/logging", false);
-     if(!settings.contains("Logfile/size"))
        settings.setValue("Logfile/size", 1.5);
-     if(!settings.contains("Lock_screen"))
        settings.setValue("Lock_screen", true);
-     if(!settings.contains("Autostart"))
-       settings.setValue("Autostart", false);
-
-/***************** read files entries *****************/
-     timeEdit->setTime(QTime(settings.value("Time/time_hour").toInt(),settings.value("Time/time_minute").toInt()));
-     spin->setValue(settings.value("Time/countdown_minutes").toInt());
-     resize(settings.value("MainWindow/size").toSize());
-     actionKeep_window_proportions->setChecked(settings.value("MainWindow/keep_proportions").toBool());
-     if(settings.contains("Fonts/font_type")){
-       font1->setFamily(settings.value("Fonts/font_type").toString());
-       font2->setFamily(settings.value("Fonts/font_type").toString());
-       font3->setFamily(settings.value("Fonts/font_type").toString());
-       font1->setPointSize(settings.value("Fonts/font1").toInt());
-       font2->setPointSize(settings.value("Fonts/font2").toInt());
-       font3->setPointSize(settings.value("Fonts/font3").toInt());
+      #ifndef Q_OS_WIN32
+       QFile autostartFile(QDir::homePath() + "/.config/autostart/qshutdown.desktop");
+       if(autostartFile.exists())
+         settings.setValue("Autostart", true);
+       else
+         settings.setValue("Autostart", false);
+      #endif
      }
      else
-       getFonts();
+       pref->autostartFile();
 
-     radio1->setChecked(settings.value("CheckBoxes/target_time").toBool());
-     radio2->setChecked(settings.value("CheckBoxes/countdown").toBool());
-     lock->setChecked(settings.value("CheckBoxes/lock").toBool());
-     comboBox->setCurrentIndex(settings.value("Power/comboBox").toInt());
-     warnings->setChecked(settings.value("CheckBoxes/warnings").toBool());
-     log_action->setChecked(settings.value("Logfile/logging").toBool());
-     logFileSize = settings.value("Logfile/size").toDouble();
 
-     if(settings.value("Time/countdown_at_startup").toBool()){
+/***************** read files entries *****************/
+     timeEdit->setTime(QTime(settings.value("Time/time_hour",22).toInt(),settings.value("Time/time_minute",00).toInt()));
+     spin->setValue(settings.value("Time/countdown_minutes",60).toInt());
+     resize(settings.value("MainWindow/size",QSize(290,280)).toSize());
+     actionKeep_window_proportions->setChecked(settings.value("MainWindow/keep_proportions",false).toBool());
+     font1->setFamily(settings.value("Fonts/font_type","Times New Roman").toString());
+     font2->setFamily(settings.value("Fonts/font_type","Times New Roman").toString());
+     font3->setFamily(settings.value("Fonts/font_type","Times New Roman").toString());
+     font1->setPointSize(settings.value("Fonts/font1",13).toInt());
+     font2->setPointSize(settings.value("Fonts/font2",18).toInt());
+     font3->setPointSize(settings.value("Fonts/font3",11).toInt());
+
+
+     radio1->setChecked(settings.value("CheckBoxes/target_time",false).toBool());
+     radio2->setChecked(settings.value("CheckBoxes/countdown",true).toBool());
+     lock->setChecked(settings.value("CheckBoxes/lock",true).toBool());
+     comboBox->setCurrentIndex(settings.value("Power/comboBox",0).toInt());
+     warnings->setChecked(settings.value("CheckBoxes/warnings",true).toBool());
+     log_action->setChecked(settings.value("Logfile/logging",false).toBool());
+     logFileSize = settings.value("Logfile/size",1.5).toDouble();
+
+     if(settings.value("Time/countdown_at_startup",false).toBool()){
        set();
-       if(settings.value("Hide_at_startup").toBool()){
+       if(settings.value("Hide_at_startup",false).toBool())
          QTimer::singleShot(2000, this, SLOT(hide()));
-         minimize_restore_action->setText(restore);
-       }
      }
 
-     lockEverything(settings.value("Lock_all").toBool());
+     lockEverything(settings.value("Lock_all",false).toBool());
 
      QList<QWidget*> list;
      list << lcdL << comboBox << targetTime
