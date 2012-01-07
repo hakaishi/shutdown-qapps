@@ -3,6 +3,9 @@ Changes in Release 1.6.2
 
  - replaced all qDebug(), qWarning() and qCritical()
  - added "About Qt"
+ - reworked QSettings
+ - added hideEvent because of minimize/restore Action of the
+   System Tray Icon
 
 Changes in Release 1.6.1
 =========================

@@ -29,16 +29,16 @@ Info::Info(QWidget *parent): QTextEdit(parent){
 
 Info::~Info(){ }
 
-void Info::showEvent(QShowEvent* show_){
+void Info::showEvent(QShowEvent* show_Info){
      isClosed = false;
      starting();
-     QTextEdit::showEvent(show_);
+     QWidget::showEvent(show_Info);
 }
 
-void Info::closeEvent(QCloseEvent* close_){
+void Info::closeEvent(QCloseEvent* close_Info){
      isClosed = true;
      finishing();
-     QTextEdit::closeEvent(close_);
+     QWidget::closeEvent(close_Info);
 }
 
 bool Info::getClosed(){ return isClosed; }
