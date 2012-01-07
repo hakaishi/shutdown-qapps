@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>325</width>
-    <height>360</height>
+    <width>300</width>
+    <height>337</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -427,8 +427,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>325</width>
-     <height>26</height>
+     <width>300</width>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -522,83 +522,18 @@
  </widget>
  <tabstops>
   <tabstop>ok</tabstop>
-  <tabstop>lock</tabstop>
-  <tabstop>warnings</tabstop>
   <tabstop>comboBox</tabstop>
   <tabstop>toolButton</tabstop>
   <tabstop>radio1</tabstop>
   <tabstop>timeEdit</tabstop>
   <tabstop>radio2</tabstop>
   <tabstop>spin</tabstop>
+  <tabstop>lock</tabstop>
+  <tabstop>warnings</tabstop>
   <tabstop>now</tabstop>
  </tabstops>
  <resources>
   <include location="../../../qshutdown.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>timeEdit</sender>
-   <signal>editingFinished()</signal>
-   <receiver>ok</receiver>
-   <slot>setFocus()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>255</x>
-     <y>101</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>162</x>
-     <y>271</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>spin</sender>
-   <signal>editingFinished()</signal>
-   <receiver>ok</receiver>
-   <slot>setFocus()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>255</x>
-     <y>135</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>162</x>
-     <y>271</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>radio2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>spin</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>198</x>
-     <y>135</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>255</x>
-     <y>135</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>radio1</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>timeEdit</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>198</x>
-     <y>101</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>255</x>
-     <y>101</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

@@ -76,29 +76,29 @@ void Preferences::showEvent(QShowEvent* show_pref){
        msgBox->show();
      }
      loadSettings();
-     QWidget::showEvent(show_pref);
+     QDialog::showEvent(show_pref);
 }
 
 void Preferences::loadSettings(){
      if(settings->contains("PrefWindowSize/size"))
        resize(settings->value("PrefWindowSize/size").toSize());
-     comboBox->setCurrentIndex(settings->value("Power/comboBox",0).toInt());
-     timeEdit->setTime(QTime(settings->value("Time/time_hour",22).toInt(),settings->value("Time/time_minute",00).toInt()));
-     spin->setValue(settings->value("Time/countdown_minutes",60).toInt());
-     stopHide->setChecked(settings->value("Quit_on_close",false).toBool());
-     countdown->setChecked(settings->value("Time/countdown_at_startup",false).toBool());
-     hideMe->setChecked(settings->value("Hide_at_startup",false).toBool());
-     fontComboBox->setCurrentFont(settings->value("Fonts/font_type","Times New Roman").toString());
-     font1Spin->setValue(settings->value("Fonts/font1",13).toInt());
-     font2Spin->setValue(settings->value("Fonts/font2",18).toInt());
-     font3Spin->setValue(settings->value("Fonts/font3",11).toInt());
-     spinBox->setValue(settings->value("Logfile/size",1.5).toDouble());
-     radio1->setChecked(settings->value("CheckBoxes/target_time",false).toBool());
-     radio2->setChecked(settings->value("CheckBoxes/countdown",true).toBool());
-     lock->setChecked(settings->value("CheckBoxes/lock",true).toBool());
-     warn->setChecked(settings->value("CheckBoxes/warnings",true).toBool());
-     log->setChecked(settings->value("Logfile/logging",false).toBool());
-     lockS->setChecked(settings->value("Lock_screen",true).toBool());
+     comboBox->setCurrentIndex(settings->value("Power/comboBox").toInt());
+     timeEdit->setTime(QTime(settings->value("Time/time_hour").toInt(),settings->value("Time/time_minute").toInt()));
+     spin->setValue(settings->value("Time/countdown_minutes").toInt());
+     stopHide->setChecked(settings->value("Quit_on_close").toBool());
+     countdown->setChecked(settings->value("Time/countdown_at_startup").toBool());
+     hideMe->setChecked(settings->value("Hide_at_startup").toBool());
+     fontComboBox->setCurrentFont(settings->value("Fonts/font_type").toString());
+     font1Spin->setValue(settings->value("Fonts/font1").toInt());
+     font2Spin->setValue(settings->value("Fonts/font2").toInt());
+     font3Spin->setValue(settings->value("Fonts/font3").toInt());
+     spinBox->setValue(settings->value("Logfile/size").toDouble());
+     radio1->setChecked(settings->value("CheckBoxes/target_time").toBool());
+     radio2->setChecked(settings->value("CheckBoxes/countdown").toBool());
+     lock->setChecked(settings->value("CheckBoxes/lock").toBool());
+     warn->setChecked(settings->value("CheckBoxes/warnings").toBool());
+     log->setChecked(settings->value("Logfile/logging").toBool());
+     lockS->setChecked(settings->value("Lock_screen").toBool());
      autostart->setChecked(settings->value("Autostart").toBool());
 
      lockMyScreen = settings->value("Lock_screen").toBool();
@@ -152,12 +152,13 @@ void Preferences::resetSettings(){
      }
 }
 
-void Preferences::closeEvent(QCloseEvent* close_pref){
+void Preferences::closeEvent(QCloseEvent* window_close){
      isClosed = true;
      finishing(); //sends SIGNAL finishing()
      if(settings->isWritable())
        settings->setValue("PrefWindowSize/size", size());
-     QWidget::closeEvent(close_pref);
+
+     QDialog::closeEvent(window_close);
 }
 
 bool Preferences::getClosed(){ return isClosed; }
@@ -173,10 +174,10 @@ void Preferences::fontSize2Changed(int f2){ fontS2 = f2; changeFont(); }
 void Preferences::fontSize3Changed(int f3){ fontS3 = f3; changeFont(); }
 
 void Preferences::resetFont(){
-     fonts = settings->value("Fonts/font_type","Times New Roman").toString();
-     fontS1 = settings->value("Fonts/font1",13).toInt();
-     fontS2 = settings->value("Fonts/font2",18).toInt();
-     fontS3 = settings->value("Fonts/font3",11).toInt();
+     fonts = settings->value("Fonts/font_type").toString();
+     fontS1 = settings->value("Fonts/font1").toInt();
+     fontS2 = settings->value("Fonts/font2").toInt();
+     fontS3 = settings->value("Fonts/font3").toInt();
      changeFont();
 }
 

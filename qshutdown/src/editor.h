@@ -48,7 +48,7 @@ class Editor : public QDialog, public Ui::Editor {
 
     protected:
      virtual void showEvent(QShowEvent* show_editor);
-     virtual void closeEvent(QCloseEvent* close_editor);
+     virtual void closeEvent(QCloseEvent* window_close);
      void keyPressEvent(QKeyEvent* kEvent);
 
 };

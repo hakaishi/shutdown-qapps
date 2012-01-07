@@ -42,8 +42,8 @@ class Calendar : public QDialog, public Ui::Calendar {
      void finishing();
 
     protected:
-     virtual void showEvent(QShowEvent* show_calendar);
-     virtual void closeEvent(QCloseEvent* close_calendar);
+     virtual void showEvent(QShowEvent* show_);
+     virtual void closeEvent(QCloseEvent* close_);
 
 };
 

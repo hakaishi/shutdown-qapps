@@ -43,16 +43,16 @@ void Calendar::setDate(){
      }
 }
 
-void Calendar::showEvent(QShowEvent* show_calendar){
+void Calendar::showEvent(QShowEvent* show_){
      isClosed = false;
      starting();
-     QWidget::showEvent(show_calendar);
+     QDialog::showEvent(show_);
 }
 
-void Calendar::closeEvent(QCloseEvent* close_calendar){
+void Calendar::closeEvent(QCloseEvent* close_){
      isClosed = true;
      finishing();
-     QWidget::closeEvent(close_calendar);
+     QDialog::closeEvent(close_);
 }
 
 bool Calendar::getClosed(){ return isClosed; }

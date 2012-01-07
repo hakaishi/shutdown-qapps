@@ -48,10 +48,8 @@ class Preferences : public QDialog, public Ui::Preferences {
      void fontSize1Changed(int f1);
      void fontSize2Changed(int f2);
      void fontSize3Changed(int f3);
-     void lockScreen();
-
-    public slots:
      void autostartFile();
+     void lockScreen();
 
     signals:
      void starting();
@@ -61,7 +59,7 @@ class Preferences : public QDialog, public Ui::Preferences {
 
     protected:
      virtual void showEvent(QShowEvent* show_pref);
-     virtual void closeEvent(QCloseEvent* close_pref);
+     virtual void closeEvent(QCloseEvent* window_close);
 };
 
 #endif //PREFERENCES_H

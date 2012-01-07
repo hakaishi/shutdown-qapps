@@ -48,8 +48,8 @@ class PassWord : public QDialog, public Ui::PassWord {
      void update();
 
     protected:
-     virtual void showEvent(QShowEvent* show_pw);
-     virtual void closeEvent(QCloseEvent* close_pw);
+     virtual void showEvent(QShowEvent* show_);
+     virtual void closeEvent(QCloseEvent* close_);
 };
 
 #endif //PASSWD_H

@@ -61,13 +61,13 @@ void Editor::showEvent(QShowEvent* show_editor){
 
      starting();
 
-     QWidget::showEvent(show_editor);
+     QDialog::showEvent(show_editor);
 }
 
-void Editor::closeEvent(QCloseEvent* close_editor){
+void Editor::closeEvent(QCloseEvent* window_close){
      isClosed = true;
      finishing();
-     QWidget::closeEvent(close_editor);
+     QDialog::closeEvent(window_close);
 }
 
 bool Editor::getClosed(){ return isClosed; }

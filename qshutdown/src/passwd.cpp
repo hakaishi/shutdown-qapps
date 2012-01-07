@@ -78,16 +78,16 @@ void PassWord::update(){
      }
 }
 
-void PassWord::showEvent(QShowEvent* show_pw){
+void PassWord::showEvent(QShowEvent* show_){
      isClosed = false;
      starting();
-     QWidget::showEvent(show_pw);
+     QDialog::showEvent(show_);
 }
 
-void PassWord::closeEvent(QCloseEvent* close_pw){
+void PassWord::closeEvent(QCloseEvent* close_){
      isClosed = true;
      finishing();
-     QWidget::closeEvent(close_pw);
+     QDialog::closeEvent(close_);
 }
 
 bool PassWord::getClosed(){ return isClosed; }

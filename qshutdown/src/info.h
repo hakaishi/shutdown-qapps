@@ -35,8 +35,8 @@ class Info : public QTextEdit{
      void finishing();
 
     protected:
-     virtual void showEvent(QShowEvent* show_Info);
-     virtual void closeEvent(QCloseEvent* close_Info);
+     virtual void showEvent(QShowEvent* show_);
+     virtual void closeEvent(QCloseEvent* close_);
 };
 
 #endif //INFO_H
