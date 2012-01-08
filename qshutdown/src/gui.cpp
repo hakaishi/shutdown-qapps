@@ -37,8 +37,6 @@ Gui::Gui(){
      datetime = QDateTime::currentDateTime();
      elapsedTime.start();
 
-     minimize = QString(tr("&Minimize"));
-
    //Preferences
      pref = new Preferences(this);
 
@@ -73,7 +71,7 @@ Gui::Gui(){
 
    //TrayIconContextMenu
      menu = new QMenu(this);
-     minimize_restore_action = new QAction(minimize,this);
+     minimize_restore_action = new QAction(tr("&Minimize"),this);
      reset_action = new QAction(tr("R&eset"),this);
      quit_action = new QAction(tr("&Quit"),this);
      info_action = new QAction(tr("&Info"),this);
@@ -192,11 +190,14 @@ Gui::Gui(){
 
 Gui::~Gui(){ delete font1; delete font2; delete font3; }
 
+void Gui::showEvent(QShowEvent* show_window){
+     minimize_restore_action->setText(tr("&Minimize"));
+     QWidget::showEvent(show_window);
+}
+
 void Gui::tray_actions(){
-     if(isMinimized() || isHidden()){  //in case that the window is minimized or hidden
+     if(isMinimized() || isHidden())  //in case that the window is minimized or hidden
        showNormal();
-       minimize_restore_action->setText(minimize);
-     }
      else
        hide();
 }
@@ -275,10 +276,8 @@ void Gui::showW(){
 
 void Gui::showRunningProgram(){
      center();
-     if(isMinimized() || isHidden()){
+     if(isMinimized() || isHidden())
        showNormal();
-       minimize_restore_action->setText(minimize);
-     }
      else
        activateWindow();
 }

@@ -47,7 +47,6 @@ class Gui : public QMainWindow, public Ui::Gui {
      void loadSettings();
      void center();
      QString information;
-     QString minimize;
  
     private:
      bool            timeRunning;
@@ -108,6 +107,7 @@ class Gui : public QMainWindow, public Ui::Gui {
     protected:
      void keyPressEvent(QKeyEvent* kEvent);
      virtual void closeEvent(QCloseEvent* window_close);
+     virtual void showEvent(QShowEvent* window_show);
      virtual void hideEvent(QHideEvent* window_hide);
 };
 
