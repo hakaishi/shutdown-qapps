@@ -1,3 +1,13 @@
+shutdown-qapps (1.6.3-1) unstable; urgency=low
+
+  * qshutdown
+    - added advanced settings for specifying or choosing a shutdown/
+      reboot/suspend/hibernate command.
+    - added gnome-session-quit command
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 29 Feb 2012 01:36:24 +0100
+
+
 shutdown-qapps (1.6.2-1) unstable; urgency=low
 
   * qshutdown & qprogram-starter
@@ -5,10 +15,10 @@ shutdown-qapps (1.6.2-1) unstable; urgency=low
   * qshutdown
     - added "About Qt"
     - reworked QSettings
-    - added hideEvent because of minimize/restore Action of the
-      System Tray Icon
+    - added hideEvent and showEvent because of minimize/restore Action of
+      the System Tray Icon
 
- -- Christian Metscher <hakaishi@web.de>  Fri, 30 Dec 2011 13:05:55 +0100
+ -- Christian Metscher <hakaishi@web.de>  Sun, 08 Jan 2012 15:22:33 +0100
 
 
 shutdown-qapps (1.6.1-1) unstable; urgency=low

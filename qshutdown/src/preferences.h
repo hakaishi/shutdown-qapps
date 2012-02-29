@@ -28,6 +28,8 @@ class Preferences : public QDialog, public Ui::Preferences {
      Preferences(QWidget *parent = 0);
      ~Preferences();
      QString fonts;
+     QString myShutdown, myReboot, mySuspend, myHibernate;
+     QString userDef1S, userDef2S, userDef3S, userDef4S;
      int fontS1, fontS2, fontS3;
      bool getClosed();
      bool getQuitOnClose();
@@ -49,6 +51,7 @@ class Preferences : public QDialog, public Ui::Preferences {
      void fontSize2Changed(int f2);
      void fontSize3Changed(int f3);
      void lockScreen();
+     void enableUserDef();
 
     public slots:
      void autostartFile();

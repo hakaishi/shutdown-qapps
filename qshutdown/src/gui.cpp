@@ -336,7 +336,6 @@ void Gui::updateT(){
        reset();
 
      QDate myDate;
-
      QString tip1, tip2;
 
      if(shutdown_action->isChecked())
@@ -504,7 +503,7 @@ void Gui::Time(){
      bigI = i; //for more precise display with LCD
 }
 
-void Gui::saveWindowSize(){
+void Gui::saveLog(){
    #ifdef Q_OS_WIN32
      QString file(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf");
    #else //!Q_OS_WIN32
@@ -514,10 +513,7 @@ void Gui::saveWindowSize(){
 
      settings.setValue("MainWindow/size", size());
      settings.setValue("MainWindow/keep_proportions", actionKeep_window_proportions->isChecked());
-}
 
-void Gui::saveLog(){
-     saveWindowSize();
      if(log_action->isChecked()){ //if logfile is set in the icon contextmenu
      #ifdef Q_OS_WIN32
        QFile logfile(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/log.txt");
@@ -560,21 +556,58 @@ void Gui::saveLog(){
 
 void Gui::finished_(){
      finishedExecuted = true;
-     saveLog();
      switch(comboBox->currentIndex()){
        case 0:
-         saveWindowSize();
+         if(pref->shutdownM->currentIndex()==0) { Power::automatic = true; } //TODO vergiss den reset für die Variable(n) nicht!
+         if(pref->shutdownM->currentIndex()==1) { Power::gnome = true; }
+         if(pref->shutdownM->currentIndex()==2) { Power::kde = true; }
+         if(pref->shutdownM->currentIndex()==3) { Power::hal_ = true; }
+         if(pref->shutdownM->currentIndex()==4) { Power::consolekit = true; }
+         if(pref->shutdownM->currentIndex()==5) { Power::sudo = true; }
+         if(pref->shutdownM->currentIndex()==6) {
+           Power::user = true;
+           Power::myShutdown = pref->myShutdown;
+         }
+         saveLog();
          Power::shutdown();
          break;
        case 1:
-         saveWindowSize();
+         if(pref->rebootM->currentIndex()==0) { Power::automatic = true; } //TODO vergiss den reset für die Variable(n) nicht!
+         if(pref->rebootM->currentIndex()==1) { Power::gnome = true; }
+         if(pref->rebootM->currentIndex()==2) { Power::kde = true; }
+         if(pref->rebootM->currentIndex()==3) { Power::hal_ = true; }
+         if(pref->rebootM->currentIndex()==4) { Power::consolekit = true; }
+         if(pref->rebootM->currentIndex()==5) { Power::sudo = true; }
+         if(pref->rebootM->currentIndex()==6) {
+           Power::user = true;
+           Power::myReboot = pref->myReboot;
+         }
+         saveLog();
          Power::reboot();
          break;
        case 2:
+         if(pref->suspendM->currentIndex()==0) { Power::automatic = true; } //TODO vergiss den reset für die Variable(n) nicht!
+         if(pref->suspendM->currentIndex()==1) { Power::gnome = true; }
+         if(pref->suspendM->currentIndex()==2) { Power::hal_ = true; }
+         if(pref->suspendM->currentIndex()==3) { Power::upower_ = true; }
+         if(pref->suspendM->currentIndex()==4) { Power::devicekit = true; }
+         if(pref->suspendM->currentIndex()==5) {
+           Power::user = true;
+           Power::mySuspend = pref->mySuspend;
+         }
          if(pref->lockMyScreen){ Power::lockMyScreen = true; }
          Power::suspend();
          break;
        case 3:
+         if(pref->hibernateM->currentIndex()==0) { Power::automatic = true; } //TODO vergiss den reset für die Variable(n) nicht!
+         if(pref->hibernateM->currentIndex()==1) { Power::gnome = true; }
+         if(pref->hibernateM->currentIndex()==2) { Power::hal_ = true; }
+         if(pref->hibernateM->currentIndex()==3) { Power::upower_ = true; }
+         if(pref->hibernateM->currentIndex()==4) { Power::devicekit = true; }
+         if(pref->hibernateM->currentIndex()==5) {
+           Power::user = true;
+           Power::myHibernate = pref->myHibernate;
+         }
          if(pref->lockMyScreen){ Power::lockMyScreen = true; }
          Power::hibernate();
          break;
@@ -596,8 +629,7 @@ void Gui::closeEvent(QCloseEvent* window_close){
 }
 
 void Gui::beforeQuit(){
-     if(!finishedExecuted)
-       saveLog();
+     saveLog();
   #ifndef Q_OS_WIN32
      QDBusConnection::sessionBus().unregisterObject(OBJECT_NAME, QDBusConnection::UnregisterNode);
      QDBusConnection::sessionBus().unregisterService(SERVICE_NAME);
@@ -735,7 +767,7 @@ void Gui::lockEverything(bool actual){
                 << minutes << pref->comboBox << pref->timeEdit << pref->spin
                 << pref->radio1 << pref->radio2 << pref->stopHide
                 << pref->autostart << pref->lock << pref->countdown
-                << pref->log << pref->reset << pref->spinBox;
+                << pref->log << pref->reset << pref->spinBox << pref->tab2;
      foreach(QWidget * widgetPtr, widgetList)
        widgetPtr->setDisabled(actual);
 

@@ -89,7 +89,6 @@ class Gui : public QMainWindow, public Ui::Gui {
      void Time();
      void power_action(int action);
      void power(QAction *action);
-     void saveWindowSize();
      void reset();
      void finished_();
      void beforeQuit();

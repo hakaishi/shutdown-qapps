@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>372</width>
-    <height>598</height>
+    <width>413</width>
+    <height>659</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,6 +18,13 @@
     <normaloff>:/red_glasses</normaloff>:/red_glasses</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="16" column="2">
+    <widget class="QPushButton" name="confEditButton">
+     <property name="text">
+      <string>&amp;Edit configuration file</string>
+     </property>
+    </widget>
+   </item>
    <item row="19" column="1" colspan="2">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
@@ -26,382 +33,6 @@
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
-    </widget>
-   </item>
-   <item row="16" column="0">
-    <widget class="QPushButton" name="reset">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>&amp;Reset settings</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="3">
-    <widget class="QScrollArea" name="scrollArea">
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>350</width>
-        <height>484</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <property name="spacing">
-        <number>6</number>
-       </property>
-       <property name="margin">
-        <number>0</number>
-       </property>
-       <item>
-        <layout class="QGridLayout" name="gridLayout_3">
-         <property name="horizontalSpacing">
-          <number>0</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>2</number>
-         </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_3">
-           <property name="text">
-            <string>Shutdown type:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="timeLabel">
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="text">
-            <string>Target time:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="spinLabel">
-           <property name="text">
-            <string>Minutes to countdown:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string>Font:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="font1Label">
-           <property name="text">
-            <string>Font size 1:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="font2Label">
-           <property name="text">
-            <string>Font size 2:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="font3Label">
-           <property name="text">
-            <string>Font size 3:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
-          <widget class="QLabel" name="label">
-           <property name="toolTip">
-            <string/>
-           </property>
-           <property name="text">
-            <string>Size for log file:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QTimeEdit" name="timeEdit">
-           <property name="toolTip">
-            <string>What target time should be displayed
-by default at startup?</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QSpinBox" name="spin">
-           <property name="toolTip">
-            <string>How many minutes should be displayed
-for countdown by default at startup?</string>
-           </property>
-           <property name="minimum">
-            <number>0</number>
-           </property>
-           <property name="maximum">
-            <number>1440</number>
-           </property>
-           <property name="singleStep">
-            <number>1</number>
-           </property>
-           <property name="value">
-            <number>1</number>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QFontComboBox" name="fontComboBox">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="toolTip">
-            <string>Set a font</string>
-           </property>
-           <property name="currentFont">
-            <font>
-             <family>Liberation Serif</family>
-            </font>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QSpinBox" name="font1Spin">
-           <property name="toolTip">
-            <string>Labels for example</string>
-           </property>
-           <property name="minimum">
-            <number>6</number>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QSpinBox" name="font2Spin">
-           <property name="toolTip">
-            <string>OK and Minimize buttons</string>
-           </property>
-           <property name="minimum">
-            <number>6</number>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QSpinBox" name="font3Spin">
-           <property name="toolTip">
-            <string>checkboxes and &quot;now!&quot; button</string>
-           </property>
-           <property name="minimum">
-            <number>6</number>
-           </property>
-           <property name="value">
-            <number>6</number>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="1">
-          <widget class="QDoubleSpinBox" name="spinBox">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="toolTip">
-            <string>Size for log file in KB</string>
-           </property>
-           <property name="decimals">
-            <number>1</number>
-           </property>
-           <property name="minimum">
-            <double>1.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.100000000000000</double>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QComboBox" name="comboBox">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="toolTip">
-            <string>What should be displayed first by
-default at startup?</string>
-           </property>
-           <property name="sizeAdjustPolicy">
-            <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
-           </property>
-           <item>
-            <property name="text">
-             <string>Shutdown</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Reboot</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Suspend</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Hibernate</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <property name="spacing">
-          <number>4</number>
-         </property>
-         <item>
-          <widget class="QCheckBox" name="stopHide">
-           <property name="toolTip">
-            <string>The close button usually hides the main window.
-Disabling hiding means, that qshutdown will then
-quit instead.</string>
-           </property>
-           <property name="text">
-            <string>&amp;Disable hiding</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="radio1">
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="text">
-            <string>Enable the &amp;target time at startup</string>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="radio2">
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="text">
-            <string>Enable the minute &amp;countdown at startup</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="autostart">
-           <property name="text">
-            <string>A&amp;utostart</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="lock">
-           <property name="toolTip">
-            <string>Set if the checkbox for &quot;Lock after start?&quot;
-should be checked by default at startup</string>
-           </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="text">
-            <string>&quot;&amp;Lock after start?&quot;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="warn">
-           <property name="toolTip">
-            <string>Set if the checkbox for &quot;Warnings on?&quot;
-should be checked by default at startup</string>
-           </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="text">
-            <string>&quot;&amp;Warnings on?&quot;</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="countdown">
-           <property name="toolTip">
-            <string>Start countdown at startup</string>
-           </property>
-           <property name="text">
-            <string>&amp;Start countdown</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="hideMe">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="toolTip">
-            <string>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</string>
-           </property>
-           <property name="text">
-            <string>&amp;Hide qshutdown at startup</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="log">
-           <property name="toolTip">
-            <string>Log start time of qshutdown and how long
-it was running</string>
-           </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="text">
-            <string>L&amp;ogging</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="lockS">
-           <property name="text">
-            <string>Lock screen &amp;for suspend and hibernate</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
     </widget>
    </item>
    <item row="18" column="0">
@@ -420,35 +51,623 @@ it was running</string>
      </property>
     </spacer>
    </item>
-   <item row="16" column="2">
-    <widget class="QPushButton" name="confEditButton">
-     <property name="text">
-      <string>&amp;Edit configuration file</string>
+   <item row="16" column="0">
+    <widget class="QPushButton" name="reset">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
+     <property name="text">
+      <string>&amp;Reset settings</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="0" colspan="3">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>General</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>371</width>
+            <height>496</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <property name="spacing">
+            <number>6</number>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <item>
+            <layout class="QGridLayout" name="gridLayout_4">
+             <property name="horizontalSpacing">
+              <number>0</number>
+             </property>
+             <property name="verticalSpacing">
+              <number>2</number>
+             </property>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>Shutdown type:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="timeLabel">
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="text">
+                <string>Target time:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="spinLabel">
+               <property name="text">
+                <string>Minutes to countdown:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Font:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="font1Label">
+               <property name="text">
+                <string>Font size 1:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="font2Label">
+               <property name="text">
+                <string>Font size 2:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="font3Label">
+               <property name="text">
+                <string>Font size 3:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="label_6">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="text">
+                <string>Size for log file:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QTimeEdit" name="timeEdit">
+               <property name="toolTip">
+                <string>What target time should be displayed
+by default at startup?</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSpinBox" name="spin">
+               <property name="toolTip">
+                <string>How many minutes should be displayed
+for countdown by default at startup?</string>
+               </property>
+               <property name="minimum">
+                <number>0</number>
+               </property>
+               <property name="maximum">
+                <number>1440</number>
+               </property>
+               <property name="singleStep">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QFontComboBox" name="fontComboBox">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="toolTip">
+                <string>Set a font</string>
+               </property>
+               <property name="currentFont">
+                <font>
+                 <family>Liberation Serif</family>
+                </font>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QSpinBox" name="font1Spin">
+               <property name="toolTip">
+                <string>Labels for example</string>
+               </property>
+               <property name="minimum">
+                <number>6</number>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QSpinBox" name="font2Spin">
+               <property name="toolTip">
+                <string>OK and Minimize buttons</string>
+               </property>
+               <property name="minimum">
+                <number>6</number>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QSpinBox" name="font3Spin">
+               <property name="toolTip">
+                <string>checkboxes and &quot;now!&quot; button</string>
+               </property>
+               <property name="minimum">
+                <number>6</number>
+               </property>
+               <property name="value">
+                <number>6</number>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QDoubleSpinBox" name="spinBox">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="toolTip">
+                <string>Size for log file in KB</string>
+               </property>
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="minimum">
+                <double>1.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.100000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="comboBox">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="toolTip">
+                <string>What should be displayed first by
+default at startup?</string>
+               </property>
+               <property name="sizeAdjustPolicy">
+                <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Shutdown</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Reboot</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Suspend</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Hibernate</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <property name="spacing">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QCheckBox" name="stopHide">
+               <property name="toolTip">
+                <string>The close button usually hides the main window.
+Disabling hiding means, that qshutdown will then
+quit instead.</string>
+               </property>
+               <property name="text">
+                <string>&amp;Disable hiding</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radio1">
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="text">
+                <string>Enable the &amp;target time at startup</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radio2">
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="text">
+                <string>Enable the minute &amp;countdown at startup</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="autostart">
+               <property name="text">
+                <string>A&amp;utostart</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="lock">
+               <property name="toolTip">
+                <string>Set if the checkbox for &quot;Lock after start?&quot;
+should be checked by default at startup</string>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="text">
+                <string>&quot;&amp;Lock after start?&quot;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="warn">
+               <property name="toolTip">
+                <string>Set if the checkbox for &quot;Warnings on?&quot;
+should be checked by default at startup</string>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="text">
+                <string>&quot;&amp;Warnings on?&quot;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="countdown">
+               <property name="toolTip">
+                <string>Start countdown at startup</string>
+               </property>
+               <property name="text">
+                <string>&amp;Start countdown</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="hideMe">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="toolTip">
+                <string>Hide qshutdown at startup if
+&quot;Start countdown&quot; is checked.</string>
+               </property>
+               <property name="text">
+                <string>&amp;Hide qshutdown at startup</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="log">
+               <property name="toolTip">
+                <string>Log start time of qshutdown and how long
+it was running</string>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="text">
+                <string>L&amp;ogging</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="lockS">
+               <property name="text">
+                <string>Lock screen &amp;for suspend and hibernate</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab2">
+      <attribute name="title">
+       <string>Advanced</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="6" column="0" colspan="2">
+        <widget class="QPlainTextEdit" name="userDef3">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="plainText">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="suspendML">
+         <property name="text">
+          <string>Suspend method:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="rebootM">
+         <item>
+          <property name="text">
+           <string>automatic</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Gnome session</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>KDE session</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>HAL</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ConsoleKit</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>sudo shutdown -r</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>user defined</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="hibernateML">
+         <property name="text">
+          <string>Hibernate method:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="shutdownM">
+         <item>
+          <property name="text">
+           <string>automatic</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Gnome session</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>KDE session</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>HAL</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ConsoleKit</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>sudo shutdown -P</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>user defined</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="shutdownML">
+         <property name="text">
+          <string>Shutdown method:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="suspendM">
+         <item>
+          <property name="text">
+           <string>automatic</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Gnome session</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>HAL</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>UPower</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>DeviceKit</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>user defined</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QPlainTextEdit" name="userDef1">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="plainText">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="hibernateM">
+         <item>
+          <property name="text">
+           <string>automatic</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Gnome session</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>HAL</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>UPower</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>DeviceKit</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>user defined</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="rebootML">
+         <property name="text">
+          <string>Reboot method:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QPlainTextEdit" name="userDef2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="plainText">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0" colspan="2">
+        <widget class="QPlainTextEdit" name="userDef4">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="plainText">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
   </layout>
  </widget>
  <tabstops>
-  <tabstop>scrollArea</tabstop>
-  <tabstop>comboBox</tabstop>
-  <tabstop>timeEdit</tabstop>
-  <tabstop>spin</tabstop>
-  <tabstop>fontComboBox</tabstop>
-  <tabstop>font1Spin</tabstop>
-  <tabstop>font2Spin</tabstop>
-  <tabstop>font3Spin</tabstop>
-  <tabstop>spinBox</tabstop>
-  <tabstop>stopHide</tabstop>
-  <tabstop>radio1</tabstop>
-  <tabstop>radio2</tabstop>
-  <tabstop>autostart</tabstop>
-  <tabstop>lock</tabstop>
-  <tabstop>warn</tabstop>
-  <tabstop>countdown</tabstop>
-  <tabstop>hideMe</tabstop>
-  <tabstop>log</tabstop>
-  <tabstop>lockS</tabstop>
   <tabstop>reset</tabstop>
   <tabstop>confEditButton</tabstop>
   <tabstop>buttonBox</tabstop>
@@ -486,22 +705,6 @@ it was running</string>
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>countdown</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>hideMe</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>188</x>
-     <y>381</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>188</x>
-     <y>407</y>
     </hint>
    </hints>
   </connection>

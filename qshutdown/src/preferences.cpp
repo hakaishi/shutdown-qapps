@@ -46,6 +46,11 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      fontS2 = 18;
      fontS3 = 11;
 
+     userDef1S = tr("Please input an user specified command for shutdown here");
+     userDef2S = tr("Please input an user specified command for reboot here");
+     userDef3S = tr("Please input an user specified command for suspend here");
+     userDef4S = tr("Please input an user specified command for hibernate here");
+
      msgBox = new QMessageBox(this);
      msgBox->setWindowTitle("Error");
      msgBox->setIcon(QMessageBox::Warning);
@@ -62,8 +67,21 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      connect(buttonBox, SIGNAL(rejected()), this, SLOT(resetFont()));
      connect(confEditButton, SIGNAL(clicked(bool)), this, SIGNAL(editConf()));
      connect(this, SIGNAL(rejected()), this, SLOT(close()));
+     connect(shutdownM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef()));
+     connect(rebootM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef()));
+     connect(suspendM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef()));
+     connect(hibernateM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef()));
 
      loadSettings();
+
+     if(userDef1->isEnabled())
+       myShutdown = userDef1->toPlainText();
+     if(userDef2->isEnabled())
+       myReboot = userDef2->toPlainText();
+     if(userDef3->isEnabled())
+       mySuspend = userDef3->toPlainText();
+     if(userDef4->isEnabled())
+       myHibernate = userDef4->toPlainText();
 }
 
 Preferences::~Preferences(){ delete settings; }
@@ -77,6 +95,53 @@ void Preferences::showEvent(QShowEvent* show_pref){
      }
      loadSettings();
      QWidget::showEvent(show_pref);
+}
+
+void Preferences::enableUserDef(){
+     if(shutdownM->currentIndex() == 6){
+       userDef1->setEnabled(true);
+       userDef1->setFocus();
+       if(userDef1->toPlainText() == userDef1S)
+         userDef1->clear();
+     }
+     else{
+       userDef1->setEnabled(false);
+       if(userDef1->toPlainText() == "")
+         userDef1->setPlainText(userDef1S);
+     }
+     if(rebootM->currentIndex() == 6){
+       userDef2->setEnabled(true);
+       userDef2->setFocus();
+       if(userDef2->toPlainText() == userDef2S)
+         userDef2->clear();
+     }
+     else{
+       userDef2->setEnabled(false);
+       if(userDef2->toPlainText() == "")
+         userDef2->setPlainText(userDef2S);
+     }
+     if(suspendM->currentIndex() == 5){
+       userDef3->setEnabled(true);
+       userDef3->setFocus();
+       if(userDef3->toPlainText() == userDef3S)
+         userDef3->clear();
+     }
+     else{
+       userDef3->setEnabled(false);
+       if(userDef3->toPlainText() == "")
+         userDef3->setPlainText(userDef3S);
+     }
+     if(hibernateM->currentIndex() == 5){
+       userDef4->setEnabled(true);
+       userDef4->setFocus();
+       if(userDef4->toPlainText() == userDef4S)
+         userDef4->clear();
+     }
+     else{
+       userDef4->setEnabled(false);
+       if(userDef4->toPlainText() == "")
+         userDef4->setPlainText(userDef4S);
+     }
 }
 
 void Preferences::loadSettings(){
@@ -100,7 +165,14 @@ void Preferences::loadSettings(){
      log->setChecked(settings->value("Logfile/logging",false).toBool());
      lockS->setChecked(settings->value("Lock_screen",true).toBool());
      autostart->setChecked(settings->value("Autostart").toBool());
-
+     shutdownM->setCurrentIndex(settings->value("Methods/shutdown",0).toInt());
+     userDef1->setPlainText(settings->value("Methods/myShutdown",userDef1S).toString());
+     rebootM->setCurrentIndex(settings->value("Methods/reboot",0).toInt());
+     userDef2->setPlainText(settings->value("Methods/myReboot",userDef2S).toString());
+     suspendM->setCurrentIndex(settings->value("Methods/suspend",0).toInt());
+     userDef3->setPlainText(settings->value("Methods/mySuspend",userDef3S).toString());
+     hibernateM->setCurrentIndex(settings->value("Methods/hibernate",0).toInt());
+     userDef4->setPlainText(settings->value("Methods/myHibernate",userDef4S).toString());
      lockMyScreen = settings->value("Lock_screen").toBool();
 }
 
@@ -125,9 +197,30 @@ void Preferences::saveToConfFile(){
        settings->setValue("Logfile/logging", log->isChecked());
        settings->setValue("Lock_screen", lockS->isChecked());
        settings->setValue("Autostart", autostart->isChecked());
+       settings->setValue("Methods/shutdown", shutdownM->currentIndex());
+       settings->setValue("Methods/myShutdown", userDef1->toPlainText());
+       settings->setValue("Methods/reboot", rebootM->currentIndex());
+       settings->setValue("Methods/myReboot", userDef2->toPlainText());
+       settings->setValue("Methods/suspend", suspendM->currentIndex());
+       settings->setValue("Methods/mySuspend", userDef3->toPlainText());
+       settings->setValue("Methods/hibernate", hibernateM->currentIndex());
+       settings->setValue("Methods/myHibernate", userDef4->toPlainText());
      }
      autostartFile(); //to create or to delete the autostart file
      lockScreen();    //set lockMyScreen to true or false according to lockS
+
+     if(userDef1->isEnabled())
+       myShutdown = userDef1->toPlainText();
+     else myShutdown = "";
+     if(userDef2->isEnabled())
+       myReboot = userDef2->toPlainText();
+     else myReboot = "";
+     if(userDef3->isEnabled())
+       mySuspend = userDef3->toPlainText();
+     else mySuspend = "";
+     if(userDef4->isEnabled())
+       myHibernate = userDef4->toPlainText();
+     else mySuspend = "";
 }
 
 void Preferences::resetSettings(){
@@ -149,6 +242,14 @@ void Preferences::resetSettings(){
        warn->setChecked(true);
        log->setChecked(false);
        lockS->setChecked(true);
+       shutdownM->setCurrentIndex(0);
+       rebootM->setCurrentIndex(0);
+       suspendM->setCurrentIndex(0);
+       hibernateM->setCurrentIndex(0);
+       userDef1->setPlainText(userDef1S);
+       userDef2->setPlainText(userDef2S);
+       userDef3->setPlainText(userDef3S);
+       userDef4->setPlainText(userDef4S);
      }
 }
 

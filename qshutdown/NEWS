@@ -1,11 +1,18 @@
+Changes in Release 1.6.3
+=========================
+
+ - added advanced settings for specifying or choosing a shutdown/reboot/
+   suspend/hibernate command.
+ - added gnome-session-quit command
+
 Changes in Release 1.6.2
 =========================
 
  - replaced all qDebug(), qWarning() and qCritical()
  - added "About Qt"
  - reworked QSettings
- - added hideEvent because of minimize/restore Action of the
-   System Tray Icon
+ - added hideEvent and showEvent because of minimize/restore Action of
+   the System Tray Icon
 
 Changes in Release 1.6.1
 =========================

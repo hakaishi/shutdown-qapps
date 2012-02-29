@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="de_DE" sourcelanguage="en_US">
 <context>
     <name>About</name>
     <message>
@@ -580,6 +580,86 @@ stattdessen beendet wird.</translation>
     <message>
         <source>&amp;Disable hiding</source>
         <translation>&amp;Deaktiviere das Verstecken</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Allgemein</translation>
+    </message>
+    <message>
+        <source>Advanced</source>
+        <translation>Erweitert</translation>
+    </message>
+    <message>
+        <source>Suspend method:</source>
+        <translation>Befehlsmethode für Standby:</translation>
+    </message>
+    <message>
+        <source>automatic</source>
+        <translation>automatisch</translation>
+    </message>
+    <message>
+        <source>HAL</source>
+        <translation>HAL</translation>
+    </message>
+    <message>
+        <source>ConsoleKit</source>
+        <translation>ConsoleKit</translation>
+    </message>
+    <message>
+        <source>sudo shutdown -r</source>
+        <translation>sudo shutdown -r</translation>
+    </message>
+    <message>
+        <source>user defined</source>
+        <translation>benutzerdefiniert</translation>
+    </message>
+    <message>
+        <source>Hibernate method:</source>
+        <translation>Befehlsmethode für Ruhezustand:</translation>
+    </message>
+    <message>
+        <source>sudo shutdown -P</source>
+        <translation>sudo shutdown -P</translation>
+    </message>
+    <message>
+        <source>Shutdown method:</source>
+        <translation>Befehlsmethode für Shutdown:</translation>
+    </message>
+    <message>
+        <source>UPower</source>
+        <translation>UPower</translation>
+    </message>
+    <message>
+        <source>DeviceKit</source>
+        <translation>DeviceKit</translation>
+    </message>
+    <message>
+        <source>Reboot method:</source>
+        <translation>Befehlsmethode für Neustart:</translation>
+    </message>
+    <message>
+        <source>Please input an user specified command for suspend here</source>
+        <translation>Bitte geben sie hier einen benutzerdefinierten Befehl für den Standby ein</translation>
+    </message>
+    <message>
+        <source>Gnome session</source>
+        <translation>Gnome Sitzung</translation>
+    </message>
+    <message>
+        <source>KDE session</source>
+        <translation>KDE Sitzung</translation>
+    </message>
+    <message>
+        <source>Please input an user specified command for shutdown here</source>
+        <translation>Bitte geben sie hier einen benutzerdefinierten Befehl für den Shutdown ein</translation>
+    </message>
+    <message>
+        <source>Please input an user specified command for reboot here</source>
+        <translation>Bitte geben sie hier einen benutzerdefinierten Befehl für den Neustart ein</translation>
+    </message>
+    <message>
+        <source>Please input an user specified command for hibernate here</source>
+        <translation>Bitte geben sie hier einen benutzerdefinierten Befehl für den Ruhezustand ein</translation>
     </message>
 </context>
 <context>
