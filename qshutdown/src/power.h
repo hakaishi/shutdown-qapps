@@ -69,20 +69,22 @@ void shutdown(){
    #ifdef Q_OS_WIN32
      QProcess::startDetached("shutdown -s -f -t 00"); // Windows command to shutdown immediately
    #else
-     response = gnomeSessionManager.call("RequestShutdown");
-     if(response.type() == QDBusMessage::ErrorMessage){
-       if(verbose)
-         oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
-       g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
-       g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
-       g_pwr3 = QProcess::startDetached("gnome-session-quit --force --no-prompt --power-off");
-       if(verbose && !g_pwr1 && !g_pwr2 && !g_pwr3)
-           oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
-                << endl;
+     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
+     g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
+     g_pwr3 = QProcess::startDetached("gnome-session-quit --force --no-prompt --power-off");
+     if(verbose && !g_pwr1 && !g_pwr2 && !g_pwr3)
+       oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
+            << endl;
+     if(!g_pwr1 && !g_pwr2 && !g_pwr3){
+       response = gnomeSessionManager.call("RequestShutdown");
+       if(response.type() == QDBusMessage::ErrorMessage){
+         if(verbose)
+           oput << "W: " << response.errorName() << ": "
+                << response.errorMessage() << endl;
+       }
+       else g = true;
      }
-     else
-       g = true;
+     else g = true;
 
      if(!g && !g_pwr1 && !g_pwr2 && !g_pwr3){
        response = kdeSessionManager.call("logout", 0, 2, 2);
@@ -91,8 +93,7 @@ void shutdown(){
            oput << "W: " << response.errorName() << ": "
                 << response.errorMessage() << endl;
        }
-       else
-         k = true;
+       else k = true;
      }
 
      if(!g && !g_pwr1 && !g_pwr2 && !g_pwr3 && !k){
@@ -102,8 +103,7 @@ void shutdown(){
            oput << "W: " << response.errorName() << ": "
                 << response.errorMessage() << endl;
        }
-       else
-         hal = true;
+       else hal = true;
      }
 
      if(!g && !g_pwr1 && !g_pwr2 && !g_pwr3 && !k && !hal){
@@ -118,18 +118,20 @@ void shutdown(){
    #endif
   }
   if(gnome){
-    response = gnomeSessionManager.call("RequestShutdown");
-    if(response.type() == QDBusMessage::ErrorMessage){
-      if(verbose)
-        oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
-      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
-      g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
-      g_pwr3 = QProcess::startDetached("gnome-session-quit --force --no-prompt --power-off");
-      if(verbose && !g_pwr1 && !g_pwr2 && !g_pwr3)
-        oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
-             << endl;
-     }
+    g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
+    g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
+    g_pwr3 = QProcess::startDetached("gnome-session-quit --force --no-prompt --power-off");
+    if(verbose && !g_pwr1 && !g_pwr2 && !g_pwr3)
+      oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
+           << endl;
+    if(!g_pwr1 && !g_pwr2 && !g_pwr3){
+      response = gnomeSessionManager.call("RequestShutdown");
+      if(response.type() == QDBusMessage::ErrorMessage){
+        if(verbose)
+          oput << "W: " << response.errorName() << ": "
+               << response.errorMessage() << endl;
+      }
+    }
   }
   if(kde){
     response = kdeSessionManager.call("logout", 0, 2, 2);
@@ -194,19 +196,21 @@ void reboot(){
    #ifdef Q_OS_WIN32
      QProcess::startDetached("shutdown -r -f -t 00"); // Windows command to reboot immediately
    #else
-     response = gnomeSessionManager.call("RequestReboot");
-     if(response.type() == QDBusMessage::ErrorMessage){
-       if(verbose)
-         oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
-       g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh reboot");
-       g_pwr2 = QProcess::startDetached("gnome-power-cmd reboot");
-       if(verbose && !g_pwr1 && !g_pwr2)
-         oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-              << endl;
+     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh reboot");
+     g_pwr2 = QProcess::startDetached("gnome-power-cmd reboot");
+     if(verbose && !g_pwr1 && !g_pwr2)
+       oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
+            << endl;
+     if(!g_pwr1 && !g_pwr2){
+       response = gnomeSessionManager.call("RequestReboot");
+       if(response.type() == QDBusMessage::ErrorMessage){
+         if(verbose)
+           oput << "W: " << response.errorName() << ": "
+                << response.errorMessage() << endl;
+       }
+       else g = true;
      }
-     else
-       g = true;
+     else g = true;
 
      if(!g && !g_pwr1 && !g_pwr2){
        QDBusInterface kdeSessionManager("org.kde.ksmserver", "/KSMServer",
@@ -244,16 +248,18 @@ void reboot(){
    #endif
   }
   if(gnome){
-    response = gnomeSessionManager.call("RequestReboot");
-    if(response.type() == QDBusMessage::ErrorMessage){
-      if(verbose)
-        oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
-      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh reboot");
-      g_pwr2 = QProcess::startDetached("gnome-power-cmd reboot");
-      if(verbose && !g_pwr1 && !g_pwr2)
-        oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-             << endl;
+    g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh reboot");
+    g_pwr2 = QProcess::startDetached("gnome-power-cmd reboot");
+    if(verbose && !g_pwr1 && !g_pwr2)
+      oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
+           << endl;
+    if(!g_pwr1 && !g_pwr2){
+      response = gnomeSessionManager.call("RequestReboot");
+      if(response.type() == QDBusMessage::ErrorMessage){
+        if(verbose)
+          oput << "W: " << response.errorName() << ": "
+               << response.errorMessage() << endl;
+      }
     }
   }
   if(kde){
