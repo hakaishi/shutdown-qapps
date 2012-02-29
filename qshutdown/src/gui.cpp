@@ -483,6 +483,7 @@ void Gui::set(){
        minim->show();
        minim->setFocus();
        minim->setAutoDefault(true);         //minimize-button will accept the return key
+       pref->tab2->setDisabled(true);
      }
      if(!editor->getLockAll()){
        reset_action->setEnabled(true);
@@ -558,7 +559,7 @@ void Gui::finished_(){
      finishedExecuted = true;
      switch(comboBox->currentIndex()){
        case 0:
-         if(pref->shutdownM->currentIndex()==0) { Power::automatic = true; } //TODO vergiss den reset für die Variable(n) nicht!
+         if(pref->shutdownM->currentIndex()==0) { Power::automatic = true; }
          if(pref->shutdownM->currentIndex()==1) { Power::gnome = true; }
          if(pref->shutdownM->currentIndex()==2) { Power::kde = true; }
          if(pref->shutdownM->currentIndex()==3) { Power::hal_ = true; }
@@ -572,7 +573,7 @@ void Gui::finished_(){
          Power::shutdown();
          break;
        case 1:
-         if(pref->rebootM->currentIndex()==0) { Power::automatic = true; } //TODO vergiss den reset für die Variable(n) nicht!
+         if(pref->rebootM->currentIndex()==0) { Power::automatic = true; }
          if(pref->rebootM->currentIndex()==1) { Power::gnome = true; }
          if(pref->rebootM->currentIndex()==2) { Power::kde = true; }
          if(pref->rebootM->currentIndex()==3) { Power::hal_ = true; }
@@ -586,7 +587,7 @@ void Gui::finished_(){
          Power::reboot();
          break;
        case 2:
-         if(pref->suspendM->currentIndex()==0) { Power::automatic = true; } //TODO vergiss den reset für die Variable(n) nicht!
+         if(pref->suspendM->currentIndex()==0) { Power::automatic = true; }
          if(pref->suspendM->currentIndex()==1) { Power::gnome = true; }
          if(pref->suspendM->currentIndex()==2) { Power::hal_ = true; }
          if(pref->suspendM->currentIndex()==3) { Power::upower_ = true; }
@@ -599,7 +600,7 @@ void Gui::finished_(){
          Power::suspend();
          break;
        case 3:
-         if(pref->hibernateM->currentIndex()==0) { Power::automatic = true; } //TODO vergiss den reset für die Variable(n) nicht!
+         if(pref->hibernateM->currentIndex()==0) { Power::automatic = true; }
          if(pref->hibernateM->currentIndex()==1) { Power::gnome = true; }
          if(pref->hibernateM->currentIndex()==2) { Power::hal_ = true; }
          if(pref->hibernateM->currentIndex()==3) { Power::upower_ = true; }
@@ -812,6 +813,7 @@ void Gui::reset(){
      finishedExecuted = false;
      minim->hide();
      ok->show();
+     pref->tab2->setEnabled(true);
      if(!editor->getLockAll())
        lockEverything(false);
      else loadSettings();
