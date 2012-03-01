@@ -51,7 +51,10 @@ class Preferences : public QDialog, public Ui::Preferences {
      void fontSize2Changed(int f2);
      void fontSize3Changed(int f3);
      void lockScreen();
-     void enableUserDef();
+     void enableUserDef1();
+     void enableUserDef2();
+     void enableUserDef3();
+     void enableUserDef4();
 
     public slots:
      void autostartFile();

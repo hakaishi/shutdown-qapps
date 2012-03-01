@@ -67,10 +67,10 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      connect(buttonBox, SIGNAL(rejected()), this, SLOT(resetFont()));
      connect(confEditButton, SIGNAL(clicked(bool)), this, SIGNAL(editConf()));
      connect(this, SIGNAL(rejected()), this, SLOT(close()));
-     connect(shutdownM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef()));
-     connect(rebootM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef()));
-     connect(suspendM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef()));
-     connect(hibernateM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef()));
+     connect(shutdownM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef1()));
+     connect(rebootM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef2()));
+     connect(suspendM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef3()));
+     connect(hibernateM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef4()));
 
      loadSettings();
 
@@ -97,7 +97,7 @@ void Preferences::showEvent(QShowEvent* show_pref){
      QWidget::showEvent(show_pref);
 }
 
-void Preferences::enableUserDef(){
+void Preferences::enableUserDef1(){
      if(shutdownM->currentIndex() == 6){
        userDef1->setEnabled(true);
        userDef1->setFocus();
@@ -109,6 +109,9 @@ void Preferences::enableUserDef(){
        if(userDef1->toPlainText() == "")
          userDef1->setPlainText(userDef1S);
      }
+}
+
+void Preferences::enableUserDef2(){
      if(rebootM->currentIndex() == 6){
        userDef2->setEnabled(true);
        userDef2->setFocus();
@@ -120,6 +123,9 @@ void Preferences::enableUserDef(){
        if(userDef2->toPlainText() == "")
          userDef2->setPlainText(userDef2S);
      }
+}
+
+void Preferences::enableUserDef3(){
      if(suspendM->currentIndex() == 5){
        userDef3->setEnabled(true);
        userDef3->setFocus();
@@ -131,6 +137,9 @@ void Preferences::enableUserDef(){
        if(userDef3->toPlainText() == "")
          userDef3->setPlainText(userDef3S);
      }
+}
+
+void Preferences::enableUserDef4(){
      if(hibernateM->currentIndex() == 5){
        userDef4->setEnabled(true);
        userDef4->setFocus();
