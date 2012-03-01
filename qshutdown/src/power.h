@@ -41,7 +41,10 @@ bool upower_ = false;
 bool devicekit = false;
 bool user = false;
 QString myShutdown, myReboot, mySuspend, myHibernate;
+
+#ifndef Q_OS_WIN32
 QDBusMessage response;
+#endif
 
 void shutdown(){
   //variables for automatic mode
@@ -51,7 +54,7 @@ void shutdown(){
   bool g_pwr2 = false;
   bool g_pwr3 = false;
   bool hal = false;
-
+ #ifndef Q_OS_WIN32
   QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
     "/org/gnome/SessionManager", "org.gnome.SessionManager",
     QDBusConnection::sessionBus());
@@ -64,6 +67,7 @@ void shutdown(){
   QDBusInterface freedesktopConsoleKit("org.freedesktop.ConsoleKit",
     "/org/freedesktop/ConsoleKit/Manager", "org.freedesktop.ConsoleKit.Manager",
     QDBusConnection::systemBus());
+ #endif
 
   if(automatic){
    #ifdef Q_OS_WIN32
@@ -115,7 +119,6 @@ void shutdown(){
          QProcess::startDetached("sudo shutdown -P now");
        }
      }
-   #endif
   }
   if(gnome){
     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
@@ -170,6 +173,7 @@ void shutdown(){
   consolekit = false;
   sudo = false;
   user = false;
+   #endif
 }
 
 void reboot(){
@@ -179,6 +183,7 @@ void reboot(){
   bool g_pwr2 = false;
   bool hal = false;
 
+ #ifndef Q_OS_WIN32
   QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
     "/org/gnome/SessionManager", "org.gnome.SessionManager",
     QDBusConnection::sessionBus());
@@ -191,6 +196,7 @@ void reboot(){
   QDBusInterface freedesktopConsoleKit("org.freedesktop.ConsoleKit",
     "/org/freedesktop/ConsoleKit/Manager", "org.freedesktop.ConsoleKit.Manager",
     QDBusConnection::systemBus());
+ #endif
 
   if(automatic){
    #ifdef Q_OS_WIN32
@@ -245,7 +251,6 @@ void reboot(){
          QProcess::startDetached("sudo shutdown -r now");
        }
      }
-   #endif
   }
   if(gnome){
     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh reboot");
@@ -299,6 +304,7 @@ void reboot(){
   consolekit = false;
   sudo = false;
   user = false;
+   #endif
 }
 
 void suspend(){
@@ -307,6 +313,7 @@ void suspend(){
   bool hal = false;
   bool upower = false;
 
+ #ifndef Q_OS_WIN32
   QDBusInterface freedesktopHal("org.freedesktop.Hal",
     "/org/freedesktop/Hal/devices/computer",
     "org.freedesktop.Hal.Device.SystemPowerManagement",
@@ -317,10 +324,8 @@ void suspend(){
   QDBusInterface freedesktopDeviceKit("org.freedesktop.DeviceKit.Power",
     "/org/freedesktop/DeviceKit/Power",
     "org.freedesktop.DeviceKit.Power", QDBusConnection::systemBus());
+ #endif
 
-   #ifdef Q_OS_WIN32
-     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState"); // Windows command to suspend immediately
-   #else
      if(lockMyScreen){
        bool lock_works = false;
 
@@ -367,6 +372,9 @@ void suspend(){
      }
 
   if(automatic){
+   #ifdef Q_OS_WIN32
+     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState"); // Windows command to suspend immediately
+   #else
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh suspend");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd suspend");
      if(!g_pwr1 && !g_pwr2 && verbose)
@@ -403,7 +411,6 @@ void suspend(){
                 << response.errorMessage() << endl;
        }
      }
-   #endif
   }
   if(gnome){
     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh suspend");
@@ -448,6 +455,7 @@ void suspend(){
   upower_ = false;
   devicekit = false;
   user = false;
+   #endif
 }
 
 void hibernate(){
@@ -456,6 +464,7 @@ void hibernate(){
   bool hal = false;
   bool upower = false;
 
+ #ifndef Q_OS_WIN32
   QDBusInterface freedesktopHal("org.freedesktop.Hal",
     "/org/freedesktop/Hal/devices/computer",
     "org.freedesktop.Hal.Device.SystemPowerManagement",
@@ -466,10 +475,8 @@ void hibernate(){
   QDBusInterface freedesktopDeviceKit("org.freedesktop.DeviceKit.Power",
     "/org/freedesktop/DeviceKit/Power",
     "org.freedesktop.DeviceKit.Power", QDBusConnection::systemBus());
+ #endif
 
-   #ifdef Q_OS_WIN32
-     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState"); // Windows command to hibernate immediately
-   #else
      if(lockMyScreen){
        bool lock_works = false;
 
@@ -516,6 +523,9 @@ void hibernate(){
      }
 
   if(automatic){
+   #ifdef Q_OS_WIN32
+     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState"); // Windows command to hibernate immediately
+   #else
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh hibernate");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd hibernate");
      if(!g_pwr1 && !g_pwr2 && verbose)
@@ -552,7 +562,6 @@ void hibernate(){
                 << response.errorMessage() << endl;
        }
      }
-   #endif
   }
   if(gnome){
     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh hibernate");
@@ -595,6 +604,7 @@ void hibernate(){
   upower_ = false;
   devicekit = false;
   user = false;
+   #endif
 }
 
 }
