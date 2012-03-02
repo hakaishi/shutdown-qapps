@@ -5,7 +5,7 @@ shutdown-qapps (1.6.3-1) unstable; urgency=low
       reboot/suspend/hibernate command.
     - added gnome-session-quit command
 
- -- Christian Metscher <hakaishi@web.de>  Wed, 29 Feb 2012 01:36:24 +0100
+ -- Christian Metscher <hakaishi@web.de>  Fri, 02 Mar 2012 18:59:28 +0100
 
 
 shutdown-qapps (1.6.2-1) unstable; urgency=low

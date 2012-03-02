@@ -28,6 +28,7 @@ extern bool verbose;
 
 namespace Power{
 
+#ifndef Q_OS_WIN32
 QTextStream oput(stdout);
 
 bool lockMyScreen;
@@ -41,12 +42,11 @@ bool upower_ = false;
 bool devicekit = false;
 bool user = false;
 QString myShutdown, myReboot, mySuspend, myHibernate;
-
-#ifndef Q_OS_WIN32
 QDBusMessage response;
 #endif
 
 void shutdown(){
+ #ifndef Q_OS_WIN32
   //variables for automatic mode
   bool g = false; //gnome
   bool k = false; //kde
@@ -54,7 +54,7 @@ void shutdown(){
   bool g_pwr2 = false;
   bool g_pwr3 = false;
   bool hal = false;
- #ifndef Q_OS_WIN32
+
   QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
     "/org/gnome/SessionManager", "org.gnome.SessionManager",
     QDBusConnection::sessionBus());
@@ -177,13 +177,13 @@ void shutdown(){
 }
 
 void reboot(){
+ #ifndef Q_OS_WIN32
   bool g = false; //gnome
   bool k = false; //kde
   bool g_pwr1 = false;
   bool g_pwr2 = false;
   bool hal = false;
 
- #ifndef Q_OS_WIN32
   QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
     "/org/gnome/SessionManager", "org.gnome.SessionManager",
     QDBusConnection::sessionBus());
@@ -308,12 +308,12 @@ void reboot(){
 }
 
 void suspend(){
+ #ifndef Q_OS_WIN32
   bool g_pwr1 = false;
   bool g_pwr2 = false;
   bool hal = false;
   bool upower = false;
 
- #ifndef Q_OS_WIN32
   QDBusInterface freedesktopHal("org.freedesktop.Hal",
     "/org/freedesktop/Hal/devices/computer",
     "org.freedesktop.Hal.Device.SystemPowerManagement",
@@ -324,7 +324,6 @@ void suspend(){
   QDBusInterface freedesktopDeviceKit("org.freedesktop.DeviceKit.Power",
     "/org/freedesktop/DeviceKit/Power",
     "org.freedesktop.DeviceKit.Power", QDBusConnection::systemBus());
- #endif
 
      if(lockMyScreen){
        bool lock_works = false;
@@ -370,6 +369,7 @@ void suspend(){
 	  else lock_works = true;
         }
      }
+ #endif
 
   if(automatic){
    #ifdef Q_OS_WIN32
@@ -459,12 +459,12 @@ void suspend(){
 }
 
 void hibernate(){
+ #ifndef Q_OS_WIN32
   bool g_pwr1 = false;
   bool g_pwr2 = false;
   bool hal = false;
   bool upower = false;
 
- #ifndef Q_OS_WIN32
   QDBusInterface freedesktopHal("org.freedesktop.Hal",
     "/org/freedesktop/Hal/devices/computer",
     "org.freedesktop.Hal.Device.SystemPowerManagement",
@@ -475,7 +475,6 @@ void hibernate(){
   QDBusInterface freedesktopDeviceKit("org.freedesktop.DeviceKit.Power",
     "/org/freedesktop/DeviceKit/Power",
     "org.freedesktop.DeviceKit.Power", QDBusConnection::systemBus());
- #endif
 
      if(lockMyScreen){
        bool lock_works = false;
@@ -521,6 +520,7 @@ void hibernate(){
 	  else lock_works = true;
         }
      }
+ #endif
 
   if(automatic){
    #ifdef Q_OS_WIN32
