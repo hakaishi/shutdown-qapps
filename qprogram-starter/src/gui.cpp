@@ -59,7 +59,7 @@ Gui::Gui(QWidget *parent) : QWidget(parent){
    #else //!Q_OS_WIN32
      file = QDir::homePath() + "/.qprogram-starter/qprogram-starter.conf";
    #endif
-     settings = new QSettings(file, QSettings::NativeFormat);
+     settings = new QSettings(file, QSettings::IniFormat);
 
      hintMsgBox = new QTextEdit;
      hintMsgBox->setReadOnly(true);

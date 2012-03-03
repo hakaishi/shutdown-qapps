@@ -510,7 +510,7 @@ void Gui::saveLog(){
    #else //!Q_OS_WIN32
      QString file(QDir::homePath() + "/.qshutdown/qshutdown.conf");
    #endif //Q_OS_WIN32
-     QSettings settings(file, QSettings::NativeFormat);
+     QSettings settings(file, QSettings::IniFormat);
 
      settings.setValue("MainWindow/size", size());
      settings.setValue("MainWindow/keep_proportions", actionKeep_window_proportions->isChecked());
@@ -644,7 +644,7 @@ void Gui::loadSettings(){
 #else //!Q_OS_WIN32
      QString file(QDir::homePath() + "/.qshutdown/qshutdown.conf");
 #endif //Q_OS_WIN32
-     QSettings settings(file, QSettings::NativeFormat);
+     QSettings settings(file, QSettings::IniFormat);
 
      if(!settings.isWritable()){
        QTextStream myOutput;

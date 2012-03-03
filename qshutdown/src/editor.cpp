@@ -78,7 +78,7 @@ bool Editor::getLockAll(){
 #else //!Q_OS_WIN32
      QString file(QDir::homePath() + "/.qshutdown/qshutdown.conf");
 #endif //Q_OS_WIN32
-     QSettings settings(file, QSettings::NativeFormat);
+     QSettings settings(file, QSettings::IniFormat);
      return settings.value("Lock_all").toBool();
 }
 

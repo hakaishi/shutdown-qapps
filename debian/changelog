@@ -4,8 +4,10 @@ shutdown-qapps (1.6.3-1) unstable; urgency=low
     - added advanced settings for specifying or choosing a shutdown/
       reboot/suspend/hibernate command.
     - added gnome-session-quit command
+  * qshutdown & qprogram-starter
+    - File format for .conf files changed to Ini (Windows compatible)
 
- -- Christian Metscher <hakaishi@web.de>  Fri, 02 Mar 2012 18:59:28 +0100
+ -- Christian Metscher <hakaishi@web.de>  Sat, 03 Mar 2012 03:11:03 +0100
 
 
 shutdown-qapps (1.6.2-1) unstable; urgency=low

@@ -28,7 +28,6 @@ extern bool verbose;
 
 namespace Power{
 
-#ifndef Q_OS_WIN32
 QTextStream oput(stdout);
 
 bool lockMyScreen;
@@ -42,6 +41,7 @@ bool upower_ = false;
 bool devicekit = false;
 bool user = false;
 QString myShutdown, myReboot, mySuspend, myHibernate;
+#ifndef Q_OS_WIN32
 QDBusMessage response;
 #endif
 
@@ -72,6 +72,7 @@ void shutdown(){
   if(automatic){
    #ifdef Q_OS_WIN32
      QProcess::startDetached("shutdown -s -f -t 00"); // Windows command to shutdown immediately
+     }
    #else
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
@@ -201,6 +202,7 @@ void reboot(){
   if(automatic){
    #ifdef Q_OS_WIN32
      QProcess::startDetached("shutdown -r -f -t 00"); // Windows command to reboot immediately
+     }
    #else
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh reboot");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd reboot");
@@ -374,6 +376,7 @@ void suspend(){
   if(automatic){
    #ifdef Q_OS_WIN32
      QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState"); // Windows command to suspend immediately
+     }
    #else
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh suspend");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd suspend");
@@ -525,6 +528,7 @@ void hibernate(){
   if(automatic){
    #ifdef Q_OS_WIN32
      QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState"); // Windows command to hibernate immediately
+     }
    #else
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh hibernate");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd hibernate");

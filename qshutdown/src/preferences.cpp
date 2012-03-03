@@ -39,7 +39,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
 #else //!Q_OS_WIN32
      file = QDir::homePath() + "/.qshutdown/qshutdown.conf";
 #endif //Q_OS_WIN32
-     settings = new QSettings(file, QSettings::NativeFormat);
+     settings = new QSettings(file, QSettings::IniFormat);
 
      fonts = "Times New Roman";
      fontS1 = 13;

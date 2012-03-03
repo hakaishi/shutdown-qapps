@@ -31,7 +31,7 @@ ChangePassword::ChangePassword(QWidget *parent): QDialog(parent){
 #else //!Q_OS_WIN32
      file = QDir::homePath() + "/.qshutdown/qshutdown.conf";
 #endif //Q_OS_WIN32
-     settings = new QSettings(file, QSettings::NativeFormat);
+     settings = new QSettings(file, QSettings::IniFormat);
 
      if(settings->contains("Password")){
        oldPasswd->setEnabled(true);
