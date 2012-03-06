@@ -661,6 +661,19 @@ stattdessen beendet wird.</translation>
         <source>Please input an user specified command for hibernate here</source>
         <translation>Bitte geben sie hier einen benutzerdefinierten Befehl für den Ruhezustand ein</translation>
     </message>
+    <message>
+        <source>Some systems block for example the shutdown
+because qshutdown is still running. Set a hook if
+qshutdown should quit after the countdown ended.</source>
+        <translation>Manche Systeme blockieren z.B. den Shutdown
+weil qshutdown noch läuft. Setze ein Häkchen,
+wenn qshutdown sich nach dem Ende des
+Countdowns beenden soll.</translation>
+    </message>
+    <message>
+        <source>Quit qshutdown after countdown ended?</source>
+        <translation>qshutdown nach dem Countdown beenden?</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
