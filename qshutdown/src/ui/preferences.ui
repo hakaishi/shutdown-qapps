@@ -444,6 +444,45 @@ it was running</string>
        <string>Advanced</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1">
+        <widget class="QComboBox" name="shutdownM">
+         <item>
+          <property name="text">
+           <string>automatic</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Gnome session</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>KDE session</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>HAL</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ConsoleKit</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>sudo shutdown -P</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>user defined</string>
+          </property>
+         </item>
+        </widget>
+       </item>
        <item row="6" column="0" colspan="2">
         <widget class="QPlainTextEdit" name="userDef3">
          <property name="enabled">
@@ -505,45 +544,6 @@ it was running</string>
          <property name="text">
           <string>Hibernate method:</string>
          </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QComboBox" name="shutdownM">
-         <item>
-          <property name="text">
-           <string>automatic</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Gnome session</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>KDE session</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>HAL</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>ConsoleKit</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>sudo shutdown -P</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>user defined</string>
-          </property>
-         </item>
         </widget>
        </item>
        <item row="0" column="0">
@@ -658,6 +658,18 @@ it was running</string>
          </property>
          <property name="plainText">
           <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0" colspan="2">
+        <widget class="QCheckBox" name="quitAfterCountdown">
+         <property name="toolTip">
+          <string>Some systems block for example the shutdown
+because qshutdown is still running. Set a hook if
+qshutdown should quit after the countdown ended.</string>
+         </property>
+         <property name="text">
+          <string>Quit qshutdown after countdown ended?</string>
          </property>
         </widget>
        </item>

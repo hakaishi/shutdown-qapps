@@ -97,6 +97,17 @@ void Preferences::showEvent(QShowEvent* show_pref){
      QWidget::showEvent(show_pref);
 }
 
+void Preferences::setFocusToUserDef(){
+     if(userDef4->isEnabled())
+       userDef4->setFocus();
+     if(userDef3->isEnabled())
+       userDef3->setFocus();
+     if(userDef2->isEnabled())
+       userDef2->setFocus();
+     if(userDef1->isEnabled())
+       userDef1->setFocus();
+}
+
 void Preferences::enableUserDef1(){
      if(shutdownM->currentIndex() == 6){
        userDef1->setEnabled(true);
@@ -108,6 +119,7 @@ void Preferences::enableUserDef1(){
        userDef1->setEnabled(false);
        if(userDef1->toPlainText() == "")
          userDef1->setPlainText(userDef1S);
+       setFocusToUserDef();
      }
 }
 
@@ -122,6 +134,7 @@ void Preferences::enableUserDef2(){
        userDef2->setEnabled(false);
        if(userDef2->toPlainText() == "")
          userDef2->setPlainText(userDef2S);
+       setFocusToUserDef();
      }
 }
 
@@ -136,6 +149,7 @@ void Preferences::enableUserDef3(){
        userDef3->setEnabled(false);
        if(userDef3->toPlainText() == "")
          userDef3->setPlainText(userDef3S);
+       setFocusToUserDef();
      }
 }
 
@@ -150,6 +164,7 @@ void Preferences::enableUserDef4(){
        userDef4->setEnabled(false);
        if(userDef4->toPlainText() == "")
          userDef4->setPlainText(userDef4S);
+       setFocusToUserDef();
      }
 }
 
@@ -183,6 +198,7 @@ void Preferences::loadSettings(){
      hibernateM->setCurrentIndex(settings->value("Methods/hibernate",0).toInt());
      userDef4->setPlainText(settings->value("Methods/myHibernate",userDef4S).toString());
      lockMyScreen = settings->value("Lock_screen").toBool();
+     quitAfterCountdown->setChecked(settings->value("Quit_after_countdown_ended", false).toBool());
 }
 
 void Preferences::saveToConfFile(){
@@ -214,6 +230,7 @@ void Preferences::saveToConfFile(){
        settings->setValue("Methods/mySuspend", userDef3->toPlainText());
        settings->setValue("Methods/hibernate", hibernateM->currentIndex());
        settings->setValue("Methods/myHibernate", userDef4->toPlainText());
+       settings->setValue("Quit_after_countdown_ended", quitAfterCountdown->isChecked());
      }
      autostartFile(); //to create or to delete the autostart file
      lockScreen();    //set lockMyScreen to true or false according to lockS
@@ -259,6 +276,7 @@ void Preferences::resetSettings(){
        userDef2->setPlainText(userDef2S);
        userDef3->setPlainText(userDef3S);
        userDef4->setPlainText(userDef4S);
+       quitAfterCountdown->setChecked(false);
      }
 }
 

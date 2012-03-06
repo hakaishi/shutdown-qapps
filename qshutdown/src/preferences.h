@@ -55,6 +55,7 @@ class Preferences : public QDialog, public Ui::Preferences {
      void enableUserDef2();
      void enableUserDef3();
      void enableUserDef4();
+     void setFocusToUserDef();
 
     public slots:
      void autostartFile();

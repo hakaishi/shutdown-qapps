@@ -614,6 +614,8 @@ void Gui::finished_(){
          break;
        default:;
      }
+     if(pref->quitAfterCountdown->isChecked())
+       qApp->quit();
 }
 
 void Gui::hideEvent(QHideEvent* window_hide){
