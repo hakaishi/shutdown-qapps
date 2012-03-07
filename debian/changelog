@@ -7,7 +7,7 @@ shutdown-qapps (1.6.3-1) unstable; urgency=low
   * qshutdown & qprogram-starter
     - File format for .conf files changed to Ini (Windows compatible)
 
- -- Christian Metscher <hakaishi@web.de>  Tue, 06 Mar 2012 13:06:56 +0100
+ -- Christian Metscher <hakaishi@web.de>  Thu, 08 Mar 2012 00:15:30 +0100
 
 
 shutdown-qapps (1.6.2-1) unstable; urgency=low
