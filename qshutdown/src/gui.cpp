@@ -176,8 +176,10 @@ Gui::Gui(){
      connect(checkPassword, SIGNAL(finishing()), this, SLOT(warnings_on()));
 
      connect(editor, SIGNAL(saved()), this, SLOT(updateLock()));      //update to see if Lock_all was (de)activated
+     connect(editor, SIGNAL(saved()), pref, SLOT(loadSettings()));
      connect(editor, SIGNAL(starting()), ti, SLOT(stop()));
      connect(editor, SIGNAL(finishing()), this, SLOT(warnings_on()));
+     connect(editor, SIGNAL(finishing()), pref, SLOT(loadSettings()));
 
      connect(actionLog_file, SIGNAL(toggled(bool)), log_action, SLOT(setChecked(bool)));
      connect(log_action, SIGNAL(toggled(bool)), actionLog_file, SLOT(setChecked(bool)));

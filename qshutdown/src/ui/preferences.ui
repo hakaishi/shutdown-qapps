@@ -389,10 +389,10 @@ should be checked by default at startup</string>
              <item>
               <widget class="QCheckBox" name="countdown">
                <property name="toolTip">
-                <string>Start countdown at startup</string>
+                <string/>
                </property>
                <property name="text">
-                <string>&amp;Start countdown</string>
+                <string>&amp;Start countdown at startup</string>
                </property>
               </widget>
              </item>

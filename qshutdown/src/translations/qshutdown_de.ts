@@ -505,14 +505,6 @@ und wie lange es gelaufen ist</translation>
         <translation>&amp;Protokollieren</translation>
     </message>
     <message>
-        <source>Start countdown at startup</source>
-        <translation>Starte den Countdown bei Programmstart</translation>
-    </message>
-    <message>
-        <source>&amp;Start countdown</source>
-        <translation>Starte &amp;Countdown</translation>
-    </message>
-    <message>
         <source>checkboxes and &quot;now!&quot; button</source>
         <translation>Checkboxen und &quot;Jetzt!&quot; Knopf</translation>
     </message>
@@ -673,6 +665,10 @@ Countdowns beenden soll.</translation>
     <message>
         <source>Quit qshutdown after countdown ended?</source>
         <translation>qshutdown nach dem Countdown beenden?</translation>
+    </message>
+    <message>
+        <source>&amp;Start countdown at startup</source>
+        <translation>Starte &amp;Countdown bei Programmstart</translation>
     </message>
 </context>
 <context>
