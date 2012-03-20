@@ -57,7 +57,7 @@ Gui::Gui(){
      versionFile.open(QIODevice::ReadOnly | QIODevice::Text);
      QTextStream in(&versionFile);
      QString string = in.readLine();
-     version->setText(string);
+     version->setText(tr("Version ") + string);
      versionFile.close();
 
    //About

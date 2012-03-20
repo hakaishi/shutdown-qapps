@@ -330,9 +330,6 @@ quit instead.</string>
              </item>
              <item>
               <widget class="QRadioButton" name="radio1">
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
                <property name="text">
                 <string>Enable the &amp;target time at startup</string>
                </property>
@@ -343,9 +340,6 @@ quit instead.</string>
              </item>
              <item>
               <widget class="QRadioButton" name="radio2">
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
                <property name="text">
                 <string>Enable the minute &amp;countdown at startup</string>
                </property>
@@ -364,9 +358,6 @@ quit instead.</string>
                 <string>Set if the checkbox for &quot;Lock after start?&quot;
 should be checked by default at startup</string>
                </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
                <property name="text">
                 <string>&quot;&amp;Lock after start?&quot;</string>
                </property>
@@ -377,9 +368,6 @@ should be checked by default at startup</string>
                <property name="toolTip">
                 <string>Set if the checkbox for &quot;Warnings on?&quot;
 should be checked by default at startup</string>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
                </property>
                <property name="text">
                 <string>&quot;&amp;Warnings on?&quot;</string>
@@ -415,9 +403,6 @@ should be checked by default at startup</string>
                <property name="toolTip">
                 <string>Log start time of qshutdown and how long
 it was running</string>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
                </property>
                <property name="text">
                 <string>L&amp;ogging</string>

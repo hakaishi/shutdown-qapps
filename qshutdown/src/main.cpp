@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
      //My translations
      QTranslator translator;
      QString trDir = "/usr/share/qshutdown/translations/";
-     translator.load(trDir + "qshutdown_" + QLocale::system().name());
+     translator.load(trDir + "qshutdown-" + QLocale::system().name());
      app.installTranslator(&translator);
 
      QTextStream myOutput(stdout);
@@ -109,7 +109,7 @@ int main(int argc, char *argv[]){
        if(QDBusConnection::sessionBus().registerService(SERVICE_NAME)){
          //if possible register qshutdown as a service in the session bus
      #endif //Q_OS_WIN32
-         window.information = infoDoc.toHtml();
+         window.information = infoStr;
          window.loadSettings();
          window.center();
          window.show();

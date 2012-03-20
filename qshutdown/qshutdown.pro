@@ -25,7 +25,11 @@ SOURCES = src/gui.cpp src/main.cpp src/info.cpp\
           src/ch_passwd.cpp src/passwd.cpp\
           src/editor.cpp src/about.cpp
 RESOURCES = ../qshutdown.qrc
-TRANSLATIONS = src/translations/qshutdown_de.ts
+TRANSLATIONS = src/translations/qshutdown-en_GB.ts\
+               src/translations/qshutdown-uk.ts\
+               src/translations/qshutdown-ast.ts\
+               src/translations/qshutdown-he.ts\
+               src/translations/qshutdown-de.ts
 FORMS = src/ui/gui.ui src/ui/preferences.ui\
         src/ui/calendar.ui src/ui/ch_passwd.ui\
         src/ui/passwd.ui src/ui/editor.ui\

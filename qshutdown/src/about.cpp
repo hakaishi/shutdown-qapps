@@ -25,12 +25,32 @@ About::About(QWidget *parent): QDialog(parent){
 
      textBrowser->setOpenExternalLinks(true);
 
+     textBrowser_3->setHtml(tr("<p ><span style=\" font-size:20pt;\">qshutdown</span><br />"
+                               "<span style=\" font-size:14pt;\">Using Qt</span></p>"));
+     textBrowser_2->setHtml(tr("<p >Special thanks to:<br /></p>"
+                               "<p >Fabian Deuchler for helping here and "
+                               "there.<br /><br />And Brian Nelson for "
+                               "sponsoring the uploads to Debian.</p>"));
+     textBrowser->setText(tr("<p >qshutdown, a time and countdown based shutdown tool</p>"
+                             "<p >Author: Christian Metscher &lt;hakaishi@web.de&gt;</p>"
+                             "<p >Copyright &copy; 2010-2012, by Christian Metscher</p>"
+                             "<p ><a href=\"https://launchpad.net/~hakaishi\">"
+                             "<span style=\" text-decoration: underline; "
+                             "color:#0000ff;\">https://launchpad.net/~hakaishi</span></a></p>"
+                             "<p >Please use <a href=\"https://bugs.launchpad.net/qt-"
+                             "shutdown-p\"><span style=\" text-decoration: underline; "
+                             "color:#0000ff;\">https://bugs.launchpad.net/qt-shutdown-p</span></a>"
+                             " or <a href=\"http://www.debian.org/Bugs/Reporting\">"
+                             "<span style=\" text-decoration: underline; "
+                             "color:#0000ff;\">http://www.debian.org/Bugs/Reporting</span>"
+                             "</a> to report bugs.</p>"));
+
    //Versioning
      QFile versionFile(":version");
      versionFile.open(QIODevice::ReadOnly | QIODevice::Text);
      QTextStream in(&versionFile);
      QString string = in.readLine();
-     version->setText(string);
+     version->setText(tr("Version ") + string);
      versionFile.close();
 
      icon = QIcon(":red_glasses_image");

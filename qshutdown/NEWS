@@ -1,9 +1,19 @@
+Changes in Release 1.6.4
+=========================
+
+ - new (bigger) qshutdown symbol
+ - many new translations
+
 Changes in Release 1.6.3
 =========================
 
  - added advanced settings for specifying or choosing a shutdown/reboot/
    suspend/hibernate command.
+ - added checkBox for qshutdown to quit after countdown ended
  - added gnome-session-quit command
+ - changed config file format
+ - fix for enabling "hide qshudown at startup"
+ - save and ok of the editor now updates the preferences window's settings
 
 Changes in Release 1.6.2
 =========================

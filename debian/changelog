@@ -1,9 +1,22 @@
+shutdown-qapps (1.6.4-1) unstable; urgency=low
+
+  * qshutdown
+    - new (and bigger) qshutdown symbol
+    - many new translations
+
+ -- Christian Metscher <hakaishi@web.de>  Tue, 20 Mar 2012 16:06:36 +0100
+
+
 shutdown-qapps (1.6.3-1) unstable; urgency=low
 
   * qshutdown
-    - added advanced settings for specifying or choosing a shutdown/
-      reboot/suspend/hibernate command.
+    - added advanced settings for specifying or choosing a shutdown/reboot/
+      suspend/hibernate command.
+    - added checkBox for qshutdown to quit after countdown ended
     - added gnome-session-quit command
+    - changed config file format
+    - fix for enabling "hide qshudown at startup"
+    - save and ok of the editor now updates the preferences window's settings
   * qshutdown & qprogram-starter
     - File format for .conf files changed to Ini (Windows compatible)
 
