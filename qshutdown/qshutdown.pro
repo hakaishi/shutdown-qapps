@@ -38,7 +38,7 @@ FORMS = src/ui/gui.ui src/ui/preferences.ui\
 !win32{
 # install
 target.path = /usr/bin
-icon.files = src/pixmap/red_glasses.xpm
+icon.files = src/pixmap/red_glasses*
 icon.path = /usr/share/pixmaps
 translation.files = src/translations/*.qm
 translation.path = /usr/share/qshutdown/translations
