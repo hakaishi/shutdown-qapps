@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>413</width>
-    <height>659</height>
+    <height>684</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -87,8 +87,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>371</width>
-            <height>496</height>
+            <width>383</width>
+            <height>514</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -189,7 +189,7 @@ by default at startup?</string>
 for countdown by default at startup?</string>
                </property>
                <property name="minimum">
-                <number>0</number>
+                <number>1</number>
                </property>
                <property name="maximum">
                 <number>1440</number>

@@ -477,7 +477,7 @@ void Gui::set(){
      if(lock->isChecked() || editor->getLockAll()){       //when OK-button is clicked and lock is checked
        QList<QWidget*> list;
        list << spin << radio1 << radio2 << lock << timeEdit << comboBox << targetTime
-            << minutes;
+            << minutes << pref->tab2;
        foreach(QWidget * ptr, list)
          ptr->setDisabled(true);
        power_actions->setDisabled(true);
@@ -485,7 +485,6 @@ void Gui::set(){
        minim->show();
        minim->setFocus();
        minim->setAutoDefault(true);         //minimize-button will accept the return key
-       pref->tab2->setDisabled(true);
      }
      if(!editor->getLockAll()){
        reset_action->setEnabled(true);
@@ -777,23 +776,15 @@ void Gui::lockEverything(bool actual){
        widgetPtr->setDisabled(actual);
 
      if(lock->isChecked() && timeRunning && !actual){
-       timeEdit->setDisabled(true);
-       radio1->setDisabled(true);
-       spin->setDisabled(true);
-       radio2->setDisabled(true);
-       comboBox->setDisabled(true);
-       targetTime->setDisabled(true);
-       minutes->setDisabled(true);
+       QList<QWidget*> widgetList2;
+       widgetList2 << timeEdit << spin << radio1  << radio2 << comboBox
+                   << targetTime << minutes << pref->tab2;
+       foreach(QWidget * widgetPtr2, widgetList2)
+             widgetPtr2->setDisabled(true);
      }
      if(timeRunning){
        reset_action->setDisabled(actual);
        action_Reset->setDisabled(actual);
-       if(!lock->isChecked()){
-         ok->hide();
-         minim->show();
-         minim->setFocus();
-         minim->setAutoDefault(true);
-       }
      }
      else{
        reset_action->setDisabled(true);
