@@ -444,7 +444,7 @@ it was running</source>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
-        <translation>תיבות הסימון והלחצן „כעת!</translation>
+        <translation>תיבות סימון והלחצן „כעת!“</translation>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
