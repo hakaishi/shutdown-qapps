@@ -1,167 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_GB">
+<TS version="2.0" language="uz_UZ">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation>About qshutdown</translation>
+        <translation>qshutdown ҳақида</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation>Version </translation>
+        <translation>Версияси </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;About</translation>
+        <translation>&amp;Ҳақида</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation>&amp;Thanks To</translation>
+        <translation>&amp;Раҳмат, сизга,</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
-        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Qt&apos;дан фойдаланиш&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;Алоҳида миннатдорчлик билдирамиз:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler&apos;га бу ерда ва у ерда ёрдам берганлиги учун&lt;br /&gt;&lt;br /&gt;ва Brian Nelson&apos;га Debian&apos;га юклашларни қўллаб-қувватлагани учун&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;qshutdown, вақт ва ўчириш вақти ҳисобига асосланган ўчириш воситаси&lt;/p&gt;&lt;p &gt;Муаллифи: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Муаллифлик ҳуқуқи &amp;copy; 2010-2012, Christian Metscher&apos;га тегишли&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Марҳамат, &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; сайтидан фойдаланинг ёки носозликларни хабар бериш &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; сайтидан фойдаланинг.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
     <name>Calendar</name>
     <message>
         <source>Calendar</source>
-        <translation>Calendar</translation>
+        <translation>Календар</translation>
     </message>
 </context>
 <context>
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation>Change Password</translation>
+        <translation>Махфий сўзни ўзгартириш</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation>Retype password:</translation>
+        <translation>Махфий сўзни қайта киритинг:</translation>
     </message>
     <message>
         <source>New password:</source>
-        <translation>New password:</translation>
+        <translation>Янги махфий сўз:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation>Old password:</translation>
+        <translation>Эски махфий сўз:</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation>The current password is not correct!</translation>
+        <translation>Жорий махфий сўз хато!</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation>The retyped password doesn&apos;t match!</translation>
+        <translation>Кейинги киритилган махфий сўзингиз олдингисидан фарқли!</translation>
     </message>
 </context>
 <context>
     <name>Editor</name>
     <message>
         <source>Editor</source>
-        <translation>Editor</translation>
+        <translation>Таҳрирчи</translation>
     </message>
 </context>
 <context>
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation>&amp;Minimise!</translation>
+        <translation>&amp;Ёиғиш!</translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation>Shutdown-time:</translation>
+        <translation>Ўчиш вақти:</translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
-        <translation>Minutes until shutdown:</translation>
+        <translation>Ўчгунгача дақиқалар:</translation>
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation>Reboot-time:</translation>
+        <translation>Ўчиб-ёниш вақти:</translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
-        <translation>Minutes until reboot:</translation>
+        <translation>Ўчиб-ёнгунга қадар дақиқалар:</translation>
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation>Suspend-time:</translation>
+        <translation>Кутиш усули вақти:</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation>Minutes till suspend:</translation>
+        <translation>Кутиш усулига қадар дақиқалар:</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>
-        <translation>Hibernate-time:</translation>
+        <translation>Уйқуга кетиш вақти:</translation>
     </message>
     <message>
         <source>Minutes till hibernate:</source>
-        <translation>Minutes until hibernation:</translation>
+        <translation>Уйқуга кетганга қадар дақиқалар:</translation>
     </message>
     <message>
         <source>shutdown in </source>
-        <translation>shutdown in </translation>
+        <translation>ўчириш: </translation>
     </message>
     <message>
         <source>reboot in </source>
-        <translation>reboot in </translation>
+        <translation>ўчириб-ёқиш: </translation>
     </message>
     <message>
         <source>suspend in </source>
-        <translation>suspend in </translation>
+        <translation>кутиш усулига ўтиш: </translation>
     </message>
     <message>
         <source>hibernate in </source>
-        <translation>hibernate in </translation>
+        <translation>уйқуга кетиш: </translation>
     </message>
     <message>
         <source>years</source>
-        <translation>years</translation>
+        <translation>йиллар</translation>
     </message>
     <message>
         <source>months</source>
-        <translation>months</translation>
+        <translation>ойлар</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>hours</translation>
+        <translation>соатлар</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>days</translation>
+        <translation>кунлар</translation>
     </message>
     <message>
         <source>Res&amp;tore</source>
-        <translation>Res&amp;tore</translation>
+        <translation>Қайта &amp;тиклаш</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation>&amp;Minimise</translation>
+        <translation>Й&amp;иғиш</translation>
     </message>
     <message>
         <source>day</source>
-        <translation>day</translation>
+        <translation>кун</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minutes</translation>
+        <translation>дақиқалар</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>seconds</translation>
+        <translation>сониялар</translation>
     </message>
     <message>
         <source>&apos;qshutdown&apos;</source>
@@ -169,39 +169,39 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Shutdown</translation>
+        <translation>Ўчириш</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Reboot</translation>
+        <translation>Ўчириб-ёқиш</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Suspend</translation>
+        <translation>Кутиш усули</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Hibernate</translation>
+        <translation>Уйқуга кетиш усули</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
-        <translation>&amp;Lock after start?</translation>
+        <translation>Ишга туширилгандан сўнг &amp;қулфлансинми?</translation>
     </message>
     <message>
         <source>&amp;Warnings on?</source>
-        <translation>&amp;Warnings on?</translation>
+        <translation>&amp;Огоҳлантирилсинми?</translation>
     </message>
     <message>
         <source>Minutes</source>
-        <translation>Minutes</translation>
+        <translation>Дақиқалар</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
-        <translation>&amp;Now!</translation>
+        <translation>&amp;Ҳозир!</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
-        <translation>You can set a date in the calendar</translation>
+        <translation>Сиз вақтни тақвимда ўрната оласиз</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -209,312 +209,311 @@
     </message>
     <message>
         <source>R&amp;eset</source>
-        <translation>R&amp;eset</translation>
+        <translation>Т&amp;иклаш</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Quit</translation>
+        <translation>Чи&amp;қиш</translation>
     </message>
     <message>
         <source>&amp;Info</source>
-        <translation>&amp;Info</translation>
+        <translation>&amp;Маълумот</translation>
     </message>
     <message>
         <source>&amp;Logfile</source>
-        <translation>&amp;Logfile</translation>
+        <translation>&amp;Маълумотлар файли</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation>&amp;Preferences</translation>
+        <translation>&amp;Мослаш</translation>
     </message>
     <message>
         <source>&amp;Shutdown</source>
-        <translation>&amp;Shutdown</translation>
+        <translation>Ў&amp;чириш</translation>
     </message>
     <message>
         <source>&amp;Reboot</source>
-        <translation>&amp;Reboot</translation>
+        <translation>&amp;Ўчириб-ёқиш</translation>
     </message>
     <message>
         <source>S&amp;uspend</source>
-        <translation>S&amp;uspend</translation>
+        <translation>К&amp;тиш усулига ўтиш</translation>
     </message>
     <message>
         <source>&amp;Hibernate</source>
-        <translation>&amp;Hibernate</translation>
+        <translation>&amp;Уйқуга кетиш</translation>
     </message>
     <message>
         <source>Lock settings after countdown started</source>
-        <translation>Lock settings after countdown started</translation>
+        <translation>Вақт ҳисоби ишга тушгандан сўнг мослашларни қулфлаш</translation>
     </message>
     <message>
         <source>Calendar</source>
-        <translation>Calendar</translation>
+        <translation>Тақвим</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;File</translation>
+        <translation>&amp;Файл</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
+        <translation>&amp;Ёрдам</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Settings</translation>
+        <translation>&amp;Мосламалар</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;About</translation>
+        <translation>&amp;Ҳақида</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation>&amp;Reset</translation>
+        <translation>&amp;Тиклаш</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation>&amp;Configure</translation>
+        <translation>&amp;Мослаш</translation>
     </message>
     <message>
         <source>&amp;Keep proportions</source>
-        <translation>&amp;Keep proportions</translation>
+        <translation>Пропорцияни &amp;сақлаш</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Warning</translation>
+        <translation>Диққат</translation>
     </message>
     <message>
         <source>Action imminent!</source>
-        <translation>Action imminent!</translation>
+        <translation>Амални бекор қилиб бўлмайди!</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Information</translation>
+        <translation>Маълумот</translation>
     </message>
     <message>
         <source>Countdown is not running!</source>
-        <translation>Countdown is not running!</translation>
+        <translation>Тескари вақт ҳисоби ишга туширилмаган!</translation>
     </message>
     <message>
         <source>Turns on/off all warnings</source>
-        <translation>Turns on/off all warnings</translation>
+        <translation>Огоҳлантиришларни ўчириш/ёқиш</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>About &amp;Qt</translation>
+        <translation>&amp;Qt ҳақида</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation>Version </translation>
+        <translation>Версияси </translation>
     </message>
 </context>
 <context>
     <name>Info</name>
     <message>
         <source>Info</source>
-        <translation>Info</translation>
+        <translation>Маълумот</translation>
     </message>
 </context>
 <context>
     <name>PassWord</name>
     <message>
         <source>Password</source>
-        <translation>Password</translation>
+        <translation>Махфий сўз</translation>
     </message>
     <message>
         <source>&amp;Set password</source>
-        <translation>&amp;Set password</translation>
+        <translation>Махфий сўз &amp;ўрнатиш</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Password:</translation>
+        <translation>Махфий сўз:</translation>
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation>The password is not correct!</translation>
+        <translation>Махфий сўз - хато!</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
-        <translation>&amp;Change password</translation>
+        <translation>Махфий сўзни &amp;ўзгартириш</translation>
     </message>
 </context>
 <context>
     <name>Preferences</name>
     <message>
         <source>Preferences</source>
-        <translation>Preferences</translation>
+        <translation>Параметрлар</translation>
     </message>
     <message>
         <source>Enable the &amp;target time at startup</source>
-        <translation>Enable the &amp;target time at startup</translation>
+        <translation>Ишга тушиш &amp;мўлжал вақтини ёқиш</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Shutdown</translation>
+        <translation>Ўчириш</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
-        <translation>Shutdown type:</translation>
+        <translation>Ўчириш тури:</translation>
     </message>
     <message>
         <source>Target time:</source>
-        <translation>Target time:</translation>
+        <translation>Мўлжалланган вақт:</translation>
     </message>
     <message>
         <source>Minutes to countdown:</source>
-        <translation>Minutes to countdown:</translation>
+        <translation>Тескари ҳисоб вақти дақиқалари:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Font:</translation>
+        <translation>Шрифт:</translation>
     </message>
     <message>
         <source>Font size 1:</source>
-        <translation>Font size 1:</translation>
+        <translation>Шрифт ҳажми 1:</translation>
     </message>
     <message>
         <source>Font size 2:</source>
-        <translation>Font size 2:</translation>
+        <translation>Шрифт ҳажми 2:</translation>
     </message>
     <message>
         <source>Font size 3:</source>
-        <translation>Font size 3:</translation>
+        <translation>Шрифт ҳажми 3:</translation>
     </message>
     <message>
         <source>Size for log file:</source>
-        <translation>Size for log file:</translation>
+        <translation>Лог файл ҳажми:</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Reboot</translation>
+        <translation>Ўчириб-ёқиш</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Suspend</translation>
+        <translation>Кутиш усули</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Hibernate</translation>
+        <translation>Уйқуга кетиш усули</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
-        <translation>A&amp;utostart</translation>
+        <translation>А&amp;вто ишга тушиш</translation>
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
-        <translation>&amp;Hide qshutdown at startup</translation>
+        <translation>qshutdown  ишга тушганда &amp;яшириш</translation>
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>
-        <translation>Lock screen &amp;for suspend and hibernate</translation>
+        <translation>Кутиш ва уйқуга кетиш усули &amp;учун экранни қулфлаш</translation>
     </message>
     <message>
         <source>&amp;Edit configuration file</source>
-        <translation>&amp;Edit configuration file</translation>
+        <translation>Мослаш файлини &amp;ўзгартириш</translation>
     </message>
     <message>
         <source>Enable the minute &amp;countdown at startup</source>
-        <translation>Enable the minute &amp;countdown at startup</translation>
+        <translation>Ушбу дақиқа ва &amp;тескари ҳисоб вақти ишга туширилганда ёқилсин</translation>
     </message>
     <message>
         <source>&amp;Reset settings</source>
-        <translation>&amp;Reset settings</translation>
+        <translation>Мослашларни &amp;тиклаш</translation>
     </message>
     <message>
         <source>Size for log file in KB</source>
-        <translation>Size for log file in KB</translation>
+        <translation>Маълумот файлининг КБлардаги ҳажми</translation>
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
-        <translation>&quot;&amp;Lock after start?&quot;</translation>
+        <translation>&quot;Ишга тушганда &amp;қулфлансинми?&quot;</translation>
     </message>
     <message>
         <source>&quot;&amp;Warnings on?&quot;</source>
-        <translation>&quot;&amp;Warnings on?&quot;</translation>
+        <translation>&quot;&amp;Огоҳлантирилсинми?&quot;</translation>
     </message>
     <message>
         <source>Log start time of qshutdown and how long
 it was running</source>
-        <translation>Log start time of qshutdown and how long
-it was running</translation>
+        <translation>qshutdown&apos;нинг ишга тушиш вақти ва қанча вақт ишлаганини журналга қўшиш</translation>
     </message>
     <message>
         <source>L&amp;ogging</source>
-        <translation>L&amp;ogging</translation>
+        <translation>Л&amp;оглаш</translation>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
-        <translation>checkboxes and &quot;now!&quot; button</translation>
+        <translation>байроқча ва &quot;Ҳозир!&quot; тугмаси</translation>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
-        <translation>OK and Minimise buttons</translation>
+        <translation>ОК ва тугмаларни йиғиш</translation>
     </message>
     <message>
         <source>Labels for example</source>
-        <translation>Labels for example</translation>
+        <translation>Намуна учун ёрлиқлар</translation>
     </message>
     <message>
         <source>Set a font</source>
-        <translation>Set a font</translation>
+        <translation>Шрифт ўрнатиш</translation>
     </message>
     <message>
         <source>What target time should be displayed
 by default at startup?</source>
-        <translation>What target time should be displayed
-by default at startup?</translation>
+        <translation>Стандарт ҳолатда ишга тушганда,
+қанча мўлжал вақт кўриниши керак?</translation>
     </message>
     <message>
         <source>How many minutes should be displayed
 for countdown by default at startup?</source>
-        <translation>How many minutes should be displayed
-for countdown by default at startup?</translation>
+        <translation>Стандарт ҳолатда ишга тушганда,
+тескари вақт ҳисоби учун қанча дақиқа кўриниши керак?</translation>
     </message>
     <message>
         <source>What should be displayed first by
 default at startup?</source>
-        <translation>What should be displayed first by
-default at startup?</translation>
+        <translation>Стандарт ҳолатда ишга тушганда,
+биринчи нима кўриниши керак?</translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Lock after start?&quot;
 should be checked by default at startup</source>
-        <translation>Set if the checkbox for &quot;Lock after start?&quot;
-should be checked by default at startup</translation>
+        <translation>Агарда байроқча &quot;Ишга тушгандан сўнг қулфлансинми?&quot; учун ўрнатилган бўлса,
+стандарт ҳолатда ишга тушган вақтда текширилади</translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Warnings on?&quot;
 should be checked by default at startup</source>
-        <translation>Set if the checkbox for &quot;Warnings on?&quot;
-should be checked by default at startup</translation>
+        <translation>Агарда байроқча &quot;Огоҳлантиришлар ёқилсинми?&quot; учун ўрнатилган бўлса,
+стандарт ҳолатда ишга тушган вақтда текширилади</translation>
     </message>
     <message>
         <source>The close button usually hides the main window.
 Disabling hiding means, that qshutdown will then
 quit instead.</source>
-        <translation>The close button usually hides the main window.
-Disabling hiding means, that qshutdown will then
-quit instead.</translation>
+        <translation>Одатда яшириш тугмаси асосий ойнани яширади.
+Яширишни ўчириш - qshutdown&apos;дан тўғридан-тўғри
+чиқиб кетиш деганидир.</translation>
     </message>
     <message>
         <source>&amp;Disable hiding</source>
-        <translation>&amp;Disable hiding</translation>
+        <translation>Яширишни &amp;ўчириш</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>General</translation>
+        <translation>Умумий</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation>Advanced</translation>
+        <translation>Қўшимча</translation>
     </message>
     <message>
         <source>Suspend method:</source>
-        <translation>Suspend method:</translation>
+        <translation>Кутиш усули:</translation>
     </message>
     <message>
         <source>automatic</source>
-        <translation>automatic</translation>
+        <translation>автоматик</translation>
     </message>
     <message>
         <source>HAL</source>
@@ -530,11 +529,11 @@ quit instead.</translation>
     </message>
     <message>
         <source>user defined</source>
-        <translation>user defined</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hibernate method:</source>
-        <translation>Hibernate method:</translation>
+        <translation>Уйқуга кетиш усули:</translation>
     </message>
     <message>
         <source>sudo shutdown -P</source>
@@ -542,7 +541,7 @@ quit instead.</translation>
     </message>
     <message>
         <source>Shutdown method:</source>
-        <translation>Shutdown method:</translation>
+        <translation>Ўчириш усули:</translation>
     </message>
     <message>
         <source>UPower</source>
@@ -554,66 +553,64 @@ quit instead.</translation>
     </message>
     <message>
         <source>Reboot method:</source>
-        <translation>Reboot method:</translation>
+        <translation>Ўчириб-ёқиш усули</translation>
     </message>
     <message>
         <source>Please input an user specified command for suspend here</source>
-        <translation>Please input an user specified command for suspend here</translation>
+        <translation>Марҳамат, кутиш усулига ўтиш учун бу ерга фойдаланувчи кўрсатган буйруқни киритинг</translation>
     </message>
     <message>
         <source>Gnome session</source>
-        <translation>Gnome session</translation>
+        <translation>Gnome сеанси</translation>
     </message>
     <message>
         <source>KDE session</source>
-        <translation>KDE session</translation>
+        <translation>KDE сеанси</translation>
     </message>
     <message>
         <source>Please input an user specified command for shutdown here</source>
-        <translation>Please input an user specified command for shutdown here</translation>
+        <translation>Марҳамат, ўчириш учун бу ерга фойдаланувчи кўрсатган буйруқни киритинг</translation>
     </message>
     <message>
         <source>Please input an user specified command for reboot here</source>
-        <translation>Please input an user specified command for reboot here</translation>
+        <translation>Марҳамат, ўчириб-ёқиш учун бу ерга фойдаланувчи кўрсатган буйруқни киритинг</translation>
     </message>
     <message>
         <source>Please input an user specified command for hibernate here</source>
-        <translation>Please input an user specified command for hibernate here</translation>
+        <translation>Марҳамат, уйқуга кетиш учун бу ерга фойдаланувчи кўрсатган буйруқни киритинг</translation>
     </message>
     <message>
         <source>Some systems block for example the shutdown
 because qshutdown is still running. Set a hook if
 qshutdown should quit after the countdown ended.</source>
-        <translation>Some systems block for example the shutdown
-because qshutdown is still running. Set a hook if
-qshutdown should quit after the countdown ended.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Quit qshutdown after countdown ended?</source>
-        <translation>Quit qshutdown after countdown ended?</translation>
+        <translation>Тескари ҳисоб вақти тугаганда qshutdown дастуридан чиқилсинми?</translation>
     </message>
     <message>
         <source>&amp;Start countdown at startup</source>
-        <translation>&amp;Start countdown at startup</translation>
+        <translation>Тескари ҳисоб вақтини тизим юкланганда &amp;ишга тушириш</translation>
     </message>
     <message>
         <source>Hide qshutdown at startup if
 &quot;Start countdown&quot; is checked.</source>
-        <translation>Hide qshutdown at startup if
-&quot;Start countdown at startup&quot; is checked.</translation>
+        <translation>&quot;Тескари ҳисоб вақти ишга тушганда&quot; текширилса,
+qshutdown ишга тушиш вақтида яширилсин.</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation>The File &quot;%1&quot; is not writable!
-Maybe you just don&apos;t have the permissions to do so.</translation>
+        <translation>Файл &quot;%1&quot; ёзиб бўлмайди!
+Балки, сизга ўзгартиришга рухсат берилмагандир.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the username or %groupname.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configurationfile (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Prefereces&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the config file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

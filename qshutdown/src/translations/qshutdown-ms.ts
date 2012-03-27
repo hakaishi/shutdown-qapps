@@ -1,167 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_GB">
+<TS version="2.0" language="ms_MY">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation>About qshutdown</translation>
+        <translation>Perihal qshutdown</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation>Version </translation>
+        <translation>Versi </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;About</translation>
+        <translation>Perih&amp;al</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation>&amp;Thanks To</translation>
+        <translation>&amp;Terima Kasih Kepada</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
-        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Menggunakan Qt&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;Terima kasih buat:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler kerana bantuannya disini.&lt;br /&gt;&lt;br /&gt;Dan Brian Nelson kerana penajaan muat naik ke Debian.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;qshutdown, adalah masa dan kiraan mengundur berasaskan alat shutdown&lt;/p&gt;&lt;p &gt;Pengarang: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Hakcipta &amp;copy; 2010-2012, oleh Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Sila guna &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; atau &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; untuk laporkan pepijat.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
     <name>Calendar</name>
     <message>
         <source>Calendar</source>
-        <translation>Calendar</translation>
+        <translation>Kalendar</translation>
     </message>
 </context>
 <context>
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation>Change Password</translation>
+        <translation>Ubah Kata Laluan</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation>Retype password:</translation>
+        <translation>Taip Semula kata laluan:</translation>
     </message>
     <message>
         <source>New password:</source>
-        <translation>New password:</translation>
+        <translation>Kata laluan baru:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation>Old password:</translation>
+        <translation>Kata laluan lama:</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation>The current password is not correct!</translation>
+        <translation>Kata laluan semasa salah!</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation>The retyped password doesn&apos;t match!</translation>
+        <translation>Kata laluan yang ditaip semula tidak sepadan!</translation>
     </message>
 </context>
 <context>
     <name>Editor</name>
     <message>
         <source>Editor</source>
-        <translation>Editor</translation>
+        <translation>Penyunting</translation>
     </message>
 </context>
 <context>
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation>&amp;Minimise!</translation>
+        <translation>&amp;Minimumkan!</translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation>Shutdown-time:</translation>
+        <translation>Masa-dimatikan:</translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
-        <translation>Minutes until shutdown:</translation>
+        <translation>Minit sehingga dimatikan:</translation>
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation>Reboot-time:</translation>
+        <translation>Masa-but-semula:</translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
-        <translation>Minutes until reboot:</translation>
+        <translation>Minit sehingga but semula:</translation>
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation>Suspend-time:</translation>
+        <translation>Masa-tangguh:</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation>Minutes till suspend:</translation>
+        <translation>Minit sehingga tangguh:</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>
-        <translation>Hibernate-time:</translation>
+        <translation>Masa-hibernasi:</translation>
     </message>
     <message>
         <source>Minutes till hibernate:</source>
-        <translation>Minutes until hibernation:</translation>
+        <translation>Minit sehingga hibernasi:</translation>
     </message>
     <message>
         <source>shutdown in </source>
-        <translation>shutdown in </translation>
+        <translation>dimatikan dalam </translation>
     </message>
     <message>
         <source>reboot in </source>
-        <translation>reboot in </translation>
+        <translation>dibut semula dalam </translation>
     </message>
     <message>
         <source>suspend in </source>
-        <translation>suspend in </translation>
+        <translation>ditangguh dalam </translation>
     </message>
     <message>
         <source>hibernate in </source>
-        <translation>hibernate in </translation>
+        <translation>dihibernasi dalam </translation>
     </message>
     <message>
         <source>years</source>
-        <translation>years</translation>
+        <translation>tahun</translation>
     </message>
     <message>
         <source>months</source>
-        <translation>months</translation>
+        <translation>bulan</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>hours</translation>
+        <translation>jam</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>days</translation>
+        <translation>hari</translation>
     </message>
     <message>
         <source>Res&amp;tore</source>
-        <translation>Res&amp;tore</translation>
+        <translation>Puli&amp;h</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation>&amp;Minimise</translation>
+        <translation>&amp;Minimumkan</translation>
     </message>
     <message>
         <source>day</source>
-        <translation>day</translation>
+        <translation>hari</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minutes</translation>
+        <translation>minit</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>seconds</translation>
+        <translation>saat</translation>
     </message>
     <message>
         <source>&apos;qshutdown&apos;</source>
@@ -169,39 +169,39 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Shutdown</translation>
+        <translation>Matikan</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Reboot</translation>
+        <translation>But Semula</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Suspend</translation>
+        <translation>Tangguh</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Hibernate</translation>
+        <translation>Hibernasi</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
-        <translation>&amp;Lock after start?</translation>
+        <translation>&amp;Kunci selepas mula?</translation>
     </message>
     <message>
         <source>&amp;Warnings on?</source>
-        <translation>&amp;Warnings on?</translation>
+        <translation>&amp;Amaran dihidupkan?</translation>
     </message>
     <message>
         <source>Minutes</source>
-        <translation>Minutes</translation>
+        <translation>Minit</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
-        <translation>&amp;Now!</translation>
+        <translation>S&amp;ekarang!</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
-        <translation>You can set a date in the calendar</translation>
+        <translation>Anda boleh tetapkan tarikh dalam kalendar</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -209,312 +209,315 @@
     </message>
     <message>
         <source>R&amp;eset</source>
-        <translation>R&amp;eset</translation>
+        <translation>Teta&amp;p Semula</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Quit</translation>
+        <translation>Ke&amp;luar</translation>
     </message>
     <message>
         <source>&amp;Info</source>
-        <translation>&amp;Info</translation>
+        <translation>Makl&amp;umat</translation>
     </message>
     <message>
         <source>&amp;Logfile</source>
-        <translation>&amp;Logfile</translation>
+        <translation>&amp;Fail log</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation>&amp;Preferences</translation>
+        <translation>&amp;Keutamaan</translation>
     </message>
     <message>
         <source>&amp;Shutdown</source>
-        <translation>&amp;Shutdown</translation>
+        <translation>&amp;Matikan</translation>
     </message>
     <message>
         <source>&amp;Reboot</source>
-        <translation>&amp;Reboot</translation>
+        <translation>&amp;But Semula</translation>
     </message>
     <message>
         <source>S&amp;uspend</source>
-        <translation>S&amp;uspend</translation>
+        <translation>&amp;Tangguh</translation>
     </message>
     <message>
         <source>&amp;Hibernate</source>
-        <translation>&amp;Hibernate</translation>
+        <translation>&amp;Hibernasi</translation>
     </message>
     <message>
         <source>Lock settings after countdown started</source>
-        <translation>Lock settings after countdown started</translation>
+        <translation>Tetapan kunci selepas kiraan mengundur bermula</translation>
     </message>
     <message>
         <source>Calendar</source>
-        <translation>Calendar</translation>
+        <translation>Kalendar</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;File</translation>
+        <translation>&amp;Fail</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
+        <translation>&amp;Bantuan</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Settings</translation>
+        <translation>Teta&amp;pan</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;About</translation>
+        <translation>Perih&amp;al</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation>&amp;Reset</translation>
+        <translation>&amp;Tetap semula</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation>&amp;Configure</translation>
+        <translation>Konfi&amp;gur</translation>
     </message>
     <message>
         <source>&amp;Keep proportions</source>
-        <translation>&amp;Keep proportions</translation>
+        <translation>K&amp;ekal perkadaran</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Warning</translation>
+        <translation>Amaran</translation>
     </message>
     <message>
         <source>Action imminent!</source>
-        <translation>Action imminent!</translation>
+        <translation>Tindakan hampir!</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Information</translation>
+        <translation>Maklumat</translation>
     </message>
     <message>
         <source>Countdown is not running!</source>
-        <translation>Countdown is not running!</translation>
+        <translation>Kiraan mengundur tidak berjalan!</translation>
     </message>
     <message>
         <source>Turns on/off all warnings</source>
-        <translation>Turns on/off all warnings</translation>
+        <translation>Matikan/hidupkan semua amaran</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>About &amp;Qt</translation>
+        <translation>Perihal &amp;Qt</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation>Version </translation>
+        <translation>Versi </translation>
     </message>
 </context>
 <context>
     <name>Info</name>
     <message>
         <source>Info</source>
-        <translation>Info</translation>
+        <translation>Maklumat</translation>
     </message>
 </context>
 <context>
     <name>PassWord</name>
     <message>
         <source>Password</source>
-        <translation>Password</translation>
+        <translation>Kata laluan</translation>
     </message>
     <message>
         <source>&amp;Set password</source>
-        <translation>&amp;Set password</translation>
+        <translation>T&amp;etap kata laluan</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Password:</translation>
+        <translation>Kata Laluan:</translation>
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation>The password is not correct!</translation>
+        <translation>Kata laluan salah!</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
-        <translation>&amp;Change password</translation>
+        <translation>&amp;Ubah kata laluan</translation>
     </message>
 </context>
 <context>
     <name>Preferences</name>
     <message>
         <source>Preferences</source>
-        <translation>Preferences</translation>
+        <translation>Keutamaan</translation>
     </message>
     <message>
         <source>Enable the &amp;target time at startup</source>
-        <translation>Enable the &amp;target time at startup</translation>
+        <translation>Benarkan masa sasa&amp;ran pada permulaan</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Shutdown</translation>
+        <translation>Matikan</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
-        <translation>Shutdown type:</translation>
+        <translation>Jenis matikan:</translation>
     </message>
     <message>
         <source>Target time:</source>
-        <translation>Target time:</translation>
+        <translation>Masa sasaran:</translation>
     </message>
     <message>
         <source>Minutes to countdown:</source>
-        <translation>Minutes to countdown:</translation>
+        <translation>Minit untuk kiraan mengundur:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Font:</translation>
+        <translation>Fon:</translation>
     </message>
     <message>
         <source>Font size 1:</source>
-        <translation>Font size 1:</translation>
+        <translation>Fon saiz 1:</translation>
     </message>
     <message>
         <source>Font size 2:</source>
-        <translation>Font size 2:</translation>
+        <translation>Fon saiz 2:</translation>
     </message>
     <message>
         <source>Font size 3:</source>
-        <translation>Font size 3:</translation>
+        <translation>Fon saiz 3:</translation>
     </message>
     <message>
         <source>Size for log file:</source>
-        <translation>Size for log file:</translation>
+        <translation>Saiz untuk fail log:</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Reboot</translation>
+        <translation>But Semula</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Suspend</translation>
+        <translation>Tangguh</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Hibernate</translation>
+        <translation>Hibernasi</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
-        <translation>A&amp;utostart</translation>
+        <translation>Mula-sen&amp;diri</translation>
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
-        <translation>&amp;Hide qshutdown at startup</translation>
+        <translation>Sembuun&amp;yi qshutdown pada permulaan</translation>
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>
-        <translation>Lock screen &amp;for suspend and hibernate</translation>
+        <translation>Kunci skrin u&amp;ntuk tangguh dan hibernasi</translation>
     </message>
     <message>
         <source>&amp;Edit configuration file</source>
-        <translation>&amp;Edit configuration file</translation>
+        <translation>Sunt&amp;ing fail konfigurasi</translation>
     </message>
     <message>
         <source>Enable the minute &amp;countdown at startup</source>
-        <translation>Enable the minute &amp;countdown at startup</translation>
+        <translation>Benarkan minit ki&amp;raan mengundur semasa permulaan</translation>
     </message>
     <message>
         <source>&amp;Reset settings</source>
-        <translation>&amp;Reset settings</translation>
+        <translation>T&amp;etap semula tetapan</translation>
     </message>
     <message>
         <source>Size for log file in KB</source>
-        <translation>Size for log file in KB</translation>
+        <translation>Saiz bagi fail log dalam KB</translation>
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
-        <translation>&quot;&amp;Lock after start?&quot;</translation>
+        <translation>&quot;Kun&amp;ci selepas mula?&quot;</translation>
     </message>
     <message>
         <source>&quot;&amp;Warnings on?&quot;</source>
-        <translation>&quot;&amp;Warnings on?&quot;</translation>
+        <translation>&quot;&amp;Amaran dihidupkan?&quot;</translation>
     </message>
     <message>
         <source>Log start time of qshutdown and how long
 it was running</source>
-        <translation>Log start time of qshutdown and how long
-it was running</translation>
+        <translation>Masa mula log bagi qshutdown dan berapa
+lamakah ia berjalan</translation>
     </message>
     <message>
         <source>L&amp;ogging</source>
-        <translation>L&amp;ogging</translation>
+        <translation>Pengel&amp;ogan</translation>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
-        <translation>checkboxes and &quot;now!&quot; button</translation>
+        <translation>kotak tanda dan butang &quot;sekarang!&quot;</translation>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
-        <translation>OK and Minimise buttons</translation>
+        <translation>Butang OK dan Minimumkan</translation>
     </message>
     <message>
         <source>Labels for example</source>
-        <translation>Labels for example</translation>
+        <translation>Label untuk contoh</translation>
     </message>
     <message>
         <source>Set a font</source>
-        <translation>Set a font</translation>
+        <translation>Tetapkan fon</translation>
     </message>
     <message>
         <source>What target time should be displayed
 by default at startup?</source>
-        <translation>What target time should be displayed
-by default at startup?</translation>
+        <translation>Apakah masa sasaran yang patut dipaparkan
+secara lalai semasa permulaan?</translation>
     </message>
     <message>
         <source>How many minutes should be displayed
 for countdown by default at startup?</source>
-        <translation>How many minutes should be displayed
-for countdown by default at startup?</translation>
+        <translation>Berapa minitkah patut dipaparkan 
+untuk kiraan mengundur secara lalai
+pada permulaan?</translation>
     </message>
     <message>
         <source>What should be displayed first by
 default at startup?</source>
-        <translation>What should be displayed first by
-default at startup?</translation>
+        <translation>Apakah yang patut dipaparkan dahulu
+secara lalai semasa permulaan?</translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Lock after start?&quot;
 should be checked by default at startup</source>
-        <translation>Set if the checkbox for &quot;Lock after start?&quot;
-should be checked by default at startup</translation>
+        <translation>Tetapkan jika kotak tanda untuk &quot;kunci selepas
+mula?&quot; patut ditanda secara lalai semasa
+permulaan</translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Warnings on?&quot;
 should be checked by default at startup</source>
-        <translation>Set if the checkbox for &quot;Warnings on?&quot;
-should be checked by default at startup</translation>
+        <translation>Tetapkan jika kotak tanda untuk &quot;Amaran
+dihidupkan?&quot; patut ditanda secara lalai
+semasa permulaan</translation>
     </message>
     <message>
         <source>The close button usually hides the main window.
 Disabling hiding means, that qshutdown will then
 quit instead.</source>
-        <translation>The close button usually hides the main window.
-Disabling hiding means, that qshutdown will then
-quit instead.</translation>
+        <translation>Butang tutup biasanya sembunyian tetingkap utama.
+Pelumpuhan sembunyi bermaksud, qshutdown akan
+ditutup.</translation>
     </message>
     <message>
         <source>&amp;Disable hiding</source>
-        <translation>&amp;Disable hiding</translation>
+        <translation>&amp;Lumpuhkan sembunyi</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>General</translation>
+        <translation>Am</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation>Advanced</translation>
+        <translation>Lanjutan</translation>
     </message>
     <message>
         <source>Suspend method:</source>
-        <translation>Suspend method:</translation>
+        <translation>Kaedah tangguh:</translation>
     </message>
     <message>
         <source>automatic</source>
-        <translation>automatic</translation>
+        <translation>automatik</translation>
     </message>
     <message>
         <source>HAL</source>
@@ -530,11 +533,11 @@ quit instead.</translation>
     </message>
     <message>
         <source>user defined</source>
-        <translation>user defined</translation>
+        <translation>ditakrif pengguna</translation>
     </message>
     <message>
         <source>Hibernate method:</source>
-        <translation>Hibernate method:</translation>
+        <translation>Kaedah hibernasi:</translation>
     </message>
     <message>
         <source>sudo shutdown -P</source>
@@ -542,7 +545,7 @@ quit instead.</translation>
     </message>
     <message>
         <source>Shutdown method:</source>
-        <translation>Shutdown method:</translation>
+        <translation>Kaedah matikan:</translation>
     </message>
     <message>
         <source>UPower</source>
@@ -554,66 +557,66 @@ quit instead.</translation>
     </message>
     <message>
         <source>Reboot method:</source>
-        <translation>Reboot method:</translation>
+        <translation>Kaedah but semula:</translation>
     </message>
     <message>
         <source>Please input an user specified command for suspend here</source>
-        <translation>Please input an user specified command for suspend here</translation>
+        <translation>Sila masukkan perintah dinyatakan pengguna untuk tangguh disini</translation>
     </message>
     <message>
         <source>Gnome session</source>
-        <translation>Gnome session</translation>
+        <translation>Sesi Gnome</translation>
     </message>
     <message>
         <source>KDE session</source>
-        <translation>KDE session</translation>
+        <translation>Sesi KDE</translation>
     </message>
     <message>
         <source>Please input an user specified command for shutdown here</source>
-        <translation>Please input an user specified command for shutdown here</translation>
+        <translation>Sila masukkan perintah dinyatakan pengguna untuk matikan disini</translation>
     </message>
     <message>
         <source>Please input an user specified command for reboot here</source>
-        <translation>Please input an user specified command for reboot here</translation>
+        <translation>Sila masukkan perintah dinyatakan pengguna untuk but semula disini</translation>
     </message>
     <message>
         <source>Please input an user specified command for hibernate here</source>
-        <translation>Please input an user specified command for hibernate here</translation>
+        <translation>Sila masukkan perintah dinyatakan pengguna untuk hibernasi disini</translation>
     </message>
     <message>
         <source>Some systems block for example the shutdown
 because qshutdown is still running. Set a hook if
 qshutdown should quit after the countdown ended.</source>
-        <translation>Some systems block for example the shutdown
-because qshutdown is still running. Set a hook if
-qshutdown should quit after the countdown ended.</translation>
+        <translation>Beberapa sekatan sistem contohnya shutdown
+kerana qshutdown masih berjalan. Tetapkan
+cangkuk jika qshutdown patut keluar selepas
+kiraan mengundur tamat.</translation>
     </message>
     <message>
         <source>Quit qshutdown after countdown ended?</source>
-        <translation>Quit qshutdown after countdown ended?</translation>
+        <translation>Keluar qshutdown selepas kiraan mengundur tamat?</translation>
     </message>
     <message>
         <source>&amp;Start countdown at startup</source>
-        <translation>&amp;Start countdown at startup</translation>
+        <translation>&amp;Mula kiraan mengundur semasa permulaan</translation>
     </message>
     <message>
         <source>Hide qshutdown at startup if
 &quot;Start countdown&quot; is checked.</source>
-        <translation>Hide qshutdown at startup if
-&quot;Start countdown at startup&quot; is checked.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation>The File &quot;%1&quot; is not writable!
-Maybe you just don&apos;t have the permissions to do so.</translation>
+        <translation>Fail &quot;%1&quot; tidak boleh ditulis!
+Mungkin anda tidak mempunyai keizinan membuatnya.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the username or %groupname.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configurationfile (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Prefereces&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the config file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <translation>&lt;html dir=&quot;rtl&quot;&gt;&lt;p&gt;qshutdown תציג את עצמה 3 פעמים כאות אזהרהאם נותרו פחות מ־ 70 שניות.&lt;/p&gt;&lt;p&gt;תכנית זו משתמשת ב־ qdbus כדי לשלוח בקשת כיבוי/הפעלה מחדש/השהיה/תרדמת לאחד ממנהלי ההפעלה, בין אם gnome- או kde-session-manager, ל־ HAL/ConsoleKit/DeviceKit/UPower ואם אף אחד מאלה לא עובד, ייעשה שימוש בפקודה &apos;sudo shutdown&apos; (נא לשים לב שבעת שליחת בקשת הכיבוי ל־ HAL או ל־ ConsoleKit, או בעת שימוש בפקודה shutdown, ההפעלה לא תישמר. אם ייעשה שימוש בפקודת הכיבוי (shutdown), התכנית תוכל רק לכבות או להפעיל מחדש). כך שאם לא קורה דבר כאשר הגיע מועד הכיבוי או ההפעלה מחדש, משמעות הדבר היא שחסרה ההרשאה להפעלת פקודת הכיבוי. במקרה שכזה ניתן לבצע את הפעולות הבאות:&lt;/p&gt;&lt;p&gt;להדביק את הפקודות הבאות במסוף:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;להוסיף את השורה הזאת:&lt;pre&gt;ALL = NOPASSWD:/sbin/shutdown *&lt;/pre&gt;כאשר * מחליף את שם_המשתמש או את %שם_הקבוצה.&lt;/p&gt;&lt;p&gt;המספר הגבוה ביותר של countdown_minutes (דקות לספירה לאחור) הוא 1440 (24 שעות).&lt;br/&gt;קובץ התצורה (וקובץ היומן) נמצאים תחת התיקייה &lt;i&gt;/qshutdown./~&lt;/i&gt; (במערכות Linux/Unix).&lt;/p&gt;&lt;b&gt;למנהלים:&lt;/b&gt;&lt;br /&gt;אם ברצונכם ש־ qshutdown יופעל במצב „בקרת הורים“ עבור כל המשתמשים, באפשרותכם &lt;p&gt;להשתמש בפקודה &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d&quot; ולהגדיר את האפשרות Lock_all תחת /root/.qshutdown/qshutdown.conf כדי שתהיה true (אמת/פעיל). נא לשים לב שיש להפעיל את qshutdown לפחות פעם אחת כדי שייווצר הקובץ qshutdown.conf. יתר על כך יש להוסיף את השורה הבאה לקובץ ה־ sudoers (כמופיע להלן):&lt;p&gt;&lt;pre&gt;ALL = NOPASSWD:/usr/bin/qshutdown *&lt;/pre&gt;&lt;br/&gt;אם אי פעם שכחת את הססמה שהוגדרה עבורך, &lt;p&gt;עליך פשוט להסיר את כל השורה המתחילה ב־ &quot;Password&quot; ידנית מהקובץ qshutdown.conf.&lt;/p&gt;&lt;b&gt;טיפים לשימוש:&lt;/b&gt;&lt;br /&gt;&lt;/p&gt;אם ברצונך ש־ qshutdown תפסיק „לנג׳ס“ לך, עליך פשוט להסיר את העוגן מ„אזהרות פעילות?“.&lt;p&gt;&lt;b&gt;מקשי קיצור:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;חלון מידע (זה) &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;יציאה&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;העדפות&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;כתיבת זמן הפעילות ליומן הפעילות (יופעל רק עם יציאה מ־qshutdown. כדי להפוך הגדרה זו לקבועה יש לסדר זאת בהגדרות.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;הגדרה לכיבוי&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;הגדרה להפעלה מחדש&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;הגדרה להשהיה לזיכרון&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;הגדרה לתרדמת&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;עצירת הספירה לאחור (רק אם החלה הספירה לאחור והמנהל לא הגביל את הגישה לכך)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;לעריכת קובץ התצורה (לשם כך נדרשת ססמה. אם תכנה זו משמשת אותך כמשתמש רגיל, ניתן להגדיר „ססמה ריקה“ (להשאיר את שדה הססמה ריק)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

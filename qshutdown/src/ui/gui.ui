@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>325</width>
+    <width>326</width>
     <height>360</height>
    </rect>
   </property>
@@ -427,7 +427,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>325</width>
+     <width>326</width>
      <height>26</height>
     </rect>
    </property>
@@ -508,6 +508,9 @@
   </action>
   <action name="actionKeep_window_proportions">
    <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
     <bool>true</bool>
    </property>
    <property name="text">

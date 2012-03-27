@@ -55,8 +55,8 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      msgBox->setWindowTitle("Error");
      msgBox->setIcon(QMessageBox::Warning);
      msgBox->setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Window);
-     msgBox->setInformativeText(tr("The File \"") + file + tr("\" is not writable!\n"
-     "Maybe you just don't have the permissions to do so."));
+     msgBox->setInformativeText(tr("The File \"%1\" is not writable!\n"
+     "Maybe you just don't have the permissions to do so.").arg(file));
 
      connect(buttonBox, SIGNAL(accepted()), this, SLOT(saveToConfFile()));
      connect(reset, SIGNAL(clicked(bool)), this, SLOT(resetSettings()));

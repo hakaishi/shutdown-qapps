@@ -52,6 +52,10 @@ SOLUTION: Type the following line in a terminal:
 
 gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"
 
+In case you want to use the sudo shutdown command and you have set
+the rights in the sudoers, but it still doesn't work, please specify
+your own command in the preferences and try if "sudo shutdown -hP" now works.
+
 
 
 HINTS ON USAGE:

@@ -663,7 +663,7 @@ void Gui::loadSettings(){
        settings.setValue("Time/countdown_at_startup", false);
        settings.setValue("Hide_at_startup", false);
        settings.setValue("MainWindow/size", QSize(290, 280));
-       settings.setValue("MainWindow/keep_proportions", false);
+       settings.setValue("MainWindow/keep_proportions", true);
        settings.setValue("Fonts/font_type", "Times New Roman");
        settings.setValue("Fonts/font1", 13);
        settings.setValue("Fonts/font2", 18);
@@ -692,7 +692,7 @@ void Gui::loadSettings(){
      timeEdit->setTime(QTime(settings.value("Time/time_hour",22).toInt(),settings.value("Time/time_minute",00).toInt()));
      spin->setValue(settings.value("Time/countdown_minutes",60).toInt());
      resize(settings.value("MainWindow/size",QSize(290,280)).toSize());
-     actionKeep_window_proportions->setChecked(settings.value("MainWindow/keep_proportions",false).toBool());
+     actionKeep_window_proportions->setChecked(settings.value("MainWindow/keep_proportions",true).toBool());
      font1->setFamily(settings.value("Fonts/font_type","Times New Roman").toString());
      font2->setFamily(settings.value("Fonts/font_type","Times New Roman").toString());
      font3->setFamily(settings.value("Fonts/font_type","Times New Roman").toString());

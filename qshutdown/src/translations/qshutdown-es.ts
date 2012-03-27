@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_GB">
+<TS version="2.0" language="es_ES">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation>About qshutdown</translation>
+        <translation>Acerca de qshutdown</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation>Version </translation>
+        <translation>Versión </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;About</translation>
+        <translation>&amp;Acerca de</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation>&amp;Thanks To</translation>
+        <translation>Agradecimien&amp;tos a</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
-        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Utiliza Qt&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;Agradecemos especialmente a:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler por ayudar aquí y allí.&lt;br /&gt;&lt;br /&gt;Y a Brian Nelson por auspiciar la subida a Debian.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;qshutdown, una herramienta para apagar el sistema en cuenta atrás&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, por Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; o &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; para informar fallos.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
     <name>Calendar</name>
     <message>
         <source>Calendar</source>
-        <translation>Calendar</translation>
+        <translation>Calendario</translation>
     </message>
 </context>
 <context>
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation>Change Password</translation>
+        <translation>Cambiar contraseña</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation>Retype password:</translation>
+        <translation>Vuelva a escribir la contraseña:</translation>
     </message>
     <message>
         <source>New password:</source>
-        <translation>New password:</translation>
+        <translation>Contraseña nueva:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation>Old password:</translation>
+        <translation>Contraseña anterior:</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation>The current password is not correct!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation>The retyped password doesn&apos;t match!</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -77,91 +77,91 @@
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation>&amp;Minimise!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation>Shutdown-time:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
-        <translation>Minutes until shutdown:</translation>
+        <translation>Minutos hasta apagar:</translation>
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation>Reboot-time:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
-        <translation>Minutes until reboot:</translation>
+        <translation>Minutos hasta reiniciar:</translation>
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation>Suspend-time:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation>Minutes till suspend:</translation>
+        <translation>Minutos hasta suspender:</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>
-        <translation>Hibernate-time:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Minutes till hibernate:</source>
-        <translation>Minutes until hibernation:</translation>
+        <translation>Minutos hasta hibernar:</translation>
     </message>
     <message>
         <source>shutdown in </source>
-        <translation>shutdown in </translation>
+        <translation>apagado en </translation>
     </message>
     <message>
         <source>reboot in </source>
-        <translation>reboot in </translation>
+        <translation>reinicio en </translation>
     </message>
     <message>
         <source>suspend in </source>
-        <translation>suspend in </translation>
+        <translation>suspensión en </translation>
     </message>
     <message>
         <source>hibernate in </source>
-        <translation>hibernate in </translation>
+        <translation>hibernación en </translation>
     </message>
     <message>
         <source>years</source>
-        <translation>years</translation>
+        <translation>años</translation>
     </message>
     <message>
         <source>months</source>
-        <translation>months</translation>
+        <translation>meses</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>hours</translation>
+        <translation>horas</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>days</translation>
+        <translation>días</translation>
     </message>
     <message>
         <source>Res&amp;tore</source>
-        <translation>Res&amp;tore</translation>
+        <translation>Res&amp;taurar</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation>&amp;Minimise</translation>
+        <translation>&amp;Minimizar</translation>
     </message>
     <message>
         <source>day</source>
-        <translation>day</translation>
+        <translation>día</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minutes</translation>
+        <translation>minutos</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>seconds</translation>
+        <translation>segundos</translation>
     </message>
     <message>
         <source>&apos;qshutdown&apos;</source>
@@ -169,336 +169,328 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Shutdown</translation>
+        <translation>Apagar</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Reboot</translation>
+        <translation>Reiniciar</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Suspend</translation>
+        <translation>Suspender</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Hibernate</translation>
+        <translation>Hibernar</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
-        <translation>&amp;Lock after start?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Warnings on?</source>
-        <translation>&amp;Warnings on?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Minutes</source>
-        <translation>Minutes</translation>
+        <translation>Minutos</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
-        <translation>&amp;Now!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
-        <translation>You can set a date in the calendar</translation>
+        <translation>Puede establecer una fecha en el calendario</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation>&amp;OK</translation>
+        <translation>&amp;Aceptar</translation>
     </message>
     <message>
         <source>R&amp;eset</source>
-        <translation>R&amp;eset</translation>
+        <translation>R&amp;establecer</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Quit</translation>
+        <translation>&amp;Salir</translation>
     </message>
     <message>
         <source>&amp;Info</source>
-        <translation>&amp;Info</translation>
+        <translation>&amp;Información</translation>
     </message>
     <message>
         <source>&amp;Logfile</source>
-        <translation>&amp;Logfile</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation>&amp;Preferences</translation>
+        <translation>&amp;Preferencias</translation>
     </message>
     <message>
         <source>&amp;Shutdown</source>
-        <translation>&amp;Shutdown</translation>
+        <translation>&amp;Apagar</translation>
     </message>
     <message>
         <source>&amp;Reboot</source>
-        <translation>&amp;Reboot</translation>
+        <translation>&amp;Reiniciar</translation>
     </message>
     <message>
         <source>S&amp;uspend</source>
-        <translation>S&amp;uspend</translation>
+        <translation>S&amp;uspender</translation>
     </message>
     <message>
         <source>&amp;Hibernate</source>
-        <translation>&amp;Hibernate</translation>
+        <translation>&amp;Hibernar</translation>
     </message>
     <message>
         <source>Lock settings after countdown started</source>
-        <translation>Lock settings after countdown started</translation>
+        <translation>Bloquear la configuración después de iniciada la cuenta atrás</translation>
     </message>
     <message>
         <source>Calendar</source>
-        <translation>Calendar</translation>
+        <translation>Calendario</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;File</translation>
+        <translation>&amp;Archivo</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
+        <translation>Ay&amp;uda</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Settings</translation>
+        <translation>&amp;Opciones</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;About</translation>
+        <translation>&amp;Acerca de</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation>&amp;Reset</translation>
+        <translation>&amp;Restablecer</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation>&amp;Configure</translation>
+        <translation>&amp;Configurar</translation>
     </message>
     <message>
         <source>&amp;Keep proportions</source>
-        <translation>&amp;Keep proportions</translation>
+        <translation>&amp;Mantener proporciones</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Warning</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Action imminent!</source>
-        <translation>Action imminent!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Information</translation>
+        <translation>Información</translation>
     </message>
     <message>
         <source>Countdown is not running!</source>
-        <translation>Countdown is not running!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Turns on/off all warnings</source>
-        <translation>Turns on/off all warnings</translation>
+        <translation>Activa o desactiva todos los avisos</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>About &amp;Qt</translation>
+        <translation>Acerca de &amp;Qt</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation>Version </translation>
+        <translation>Versión </translation>
     </message>
 </context>
 <context>
     <name>Info</name>
     <message>
         <source>Info</source>
-        <translation>Info</translation>
+        <translation>Información</translation>
     </message>
 </context>
 <context>
     <name>PassWord</name>
     <message>
         <source>Password</source>
-        <translation>Password</translation>
+        <translation>Contraseña</translation>
     </message>
     <message>
         <source>&amp;Set password</source>
-        <translation>&amp;Set password</translation>
+        <translation>E&amp;stablecer contraseña</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Password:</translation>
+        <translation>Contraseña:</translation>
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation>The password is not correct!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Change password</source>
-        <translation>&amp;Change password</translation>
+        <translation>&amp;Cambiar contraseña</translation>
     </message>
 </context>
 <context>
     <name>Preferences</name>
     <message>
         <source>Preferences</source>
-        <translation>Preferences</translation>
+        <translation>Preferencias</translation>
     </message>
     <message>
         <source>Enable the &amp;target time at startup</source>
-        <translation>Enable the &amp;target time at startup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Shutdown</translation>
+        <translation>Apagar</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
-        <translation>Shutdown type:</translation>
+        <translation>Tipo de apagado:</translation>
     </message>
     <message>
         <source>Target time:</source>
-        <translation>Target time:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Minutes to countdown:</source>
-        <translation>Minutes to countdown:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Font:</translation>
+        <translation>Tipo de letra:</translation>
     </message>
     <message>
         <source>Font size 1:</source>
-        <translation>Font size 1:</translation>
+        <translation>Tamaño de letra 1:</translation>
     </message>
     <message>
         <source>Font size 2:</source>
-        <translation>Font size 2:</translation>
+        <translation>Tamaño de letra 2:</translation>
     </message>
     <message>
         <source>Font size 3:</source>
-        <translation>Font size 3:</translation>
+        <translation>Tamaño de letra 3:</translation>
     </message>
     <message>
         <source>Size for log file:</source>
-        <translation>Size for log file:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Reboot</translation>
+        <translation>Reiniciar</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Suspend</translation>
+        <translation>Suspender</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Hibernate</translation>
+        <translation>Hibernar</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
-        <translation>A&amp;utostart</translation>
+        <translation>Iniciar a&amp;utomáticamente</translation>
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
-        <translation>&amp;Hide qshutdown at startup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>
-        <translation>Lock screen &amp;for suspend and hibernate</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Edit configuration file</source>
-        <translation>&amp;Edit configuration file</translation>
+        <translation>&amp;Editar archivo de configuración</translation>
     </message>
     <message>
         <source>Enable the minute &amp;countdown at startup</source>
-        <translation>Enable the minute &amp;countdown at startup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Reset settings</source>
-        <translation>&amp;Reset settings</translation>
+        <translation>&amp;Restablecer opciones</translation>
     </message>
     <message>
         <source>Size for log file in KB</source>
-        <translation>Size for log file in KB</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
-        <translation>&quot;&amp;Lock after start?&quot;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&quot;&amp;Warnings on?&quot;</source>
-        <translation>&quot;&amp;Warnings on?&quot;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Log start time of qshutdown and how long
 it was running</source>
-        <translation>Log start time of qshutdown and how long
-it was running</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>L&amp;ogging</source>
-        <translation>L&amp;ogging</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
-        <translation>checkboxes and &quot;now!&quot; button</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
-        <translation>OK and Minimise buttons</translation>
+        <translation>Botones Aceptar y Minimizar</translation>
     </message>
     <message>
         <source>Labels for example</source>
-        <translation>Labels for example</translation>
+        <translation>Etiquetas por ejemplo</translation>
     </message>
     <message>
         <source>Set a font</source>
-        <translation>Set a font</translation>
+        <translation>Establecer un tipo de letra</translation>
     </message>
     <message>
         <source>What target time should be displayed
 by default at startup?</source>
-        <translation>What target time should be displayed
-by default at startup?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>How many minutes should be displayed
 for countdown by default at startup?</source>
-        <translation>How many minutes should be displayed
-for countdown by default at startup?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>What should be displayed first by
 default at startup?</source>
-        <translation>What should be displayed first by
-default at startup?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Lock after start?&quot;
 should be checked by default at startup</source>
-        <translation>Set if the checkbox for &quot;Lock after start?&quot;
-should be checked by default at startup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Warnings on?&quot;
 should be checked by default at startup</source>
-        <translation>Set if the checkbox for &quot;Warnings on?&quot;
-should be checked by default at startup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The close button usually hides the main window.
 Disabling hiding means, that qshutdown will then
 quit instead.</source>
-        <translation>The close button usually hides the main window.
-Disabling hiding means, that qshutdown will then
-quit instead.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Disable hiding</source>
-        <translation>&amp;Disable hiding</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>General</source>
@@ -506,15 +498,15 @@ quit instead.</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation>Advanced</translation>
+        <translation>Avanzado</translation>
     </message>
     <message>
         <source>Suspend method:</source>
-        <translation>Suspend method:</translation>
+        <translation>Método de suspensión:</translation>
     </message>
     <message>
         <source>automatic</source>
-        <translation>automatic</translation>
+        <translation>automático</translation>
     </message>
     <message>
         <source>HAL</source>
@@ -530,11 +522,11 @@ quit instead.</translation>
     </message>
     <message>
         <source>user defined</source>
-        <translation>user defined</translation>
+        <translation>definido por el usuario</translation>
     </message>
     <message>
         <source>Hibernate method:</source>
-        <translation>Hibernate method:</translation>
+        <translation>Método de hibernación:</translation>
     </message>
     <message>
         <source>sudo shutdown -P</source>
@@ -542,7 +534,7 @@ quit instead.</translation>
     </message>
     <message>
         <source>Shutdown method:</source>
-        <translation>Shutdown method:</translation>
+        <translation>Método de apagado:</translation>
     </message>
     <message>
         <source>UPower</source>
@@ -554,66 +546,62 @@ quit instead.</translation>
     </message>
     <message>
         <source>Reboot method:</source>
-        <translation>Reboot method:</translation>
+        <translation>Método de reinicio:</translation>
     </message>
     <message>
         <source>Please input an user specified command for suspend here</source>
-        <translation>Please input an user specified command for suspend here</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Gnome session</source>
-        <translation>Gnome session</translation>
+        <translation>Sesión de Gnome</translation>
     </message>
     <message>
         <source>KDE session</source>
-        <translation>KDE session</translation>
+        <translation>Sesión de KDE</translation>
     </message>
     <message>
         <source>Please input an user specified command for shutdown here</source>
-        <translation>Please input an user specified command for shutdown here</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Please input an user specified command for reboot here</source>
-        <translation>Please input an user specified command for reboot here</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Please input an user specified command for hibernate here</source>
-        <translation>Please input an user specified command for hibernate here</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Some systems block for example the shutdown
 because qshutdown is still running. Set a hook if
 qshutdown should quit after the countdown ended.</source>
-        <translation>Some systems block for example the shutdown
-because qshutdown is still running. Set a hook if
-qshutdown should quit after the countdown ended.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Quit qshutdown after countdown ended?</source>
-        <translation>Quit qshutdown after countdown ended?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Start countdown at startup</source>
-        <translation>&amp;Start countdown at startup</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hide qshutdown at startup if
 &quot;Start countdown&quot; is checked.</source>
-        <translation>Hide qshutdown at startup if
-&quot;Start countdown at startup&quot; is checked.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation>The File &quot;%1&quot; is not writable!
-Maybe you just don&apos;t have the permissions to do so.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the username or %groupname.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configurationfile (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Prefereces&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the config file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

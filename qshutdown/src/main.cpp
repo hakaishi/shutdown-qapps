@@ -51,8 +51,8 @@ int main(int argc, char *argv[]){
        "lacks the rights for the shutdown command. In this case one can do the following:"
        "<br/><br/>Paste the following in a terminal:<pre>EDITOR=nano sudo -E visudo</pre>and "
        "add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre>whereas * replaces the "
-       "username or %groupname.<br/><br/>The maximum Number of countdown_minutes is "
-       "1440 (24 hours).<br/>The configurationfile (and logfile) is located at "
+       "user name or %group name.<br/><br/>The maximum Number of countdown_minutes is "
+       "1440 (24 hours).<br/>The configuration file (and logfile) is located at "
        "<i>~/.qshutdown/</i> (under Linux/Unix).<br/><br/><b>For admins:</b><br/>If you want "
        "qshutdown to run with \"parental lock\" for every user, you can do "
        "\"sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/\" "
@@ -65,13 +65,13 @@ int main(int argc, char *argv[]){
        "\"bugging\" you, just remove the hook from "
        "\"warnings on?\".<br/><br/><b>Hotkeys:</b><table border=\"1\"><tr><td>Ctrl+I</td><td>(this)"
        " information window</td></tr><tr><td>Ctrl+Q</td><td>Quit</td></tr><tr><td>Ctrl+P</td>"
-       "<td>Prefereces</td></tr><tr><td>Ctrl+L</td><td>write the run time once into the logfile (works "
+       "<td>Preferences</td></tr><tr><td>Ctrl+L</td><td>write the run time once into the logfile (works "
        "only if qshutdown quits. To make it permanent set it in the preferences.)</td></tr><tr>"
        "<td>Ctrl+S</td><td>set to shutdown</td></tr><tr><td>Ctrl+R</td><td>set to restart</td></tr>"
        "<tr><td>Ctrl+U</td><td>set to suspend to RAM</td></tr><tr><td>Ctrl+H</td><td>set to hibernate"
        "</td></tr><tr><td>Ctrl+E</td><td>stop countdown (only if the countdown has started and the admin "
-       "didn't restrict the access)</td></tr><tr><td>Shift+E</td><td>to edit the config file (for this "
-       "a password is necessary. If you are a user, you can set an \"empty password\" (leave the "
+       "didn't restrict the access)</td></tr><tr><td>Shift+E</td><td>to edit the configuration file (for "
+       "this a password is necessary. If you are a user, you can set an \"empty password\" (leave the "
        "password field empty)).</td></tr></table>"));
      QTextDocumentFragment infoDoc;
      infoDoc = QTextDocumentFragment::fromHtml(infoStr);
