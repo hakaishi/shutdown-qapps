@@ -17,11 +17,11 @@
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation type="unfinished"></translation>
+        <translation>謝辞(&amp;T)</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Qt を使用しています&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation>パスワードがマッチしていません！</translation>
+        <translation>パスワードが一致していません！</translation>
     </message>
 </context>
 <context>
@@ -85,7 +85,7 @@
     </message>
     <message>
         <source>Minutes till shutdown:</source>
-        <translation>シャットダウンまで、何分:</translation>
+        <translation>シャットダウンまでの分数:</translation>
     </message>
     <message>
         <source>Reboot-time:</source>
@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Minutes till reboot:</source>
-        <translation>再起動まで、何分:</translation>
+        <translation>再起動までの分数:</translation>
     </message>
     <message>
         <source>Suspend-time:</source>
@@ -101,7 +101,7 @@
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation>サスペンドまで、何分:</translation>
+        <translation>サスペンドまでの分数:</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>

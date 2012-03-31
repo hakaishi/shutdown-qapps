@@ -30,7 +30,6 @@ Gui::Gui(){
 
      setupUi(this);
 
-     finishedExecuted = false;
      timeRunning = false;
      logFileSize = 1.5;
 
@@ -334,9 +333,6 @@ void Gui::keyPressEvent(QKeyEvent *kEvent){
 }
 
 void Gui::updateT(){
-     if(finishedExecuted)
-       reset();
-
      QDate myDate;
      QString tip1, tip2;
 
@@ -386,12 +382,12 @@ void Gui::updateT(){
 
        if(i>=86400){ //if one day and some time to go
          tip2 = (">= 1 " + tr("day"));
-         lcdL->setText(tr("day"));
-         if(bigI/86400 >= 10)
-           lcd->setNumDigits(4);
-         else
-           lcd->setNumDigits(3);
+         lcd->setNumDigits(3);
          lcd->display(bigI/86400);
+         if(lcd->value() > 1.1)
+           lcdL->setText(tr("days"));
+         else
+           lcdL->setText(tr("day"));
        }
        if(i<86400 && i>3600){ //if there is less than one day, show hours
          tip2 = (QString::number(i/3600) + " " + tr("hours"));
@@ -414,7 +410,7 @@ void Gui::updateT(){
          lcd->display(bigI/60);
        }
        if(i<=60){
-         tip2 = ("1 " + tr("seconds"));
+         tip2 = (QString::number(i) + " " + tr("seconds"));
          lcdL->setText(tr("seconds"));
          lcd->display(i);
        }
@@ -451,7 +447,7 @@ void Gui::updateT(){
          lcd->display(i);
        }
 
-       //this will ensure that the shutdown-type will be executed in case a few seconds were skipped
+     //this will ensure that the shutdown-type will be executed in case a few seconds were skipped
        if(i<=86390)
          n = 10; //any number to keep i in check
        if((i==0) || ((i>n) && (i>86390)))
@@ -557,7 +553,6 @@ void Gui::saveLog(){
 }
 
 void Gui::finished_(){
-     finishedExecuted = true;
      switch(comboBox->currentIndex()){
        case 0:
          if(pref->shutdownM->currentIndex()==0) { Power::automatic = true; }
@@ -617,6 +612,8 @@ void Gui::finished_(){
      }
      if(pref->quitAfterCountdown->isChecked())
        qApp->quit();
+     else
+       reset();
 }
 
 void Gui::hideEvent(QHideEvent* window_hide){
@@ -799,13 +796,11 @@ void Gui::reset(){
      lcdL->setText(tr("minutes"));
      cal->setCalendarDate = QDate();
      cal->calendarDate = QDate();
-     if(finishedExecuted)
-       showNormal();
+     showNormal();
      timer->stop();
      if(!ti->isActive())
        ti->start(30000);
      timeRunning = false;
-     finishedExecuted = false;
      minim->hide();
      ok->show();
      pref->tab2->setEnabled(true);

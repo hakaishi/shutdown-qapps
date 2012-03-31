@@ -3,6 +3,7 @@ shutdown-qapps (1.6.4-1) unstable; urgency=low
   * qshutdown
     - new (and bigger) qshutdown symbol
     - many new translations
+    - fix for intern reset: now independent from QTimer
 
  -- Christian Metscher <hakaishi@web.de>  Tue, 20 Mar 2012 16:06:36 +0100
 

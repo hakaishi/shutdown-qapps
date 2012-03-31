@@ -249,7 +249,7 @@
     </message>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished">క్యాలెండరు</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;File</source>

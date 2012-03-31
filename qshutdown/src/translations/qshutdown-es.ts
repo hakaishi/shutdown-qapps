@@ -59,11 +59,11 @@
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation type="unfinished"></translation>
+        <translation>La contraseña actual no es correcta.</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation type="unfinished"></translation>
+        <translation>La contraseña reescrita no coincide.</translation>
     </message>
 </context>
 <context>
@@ -77,7 +77,7 @@
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Minimizar</translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
@@ -185,11 +185,11 @@
     </message>
     <message>
         <source>&amp;Lock after start?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿&amp;Bloquear después de iniciar?</translation>
     </message>
     <message>
         <source>&amp;Warnings on?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Activar a&amp;visos?</translation>
     </message>
     <message>
         <source>Minutes</source>
@@ -197,7 +197,7 @@
     </message>
     <message>
         <source>&amp;Now!</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ahora</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
@@ -285,7 +285,7 @@
     </message>
     <message>
         <source>Action imminent!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Acción inminente!</translation>
     </message>
     <message>
         <source>Information</source>
@@ -331,7 +331,7 @@
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation type="unfinished"></translation>
+        <translation>La contraseña no es correcta.</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
@@ -426,11 +426,11 @@
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>«¿&amp;Bloquear después de iniciar?»</translation>
     </message>
     <message>
         <source>&quot;&amp;Warnings on?&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>«¿Activar a&amp;visos?»</translation>
     </message>
     <message>
         <source>Log start time of qshutdown and how long
@@ -443,7 +443,7 @@ it was running</source>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
-        <translation type="unfinished"></translation>
+        <translation>casillas de verificación y botón «ahora»</translation>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
@@ -580,7 +580,7 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Quit qshutdown after countdown ended?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Salir de qshutdown cuando termine la cuenta atrás?</translation>
     </message>
     <message>
         <source>&amp;Start countdown at startup</source>
@@ -594,7 +594,8 @@ qshutdown should quit after the countdown ended.</source>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation type="unfinished"></translation>
+        <translation>El archivo «%1» no es escribible.
+Quizá no tiene los permisos para hacerlo.</translation>
     </message>
 </context>
 <context>

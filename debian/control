@@ -4,6 +4,8 @@ Priority: optional
 Maintainer: Christian Metscher <hakaishi@web.de>
 Build-Depends: debhelper (>= 7.0.50), libqt4-dev
 Standards-Version: 3.9.3
+Vcs-Git: git://github.com/hakaishi/shutdown-qapps.git
+Vcs-browser: https://github.com/hakaishi/shutdown-qapps
 Homepage: https://launchpad.net/~hakaishi
 
 Package: qprogram-starter

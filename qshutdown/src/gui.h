@@ -53,9 +53,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      QPushButton     *minim;
      QTimer          *timer, *ti;
      QDateTime       datetime;
-     QTime           localTime;
-     QTime           futureTime;
-     QTime           elapsedTime;
+     QTime           localTime, futureTime, elapsedTime;
      QIcon           icon;
      QSystemTrayIcon *TIcon;
      QMenu           *menu;
@@ -68,7 +66,6 @@ class Gui : public QMainWindow, public Ui::Gui {
      double          bigI; //for more precise display
      int             n; //to check if i==0 was skipped
      QFont           *font1, *font2, *font3;
-     bool            finishedExecuted;
      double          logFileSize;
      Preferences     *pref;
      Info            *infoBox;

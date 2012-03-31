@@ -273,7 +273,7 @@
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation>&amp;Einrichten</translation>
+        <translation>&amp;Konfigurieren</translation>
     </message>
     <message>
         <source>&amp;Keep proportions</source>

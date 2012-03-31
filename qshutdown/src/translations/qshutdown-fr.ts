@@ -486,7 +486,7 @@ doit être cochée par défaut au démarrage</translation>
         <source>Set if the checkbox for &quot;Warnings on?&quot;
 should be checked by default at startup</source>
         <translation>Définit si la case «Activer les alertes?»
-doit être cochée par défaut au démarrage</translation>
+doit être cochée par défaut au démarrage.</translation>
     </message>
     <message>
         <source>The close button usually hides the main window.

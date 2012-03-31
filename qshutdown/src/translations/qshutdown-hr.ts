@@ -249,7 +249,7 @@
     </message>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished">Kalendar</translation>
+        <translation>Kalendar</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -265,7 +265,7 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished">&amp;O programu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Reset</source>
@@ -542,7 +542,7 @@ quit instead.</source>
     </message>
     <message>
         <source>DeviceKit</source>
-        <translation type="unfinished">DeviceKit</translation>
+        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
