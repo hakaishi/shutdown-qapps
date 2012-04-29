@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="de">
 <context>
     <name>Gui</name>
     <message>
@@ -122,7 +122,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>: Failed to start! No such program or command.
 </source>
-        <translation>: Start fehlgeschlagen! Unbekannter Befehl oder unbekanntes Programm.</translation>
+        <translation type="obsolete">: Start fehlgeschlagen! Unbekannter Befehl oder unbekanntes Programm.</translation>
     </message>
     <message>
         <source>&lt;b&gt;process 1 crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
@@ -135,6 +135,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>&lt;b&gt;Unknown error!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
         <translation>&lt;b&gt;Unbekannter Fehler!&lt;/b&gt;&lt;br/&gt;Dies könnte durch unzulässige Parameter oder Optionen verursacht worden sein.</translation>
+    </message>
+    <message>
+        <source>&quot;%1&quot;: Failed to start! No such program or command.
+</source>
+        <translation>&quot;%1&quot;: Start fehlgeschlagen! Unbekannter Befehl oder unbekanntes Programm.</translation>
     </message>
 </context>
 </TS>

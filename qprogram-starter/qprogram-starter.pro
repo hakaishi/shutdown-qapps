@@ -19,7 +19,7 @@ HEADERS = src/gui.h
 FORMS = src/ui/gui.ui
 SOURCES = src/main.cpp src/gui.cpp
 RESOURCES = ../qprogram-starter.qrc
-TRANSLATIONS = src/translations/qprogram-starter_de.ts
+TRANSLATIONS = src/translations/qprogram-starter-de.ts
 
 # install
 target.path = /usr/bin

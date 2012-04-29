@@ -32,7 +32,7 @@ int main (int argc, char *argv[]){
      //My translations
      QTranslator translator;
      QString trDir = "/usr/share/qprogram-starter/translations/";
-     translator.load(trDir + "qprogram-starter_" + QLocale::system().name());
+     translator.load(trDir + "qprogram-starter-" + QLocale::system().name());
      app.installTranslator(&translator);
 
      Gui window;

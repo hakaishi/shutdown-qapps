@@ -369,7 +369,8 @@ void Gui::message(){
                if(!errorLog1.open(QIODevice::Append))
                  return;
                QTextStream err1(&errorLog1);
-               err1 << "\"" << textEdit->toPlainText() << "\"" << tr(": Failed to start! No such program or command.\n");
+               err1 << tr("\"%1\": Failed to start! No such program or "
+                          "command.\n").arg(textEdit->toPlainText());
                errorLog1.close();
              }
 
@@ -378,7 +379,8 @@ void Gui::message(){
                if(!errorLog2.open(QIODevice::Append))
                  return;
                QTextStream err2(&errorLog2);
-               err2 << "\"" << textEdit2->toPlainText() << "\"" << tr(": Failed to start! No such program or command.\n");
+               err2 << tr("\"%1\": Failed to start! No such program or "
+                          "command.\n").arg(textEdit2->toPlainText());
                errorLog2.close();
              }
            }
