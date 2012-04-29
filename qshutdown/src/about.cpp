@@ -58,4 +58,4 @@ About::About(QWidget *parent): QDialog(parent){
      label->setPixmap(pixmap);
 }
 
-About::~About(){ delete icon; }
+About::~About(){ }

@@ -9,7 +9,7 @@ shutdown-qapps (1.6.4-1) unstable; urgency=low
       preferences and password dialogs
     - removed version text label from the main window
     - added version message to the statusbar
-    - simplyfied the creation of the config file
+    - simplified the creation of the config file
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 29 Apr 2012 22:00:00 +0200
 
