@@ -92,7 +92,7 @@
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
    <receiver>ChangePassword</receiver>
-   <slot>reject()</slot>
+   <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>316</x>
@@ -101,6 +101,22 @@
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ChangePassword</sender>
+   <signal>rejected()</signal>
+   <receiver>ChangePassword</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>131</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>131</x>
+     <y>74</y>
     </hint>
    </hints>
   </connection>

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>265</width>
-    <height>111</height>
+    <height>114</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -79,6 +79,22 @@
     <hint type="destinationlabel">
      <x>170</x>
      <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PassWord</sender>
+   <signal>rejected()</signal>
+   <receiver>PassWord</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>132</x>
+     <y>56</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>132</x>
+     <y>56</y>
     </hint>
    </hints>
   </connection>

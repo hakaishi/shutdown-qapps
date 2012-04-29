@@ -51,8 +51,6 @@ PassWord::PassWord(QWidget *parent): QDialog(parent){
      connect(passwdLineEdit, SIGNAL(returnPressed()), this, SLOT(checkPW()));
      connect(buttonBox, SIGNAL(accepted()), this, SLOT(checkPW()));
      connect(changePasswdButton, SIGNAL(clicked(bool)), chPW, SLOT(show()));
-     connect(this, SIGNAL(rejected()), passwdLineEdit, SLOT(clear()));
-     connect(this, SIGNAL(rejected()), this, SLOT(close()));
      connect(chPW, SIGNAL(updatePasswordGui()), this, SLOT(update()));
 }
 
@@ -85,6 +83,7 @@ void PassWord::showEvent(QShowEvent* show_pw){
 }
 
 void PassWord::closeEvent(QCloseEvent* close_pw){
+     passwdLineEdit->clear();
      isClosed = true;
      finishing();
      QWidget::closeEvent(close_pw);

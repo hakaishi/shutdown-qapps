@@ -18,7 +18,6 @@
 #define CH_PASSWD_H
 
 #include "ui_ch_passwd.h"
-
 #include <QMessageBox>
 #include <QSettings>
 
@@ -41,6 +40,9 @@ class ChangePassword : public QDialog, public Ui::ChangePassword {
      void checkOldPW();
      void checkNewPW();
      void savePW();
+
+    protected:
+     virtual void closeEvent(QCloseEvent* close_ch_pw);
 
 };
 

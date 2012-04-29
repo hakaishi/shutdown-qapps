@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="nds">
+<TS version="2.0" language="cs">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>O aplikaci qshutdown</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>Verze </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>O &amp;aplikaci</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation type="unfinished"></translation>
+        <translation>Podě&amp;kování</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
@@ -36,26 +36,26 @@
     <name>Calendar</name>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalendář</translation>
     </message>
 </context>
 <context>
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Změnit heslo</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Heslo znovu:</translation>
     </message>
     <message>
         <source>New password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nové heslo:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Původní heslo:</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
@@ -165,19 +165,19 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypnout</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Restartovat</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>Uspat do paměti</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Uspat na disk</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
@@ -197,7 +197,7 @@
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>R&amp;eset</source>
@@ -217,7 +217,7 @@
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Předvolby</translation>
     </message>
     <message>
         <source>&amp;Shutdown</source>
@@ -241,7 +241,7 @@
     </message>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalendář</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -257,7 +257,7 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>O &amp;aplikaci</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
@@ -297,7 +297,7 @@
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>Verze </translation>
     </message>
 </context>
 <context>
@@ -342,7 +342,7 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypnout</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
@@ -378,15 +378,15 @@
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Restartovat</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>Uspat do paměti</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Uspat na disk</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>

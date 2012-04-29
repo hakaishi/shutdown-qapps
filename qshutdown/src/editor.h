@@ -18,7 +18,6 @@
 #define EDITOR_H
 
 #include "ui_editor.h"
-
 #include <QFile>
 #include <QSettings>
 

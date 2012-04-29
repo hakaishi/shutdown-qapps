@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="nds">
+<TS version="2.0" language="mr">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>qshutdown विषयी</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>आवृत्ती </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>विषयी (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation type="unfinished"></translation>
+        <translation>यांस धन्यावद (&amp;T)</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
@@ -36,14 +36,14 @@
     <name>Calendar</name>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>दिनदर्शिका</translation>
     </message>
 </context>
 <context>
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation type="unfinished"></translation>
+        <translation>परवलीचा शब्द बदला</translation>
     </message>
     <message>
         <source>Retype password:</source>
@@ -51,11 +51,11 @@
     </message>
     <message>
         <source>New password:</source>
-        <translation type="unfinished"></translation>
+        <translation>नवीन परवलीचा शब्द:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation type="unfinished"></translation>
+        <translation>जुना परवलीचा शब्द:</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
@@ -70,7 +70,7 @@
     <name>Editor</name>
     <message>
         <source>Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>संपादक</translation>
     </message>
 </context>
 <context>
@@ -97,87 +97,87 @@
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रलंबित वेळ:</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रलंबित करण्यापूर्वीची मिनिटे:</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>विश्रांतीची वेळ:</translation>
     </message>
     <message>
         <source>Minutes till hibernate:</source>
-        <translation type="unfinished"></translation>
+        <translation>विश्रांतीपुर्वीची मिनिटे:</translation>
     </message>
     <message>
         <source>shutdown in </source>
-        <translation type="unfinished"></translation>
+        <translation>बंद करा </translation>
     </message>
     <message>
         <source>reboot in </source>
-        <translation type="unfinished"></translation>
+        <translation>पुन्हा चालू करा </translation>
     </message>
     <message>
         <source>suspend in </source>
-        <translation type="unfinished"></translation>
+        <translation>प्रलंबित करा </translation>
     </message>
     <message>
         <source>hibernate in </source>
-        <translation type="unfinished"></translation>
+        <translation>विश्रांती द्या </translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished"></translation>
+        <translation>वर्षे</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished"></translation>
+        <translation>महिने</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>तास</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>दिवस</translation>
     </message>
     <message>
         <source>Res&amp;tore</source>
-        <translation type="unfinished"></translation>
+        <translation>पुनःस्थितीत आणा (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>लहान करा (&amp;M)</translation>
     </message>
     <message>
         <source>day</source>
-        <translation type="unfinished"></translation>
+        <translation>दिवस</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>मिनिटे</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>सेकंद</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>बंद करा</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>पुन्हा चालू करा</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रलंबित करा</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>विश्रांती द्या</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
@@ -185,31 +185,31 @@
     </message>
     <message>
         <source>&amp;Warnings on?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">सूचना चालू ? (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
-        <translation type="unfinished"></translation>
+        <translation>आत्ता ! (&amp;N)</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>तुम्ही दिनदिर्शिकेत तारीख नोंदवू शकता</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>ठिक आहे (&amp;O)</translation>
     </message>
     <message>
         <source>R&amp;eset</source>
-        <translation type="unfinished"></translation>
+        <translation>पुनःस्थितीत आणा (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>बाहेर पडा (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Info</source>
-        <translation type="unfinished"></translation>
+        <translation>माहिती (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Logfile</source>
@@ -221,19 +221,19 @@
     </message>
     <message>
         <source>&amp;Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>बंद करा (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>पुन्हा चालू करा (&amp;R)</translation>
     </message>
     <message>
         <source>S&amp;uspend</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रलंबित करा (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>विश्रांती द्या (&amp;H)</translation>
     </message>
     <message>
         <source>Lock settings after countdown started</source>
@@ -241,31 +241,31 @@
     </message>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>दिनदर्शिका</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>फाइल (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>मदत (&amp;H)</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>संयोजना (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>विषयी (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>पुनःस्थापन (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>मांडणी करा (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Keep proportions</source>
@@ -273,7 +273,7 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>चेतावणी</translation>
     </message>
     <message>
         <source>Action imminent!</source>
@@ -281,7 +281,7 @@
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>माहिती</translation>
     </message>
     <message>
         <source>Countdown is not running!</source>
@@ -297,14 +297,14 @@
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>आवृत्ती </translation>
     </message>
 </context>
 <context>
     <name>Info</name>
     <message>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>माहिती</translation>
     </message>
 </context>
 <context>
@@ -342,7 +342,7 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>बंद करा</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
@@ -378,15 +378,15 @@
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>पुन्हा चालू करा</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रलंबित करा</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>विश्रांती द्या</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="nds">
+<TS version="2.0" language="tr">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>qshutdown hakkında</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>Sürüm </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Hakkında</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Teşekkürler</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
@@ -36,148 +36,148 @@
     <name>Calendar</name>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>Takvim</translation>
     </message>
 </context>
 <context>
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Açarsözü Değiştir</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Açarsözü yeniden girin:</translation>
     </message>
     <message>
         <source>New password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni açarsöz:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eski açarsöz:</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanılan açarsöz doğru değil!</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeniden yazılan açarsöz uyuşmuyor!</translation>
     </message>
 </context>
 <context>
     <name>Editor</name>
     <message>
         <source>Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Düzenleyici</translation>
     </message>
 </context>
 <context>
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Küçült!</translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapanma zamânı:</translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapatmaya kalan dakîka:</translation>
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeniden başlatma zamânı:</translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeniden başlatmaya kalan dakîka:</translation>
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyku zamânı:</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation type="unfinished"></translation>
+        <translation>Uykuya kalan dakîka:</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Derin uyku zamânı:</translation>
     </message>
     <message>
         <source>Minutes till hibernate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Derin uykuya kalan dakîka:</translation>
     </message>
     <message>
         <source>shutdown in </source>
-        <translation type="unfinished"></translation>
+        <translation>kapanıyor </translation>
     </message>
     <message>
         <source>reboot in </source>
-        <translation type="unfinished"></translation>
+        <translation>yeniden başlatılıyor </translation>
     </message>
     <message>
         <source>suspend in </source>
-        <translation type="unfinished"></translation>
+        <translation>uykuya geçiyor </translation>
     </message>
     <message>
         <source>hibernate in </source>
-        <translation type="unfinished"></translation>
+        <translation>derin uykuya geçiyor </translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished"></translation>
+        <translation>yıl</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished"></translation>
+        <translation>ay</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>saat</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>gün</translation>
     </message>
     <message>
         <source>Res&amp;tore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Geri Yükle</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Küçült</translation>
     </message>
     <message>
         <source>day</source>
-        <translation type="unfinished"></translation>
+        <translation>gün</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>dakîka</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>sâniye</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgisayarı Kapat</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeniden Başlat</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyku</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Derin Uyku</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
@@ -189,212 +189,212 @@
     </message>
     <message>
         <source>&amp;Now!</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Şimdi!</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>Takvimden bir târih seçebilirsiniz</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tamam</translation>
     </message>
     <message>
         <source>R&amp;eset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sıfırla</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Çıkış</translation>
     </message>
     <message>
         <source>&amp;Info</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bilgi</translation>
     </message>
     <message>
         <source>&amp;Logfile</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Kayıt dosyası</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tercihler</translation>
     </message>
     <message>
         <source>&amp;Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bilgisayarı Kapat</translation>
     </message>
     <message>
         <source>&amp;Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Yeniden Başlat</translation>
     </message>
     <message>
         <source>S&amp;uspend</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Uyku</translation>
     </message>
     <message>
         <source>&amp;Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Derin Uyku</translation>
     </message>
     <message>
         <source>Lock settings after countdown started</source>
-        <translation type="unfinished"></translation>
+        <translation>Geri sayım başladıktan sonra ayarları kilitle</translation>
     </message>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>Takvim</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dosya</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Yardım</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ayarlar</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Hakkında</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sıfırla</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Yapılandır</translation>
     </message>
     <message>
         <source>&amp;Keep proportions</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ana pencere orantılarını sâbit tut</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Action imminent!</source>
-        <translation type="unfinished"></translation>
+        <translation>Az kaldı!</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgilendirme</translation>
     </message>
     <message>
         <source>Countdown is not running!</source>
-        <translation type="unfinished"></translation>
+        <translation>Geri sayım başlatılmadı!</translation>
     </message>
     <message>
         <source>Turns on/off all warnings</source>
-        <translation type="unfinished"></translation>
+        <translation>Bütün uyarıları açar/kapatır</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Qt Hakkında</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>Sürüm </translation>
     </message>
 </context>
 <context>
     <name>Info</name>
     <message>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgi</translation>
     </message>
 </context>
 <context>
     <name>PassWord</name>
     <message>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Açarsöz</translation>
     </message>
     <message>
         <source>&amp;Set password</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Açarsöz belirle</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Açarsöz:</translation>
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation type="unfinished"></translation>
+        <translation>Açarsöz yanlış!</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Açarsözü değiştir</translation>
     </message>
 </context>
 <context>
     <name>Preferences</name>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Tercihler</translation>
     </message>
     <message>
         <source>Enable the &amp;target time at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Hedef zamânı başlangıçta etkinleştir</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilgisayarı Kapat</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapatma türü:</translation>
     </message>
     <message>
         <source>Target time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hedef zaman:</translation>
     </message>
     <message>
         <source>Minutes to countdown:</source>
-        <translation type="unfinished"></translation>
+        <translation>Geri sayıma kalan dakîka:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazıbiçimi:</translation>
     </message>
     <message>
         <source>Font size 1:</source>
-        <translation type="unfinished"></translation>
+        <translation>1. yazıbiçimi boyutu:</translation>
     </message>
     <message>
         <source>Font size 2:</source>
-        <translation type="unfinished"></translation>
+        <translation>2. yazıbiçimi boyutu:</translation>
     </message>
     <message>
         <source>Font size 3:</source>
-        <translation type="unfinished"></translation>
+        <translation>3. yazıbiçimi boyutu:</translation>
     </message>
     <message>
         <source>Size for log file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kayıt dosyası boyutu:</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeniden Başlat</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyku</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Derin Uyku</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Özişler Başlat</translation>
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;qshutdown&apos;ı başlangıçta gizle</translation>
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>

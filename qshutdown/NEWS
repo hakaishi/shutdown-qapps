@@ -1,8 +1,15 @@
 Changes in Release 1.6.4
 =========================
 
- - new (bigger) qshutdown symbol
+ - new (and bigger) qshutdown symbol
  - many new translations
+ - fix for intern reset: now independent from QTimer
+ - fix for not keeping proportions at startup
+ - fix for discarding changes and passwords when escaping
+   preferences and password dialogs
+ - removed version text label from the main window
+ - added version text message to the statusbar
+ - simplyfied the creation of the config file
 
 Changes in Release 1.6.3
 =========================

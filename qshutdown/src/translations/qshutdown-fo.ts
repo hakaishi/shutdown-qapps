@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="nds">
+<TS version="2.0" language="fo">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Um qshutdown</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>Útgáva </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Um</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Takk til</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Brúkar Qt&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
@@ -36,18 +36,18 @@
     <name>Calendar</name>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalendari</translation>
     </message>
 </context>
 <context>
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Broytt loyniorð</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Endurskriva loyniorð:</translation>
     </message>
     <message>
         <source>New password:</source>
@@ -241,7 +241,7 @@
     </message>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalendari</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -257,7 +257,7 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Um</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
@@ -297,7 +297,7 @@
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>Útgáva </translation>
     </message>
 </context>
 <context>

@@ -30,6 +30,15 @@ Gui::Gui(){
 
      setupUi(this);
 
+   //Seconds won't be recognized, thus removing them (just in case).
+     QString timeEditFormat;
+     timeEditFormat = timeEdit->displayFormat();
+     if(timeEditFormat.contains(":ss"))
+       timeEditFormat.replace(QString(":ss"), QString(""));
+     if(timeEditFormat.contains(":s"))
+       timeEditFormat.replace(QString(":s"), QString(""));
+     timeEdit->setDisplayFormat(timeEditFormat);
+
      timeRunning = false;
      logFileSize = 1.5;
 
@@ -55,9 +64,20 @@ Gui::Gui(){
      QFile versionFile(":version");
      versionFile.open(QIODevice::ReadOnly | QIODevice::Text);
      QTextStream in(&versionFile);
-     QString string = in.readLine();
-     version->setText(tr("Version ") + string);
+     statusBar()->showMessage(tr("Version ") + in.readLine(),15000);
      versionFile.close();
+
+/* //Parental lock label for the statusbar
+     parentalLockL = new QLabel(tr("locked"));
+     parentalLockL->setFrameShape(QFrame::Box);
+     parentalLockL->setFrameShadow(QFrame::Sunken);
+     parentalLockL->setToolTip(tr("Parental lock is activated"));
+
+   //Custom mode label for the statusbar
+     customL = new QLabel(tr("custom"));
+     customL->setFrameShape(QFrame::Box);
+     customL->setFrameShadow(QFrame::Sunken);
+     customL->setToolTip(tr("Using user defined command"));*/
 
    //About
      about = new About(this);
@@ -189,7 +209,13 @@ Gui::Gui(){
      connect(actionKeep_window_proportions, SIGNAL(toggled(bool)), this, SLOT(staticProportions(bool)));
 }
 
-Gui::~Gui(){ delete font1; delete font2; delete font3; }
+Gui::~Gui(){
+     delete font1;
+     delete font2;
+     delete font3;
+//     delete parentalLockL;
+//     delete customL;
+}
 
 void Gui::showEvent(QShowEvent* show_window){
      minimize_restore_action->setText(tr("&Minimize"));
@@ -486,6 +512,17 @@ void Gui::set(){
        reset_action->setEnabled(true);
        action_Reset->setEnabled(true);
      }
+
+/*   if((comboBox->currentIndex() == 0 && pref->shutdownM->currentIndex() == 6)
+        || (comboBox->currentIndex() == 1 && pref->rebootM->currentIndex() == 6)
+        || (comboBox->currentIndex() == 2 && pref->suspendM->currentIndex() == 5)
+        || (comboBox->currentIndex() == 3 && pref->hibernateM->currentIndex() == 5)){
+       if(!customL->isVisible())
+         customL->show();
+       statusBar()->addPermanentWidget(customL);
+     }
+     else
+       statusBar()->removeWidget(customL);*/
 }
 
 void Gui::Time(){
@@ -509,8 +546,8 @@ void Gui::saveLog(){
    #endif //Q_OS_WIN32
      QSettings settings(file, QSettings::IniFormat);
 
-     settings.setValue("MainWindow/size", size());
-     settings.setValue("MainWindow/keep_proportions", actionKeep_window_proportions->isChecked());
+     settings.setValue("MainWindow/size",size());
+     settings.setValue("MainWindow/keep_proportions",actionKeep_window_proportions->isChecked());
 
      if(log_action->isChecked()){ //if logfile is set in the icon contextmenu
      #ifdef Q_OS_WIN32
@@ -529,7 +566,7 @@ void Gui::saveLog(){
        while(!logfile.atEnd())
          out.readLine();
        out << "[" << datetime.toString("yyyy.MM.dd hh:mm") << "] "
-           << 1/(60000.0/elapsedTime.elapsed()) << " Minutes uptime\n";
+           << 1/(60000.0/elapsedTime.elapsed()) << " minutes uptime\n";
        logfile.close();
 
 /******* if log.txt is bigger than set in preferences, delete first line *******/
@@ -553,6 +590,8 @@ void Gui::saveLog(){
 }
 
 void Gui::finished_(){
+     if(!pref->quitAfterCountdown->isChecked())
+       reset();
      switch(comboBox->currentIndex()){
        case 0:
          if(pref->shutdownM->currentIndex()==0) { Power::automatic = true; }
@@ -612,8 +651,6 @@ void Gui::finished_(){
      }
      if(pref->quitAfterCountdown->isChecked())
        qApp->quit();
-     else
-       reset();
 }
 
 void Gui::hideEvent(QHideEvent* window_hide){
@@ -651,38 +688,19 @@ void Gui::loadSettings(){
        myOutput << "W: qshutdown.conf is not writable!" << endl;
      }
 
-     if(!QFile::exists(file)){
-       settings.setValue("Lock_all", false);
-       settings.setValue("Quit_on_close", false);
-       settings.setValue("Time/time_hour", 22);
-       settings.setValue("Time/time_minute", 00);
-       settings.setValue("Time/countdown_minutes", 60);
-       settings.setValue("Time/countdown_at_startup", false);
-       settings.setValue("Hide_at_startup", false);
-       settings.setValue("MainWindow/size", QSize(290, 280));
-       settings.setValue("MainWindow/keep_proportions", true);
-       settings.setValue("Fonts/font_type", "Times New Roman");
-       settings.setValue("Fonts/font1", 13);
-       settings.setValue("Fonts/font2", 18);
-       settings.setValue("Fonts/font3", 11);
-       settings.setValue("CheckBoxes/target_time", false);
-       settings.setValue("CheckBoxes/countdown", true);
-       settings.setValue("CheckBoxes/lock", true);
-       settings.setValue("CheckBoxes/warnings", true);
-       settings.setValue("Power/comboBox", 0);
-       settings.setValue("Logfile/logging", false);
-       settings.setValue("Logfile/size", 1.5);
-       settings.setValue("Lock_screen", true);
-      #ifndef Q_OS_WIN32
-       QFile autostartFile(QDir::homePath() + "/.config/autostart/qshutdown.desktop");
-       if(autostartFile.exists())
-         settings.setValue("Autostart", true);
-       else
-         settings.setValue("Autostart", false);
-      #endif
-     }
+     if(!settings.contains("Lock_all"))
+       settings.setValue("Lock_all",false);
+     if(!settings.contains("MainWindow/keep_proportions"))
+       settings.setValue("MainWindow/keep_proportions",true);
+    #ifndef Q_OS_WIN32
+     QFile autostartFile(QDir::homePath() + "/.config/autostart/qshutdown.desktop");
+     if(autostartFile.exists())
+       settings.setValue("Autostart",true);
      else
-       pref->autostartFile();
+       settings.setValue("Autostart",false);
+    #endif
+
+     pref->autostartFile();
 
 
 /***************** read files entries *****************/
@@ -711,6 +729,8 @@ void Gui::loadSettings(){
        if(settings.value("Hide_at_startup",false).toBool())
          QTimer::singleShot(2000, this, SLOT(hide()));
      }
+
+     staticProportions(settings.value("MainWindow/keep_proportions",true).toBool());
 
      lockEverything(settings.value("Lock_all",false).toBool());
 
@@ -787,8 +807,17 @@ void Gui::lockEverything(bool actual){
        reset_action->setDisabled(true);
        action_Reset->setDisabled(true);
      }
+
+/*   if(actual){
+       if(!parentalLockL->isVisible())
+         parentalLockL->show();
+       statusBar()->addPermanentWidget(parentalLockL);
+     }
+     if(!actual && parentalLockL->isVisible())
+       statusBar()->removeWidget(parentalLockL);*/
 }
 void Gui::reset(){
+     timer->stop();
      setWindowTitle("'qshutdown'");
      toolButton->setText("Calendar");
      lcd->display(0);
@@ -797,7 +826,6 @@ void Gui::reset(){
      cal->setCalendarDate = QDate();
      cal->calendarDate = QDate();
      showNormal();
-     timer->stop();
      if(!ti->isActive())
        ti->start(30000);
      timeRunning = false;
@@ -809,6 +837,7 @@ void Gui::reset(){
      else loadSettings();
      action_Reset->setDisabled(true);
      reset_action->setDisabled(true);
+     //statusBar()->removeWidget(customL);
 }
 
 void Gui::getFonts(){

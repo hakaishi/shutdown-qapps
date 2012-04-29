@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.0" language="ja">
 <context>
     <name>About</name>
     <message>
@@ -109,7 +109,7 @@
     </message>
     <message>
         <source>Minutes till hibernate:</source>
-        <translation>ハイバネーションまで、何分:</translation>
+        <translation>ハイバネーションまでの分数:</translation>
     </message>
     <message>
         <source>shutdown in </source>
@@ -125,7 +125,7 @@
     </message>
     <message>
         <source>hibernate in </source>
-        <translation type="unfinished"></translation>
+        <translation>ハイバネーションまで </translation>
     </message>
     <message>
         <source>years</source>
@@ -164,10 +164,6 @@
         <translation>秒</translation>
     </message>
     <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation>シャットダウン</translation>
     </message>
@@ -181,7 +177,7 @@
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>ハイバネーション</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
@@ -190,10 +186,6 @@
     <message>
         <source>&amp;Warnings on?</source>
         <translation>警告をオンにする？(&amp;W)</translation>
-    </message>
-    <message>
-        <source>Minutes</source>
-        <translation>分</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -241,7 +233,7 @@
     </message>
     <message>
         <source>&amp;Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>ハイバネーション(&amp;H)</translation>
     </message>
     <message>
         <source>Lock settings after countdown started</source>
@@ -285,7 +277,7 @@
     </message>
     <message>
         <source>Action imminent!</source>
-        <translation type="unfinished"></translation>
+        <translation>後わずか!</translation>
     </message>
     <message>
         <source>Information</source>
@@ -358,7 +350,7 @@
     </message>
     <message>
         <source>Target time:</source>
-        <translation type="unfinished"></translation>
+        <translation>目標時間：</translation>
     </message>
     <message>
         <source>Minutes to countdown:</source>
@@ -394,7 +386,7 @@
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>ハイバネーション</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
@@ -509,18 +501,6 @@ quit instead.</source>
         <translation>自動的</translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation>HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
         <translation type="unfinished"></translation>
     </message>
@@ -529,20 +509,8 @@ quit instead.</source>
         <translation>ハイバネーションの方法：</translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation>シャットダウンの方法：</translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation>UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -588,7 +556,7 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
+&quot;Start countdown&quot; is checked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

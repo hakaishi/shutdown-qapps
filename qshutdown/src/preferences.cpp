@@ -64,15 +64,16 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      connect(font2Spin, SIGNAL(valueChanged(int)), this, SLOT(fontSize2Changed(int)));
      connect(font3Spin, SIGNAL(valueChanged(int)), this, SLOT(fontSize3Changed(int)));
      connect(fontComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(fontChanged(QString)));
-     connect(buttonBox, SIGNAL(rejected()), this, SLOT(resetFont()));
      connect(confEditButton, SIGNAL(clicked(bool)), this, SIGNAL(editConf()));
-     connect(this, SIGNAL(rejected()), this, SLOT(close()));
      connect(shutdownM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef1()));
      connect(rebootM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef2()));
      connect(suspendM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef3()));
      connect(hibernateM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef4()));
 
      loadSettings();
+
+     if(!QFile::exists(file))
+       saveToConfFile();
 
      if(userDef1->isEnabled())
        myShutdown = userDef1->toPlainText();
@@ -198,39 +199,39 @@ void Preferences::loadSettings(){
      hibernateM->setCurrentIndex(settings->value("Methods/hibernate",0).toInt());
      userDef4->setPlainText(settings->value("Methods/myHibernate",userDef4S).toString());
      lockMyScreen = settings->value("Lock_screen").toBool();
-     quitAfterCountdown->setChecked(settings->value("Quit_after_countdown_ended", false).toBool());
+     quitAfterCountdown->setChecked(settings->value("Quit_after_countdown_ended",false).toBool());
 }
 
 void Preferences::saveToConfFile(){
      if(settings->isWritable()){
-       settings->setValue("Power/comboBox", comboBox->currentIndex());
-       settings->setValue("Time/time_hour", timeEdit->time().hour());
-       settings->setValue("Time/time_minute", timeEdit->time().minute());
-       settings->setValue("Quit_on_close", stopHide->isChecked());
-       settings->setValue("Time/countdown_at_startup", countdown->isChecked());
-       settings->setValue("Hide_at_startup", hideMe->isChecked());
-       settings->setValue("Time/countdown_minutes", spin->value());
-       settings->setValue("Fonts/font_type", fontComboBox->currentText());
-       settings->setValue("Fonts/font1", font1Spin->value());
-       settings->setValue("Fonts/font2", font2Spin->value());
-       settings->setValue("Fonts/font3", font3Spin->value());
-       settings->setValue("Logfile/size", spinBox->value());
-       settings->setValue("CheckBoxes/target_time", radio1->isChecked());
-       settings->setValue("CheckBoxes/countdown", radio2->isChecked());
-       settings->setValue("CheckBoxes/lock", lock->isChecked());
-       settings->setValue("CheckBoxes/warnings", warn->isChecked());
-       settings->setValue("Logfile/logging", log->isChecked());
-       settings->setValue("Lock_screen", lockS->isChecked());
-       settings->setValue("Autostart", autostart->isChecked());
-       settings->setValue("Methods/shutdown", shutdownM->currentIndex());
-       settings->setValue("Methods/myShutdown", userDef1->toPlainText());
-       settings->setValue("Methods/reboot", rebootM->currentIndex());
-       settings->setValue("Methods/myReboot", userDef2->toPlainText());
-       settings->setValue("Methods/suspend", suspendM->currentIndex());
-       settings->setValue("Methods/mySuspend", userDef3->toPlainText());
-       settings->setValue("Methods/hibernate", hibernateM->currentIndex());
-       settings->setValue("Methods/myHibernate", userDef4->toPlainText());
-       settings->setValue("Quit_after_countdown_ended", quitAfterCountdown->isChecked());
+       settings->setValue("Power/comboBox",comboBox->currentIndex());
+       settings->setValue("Time/time_hour",timeEdit->time().hour());
+       settings->setValue("Time/time_minute",timeEdit->time().minute());
+       settings->setValue("Quit_on_close",stopHide->isChecked());
+       settings->setValue("Time/countdown_at_startup",countdown->isChecked());
+       settings->setValue("Hide_at_startup",hideMe->isChecked());
+       settings->setValue("Time/countdown_minutes",spin->value());
+       settings->setValue("Fonts/font_type",fontComboBox->currentText());
+       settings->setValue("Fonts/font1",font1Spin->value());
+       settings->setValue("Fonts/font2",font2Spin->value());
+       settings->setValue("Fonts/font3",font3Spin->value());
+       settings->setValue("Logfile/size",spinBox->value());
+       settings->setValue("CheckBoxes/target_time",radio1->isChecked());
+       settings->setValue("CheckBoxes/countdown",radio2->isChecked());
+       settings->setValue("CheckBoxes/lock",lock->isChecked());
+       settings->setValue("CheckBoxes/warnings",warn->isChecked());
+       settings->setValue("Logfile/logging",log->isChecked());
+       settings->setValue("Lock_screen",lockS->isChecked());
+       settings->setValue("Autostart",autostart->isChecked());
+       settings->setValue("Methods/shutdown",shutdownM->currentIndex());
+       settings->setValue("Methods/myShutdown",userDef1->toPlainText());
+       settings->setValue("Methods/reboot",rebootM->currentIndex());
+       settings->setValue("Methods/myReboot",userDef2->toPlainText());
+       settings->setValue("Methods/suspend",suspendM->currentIndex());
+       settings->setValue("Methods/mySuspend",userDef3->toPlainText());
+       settings->setValue("Methods/hibernate",hibernateM->currentIndex());
+       settings->setValue("Methods/myHibernate",userDef4->toPlainText());
+       settings->setValue("Quit_after_countdown_ended",quitAfterCountdown->isChecked());
      }
      autostartFile(); //to create or to delete the autostart file
      lockScreen();    //set lockMyScreen to true or false according to lockS
@@ -247,6 +248,8 @@ void Preferences::saveToConfFile(){
      if(userDef4->isEnabled())
        myHibernate = userDef4->toPlainText();
      else mySuspend = "";
+
+     this->close();
 }
 
 void Preferences::resetSettings(){
@@ -284,7 +287,8 @@ void Preferences::closeEvent(QCloseEvent* close_pref){
      isClosed = true;
      finishing(); //sends SIGNAL finishing()
      if(settings->isWritable())
-       settings->setValue("PrefWindowSize/size", size());
+       settings->setValue("PrefWindowSize/size",size());
+     resetFont();
      QWidget::closeEvent(close_pref);
 }
 

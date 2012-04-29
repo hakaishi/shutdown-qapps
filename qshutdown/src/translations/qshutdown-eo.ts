@@ -164,10 +164,6 @@
         <translation>sekundoj</translation>
     </message>
     <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation>Elŝalti</translation>
     </message>
@@ -190,10 +186,6 @@
     <message>
         <source>&amp;Warnings on?</source>
         <translation>Ĉu enŝalti a&amp;vertojn?</translation>
-    </message>
-    <message>
-        <source>Minutes</source>
-        <translation>Minutoj</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -509,18 +501,6 @@ quit instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation>HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
         <translation type="unfinished"></translation>
     </message>
@@ -529,20 +509,8 @@ quit instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation>UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -588,7 +556,7 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
+&quot;Start countdown&quot; is checked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="he_IL">
+<TS version="2.0" language="he">
 <context>
     <name>About</name>
     <message>
@@ -25,7 +25,7 @@
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;html dir=&quot;rtl&quot;&gt;&lt;p&gt;תודות מיוחדות לאנשים הבאים:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;Fabian Deuchler על עזרה פה ושם.&lt;/p&gt;&lt;p&gt;ול־ Brian Nelson על הטיפול בהעלאות לדביאן.&lt;/p&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html dir=&quot;rtl&quot;&gt;&lt;p&gt;תודות מיוחדות לאנשים הבאים:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;Fabian Deuchler על עזרה פה ושם.&lt;/p&gt;&lt;p&gt;ל־ Brian Nelson על הטיפול בהעלאות לדביאן.&lt;/p&gt;&lt;p&gt;ולמתרגם: ירון שהרבני&lt;/p&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
@@ -164,10 +164,6 @@
         <translation>שניות</translation>
     </message>
     <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation>כיבוי</translation>
     </message>
@@ -190,10 +186,6 @@
     <message>
         <source>&amp;Warnings on?</source>
         <translation>לה&amp;פעיל את האזהרות?</translation>
-    </message>
-    <message>
-        <source>Minutes</source>
-        <translation>דקות</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -480,13 +472,13 @@ default at startup?</source>
         <source>Set if the checkbox for &quot;Lock after start?&quot;
 should be checked by default at startup</source>
         <translation>הגדרה האם תיבת הסימון „נעילה לאחר ההפעלה?“
-אמור להיות מסומנת בהתחלה כבררת מחדל.</translation>
+אמור להיות מסומנת בהתחלה כבררת מחדל</translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Warnings on?&quot;
 should be checked by default at startup</source>
         <translation>הגדרה האם תיבת הסימון „אזהרות פעילות?“
-אמור להיות מסומנת בהתחלה כבררת מחדל.</translation>
+אמור להיות מסומנת בהתחלה כבררת מחדל</translation>
     </message>
     <message>
         <source>The close button usually hides the main window.
@@ -517,18 +509,6 @@ quit instead.</source>
         <translation>אוטומטית</translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation>HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
         <translation>בהגדרות המשתמש</translation>
     </message>
@@ -537,20 +517,8 @@ quit instead.</source>
         <translation>שיטת התרדמת:</translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation>שיטת הכיבוי:</translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation>UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -598,9 +566,9 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
-        <translation>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</translation>
+&quot;Start countdown&quot; is checked</source>
+        <translation>«قوزغالغاندا countdown نى قوزغات» تاللانغان بولسا
+قوزغالغاندا qshutdown نى يوشۇر</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!

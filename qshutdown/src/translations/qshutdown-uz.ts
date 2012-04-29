@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="uz_UZ">
+<TS version="2.0" language="uz">
 <context>
     <name>About</name>
     <message>
@@ -164,10 +164,6 @@
         <translation>сониялар</translation>
     </message>
     <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation>Ўчириш</translation>
     </message>
@@ -190,10 +186,6 @@
     <message>
         <source>&amp;Warnings on?</source>
         <translation>&amp;Огоҳлантирилсинми?</translation>
-    </message>
-    <message>
-        <source>Minutes</source>
-        <translation>Дақиқалар</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -516,44 +508,20 @@ quit instead.</source>
         <translation>автоматик</translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation>HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
-        <translation type="unfinished"></translation>
+        <translation>аниқ фойдаланувчи</translation>
     </message>
     <message>
         <source>Hibernate method:</source>
         <translation>Уйқуга кетиш усули:</translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation>Ўчириш усули:</translation>
     </message>
     <message>
-        <source>UPower</source>
-        <translation>UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
-    </message>
-    <message>
         <source>Reboot method:</source>
-        <translation>Ўчириб-ёқиш усули</translation>
+        <translation>Ўчириб-ёқиш усули:</translation>
     </message>
     <message>
         <source>Please input an user specified command for suspend here</source>
@@ -583,7 +551,10 @@ quit instead.</source>
         <source>Some systems block for example the shutdown
 because qshutdown is still running. Set a hook if
 qshutdown should quit after the countdown ended.</source>
-        <translation type="unfinished"></translation>
+        <translation>Баъзи тизим блокланган, масалан, ўчириш,
+чунки qshutdown ҳалигача ишламоқда. Агар тескари
+ҳисоб тугагандан сўнг  qshutdown`дан чиқиш керак бўлса,
+унга &quot;тўғри&quot; белгисини белгиланг.</translation>
     </message>
     <message>
         <source>Quit qshutdown after countdown ended?</source>
@@ -595,9 +566,9 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
+&quot;Start countdown&quot; is checked</source>
         <translation>&quot;Тескари ҳисоб вақти ишга тушганда&quot; текширилса,
-qshutdown ишга тушиш вақтида яширилсин.</translation>
+qshutdown ишга тушиш вақтида яширилсин</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!

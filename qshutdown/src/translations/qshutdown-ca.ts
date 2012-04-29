@@ -164,10 +164,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation type="unfinished"></translation>
     </message>
@@ -189,10 +185,6 @@
     </message>
     <message>
         <source>&amp;Warnings on?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Minutes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -323,7 +315,7 @@
     </message>
     <message>
         <source>&amp;Set password</source>
-        <translation type="unfinished"></translation>
+        <translation>Po&amp;sa contrasenya</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -346,7 +338,7 @@
     </message>
     <message>
         <source>Enable the &amp;target time at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Ac&amp;tiva el temps objectiu a l&apos;inici</translation>
     </message>
     <message>
         <source>Shutdown</source>
@@ -402,11 +394,11 @@
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Ama&amp;ga qshutdown a l&apos;inici</translation>
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Bloque&amp;ja la pantalla per suspendre i hibernar</translation>
     </message>
     <message>
         <source>&amp;Edit configuration file</source>
@@ -414,11 +406,11 @@
     </message>
     <message>
         <source>Enable the minute &amp;countdown at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Activa el minut del &amp;compte enrere a l&apos;inici</translation>
     </message>
     <message>
         <source>&amp;Reset settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Reinicia els paràmetres</translation>
     </message>
     <message>
         <source>Size for log file in KB</source>
@@ -426,11 +418,11 @@
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;B&amp;loqueja desprès d&apos;iniciar?&quot;</translation>
     </message>
     <message>
         <source>&quot;&amp;Warnings on?&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Ad&amp;vertències activades?&quot;</translation>
     </message>
     <message>
         <source>Log start time of qshutdown and how long
@@ -509,18 +501,6 @@ quit instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation>HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
         <translation type="unfinished"></translation>
     </message>
@@ -529,20 +509,8 @@ quit instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation>UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -587,13 +555,13 @@ qshutdown should quit after the countdown ended.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
+        <source>The File &quot;%1&quot; is not writable!
+Maybe you just don&apos;t have the permissions to do so.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The File &quot;%1&quot; is not writable!
-Maybe you just don&apos;t have the permissions to do so.</source>
+        <source>Hide qshutdown at startup if
+&quot;Start countdown&quot; is checked</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

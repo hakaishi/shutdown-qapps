@@ -87,8 +87,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>383</width>
-            <height>514</height>
+            <width>371</width>
+            <height>521</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -391,7 +391,7 @@ should be checked by default at startup</string>
                </property>
                <property name="toolTip">
                 <string>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</string>
+&quot;Start countdown&quot; is checked</string>
                </property>
                <property name="text">
                 <string>&amp;Hide qshutdown at startup</string>
@@ -448,17 +448,17 @@ it was running</string>
          </item>
          <item>
           <property name="text">
-           <string>HAL</string>
+           <string notr="true">HAL</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>ConsoleKit</string>
+           <string notr="true">ConsoleKit</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>sudo shutdown -P</string>
+           <string notr="true">sudo shutdown -P</string>
           </property>
          </item>
          <item>
@@ -504,17 +504,17 @@ it was running</string>
          </item>
          <item>
           <property name="text">
-           <string>HAL</string>
+           <string notr="true">HAL</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>ConsoleKit</string>
+           <string notr="true">ConsoleKit</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>sudo shutdown -r</string>
+           <string notr="true">sudo shutdown -r</string>
           </property>
          </item>
          <item>
@@ -552,17 +552,17 @@ it was running</string>
          </item>
          <item>
           <property name="text">
-           <string>HAL</string>
+           <string notr="true">HAL</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>UPower</string>
+           <string notr="true">UPower</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>DeviceKit</string>
+           <string notr="true">DeviceKit</string>
           </property>
          </item>
          <item>
@@ -599,17 +599,17 @@ it was running</string>
          </item>
          <item>
           <property name="text">
-           <string>HAL</string>
+           <string notr="true">HAL</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>UPower</string>
+           <string notr="true">UPower</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>DeviceKit</string>
+           <string notr="true">DeviceKit</string>
           </property>
          </item>
          <item>
@@ -675,22 +675,6 @@ qshutdown should quit after the countdown ended.</string>
  <connections>
   <connection>
    <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>Preferences</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>400</x>
-     <y>631</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
    <signal>rejected()</signal>
    <receiver>Preferences</receiver>
    <slot>close()</slot>
@@ -718,6 +702,22 @@ qshutdown should quit after the countdown ended.</string>
     <hint type="destinationlabel">
      <x>206</x>
      <y>481</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Preferences</sender>
+   <signal>rejected()</signal>
+   <receiver>Preferences</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>206</x>
+     <y>341</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>206</x>
+     <y>341</y>
     </hint>
    </hints>
   </connection>

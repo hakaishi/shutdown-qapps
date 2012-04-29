@@ -13,15 +13,15 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;О программе</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Благодарности</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;работает на Qt&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation>Пароли не совпадают</translation>
+        <translation>Пароли не совпадают!</translation>
     </message>
 </context>
 <context>
@@ -81,27 +81,27 @@
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Время выключения:</translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
-        <translation>Минут до выключения;</translation>
+        <translation>Минут до выключения:</translation>
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Время перезагрузки:</translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
-        <translation>Минут до перезагрузки;</translation>
+        <translation>Минут до перезагрузки:</translation>
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Время перехода в спящий режим:</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation type="unfinished"></translation>
+        <translation>Минут до перехода в спящий режим:</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>
@@ -113,35 +113,35 @@
     </message>
     <message>
         <source>shutdown in </source>
-        <translation type="unfinished"></translation>
+        <translation>выключение через </translation>
     </message>
     <message>
         <source>reboot in </source>
-        <translation type="unfinished"></translation>
+        <translation>перезагрузка через </translation>
     </message>
     <message>
         <source>suspend in </source>
-        <translation type="unfinished"></translation>
+        <translation>переход в ждущий режим через </translation>
     </message>
     <message>
         <source>hibernate in </source>
-        <translation type="unfinished"></translation>
+        <translation>переход в спящий режим через </translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished"></translation>
+        <translation>лет</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished"></translation>
+        <translation>месяцев</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>часов</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>дней</translation>
     </message>
     <message>
         <source>Res&amp;tore</source>
@@ -153,35 +153,31 @@
     </message>
     <message>
         <source>day</source>
-        <translation type="unfinished"></translation>
+        <translation>день</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>минуты</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
+        <translation>секунды</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Выключить</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Перезагрузить</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим ожидания</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Спящий режим</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
@@ -189,10 +185,6 @@
     </message>
     <message>
         <source>&amp;Warnings on?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Minutes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -205,7 +197,7 @@
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>R&amp;eset</source>
@@ -265,7 +257,7 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;О программе</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
@@ -350,7 +342,7 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Выключить</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
@@ -386,15 +378,15 @@
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Перезагрузить</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим ожидания</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Спящий режим</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
@@ -509,18 +501,6 @@ quit instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation>HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
         <translation type="unfinished"></translation>
     </message>
@@ -529,20 +509,8 @@ quit instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation>UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -587,13 +555,13 @@ qshutdown should quit after the countdown ended.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
+        <source>The File &quot;%1&quot; is not writable!
+Maybe you just don&apos;t have the permissions to do so.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The File &quot;%1&quot; is not writable!
-Maybe you just don&apos;t have the permissions to do so.</source>
+        <source>Hide qshutdown at startup if
+&quot;Start countdown&quot; is checked</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

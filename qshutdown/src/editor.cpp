@@ -85,7 +85,8 @@ bool Editor::getLockAll(){
 void Editor::keyPressEvent(QKeyEvent *kEvent){
      if((kEvent->modifiers() == Qt::ControlModifier) && (kEvent->key() == Qt::Key_S))
        saveChanges();
-     if((kEvent->modifiers() == Qt::ControlModifier) && (kEvent->key() == Qt::Key_Q))
+     if(((kEvent->modifiers() == Qt::ControlModifier) && (kEvent->key() == Qt::Key_Q))
+         || (kEvent->key() == Qt::Key_Escape))
        reject();
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="es_ES">
+<TS version="2.0" language="es">
 <context>
     <name>About</name>
     <message>
@@ -59,11 +59,11 @@
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation>La contraseña actual no es correcta.</translation>
+        <translation>¡La contraseña actual no es correcta!</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation>La contraseña reescrita no coincide.</translation>
+        <translation>¡La contraseña reescrita no coincide!</translation>
     </message>
 </context>
 <context>
@@ -77,11 +77,11 @@
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation>&amp;Minimizar</translation>
+        <translation>¡&amp;Minimizar!</translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo de apagado:</translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
@@ -89,7 +89,7 @@
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo de reinicio:</translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo de suspensión:</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
@@ -105,7 +105,7 @@
     </message>
     <message>
         <source>Hibernate-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo de hibernado:</translation>
     </message>
     <message>
         <source>Minutes till hibernate:</source>
@@ -164,10 +164,6 @@
         <translation>segundos</translation>
     </message>
     <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation>Apagar</translation>
     </message>
@@ -192,12 +188,8 @@
         <translation>¿Activar a&amp;visos?</translation>
     </message>
     <message>
-        <source>Minutes</source>
-        <translation>Minutos</translation>
-    </message>
-    <message>
         <source>&amp;Now!</source>
-        <translation>&amp;Ahora</translation>
+        <translation>¡&amp;Ahora!</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
@@ -293,7 +285,7 @@
     </message>
     <message>
         <source>Countdown is not running!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡La cuenta regresiva no está corriendo!</translation>
     </message>
     <message>
         <source>Turns on/off all warnings</source>
@@ -331,7 +323,7 @@
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation>La contraseña no es correcta.</translation>
+        <translation>¡La contraseña no es correcta!</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
@@ -382,7 +374,7 @@
     </message>
     <message>
         <source>Size for log file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño para el archivo log:</translation>
     </message>
     <message>
         <source>Reboot</source>
@@ -402,11 +394,11 @@
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ocultar qshutdown al inicio</translation>
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Bloquear la pantalla al suspender o hibernar</translation>
     </message>
     <message>
         <source>&amp;Edit configuration file</source>
@@ -422,7 +414,7 @@
     </message>
     <message>
         <source>Size for log file in KB</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaño para el archivo log en KB</translation>
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
@@ -443,7 +435,7 @@ it was running</source>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
-        <translation>casillas de verificación y botón «ahora»</translation>
+        <translation>casillas de verificación y botón «¡Ahora!»</translation>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
@@ -509,18 +501,6 @@ quit instead.</source>
         <translation>automático</translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation>HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
         <translation>definido por el usuario</translation>
     </message>
@@ -529,20 +509,8 @@ quit instead.</source>
         <translation>Método de hibernación:</translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation>Método de apagado:</translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation>UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -550,7 +518,7 @@ quit instead.</source>
     </message>
     <message>
         <source>Please input an user specified command for suspend here</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriba aquí un comando específico para suspender</translation>
     </message>
     <message>
         <source>Gnome session</source>
@@ -562,11 +530,11 @@ quit instead.</source>
     </message>
     <message>
         <source>Please input an user specified command for shutdown here</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriba aquí un comando específico para apagar</translation>
     </message>
     <message>
         <source>Please input an user specified command for reboot here</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriba aquí un comando específico para reiniciar</translation>
     </message>
     <message>
         <source>Please input an user specified command for hibernate here</source>
@@ -588,13 +556,13 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
+&quot;Start countdown&quot; is checked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation>El archivo «%1» no es escribible.
+        <translation>¡El archivo «%1» no es escribible!
 Quizá no tiene los permisos para hacerlo.</translation>
     </message>
 </context>

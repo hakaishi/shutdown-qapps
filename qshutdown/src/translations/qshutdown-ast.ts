@@ -164,10 +164,6 @@
         <translation>segundos</translation>
     </message>
     <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation>Apagáu</translation>
     </message>
@@ -190,10 +186,6 @@
     <message>
         <source>&amp;Warnings on?</source>
         <translation>¿Activar a&amp;visos?</translation>
-    </message>
-    <message>
-        <source>Minutes</source>
-        <translation>Minutos</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -517,18 +509,6 @@ entós se zarrará.</translation>
         <translation>automáticu</translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation>HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
         <translation>definíu pol usuariu</translation>
     </message>
@@ -537,20 +517,8 @@ entós se zarrará.</translation>
         <translation>Métodu d&apos;hibernación:</translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation>Métodu d&apos;apagáu:</translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation>UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -598,9 +566,9 @@ qshutdown tien de finar en acabando la cuenta atrás.</translation>
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
+&quot;Start countdown&quot; is checked</source>
         <translation>Anubrir qshutdown nel aniciu si
-ta marcáu &quot;Llanzar cuenta atrás nel aniciu&quot;.</translation>
+ta marcáu &quot;Llanzar cuenta atrás nel aniciu&quot;</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!

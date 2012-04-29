@@ -73,6 +73,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      PassWord        *checkPassword;
      Editor          *editor;
      About           *about;
+     //QLabel          *parentalLockL, *customL;
 
      // defining signals and slots
  

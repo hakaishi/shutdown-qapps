@@ -72,9 +72,6 @@ void ChangePassword::checkNewPW(){
      if(newPasswd->text() == retypedNewPasswd->text()){
        savePW();
        accept();
-       oldPasswd->clear();
-       newPasswd->clear();
-       retypedNewPasswd->clear();
      }
      else
        msgBox2->exec();
@@ -88,4 +85,14 @@ void ChangePassword::savePW(){
        oldPasswd->setEnabled(true);
        oldL->setEnabled(true);
      }
+     oldPasswd->clear();
+     newPasswd->clear();
+     retypedNewPasswd->clear();
+}
+
+void ChangePassword::closeEvent(QCloseEvent* close_ch_pw){
+     oldPasswd->clear();
+     newPasswd->clear();
+     retypedNewPasswd->clear();
+     QWidget::closeEvent(close_ch_pw);
 }

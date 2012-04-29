@@ -4,8 +4,14 @@ shutdown-qapps (1.6.4-1) unstable; urgency=low
     - new (and bigger) qshutdown symbol
     - many new translations
     - fix for intern reset: now independent from QTimer
+    - fix for not keeping proportions at startup
+    - fix for discarding changes and passwords when escaping
+      preferences and password dialogs
+    - removed version text label from the main window
+    - added version message to the statusbar
+    - simplyfied the creation of the config file
 
- -- Christian Metscher <hakaishi@web.de>  Tue, 20 Mar 2012 16:06:36 +0100
+ -- Christian Metscher <hakaishi@web.de>  Sun, 29 Apr 2012 22:00:00 +0200
 
 
 shutdown-qapps (1.6.3-1) unstable; urgency=low

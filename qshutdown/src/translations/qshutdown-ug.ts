@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ug_CN">
+<TS version="2.0" language="ug">
 <context>
     <name>About</name>
     <message>
@@ -89,7 +89,7 @@
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation>قايتا قوزغىتىش ۋاقتى</translation>
+        <translation>قايتا قوزغىتىش ۋاقتى:</translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
@@ -164,10 +164,6 @@
         <translation>سېكۇنت</translation>
     </message>
     <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation>تاقا</translation>
     </message>
@@ -185,15 +181,11 @@
     </message>
     <message>
         <source>&amp;Lock after start?</source>
-        <translation>قوزغاتقاندىن كىيىن قۇلۇپلا(&amp;L)</translation>
+        <translation>قوزغاتقاندىن كىيىن قۇلۇپلا؟(&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Warnings on?</source>
-        <translation>ئاگاھلاندۇرامدۇ(&amp;W)</translation>
-    </message>
-    <message>
-        <source>Minutes</source>
-        <translation>مىنۇتلار</translation>
+        <translation>ئاگاھلاندۇرامدۇ؟(&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -426,11 +418,11 @@
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
-        <translation>&quot;قوزغالغاندىن كېيىن قۇلۇپلامدۇ(&amp;L)؟&quot;</translation>
+        <translation>«قوزغالغاندىن كېيىن قۇلۇپلامدۇ؟(&amp;L)»</translation>
     </message>
     <message>
         <source>&quot;&amp;Warnings on?&quot;</source>
-        <translation>&quot;ئاگاھلاندۇرامدۇ(&amp;W)؟&quot;</translation>
+        <translation>«ئاگاھلاندۇرامدۇ؟(&amp;W)»</translation>
     </message>
     <message>
         <source>Log start time of qshutdown and how long
@@ -480,13 +472,13 @@ default at startup?</source>
         <source>Set if the checkbox for &quot;Lock after start?&quot;
 should be checked by default at startup</source>
         <translation>ئەگەر «قوزغىلىشتىن ئىلگىرى قۇلۇپلانسۇنمۇ؟» تاللانما رامكا تاللانغان بولسا
- كۆڭۈلدىكى ئەھۋالدا قوزغىتىش قىلىپ تەڭشىلىدۇ.</translation>
+ كۆڭۈلدىكى ئەھۋالدا قوزغىتىش قىلىپ تەڭشىلىدۇ</translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Warnings on?&quot;
 should be checked by default at startup</source>
         <translation>ئەگەر «ئاگاھلاندۇرۇشنى ئاچامدۇ؟» تاللانما رامكا تاللانغان بولسا
- كۆڭۈلدىكى ئەھۋالدا قوزغىتىش قىلىپ تەڭشىلىدۇ.</translation>
+ كۆڭۈلدىكى ئەھۋالدا قوزغىتىش قىلىپ تەڭشىلىدۇ</translation>
     </message>
     <message>
         <source>The close button usually hides the main window.
@@ -517,18 +509,6 @@ quit instead.</source>
         <translation>ئاپتوماتىك</translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation>HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
         <translation>ئىشلەتكۈچى بەلگىلىگەن</translation>
     </message>
@@ -537,20 +517,8 @@ quit instead.</source>
         <translation>ئۈچەك ئۇسۇلى:</translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation>تاقاش ئۇسۇلى:</translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation>UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -584,7 +552,9 @@ quit instead.</source>
         <source>Some systems block for example the shutdown
 because qshutdown is still running. Set a hook if
 qshutdown should quit after the countdown ended.</source>
-        <translation type="unfinished"></translation>
+        <translation>بەزى سىستېمىلار كومپيۇتېرنى تاقاشقا ئوخشاش مەشغۇلاتنى توسىدۇ
+چۈنكى qshutdown ئىجرا قىلىنىۋاتىدۇ. تەتۈر ساناق ئاخىرلاشقاندىن كېيىن
+qshutdown چېكىنىدىغان بولسا ئىلمەك (hook)تىن بىرنى تەڭشەڭ.</translation>
     </message>
     <message>
         <source>Quit qshutdown after countdown ended?</source>
@@ -596,21 +566,22 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
+&quot;Start countdown&quot; is checked</source>
         <translation>«قوزغالغاندا countdown نى قوزغات» تاللانغان بولسا
-قوزغالغاندا qshutdown نى يوشۇر.</translation>
+قوزغالغاندا qshutdown نى يوشۇر</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation type="unfinished"></translation>
+        <translation>بۇ &quot;%1&quot; ھۆججەتكە يازالمايدۇ!
+بەلكىم يېزىش ھوقۇقىڭىز بولماسلىقى مۇمكىن.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>يەنە 70 سېكۇنتمۇ قالمىغاندا qshutdown ئۈچ قېتىم ئاگاھلاندۇرىدۇ. &lt;br/&gt;&lt;br/&gt;بۇ پىروگرامما qdbus ئىشلىتىپ gnome- ياكىkde-session-manager ياكى HAL/ConsoleKit/DeviceKit/UPower  غا تاقا/قايتا قوزغات/توڭلات/ئۆچەك ئىلتىماسىنى يوللايدۇ. ئەگەر ھېچقايسىسىدا ئىنكاس بولمىسا ئۇنداقتا «sudo shutdown» بۇيرۇقى(دىققەت، HAL ياكى ConsoleKit قا ئىلتىماس يوللىغان ياكى shutdown  بۇيرۇقىنى ئىشلەتكەندە،  سۆزلىشىشنى ساقلىغىلى بولمايدۇ. shutdown  بۇيرۇقىنى ئىشلەتكەندە، پىروگرامما پەقەت كومپيۇتېرنى تاقىيالايدۇ ياكى قايتا قوزغىتالايدۇ)نى ئىشلىتىڭ. شۇڭلاشقا، ئەگەر كومپيۇتېرنى تاقاش ياكى قايتا قوزغىتىش ۋاقتى توشقاندا، مەشغۇلات بولمىسا، ئىشلەتكۈچىنىڭ shutdown  بۇيرۇقىنى ئىجرا قىلىش ھوقۇقى يوقلۇقىنى بىلدۈرىدۇ. بۇ خىل ئەھۋالدا ئىشلەتكۈچى تۆۋەندىكىدەك مەشغۇلات قىلسا بولىدۇ: &lt;br/&gt;&lt;br/&gt;تۆۋەندىكى بۇيرۇقنى تېرمىنالغا كۆچۈرۈپ: &lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; بۇ بىر قۇر بۇيرۇقنى قوشۇپ &lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;بۇنىڭدا * ئىشلەتكۈچى ئاتى ياكى %group ئاتى بىلەن ئالماشتۇرۇلىدۇ. &lt;br/&gt;&lt;br/&gt; كومپيۇتېرنى تەتۈر ساناقتا تاقاش ئەڭ ئۇزۇن بولغاندا 1440 مىنۇت (24 سائەت).&lt;br/&gt;سەپلىمە ھۆججەت (ۋە كۈندىلىك خاتىرە ھۆججەت) ئورنى &lt;i&gt;~/.qshutdown/&lt;/i&gt; (Linux/Unix مۇھىتىدا). &lt;br/&gt;&lt;br/&gt;&lt;b&gt;باشقۇرغۇچىغا نىسبەتەن: &lt;/b&gt;&lt;br/&gt;ئەگەر ھەر بىر ئىشلەتكۈچىنىڭ qshutdown بۇيرۇقىنى «ئاتا ئانا تىزگىنى» ئۇسۇلىدا ئىجرا قىلدۇرۇشنى ئويلىسىڭىز، «sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/» نى ئىجرا قىلىڭ ھەمدە /root/.qshutdown/qshutdown.conf  دىكى Lock_all تاللانمىنى true (راست) قىلىپ تەڭشەڭ دىققەت qshutdown نى بىرلا قېتىم ئىجرا قىلىپ qshutdown.conf نى شەكىللەندۈرىدۇ. ئۇنىڭدىن باشقا sudoers  غا بىر قۇر (ئۈستىدىكى بىلەن ئوخشاش) قوشۇڭ: &lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;ئەگەر سىز ئېھتىياتسىزلىقتىن تەڭشىگەن ئىمنى ئۇنتۇپ قالسىڭىز، qshutdown.conf دىن «Password» بار قۇرنى ئۆچۈرۈۋەتسىڭىزلا بولىدۇ. &lt;br/&gt;&lt;br/&gt;&lt;b&gt;ئىشلىتىش ئەسكەرتىشى: &lt;/b&gt;&lt;br/&gt;ئەگەر qshutdown نىڭ سىزنى ئاۋارە قىلىشىنى خاھلىمىسىڭىز «ئاگاھلاندۇرۇشنى باشلامدۇ؟» دىن بۇ ئىلمەكنى ئېلىۋەتسىڭىز بولىدۇ.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;تېز كۇنۇپكا: &lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;بۇ ئۇچۇر كۆزنىكى &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;چېكىن&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;مايىللىق&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;ئىجرا قىلىش ۋاقتىنى كۈندىلىك خاتىرە ھۆججىتىگە بىر قېتىم (پەقەت qshutdown  چېكىنگەندە ئاندىن كۈچكە ئىگە. مەڭگۈلۈك تەڭشىمەكچى بولسىڭىز مايىللىقتىن ئۆزگەرتىڭ.)يازىدۇ.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;تاقاشقا تەڭشە&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;قايتا قوزغىتىشقا تەڭشە&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;ئەسلەككە توڭلات&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;ئۈچەككە تەڭشە&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;تەتۈر ساناقنى توختات(پەقەت تەتۈر ساناق قوزغىتىلغان ھەمدە باشقۇرغۇچى چەكلىمىگەن ئەھۋالدا كۈچكە ئىگە)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;سەپلىمە ھۆججەت تەھرىر (بۇنىڭغا بىر ئىم كېرەك. ئەگەر پەقەت سىزلا بولسىڭىز «بوش ئىم» )(ئىم سۆز بۆلىكىنى تولدۇرمايسىز)تەڭشىسىڭىز بولىدۇ.&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 </TS>
