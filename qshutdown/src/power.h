@@ -52,7 +52,6 @@ void shutdown(){
   bool k = false; //kde
   bool g_pwr1 = false;
   bool g_pwr2 = false;
-  bool g_pwr3 = false;
   bool hal = false;
 
   QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
@@ -76,11 +75,10 @@ void shutdown(){
    #else
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
-     g_pwr3 = QProcess::startDetached("gnome-session-quit --force --no-prompt --power-off");
-     if(verbose && !g_pwr1 && !g_pwr2 && !g_pwr3)
+     if(verbose && !g_pwr1 && !g_pwr2)
        oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
             << endl;
-     if(!g_pwr1 && !g_pwr2 && !g_pwr3){
+     if(!g_pwr1 && !g_pwr2){
        response = gnomeSessionManager.call("RequestShutdown");
        if(response.type() == QDBusMessage::ErrorMessage){
          if(verbose)
@@ -91,7 +89,7 @@ void shutdown(){
      }
      else g = true;
 
-     if(!g && !g_pwr1 && !g_pwr2 && !g_pwr3){
+     if(!g && !g_pwr1 && !g_pwr2){
        response = kdeSessionManager.call("logout", 0, 2, 2);
        if(response.type() == QDBusMessage::ErrorMessage){
          if(verbose)
@@ -101,7 +99,7 @@ void shutdown(){
        else k = true;
      }
 
-     if(!g && !g_pwr1 && !g_pwr2 && !g_pwr3 && !k){
+     if(!g && !g_pwr1 && !g_pwr2 && !k){
        response = freedesktopHal.call("Shutdown");
        if(response.type() == QDBusMessage::ErrorMessage){
          if(verbose)
@@ -111,7 +109,7 @@ void shutdown(){
        else hal = true;
      }
 
-     if(!g && !g_pwr1 && !g_pwr2 && !g_pwr3 && !k && !hal){
+     if(!g && !g_pwr1 && !g_pwr2 && !k && !hal){
        response = freedesktopConsoleKit.call("Stop");
        if(response.type() == QDBusMessage::ErrorMessage){
          if(verbose)
@@ -124,11 +122,10 @@ void shutdown(){
   if(gnome){
     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
     g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
-    g_pwr3 = QProcess::startDetached("gnome-session-quit --force --no-prompt --power-off");
-    if(verbose && !g_pwr1 && !g_pwr2 && !g_pwr3)
+    if(verbose && !g_pwr1 && !g_pwr2)
       oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
            << endl;
-    if(!g_pwr1 && !g_pwr2 && !g_pwr3){
+    if(!g_pwr1 && !g_pwr2){
       response = gnomeSessionManager.call("RequestShutdown");
       if(response.type() == QDBusMessage::ErrorMessage){
         if(verbose)

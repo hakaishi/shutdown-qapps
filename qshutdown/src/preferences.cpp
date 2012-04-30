@@ -30,6 +30,15 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
 
      setWindowFlags(Qt::Window);    //always in front
 
+   //Seconds won't be recognized, thus removing them (just in case).
+     QString timeEditFormat;
+     timeEditFormat = timeEdit->displayFormat();
+     if(timeEditFormat.contains(":ss"))
+       timeEditFormat.replace(QString(":ss"), QString(""));
+     if(timeEditFormat.contains(":s"))
+       timeEditFormat.replace(QString(":s"), QString(""));
+     timeEdit->setDisplayFormat(timeEditFormat);
+
 /***************** load settings from the conf file *****************/
 
 #ifdef Q_OS_WIN32
