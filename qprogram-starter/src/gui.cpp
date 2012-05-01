@@ -30,6 +30,8 @@ Gui::Gui(QWidget *parent) : QWidget(parent){
 
      myOutput = new QTextStream(stdout);
 
+     shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+
      aborted = false;
      process2Started = false;
 
@@ -66,7 +68,7 @@ Gui::Gui(QWidget *parent) : QWidget(parent){
      hintMsgBox->resize(520,450);
      hintMsgBox->setWindowTitle("Info");
      hintMsgBox->setWindowModality(Qt::NonModal);
-     hintMsgBox->setHtml(tr("The command in the second text editor (if there is any) will be executed after the first one. The message boxes will close themselves after 10 seconds.<br/>To start a program just type i.e. \"firefox\" or \"firefox www.google.com\" and then click on OK.<br/><br/>If the process is \"finished\" although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.<br/><br/>When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).<br/><br/>make examples:<br/>&nbsp;make -C /path/to/project<br/>&nbsp;make clean -C /path/to/project<br/><br/>About Errors:<br/>Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at <i>~/.qprogram-starter/</i>.<br/><br/>If the shutdown won't work, it means that \"sudo shutdown -P now\" is used. This needs root permissions. You can do the this:<br/><br/>Post the following in a terminal:<pre>EDITOR=nano sudo -E visudo</pre> and add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre> whereas * replaces the username or %groupname.<br/><br/>The configuration-file can be found at <i>~/.qprogram-starter/</i>."));
+     hintMsgBox->setHtml(tr("The command in the second text editor (if there is any) will be executed after the first one. The message boxes will close themselves after 10 seconds.<br/>To start a program just type i.e. \"firefox\" or \"firefox www.google.com\" and then click on OK. Commands etc. can be linked by \"&&\" etc. <br/><br/>If the process is \"finished\" although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.<br/><br/>When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).<br/><br/>make examples:<br/>&nbsp;make -C /path/to/project<br/>&nbsp;make clean -C /path/to/project<br/><br/>About Errors:<br/>Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at <i>~/.qprogram-starter/</i>.<br/><br/>If the shutdown won't work, it means that \"sudo shutdown -P now\" is used. This needs root permissions. You can do the this:<br/><br/>Post the following in a terminal:<pre>EDITOR=nano sudo -E visudo</pre> and add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre> whereas * replaces the username or %groupname.<br/><br/>The configuration-file can be found at <i>~/.qprogram-starter/</i>."));
 
      connect(dateTimeTimer, SIGNAL(timeout()), this, SLOT(currentDateAndTime()));
      connect(startB, SIGNAL(clicked(bool)), this, SLOT(run()));
@@ -114,7 +116,8 @@ void Gui::info_hint(){ hintMsgBox->show(); }
 void Gui::check(){ //To check if start time is reached
      secondsToTimeInTheFuture = QDateTime::currentDateTime().secsTo(timeInTheFuture);
      if(secondsToTimeInTheFuture <= 0){
-       process1->start(textEdit->toPlainText());
+       processArgs1 << "-c" << textEdit->toPlainText();
+       process1->start(shell, processArgs1);
        timer->stop();
      }
 }
@@ -141,8 +144,10 @@ void Gui::run(){ //To start either the timer or start the process
        timeEdit->setDisabled(true);
        if(atDateCheckBox->isChecked())
          timer->start(1000);
-       else
-         process1->start(textEdit->toPlainText());
+       else{
+         processArgs1 << "-c" << textEdit->toPlainText();
+         process1->start(shell, processArgs1);
+       }
      }
      else{
        QMessageBox msgBox;
@@ -189,7 +194,8 @@ void Gui::abortProcesses(){
 void Gui::checkForProcess2(){ //check if there is a second command
      if(process1->exitCode()==0 && process1->exitStatus()==0 && process1->error()==5
        && !textEdit2->toPlainText().isEmpty() && !aborted){
-       process2->start(textEdit2->toPlainText());
+       processArgs2 << "-c" << textEdit2->toPlainText();
+       process2->start(shell, processArgs2);
        process2Started = true;
        textEdit2->setDisabled(true);
      }

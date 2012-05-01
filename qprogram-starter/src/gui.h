@@ -40,8 +40,9 @@ class Gui : public QWidget, public Ui::Gui {
       QDateTime      nextDate, timeInTheFuture;
       double         secondsToTimeInTheFuture;
       QTextEdit      *hintMsgBox, *logBox1, *logBox2;
-      QString        file, errProcess1, errProcess2,
+      QString        shell, file, errProcess1, errProcess2,
                      outputProcess1, outputProcess2;
+      QStringList    processArgs1, processArgs2;
       QSettings      *settings; 
       QString        program1, program2;
       bool           process2Started;

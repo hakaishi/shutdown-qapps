@@ -1,7 +1,7 @@
 qprogram-starter
 
 
-Depencies: libqt4-dev, libqt4-dbus, build-essential
+Dependencies: libqt4-dev, libqt4-dbus, build-essential
 
 
 If you want to install from source, open a terminal and change into this folder.

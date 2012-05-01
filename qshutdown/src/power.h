@@ -29,6 +29,7 @@ extern bool verbose;
 namespace Power{
 
 QTextStream oput(stdout);
+QString shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
 
 bool lockMyScreen;
 bool automatic = false;
@@ -53,6 +54,9 @@ void shutdown(){
   bool g_pwr1 = false;
   bool g_pwr2 = false;
   bool hal = false;
+
+  QStringList args;
+  args << "-c" << myShutdown;
 
   QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
     "/org/gnome/SessionManager", "org.gnome.SessionManager",
@@ -161,7 +165,7 @@ void shutdown(){
   if(sudo)
     QProcess::startDetached("sudo shutdown -P now");
   if(user)
-    QProcess::startDetached(myShutdown);
+    QProcess::startDetached(shell, args);
 
   //resetting variables
   automatic = false;
@@ -181,6 +185,9 @@ void reboot(){
   bool g_pwr1 = false;
   bool g_pwr2 = false;
   bool hal = false;
+
+  QStringList args;
+  args << "-c" << myReboot;
 
   QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
     "/org/gnome/SessionManager", "org.gnome.SessionManager",
@@ -293,7 +300,7 @@ void reboot(){
   if(sudo)
     QProcess::startDetached("sudo shutdown -r now");
   if(user)
-    QProcess::startDetached(myReboot);
+    QProcess::startDetached(shell, args);
 
   //resetting variables
   automatic = false;
@@ -312,6 +319,9 @@ void suspend(){
   bool g_pwr2 = false;
   bool hal = false;
   bool upower = false;
+
+  QStringList args;
+  args << "-c" << mySuspend;
 
   QDBusInterface freedesktopHal("org.freedesktop.Hal",
     "/org/freedesktop/Hal/devices/computer",
@@ -446,7 +456,7 @@ void suspend(){
     }
   }
   if(user)
-    QProcess::startDetached(mySuspend);
+    QProcess::startDetached(shell, args);
 
   //resetting variables
   automatic = false;
@@ -464,6 +474,9 @@ void hibernate(){
   bool g_pwr2 = false;
   bool hal = false;
   bool upower = false;
+
+  QStringList args;
+  args << "-c" << myHibernate;
 
   QDBusInterface freedesktopHal("org.freedesktop.Hal",
     "/org/freedesktop/Hal/devices/computer",
@@ -596,7 +609,7 @@ void hibernate(){
     }
   }
   if(user)
-    QProcess::startDetached(myHibernate);
+    QProcess::startDetached(shell, args);
 
   //resetting variables
   automatic = false;
