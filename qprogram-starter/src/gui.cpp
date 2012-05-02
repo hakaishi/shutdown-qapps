@@ -171,6 +171,9 @@ void Gui::abortProcesses(){
      process1->close();
      process2->close();
 
+     processArgs1.clear();
+     processArgs2.clear();
+
      QMessageBox msgBox;
      msgBox.setWindowTitle(tr("Information"));
      msgBox.setIcon(QMessageBox::Information);
@@ -344,6 +347,9 @@ void Gui::shutdown_or_message(){
      else
        message();
 #endif
+
+     processArgs1.clear();
+     processArgs2.clear();
 }
 
 void Gui::message(){
