@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2011 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2012 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -67,7 +67,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      msgBox->setInformativeText(tr("The File \"%1\" is not writable!\n"
      "Maybe you just don't have the permissions to do so.").arg(file));
 
-     connect(buttonBox, SIGNAL(accepted()), this, SLOT(saveToConfFile()));
+     connect(this, SIGNAL(accepted()), this, SLOT(saveToConfFile()));
      connect(reset, SIGNAL(clicked(bool)), this, SLOT(resetSettings()));
      connect(font1Spin, SIGNAL(valueChanged(int)), this, SLOT(fontSize1Changed(int)));
      connect(font2Spin, SIGNAL(valueChanged(int)), this, SLOT(fontSize2Changed(int)));

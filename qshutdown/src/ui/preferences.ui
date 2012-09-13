@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>413</width>
-    <height>684</height>
+    <height>708</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -87,8 +87,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>371</width>
-            <height>521</height>
+            <width>353</width>
+            <height>568</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -718,6 +718,22 @@ qshutdown should quit after the countdown ended.</string>
     <hint type="destinationlabel">
      <x>206</x>
      <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Preferences</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>265</x>
+     <y>683</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>206</x>
+     <y>353</y>
     </hint>
    </hints>
   </connection>

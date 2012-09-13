@@ -25,11 +25,11 @@
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Specialaj dankoj al:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian DEUCHLER por ĝenerala helpado.&lt;br /&gt;&lt;br /&gt;kaj Brian NELSON por sponsori la alŝutoj al Debiano.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;Specialaj dankoj al:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian DEUCHLER por ĝenerala helpado.&lt;br /&gt;&lt;br /&gt;kaj Brian NELSON por sponsori la alŝutoj al Debiano.&lt;br /&gt;&lt;br /&gt;Tradukisto: Michael MORONI&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p &gt;qshutdown, elŝaltilo baziĝita sur tempo kaj ĝisnombrado&lt;/p&gt;&lt;p &gt;Aŭtoro: Christian METSCHER &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Kopirajto &amp;copy; 2010-2012, de Christian METSCHER&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Bonvole uzu &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; aŭ &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; por raporti cimojn.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -237,7 +237,7 @@
     </message>
     <message>
         <source>Lock settings after countdown started</source>
-        <translation type="unfinished"></translation>
+        <translation>Ŝlosi agordojn post ol startigo de ĝisnombrado</translation>
     </message>
     <message>
         <source>Calendar</source>
@@ -285,7 +285,7 @@
     </message>
     <message>
         <source>Countdown is not running!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĝisnombrado ne estas rulanta!</translation>
     </message>
     <message>
         <source>Turns on/off all warnings</source>
@@ -354,7 +354,7 @@
     </message>
     <message>
         <source>Minutes to countdown:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minutoj al ĝisnombrado:</translation>
     </message>
     <message>
         <source>Font:</source>
@@ -398,19 +398,19 @@
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Ŝlosi ekranon &amp;por prokrasto kaj pasivumigo</translation>
     </message>
     <message>
         <source>&amp;Edit configuration file</source>
-        <translation type="unfinished"></translation>
+        <translation>R&amp;edakti agorddosieron</translation>
     </message>
     <message>
         <source>Enable the minute &amp;countdown at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Enŝalti la &amp;minutan ĝisnombradon je starto</translation>
     </message>
     <message>
         <source>&amp;Reset settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rekomencigi agordojn</translation>
     </message>
     <message>
         <source>Size for log file in KB</source>
@@ -418,11 +418,11 @@
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Ĉu  ŝ&amp;losi post startigo?&quot;</translation>
     </message>
     <message>
         <source>&quot;&amp;Warnings on?&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;Ĉu enŝalti a&amp;vertojn?&quot;</translation>
     </message>
     <message>
         <source>Log start time of qshutdown and how long
@@ -431,7 +431,7 @@ it was running</source>
     </message>
     <message>
         <source>L&amp;ogging</source>
-        <translation type="unfinished"></translation>
+        <translation>Pr&amp;otokolado</translation>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
@@ -439,7 +439,7 @@ it was running</source>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>Butonoj Bone kaj Minimumigi</translation>
     </message>
     <message>
         <source>Labels for example</source>
@@ -447,7 +447,7 @@ it was running</source>
     </message>
     <message>
         <source>Set a font</source>
-        <translation type="unfinished"></translation>
+        <translation>Agordi tiparon</translation>
     </message>
     <message>
         <source>What target time should be displayed
@@ -486,35 +486,35 @@ quit instead.</source>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Ĝenerala</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>Progresita</translation>
     </message>
     <message>
         <source>Suspend method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Prokrasta metodo:</translation>
     </message>
     <message>
         <source>automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>aŭtomata</translation>
     </message>
     <message>
         <source>user defined</source>
-        <translation type="unfinished"></translation>
+        <translation>difinita de uzanto</translation>
     </message>
     <message>
         <source>Hibernate method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasivumiga metodo:</translation>
     </message>
     <message>
         <source>Shutdown method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Elŝalta metodo:</translation>
     </message>
     <message>
         <source>Reboot method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Restartiga metodo:</translation>
     </message>
     <message>
         <source>Please input an user specified command for suspend here</source>
@@ -522,11 +522,11 @@ quit instead.</source>
     </message>
     <message>
         <source>Gnome session</source>
-        <translation type="unfinished"></translation>
+        <translation>GNOME-seanco</translation>
     </message>
     <message>
         <source>KDE session</source>
-        <translation type="unfinished"></translation>
+        <translation>KDE-seanco</translation>
     </message>
     <message>
         <source>Please input an user specified command for shutdown here</source>
@@ -552,7 +552,7 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>&amp;Start countdown at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Startigi ĝisnombrado je startigo</translation>
     </message>
     <message>
         <source>Hide qshutdown at startup if

@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown the shutdown/reboot/suspend/hibernate
- * Copyright (C) 2010-2011 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2012 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -189,9 +189,9 @@ Gui::Gui(){
      connect(cal, SIGNAL(starting()), ti, SLOT(stop()));
      connect(cal, SIGNAL(finishing()), this, SLOT(warnings_on()));
 
-     connect(checkPassword, SIGNAL(success()), pref, SLOT(saveToConfFile()));
      connect(checkPassword, SIGNAL(success()), this, SLOT(showEditor())); //if correct password was entered open editor
      connect(checkPassword, SIGNAL(starting()), ti, SLOT(stop()));
+     connect(checkPassword, SIGNAL(starting()), pref, SLOT(accept()));
      connect(checkPassword, SIGNAL(finishing()), this, SLOT(warnings_on()));
 
      connect(editor, SIGNAL(saved()), this, SLOT(updateLock()));      //update to see if Lock_all was (de)activated
@@ -219,7 +219,7 @@ Gui::~Gui(){
 
 void Gui::showEvent(QShowEvent* show_window){
      minimize_restore_action->setText(tr("&Minimize"));
-     QWidget::showEvent(show_window);
+     QMainWindow::showEvent(show_window);
 }
 
 void Gui::tray_actions(){
@@ -655,7 +655,7 @@ void Gui::finished_(){
 
 void Gui::hideEvent(QHideEvent* window_hide){
      minimize_restore_action->setText(tr("Res&tore"));
-     QWidget::hideEvent(window_hide);
+     QMainWindow::hideEvent(window_hide);
 }
 
 void Gui::closeEvent(QCloseEvent* window_close){
@@ -663,7 +663,7 @@ void Gui::closeEvent(QCloseEvent* window_close){
        hide();
      else if(!editor->getLockAll())
        qApp->quit();
-     QWidget::closeEvent(window_close);
+     QMainWindow::closeEvent(window_close);
 }
 
 void Gui::beforeQuit(){
