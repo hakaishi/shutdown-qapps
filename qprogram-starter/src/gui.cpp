@@ -292,29 +292,30 @@ void Gui::shutdown_or_message(){
        bool hal = false;
        QDBusMessage response;
 
-       QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
-         "/org/gnome/SessionManager", "org.gnome.SessionManager",
-         QDBusConnection::sessionBus());
-       response = gnomeSessionManager.call("RequestShutdown");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         *myOutput << "W: " << response.errorName() << ": "
-                   << response.errorMessage() << endl;
-         g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
-         g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
-         if(!g_pwr1 && !g_pwr2)
-           *myOutput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-                     << endl;
+       g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
+       g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
+       if(!g_pwr1 && !g_pwr2){
+         *myOutput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
+                   << endl;
+         QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
+           "/org/gnome/SessionManager", "org.gnome.SessionManager",
+           QDBusConnection::sessionBus());
+         response = gnomeSessionManager.call("RequestShutdown");
+         if(response.type() == QDBusMessage::ErrorMessage){
+           *myOutput << "W: " << response.errorName() << ": "
+                     << response.errorMessage() << endl;
+         }
+         else g = true;
+         if(!g){
+           response = gnomeSessionManager.call("Shutdown");
+           if(response.type() == QDBusMessage::ErrorMessage)
+             *myOutput << "W: " << response.errorName() << ": "
+                       << response.errorMessage() << endl;
+           }
+           else g = true;
        }
        else
          g = true;
-       if(!g){
-         response = gnomeSessionManager.call("Shutdown");
-         if(response.type() == QDBusMessage::ErrorMessage)
-           *myOutput << "W: " << response.errorName() << ": "
-                     << response.errorMessage() << endl;
-         else
-           g = true;
-       }
 
        if(!g && !g_pwr1 && !g_pwr2){
          QDBusInterface kdeSessionManager("org.kde.ksmserver", "/KSMServer",
