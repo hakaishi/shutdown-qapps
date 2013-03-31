@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="zza">
+<TS version="2.0" language="my">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>qshutdown အကြောင်း</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>ဗားရှင်း </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;A အကြောင်း</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;T ကျေးဇူးတင်လွှာ</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Qt ကိုသုံးပြီး&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
@@ -36,56 +36,56 @@
     <name>Calendar</name>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြက္ခဒိန်</translation>
     </message>
 </context>
 <context>
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation type="unfinished"></translation>
+        <translation>စကားဝှက် ကိုပြောင်းမည်။</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation type="unfinished"></translation>
+        <translation>စကားဝှက်ကိုပြန်ရိုက်ပါ -</translation>
     </message>
     <message>
         <source>New password:</source>
-        <translation type="unfinished"></translation>
+        <translation>စကားဝှက်အသစ် -</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation type="unfinished"></translation>
+        <translation>စကားဝှက်အဟောင်း -</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation type="unfinished"></translation>
+        <translation>ယခုစကားဝှက်သည်မမှန်ကန်ပါ</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြန်ရိုက်သည့်စကားဝှက်နှစ်ခုသည်မတူညီပါ။</translation>
     </message>
 </context>
 <context>
     <name>Editor</name>
     <message>
         <source>Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor</translation>
     </message>
 </context>
 <context>
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;M ချုံ့မည်</translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>ပိတ်မည့်အချိန်-</translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
-        <translation type="unfinished"></translation>
+        <translation>မပိတ်ခင်လိုသည့်မိနစ် -</translation>
     </message>
     <message>
         <source>Reboot-time:</source>
@@ -93,15 +93,15 @@
     </message>
     <message>
         <source>Minutes till reboot:</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြန်မစခင်လိုသည့်မိနစ်</translation>
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>ဆိုင်းငံ့မည့်အချိန် -</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation type="unfinished"></translation>
+        <translation>မဆိုင်းငံ့ခင်လိုသည့်မိနစ်</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>
@@ -113,15 +113,15 @@
     </message>
     <message>
         <source>shutdown in </source>
-        <translation type="unfinished"></translation>
+        <translation>ပိတ်တော့မည့် </translation>
     </message>
     <message>
         <source>reboot in </source>
-        <translation type="unfinished"></translation>
+        <translation>ပြန်စတော့မည့် </translation>
     </message>
     <message>
         <source>suspend in </source>
-        <translation type="unfinished"></translation>
+        <translation>ဆိုင်းငံ့တော့မည့် </translation>
     </message>
     <message>
         <source>hibernate in </source>
@@ -129,19 +129,19 @@
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished"></translation>
+        <translation>နှစ်များ</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished"></translation>
+        <translation>လများ</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>နာရီများ</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>နေ့များ</translation>
     </message>
     <message>
         <source>Res&amp;tore</source>
@@ -149,87 +149,95 @@
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;M ချုံ့မည်</translation>
     </message>
     <message>
         <source>day</source>
-        <translation type="unfinished"></translation>
+        <translation>နေ့</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>မိနစ်</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>စက္ကန့်များ</translation>
+    </message>
+    <message>
+        <source>&apos;qshutdown&apos;</source>
+        <translation>&apos;qshutdown&apos;</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>ပိတ်မည်</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>စနစ်ပြန်လည်စတင်ရန်</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>ဆိုင်းငံ့ထားမည်</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>လက်ရှိ အခြေအနေတိုင်းမှတ်သား၍ အပြီးထွက်မည်</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;L ​ပြန်စပြီးပါက သော့ခတ်ထားမလား။</translation>
     </message>
     <message>
         <source>&amp;Warnings on?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Minutes</source>
+        <translation>မိနစ်</translation>
+    </message>
+    <message>
         <source>&amp;Now!</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;N ယခုချက်ချင်း</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြက္ခဒိန်တွင်ရက်စွဲသတ်မှတ်နိုင်ပါသည်။</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;O အိုကေ</translation>
     </message>
     <message>
         <source>R&amp;eset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;e ပြန်စမည်</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Q ထွက်</translation>
     </message>
     <message>
         <source>&amp;Info</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;I သတင်းအချက်အလက်</translation>
     </message>
     <message>
         <source>&amp;Logfile</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Logfile</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Preferences</translation>
     </message>
     <message>
         <source>&amp;Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sလုံး၀ပိတ်မည်</translation>
     </message>
     <message>
         <source>&amp;Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;R အစကနေပြန်စမည်</translation>
     </message>
     <message>
         <source>S&amp;uspend</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;u ဆိုင်းငံ့ထားမည်</translation>
     </message>
     <message>
         <source>&amp;Hibernate</source>
@@ -241,27 +249,27 @@
     </message>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>ပြက္ခဒိန်</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Fဖိုင်</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;H အကူအညီ</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Settings</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;A အကြောင်း</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Reset</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
@@ -273,7 +281,7 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>သတိပေးချက်</translation>
     </message>
     <message>
         <source>Action imminent!</source>
@@ -281,60 +289,60 @@
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>အချက်အလက်</translation>
     </message>
     <message>
         <source>Countdown is not running!</source>
-        <translation type="unfinished"></translation>
+        <translation>အချိန်ကိုနောက်ပြန်ရေတွက်ခြင်းကိုမဖွင့်ထားပါ</translation>
     </message>
     <message>
         <source>Turns on/off all warnings</source>
-        <translation type="unfinished"></translation>
+        <translation>သတိပေးချက်များအားလုံးကိုဖွင့်မည်၊ပိတ်ထားမည်</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Qt အကြောင်း</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>ဗားရှင်း </translation>
     </message>
 </context>
 <context>
     <name>Info</name>
     <message>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>အချက်အလက်</translation>
     </message>
 </context>
 <context>
     <name>PassWord</name>
     <message>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>စကားဝှက်</translation>
     </message>
     <message>
         <source>&amp;Set password</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;S စကားဝှက်သတ်မှတ်မည်</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>စကားဝှက် −</translation>
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation type="unfinished"></translation>
+        <translation>စကားဝှက်မမှန်ကန်ပါ</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;C စကားဝှက်ကိုပြောင်းမည်</translation>
     </message>
 </context>
 <context>
     <name>Preferences</name>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferences</translation>
     </message>
     <message>
         <source>Enable the &amp;target time at startup</source>
@@ -342,15 +350,15 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>ပိတ်မည်</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
-        <translation type="unfinished"></translation>
+        <translation>ပိတ်မည့်အမျိုးအစား-</translation>
     </message>
     <message>
         <source>Target time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Target အချိန်-</translation>
     </message>
     <message>
         <source>Minutes to countdown:</source>
@@ -358,43 +366,43 @@
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>စာလုံးပုံစံ-</translation>
     </message>
     <message>
         <source>Font size 1:</source>
-        <translation type="unfinished"></translation>
+        <translation>စာလုံးအရွယ်အစား ၁ -</translation>
     </message>
     <message>
         <source>Font size 2:</source>
-        <translation type="unfinished"></translation>
+        <translation>စာလုံးအရွယ်အစား ၂ -</translation>
     </message>
     <message>
         <source>Font size 3:</source>
-        <translation type="unfinished"></translation>
+        <translation>စာလုံးအရွယ်အစား ၃ -</translation>
     </message>
     <message>
         <source>Size for log file:</source>
-        <translation type="unfinished"></translation>
+        <translation>သိမ်းမည့်ဖိုင်အတွက်အရွယ်အစား-</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>စနစ်ပြန်လည်စတင်ရန်</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>ဆိုင်းငံ့ထားမည်</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>လက်ရှိ အခြေအနေတိုင်းမှတ်သား၍ အပြီးထွက်မည်</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;u အလိုအလျောက်စမည်</translation>
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;H qshutdown ကိုစက်စတင်ဖွင့်ဖွင့်ခြင်းတွင် ဖျောက်ထားမည်</translation>
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>
@@ -410,15 +418,15 @@
     </message>
     <message>
         <source>&amp;Reset settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Reset settings</translation>
     </message>
     <message>
         <source>Size for log file in KB</source>
-        <translation type="unfinished"></translation>
+        <translation>သိမ်းမည့်ဖိုင်အရွယ်အစားKB ဖြင့်</translation>
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;&amp;Lပြန်စပြီးသည့်အချိန်တွင်သော့ခတ်ပိတ်ထားမလား&quot;</translation>
     </message>
     <message>
         <source>&quot;&amp;Warnings on?&quot;</source>
@@ -435,11 +443,11 @@ it was running</source>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
-        <translation type="unfinished"></translation>
+        <translation>checkboxes နှင့် &quot;ယခု&quot; ခလုတ်</translation>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>အိုကေ နှင့် ချုံ့မည့်ခလုတ်များ</translation>
     </message>
     <message>
         <source>Labels for example</source>
@@ -447,7 +455,7 @@ it was running</source>
     </message>
     <message>
         <source>Set a font</source>
-        <translation type="unfinished"></translation>
+        <translation>စာလုံးပုံစံသတ်မှတ်မည်</translation>
     </message>
     <message>
         <source>What target time should be displayed
@@ -482,39 +490,63 @@ quit instead.</source>
     </message>
     <message>
         <source>&amp;Disable hiding</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dဖျောက်ထားခြင်းကိုပိတ်ထားမည်</translation>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>အထွေထွေ</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>အဆင့်မြင့်</translation>
     </message>
     <message>
         <source>Suspend method:</source>
-        <translation type="unfinished"></translation>
+        <translation>ဆိုင်းငံ့မည့်နည်းလမ်း-</translation>
     </message>
     <message>
         <source>automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>အလိုအလျောက်</translation>
+    </message>
+    <message>
+        <source>HAL</source>
+        <translation>HAL</translation>
+    </message>
+    <message>
+        <source>ConsoleKit</source>
+        <translation>ConsoleKit</translation>
+    </message>
+    <message>
+        <source>sudo shutdown -r</source>
+        <translation>sudo shutdown -r</translation>
     </message>
     <message>
         <source>user defined</source>
-        <translation type="unfinished"></translation>
+        <translation>အသုံးပြုသူမှသတ်မှတ်ထားသော</translation>
     </message>
     <message>
         <source>Hibernate method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibernate နည်းလမ်း-</translation>
+    </message>
+    <message>
+        <source>sudo shutdown -P</source>
+        <translation>sudo shutdown -P</translation>
     </message>
     <message>
         <source>Shutdown method:</source>
-        <translation type="unfinished"></translation>
+        <translation>လုံး၀ပိတ်မည့်နည်းလမ်း -</translation>
+    </message>
+    <message>
+        <source>UPower</source>
+        <translation>UPower</translation>
+    </message>
+    <message>
+        <source>DeviceKit</source>
+        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
-        <translation type="unfinished"></translation>
+        <translation>စက်ကိုပိတ်ပြီးပြန်ဖွင့်နိုင်မည့်နည်းလမ်း-</translation>
     </message>
     <message>
         <source>Please input an user specified command for suspend here</source>
@@ -522,11 +554,11 @@ quit instead.</source>
     </message>
     <message>
         <source>Gnome session</source>
-        <translation type="unfinished"></translation>
+        <translation>Gnome ကဏ္ဍ</translation>
     </message>
     <message>
         <source>KDE session</source>
-        <translation type="unfinished"></translation>
+        <translation>KDE  ကဏ္ဍ</translation>
     </message>
     <message>
         <source>Please input an user specified command for shutdown here</source>
@@ -548,21 +580,22 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Quit qshutdown after countdown ended?</source>
-        <translation type="unfinished"></translation>
+        <translation>အချိန်ရေတွက်မှု့ပြီးပါက qshutdown ကိုထွက်မလား။</translation>
     </message>
     <message>
         <source>&amp;Start countdown at startup</source>
+        <translation>&amp;S စက်စဖွင့်ဖွင့်ခြင်းမှာ အချိန်ရေတွက်မှု့ကိုစမည်</translation>
+    </message>
+    <message>
+        <source>Hide qshutdown at startup if
+&quot;Start countdown&quot; is checked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked</source>
-        <translation type="unfinished"></translation>
+        <translation>ဖိုင် &quot;%1&quot; ကိုရေးလို့မရပါ
+သင်ခွင့်ပြုချက်မရှိလို့လည်းဖြစ်နိုင်ပါသည်။</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2012 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -94,5 +94,5 @@ void ChangePassword::closeEvent(QCloseEvent* close_ch_pw){
      oldPasswd->clear();
      newPasswd->clear();
      retypedNewPasswd->clear();
-     QWidget::closeEvent(close_ch_pw);
+     QDialog::closeEvent(close_ch_pw);
 }

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="nds">
+<TS version="2.0" language="pt_BR">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre o qshutdown</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>Versão </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sobre</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Agradecimentos</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Usando Qt&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
@@ -43,23 +43,23 @@
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Modificar senha</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Redigite a senha:</translation>
     </message>
     <message>
         <source>New password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nova senha:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Senha anterior:</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation type="unfinished"></translation>
+        <translation>A senha atual não está correta!</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
@@ -70,14 +70,14 @@
     <name>Editor</name>
     <message>
         <source>Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor</translation>
     </message>
 </context>
 <context>
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Minimizar!</translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
@@ -113,71 +113,75 @@
     </message>
     <message>
         <source>shutdown in </source>
-        <translation type="unfinished"></translation>
+        <translation>desligar em </translation>
     </message>
     <message>
         <source>reboot in </source>
-        <translation type="unfinished"></translation>
+        <translation>reiniciar em </translation>
     </message>
     <message>
         <source>suspend in </source>
-        <translation type="unfinished"></translation>
+        <translation>supender em </translation>
     </message>
     <message>
         <source>hibernate in </source>
-        <translation type="unfinished"></translation>
+        <translation>hibernar em </translation>
     </message>
     <message>
         <source>years</source>
-        <translation type="unfinished"></translation>
+        <translation>anos</translation>
     </message>
     <message>
         <source>months</source>
-        <translation type="unfinished"></translation>
+        <translation>meses</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation type="unfinished"></translation>
+        <translation>horas</translation>
     </message>
     <message>
         <source>days</source>
-        <translation type="unfinished"></translation>
+        <translation>dias</translation>
     </message>
     <message>
         <source>Res&amp;tore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Restaurar</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Minimizar</translation>
     </message>
     <message>
         <source>day</source>
-        <translation type="unfinished"></translation>
+        <translation>dia</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>minutos</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>segundos</translation>
+    </message>
+    <message>
+        <source>&apos;qshutdown&apos;</source>
+        <translation>&apos;qshutdown&apos;</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Desligar</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Reiniciar</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>Suspender</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibernar</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
@@ -188,8 +192,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Minutes</source>
+        <translation>Minutos</translation>
+    </message>
+    <message>
         <source>&amp;Now!</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Agora!</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
@@ -197,43 +205,43 @@
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>R&amp;eset</source>
-        <translation type="unfinished"></translation>
+        <translation>R&amp;einiciar</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sair</translation>
     </message>
     <message>
         <source>&amp;Info</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Informações</translation>
     </message>
     <message>
         <source>&amp;Logfile</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Arquivo de log</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Preferências</translation>
     </message>
     <message>
         <source>&amp;Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Desligar</translation>
     </message>
     <message>
         <source>&amp;Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Reiniciar</translation>
     </message>
     <message>
         <source>S&amp;uspend</source>
-        <translation type="unfinished"></translation>
+        <translation>S&amp;uspender</translation>
     </message>
     <message>
         <source>&amp;Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Hibernar</translation>
     </message>
     <message>
         <source>Lock settings after countdown started</source>
@@ -241,47 +249,47 @@
     </message>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>Calendário</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Arquivo</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>A&amp;juda</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configurações</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sobre</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Reiniciar</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Configurar</translation>
     </message>
     <message>
         <source>&amp;Keep proportions</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Manter as proporções</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Action imminent!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ação iminente!</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informações</translation>
     </message>
     <message>
         <source>Countdown is not running!</source>
@@ -293,48 +301,48 @@
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre o &amp;Qt</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>Versão </translation>
     </message>
 </context>
 <context>
     <name>Info</name>
     <message>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Informações</translation>
     </message>
 </context>
 <context>
     <name>PassWord</name>
     <message>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Senha</translation>
     </message>
     <message>
         <source>&amp;Set password</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Definir senha</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Senha:</translation>
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation type="unfinished"></translation>
+        <translation>A senha não está correta!</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Modificar senha</translation>
     </message>
 </context>
 <context>
     <name>Preferences</name>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferências</translation>
     </message>
     <message>
         <source>Enable the &amp;target time at startup</source>
@@ -342,7 +350,7 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Desligar</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
@@ -358,35 +366,35 @@
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonte:</translation>
     </message>
     <message>
         <source>Font size 1:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonte tamanho 1:</translation>
     </message>
     <message>
         <source>Font size 2:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonte tamanho 2:</translation>
     </message>
     <message>
         <source>Font size 3:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fonte tamanho 3:</translation>
     </message>
     <message>
         <source>Size for log file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamanho para o arquivo de log:</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Reiniciar</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>Suspender</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Hibernar</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
@@ -402,7 +410,7 @@
     </message>
     <message>
         <source>&amp;Edit configuration file</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Editar arquivo de configuração</translation>
     </message>
     <message>
         <source>Enable the minute &amp;countdown at startup</source>
@@ -410,7 +418,7 @@
     </message>
     <message>
         <source>&amp;Reset settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Resetar configurações</translation>
     </message>
     <message>
         <source>Size for log file in KB</source>
@@ -447,7 +455,7 @@ it was running</source>
     </message>
     <message>
         <source>Set a font</source>
-        <translation type="unfinished"></translation>
+        <translation>Definir uma fonte</translation>
     </message>
     <message>
         <source>What target time should be displayed
@@ -486,11 +494,11 @@ quit instead.</source>
     </message>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Geral</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>Avançado</translation>
     </message>
     <message>
         <source>Suspend method:</source>
@@ -498,7 +506,19 @@ quit instead.</source>
     </message>
     <message>
         <source>automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>automático</translation>
+    </message>
+    <message>
+        <source>HAL</source>
+        <translation>HAL</translation>
+    </message>
+    <message>
+        <source>ConsoleKit</source>
+        <translation>ConsoleKit</translation>
+    </message>
+    <message>
+        <source>sudo shutdown -r</source>
+        <translation>sudo shutdown -r</translation>
     </message>
     <message>
         <source>user defined</source>
@@ -509,8 +529,20 @@ quit instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>sudo shutdown -P</source>
+        <translation>sudo shutdown -P</translation>
+    </message>
+    <message>
         <source>Shutdown method:</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UPower</source>
+        <translation>UPower</translation>
+    </message>
+    <message>
+        <source>DeviceKit</source>
+        <translation>DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -522,11 +554,11 @@ quit instead.</source>
     </message>
     <message>
         <source>Gnome session</source>
-        <translation type="unfinished"></translation>
+        <translation>Sessão do GNOME</translation>
     </message>
     <message>
         <source>KDE session</source>
-        <translation type="unfinished"></translation>
+        <translation>Sessão do KDE</translation>
     </message>
     <message>
         <source>Please input an user specified command for shutdown here</source>
@@ -555,13 +587,13 @@ qshutdown should quit after the countdown ended.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The File &quot;%1&quot; is not writable!
-Maybe you just don&apos;t have the permissions to do so.</source>
+        <source>Hide qshutdown at startup if
+&quot;Start countdown&quot; is checked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked</source>
+        <source>The File &quot;%1&quot; is not writable!
+Maybe you just don&apos;t have the permissions to do so.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

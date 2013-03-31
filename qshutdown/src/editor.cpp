@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2012 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,13 +61,13 @@ void Editor::showEvent(QShowEvent* show_editor){
 
      starting();
 
-     QWidget::showEvent(show_editor);
+     QDialog::showEvent(show_editor);
 }
 
 void Editor::closeEvent(QCloseEvent* close_editor){
      isClosed = true;
      finishing();
-     QWidget::closeEvent(close_editor);
+     QDialog::closeEvent(close_editor);
 }
 
 bool Editor::getClosed(){ return isClosed; }

@@ -1,6 +1,6 @@
 /* qprogram-starter, a program to start programs or commands, with
    the option to log output and errors and to shutdown the system.
- * Copyright (C) 2010-2012 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

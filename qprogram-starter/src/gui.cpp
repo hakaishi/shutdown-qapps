@@ -1,6 +1,6 @@
 /* qprogram-starter, a program to start programs or commands, with
    the option to log output and errors and to shutdown the system.
- * Copyright (C) 2010-2012 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -68,7 +68,7 @@ Gui::Gui(QWidget *parent) : QWidget(parent){
      hintMsgBox->resize(520,450);
      hintMsgBox->setWindowTitle("Info");
      hintMsgBox->setWindowModality(Qt::NonModal);
-     hintMsgBox->setHtml(tr("The command in the second text editor (if there is any) will be executed after the first one. The message boxes will close themselves after 10 seconds.<br/>To start a program just type i.e. \"firefox\" or \"firefox www.google.com\" and then click on OK. Commands etc. can be linked by \"&&\" etc. <br/><br/>If the process is \"finished\" although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.<br/><br/>When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).<br/><br/>make examples:<br/>&nbsp;make -C /path/to/project<br/>&nbsp;make clean -C /path/to/project<br/><br/>About Errors:<br/>Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at <i>~/.qprogram-starter/</i>.<br/><br/>If the shutdown won't work, it means that \"sudo shutdown -P now\" is used. This needs root permissions. You can do the this:<br/><br/>Post the following in a terminal:<pre>EDITOR=nano sudo -E visudo</pre> and add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre> whereas * replaces the username or %groupname.<br/><br/>The configuration-file can be found at <i>~/.qprogram-starter/</i>."));
+     hintMsgBox->setHtml(tr("The command in the second text editor (if there is any) will be executed after the first one. The message boxes will close themselves after 10 seconds.<br/>To start a program just type i.e. \"firefox\" or \"firefox www.google.com\" and then click on Start. Commands etc. can be linked by \"&&\" etc. <br/><br/>If the process is \"finished\" although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.<br/><br/>When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).<br/><br/>make examples:<br/>&nbsp;make -C /path/to/project<br/>&nbsp;make clean -C /path/to/project<br/><br/>About Errors:<br/>Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at <i>~/.qprogram-starter/</i>.<br/><br/>If the shutdown won't work, it means that \"sudo shutdown -P now\" is used. This needs root permissions. You can do the this:<br/><br/>Post the following in a terminal:<pre>EDITOR=nano sudo -E visudo</pre> and add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre> whereas * replaces the username or %groupname.<br/><br/>The configuration-file can be found at <i>~/.qprogram-starter/</i>."));
 
      connect(dateTimeTimer, SIGNAL(timeout()), this, SLOT(currentDateAndTime()));
      connect(startB, SIGNAL(clicked(bool)), this, SLOT(run()));
@@ -96,10 +96,7 @@ void Gui::closeEvent(QCloseEvent* window_close){
      if(!settings->isWritable())
        *myOutput << "W: qprogram-starter.conf is not writable!" << endl;
      else
-       settings->setValue("CheckBoxes/atDate", atDateCheckBox->isChecked());
-       settings->setValue("CheckBoxes/logging", loggingCheckBox->isChecked());
-       settings->setValue("CheckBoxes/shutdown", shutdownCheckBox->isChecked());
-       settings->setValue("CheckBoxes/quitWithLasProcess", quitCheckBox->isChecked());
+       saveSettings();
      qApp->quit();
      QWidget::closeEvent(window_close);
 }
@@ -116,7 +113,7 @@ void Gui::info_hint(){ hintMsgBox->show(); }
 void Gui::check(){ //To check if start time is reached
      secondsToTimeInTheFuture = QDateTime::currentDateTime().secsTo(timeInTheFuture);
      if(secondsToTimeInTheFuture <= 0){
-       processArgs1 << "-c" << textEdit->toPlainText();
+       processArgs1 << "-c" << plainTextEdit->toPlainText();
        process1->start(shell, processArgs1);
        timer->stop();
      }
@@ -124,28 +121,28 @@ void Gui::check(){ //To check if start time is reached
 
 void Gui::getProgram1(){
      program1 = QFileDialog::getOpenFileName(this, tr("Select a program"), "/usr/bin");
-     textEdit->insertPlainText(program1);
-     textEdit->setFocus();
+     plainTextEdit->insertPlainText(program1);
+     plainTextEdit->setFocus();
 }
 
 void Gui::getProgram2(){
      program2 = QFileDialog::getOpenFileName(this, tr("Select a program"), "/usr/bin");
-     textEdit2->insertPlainText(program2);
-     textEdit2->setFocus();
+     plainTextEdit2->insertPlainText(program2);
+     plainTextEdit2->setFocus();
 }
 
 void Gui::run(){ //To start either the timer or start the process
-     if(!textEdit->toPlainText().isEmpty()){
+     if(!plainTextEdit->toPlainText().isEmpty()){
        nextDate = dateEdit->dateTime();
        timeInTheFuture = nextDate.addSecs(timeEdit->time().hour()*3600 + timeEdit->time().minute()*60 + timeEdit->time().second());
-       textEdit->setDisabled(true);
+       plainTextEdit->setDisabled(true);
        atDateCheckBox->setDisabled(true);
        dateEdit->setDisabled(true);
        timeEdit->setDisabled(true);
        if(atDateCheckBox->isChecked())
          timer->start(1000);
        else{
-         processArgs1 << "-c" << textEdit->toPlainText();
+         processArgs1 << "-c" << plainTextEdit->toPlainText();
          process1->start(shell, processArgs1);
        }
      }
@@ -188,19 +185,19 @@ void Gui::abortProcesses(){
        dateEdit->setEnabled(true);
        timeEdit->setEnabled(true);
      }
-     textEdit->setEnabled(true);
-     textEdit2->setEnabled(true);
+     plainTextEdit->setEnabled(true);
+     plainTextEdit2->setEnabled(true);
 
      aborted = false;
 }
 
 void Gui::checkForProcess2(){ //check if there is a second command
      if(process1->exitCode()==0 && process1->exitStatus()==0 && process1->error()==5
-       && !textEdit2->toPlainText().isEmpty() && !aborted){
-       processArgs2 << "-c" << textEdit2->toPlainText();
+       && !plainTextEdit2->toPlainText().isEmpty() && !aborted){
+       processArgs2 << "-c" << plainTextEdit2->toPlainText();
        process2->start(shell, processArgs2);
        process2Started = true;
-       textEdit2->setDisabled(true);
+       plainTextEdit2->setDisabled(true);
      }
      else
        finished();
@@ -272,7 +269,7 @@ void Gui::showLogs(){
        logBox1->show();
 
        if(process1->exitCode()==0 && process1->exitStatus()==0
-         && process1->error()==5 && !textEdit2->toPlainText().isEmpty() && !aborted){
+         && process1->error()==5 && !plainTextEdit2->toPlainText().isEmpty() && !aborted){
          if(!outputProcess2.isEmpty())
            logBox2->append(outputProcess2);
          if(!errProcess2.isEmpty())
@@ -285,6 +282,9 @@ void Gui::showLogs(){
 void Gui::shutdown_or_message(){
 #ifndef Q_OS_WIN32
      if(shutdownCheckBox->isChecked() && !aborted){
+
+       saveSettings();
+
        bool g = false; //gnome
        bool k = false; //kde
        bool g_pwr1 = false;
@@ -307,6 +307,14 @@ void Gui::shutdown_or_message(){
        }
        else
          g = true;
+       if(!g){
+         response = gnomeSessionManager.call("Shutdown");
+         if(response.type() == QDBusMessage::ErrorMessage)
+           *myOutput << "W: " << response.errorName() << ": "
+                     << response.errorMessage() << endl;
+         else
+           g = true;
+       }
 
        if(!g && !g_pwr1 && !g_pwr2){
          QDBusInterface kdeSessionManager("org.kde.ksmserver", "/KSMServer",
@@ -356,7 +364,7 @@ void Gui::message(){
      if(!aborted){
        QMessageBox msgBox;
        if(process1->exitCode()==0 && process1->exitStatus()==0 && process1->error()==5){
-         if(textEdit2->toPlainText().isEmpty()){
+         if(plainTextEdit2->toPlainText().isEmpty()){
            msgBox.setWindowTitle(tr("Information"));
            msgBox.setIcon(QMessageBox::Information);
            msgBox.setInformativeText(tr("<b>process 1 finished!</b>"));
@@ -382,7 +390,7 @@ void Gui::message(){
                  return;
                QTextStream err1(&errorLog1);
                err1 << tr("\"%1\": Failed to start! No such program or "
-                          "command.\n").arg(textEdit->toPlainText());
+                          "command.\n").arg(plainTextEdit->toPlainText());
                errorLog1.close();
              }
 
@@ -392,7 +400,7 @@ void Gui::message(){
                  return;
                QTextStream err2(&errorLog2);
                err2 << tr("\"%1\": Failed to start! No such program or "
-                          "command.\n").arg(textEdit2->toPlainText());
+                          "command.\n").arg(plainTextEdit2->toPlainText());
                errorLog2.close();
              }
            }
@@ -418,16 +426,23 @@ void Gui::message(){
        dateEdit->setEnabled(true);
        timeEdit->setEnabled(true);
      }
-     textEdit->setEnabled(true);
-     textEdit2->setEnabled(true);
+     plainTextEdit->setEnabled(true);
+     plainTextEdit2->setEnabled(true);
 
      if(quitCheckBox->isChecked() && !aborted)
        close();
 }
 
 void Gui::saveData(){
-     settings->setValue("Text/text1", textEdit->toPlainText());
-     settings->setValue("Text/text2", textEdit2->toPlainText());
+     settings->setValue("Text/text1", plainTextEdit->toPlainText());
+     settings->setValue("Text/text2", plainTextEdit2->toPlainText());
+}
+
+void Gui::saveSettings(){
+     settings->setValue("CheckBoxes/atDate", atDateCheckBox->isChecked());
+     settings->setValue("CheckBoxes/logging", loggingCheckBox->isChecked());
+     settings->setValue("CheckBoxes/shutdown", shutdownCheckBox->isChecked());
+     settings->setValue("CheckBoxes/quitWithLastProcess", quitCheckBox->isChecked());
 }
 
 void Gui::loadSettings(){
@@ -438,8 +453,8 @@ void Gui::loadSettings(){
          settings->setValue("CheckBoxes/logging", false);
        if(!settings->contains("CheckBoxes/shutdown"))
          settings->setValue("CheckBoxes/shutdown", false);
-       if(!settings->contains("CheckBoxes/quitWithLasProcess"))
-         settings->setValue("CheckBoxes/quitWithLasProcess", false);
+       if(!settings->contains("CheckBoxes/quitWithLastProcess"))
+         settings->setValue("CheckBoxes/quitWithLastProcess", false);
        if(!settings->contains("CheckBoxes/text1"))
          settings->setValue("Text/text1", QString());
        if(!settings->contains("CheckBoxes/text2"))
@@ -449,7 +464,7 @@ void Gui::loadSettings(){
      atDateCheckBox->setChecked(settings->value("CheckBoxes/atDate").toBool());
      loggingCheckBox->setChecked(settings->value("CheckBoxes/logging").toBool());
      shutdownCheckBox->setChecked(settings->value("CheckBoxes/shutdown").toBool());
-     quitCheckBox->setChecked(settings->value("CheckBoxes/quitWithLasProcess").toBool());
-     textEdit->setText(settings->value("Text/text1").toString());
-     textEdit2->setText(settings->value("Text/text2").toString());
+     quitCheckBox->setChecked(settings->value("CheckBoxes/quitWithLastProcess").toBool());
+     plainTextEdit->setPlainText(settings->value("Text/text1").toString());
+     plainTextEdit2->setPlainText(settings->value("Text/text2").toString());
 }

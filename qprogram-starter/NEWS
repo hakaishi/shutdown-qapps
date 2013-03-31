@@ -1,3 +1,15 @@
+Changes in Release 1.6.5
+=========================
+
+ - fixed bug: Settings are not saved if shutdown was set
+ - reviewed shutdown commands
+ - starting translations
+
+Changes in Release 1.6.4
+=========================
+
+ - Commands etc. can now be linked/connected with "&&" etc.
+
 Changes in Release 1.6.2
 =========================
 

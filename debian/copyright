@@ -1,6 +1,6 @@
 This package was debianized by:
 
-    Christian Metscher <hakaishi@web.de> on Thu, 13 Sep 2012 10:41:21 +0200
+    Christian Metscher <hakaishi@web.de> on Sun, 31 Mar 2013 12:29:27 +0200
 
 Upstream Author:
 
@@ -8,7 +8,7 @@ Upstream Author:
 
 Copyright:
 
-    Copyright (C) 2010-2012 Christian Metscher <hakaishi@web.de>
+    Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
 
 License:
 
@@ -29,7 +29,7 @@ License:
 
 The Debian packaging is:
 
-    Copyright (C) 2010-2012 Christian Metscher <hakaishi@web.de>
+    Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
 
 and is licensed under the GPL version 3, see `/usr/share/common-licenses/GPL-3'.
 

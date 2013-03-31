@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown the shutdown/reboot/suspend/hibernate
- * Copyright (C) 2010-2012 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -90,6 +90,15 @@ void shutdown(){
                 << response.errorMessage() << endl;
        }
        else g = true;
+       if(!g){
+         response = gnomeSessionManager.call("Shutdown");
+         if(response.type() == QDBusMessage::ErrorMessage){
+           if(verbose)
+             oput << "W: " << response.errorName() << ": "
+                  << response.errorMessage() << endl;
+         }
+         else g = true;
+       }
      }
      else g = true;
 

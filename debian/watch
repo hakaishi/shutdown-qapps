@@ -1,4 +1,2 @@
 version=3
-https://github.com/hakaishi/shutdown-qapps/downloads/ \
-/downloads/hakaishi/shutdown-qapps/shutdown-qapps_(\d\.\d\.\d)\.orig\.tar\.gz \
-debian uupdate
+https://launchpad.net/qt-shutdown-p/+download .*/shutdown-qapps_(\d.*)\.orig\.tar\.gz

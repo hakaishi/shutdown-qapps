@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2012 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,13 +46,13 @@ void Calendar::setDate(){
 void Calendar::showEvent(QShowEvent* show_calendar){
      isClosed = false;
      starting();
-     QWidget::showEvent(show_calendar);
+     QDialog::showEvent(show_calendar);
 }
 
 void Calendar::closeEvent(QCloseEvent* close_calendar){
      isClosed = true;
      finishing();
-     QWidget::closeEvent(close_calendar);
+     QDialog::closeEvent(close_calendar);
 }
 
 bool Calendar::getClosed(){ return isClosed; }

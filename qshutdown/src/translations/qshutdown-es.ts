@@ -25,7 +25,7 @@
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Agradecemos especialmente a:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler por ayudar aquí y allí.&lt;br /&gt;&lt;br /&gt;Y a Brian Nelson por auspiciar la subida a Debian.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;Agradecemos especialmente a:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler por ayudar aquí y allí.&lt;br /&gt;&lt;br /&gt;Y a Brian Nelson por auspiciar la subida a Debian.&lt;br /&gt;&lt;br /&gt;Translators: Eduardo Battaglia, Fitoschido, inma barrios, Dante Díaz, Adolfo Jayme Barrientos&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
@@ -354,7 +354,7 @@
     </message>
     <message>
         <source>Minutes to countdown:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minutos a la cuenta regresiva:</translation>
     </message>
     <message>
         <source>Font:</source>
@@ -457,7 +457,8 @@ by default at startup?</source>
     <message>
         <source>How many minutes should be displayed
 for countdown by default at startup?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Cuántos minutos deberán ser mostrados,
+por defecto, para la cuenta regresiva al inicio?</translation>
     </message>
     <message>
         <source>What should be displayed first by
@@ -557,7 +558,8 @@ qshutdown should quit after the countdown ended.</source>
     <message>
         <source>Hide qshutdown at startup if
 &quot;Start countdown&quot; is checked</source>
-        <translation type="unfinished"></translation>
+        <translation>Oculta qshutdown al inicio si
+&quot;Iniciar la cuenta regresiva&quot; está marcado</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!

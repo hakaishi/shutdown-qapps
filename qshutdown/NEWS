@@ -1,8 +1,8 @@
 Changes in Release 1.6.5
 =========================
 
- - minor fix for preferences and the password dialog
- - translation update for Esperanto
+ - minor fix for the preferences, the password and the about dialog
+ - reviewed shutdown commands
 
 Changes in Release 1.6.4
 =========================
