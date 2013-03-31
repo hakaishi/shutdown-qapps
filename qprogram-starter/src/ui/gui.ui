@@ -221,10 +221,10 @@
   <tabstop>atDateCheckBox</tabstop>
   <tabstop>dateEdit</tabstop>
   <tabstop>timeEdit</tabstop>
-  <tabstop>plainTextEdit</tabstop>
   <tabstop>browse1</tabstop>
-  <tabstop>plainTextEdit2</tabstop>
+  <tabstop>plainTextEdit</tabstop>
   <tabstop>browse2</tabstop>
+  <tabstop>plainTextEdit2</tabstop>
   <tabstop>loggingCheckBox</tabstop>
   <tabstop>quitCheckBox</tabstop>
   <tabstop>shutdownCheckBox</tabstop>
