@@ -86,8 +86,8 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
-            <width>353</width>
+            <y>-53</y>
+            <width>357</width>
             <height>568</height>
            </rect>
           </property>
@@ -391,7 +391,7 @@ should be checked by default at startup</string>
                </property>
                <property name="toolTip">
                 <string>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked</string>
+&quot;Start countdown&quot; is checked.</string>
                </property>
                <property name="text">
                 <string>&amp;Hide qshutdown at startup</string>

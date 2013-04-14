@@ -3,7 +3,9 @@ Changes in Release 1.6.5
 
  - fixed bug: Settings are not saved if shutdown was set
  - reviewed shutdown commands
- - starting translations
+ - added translations for: (German), Asturian, Bosnian, Croatian,
+    English (Australia / United Kingdom), Galician, Italian, Malay, Polish,
+    Russian, Turkish, Ukrainian
 
 Changes in Release 1.6.4
 =========================

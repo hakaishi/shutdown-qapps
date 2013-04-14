@@ -3,10 +3,14 @@ shutdown-qapps (1.6.5-1) unstable; urgency=low
   * qshutdown
     - minor fix for the preferences, the password and the about dialog
     - reviewed shutdown commands
+    - new translations for: English (Australian), Galician, Croatian, Burmese,
+      Romanian
   * qprogram-starter
     - fixed bug: Settings are not saved if shutdown was set
     - reviewed shutdown commands
-    - starting translations
+    - added translations for: (German), Asturian, Bosnian, Croatian,
+      English (Australia / United Kingdom), Galician, Italian, Malay, Polish,
+      Russian, Turkish, Ukrainian
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 31 Mar 2013 12:29:27 +0200
 

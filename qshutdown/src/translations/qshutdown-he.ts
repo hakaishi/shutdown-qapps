@@ -29,7 +29,11 @@
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;html dir=&quot;rtl&quot;&gt;&lt;p&gt;qshutdown, כלי לכיבוי לפי תזמון או ספירה לאחור&lt;/p&gt;&lt;p&gt;יוצר: &amp;lt;Christian Metscher &amp;lt;hakaishi@web.de&lt;/p&gt;&lt;p&gt;כל הזכויות שמורות &amp;copy; 2010-‏2012, ל־Christian Metscher &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;נא להשתמש בכתובת &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot;  text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; או ב־ &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; כדי לדווח על תקלות.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html dir=&quot;rtl&quot;&gt;&lt;p&gt;qshutdown, כלי לכיבוי לפי תזמון או ספירה לאחור&lt;/p&gt;&lt;p&gt;יוצר: &amp;lt;Christian Metscher &amp;lt;hakaishi@web.de&lt;/p&gt;&lt;p&gt;כל הזכויות שמורות &amp;copy; 2010-‏2012, ל־Christian Metscher &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;נא להשתמש בכתובת &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot;  text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; או ב־ &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; כדי לדווח על תקלות.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;html dir=&quot;rtl&quot;&gt;&lt;p&gt;qshutdown, כלי לכיבוי לפי תזמון או ספירה לאחור&lt;/p&gt;&lt;p&gt;יוצר: &amp;lt;Christian Metscher &amp;lt;hakaishi@web.de&lt;/p&gt;&lt;p&gt;כל הזכויות שמורות &amp;copy; 2010-‏2013, ל־Christian Metscher &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;נא להשתמש בכתובת &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot;  text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; או ב־ &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; כדי לדווח על תקלות.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -164,6 +168,10 @@
         <translation>שניות</translation>
     </message>
     <message>
+        <source>&apos;qshutdown&apos;</source>
+        <translation type="obsolete">&apos;qshutdown&apos;</translation>
+    </message>
+    <message>
         <source>Shutdown</source>
         <translation>כיבוי</translation>
     </message>
@@ -186,6 +194,10 @@
     <message>
         <source>&amp;Warnings on?</source>
         <translation>לה&amp;פעיל את האזהרות?</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation type="obsolete">דקות</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -472,13 +484,13 @@ default at startup?</source>
         <source>Set if the checkbox for &quot;Lock after start?&quot;
 should be checked by default at startup</source>
         <translation>הגדרה האם תיבת הסימון „נעילה לאחר ההפעלה?“
-אמור להיות מסומנת בהתחלה כבררת מחדל</translation>
+אמור להיות מסומנת בהתחלה כבררת מחדל.</translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Warnings on?&quot;
 should be checked by default at startup</source>
         <translation>הגדרה האם תיבת הסימון „אזהרות פעילות?“
-אמור להיות מסומנת בהתחלה כבררת מחדל</translation>
+אמור להיות מסומנת בהתחלה כבררת מחדל.</translation>
     </message>
     <message>
         <source>The close button usually hides the main window.
@@ -509,6 +521,18 @@ quit instead.</source>
         <translation>אוטומטית</translation>
     </message>
     <message>
+        <source>HAL</source>
+        <translation type="obsolete">HAL</translation>
+    </message>
+    <message>
+        <source>ConsoleKit</source>
+        <translation type="obsolete">ConsoleKit</translation>
+    </message>
+    <message>
+        <source>sudo shutdown -r</source>
+        <translation type="obsolete">sudo shutdown -r</translation>
+    </message>
+    <message>
         <source>user defined</source>
         <translation>בהגדרות המשתמש</translation>
     </message>
@@ -517,8 +541,20 @@ quit instead.</source>
         <translation>שיטת התרדמת:</translation>
     </message>
     <message>
+        <source>sudo shutdown -P</source>
+        <translation type="obsolete">sudo shutdown -P</translation>
+    </message>
+    <message>
         <source>Shutdown method:</source>
         <translation>שיטת הכיבוי:</translation>
+    </message>
+    <message>
+        <source>UPower</source>
+        <translation type="obsolete">UPower</translation>
+    </message>
+    <message>
+        <source>DeviceKit</source>
+        <translation type="obsolete">DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -566,9 +602,9 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked</source>
-        <translation>«قوزغالغاندا countdown نى قوزغات» تاللانغان بولسا
-قوزغالغاندا qshutdown نى يوشۇر</translation>
+&quot;Start countdown&quot; is checked.</source>
+        <translation>הסתרת qshutdown עם הפעלתה אם
+יש סימון על „הפעלת הספירה לאחור עם ההפעלה“.</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!

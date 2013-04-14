@@ -28,7 +28,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -47,7 +47,7 @@
     </message>
     <message>
         <source>Retype password:</source>
-        <translation>စကားဝှက်ကိုပြန်ရိုက်ပါ -</translation>
+        <translation>စကားဝှက်ကို ပြန်ရိုက်ပါ။</translation>
     </message>
     <message>
         <source>New password:</source>
@@ -165,7 +165,7 @@
     </message>
     <message>
         <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
+        <translation type="obsolete">&apos;qshutdown&apos;</translation>
     </message>
     <message>
         <source>Shutdown</source>
@@ -193,7 +193,7 @@
     </message>
     <message>
         <source>Minutes</source>
-        <translation>မိနစ်</translation>
+        <translation type="obsolete">မိနစ်</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -510,15 +510,15 @@ quit instead.</source>
     </message>
     <message>
         <source>HAL</source>
-        <translation>HAL</translation>
+        <translation type="obsolete">HAL</translation>
     </message>
     <message>
         <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
+        <translation type="obsolete">ConsoleKit</translation>
     </message>
     <message>
         <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
+        <translation type="obsolete">sudo shutdown -r</translation>
     </message>
     <message>
         <source>user defined</source>
@@ -530,7 +530,7 @@ quit instead.</source>
     </message>
     <message>
         <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
+        <translation type="obsolete">sudo shutdown -P</translation>
     </message>
     <message>
         <source>Shutdown method:</source>
@@ -538,11 +538,11 @@ quit instead.</source>
     </message>
     <message>
         <source>UPower</source>
-        <translation>UPower</translation>
+        <translation type="obsolete">UPower</translation>
     </message>
     <message>
         <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
+        <translation type="obsolete">DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -587,15 +587,15 @@ qshutdown should quit after the countdown ended.</source>
         <translation>&amp;S စက်စဖွင့်ဖွင့်ခြင်းမှာ အချိန်ရေတွက်မှု့ကိုစမည်</translation>
     </message>
     <message>
-        <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
         <translation>ဖိုင် &quot;%1&quot; ကိုရေးလို့မရပါ
 သင်ခွင့်ပြုချက်မရှိလို့လည်းဖြစ်နိုင်ပါသည်။</translation>
+    </message>
+    <message>
+        <source>Hide qshutdown at startup if
+&quot;Start countdown&quot; is checked.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

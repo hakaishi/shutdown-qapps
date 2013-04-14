@@ -3,6 +3,8 @@ Changes in Release 1.6.5
 
  - minor fix for the preferences, the password and the about dialog
  - reviewed shutdown commands
+ - new translations for: English (Australian), Galician, Croatian, Burmese,
+    Romanian
 
 Changes in Release 1.6.4
 =========================

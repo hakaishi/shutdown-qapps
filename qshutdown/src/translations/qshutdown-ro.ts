@@ -30,7 +30,11 @@
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, utilitar de închidere programată a calculatorului&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Vă rugăm utilizați &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; sau &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; pentru raportarea defectelor.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p &gt;qshutdown, utilitar de închidere programată a calculatorului&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Vă rugăm utilizați &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; sau &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; pentru raportarea defectelor.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p &gt;qshutdown, utilitar de închidere programată a calculatorului&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Vă rugăm utilizați &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; sau &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; pentru raportarea defectelor.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -166,7 +170,7 @@
     </message>
     <message>
         <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
+        <translation type="obsolete">&apos;qshutdown&apos;</translation>
     </message>
     <message>
         <source>Shutdown</source>
@@ -194,7 +198,7 @@
     </message>
     <message>
         <source>Minutes</source>
-        <translation>Minute</translation>
+        <translation type="obsolete">Minute</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -519,15 +523,15 @@ se va închide complet.</translation>
     </message>
     <message>
         <source>HAL</source>
-        <translation>HAL</translation>
+        <translation type="obsolete">HAL</translation>
     </message>
     <message>
         <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
+        <translation type="obsolete">ConsoleKit</translation>
     </message>
     <message>
         <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
+        <translation type="obsolete">sudo shutdown -r</translation>
     </message>
     <message>
         <source>user defined</source>
@@ -539,7 +543,7 @@ se va închide complet.</translation>
     </message>
     <message>
         <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
+        <translation type="obsolete">sudo shutdown -P</translation>
     </message>
     <message>
         <source>Shutdown method:</source>
@@ -547,11 +551,11 @@ se va închide complet.</translation>
     </message>
     <message>
         <source>UPower</source>
-        <translation>UPower</translation>
+        <translation type="obsolete">UPower</translation>
     </message>
     <message>
         <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
+        <translation type="obsolete">DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -608,6 +612,12 @@ dacă este bifat „Pornire numărătoare”.</translation>
 Maybe you just don&apos;t have the permissions to do so.</source>
         <translation>Fișierul „%1” nu poate fi scris!
 Poate nu aveți permisiune de scriere.</translation>
+    </message>
+    <message>
+        <source>Hide qshutdown at startup if
+&quot;Start countdown&quot; is checked</source>
+        <translation type="obsolete">Ascunde qshutdown la pornirea calculatorului
+dacă este bifat „Pornire numărătoare”.</translation>
     </message>
 </context>
 <context>

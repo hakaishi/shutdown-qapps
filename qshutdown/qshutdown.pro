@@ -29,16 +29,18 @@ TRANSLATIONS = src/translations/qshutdown-ast.ts\
                src/translations/qshutdown-bg.ts\
                src/translations/qshutdown-bs.ts\
                src/translations/qshutdown-de.ts\
+               src/translations/qshutdown-en_AU.ts\
                src/translations/qshutdown-en_GB.ts\
                src/translations/qshutdown-eo.ts\
                src/translations/qshutdown-es.ts\
                src/translations/qshutdown-fr.ts\
+               src/translations/qshutdown-gl.ts\
                src/translations/qshutdown-he.ts\
+               src/translations/qshutdown-hr.ts\
                src/translations/qshutdown-it.ts\
                src/translations/qshutdown-ja.ts\
                src/translations/qshutdown-ms.ts\
                src/translations/qshutdown-my.ts\
-               src/translations/qshutdown-pt_BR.ts\
                src/translations/qshutdown-ro.ts\
                src/translations/qshutdown-tr.ts\
                src/translations/qshutdown-ug.ts\

@@ -25,11 +25,15 @@
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Agradecimientu especial a:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler por ayudar equí y acullá.&lt;br /&gt;&lt;br /&gt;Y Brian Nelson por patrocinar les xubíes a Debian.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;Agradecimientu especial a:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler por ayudar equí y acullá.&lt;br /&gt;&lt;br /&gt;Y Brian Nelson por patrocinar les xubíes a Debian.&lt;br /&gt;&lt;br /&gt;Traductor: Xuacu Saturio&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, una ferramienta d&apos;apagáu pol horariu y cuenta atrás&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Por favor, usa &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; o &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; pa informar de fallos.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p &gt;qshutdown, una ferramienta d&apos;apagáu pol horariu y cuenta atrás&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Por favor, usa &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; o &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; pa informar de fallos.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p &gt;qshutdown, una ferramienta d&apos;apagáu pol horariu y cuenta atrás&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Por favor, usa &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; o &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; pa informar de fallos.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -43,27 +47,27 @@
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation>Camudar la conseña</translation>
+        <translation>Camudar la contraseña</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation>Escribi la conseña otra vuelta:</translation>
+        <translation>Escribi la contraseña otra vuelta:</translation>
     </message>
     <message>
         <source>New password:</source>
-        <translation>Conseña nueva:</translation>
+        <translation>Contraseña nueva:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation>Conseña antigua:</translation>
+        <translation>Contraseña antigua:</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation>¡La conseña actual ye incorreuta!</translation>
+        <translation>¡La contraseña actual ye incorreuta!</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation>¡La conseña que volvisti a escribir nun casa!</translation>
+        <translation>¡La contraseña que volvisti a escribir nun casa!</translation>
     </message>
 </context>
 <context>
@@ -164,12 +168,16 @@
         <translation>segundos</translation>
     </message>
     <message>
+        <source>&apos;qshutdown&apos;</source>
+        <translation type="obsolete">&apos;qshutdown&apos;</translation>
+    </message>
+    <message>
         <source>Shutdown</source>
         <translation>Apagáu</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Reiniciar</translation>
+        <translation>Reaniciar</translation>
     </message>
     <message>
         <source>Suspend</source>
@@ -181,11 +189,15 @@
     </message>
     <message>
         <source>&amp;Lock after start?</source>
-        <translation>¿B&amp;loquiar dempués d&apos;executar?</translation>
+        <translation>¿B&amp;loquiar dempués del aniciu?</translation>
     </message>
     <message>
         <source>&amp;Warnings on?</source>
         <translation>¿Activar a&amp;visos?</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation type="obsolete">Minutos</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -311,23 +323,23 @@
     <name>PassWord</name>
     <message>
         <source>Password</source>
-        <translation>Conseña</translation>
+        <translation>Contraseña</translation>
     </message>
     <message>
         <source>&amp;Set password</source>
-        <translation>Afitar con&amp;seña</translation>
+        <translation>Afitar contra&amp;seña</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Conseña:</translation>
+        <translation>Contraseña:</translation>
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation>¡La conseña nun ye correuta!</translation>
+        <translation>¡La contraseña nun ye correuta!</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
-        <translation>&amp;Camudar conseña</translation>
+        <translation>&amp;Camudar contraseña</translation>
     </message>
 </context>
 <context>
@@ -390,7 +402,7 @@
     </message>
     <message>
         <source>A&amp;utostart</source>
-        <translation>Arranque a&amp;uto</translation>
+        <translation>&amp;Autoarranque</translation>
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
@@ -398,7 +410,7 @@
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>
-        <translation>Bloquiar pantalla &amp;con suspender ya hibernar</translation>
+        <translation>&amp;Bloquiar pantalla con suspender ya hibernar</translation>
     </message>
     <message>
         <source>&amp;Edit configuration file</source>
@@ -486,7 +498,7 @@ Disabling hiding means, that qshutdown will then
 quit instead.</source>
         <translation>El botón zarrar de vezu anubre la ventana principal.
 Desactivar anubrimientu significa que qshutdown
-entós se zarrará.</translation>
+entós zarraráse.</translation>
     </message>
     <message>
         <source>&amp;Disable hiding</source>
@@ -509,6 +521,18 @@ entós se zarrará.</translation>
         <translation>automáticu</translation>
     </message>
     <message>
+        <source>HAL</source>
+        <translation type="obsolete">HAL</translation>
+    </message>
+    <message>
+        <source>ConsoleKit</source>
+        <translation type="obsolete">ConsoleKit</translation>
+    </message>
+    <message>
+        <source>sudo shutdown -r</source>
+        <translation type="obsolete">sudo shutdown -r</translation>
+    </message>
+    <message>
         <source>user defined</source>
         <translation>definíu pol usuariu</translation>
     </message>
@@ -517,8 +541,20 @@ entós se zarrará.</translation>
         <translation>Métodu d&apos;hibernación:</translation>
     </message>
     <message>
+        <source>sudo shutdown -P</source>
+        <translation type="obsolete">sudo shutdown -P</translation>
+    </message>
+    <message>
         <source>Shutdown method:</source>
         <translation>Métodu d&apos;apagáu:</translation>
+    </message>
+    <message>
+        <source>UPower</source>
+        <translation type="obsolete">UPower</translation>
+    </message>
+    <message>
+        <source>DeviceKit</source>
+        <translation type="obsolete">DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -566,14 +602,14 @@ qshutdown tien de finar en acabando la cuenta atrás.</translation>
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked</source>
-        <translation>Anubrir qshutdown nel aniciu si
-ta marcáu &quot;Llanzar cuenta atrás nel aniciu&quot;</translation>
+&quot;Start countdown&quot; is checked.</source>
+        <translation>Anubrir qshutdown nel aniciu si ta marcáu
+&quot;Llanzar cuenta atrás nel aniciu&quot;.</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation>¡El ficheru &quot;%1&quot; nun se pue escribir!
+        <translation>¡El ficheru &quot;%1&quot; nun pue escribise!
 Seique nun tengas permisos pa facelo.</translation>
     </message>
 </context>
@@ -581,7 +617,7 @@ Seique nun tengas permisos pa facelo.</translation>
     <name>QObject</name>
     <message>
         <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>qshutdown apaecerá 3 vegaes como avisu si queden menos de 70 segundos.&lt;br/&gt;&lt;br/&gt;Esti programa usa qdbus pa unviar una solicitú d&apos;apagáu/reaniciu/suspensión/hibernación al alministrador de sesión de gnome o al de kde, a HAL/ConsoleKit/DeviceKit/UPower y, si nun funciona dengunu d&apos;ellos, S&apos;usará el comandu &apos;sudo shutdown&apos; (atalanta qu&apos;al unviar la solicitú d&apos;apagáu a HAL o ConsoleKit, o si s&apos;usa&apos;l comandu shutdown, nunca se guardará la Sesión. Al usar el comandu shutdown, el programa namái podrá apagar y reaniciar). Poro, si nun asocede ren al llegar el tiempu d&apos;apagáu o reaniciu, quier dicir que ún nun tien permisu pa usar el comandu shutdown. Nesti casu se pue facer lo siguiente:&lt;br/&gt;&lt;br/&gt;Pega lo que sigue nun terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;y amiesta esta llinia:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; onde * ye&apos;l nome d&apos;usuariu o&apos;l nome de grupu.&lt;br/&gt;&lt;br/&gt;El númberu máximu de minutos de la cuenta atrás ye de 1440 (24 hores).&lt;br/&gt;El ficheru de configuración (y el de rexistru) s&apos;alcuentra en &lt;i&gt;~/.qshutdown/&lt;/i&gt; (baxo Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;P&apos;alministradores:&lt;/b&gt;&lt;br/&gt;Si quies que qshutdown s&apos;execute con &quot;bloquéu de pas&quot; pa cada usuariu, pues facer &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; y configurar la opción Lock_all de /root/.qshutdown/qshutdown.conf como true. Atalanta que qshutdown tien d&apos;executase una vegada pa xenerar qshutdown.conf. Amás ye necesario amestar la siguiente llinia a sudoers (como más arriba):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt; Si t&apos;escaecieres dacuando la conseña configurada, val con que desanicies manualmente de qshutdown.conf tola llinia q&apos;empieza por &quot;Password&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Gabitos d&apos;usu:&lt;/b&gt;&lt;br/&gt;Si quies que qshutdown dexe de &quot;molestate&quot;, namái desanicia la llamada de &quot;¿activar avisos?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Atayos:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(esta) ventana d&apos;información&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+C&lt;/td&gt;&lt;td&gt;Colar&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferencies&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;escribi una vegada la execución nel ficheru de rexistru (sólo funciona fasta la salida de qshutdown. Pa facelo permanente, configuralo nes preferencies.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+A&lt;/td&gt;&lt;td&gt;llanzar l&apos;apagáu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;llanzar el reaniciu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;llanzar la suspensión a RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;llanzar la hibernación&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;parar la cuenta atrás (sólo si yá s&apos;anició la cuenta atrás y l&apos;alministrador nun torgó l&apos;accesu)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Mayús+E&lt;/td&gt;&lt;td&gt;pa editar el ficheru de configuración (pa esto ye necesaria una conseña. Si yes un usuariu, pues configurar una &quot;conseña balera&quot; (dexa baleru&apos;l campu conseña)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <translation>qshutdown apaecerá 3 vegaes como avisu si queden menos de 70 segundos.&lt;br/&gt;&lt;br/&gt;Esti programa usa qdbus pa unviar una solicitú d&apos;apagáu/reaniciu/suspensión/hibernación al alministrador de sesión de gnome o al de kde, a HAL/ConsoleKit/DeviceKit/UPower y, si nun funciona dengunu d&apos;ellos, S&apos;usará el comandu &apos;sudo shutdown&apos; (atalanta qu&apos;al unviar la solicitú d&apos;apagáu a HAL o ConsoleKit, o si s&apos;usa&apos;l comandu shutdown, nunca se guardará la Sesión. Al usar el comandu shutdown, el programa namái podrá apagar y reaniciar). Poro, si nun asocede ren al llegar el tiempu d&apos;apagáu o reaniciu, quier dicir que ún nun tien permisu pa usar el comandu shutdown. Nesti casu se pue facer lo siguiente:&lt;br/&gt;&lt;br/&gt;Pega lo que sigue nun terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;y amiesta esta llinia:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; onde * ye&apos;l nome d&apos;usuariu o&apos;l nome de grupu.&lt;br/&gt;&lt;br/&gt;El númberu máximu de minutos de la cuenta atrás ye de 1440 (24 hores).&lt;br/&gt;El ficheru de configuración (ya&apos;l de rexistru) alcuentrase&apos;n &lt;i&gt;~/.qshutdown/&lt;/i&gt; (baxo Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;P&apos;alministradores:&lt;/b&gt;&lt;br/&gt;Si quies que qshutdown s&apos;execute con &quot;bloquéu paternu&quot; pa cada usuariu, pues facer &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; y configurar la opción Lock_all de /root/.qshutdown/qshutdown.conf como true. Atalanta que qshutdown tien d&apos;executase una vegada pa xenerar qshutdown.conf. Amás ye necesario amestar la siguiente llinia a sudoers (como más arriba):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt; Si t&apos;escaecieres dacuando la conseña configurada, val con que desanicies manualmente de qshutdown.conf toa llinia qu&apos;empience por &quot;Password&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Gabitos d&apos;usu:&lt;/b&gt;&lt;br/&gt;Si quies que qshutdown dexe de &quot;molestate&quot;, namái desanicia la llamada de &quot;¿activar avisos?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Atayos:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(esta) ventana d&apos;información&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+C&lt;/td&gt;&lt;td&gt;Colar&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferencies&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;escribi una vegada la execución nel ficheru de rexistru (sólo funciona fasta la salida de qshutdown. Pa facelo permanente, configuralo nes preferencies.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+A&lt;/td&gt;&lt;td&gt;llanzar l&apos;apagáu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;llanzar el reaniciu&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;llanzar la suspensión a RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;llanzar la hibernación&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;parar la cuenta atrás (sólo si yá s&apos;anició la cuenta atrás y l&apos;alministrador nun torgó l&apos;accesu)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Mayús+E&lt;/td&gt;&lt;td&gt;pa editar el ficheru de configuración (pa esto ye necesaria una contraseña. Si yes un usuariu, pues configurar una &quot;contraseña balera&quot; (dexa baleru&apos;l campu contraseña)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 </TS>

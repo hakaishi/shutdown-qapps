@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="pt_BR">
+<TS version="2.0" language="hr">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation>Sobre o qshutdown</translation>
+        <translation>O qshutdown</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation>Versão </translation>
+        <translation>Inačica </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;Sobre</translation>
+        <translation>&amp;O programu</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation>&amp;Agradecimentos</translation>
+        <translation>&amp;Zahvale</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
-        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Usando Qt&lt;/span&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;koristi Qt&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p &gt;Posebene zahvale:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchleru za pomoć tamo i ovdje.&lt;br /&gt;&lt;br /&gt;I Brian Nelsonu za sponozoriranje objave na Debianu.&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -36,152 +36,152 @@
     <name>Calendar</name>
     <message>
         <source>Calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalendar</translation>
     </message>
 </context>
 <context>
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation>Modificar senha</translation>
+        <translation>Promijeni lozinku</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation>Redigite a senha:</translation>
+        <translation>Ponovi lozinku:</translation>
     </message>
     <message>
         <source>New password:</source>
-        <translation>Nova senha:</translation>
+        <translation>Nova lozinka:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation>Senha anterior:</translation>
+        <translation>Stara lozinka:</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation>A senha atual não está correta!</translation>
+        <translation>Trenutna lozinka nije ispravna!</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation type="unfinished"></translation>
+        <translation>Potvrda lozinke se ne poklapa!</translation>
     </message>
 </context>
 <context>
     <name>Editor</name>
     <message>
         <source>Editor</source>
-        <translation>Editor</translation>
+        <translation>Uređivač</translation>
     </message>
 </context>
 <context>
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation>&amp;Minimizar!</translation>
+        <translation>&amp;Smanji!</translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrijeme do gašenja:</translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minuta do gašenja:</translation>
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrijeme do ponovnog pokretanja:</translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minuta do ponovnog pokretanja:</translation>
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrijeme suspenzije:</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minuta do suspenzije:</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrijeme hibernacije:</translation>
     </message>
     <message>
         <source>Minutes till hibernate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minuta do hibernacije:</translation>
     </message>
     <message>
         <source>shutdown in </source>
-        <translation>desligar em </translation>
+        <translation>gašenje u </translation>
     </message>
     <message>
         <source>reboot in </source>
-        <translation>reiniciar em </translation>
+        <translation>ponovno pokretanje u </translation>
     </message>
     <message>
         <source>suspend in </source>
-        <translation>supender em </translation>
+        <translation>suspenzija u </translation>
     </message>
     <message>
         <source>hibernate in </source>
-        <translation>hibernar em </translation>
+        <translation>hibernacija u </translation>
     </message>
     <message>
         <source>years</source>
-        <translation>anos</translation>
+        <translation>godina</translation>
     </message>
     <message>
         <source>months</source>
-        <translation>meses</translation>
+        <translation>mjeseci</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>horas</translation>
+        <translation>sati</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>dias</translation>
+        <translation>dani</translation>
     </message>
     <message>
         <source>Res&amp;tore</source>
-        <translation>&amp;Restaurar</translation>
+        <translation>Pri&amp;kaži</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation>&amp;Minimizar</translation>
+        <translation>&amp;Minimiziraj</translation>
     </message>
     <message>
         <source>day</source>
-        <translation>dia</translation>
+        <translation>dan</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>minutos</translation>
+        <translation>minute</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>segundos</translation>
+        <translation>sekunde</translation>
     </message>
     <message>
         <source>&apos;qshutdown&apos;</source>
-        <translation>&apos;qshutdown&apos;</translation>
+        <translation type="obsolete">&apos;qshutdown&apos;</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Desligar</translation>
+        <translation>Isključi</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Reiniciar</translation>
+        <translation>Ponovno pokreni</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Suspender</translation>
+        <translation>Suspendiraj</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Hibernar</translation>
+        <translation>Hiberniraj</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
@@ -189,220 +189,220 @@
     </message>
     <message>
         <source>&amp;Warnings on?</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Prikaži upozorenja?</translation>
     </message>
     <message>
         <source>Minutes</source>
-        <translation>Minutos</translation>
+        <translation type="obsolete">Minute</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
-        <translation>&amp;Agora!</translation>
+        <translation>&amp;Isključi odmah!</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum možete postaviti u kalendaru</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation>&amp;OK</translation>
+        <translation>&amp;U redu</translation>
     </message>
     <message>
         <source>R&amp;eset</source>
-        <translation>R&amp;einiciar</translation>
+        <translation>P&amp;oništi</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Sair</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Info</source>
-        <translation>&amp;Informações</translation>
+        <translation>&amp;Informacije</translation>
     </message>
     <message>
         <source>&amp;Logfile</source>
-        <translation>&amp;Arquivo de log</translation>
+        <translation>&amp;Dnevnik datoteka</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation>&amp;Preferências</translation>
+        <translation>&amp;Postavke</translation>
     </message>
     <message>
         <source>&amp;Shutdown</source>
-        <translation>&amp;Desligar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Reboot</source>
-        <translation>&amp;Reiniciar</translation>
+        <translation>&amp;Ponovno pokretanje</translation>
     </message>
     <message>
         <source>S&amp;uspend</source>
-        <translation>S&amp;uspender</translation>
+        <translation>S&amp;uspendiraj</translation>
     </message>
     <message>
         <source>&amp;Hibernate</source>
-        <translation>&amp;Hibernar</translation>
+        <translation>&amp;Hiberniraj</translation>
     </message>
     <message>
         <source>Lock settings after countdown started</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaključaj postavke nakon što je pokrenuto odbrojavnje</translation>
     </message>
     <message>
         <source>Calendar</source>
-        <translation>Calendário</translation>
+        <translation>Kalendar</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Arquivo</translation>
+        <translation>&amp;Datoteka</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>A&amp;juda</translation>
+        <translation>&amp;Pomoć</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Configurações</translation>
+        <translation>&amp;Postavke</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;Sobre</translation>
+        <translation>&amp;O programu</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation>&amp;Reiniciar</translation>
+        <translation>&amp;Poništi</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation>&amp;Configurar</translation>
+        <translation>&amp;Podešavanje</translation>
     </message>
     <message>
         <source>&amp;Keep proportions</source>
-        <translation>&amp;Manter as proporções</translation>
+        <translation>&amp;Zadrži razmjer</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation>Upozorenje</translation>
     </message>
     <message>
         <source>Action imminent!</source>
-        <translation>Ação iminente!</translation>
+        <translation>Radnja je neminovna!</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informações</translation>
+        <translation>Informacije</translation>
     </message>
     <message>
         <source>Countdown is not running!</source>
-        <translation type="unfinished"></translation>
+        <translation>Odbrojavanje nije pokrenuto!</translation>
     </message>
     <message>
         <source>Turns on/off all warnings</source>
-        <translation type="unfinished"></translation>
+        <translation>Uključi/Isključi sva upozorenja</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>Sobre o &amp;Qt</translation>
+        <translation>O &amp;Qt</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation>Versão </translation>
+        <translation>Inačica </translation>
     </message>
 </context>
 <context>
     <name>Info</name>
     <message>
         <source>Info</source>
-        <translation>Informações</translation>
+        <translation>Informacije</translation>
     </message>
 </context>
 <context>
     <name>PassWord</name>
     <message>
         <source>Password</source>
-        <translation>Senha</translation>
+        <translation>Lozinka</translation>
     </message>
     <message>
         <source>&amp;Set password</source>
-        <translation>&amp;Definir senha</translation>
+        <translation>&amp;Postavi lozinku</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Senha:</translation>
+        <translation>Lozinka:</translation>
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation>A senha não está correta!</translation>
+        <translation>Lozinka nije ispravna!</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
-        <translation>&amp;Modificar senha</translation>
+        <translation>&amp;Promijeni lozinku</translation>
     </message>
 </context>
 <context>
     <name>Preferences</name>
     <message>
         <source>Preferences</source>
-        <translation>Preferências</translation>
+        <translation>Postavke</translation>
     </message>
     <message>
         <source>Enable the &amp;target time at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Omogući &amp;ciljano vrijeme pri pokretanju</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Desligar</translation>
+        <translation>Isključi</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Način isključivanja:</translation>
     </message>
     <message>
         <source>Target time:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ciljano vrijeme:</translation>
     </message>
     <message>
         <source>Minutes to countdown:</source>
-        <translation type="unfinished"></translation>
+        <translation>Minute za odbrojavanje:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Fonte:</translation>
+        <translation>Slovo:</translation>
     </message>
     <message>
         <source>Font size 1:</source>
-        <translation>Fonte tamanho 1:</translation>
+        <translation>Veličina slova 1:</translation>
     </message>
     <message>
         <source>Font size 2:</source>
-        <translation>Fonte tamanho 2:</translation>
+        <translation>Veličina slova 2:</translation>
     </message>
     <message>
         <source>Font size 3:</source>
-        <translation>Fonte tamanho 3:</translation>
+        <translation>Veličina slova 3:</translation>
     </message>
     <message>
         <source>Size for log file:</source>
-        <translation>Tamanho para o arquivo de log:</translation>
+        <translation>Veličina datoteke dnevnika:</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Reiniciar</translation>
+        <translation>Ponovno pokreni</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Suspender</translation>
+        <translation>Suspendiraj</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Hibernar</translation>
+        <translation>Hiberniraj</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
-        <translation type="unfinished"></translation>
+        <translation>A&amp;utomatsko pokretanje</translation>
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Sakrij qshutdown pri pokretanju</translation>
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>
@@ -410,27 +410,27 @@
     </message>
     <message>
         <source>&amp;Edit configuration file</source>
-        <translation>&amp;Editar arquivo de configuração</translation>
+        <translation>Uredi konfiguracijsku datoteku</translation>
     </message>
     <message>
         <source>Enable the minute &amp;countdown at startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Omogući odbrojavanje &amp;minuta pri pokretanju</translation>
     </message>
     <message>
         <source>&amp;Reset settings</source>
-        <translation>&amp;Resetar configurações</translation>
+        <translation>&amp;Vrati početne postavke</translation>
     </message>
     <message>
         <source>Size for log file in KB</source>
-        <translation type="unfinished"></translation>
+        <translation>Veličina za dnevnik datoteku u KB</translation>
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;&amp;Zaključaj nakon pokretanja?&quot;</translation>
     </message>
     <message>
         <source>&quot;&amp;Warnings on?&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;&amp;Prikaži upozorenja?&quot;</translation>
     </message>
     <message>
         <source>Log start time of qshutdown and how long
@@ -439,23 +439,23 @@ it was running</source>
     </message>
     <message>
         <source>L&amp;ogging</source>
-        <translation type="unfinished"></translation>
+        <translation>Z&amp;apisivanje dnevnika</translation>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
-        <translation type="unfinished"></translation>
+        <translation>potvrdni okviri i &quot;sad!&quot; gumb</translation>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
-        <translation type="unfinished"></translation>
+        <translation>OK i Minimiziraj buttons gumbi</translation>
     </message>
     <message>
         <source>Labels for example</source>
-        <translation type="unfinished"></translation>
+        <translation>Oznake za primjer</translation>
     </message>
     <message>
         <source>Set a font</source>
-        <translation>Definir uma fonte</translation>
+        <translation>Postavi slova</translation>
     </message>
     <message>
         <source>What target time should be displayed
@@ -490,87 +490,87 @@ quit instead.</source>
     </message>
     <message>
         <source>&amp;Disable hiding</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Onemogući skrivanje</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Geral</translation>
+        <translation>Općenito</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation>Avançado</translation>
+        <translation>Napredno</translation>
     </message>
     <message>
         <source>Suspend method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Način suspenzije:</translation>
     </message>
     <message>
         <source>automatic</source>
-        <translation>automático</translation>
+        <translation>automatski</translation>
     </message>
     <message>
         <source>HAL</source>
-        <translation>HAL</translation>
+        <translation type="obsolete">HAL</translation>
     </message>
     <message>
         <source>ConsoleKit</source>
-        <translation>ConsoleKit</translation>
+        <translation type="obsolete">ConsoleKit</translation>
     </message>
     <message>
         <source>sudo shutdown -r</source>
-        <translation>sudo shutdown -r</translation>
+        <translation type="obsolete">sudo shutdown -r</translation>
     </message>
     <message>
         <source>user defined</source>
-        <translation type="unfinished"></translation>
+        <translation>korisnički definirano</translation>
     </message>
     <message>
         <source>Hibernate method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Način hibernacije:</translation>
     </message>
     <message>
         <source>sudo shutdown -P</source>
-        <translation>sudo shutdown -P</translation>
+        <translation type="obsolete">sudo shutdown -P</translation>
     </message>
     <message>
         <source>Shutdown method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Način isključivanja:</translation>
     </message>
     <message>
         <source>UPower</source>
-        <translation>UPower</translation>
+        <translation type="obsolete">UPower</translation>
     </message>
     <message>
         <source>DeviceKit</source>
-        <translation>DeviceKit</translation>
+        <translation type="obsolete">DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Način ponovnog pokretanja:</translation>
     </message>
     <message>
         <source>Please input an user specified command for suspend here</source>
-        <translation type="unfinished"></translation>
+        <translation>Molim vas, ovdje unesite korisnički određenu naredbu za suspendiranje</translation>
     </message>
     <message>
         <source>Gnome session</source>
-        <translation>Sessão do GNOME</translation>
+        <translation>Gnome sesija</translation>
     </message>
     <message>
         <source>KDE session</source>
-        <translation>Sessão do KDE</translation>
+        <translation>KDE sesija</translation>
     </message>
     <message>
         <source>Please input an user specified command for shutdown here</source>
-        <translation type="unfinished"></translation>
+        <translation>Molim vas, ovdje unesite korisnički određenu naredbu za isključivanje</translation>
     </message>
     <message>
         <source>Please input an user specified command for reboot here</source>
-        <translation type="unfinished"></translation>
+        <translation>Molim vas, ovdje unesite korisnički određenu naredbu za ponovno pokretanje</translation>
     </message>
     <message>
         <source>Please input an user specified command for hibernate here</source>
-        <translation type="unfinished"></translation>
+        <translation>Molim vas, ovdje unesite korisnički određenu naredbu za hibernaciju</translation>
     </message>
     <message>
         <source>Some systems block for example the shutdown
@@ -580,20 +580,21 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Quit qshutdown after countdown ended?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugasi qshutdown nakon što je odbrojavanja završilo?</translation>
     </message>
     <message>
         <source>&amp;Start countdown at startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked.</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Početak odbrojavanja pri pokretanju</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
+        <translation>U Datoteku &quot;%1&quot; nije dopušteno pisanje!
+Možda naprosto nemate dopuštenja za to.</translation>
+    </message>
+    <message>
+        <source>Hide qshutdown at startup if
+&quot;Start countdown&quot; is checked.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -29,7 +29,11 @@
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown — програма для вимикання комп’ютера за таймером&lt;/p&gt;&lt;p &gt;Автор: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;&amp;copy; Christian Metscher, 2010–2012&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Будь ласка, користуйтеся &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; або &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; для сповіщень щодо вад.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p &gt;qshutdown — програма для вимикання комп’ютера за таймером&lt;/p&gt;&lt;p &gt;Автор: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;&amp;copy; Christian Metscher, 2010–2012&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Будь ласка, користуйтеся &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; або &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; для сповіщень щодо вад.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p &gt;qshutdown — програма для вимикання комп’ютера за таймером&lt;/p&gt;&lt;p &gt;Автор: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;&amp;copy; Christian Metscher, 2010–2013&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Будь ласка, користуйтеся &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; або &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; для сповіщень щодо вад.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -164,6 +168,10 @@
         <translation>секунд</translation>
     </message>
     <message>
+        <source>&apos;qshutdown&apos;</source>
+        <translation type="obsolete">&apos;qshutdown&apos;</translation>
+    </message>
+    <message>
         <source>Shutdown</source>
         <translation>Вимкнути</translation>
     </message>
@@ -186,6 +194,10 @@
     <message>
         <source>&amp;Warnings on?</source>
         <translation>&amp;Попередити?</translation>
+    </message>
+    <message>
+        <source>Minutes</source>
+        <translation type="obsolete">Хвилини</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -509,6 +521,18 @@ qshutdown буде просто завершено.</translation>
         <translation>автоматичний</translation>
     </message>
     <message>
+        <source>HAL</source>
+        <translation type="obsolete">HAL</translation>
+    </message>
+    <message>
+        <source>ConsoleKit</source>
+        <translation type="obsolete">ConsoleKit</translation>
+    </message>
+    <message>
+        <source>sudo shutdown -r</source>
+        <translation type="obsolete">sudo shutdown -r</translation>
+    </message>
+    <message>
         <source>user defined</source>
         <translation>визначений користувачем</translation>
     </message>
@@ -517,8 +541,20 @@ qshutdown буде просто завершено.</translation>
         <translation>Спосіб присипляння:</translation>
     </message>
     <message>
+        <source>sudo shutdown -P</source>
+        <translation type="obsolete">sudo shutdown -P</translation>
+    </message>
+    <message>
         <source>Shutdown method:</source>
         <translation>Спосіб вимикання:</translation>
+    </message>
+    <message>
+        <source>UPower</source>
+        <translation type="obsolete">UPower</translation>
+    </message>
+    <message>
+        <source>DeviceKit</source>
+        <translation type="obsolete">DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -567,9 +603,9 @@ qshutdown завершити роботу, щойно буде завершен�
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked</source>
+&quot;Start countdown&quot; is checked.</source>
         <translation>Приховати вікно qshutdown після запуску, якщо
-позначено пункт «Розпочинати відлік після запуску»</translation>
+позначено пункт «Розпочинати відлік після запуску».</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!

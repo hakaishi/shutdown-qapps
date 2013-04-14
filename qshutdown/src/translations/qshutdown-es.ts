@@ -25,11 +25,15 @@
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Agradecemos especialmente a:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler por ayudar aquí y allí.&lt;br /&gt;&lt;br /&gt;Y a Brian Nelson por auspiciar la subida a Debian.&lt;br /&gt;&lt;br /&gt;Translators: Eduardo Battaglia, Fitoschido, inma barrios, Dante Díaz, Adolfo Jayme Barrientos&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;Agradecemos especialmente a:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler por ayudar aquí y allí.&lt;br /&gt;&lt;br /&gt;Y a Brian Nelson por auspiciar la subida a Debian.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, una herramienta para apagar el sistema en cuenta atrás&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, por Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; o &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; para informar fallos.&lt;/p&gt;</translation>
+        <translation type="obsolete">&lt;p &gt;qshutdown, una herramienta para apagar el sistema en cuenta atrás&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, por Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; o &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; para informar fallos.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p &gt;qshutdown, una herramienta para apagar el sistema en cuenta atrás&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, por Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; o &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; para informar fallos.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -59,11 +63,11 @@
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation>¡La contraseña actual no es correcta!</translation>
+        <translation>La contraseña actual no es correcta.</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation>¡La contraseña reescrita no coincide!</translation>
+        <translation>La contraseña reescrita no coincide.</translation>
     </message>
 </context>
 <context>
@@ -77,7 +81,7 @@
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation>¡&amp;Minimizar!</translation>
+        <translation>&amp;Minimizar</translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
@@ -164,6 +168,10 @@
         <translation>segundos</translation>
     </message>
     <message>
+        <source>&apos;qshutdown&apos;</source>
+        <translation type="obsolete">&apos;qshutdown&apos;</translation>
+    </message>
+    <message>
         <source>Shutdown</source>
         <translation>Apagar</translation>
     </message>
@@ -188,8 +196,12 @@
         <translation>¿Activar a&amp;visos?</translation>
     </message>
     <message>
+        <source>Minutes</source>
+        <translation type="obsolete">Minutos</translation>
+    </message>
+    <message>
         <source>&amp;Now!</source>
-        <translation>¡&amp;Ahora!</translation>
+        <translation>&amp;Ahora</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
@@ -213,7 +225,7 @@
     </message>
     <message>
         <source>&amp;Logfile</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de &amp;registro</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
@@ -285,7 +297,7 @@
     </message>
     <message>
         <source>Countdown is not running!</source>
-        <translation>¡La cuenta regresiva no está corriendo!</translation>
+        <translation>La cuenta regresiva no está corriendo!</translation>
     </message>
     <message>
         <source>Turns on/off all warnings</source>
@@ -323,7 +335,7 @@
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation>¡La contraseña no es correcta!</translation>
+        <translation>La contraseña no es correcta.</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
@@ -431,11 +443,11 @@ it was running</source>
     </message>
     <message>
         <source>L&amp;ogging</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Registro</translation>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
-        <translation>casillas de verificación y botón «¡Ahora!»</translation>
+        <translation>casillas de verificación y botón «ahora»</translation>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
@@ -479,7 +491,9 @@ should be checked by default at startup</source>
         <source>The close button usually hides the main window.
 Disabling hiding means, that qshutdown will then
 quit instead.</source>
-        <translation type="unfinished"></translation>
+        <translation>Normalmente, el botón de cerrar oculta la ventana principal.
+Al desactivar el ocultamiento se saldrá completamente de
+la aplicación al pulsar el botón, en vez de ocultarla.</translation>
     </message>
     <message>
         <source>&amp;Disable hiding</source>
@@ -502,6 +516,18 @@ quit instead.</source>
         <translation>automático</translation>
     </message>
     <message>
+        <source>HAL</source>
+        <translation type="obsolete">HAL</translation>
+    </message>
+    <message>
+        <source>ConsoleKit</source>
+        <translation type="obsolete">ConsoleKit</translation>
+    </message>
+    <message>
+        <source>sudo shutdown -r</source>
+        <translation type="obsolete">sudo shutdown -r</translation>
+    </message>
+    <message>
         <source>user defined</source>
         <translation>definido por el usuario</translation>
     </message>
@@ -510,8 +536,20 @@ quit instead.</source>
         <translation>Método de hibernación:</translation>
     </message>
     <message>
+        <source>sudo shutdown -P</source>
+        <translation type="obsolete">sudo shutdown -P</translation>
+    </message>
+    <message>
         <source>Shutdown method:</source>
         <translation>Método de apagado:</translation>
+    </message>
+    <message>
+        <source>UPower</source>
+        <translation type="obsolete">UPower</translation>
+    </message>
+    <message>
+        <source>DeviceKit</source>
+        <translation type="obsolete">DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -557,14 +595,14 @@ qshutdown should quit after the countdown ended.</source>
     </message>
     <message>
         <source>Hide qshutdown at startup if
-&quot;Start countdown&quot; is checked</source>
-        <translation>Oculta qshutdown al inicio si
-&quot;Iniciar la cuenta regresiva&quot; está marcado</translation>
+&quot;Start countdown&quot; is checked.</source>
+        <translation type="unfinished">Oculta qshutdown al inicio si
+&quot;Iniciar la cuenta regresiva&quot; está marcado.</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation>¡El archivo «%1» no es escribible!
+        <translation>El archivo «%1» no es escribible.
 Quizá no tiene los permisos para hacerlo.</translation>
     </message>
 </context>
