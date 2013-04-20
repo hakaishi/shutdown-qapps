@@ -56,6 +56,11 @@ In case you want to use the sudo shutdown command and you have set
 the rights in the sudoers, but it still doesn't work, please specify
 your own command in the preferences and try if "sudo shutdown -hP" now works.
 
+For most systems using the Gnome Shell a certain DBus method has been removed,
+thus a shutdown dialog will be likely to appear if qshutdown's methods have
+been set to automatic or to Gnome session. If you do not want this
+shutdown dialog to appear, please use ConsoleKit or something else.
+
 
 
 HINTS ON USAGE:

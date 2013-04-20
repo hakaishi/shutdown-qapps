@@ -1,5 +1,5 @@
 .\"Created with GNOME Manpages Editor
-.TH qshutdown 1 "2011-10-23"
+.TH qshutdown 1 "2013-04-20"
 .PP
 .SH NAME
 qshutdown \- An avanced shutdown tool
@@ -67,6 +67,8 @@ There is no system tray icon for qshutdown in Ubuntu 11.04.
 \fBSOLUTION:\fR Type the following line in a terminal:
 .PP
 \& $ gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"
+.PP
+For most systems using the Gnome Shell a certain DBus method has been removed, thus a shutdown dialog will be likely to appear if qshutdown's methods have been set to automatic or to Gnome session. If you do not want this shutdown dialog to appear, please use ConsoleKit or something else.
 .PP
 .SH HINTS ON USAGE
 If you want qshutdown to stop "bugging" you, just remove the hook from "warnings on?".

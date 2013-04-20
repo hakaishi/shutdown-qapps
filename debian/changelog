@@ -1,3 +1,8 @@
+shutdown-qapps (1.6.5-2) unstable; urgency=low
+  *new upstream release
+
+ -- Christian Metscher <hakaishi@web.de>  Sat, 20 Apr 2013 13:23:13 +0200
+
 shutdown-qapps (1.6.5-1) unstable; urgency=low
   - new watch file
   * qshutdown
@@ -12,7 +17,7 @@ shutdown-qapps (1.6.5-1) unstable; urgency=low
       English (Australia / United Kingdom), Galician, Italian, Malay, Polish,
       Russian, Turkish, Ukrainian
 
- -- Christian Metscher <hakaishi@web.de>  Sun, 31 Mar 2013 12:29:27 +0200
+ -- Christian Metscher <hakaishi@web.de>  Sun, 14 Apr 2013 12:45:57 +0200
 
 
 shutdown-qapps (1.6.4-1) unstable; urgency=low
