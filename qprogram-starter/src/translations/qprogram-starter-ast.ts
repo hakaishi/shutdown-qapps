@@ -122,18 +122,6 @@
         <translation>El comandu del segundu editor de testu (si lu hai) executaráse dempués del primeru. Los cuadros de mensaxe zarraránse dempués de 10 segundos.&lt;br/&gt;P&apos;aniciar un programa sólo tien que escribir p.ex. «firefox» o «firefox www.google.com» y, darréu, calcar Llanzar. Los comandos, etc. puen encadenase con «&amp;&amp;» etc. &lt;br/&gt;&lt;br/&gt;Si&apos;l procesu ta «fináu», anque inda tea executandose, pruebe la opción «--nofork» (p.ex. kopete --nofork). Tenga en cuenta qu&apos;esto tamién asocederá con dellos programes como gedit, firefox o gnome-terminal si tá tan executandose.&lt;br/&gt;&lt;br/&gt;Cuando quiera aniciar un programa o comandu con sudo, use por exemplu gksu(do) o kdesu(do).&lt;br/&gt;&lt;br/&gt;Exemplos con «make»:&lt;br/&gt;&amp;nbsp;make -C /camín/al/proyeutu&lt;br/&gt;&amp;nbsp;make clean -C /camín/al/proyeutu&lt;br/&gt;&lt;br/&gt;Tocante a los errores:&lt;br/&gt;Como casi cada programa devuelve un códigu d&apos;error diferente, ye imposible dicir qué ye lo que pasó. Poro, namái tien que ver el rexistru de salida pa ver que tipu d&apos;error asocedió. Los ficheros de salida puen alcontrase&apos;n &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;Si l&apos;apagáu nun funciona, quier dicir que ta usando «sudo shutdown-P now». Esto necesita permisu de root. Pue facer lo siguiente:&lt;br/&gt;&lt;br/&gt;Apegue lo siguiente nun terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; y amieste esta llinia:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; onde * sustituye al nome d&apos;usuariu o al nome de grupu.&lt;br/&gt;&lt;br/&gt;El ficheru de configuración pue alcontrase&apos;n &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.</translation>
     </message>
     <message>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Log &lt;span style=&quot; font-weight:600;&quot;&gt;all&lt;/span&gt; output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -155,6 +143,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Version </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

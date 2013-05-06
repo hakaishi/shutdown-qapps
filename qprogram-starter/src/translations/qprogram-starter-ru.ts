@@ -122,18 +122,6 @@
         <translation>Если во втором редакторе задана команда, то она будет выполнена после первой команды. Окна с сообщениями автоматически закроются через 10 секунд.&lt;br/&gt;Для того, чтобы запустить программу, просто напечатайте, например, &quot;firefox&quot; или &quot;firefox www.google.com&quot;, затем нажмите кнопку &quot;Запуск&quot;. Команды могут объединяться с помощью символов &quot;&amp;&amp;&quot; и т.д.&lt;br/&gt;&lt;br/&gt;Если процесс &quot;закончился&quot;, несмотря на то, что он всё ещё выполняется, попробуйте использовать параметр &quot;--nofork&quot; (например, kopete --nofork). Обратите внимание, что это затронет также некоторые программы, например gedit, firefox или gnome-terminal, если они уже выполняются.&lt;br/&gt;&lt;br/&gt;Если вы хотите запустить программу или команду с помощью sudo, используйте gksu(do) или kdesu(do).&lt;br/&gt;&lt;br/&gt;Примеры использования команды make:&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;Об ошибках:&lt;br/&gt;Из-за того, что разные программы выдают разные сообщения об ошибках, иногда невозможно сказать, что именно произошло в данном случае. При возникновении ошибок, включите протоколирование и просмотрите журнал. Файлы журналов могут быть найдены в каталоге &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;Если выключение компьютера не работает, это значит, что используется команда &quot;sudo shutdown -P now&quot;. Для её выполнения требуются права администратора. Вариант решения проблемы:&lt;br/&gt;&lt;br/&gt;Введите в терминале:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; и добавьте следующую строку:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; где * представляет собой имя пользователя или группы.&lt;br/&gt;&lt;br/&gt;Файл конфигурации расположен в каталоге &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.</translation>
     </message>
     <message>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Log &lt;span style=&quot; font-weight:600;&quot;&gt;all&lt;/span&gt; output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -155,6 +143,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Version </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -122,18 +122,6 @@
         <translation>Der Befehl im zweiten Texteditor (falls einer eingegeben wurde) wird nach dem Ersten ausgeführt. Die Hinweisfenster werden sich nach 10 Sekunden selbst beenden.&lt;br/&gt;Um ein Programm zu starten, gib einfach z.B. &quot;firefox&quot; oder &quot;firefox www.google.de&quot; ein und klicke dann auf Start. Befehle etc. können mit &quot;&amp;&amp;&quot; etc. verkettet werden.&lt;br/&gt;&lt;br/&gt;Wenn der Prozess &quot;beendet&quot; ist, obwohl er noch läuft, probiere die --nofork Option (z.B. kopete --nofork). Beachte, dass dies auch bei einigen Programmen wie gedit, firefox oder gnome-terminal auftritt, wenn sie bereits laufen.&lt;br/&gt;&lt;br/&gt;Wenn man ein Programm oder ein Kommando mit sudo starten möchte, benutze bitte z.B. gksu(do) oder kdesu(do).&lt;br/&gt;&lt;br/&gt;make Beispiele:&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;Über die Fehler:&lt;br/&gt;Weil fast jedes Programm unterschiedliche Fehlerkodes ausgeben, ist es unmöglich zu sagen was passiert ist. Protokolliere also einfach die Ausgaben und sieh was für eine Art Fehler aufgetreten ist. Die Ausgabedateien kann man unter &lt;i&gt;~/.qprogram-starter/&lt;/i&gt; finden.&lt;br/&gt;&lt;br/&gt;Falls der Shutdown nich funktioniert, bedeutet das, dass &quot;sudo shutdown -P now&quot; benutzt wird. Dies benötigt Root-Rechte. Dies kann man machen:&lt;br/&gt;&lt;br/&gt;Füge das Folgende in ein Terminal ein:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;und füge diese Zeile hinzu:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;wobei * den Benutzernamen oder %Gruppennamen ersetzt.&lt;br/&gt;&lt;br/&gt;Die Konfigurations-Datei kann man unter &lt;i&gt;~/.qprogram-starter/&lt;/i&gt; finden.</translation>
     </message>
     <message>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Log &lt;span style=&quot; font-weight:600;&quot;&gt;all&lt;/span&gt; output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -155,6 +143,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Version </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

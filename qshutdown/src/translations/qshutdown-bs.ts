@@ -28,10 +28,6 @@
         <translation>&lt;p &gt;Posebno se zahvaljujemo sljedećim osobama:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabianu Deuchleru za pomoć oko raznih problema,&lt;br /&gt;&lt;br /&gt;Brianu Nelsonu za sponzorisanje dodavanja paketa u Debian.&lt;br /&gt;&lt;br /&gt;Prevodilac: Kenan Dervišević&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2012, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation type="obsolete">&lt;p &gt;qshutdown, alat za odgođeno gašenje računara&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Sva prava zadržana &amp;copy; 2010-2012, Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Molimo vas da koristite &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; ili &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; za prijavu grešaka.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
         <translation>&lt;p &gt;qshutdown, alat za odgođeno gašenje računara&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Sva prava zadržana &amp;copy; 2010-2013, Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Molimo vas da koristite &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; ili &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; za prijavu grešaka.&lt;/p&gt;</translation>
     </message>
@@ -168,10 +164,6 @@
         <translation>sekundi</translation>
     </message>
     <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation type="obsolete">&apos;qshutdown&apos;</translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation>Ugasi</translation>
     </message>
@@ -194,10 +186,6 @@
     <message>
         <source>&amp;Warnings on?</source>
         <translation>&amp;Uključiti upozorenja?</translation>
-    </message>
-    <message>
-        <source>Minutes</source>
-        <translation type="obsolete">Minute</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -521,18 +509,6 @@ onda zatvoriti.</translation>
         <translation>automatski</translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation type="obsolete">HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation type="obsolete">ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation type="obsolete">sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
         <translation>korisnički definisano</translation>
     </message>
@@ -541,20 +517,8 @@ onda zatvoriti.</translation>
         <translation>Metoda hibernacije:</translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation type="obsolete">sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation>Metoda gašenja:</translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation type="obsolete">UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation type="obsolete">DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -614,7 +578,7 @@ Možda nemate potrebnu dozvolu za zapisivanje.</translation>
     </message>
     <message>
         <source>Welcome to qshutdown!
-If you want qshutdown to automatically shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
+If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
 
 Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
         <translation type="unfinished"></translation>

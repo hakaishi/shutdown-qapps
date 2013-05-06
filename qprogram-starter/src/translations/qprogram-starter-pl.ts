@@ -122,18 +122,6 @@
         <translation>Polecenie z drugiego pola tekstowego (jeśli pole jest wypełnione) zostanie wykonane po pierwszym. Powiadomienia zamkną się po 10 sekundach.&lt;br/&gt;By uruchomić program wpisz np. &quot;firefox&quot; lub &quot;firefox www.google.com&quot; i kliknij Start. Polecenia mogą być łączone znakiem &quot;&amp;&amp;&quot;.&lt;br/&gt;&lt;br/&gt;Jeśli proces został &quot;zakończony&quot; miomo, że wciąż działa, wypróbuj opcję --nofork (np. kopete --nofork). Zauważ, że taka sytuacja będzie miała miejsce dla niektórych programów takich jak gedit, firefox, czy gnome-terminal jeśli są już uruchomione.&lt;br/&gt;&lt;br/&gt;Jeśli chcesz uruchomić program z uprawnieniami administratora (sudo), używaj gksu(do) lub kdesu(do).&lt;br/&gt;&lt;br/&gt;Przykład dla make:&lt;br/&gt;&amp;nbsp;make -C /ścieżka/do/projektu&lt;br/&gt;&amp;nbsp;make clean -C /ścieżka/do/projektu&lt;br/&gt;&lt;br/&gt;O błedach:&lt;br/&gt;Ponieważ prawie każdy program zwraca inny kod błędu niemożliwe jest określenie co się stało. Zapisz wyjście programu i zobacz jaki rodzaj błedu się pojawił. Pliki z wyjściami można znaleźć w katalogu &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;Jeśli wyłączanie komputera nie działa oznacza to, że używane jest &quot;sudo shutdown -P now&quot;. To polecenie wymaga uprawnień administratora. Można to rozwiązać w następujący sposób:&lt;br/&gt;&lt;br/&gt;Wykonaj następujące polecenie w terminalu:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; i dodaj tą linijkę: &lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; gdzie * zastępuję nazwę użytkownika lub %grupy.&lt;br/&gt;&lt;br/&gt;Plik konfiguracyjny można znaleźć w katalogu &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.</translation>
     </message>
     <message>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Log &lt;span style=&quot; font-weight:600;&quot;&gt;all&lt;/span&gt; output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -155,6 +143,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Version </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

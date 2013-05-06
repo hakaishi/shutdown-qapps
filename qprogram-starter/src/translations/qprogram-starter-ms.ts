@@ -122,18 +122,6 @@
         <translation>Perintah dalam penyunting teks kedua (jika ada) akan dilakukan selepas yang pertama. Kotak mesej akan ditutup sendiri selepas 10 saat.&lt;br/&gt;Untuk mulakan program hanya taip, cth. &quot;firefox&quot; atau &quot;firefox www.google.com&quot; dan kemudian klik pada Mula. Perintah dll. boleh dipaut dengan tanda &quot;&amp;&amp;&quot; dll. &lt;br/&gt;&lt;br/&gt;Jika proses telah &quot;selesai&quot; walaupun ia masih lagi berjalan, maka cuba pilihan --nofork (cth. kopete --nofork). Pethatian ia juga berlaku pada beberapa program seperti gedit, firefox atau gnome-terminal jika ia sedang berjalan.&lt;br/&gt;&lt;br/&gt;Bila anda mahu mulakan program atau perintah dengan sudo, sila guna gksu(do) atau kdesu(do).&lt;br/&gt;&lt;br/&gt;contoh make:&lt;br/&gt;&amp;nbsp;make -C /laluan/ke/projek&lt;br/&gt;&amp;nbsp;make clean -C /laluan/ke/projek&lt;br/&gt;&lt;br/&gt;Perihal Ralat:&lt;br/&gt;Oleh kerana setiap program menghasilkan kod ralat yang berbeza, adalah mustahil dapat menerangkan apa yang telah berlaku. Oleh itu hanya logkan output dan lihat apakah jenis ralat yang berlaku. Fail output boleh ditemui di &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;Jika shutdown tidak berfungsi, ia bermaksud &quot;sudo shutdown -P now&quot; digunakan. Ia memerlukan keizinan root. Anda boleh membuatnya:&lt;br/&gt;&lt;br/&gt;Poskan yang berikut kedalam terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; dan tambah baris ini:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; yang mana * gantikan nama pengguna atau %groupname.&lt;br/&gt;&lt;br/&gt;Fail-konfigurasi boleh ditemui di &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.</translation>
     </message>
     <message>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Log &lt;span style=&quot; font-weight:600;&quot;&gt;all&lt;/span&gt; output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -155,6 +143,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Version </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

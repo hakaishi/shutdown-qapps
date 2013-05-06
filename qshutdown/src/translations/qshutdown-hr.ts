@@ -164,10 +164,6 @@
         <translation>sekunde</translation>
     </message>
     <message>
-        <source>&apos;qshutdown&apos;</source>
-        <translation type="obsolete">&apos;qshutdown&apos;</translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation>Isključi</translation>
     </message>
@@ -190,10 +186,6 @@
     <message>
         <source>&amp;Warnings on?</source>
         <translation>&amp;Prikaži upozorenja?</translation>
-    </message>
-    <message>
-        <source>Minutes</source>
-        <translation type="obsolete">Minute</translation>
     </message>
     <message>
         <source>&amp;Now!</source>
@@ -509,18 +501,6 @@ quit instead.</source>
         <translation>automatski</translation>
     </message>
     <message>
-        <source>HAL</source>
-        <translation type="obsolete">HAL</translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation type="obsolete">ConsoleKit</translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r</source>
-        <translation type="obsolete">sudo shutdown -r</translation>
-    </message>
-    <message>
         <source>user defined</source>
         <translation>korisnički definirano</translation>
     </message>
@@ -529,20 +509,8 @@ quit instead.</source>
         <translation>Način hibernacije:</translation>
     </message>
     <message>
-        <source>sudo shutdown -P</source>
-        <translation type="obsolete">sudo shutdown -P</translation>
-    </message>
-    <message>
         <source>Shutdown method:</source>
         <translation>Način isključivanja:</translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation type="obsolete">UPower</translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation type="obsolete">DeviceKit</translation>
     </message>
     <message>
         <source>Reboot method:</source>
@@ -599,7 +567,7 @@ Možda naprosto nemate dopuštenja za to.</translation>
     </message>
     <message>
         <source>Welcome to qshutdown!
-If you want qshutdown to automatically shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
+If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
 
 Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
         <translation type="unfinished"></translation>
