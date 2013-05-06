@@ -73,7 +73,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
        infoBox->setWindowTitle("Please read this carefully!");
        infoBox->setIcon(QMessageBox::Information);
        infoBox->setInformativeText(tr("Welcome to qshutdown!\n"
-         "If you want qshutdown to automatically shutdown the system "
+         "If you want qshutdown e.g. to shutdown the system "
          "and you are using the Gnome Shell, then you are likely to get a "
          "shutdown dialog from there. If you want a direct shutdown, then "
          "please consider going into the preferences and setting the shutdown "
