@@ -133,19 +133,28 @@ void shutdown(){
      }
   }
   if(gnome){
-    g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
-    g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
-    if(verbose && !g_pwr1 && !g_pwr2)
-      oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
-           << endl;
-    if(!g_pwr1 && !g_pwr2){
-      response = gnomeSessionManager.call("RequestShutdown");
-      if(response.type() == QDBusMessage::ErrorMessage){
-        if(verbose)
-          oput << "W: " << response.errorName() << ": "
-               << response.errorMessage() << endl;
-      }
-    }
+     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
+     g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
+     if(verbose && !g_pwr1 && !g_pwr2)
+       oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
+            << endl;
+     if(!g_pwr1 && !g_pwr2){
+       response = gnomeSessionManager.call("RequestShutdown");
+       if(response.type() == QDBusMessage::ErrorMessage){
+         if(verbose)
+           oput << "W: " << response.errorName() << ": "
+                << response.errorMessage() << endl;
+       }
+       else g = true;
+       if(!g){
+         response = gnomeSessionManager.call("Shutdown");
+         if(response.type() == QDBusMessage::ErrorMessage){
+           if(verbose)
+             oput << "W: " << response.errorName() << ": "
+                  << response.errorMessage() << endl;
+         }
+       }
+     }
   }
   if(kde){
     response = kdeSessionManager.call("logout", 0, 2, 2);

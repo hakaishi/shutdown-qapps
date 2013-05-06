@@ -15,9 +15,9 @@ system(lrelease qprogram-starter.pro)
 QMAKE_DISTCLEAN = src/translations/*.qm
 
 # Input
-HEADERS = src/gui.h
-FORMS = src/ui/gui.ui
-SOURCES = src/main.cpp src/gui.cpp
+HEADERS = src/gui.h src/preferences.h
+FORMS = src/ui/gui.ui src/ui/preferences.ui
+SOURCES = src/main.cpp src/gui.cpp src/preferences.cpp
 RESOURCES = ../qprogram-starter.qrc
 TRANSLATIONS = src/translations/qprogram-starter-ast.ts\
                src/translations/qprogram-starter-bs.ts\

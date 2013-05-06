@@ -121,5 +121,76 @@
         <source>The command in the second text editor (if there is any) will be executed after the first one. The message boxes will close themselves after 10 seconds.&lt;br/&gt;To start a program just type i.e. &quot;firefox&quot; or &quot;firefox www.google.com&quot; and then click on Start. Commands etc. can be linked by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;If the process is &quot;finished&quot; although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.&lt;br/&gt;&lt;br/&gt;When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).&lt;br/&gt;&lt;br/&gt;make examples:&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;About Errors:&lt;br/&gt;Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;If the shutdown won&apos;t work, it means that &quot;sudo shutdown -P now&quot; is used. This needs root permissions. You can do the this:&lt;br/&gt;&lt;br/&gt;Post the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; whereas * replaces the username or %groupname.&lt;br/&gt;&lt;br/&gt;The configuration-file can be found at &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.</source>
         <translation>Der Befehl im zweiten Texteditor (falls einer eingegeben wurde) wird nach dem Ersten ausgeführt. Die Hinweisfenster werden sich nach 10 Sekunden selbst beenden.&lt;br/&gt;Um ein Programm zu starten, gib einfach z.B. &quot;firefox&quot; oder &quot;firefox www.google.de&quot; ein und klicke dann auf Start. Befehle etc. können mit &quot;&amp;&amp;&quot; etc. verkettet werden.&lt;br/&gt;&lt;br/&gt;Wenn der Prozess &quot;beendet&quot; ist, obwohl er noch läuft, probiere die --nofork Option (z.B. kopete --nofork). Beachte, dass dies auch bei einigen Programmen wie gedit, firefox oder gnome-terminal auftritt, wenn sie bereits laufen.&lt;br/&gt;&lt;br/&gt;Wenn man ein Programm oder ein Kommando mit sudo starten möchte, benutze bitte z.B. gksu(do) oder kdesu(do).&lt;br/&gt;&lt;br/&gt;make Beispiele:&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;Über die Fehler:&lt;br/&gt;Weil fast jedes Programm unterschiedliche Fehlerkodes ausgeben, ist es unmöglich zu sagen was passiert ist. Protokolliere also einfach die Ausgaben und sieh was für eine Art Fehler aufgetreten ist. Die Ausgabedateien kann man unter &lt;i&gt;~/.qprogram-starter/&lt;/i&gt; finden.&lt;br/&gt;&lt;br/&gt;Falls der Shutdown nich funktioniert, bedeutet das, dass &quot;sudo shutdown -P now&quot; benutzt wird. Dies benötigt Root-Rechte. Dies kann man machen:&lt;br/&gt;&lt;br/&gt;Füge das Folgende in ein Terminal ein:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;und füge diese Zeile hinzu:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;wobei * den Benutzernamen oder %Gruppennamen ersetzt.&lt;br/&gt;&lt;br/&gt;Die Konfigurations-Datei kann man unter &lt;i&gt;~/.qprogram-starter/&lt;/i&gt; finden.</translation>
     </message>
+    <message>
+        <source>MainWindow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Log &lt;span style=&quot; font-weight:600;&quot;&gt;all&lt;/span&gt; output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Configure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Preferences</name>
+    <message>
+        <source>Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>automatic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gnome session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KDE session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shutdown Method:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The File &quot;%1&quot; is not writable!
+Maybe you just don&apos;t have the permissions to do so.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome to qprogram-starter!
+If you want qprogram-starter to automatically shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
+
+Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

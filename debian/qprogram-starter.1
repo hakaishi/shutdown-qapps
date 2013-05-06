@@ -7,15 +7,19 @@ qprogram-starter \- A program starter tool
 .SH DESCRIPTION
 .B qprogram-starter
 is a simple Qt4 program to start a program or process. If you like with the options to set a start date, to log output and errors, and to shutdown after finish.
-
+.PP
 This program uses qdbus to send a shutdown request to the gnome- or kde-session-manager. If it won't do gnome-power-cmd or gnome-power-cmd.sh will be used. When this also fails then qdbus will send the shutdown request to HAL or ConsoleKit (note that when sending the request to HAL or ConsoleKit the session will never be saved). And if this won't do as well, the sudo shutdown command will be used. In this case you need root-rights, so one can to do the following:
-
+.PP
 Post the following in a terminal:
 "EDITOR=nano sudo \-E visudo" and add this line:
 "* ALL = NOPASSWD:/sbin/shutdown" whereas * replaces the username or %groupname.
-
+.PP
 .SH Configurationfile qprogram-starter.conf
 The configurationfile (and logfiles) is located at ~/.qprogram-starter
-
+.PP
+.SH KNOWN ISSUES
+.PP
+For most systems using the Gnome Shell a certain DBus method has been removed, thus a shutdown dialog will be likely to appear if qshutdown's methods have been set to automatic or to Gnome session. If you do not want this shutdown dialog to appear, please use ConsoleKit or something else.
+.PP
 .SH AUTHOR
 .B Hakaishi

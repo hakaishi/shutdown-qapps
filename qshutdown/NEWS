@@ -1,3 +1,9 @@
+Changes in Release 1.6.6
+=========================
+
+    - revisited power.h
+    - added welcome dialog with informations
+
 Changes in Release 1.6.5
 =========================
 

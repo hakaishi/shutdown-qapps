@@ -19,3 +19,12 @@ sudo make deinstall
 
 (note that ~/.qprogram-starter/qprogram-starter.conf and
  the log files won't be removed)
+
+
+KNOWN ISSUE:
+=============
+
+For most systems using the Gnome Shell a certain DBus method has been removed,
+thus a shutdown dialog will be likely to appear if qshutdown's methods have
+been set to automatic or to Gnome session. If you do not want this
+shutdown dialog to appear, please use ConsoleKit or something else.

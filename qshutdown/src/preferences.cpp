@@ -67,6 +67,24 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      msgBox->setInformativeText(tr("The File \"%1\" is not writable!\n"
      "Maybe you just don't have the permissions to do so.").arg(file));
 
+     if(QSettings().value("first_start", true).toBool())
+     {
+       infoBox = new QMessageBox(this);
+       infoBox->setWindowTitle("Please read this carefully!");
+       infoBox->setIcon(QMessageBox::Information);
+       infoBox->setInformativeText(tr("Welcome to qshutdown!\n"
+         "If you want qshutdown to automatically shutdown the system "
+         "and you are using the Gnome Shell, then you are likely to get a "
+         "shutdown dialog from there. If you want a direct shutdown, then "
+         "please consider going into the preferences and setting the shutdown "
+         "method to ConsoleKit or something else.\n\nPlease feel free to visit "
+         "https://launchpad.net/~hakaishi to report bugs or for anyting "
+         "concerning translations."));
+       infoBox->setStandardButtons(QMessageBox::Ok);
+       infoBox->show();
+       QSettings().setValue("first_start", false);
+     }
+
      connect(this, SIGNAL(accepted()), this, SLOT(saveToConfFile()));
      connect(reset, SIGNAL(clicked(bool)), this, SLOT(resetSettings()));
      connect(font1Spin, SIGNAL(valueChanged(int)), this, SLOT(fontSize1Changed(int)));

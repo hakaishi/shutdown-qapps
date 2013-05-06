@@ -15,6 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #ifndef GUI_H
 #define GUI_H
 
@@ -25,16 +26,18 @@
 #include <QProcess>
 #include <QTextStream>
 
+class Preferences;
 
-class Gui : public QWidget, public Ui::Gui {
+class Gui : public QMainWindow, public Ui::Gui {
      Q_OBJECT // important for creating own singals and slots
  
      public:
-      Gui(QWidget *parent = 0);
+      Gui();
       ~Gui();
       void loadSettings();
 
      private:
+      Preferences    *pref;
       QTimer         *dateTimeTimer, *timer;
       QProcess       *process1, *process2;
       QDateTime      nextDate, timeInTheFuture;
@@ -43,7 +46,6 @@ class Gui : public QWidget, public Ui::Gui {
       QString        shell, file, errProcess1, errProcess2,
                      outputProcess1, outputProcess2;
       QStringList    processArgs1, processArgs2;
-      QSettings      *settings; 
       QString        program1, program2;
       bool           process2Started;
       bool           aborted;
