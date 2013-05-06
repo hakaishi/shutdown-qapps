@@ -192,5 +192,13 @@ If you want qprogram-starter to automatically shutdown the system and you are us
 Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>Please read this carefully!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

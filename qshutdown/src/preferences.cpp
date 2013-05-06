@@ -61,7 +61,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      userDef4S = tr("Please input an user specified command for hibernate here");
 
      msgBox = new QMessageBox(this);
-     msgBox->setWindowTitle("Error");
+     msgBox->setWindowTitle(tr("Error"));
      msgBox->setIcon(QMessageBox::Warning);
      msgBox->setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Window);
      msgBox->setInformativeText(tr("The File \"%1\" is not writable!\n"
@@ -70,7 +70,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      if(QSettings().value("first_start", true).toBool())
      {
        infoBox = new QMessageBox(this);
-       infoBox->setWindowTitle("Please read this carefully!");
+       infoBox->setWindowTitle(tr("Please read this carefully!"));
        infoBox->setIcon(QMessageBox::Information);
        infoBox->setInformativeText(tr("Welcome to qshutdown!\n"
          "If you want qshutdown e.g. to shutdown the system "

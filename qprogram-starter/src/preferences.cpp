@@ -35,7 +35,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
 
 void Preferences::setupMsgBoxes(){
      msgBox = new QMessageBox(this);
-     msgBox->setWindowTitle("Error");
+     msgBox->setWindowTitle(tr("Error"));
      msgBox->setIcon(QMessageBox::Warning);
      msgBox->setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Window);
      msgBox->setInformativeText(tr("The File \"%1\" is not writable!\n"
@@ -44,7 +44,7 @@ void Preferences::setupMsgBoxes(){
      if(QSettings().value("first_start", true).toBool())
      {
        infoBox = new QMessageBox(this);
-       infoBox->setWindowTitle("Please read this carefully!");
+       infoBox->setWindowTitle(tr("Please read this carefully!"));
        infoBox->setIcon(QMessageBox::Information);
        infoBox->setInformativeText(tr("Welcome to qprogram-starter!\n"
          "If you want qprogram-starter to automatically shutdown the system "
