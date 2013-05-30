@@ -22,15 +22,14 @@ RESOURCES = ../qprogram-starter.qrc
 TRANSLATIONS = src/translations/qprogram-starter-ast.ts\
                src/translations/qprogram-starter-bs.ts\
                src/translations/qprogram-starter-de.ts\
-               src/translations/qprogram-starter-en_AU.ts\
                src/translations/qprogram-starter-en_GB.ts\
+               src/translations/qprogram-starter-es.ts\
                src/translations/qprogram-starter-gl.ts\
                src/translations/qprogram-starter-hr.ts\
                src/translations/qprogram-starter-it.ts\
                src/translations/qprogram-starter-ms.ts\
                src/translations/qprogram-starter-pl.ts\
-               src/translations/qprogram-starter-ru.ts\
-               src/translations/qprogram-starter-tr.ts\
+               src/translations/qprogram-starter-ro.ts\
                src/translations/qprogram-starter-uk.ts
 
 # install

@@ -29,6 +29,7 @@ TRANSLATIONS = src/translations/qshutdown-ast.ts\
                src/translations/qshutdown-bg.ts\
                src/translations/qshutdown-bs.ts\
                src/translations/qshutdown-de.ts\
+               src/translations/qshutdown-de_DE.ts\
                src/translations/qshutdown-en_AU.ts\
                src/translations/qshutdown-en_GB.ts\
                src/translations/qshutdown-eo.ts\
@@ -46,7 +47,8 @@ TRANSLATIONS = src/translations/qshutdown-ast.ts\
                src/translations/qshutdown-ug.ts\
                src/translations/qshutdown-uk.ts\
                src/translations/qshutdown-uz.ts\
-               src/translations/qshutdown-zh_CN.ts
+               src/translations/qshutdown-zh_CN.ts\
+               src/translations/qshutdown-zh_TW.ts
 FORMS = src/ui/gui.ui src/ui/preferences.ui\
         src/ui/calendar.ui src/ui/ch_passwd.ui\
         src/ui/passwd.ui src/ui/editor.ui\
