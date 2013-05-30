@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="de">
+<TS version="2.0" language="de_DE">
     <context>
         <name>About</name>
         <message>
@@ -319,7 +319,7 @@
         </message>
         <message>
             <source>Password:</source>
-            <translation>Passwort :</translation>
+            <translation>Passwort:</translation>
         </message>
         <message>
             <source>The password is not correct!</source>

@@ -49,7 +49,7 @@
     </message>
     <message>
         <source>&amp;Abort</source>
-        <translation>P&amp;rzerwij</translation>
+        <translation>&amp;Przerwij</translation>
     </message>
     <message>
         <source>Browse...</source>
@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>Save text editors &amp;contents</source>
-        <translation>Zapisz za&amp;wartość edytora tekstu</translation>
+        <translation>Zapisz &amp;zawartość edytora tekstu</translation>
     </message>
     <message>
         <source>Start the commands to this time and date</source>
@@ -123,82 +123,84 @@
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Plik</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Ustawienia</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Pomoc</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Wyjdź</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Konfiguruj</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation type="unfinished"></translation>
+        <translation>Wersja </translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+H</translation>
     </message>
 </context>
 <context>
     <name>Preferences</name>
     <message>
         <source>Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferencje</translation>
     </message>
     <message>
         <source>automatic</source>
-        <translation type="unfinished"></translation>
+        <translation>automatyczna</translation>
     </message>
     <message>
         <source>Gnome session</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesja Gnome</translation>
     </message>
     <message>
         <source>KDE session</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesja KDE</translation>
     </message>
     <message>
         <source>Shutdown Method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Metoda zamknięcia:</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik &quot;%1&quot; jest niezapisywalny!
+Być może nie masz po prostu uprawnień do wykonania tej akcji.</translation>
     </message>
     <message>
         <source>Welcome to qprogram-starter!
 If you want qprogram-starter to automatically shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
-
 Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
-        <translation type="unfinished"></translation>
+        <translation>Witaj w qprogram-starter!
+Jeśli chcesz by qprogram-starter automatycznie zamykał system i używasz Gnome Shell, prawdopodobnie uzyskasz stąd dialog zamknięcia. Jeśli chcesz bezpośredniego zamknięcia, rozważ ustawienie metody zamknięcia w preferencjach na ConsoleKit lub coś innego.
+Odwiedź https://launchpad.net/~hakaishi w celu zgłoszenia błędów lub w sprawach dotyczących tłumaczeń.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Błąd</translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <source>Please read this carefully!</source>
-        <translation type="unfinished"></translation>
+        <translation>Proszę przeczytać to uważnie!</translation>
     </message>
 </context>
 </TS>
