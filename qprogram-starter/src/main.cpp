@@ -26,17 +26,6 @@ int main (int argc, char *argv[]){
 
      QApplication app(argc, argv);
 
-     app.setApplicationName("qprogram-starter");
-     app.setOrganizationName("qprogram-starter");
-
-     QString file;
-   #ifdef Q_OS_WIN32
-     file = QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qprogram-starter/qprogram-starter.conf";
-   #else //!Q_OS_WIN32
-     file = QDir::homePath() + "/.qprogram-starter/qprogram-starter.conf";
-   #endif
-     QSettings settings(file, QSettings::IniFormat);
-
      //Qt translations
      QTranslator qtTranslator;
      qtTranslator.load("qt_" + QLocale::system().name(),

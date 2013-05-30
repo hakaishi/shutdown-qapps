@@ -26,6 +26,14 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
 
      setupUi(this);
 
+     QString file;
+   #ifdef Q_OS_WIN32
+     file = QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qprogram-starter/qprogram-starter.conf";
+   #else //!Q_OS_WIN32
+     file = QDir::homePath() + "/.qprogram-starter/qprogram-starter.conf";
+   #endif
+     settings = new QSettings(file, QSettings::IniFormat);
+
      setupMsgBoxes();
 
      loadSettings();
@@ -39,9 +47,9 @@ void Preferences::setupMsgBoxes(){
      msgBox->setIcon(QMessageBox::Warning);
      msgBox->setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Window);
      msgBox->setInformativeText(tr("The File \"%1\" is not writable!\n"
-       "Maybe you just don't have the permissions to do so.").arg(QSettings().fileName()));
+       "Maybe you just don't have the permissions to do so.").arg(settings->fileName()));
 
-     if(QSettings().value("first_start", true).toBool())
+     if(settings->value("first_start", true).toBool())
      {
        infoBox = new QMessageBox(this);
        infoBox->setWindowTitle(tr("Please read this carefully!"));
@@ -59,7 +67,7 @@ void Preferences::setupMsgBoxes(){
 }
 
 void Preferences::showEvent(QShowEvent* show_pref){
-     if(!QSettings().isWritable())
+     if(!settings->isWritable())
      {
        QTimer::singleShot(15000, msgBox, SLOT(close()));
        msgBox->show();
@@ -69,31 +77,31 @@ void Preferences::showEvent(QShowEvent* show_pref){
 }
 
 void Preferences::loadSettings(){
-     if(QSettings().value("first_start", true).toBool())
+     if(settings->value("first_start", true).toBool())
      {
        infoBox->show();
-       QSettings().setValue("first_start", false);
+       settings->setValue("first_start", false);
      }
 
-     if(!QSettings().contains("shutdown_method"))
-       QSettings().setValue("shutdown_method", 0);
-     if(!QSettings().contains("CheckBoxes/atDate"))
-       QSettings().setValue("CheckBoxes/atDate", false);
-     if(!QSettings().contains("CheckBoxes/logging"))
-       QSettings().setValue("CheckBoxes/logging", false);
-     if(!QSettings().contains("CheckBoxes/shutdown"))
-       QSettings().setValue("CheckBoxes/shutdown", false);
-     if(!QSettings().contains("CheckBoxes/quitWithLastProcess"))
-       QSettings().setValue("CheckBoxes/quitWithLastProcess", false);
-     if(!QSettings().contains("CheckBoxes/text1"))
-       QSettings().setValue("Text/text1", QString());
-     if(!QSettings().contains("CheckBoxes/text2"))
-       QSettings().setValue("Text/text2", QString());
+     if(!settings->contains("shutdown_method"))
+       settings->setValue("shutdown_method", 0);
+     if(!settings->contains("CheckBoxes/atDate"))
+       settings->setValue("CheckBoxes/atDate", false);
+     if(!settings->contains("CheckBoxes/logging"))
+       settings->setValue("CheckBoxes/logging", false);
+     if(!settings->contains("CheckBoxes/shutdown"))
+       settings->setValue("CheckBoxes/shutdown", false);
+     if(!settings->contains("CheckBoxes/quitWithLastProcess"))
+       settings->setValue("CheckBoxes/quitWithLastProcess", false);
+     if(!settings->contains("CheckBoxes/text1"))
+       settings->setValue("Text/text1", QString());
+     if(!settings->contains("CheckBoxes/text2"))
+       settings->setValue("Text/text2", QString());
 
 //read settings
-     comboBox->setCurrentIndex(QSettings().value("shutdown_method", 0).toInt());
+     comboBox->setCurrentIndex(settings->value("shutdown_method", 0).toInt());
 }
 
 void Preferences::saveToConfFile(){
-     QSettings().setValue("shutdown_method",comboBox->currentIndex());
+     settings->setValue("shutdown_method",comboBox->currentIndex());
 }

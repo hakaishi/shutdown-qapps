@@ -22,7 +22,6 @@
 #include "ui_gui.h"
 #include <QFileDialog>
 #include <QtGlobal>
-#include <QSettings>
 #include <QProcess>
 #include <QTextStream>
 

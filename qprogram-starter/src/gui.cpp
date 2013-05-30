@@ -98,7 +98,7 @@ Gui::Gui(){
 Gui::~Gui(){ delete hintMsgBox; }
 
 void Gui::closeEvent(QCloseEvent* window_close){
-     if(!QSettings().isWritable())
+     if(!pref->settings->isWritable())
        *myOutput << "W: qprogram-starter.conf is not writable!" << endl;
      else
        saveSettings();
@@ -493,22 +493,22 @@ void Gui::message(){
 }
 
 void Gui::saveData(){
-     QSettings().setValue("Text/text1", plainTextEdit->toPlainText());
-     QSettings().setValue("Text/text2", plainTextEdit2->toPlainText());
+     pref->settings->setValue("Text/text1", plainTextEdit->toPlainText());
+     pref->settings->setValue("Text/text2", plainTextEdit2->toPlainText());
 }
 
 void Gui::saveSettings(){
-     QSettings().setValue("CheckBoxes/atDate", atDateCheckBox->isChecked());
-     QSettings().setValue("CheckBoxes/logging", loggingCheckBox->isChecked());
-     QSettings().setValue("CheckBoxes/shutdown", shutdownCheckBox->isChecked());
-     QSettings().setValue("CheckBoxes/quitWithLastProcess", quitCheckBox->isChecked());
+     pref->settings->setValue("CheckBoxes/atDate", atDateCheckBox->isChecked());
+     pref->settings->setValue("CheckBoxes/logging", loggingCheckBox->isChecked());
+     pref->settings->setValue("CheckBoxes/shutdown", shutdownCheckBox->isChecked());
+     pref->settings->setValue("CheckBoxes/quitWithLastProcess", quitCheckBox->isChecked());
 }
 
 void Gui::loadSettings(){
-     atDateCheckBox->setChecked(QSettings().value("CheckBoxes/atDate").toBool());
-     loggingCheckBox->setChecked(QSettings().value("CheckBoxes/logging").toBool());
-     shutdownCheckBox->setChecked(QSettings().value("CheckBoxes/shutdown").toBool());
-     quitCheckBox->setChecked(QSettings().value("CheckBoxes/quitWithLastProcess").toBool());
-     plainTextEdit->setPlainText(QSettings().value("Text/text1").toString());
-     plainTextEdit2->setPlainText(QSettings().value("Text/text2").toString());
+     atDateCheckBox->setChecked(pref->settings->value("CheckBoxes/atDate").toBool());
+     loggingCheckBox->setChecked(pref->settings->value("CheckBoxes/logging").toBool());
+     shutdownCheckBox->setChecked(pref->settings->value("CheckBoxes/shutdown").toBool());
+     quitCheckBox->setChecked(pref->settings->value("CheckBoxes/quitWithLastProcess").toBool());
+     plainTextEdit->setPlainText(pref->settings->value("Text/text1").toString());
+     plainTextEdit2->setPlainText(pref->settings->value("Text/text2").toString());
 }

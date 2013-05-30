@@ -28,6 +28,7 @@ class Preferences : public QDialog, public Ui::Preferences {
  
     public:
      Preferences(QWidget *parent = 0);
+     QSettings *settings;
 
     private:
      QMessageBox *msgBox;
