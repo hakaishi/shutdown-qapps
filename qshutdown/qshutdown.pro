@@ -72,14 +72,3 @@ deinstall.depends = uninstall FORCE
 deinstall.commands = rm -R /usr/share/qshutdown
 QMAKE_EXTRA_TARGETS = deinstall
 }
-
-
-
-
-
-
-
-
-
-
-
