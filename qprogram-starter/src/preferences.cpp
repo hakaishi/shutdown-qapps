@@ -93,9 +93,9 @@ void Preferences::loadSettings(){
        settings->setValue("CheckBoxes/shutdown", false);
      if(!settings->contains("CheckBoxes/quitWithLastProcess"))
        settings->setValue("CheckBoxes/quitWithLastProcess", false);
-     if(!settings->contains("CheckBoxes/text1"))
+     if(!settings->contains("Text/text1"))
        settings->setValue("Text/text1", QString());
-     if(!settings->contains("CheckBoxes/text2"))
+     if(!settings->contains("Text/text2"))
        settings->setValue("Text/text2", QString());
 
 //read settings

@@ -490,6 +490,9 @@ void Gui::message(){
 
      if(quitCheckBox->isChecked() && !aborted)
        close();
+
+     processArgs1.clear();
+     processArgs2.clear();
 }
 
 void Gui::saveData(){

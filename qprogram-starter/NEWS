@@ -1,8 +1,15 @@
+Changes in Release 1.6.7
+=========================
+
+    - fixed not beeing able to start commands after first one failed
+    - fixed not saving text editors contents
+
 Changes in Release 1.6.6
 =========================
 
     - new design and new options
     - added welcome dialog
+    - update on translations
 
 Changes in Release 1.6.5
 =========================
