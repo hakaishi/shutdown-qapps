@@ -14,6 +14,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+/* INFO: For Windows hibernate has to be activated:
+   Please note that this only works if the hardware supports it and
+   enough RAM is available.
+   - powercfg -a #prints aviable sleep states
+   - powercfg -hibernate on
+   - powercfg -hibernate off
+*/
+
 #ifndef POWER_H
 #define POWER_H
 
@@ -129,6 +138,7 @@ void shutdown(){
            oput << "W: " << response.errorName() << ": "
                 << response.errorMessage() << endl;
          QProcess::startDetached("sudo shutdown -P now");
+         QProcess::startDetached("sudo shutdown -h -P now");
        }
      }
   }
@@ -180,8 +190,10 @@ void shutdown(){
               << response.errorMessage() << endl;
     }
   }
-  if(sudo)
-    QProcess::startDetached("sudo shutdown -P now");
+  if(sudo){
+     QProcess::startDetached("sudo shutdown -P now");
+     QProcess::startDetached("sudo shutdown -h -P now");
+  }
   if(user)
     QProcess::startDetached(shell, args);
 
@@ -400,7 +412,8 @@ void suspend(){
 
   if(automatic){
    #ifdef Q_OS_WIN32
-     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState"); // Windows command to suspend immediately
+     QProcess::startDetached("powercfg -hibernate off"); // enable suspend
+     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState");
      }
    #else
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh suspend");
@@ -555,7 +568,8 @@ void hibernate(){
 
   if(automatic){
    #ifdef Q_OS_WIN32
-     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState"); // Windows command to hibernate immediately
+     QProcess::startDetached("powercfg -hibernate on"); // enable hibernate
+     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState");
      }
    #else
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh hibernate");

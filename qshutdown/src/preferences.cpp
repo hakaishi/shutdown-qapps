@@ -50,10 +50,17 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
 #endif //Q_OS_WIN32
      settings = new QSettings(file, QSettings::IniFormat);
 
+#ifdef Q_OS_WIN32
      fonts = "Times New Roman";
      fontS1 = 13;
      fontS2 = 18;
      fontS3 = 11;
+#else
+     fonts = "DejaVu Sans";
+     fontS1 = 11;
+     fontS2 = 15;
+     fontS3 = 9;
+#endif
 
      userDef1S = tr("Please input an user specified command for shutdown here");
      userDef2S = tr("Please input an user specified command for reboot here");
@@ -205,10 +212,10 @@ void Preferences::loadSettings(){
      stopHide->setChecked(settings->value("Quit_on_close",false).toBool());
      countdown->setChecked(settings->value("Time/countdown_at_startup",false).toBool());
      hideMe->setChecked(settings->value("Hide_at_startup",false).toBool());
-     fontComboBox->setCurrentFont(settings->value("Fonts/font_type","Times New Roman").toString());
-     font1Spin->setValue(settings->value("Fonts/font1",13).toInt());
-     font2Spin->setValue(settings->value("Fonts/font2",18).toInt());
-     font3Spin->setValue(settings->value("Fonts/font3",11).toInt());
+     fontComboBox->setCurrentFont(settings->value("Fonts/font_type",fonts).toString());
+     font1Spin->setValue(settings->value("Fonts/font1",fontS1).toInt());
+     font2Spin->setValue(settings->value("Fonts/font2",fontS2).toInt());
+     font3Spin->setValue(settings->value("Fonts/font3",fontS3).toInt());
      spinBox->setValue(settings->value("Logfile/size",1.5).toDouble());
      radio1->setChecked(settings->value("CheckBoxes/target_time",false).toBool());
      radio2->setChecked(settings->value("CheckBoxes/countdown",true).toBool());
@@ -287,10 +294,10 @@ void Preferences::resetSettings(){
        stopHide->setChecked(false);
        hideMe->setChecked(false);
        spin->setValue(60);
-       fontComboBox->setCurrentFont(QFont("Times New Roman"));
-       font1Spin->setValue(13);
-       font2Spin->setValue(18);
-       font3Spin->setValue(11);
+       fontComboBox->setCurrentFont(QFont(fonts));
+       font1Spin->setValue(fontS1);
+       font2Spin->setValue(fontS2);
+       font3Spin->setValue(fontS3);
        spinBox->setValue(1.5);
        radio1->setChecked(false);
        radio2->setChecked(true);

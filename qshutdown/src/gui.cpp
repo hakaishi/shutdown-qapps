@@ -702,18 +702,31 @@ void Gui::loadSettings(){
 
      pref->autostartFile();
 
+#ifdef Q_OS_WIN32
+     QString fonts = "Times New Roman";
+     int fontS1 = 13;
+     int fontS2 = 18;
+     int fontS3 = 11;
+#else
+     QString fonts = "DejaVu Sans";
+     int fontS1 = 11;
+     int fontS2 = 15;
+     int fontS3 = 9;
+#endif
+
+
 
 /***************** read files entries *****************/
      timeEdit->setTime(QTime(settings.value("Time/time_hour",22).toInt(),settings.value("Time/time_minute",00).toInt()));
      spin->setValue(settings.value("Time/countdown_minutes",60).toInt());
      resize(settings.value("MainWindow/size",QSize(290,280)).toSize());
      actionKeep_window_proportions->setChecked(settings.value("MainWindow/keep_proportions",true).toBool());
-     font1->setFamily(settings.value("Fonts/font_type","Times New Roman").toString());
-     font2->setFamily(settings.value("Fonts/font_type","Times New Roman").toString());
-     font3->setFamily(settings.value("Fonts/font_type","Times New Roman").toString());
-     font1->setPointSize(settings.value("Fonts/font1",13).toInt());
-     font2->setPointSize(settings.value("Fonts/font2",18).toInt());
-     font3->setPointSize(settings.value("Fonts/font3",11).toInt());
+     font1->setFamily(settings.value("Fonts/font_type",fonts).toString());
+     font2->setFamily(settings.value("Fonts/font_type",fonts).toString());
+     font3->setFamily(settings.value("Fonts/font_type",fonts).toString());
+     font1->setPointSize(settings.value("Fonts/font1",fontS1).toInt());
+     font2->setPointSize(settings.value("Fonts/font2",fontS2).toInt());
+     font3->setPointSize(settings.value("Fonts/font3",fontS3).toInt());
 
 
      radio1->setChecked(settings.value("CheckBoxes/target_time",false).toBool());
