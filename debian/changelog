@@ -1,11 +1,12 @@
 shutdown-qapps (1.6.7-1) unstable; urgency=low
+  closes: #716194
   * qprogram-starter
     - fixed not beeing able to start commands after first one failed
     - fixed not saving text editors contents
   * qshutdown
-    -
+    - closes: #717102
 
- -- Christian Metscher <hakaishi@web.de>  Thu, 30 May 2013 12:30:11 +0200
+ -- Christian Metscher <hakaishi@web.de>  Tue, 30 Jul 2013 11:36:11 +0200
 
 
 shutdown-qapps (1.6.6-1) unstable; urgency=low
