@@ -40,7 +40,7 @@ Gui::Gui(){
      if(shell.isEmpty() && QFile("/bin/bash").exists())
         shell = "/bin/bash";
      else
-       myOutput << "E: No shells found!";
+       *myOutput << "E: No shells found!";
 
    //Versioning
      QFile versionFile(":version");

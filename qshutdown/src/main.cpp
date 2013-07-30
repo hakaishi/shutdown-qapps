@@ -21,6 +21,7 @@
 #include <QProcessEnvironment>
 
 bool verbose = false; //this is a global variable needed in power.cpp
+QString shell;
 
 int main(int argc, char *argv[]){
 
@@ -142,6 +143,10 @@ int main(int argc, char *argv[]){
        }
      #endif //Q_OS_WIN32
 
-     if(QProcessEnvironment().isEmpty())
-       myOutput << "W: No environment found! Custom commands might not work.";
+    if(!QProcessEnvironment().isEmpty())
+       shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+    if(shell.isEmpty() && QFile("/bin/bash").exists())
+       shell = "/bin/bash";
+    else
+      myOutput << "E: No shell found! Custom commands won't work!";
 }
