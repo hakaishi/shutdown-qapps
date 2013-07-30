@@ -42,6 +42,13 @@ int main(int argc, char *argv[]){
 
      QTextStream myOutput(stdout);
 
+     if(!QProcessEnvironment().isEmpty())
+       shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+     if(shell.isEmpty() && QFile("/bin/bash").exists())
+       shell = "/bin/bash";
+     else
+       myOutput << "E: No shell found! Custom commands won't work!";
+
      QString infoStr = QString(QObject::tr("qshutdown will show itself 3 times as a warning "
        "if there are less than 70 seconds left.<br/><br/>This program uses qdbus to send a "
        "shutdown/reboot/suspend/hibernate request to either the gnome- or "
@@ -142,11 +149,4 @@ int main(int argc, char *argv[]){
          }
        }
      #endif //Q_OS_WIN32
-
-    if(!QProcessEnvironment().isEmpty())
-       shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
-    if(shell.isEmpty() && QFile("/bin/bash").exists())
-       shell = "/bin/bash";
-    else
-      myOutput << "E: No shell found! Custom commands won't work!";
 }
