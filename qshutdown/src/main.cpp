@@ -18,6 +18,7 @@
 #include <QTranslator>
 #include <QLibraryInfo>
 #include <QTextStream>
+#include <QProcessEnvironment>
 
 bool verbose = false; //this is a global variable needed in power.cpp
 
@@ -140,4 +141,7 @@ int main(int argc, char *argv[]){
          }
        }
      #endif //Q_OS_WIN32
+
+     if(QProcessEnvironment().isEmpty())
+       myOutput << "W: No environment found! Custom commands might not work.";
 }

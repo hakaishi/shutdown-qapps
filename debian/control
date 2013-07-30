@@ -11,6 +11,7 @@ Homepage: https://launchpad.net/~hakaishi
 Package: qprogram-starter
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: hibernate
 Description: Qt program to start programs or commands
  qprogram-starter is a Qt program to start programs or commands. You can
  set a time or date when the processes should start, log error output
@@ -21,6 +22,7 @@ Description: Qt program to start programs or commands
 Package: qshutdown
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: hibernate
 Description: Qt program to shutdown/reboot/suspend/hibernate the system
  qshutdown is a Qt program to shutdown/reboot/suspend/hibernate the
  computer at a given time or after a certain number of minutes. It shows

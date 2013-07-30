@@ -34,7 +34,13 @@ Gui::Gui(){
 
      myOutput = new QTextStream(stdout);
 
-     shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+     QString shell;
+     if(!QProcessEnvironment().isEmpty())
+        shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+     if(shell.isEmpty() && QFile("/bin/bash").exists())
+        shell = "/bin/bash";
+     else
+       myOutput << "E: No shells found!";
 
    //Versioning
      QFile versionFile(":version");

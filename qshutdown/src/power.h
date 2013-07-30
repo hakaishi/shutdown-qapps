@@ -38,7 +38,7 @@ extern bool verbose;
 namespace Power{
 
 QTextStream oput(stdout);
-QString shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+QString shell;
 
 bool lockMyScreen;
 bool automatic = false;
@@ -194,8 +194,16 @@ void shutdown(){
      QProcess::startDetached("sudo shutdown -P now");
      QProcess::startDetached("sudo shutdown -h -P now");
   }
-  if(user)
-    QProcess::startDetached(shell, args);
+  if(user){
+    if(!QProcessEnvironment().isEmpty())
+       shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+    if(shell.isEmpty() && QFile("/bin/bash").exists())
+       shell = "/bin/bash";
+    if(!shell.isEmpty())
+      QProcess::startDetached(shell, args);
+    else
+      oput << "E: Bash not found as well!";
+  }
 
   //resetting variables
   automatic = false;
@@ -329,8 +337,16 @@ void reboot(){
   }
   if(sudo)
     QProcess::startDetached("sudo shutdown -r now");
-  if(user)
-    QProcess::startDetached(shell, args);
+  if(user){
+    if(!QProcessEnvironment().isEmpty())
+       shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+    if(shell.isEmpty() && QFile("/bin/bash").exists())
+       shell = "/bin/bash";
+    if(!shell.isEmpty())
+      QProcess::startDetached(shell, args);
+    else
+      oput << "E: Bash not found as well!";
+  }
 
   //resetting variables
   automatic = false;
@@ -486,8 +502,16 @@ void suspend(){
       }
     }
   }
-  if(user)
-    QProcess::startDetached(shell, args);
+  if(user){
+    if(!QProcessEnvironment().isEmpty())
+       shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+    if(shell.isEmpty() && QFile("/bin/bash").exists())
+       shell = "/bin/bash";
+    if(!shell.isEmpty())
+      QProcess::startDetached(shell, args);
+    else
+      oput << "E: Bash not found as well!";
+  }
 
   //resetting variables
   automatic = false;
@@ -640,8 +664,16 @@ void hibernate(){
              << response.errorMessage() << endl;
     }
   }
-  if(user)
-    QProcess::startDetached(shell, args);
+  if(user){
+    if(!QProcessEnvironment().isEmpty())
+       shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+    if(shell.isEmpty() && QFile("/bin/bash").exists())
+       shell = "/bin/bash";
+    if(!shell.isEmpty())
+      QProcess::startDetached(shell, args);
+    else
+      oput << "E: Bash not found as well!";
+  }
 
   //resetting variables
   automatic = false;
