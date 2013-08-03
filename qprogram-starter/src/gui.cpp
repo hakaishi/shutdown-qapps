@@ -40,7 +40,7 @@ Gui::Gui(){
      if(shell.isEmpty() && QFile("/bin/bash").exists())
         shell = "/bin/bash";
      else
-       *myOutput << "E: No shells found!";
+       *myOutput << "E: No shells found! qprogram-starter might not work as expected...";
 
    //Versioning
      QFile versionFile(":version");
@@ -416,8 +416,10 @@ void Gui::shutdown_or_message(){
                      << response.errorMessage() << endl;
        }
 
-       if(pref->comboBox->currentIndex() == 5) //sudo
+       if(pref->comboBox->currentIndex() == 5){ //sudo
          QProcess::startDetached("sudo shutdown -P now");
+         QProcess::startDetached("sudo shutdown -h -P now");
+       }
      }
 
      processArgs1.clear();

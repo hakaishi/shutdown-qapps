@@ -484,7 +484,7 @@ bei Programmstart standardmäßig gesetzt sein soll</translation>
             <source>The close button usually hides the main window.
 Disabling hiding means, that qshutdown will then
 quit instead.</source>
-            <translation>Der Fenster schließen Knopf versteckt für
+            <translation>Der Knopf zum schließen des Fensters versteckt für
 gewöhnlich das Hauptfenster. Das Verstecken
 zu deaktivieren bedeutet, dass qshutdown dann
 stattdessen beendet wird.</translation>
@@ -583,7 +583,7 @@ Vielleicht haben Sie dazu einfach keine Rechte.</translation>
 If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
 Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
             <translation>Willkommen bei qshutdown!
-Wenn Sie möchten, das qshutdown das system herunterfährt und Sie die Gnome Shell benuten, dann ist es wahrscheinlich, dass ein Shutdown-Dialog erscheint. Wenn Sie einen direkten Shutdown möchten, dann ziehen Sie bitte in Betracht in die Einstallungen zu gehen und die Shutdown-Methode auf ConsoleKit oder ähnliches zu stellen.
+Wenn Sie möchten, das qshutdown das System herunterfährt und Sie die Gnome Shell benuten, dann ist es wahrscheinlich, dass ein Shutdown-Dialog erscheint. Wenn Sie einen direkten Shutdown möchten, dann ziehen Sie bitte in Betracht in die Einstellungen zu gehen und die Shutdown-Methode auf ConsoleKit oder ähnliches zu stellen.
 Sie können gerne jederzeit https://launchpad.net/~hakaishi besuchen um Bugs oder alles was die Übersetzungen betrifft besuchen.</translation>
         </message>
         <message>
