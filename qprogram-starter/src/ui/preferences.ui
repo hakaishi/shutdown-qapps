@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Preferences</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../qprogram-starter.qrc">
+    <normaloff>:/pix</normaloff>:/pix</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
     <widget class="QComboBox" name="comboBox">
@@ -67,7 +71,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../qprogram-starter.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

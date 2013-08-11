@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string notr="true">qprogram-starter</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../qprogram-starter.qrc">
+    <normaloff>:/pix</normaloff>:/pix</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
@@ -193,7 +197,7 @@
      <x>0</x>
      <y>0</y>
      <width>554</width>
-     <height>29</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -260,7 +264,9 @@
   <tabstop>abortB</tabstop>
   <tabstop>showLogsButton</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../../../qprogram-starter.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>shutdownCheckBox</sender>
