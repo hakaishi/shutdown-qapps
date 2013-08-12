@@ -34,7 +34,6 @@ Gui::Gui(){
 
      myOutput = new QTextStream(stdout);
 
-     QString shell;
      if(!QProcessEnvironment().isEmpty())
         shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
      if(shell.isEmpty() && QFile("/bin/bash").exists())
