@@ -107,7 +107,7 @@ void Gui::closeEvent(QCloseEvent* window_close){
        *myOutput << "W: qprogram-starter.conf is not writable!" << endl;
      else
        saveSettings();
-     qApp->quit();
+     //qApp->quit();
      QMainWindow::closeEvent(window_close);
 }
 
