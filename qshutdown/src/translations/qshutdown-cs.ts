@@ -1,600 +1,589 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="tr">
+<TS version="2.0" language="cs_CZ">
 <context>
     <name>About</name>
     <message>
         <source>About qshutdown</source>
-        <translation>qshutdown hakkında</translation>
+        <translation>O aplikaci qshutdown</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation>Sürüm </translation>
+        <translation>Verze </translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;Hakkında</translation>
+        <translation>O &amp;aplikaci</translation>
     </message>
     <message>
         <source>&amp;Thanks To</source>
-        <translation>&amp;Teşekkürler</translation>
+        <translation>Podě&amp;kování</translation>
     </message>
     <message>
         <source>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Using Qt&lt;/span&gt;&lt;/p&gt;</source>
-        <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Qt Kullanılarak&lt;/span&gt;&lt;/p&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Özel teşekkürler:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Her yerde yardım eden Fabian Deuchler&apos;a.&lt;br /&gt;&lt;br /&gt;Ve Debian&apos;a gönderimlerde destek olan Brian Nelson&apos;a.&lt;br /&gt;&lt;br /&gt;Çevirmenler: Muhammet KARA, Volkan Gezer, Şâkir Aşçı, indis, Gökdeniz Karadağ.&lt;/p&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, bir süreli ve geri sayımlı kapatma aracı&lt;/p&gt;&lt;p &gt;Yazar: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Telif Hakkı &amp;copy; 2010-2013, Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Lütfen hata raporları için &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; veya &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; kullanın.&lt;/p&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Calendar</name>
     <message>
         <source>Calendar</source>
-        <translation>Takvim</translation>
+        <translation>Kalendář</translation>
     </message>
 </context>
 <context>
     <name>ChangePassword</name>
     <message>
         <source>Change Password</source>
-        <translation>Parolayı Değiştir</translation>
+        <translation>Změnit heslo</translation>
     </message>
     <message>
         <source>Retype password:</source>
-        <translation>Parolayı tekrar giriniz:</translation>
+        <translation>Heslo znovu:</translation>
     </message>
     <message>
         <source>New password:</source>
-        <translation>Yeni parola:</translation>
+        <translation>Nové heslo:</translation>
     </message>
     <message>
         <source>Old password:</source>
-        <translation>Eski parola:</translation>
+        <translation>Původní heslo:</translation>
     </message>
     <message>
         <source>The current password is not correct!</source>
-        <translation>Şu anki parola doğru değil!</translation>
+        <translation>Aktuální heslo není správné!</translation>
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation>Yeniden yazılan parola uyuşmuyor!</translation>
+        <translation>Přepsané heslo nesouhlasí!</translation>
     </message>
 </context>
 <context>
     <name>Editor</name>
     <message>
         <source>Editor</source>
-        <translation>Düzenleyici</translation>
+        <translation>Editor</translation>
     </message>
 </context>
 <context>
     <name>Gui</name>
     <message>
         <source>&amp;Minimize!</source>
-        <translation>&amp;Küçült!</translation>
+        <translation>&amp;Minimalizovat!</translation>
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation>Kapanma zamanı:</translation>
+        <translation>Čas vypnutí:</translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
-        <translation>Kapatmaya kalan dakika:</translation>
+        <translation>Minut do vypnutí:</translation>
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation>Yeniden başlatma zamanı:</translation>
+        <translation>Čas restartu:</translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
-        <translation>Yeniden başlatmaya kalan dakika:</translation>
+        <translation>Minut do restartu:</translation>
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation>Askıya alma zamanı:</translation>
+        <translation>Čas-uspání:</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation>Askıya almaya kalan dakika:</translation>
+        <translation>Minuty do uspání:</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>
-        <translation>Bekletme zamanı:</translation>
+        <translation>Čas-hibernace:</translation>
     </message>
     <message>
         <source>Minutes till hibernate:</source>
-        <translation>Beklemeye kalan dakika:</translation>
+        <translation>Minuty do hibernace:</translation>
     </message>
     <message>
         <source>shutdown in </source>
-        <translation>kapanıyor </translation>
+        <translation>vypínání za </translation>
     </message>
     <message>
         <source>reboot in </source>
-        <translation>yeniden başlatılıyor </translation>
+        <translation>restartování za </translation>
     </message>
     <message>
         <source>suspend in </source>
-        <translation>askıya alınıyor </translation>
+        <translation>uspání za </translation>
     </message>
     <message>
         <source>hibernate in </source>
-        <translation>beklemeye geçiyor </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>years</source>
-        <translation>yıl</translation>
+        <translation>roků</translation>
     </message>
     <message>
         <source>months</source>
-        <translation>ay</translation>
+        <translation>měsíců</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>saat</translation>
+        <translation>hodin</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>gün</translation>
+        <translation>dnů</translation>
     </message>
     <message>
         <source>Res&amp;tore</source>
-        <translation>&amp;Geri Yükle</translation>
+        <translation>Obnovi&amp;t</translation>
     </message>
     <message>
         <source>&amp;Minimize</source>
-        <translation>&amp;Küçült</translation>
+        <translation>&amp;Minimalizovat</translation>
     </message>
     <message>
         <source>day</source>
-        <translation>gün</translation>
+        <translation>den</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>dakika</translation>
+        <translation>minut</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>sâniye</translation>
+        <translation>vteřin</translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Bilgisayarı Kapat</translation>
+        <translation>Vypnutí</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Yeniden Başlat</translation>
+        <translation>Restartování</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Askıya Al</translation>
+        <translation>Uspat do paměti</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Beklet</translation>
+        <translation>Hibernace</translation>
     </message>
     <message>
         <source>&amp;Lock after start?</source>
-        <translation>Başladıktan sonra ki&amp;litlensin mi?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Warnings on?</source>
-        <translation>&amp;Uyarılar açık mı?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Now!</source>
-        <translation>&amp;Şimdi!</translation>
+        <translation>Teď</translation>
     </message>
     <message>
         <source>You can set a date in the calendar</source>
-        <translation>Takvimden bir târih seçebilirsiniz</translation>
+        <translation>Datum můžete nastavit pomocí kalendáře</translation>
     </message>
     <message>
         <source>&amp;OK</source>
-        <translation>&amp;Tamam</translation>
+        <translation>&amp;OK</translation>
     </message>
     <message>
         <source>R&amp;eset</source>
-        <translation>&amp;Sıfırla</translation>
+        <translation>R&amp;eset</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Çıkış</translation>
+        <translation>&amp;Ukončit</translation>
     </message>
     <message>
         <source>&amp;Info</source>
-        <translation>&amp;Bilgi</translation>
+        <translation>&amp;Informace</translation>
     </message>
     <message>
         <source>&amp;Logfile</source>
-        <translation>&amp;Kayıt dosyası</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation>&amp;Tercihler</translation>
+        <translation>&amp;Předvolby</translation>
     </message>
     <message>
         <source>&amp;Shutdown</source>
-        <translation>&amp;Bilgisayarı Kapat</translation>
+        <translation>Vy&amp;pnout</translation>
     </message>
     <message>
         <source>&amp;Reboot</source>
-        <translation>&amp;Yeniden Başlat</translation>
+        <translation>&amp;Restartovat</translation>
     </message>
     <message>
         <source>S&amp;uspend</source>
-        <translation>&amp;Uyku</translation>
+        <translation>&amp;Uspat do RAM</translation>
     </message>
     <message>
         <source>&amp;Hibernate</source>
-        <translation>&amp;Hazırda Beklet</translation>
+        <translation>&amp;Uspat na disk</translation>
     </message>
     <message>
         <source>Lock settings after countdown started</source>
-        <translation>Geri sayım başladıktan sonra ayarları kilitle</translation>
+        <translation>Uzamkne nastavení pokud bylo spuštěno odpočítávání</translation>
     </message>
     <message>
         <source>Calendar</source>
-        <translation>Takvim</translation>
+        <translation>Kalendář</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Dosya</translation>
+        <translation>&amp;Soubor</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Yardım</translation>
+        <translation>&amp;Nápověda</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Ayarlar</translation>
+        <translation>&amp;Nastavení</translation>
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;Hakkında</translation>
+        <translation>&amp;O programu</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation>&amp;Sıfırla</translation>
+        <translation>O&amp;bnovit</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
-        <translation>&amp;Yapılandır</translation>
+        <translation>&amp;Nastavit</translation>
     </message>
     <message>
         <source>&amp;Keep proportions</source>
-        <translation>&amp;Ana pencere orantılarını sâbit tut</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation>Upozornění</translation>
     </message>
     <message>
         <source>Action imminent!</source>
-        <translation>Az kaldı!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Bilgilendirme</translation>
+        <translation>Informace</translation>
     </message>
     <message>
         <source>Countdown is not running!</source>
-        <translation>Geri sayım başlatılmadı!</translation>
+        <translation>Běží odpočítávání!</translation>
     </message>
     <message>
         <source>Turns on/off all warnings</source>
-        <translation>Bütün uyarıları açar/kapatır</translation>
+        <translation>Zapnout/vypnout všechna varování</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>&amp;Qt Hakkında</translation>
+        <translation>O &amp;Qt</translation>
     </message>
     <message>
         <source>Version </source>
-        <translation>Sürüm </translation>
+        <translation>Verze </translation>
     </message>
 </context>
 <context>
     <name>Info</name>
     <message>
         <source>Info</source>
-        <translation>Bilgi</translation>
+        <translation>Informace</translation>
     </message>
 </context>
 <context>
     <name>PassWord</name>
     <message>
         <source>Password</source>
-        <translation>Parola</translation>
+        <translation>Heslo</translation>
     </message>
     <message>
         <source>&amp;Set password</source>
-        <translation>&amp;Parola belirle</translation>
+        <translation>&amp;Nastavit heslo</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Parola:</translation>
+        <translation>Heslo:</translation>
     </message>
     <message>
         <source>The password is not correct!</source>
-        <translation>Parola yanlış!</translation>
+        <translation>Špatné heslo!</translation>
     </message>
     <message>
         <source>&amp;Change password</source>
-        <translation>Parolayı &amp;değiştir</translation>
+        <translation>Změnit &amp;heslo</translation>
     </message>
 </context>
 <context>
     <name>Preferences</name>
     <message>
         <source>Preferences</source>
-        <translation>Tercihler</translation>
+        <translation>Nastavení</translation>
     </message>
     <message>
         <source>Enable the &amp;target time at startup</source>
-        <translation>&amp;Hedef zamanı başlangıçta etkinleştir</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Bilgisayarı Kapat</translation>
+        <translation>Vypnout</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
-        <translation>Kapatma türü:</translation>
+        <translation>Způsob vypnutí:</translation>
     </message>
     <message>
         <source>Target time:</source>
-        <translation>Hedef zaman:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Minutes to countdown:</source>
-        <translation>Geri sayıma kalan dakika:</translation>
+        <translation>Minut do začátku odpočívání:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Yazı tipi:</translation>
+        <translation>Písmo:</translation>
     </message>
     <message>
         <source>Font size 1:</source>
-        <translation>Yazı tipi boyutu 1:</translation>
+        <translation>Velikost písma 1:</translation>
     </message>
     <message>
         <source>Font size 2:</source>
-        <translation>Yazı tipi boyutu 2:</translation>
+        <translation>Velikost písma 2:</translation>
     </message>
     <message>
         <source>Font size 3:</source>
-        <translation>Yazı tipi boyutu 3:</translation>
+        <translation>Velikost písma 3:</translation>
     </message>
     <message>
         <source>Size for log file:</source>
-        <translation>Kayıt dosyası boyutu:</translation>
+        <translation>Velikost logu:</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Yeniden Başlat</translation>
+        <translation>Restartovat</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Askıya Al</translation>
+        <translation>Uspat do paměti</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Hazırda Beklet</translation>
+        <translation>Uspat na disk</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
-        <translation>&amp;Özişler Başlat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
-        <translation>&amp;qshutdown&apos;ı başlangıçta gizle</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Lock screen &amp;for suspend and hibernate</source>
-        <translation>Bekleme ve u&amp;ykuda ekranı kilitle</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Edit configuration file</source>
-        <translation>Yapılandırma dosyasını düz&amp;enle</translation>
+        <translation>&amp;Upravit konfigurační soubor</translation>
     </message>
     <message>
         <source>Enable the minute &amp;countdown at startup</source>
-        <translation>Başlanfıçta dakika &amp;geri sayımını etkinleştir</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Reset settings</source>
-        <translation>Ayarları sıfı&amp;rla</translation>
+        <translation>&amp;Resetovat nastavení</translation>
     </message>
     <message>
         <source>Size for log file in KB</source>
-        <translation>Günlük dosyasının KB cinsinden boyutu</translation>
+        <translation>Velikost logu v KB</translation>
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
-        <translation>&quot;&amp;Başladıktan sonra kilitlensin mi?&quot;</translation>
+        <translation>&quot;&amp;Uzamknout po startu?&quot;</translation>
     </message>
     <message>
         <source>&quot;&amp;Warnings on?&quot;</source>
-        <translation>&quot;&amp;Uyarılar açık mı?&quot;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Log start time of qshutdown and how long
 it was running</source>
-        <translation>qshutdown&apos;ın günlük başlama zamanı ve ne kadar süredir çalışıyor olduğu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>L&amp;ogging</source>
-        <translation>G&amp;ünlükleme</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
-        <translation>işaret kutuları ve &quot;şimdi!&quot; düğmesi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>OK and Minimize buttons</source>
-        <translation>TAMAM ve Simge Durumuna Küçült düğmeleri</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Labels for example</source>
-        <translation>Örneğin etiketler</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Set a font</source>
-        <translation>Bir yazı tipi ayarlayın</translation>
+        <translation>Nastavení písma</translation>
     </message>
     <message>
         <source>What target time should be displayed
 by default at startup?</source>
-        <translation>Başlangıçta öntanımlı hangi hedef zamanı görüntülenmeli?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>How many minutes should be displayed
 for countdown by default at startup?</source>
-        <translation>Geri sayım için başlangıçta öntanımlı
-olarak kaç dakika gösterilsin?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>What should be displayed first by
 default at startup?</source>
-        <translation>Başlangıçta öntanımlı ilk ne görüntülenmeli?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Lock after start?&quot;
 should be checked by default at startup</source>
-        <translation>&quot;Başlangıçtan sonra kilitlensin mi?&quot; işaret
-kutusunun başlangıçta işaretlenip
-işaretlenmemesini ayarla</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Warnings on?&quot;
 should be checked by default at startup</source>
-        <translation>&quot;Uyarılar açık mı?&quot; işaret kutusunun başlangıçta
-işaretlenip işaretlenmemesini ayarla</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The close button usually hides the main window.
 Disabling hiding means, that qshutdown will then
 quit instead.</source>
-        <translation>Kapat düğmesi genellikle ana pencereyi gizler.
-Gizlemeyi kapatmak, qshutdown&apos;ın bunun yerine
-kapatılmasını sağlar.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Disable hiding</source>
-        <translation>Gizlemeyi &amp;devre dışı bırak</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Genel</translation>
+        <translation>Obecné</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation>Gelişmiş</translation>
+        <translation>Pokročilé</translation>
     </message>
     <message>
         <source>Suspend method:</source>
-        <translation>Askıya alma yöntemi:</translation>
+        <translation>Metoda uspání:</translation>
     </message>
     <message>
         <source>automatic</source>
-        <translation>otomatik</translation>
+        <translation>automaticky</translation>
     </message>
     <message>
         <source>user defined</source>
-        <translation>kullanıcı tanımlı</translation>
+        <translation>definováno uživatelem</translation>
     </message>
     <message>
         <source>Hibernate method:</source>
-        <translation>Bekletme yöntemi:</translation>
+        <translation>Metoda hibernace:</translation>
     </message>
     <message>
         <source>Shutdown method:</source>
-        <translation>Kapatma yöntemi:</translation>
+        <translation>Metoda vypínání:</translation>
     </message>
     <message>
         <source>Reboot method:</source>
-        <translation>Yeniden başlatma yöntemi:</translation>
+        <translation>Metoda restartu:</translation>
     </message>
     <message>
         <source>Please input an user specified command for suspend here</source>
-        <translation>Buraya lütfen askıya alma için kullanıcı tanımlı bir komut girin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Gnome session</source>
-        <translation>Gnome oturumu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>KDE session</source>
-        <translation>KDE oturumu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Please input an user specified command for shutdown here</source>
-        <translation>Buraya lütfen kapatmak için kullanıcı tanımlı bir komut girin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Please input an user specified command for reboot here</source>
-        <translation>Buraya lütfen yeniden başlatma için kullanıcı tanımlı bir komut girin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Please input an user specified command for hibernate here</source>
-        <translation>Buraya lütfen bekletme için kullanıcı tanımlı bir komut girin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Some systems block for example the shutdown
 because qshutdown is still running. Set a hook if
 qshutdown should quit after the countdown ended.</source>
-        <translation>Bazı sistemler qshutdown hala çalıştığı için
-kapatmayı engeller. qshutdown&apos;ın geri sayımdan
-sonra çıkmasını isterseniz bir kanca ayarlayın.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Quit qshutdown after countdown ended?</source>
-        <translation>Geri sayım bittikten sonra qshutdown kapatılsın mı?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Start countdown at startup</source>
-        <translation>&amp;Başlangıçta geri sayımı başlat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Hide qshutdown at startup if
 &quot;Start countdown&quot; is checked.</source>
-        <translation>&quot;Geri sayımı başlat&quot; işaretliyse
-başlangıçta qshutdown&apos;ı gizle.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
-        <translation>&quot;%1&quot; dosyası yazılabilir değil! Belki yazmak
-için yetkiye sahip olmayabilirsiniz.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Welcome to qshutdown!
 If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
 Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
-        <translation>Qshutdown&apos;a hoş geldiniz!
-Eğer qshutdown&apos;ı sistemi kapatmak için kullanmak isterseniz ve Gnome Kabuğu kullanıyorsanız, muhtemelen oradan bir kapatma uyarısı alacaksınız. Doğrudan bir kapatma isterseniz, lütfen tercihler ve ayarlar içerisinden kapatma yöntemini ConsoleKit veya başka bir yöntem olarak ayarlayın. Lütfen hata raporları ve çeviriler ile ilgili konularda https://launchpad.net/~hakaishi adresini ziyaret edin.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Hata</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Please read this carefully!</source>
-        <translation>Lütfen bunu dikkatle okuyun!</translation>
+        <translation>Toto čtěte pozorně!</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>70 saniyeden az kalmışsa qshutdown kendini 3 kez uyarı olarak gösterecektir.&lt;br/&gt;&lt;br/&gt;Bu program gnome- veya kde-session-manager içerisinde bir kapatma/yeniden başlatma/askıya alma/bekletme talebi için qdbus kullanarak HAL/ConsoleKit/DeviceKit/UPower&apos;a ulaşır. Bunların hiçbiri çalışmazsa, &apos;sudo shutdown&apos; komutu kullanılacaktır (HAL veya ConsoleKit&apos;e kapatma talebi gönderilirken, Oturum asla kaydedilmez, eğer kapatma komutu kullanılırsa, program sadece bilgisayarı kapatabilir veya yeniden başlatabilir). Eğer kapatma veya yeniden başlatma zamanı dolduğunda herhangi bir şey olmazsa, kapatma komutundaki izinlerde bir sorun var demektir. Bu durumda şunu izleyin:&lt;br/&gt;&lt;br/&gt;Aşağıdaki metni bir uçbirime yapıştırın:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;ve şu satırı ekleyin:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;Burada * kullanıcı adını veya % grup adını temsil eder.&lt;br/&gt;&lt;br/&gt;Azami geri_sayım dakikası 1440&apos;tür (24 saat).&lt;br/&gt;Yapılandırma dosyası (ve günlük dosyası) &lt;i&gt;~/.qshutdown/&lt;/i&gt; (Linux/Unix altında) bulunur.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Yöneticiler için:&lt;/b&gt;&lt;br/&gt;Eğer qshutdown&apos;ı her kullanıcı için &quot;aile kilidi&quot; ile çalıştırmak isterseniz, &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; yapabilir ve /root/.qshutdown/qshutdown.conf içerisindeki Lock_all değerini true ayarlayabilirsiniz. Bu dosyanın oluşturulabilmesi için qshutdown&apos;ın en az bir kere çalıştırılmış olması gerektiğini göz önüne alın. Ayrıca şu satırın da sudoers içerisine (yukarıdaki gibi) eklenmesi gereklidir:&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;Eğer parola ayarlamayı unutursanız, basitçe qshutdown.conf dosyasındaki &quot;Password&quot; ile başlayan tüm satırı kaldırın.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Kullanım ipuçları:&lt;/b&gt;&lt;br/&gt;Qshutdown&apos;ın sizi rahatsız etmesini önlemek isterseniz, sadece &quot;uyarılar açık mı?&quot; seçeneğinin işaretini kaldırın.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Kısayollar:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(bu) bilgi penceresi&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Çık&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Tercihler&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;çalışma zamanını bir kez günlük dosyasına yaz (sadece qshutdown çıkarsa çalışır. Kalıcı olarak ayarlamak için tercihlerde ayarlayın.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;kapatmak üzere ayarla&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;yeniden başlatmak üzere ayarla&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;RAM&apos;e askıya almak üzere ayarla&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;beklemeye almak üzere ayarla&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;geri sayımı başlat (sadece geri sayım başladıysa ve yönetici erişimi kısıtlamadıysa)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;yapılandırma dosyasını düzenlemek için (bunun için bir parola gereklidir. Eğer bir kullanıcıysanız, bir &quot;boş parola&quot; belirleyebilirsiniz (parola alanını boş bırakın)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

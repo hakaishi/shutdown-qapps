@@ -11,6 +11,8 @@ MOC_DIR = build
 UI_DIR = build
 RCC_DIR = build
 
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 system(lrelease qshutdown.pro)
 
 QMAKE_DISTCLEAN = src/translations/*.qm
@@ -28,6 +30,7 @@ RESOURCES = ../qshutdown.qrc
 TRANSLATIONS = src/translations/qshutdown-ast.ts\
                src/translations/qshutdown-bg.ts\
                src/translations/qshutdown-bs.ts\
+               src/translations/qshutdown-cs.ts\
                src/translations/qshutdown-de.ts\
                src/translations/qshutdown-de_DE.ts\
                src/translations/qshutdown-en_AU.ts\
@@ -38,6 +41,7 @@ TRANSLATIONS = src/translations/qshutdown-ast.ts\
                src/translations/qshutdown-gl.ts\
                src/translations/qshutdown-he.ts\
                src/translations/qshutdown-hr.ts\
+               src/translations/qshutdown-id.ts\
                src/translations/qshutdown-it.ts\
                src/translations/qshutdown-ja.ts\
                src/translations/qshutdown-ms.ts\

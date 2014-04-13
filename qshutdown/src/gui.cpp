@@ -377,7 +377,7 @@ void Gui::updateT(){
        if(QDate::currentDate().daysTo(cal->setCalendarDate) > myDate.daysInYear()){
          tip2 = (QString::number(QDate::currentDate().daysTo(cal->setCalendarDate)/myDate.daysInYear()) + " " + tr("years"));
          lcdL->setText(tr("years"));
-         lcd->setNumDigits(4);
+         lcd->setDigitCount(4);
          lcd->display((double)QDate::currentDate().daysTo(cal->setCalendarDate)/myDate.daysInYear());
        }
      //if more than one month
@@ -386,9 +386,9 @@ void Gui::updateT(){
          tip2 = (QString::number(QDate::currentDate().daysTo(cal->setCalendarDate)/myDate.daysInMonth()) + " " + tr("months"));
          lcdL->setText(tr("months"));
          if((double)QDate::currentDate().daysTo(cal->setCalendarDate)/myDate.daysInMonth() >= 10)
-           lcd->setNumDigits(4);
+           lcd->setDigitCount(4);
          else
-           lcd->setNumDigits(3);
+           lcd->setDigitCount(3);
          lcd->display((double)QDate::currentDate().daysTo(cal->setCalendarDate)/myDate.daysInMonth());
        }
      //if less than days in Month
@@ -396,9 +396,9 @@ void Gui::updateT(){
          tip2 = (QString::number(QDate::currentDate().daysTo(cal->setCalendarDate)) + " " + tr("days"));
          lcdL->setText(tr("days"));
          if((double)QDate::currentDate().daysTo(cal->setCalendarDate) >= 10)
-           lcd->setNumDigits(4);
+           lcd->setDigitCount(4);
          else
-           lcd->setNumDigits(3);
+           lcd->setDigitCount(3);
          lcd->display((double)QDate::currentDate().daysTo(cal->setCalendarDate));
        }
      }
@@ -408,7 +408,7 @@ void Gui::updateT(){
 
        if(i>=86400){ //if one day and some time to go
          tip2 = (">= 1 " + tr("day"));
-         lcd->setNumDigits(3);
+         lcd->setDigitCount(3);
          lcd->display(bigI/86400);
          if(lcd->value() > 1.1)
            lcdL->setText(tr("days"));
@@ -419,20 +419,20 @@ void Gui::updateT(){
          tip2 = (QString::number(i/3600) + " " + tr("hours"));
          lcdL->setText(tr("hours"));
          if(bigI/3600 >= 10)
-           lcd->setNumDigits(4);
+           lcd->setDigitCount(4);
          else
-           lcd->setNumDigits(3);
+           lcd->setDigitCount(3);
          lcd->display(bigI/3600);
        }
        if(i<=3600 && i>60){ //if less than one hour
          tip2 = (QString::number(i/60) + " " + tr("minutes"));
          lcdL->setText(tr("minutes"));
          if(bigI/60 >= 10){
-           lcd->setNumDigits(4);
+           lcd->setDigitCount(4);
            lcd->display(bigI/60);
          }
          else
-           lcd->setNumDigits(3);
+           lcd->setDigitCount(3);
          lcd->display(bigI/60);
        }
        if(i<=60){
@@ -453,18 +453,18 @@ void Gui::updateT(){
                 + QString::number(i/60 - (i/3600)*60) + " " + tr("minutes"));
          lcdL->setText(tr("hours"));
          if(bigI/3600 >= 10)
-           lcd->setNumDigits(4);
+           lcd->setDigitCount(4);
          else
-           lcd->setNumDigits(3);
+           lcd->setDigitCount(3);
          lcd->display(bigI/3600);
        }
        if(i<=3600 && i>=60){ //Display only minutes
          tip2 = (QString::number(i/60) + " " + tr("minutes"));
          lcdL->setText(tr("minutes"));
          if(bigI/60 >= 10)
-           lcd->setNumDigits(4);
+           lcd->setDigitCount(4);
          else
-           lcd->setNumDigits(3);
+           lcd->setDigitCount(3);
          lcd->display(bigI/60);
        }
        if(i<=60){ //Display only seconds

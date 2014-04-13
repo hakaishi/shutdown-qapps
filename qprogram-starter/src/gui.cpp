@@ -328,6 +328,8 @@ void Gui::shutdown_or_message(){
       #endif
 
        if(pref->comboBox->currentIndex() == 0){ //automatic
+         if(QProcess::startDetached("/usr/bin/systemctl poweroff"))
+           return;
          g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
          g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
          if(!g_pwr1 && !g_pwr2){
@@ -416,6 +418,8 @@ void Gui::shutdown_or_message(){
        }
 
        if(pref->comboBox->currentIndex() == 5){ //sudo
+         if(QProcess::startDetached("sudo /usr/bin/systemctl poweroff"))
+           return;
          QProcess::startDetached("sudo shutdown -P now");
          QProcess::startDetached("sudo shutdown -h -P now");
        }

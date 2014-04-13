@@ -1,3 +1,11 @@
+Changes in Release 1.6.8
+=========================
+
+ - added systemctl command in "automatic" and "sudo"
+ - complete Turkish translation
+ - added Indonesian
+ - added Czech
+
 Changes in Release 1.6.7
 =========================
 
@@ -10,7 +18,6 @@ Changes in Release 1.6.6
 
     - revisited power.h
     - added welcome dialog with informations
-    - update on translations
 
 Changes in Release 1.6.5
 =========================

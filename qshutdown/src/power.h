@@ -86,6 +86,8 @@ void shutdown(){
      QProcess::startDetached("shutdown -s -f -t 00"); // Windows command to shutdown immediately
      }
    #else
+     if(QProcess::startDetached("/usr/bin/systemctl poweroff"))
+       return;
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
      if(verbose && !g_pwr1 && !g_pwr2)
@@ -191,6 +193,8 @@ void shutdown(){
     }
   }
   if(sudo){
+     if(QProcess::startDetached("sudo /usr/bin/systemctl poweroff"))
+       return;
      QProcess::startDetached("sudo shutdown -P now");
      QProcess::startDetached("sudo shutdown -h -P now");
   }
@@ -239,6 +243,8 @@ void reboot(){
      QProcess::startDetached("shutdown -r -f -t 00"); // Windows command to reboot immediately
      }
    #else
+     if(QProcess::startDetached("/usr/bin/systemctl reboot"))
+       return;
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh reboot");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd reboot");
      if(verbose && !g_pwr1 && !g_pwr2)
@@ -328,8 +334,11 @@ void reboot(){
              << response.errorMessage() << endl;
     }
   }
-  if(sudo)
+  if(sudo){
+    if(QProcess::startDetached("sudo /usr/bin/systemctl reboot"))
+      return;
     QProcess::startDetached("sudo shutdown -r now");
+  }
   if(user)
     if(!shell.isEmpty())
       QProcess::startDetached(shell, args);
@@ -418,6 +427,8 @@ void suspend(){
      QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState");
      }
    #else
+     if(QProcess::startDetached("/usr/bin/systemctl suspend"))
+       return;
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh suspend");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd suspend");
      if(!g_pwr1 && !g_pwr2 && verbose)
@@ -576,6 +587,8 @@ void hibernate(){
      QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState");
      }
    #else
+     if(QProcess::startDetached("/usr/bin/systemctl hibernate"))
+       return;
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh hibernate");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd hibernate");
      if(!g_pwr1 && !g_pwr2 && verbose)

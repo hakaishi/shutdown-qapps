@@ -1,8 +1,14 @@
+Changes in Release 1.6.8
+=========================
+
+added systemctl command in "automatic" and "sudo"
+
 Changes in Release 1.6.7
 =========================
 
     - fixed not beeing able to start commands after first one failed
     - fixed not saving text editors contents
+    - fixed not saving states of checkboxes
     - fixed bug relating to environment (#716194)
 
 Changes in Release 1.6.6
