@@ -131,7 +131,7 @@ int main(int argc, char *argv[]){
        else{ //if registering qshutdown fails (also because it is already
              // registered, show window
          myOutput << "\nqshutdown is already running!\n" << endl;
-         QDBusInterface iface(SERVICE_NAME, OBJECT_NAME, "org.qshutdown.iface",
+         QDBusInterface iface(SERVICE_NAME, OBJECT_NAME, "",
            QDBusConnection::sessionBus(), &window);
          QDBusMessage response = iface.call("showRunningProgram");
          if(response.type() == QDBusMessage::ErrorMessage){
