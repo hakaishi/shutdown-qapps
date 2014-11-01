@@ -138,14 +138,14 @@ int main(int argc, char *argv[]){
            if(verbose)
              myOutput << "QDBusInterface " << iface.interface() << " seems to be valid... -> "
                       << (iface.isValid()? "true":"false") << "\nW: " << response.errorName()
-                      << ": " << response.errorMessage() << "\n\nYou can ignore this." << endl;
+                      << ": " << response.errorMessage() << "\nYou can ignore this.\n\n" << endl;
            QDBusInterface iface2(SERVICE_NAME, OBJECT_NAME, "local.Gui",
              QDBusConnection::sessionBus(), &window);
            QDBusMessage response2 = iface2.call("showRunningProgram");
            if(response2.type() == QDBusMessage::ErrorMessage)
              myOutput << "QDBusInterface " << iface2.interface() << " seems to be valid... -> "
                       << (iface2.isValid()? "true":"false") << "\nW: " << response2.errorName()
-                      << ": " << response2.errorMessage() << "\n\nPlease report this." << endl;
+                      << ": " << response2.errorMessage() << "\nPlease report this." << endl;
          }
        }
      #endif //Q_OS_WIN32
