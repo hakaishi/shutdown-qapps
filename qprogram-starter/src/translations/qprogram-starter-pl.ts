@@ -187,20 +187,21 @@ Maybe you just don&apos;t have the permissions to do so.</source>
 Być może nie masz po prostu uprawnień do wykonania tej akcji.</translation>
     </message>
     <message>
-        <source>Welcome to qprogram-starter!
-If you want qprogram-starter to automatically shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
-Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
-        <translation>Witaj w qprogram-starter!
-Jeśli chcesz by qprogram-starter automatycznie zamykał system i używasz Gnome Shell, prawdopodobnie uzyskasz stąd dialog zamknięcia. Jeśli chcesz bezpośredniego zamknięcia, rozważ ustawienie metody zamknięcia w preferencjach na ConsoleKit lub coś innego.
-Odwiedź https://launchpad.net/~hakaishi w celu zgłoszenia błędów lub w sprawach dotyczących tłumaczeń.</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
         <source>Please read this carefully!</source>
         <translation>Proszę przeczytać to uważnie!</translation>
+    </message>
+    <message>
+        <source>Welcome to qprogram-starter!
+If you want qprogram-starter to automatically shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
+
+Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
+        <translation>Witaj w qprogram-starter!
+Jeśli chcesz by qprogram-starter automatycznie zamykał system i używasz Gnome Shell, prawdopodobnie uzyskasz stąd dialog zamknięcia. Jeśli chcesz bezpośredniego zamknięcia, rozważ ustawienie metody zamknięcia w preferencjach na ConsoleKit lub coś innego.
+Odwiedź https://launchpad.net/~hakaishi w celu zgłoszenia błędów lub w sprawach dotyczących tłumaczeń.</translation>
     </message>
 </context>
 </TS>

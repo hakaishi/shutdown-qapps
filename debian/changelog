@@ -1,3 +1,12 @@
+shutdown-qapps (1.6.9) unstable; urgency=low
+  * reverting back to qt4 for now because of system tray icon issues
+  * qshutdown
+    -added feature to hide system tray icon (because of placement issue
+     in Unity.
+
+ -- Christian Metscher <hakaishi@web.de>  Mon, 10 Nov 2014 01:47:17 +0100
+
+
 shutdown-qapps (1.6.8) unstable; urgency=low
   * added systemctl command in "automatic" and "sudo"
   * qshutdown

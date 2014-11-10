@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2014 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -99,6 +99,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      void showEditor();
      void staticProportions(bool var);
      void saveLog();
+     void hideTrayIcon(bool dontShowTray);
     public slots:
      Q_SCRIPTABLE void showRunningProgram();
     protected:

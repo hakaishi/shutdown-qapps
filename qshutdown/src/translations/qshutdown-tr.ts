@@ -28,8 +28,8 @@
         <translation>&lt;p &gt;Özel teşekkürler:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Her yerde yardım eden Fabian Deuchler&apos;a.&lt;br /&gt;&lt;br /&gt;Ve Debian&apos;a gönderimlerde destek olan Brian Nelson&apos;a.&lt;br /&gt;&lt;br /&gt;Çevirmenler: Muhammet KARA, Volkan Gezer, Şâkir Aşçı, indis, Gökdeniz Karadağ.&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, bir süreli ve geri sayımlı kapatma aracı&lt;/p&gt;&lt;p &gt;Yazar: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Telif Hakkı &amp;copy; 2010-2013, Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Lütfen hata raporları için &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; veya &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; kullanın.&lt;/p&gt;</translation>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2014, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p &gt;qshutdown, bir süreli ve geri sayımlı kapatma aracı&lt;/p&gt;&lt;p &gt;Yazar: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Telif Hakkı &amp;copy; 2010-2014, Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Lütfen hata raporları için &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; veya &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; kullanın.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -487,10 +487,6 @@ Gizlemeyi kapatmak, qshutdown&apos;ın bunun yerine
 kapatılmasını sağlar.</translation>
     </message>
     <message>
-        <source>&amp;Disable hiding</source>
-        <translation>Gizlemeyi &amp;devre dışı bırak</translation>
-    </message>
-    <message>
         <source>General</source>
         <translation>Genel</translation>
     </message>
@@ -575,19 +571,38 @@ Maybe you just don&apos;t have the permissions to do so.</source>
 için yetkiye sahip olmayabilirsiniz.</translation>
     </message>
     <message>
-        <source>Welcome to qshutdown!
-If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
-Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
-        <translation>Qshutdown&apos;a hoş geldiniz!
-Eğer qshutdown&apos;ı sistemi kapatmak için kullanmak isterseniz ve Gnome Kabuğu kullanıyorsanız, muhtemelen oradan bir kapatma uyarısı alacaksınız. Doğrudan bir kapatma isterseniz, lütfen tercihler ve ayarlar içerisinden kapatma yöntemini ConsoleKit veya başka bir yöntem olarak ayarlayın. Lütfen hata raporları ve çeviriler ile ilgili konularda https://launchpad.net/~hakaishi adresini ziyaret edin.</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
         <source>Please read this carefully!</source>
         <translation>Lütfen bunu dikkatle okuyun!</translation>
+    </message>
+    <message>
+        <source>Welcome to qshutdown!
+If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
+
+Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
+        <translation>Qshutdown&apos;a hoş geldiniz!
+Eğer qshutdown&apos;ı sistemi kapatmak için kullanmak isterseniz ve Gnome Kabuğu kullanıyorsanız, muhtemelen oradan bir kapatma uyarısı alacaksınız. Doğrudan bir kapatma isterseniz, lütfen tercihler ve ayarlar içerisinden kapatma yöntemini ConsoleKit veya başka bir yöntem olarak ayarlayın. Lütfen hata raporları ve çeviriler ile ilgili konularda https://launchpad.net/~hakaishi adresini ziyaret edin.</translation>
+    </message>
+    <message>
+        <source>Disabling the tray icon means that it is no longer
+possible to restore qshutdown from tray. Please
+consider also checking &quot;Quit on closing main
+window&quot; and &quot;Hide qshutdown at startup&quot;.
+If qshutdown is still running and you want it to
+reappear, then just execute qshutdown again,
+just as as you normally would. It will thus reappear.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable tray &amp;icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Quit on closing main window</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown the shutdown/reboot/suspend/hibernate
- * Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2014 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -86,7 +86,6 @@ Gui::Gui(){
      icon = QIcon(":red_glasses");
      TIcon = new QSystemTrayIcon(this);
      TIcon->setIcon(icon);
-     TIcon->show();
 
    //TrayIconContextMenu
      menu = new QMenu(this);
@@ -176,6 +175,7 @@ Gui::Gui(){
      connect(pref, SIGNAL(finishing()), this, SLOT(warnings_on())); //start the Qtimer ti if timeRunning == false
      connect(pref, SIGNAL(changeFont()), this, SLOT(getFonts()));
      connect(pref, SIGNAL(editConf()), checkPassword, SLOT(show()));  //ask for password when button was pressed at preferences
+     connect(pref, SIGNAL(removeTrayIcon(bool)), this, SLOT(hideTrayIcon(bool)));
 
      connect(action_Info, SIGNAL(triggered()), this, SLOT(setInfoText()));
      connect(action_Info, SIGNAL(triggered()), infoBox, SLOT(show()));
@@ -659,9 +659,11 @@ void Gui::hideEvent(QHideEvent* window_hide){
 }
 
 void Gui::closeEvent(QCloseEvent* window_close){
-     if(!pref->getQuitOnClose())
+     if(!pref->quitOnCloseMain->isChecked() && pref->disableTray->isChecked())
+       showMinimized();
+     if(!pref->quitOnCloseMain->isChecked() && !pref->disableTray->isChecked())
        hide();
-     else if(!editor->getLockAll())
+     if(pref->quitOnCloseMain->isChecked() && !editor->getLockAll())
        qApp->quit();
      QMainWindow::closeEvent(window_close);
 }
@@ -743,6 +745,8 @@ void Gui::loadSettings(){
          QTimer::singleShot(2000, this, SLOT(hide()));
      }
 
+     hideTrayIcon(settings.value("CheckBoxes/Disable_tray_icon", false).toBool());
+
      staticProportions(settings.value("MainWindow/keep_proportions",true).toBool());
 
      lockEverything(settings.value("Lock_all",false).toBool());
@@ -799,7 +803,7 @@ void Gui::lockEverything(bool actual){
      QList<QWidget*> widgetList;
      widgetList << radio1 << radio2 << lock << comboBox << targetTime
                 << minutes << pref->comboBox << pref->timeEdit << pref->spin
-                << pref->radio1 << pref->radio2 << pref->stopHide
+                << pref->radio1 << pref->radio2 << pref->quitOnCloseMain
                 << pref->autostart << pref->lock << pref->countdown
                 << pref->log << pref->reset << pref->spinBox << pref->tab2;
      foreach(QWidget * widgetPtr, widgetList)
@@ -900,4 +904,11 @@ void Gui::staticProportions(bool var){
        frame->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
      else
        frame->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+}
+
+void Gui::hideTrayIcon(bool dontShowTray){ //or only minimize if not
+     if(!dontShowTray)
+       TIcon->show();
+     else
+       TIcon->hide();
 }

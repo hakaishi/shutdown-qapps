@@ -1,3 +1,10 @@
+Changes in Release 1.6.9
+=========================
+
+ - added option to hide the system tray icon
+ - turning back to Qt4 for now due to tray icon issues (will wait
+   with Qt5 till a fix is released)
+
 Changes in Release 1.6.8
 =========================
 

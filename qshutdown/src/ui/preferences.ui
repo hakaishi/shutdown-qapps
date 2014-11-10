@@ -86,9 +86,9 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>-53</y>
-            <width>357</width>
-            <height>568</height>
+            <y>0</y>
+            <width>375</width>
+            <height>532</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -317,14 +317,30 @@ default at startup?</string>
               <number>4</number>
              </property>
              <item>
-              <widget class="QCheckBox" name="stopHide">
+              <widget class="QCheckBox" name="disableTray">
+               <property name="toolTip">
+                <string>Disabling the tray icon means that it is no longer
+possible to restore qshutdown from tray. Please
+consider also checking &quot;Quit on closing main
+window&quot; and &quot;Hide qshutdown at startup&quot;.
+If qshutdown is still running and you want it to
+reappear, then just execute qshutdown again,
+just as as you normally would. It will thus reappear.</string>
+               </property>
+               <property name="text">
+                <string>Disable tray &amp;icon</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="quitOnCloseMain">
                <property name="toolTip">
                 <string>The close button usually hides the main window.
 Disabling hiding means, that qshutdown will then
 quit instead.</string>
                </property>
                <property name="text">
-                <string>&amp;Disable hiding</string>
+                <string>&amp;Quit on closing main window</string>
                </property>
               </widget>
              </item>
@@ -668,6 +684,36 @@ qshutdown should quit after the countdown ended.</string>
   <tabstop>reset</tabstop>
   <tabstop>confEditButton</tabstop>
   <tabstop>buttonBox</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>timeEdit</tabstop>
+  <tabstop>spin</tabstop>
+  <tabstop>fontComboBox</tabstop>
+  <tabstop>font1Spin</tabstop>
+  <tabstop>font2Spin</tabstop>
+  <tabstop>font3Spin</tabstop>
+  <tabstop>spinBox</tabstop>
+  <tabstop>disableTray</tabstop>
+  <tabstop>quitOnCloseMain</tabstop>
+  <tabstop>radio1</tabstop>
+  <tabstop>radio2</tabstop>
+  <tabstop>autostart</tabstop>
+  <tabstop>lock</tabstop>
+  <tabstop>warn</tabstop>
+  <tabstop>countdown</tabstop>
+  <tabstop>hideMe</tabstop>
+  <tabstop>log</tabstop>
+  <tabstop>lockS</tabstop>
+  <tabstop>shutdownM</tabstop>
+  <tabstop>rebootM</tabstop>
+  <tabstop>suspendM</tabstop>
+  <tabstop>hibernateM</tabstop>
+  <tabstop>userDef1</tabstop>
+  <tabstop>userDef2</tabstop>
+  <tabstop>userDef3</tabstop>
+  <tabstop>userDef4</tabstop>
+  <tabstop>quitAfterCountdown</tabstop>
  </tabstops>
  <resources>
   <include location="../../../qshutdown.qrc"/>

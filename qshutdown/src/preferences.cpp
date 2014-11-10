@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2013 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2014 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
 
      isClosed = true;
 
-     setWindowFlags(Qt::Window);    //always in front
+     setWindowFlags(Qt::Window);
 
    //Seconds won't be recognized, thus removing them (just in case).
      QString timeEditFormat;
@@ -103,6 +103,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      connect(rebootM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef2()));
      connect(suspendM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef3()));
      connect(hibernateM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef4()));
+     connect(disableTray, SIGNAL(toggled(bool)), this, SIGNAL(removeTrayIcon(bool)));
 
      loadSettings();
 
@@ -209,7 +210,7 @@ void Preferences::loadSettings(){
      comboBox->setCurrentIndex(settings->value("Power/comboBox",0).toInt());
      timeEdit->setTime(QTime(settings->value("Time/time_hour",22).toInt(),settings->value("Time/time_minute",00).toInt()));
      spin->setValue(settings->value("Time/countdown_minutes",60).toInt());
-     stopHide->setChecked(settings->value("Quit_on_close",false).toBool());
+     quitOnCloseMain->setChecked(settings->value("Quit_on_close",false).toBool());
      countdown->setChecked(settings->value("Time/countdown_at_startup",false).toBool());
      hideMe->setChecked(settings->value("Hide_at_startup",false).toBool());
      fontComboBox->setCurrentFont(settings->value("Fonts/font_type",fonts).toString());
@@ -217,6 +218,7 @@ void Preferences::loadSettings(){
      font2Spin->setValue(settings->value("Fonts/font2",fontS2).toInt());
      font3Spin->setValue(settings->value("Fonts/font3",fontS3).toInt());
      spinBox->setValue(settings->value("Logfile/size",1.5).toDouble());
+     disableTray->setChecked(settings->value("CheckBoxes/Disable_tray_icon", false).toBool());
      radio1->setChecked(settings->value("CheckBoxes/target_time",false).toBool());
      radio2->setChecked(settings->value("CheckBoxes/countdown",true).toBool());
      lock->setChecked(settings->value("CheckBoxes/lock",true).toBool());
@@ -241,7 +243,7 @@ void Preferences::saveToConfFile(){
        settings->setValue("Power/comboBox",comboBox->currentIndex());
        settings->setValue("Time/time_hour",timeEdit->time().hour());
        settings->setValue("Time/time_minute",timeEdit->time().minute());
-       settings->setValue("Quit_on_close",stopHide->isChecked());
+       settings->setValue("Quit_on_close",quitOnCloseMain->isChecked());
        settings->setValue("Time/countdown_at_startup",countdown->isChecked());
        settings->setValue("Hide_at_startup",hideMe->isChecked());
        settings->setValue("Time/countdown_minutes",spin->value());
@@ -250,6 +252,7 @@ void Preferences::saveToConfFile(){
        settings->setValue("Fonts/font2",font2Spin->value());
        settings->setValue("Fonts/font3",font3Spin->value());
        settings->setValue("Logfile/size",spinBox->value());
+       settings->setValue("CheckBoxes/Disable_tray_icon",disableTray->isChecked());
        settings->setValue("CheckBoxes/target_time",radio1->isChecked());
        settings->setValue("CheckBoxes/countdown",radio2->isChecked());
        settings->setValue("CheckBoxes/lock",lock->isChecked());
@@ -291,7 +294,8 @@ void Preferences::resetSettings(){
        comboBox->setCurrentIndex(0);
        timeEdit->setTime(QTime(22,00));
        countdown->setChecked(false);
-       stopHide->setChecked(false);
+       disableTray->setChecked(false);
+       quitOnCloseMain->setChecked(false);
        hideMe->setChecked(false);
        spin->setValue(60);
        fontComboBox->setCurrentFont(QFont(fonts));
@@ -327,8 +331,6 @@ void Preferences::closeEvent(QCloseEvent* close_pref){
 }
 
 bool Preferences::getClosed(){ return isClosed; }
-
-bool Preferences::getQuitOnClose(){ return settings->value("Quit_on_close").toBool(); }
 
 void Preferences::fontChanged(QString font){ fonts = font; changeFont(); }
 

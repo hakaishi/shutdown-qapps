@@ -2,8 +2,8 @@ Source: shutdown-qapps
 Section: utils
 Priority: optional
 Maintainer: Christian Metscher <hakaishi@web.de>
-Build-Depends: debhelper (>= 9), qt5-default, qttools5-dev-tools
-Standards-Version: 3.9.4
+Build-Depends: debhelper (>= 9), libqt4-dev
+Standards-Version: 3.9.5
 Vcs-Git: git://github.com/hakaishi/shutdown-qapps.git
 Vcs-browser: https://github.com/hakaishi/shutdown-qapps
 Homepage: https://launchpad.net/~hakaishi

@@ -28,8 +28,8 @@
         <translation>&lt;p &gt;Besonderen Dank an:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler für seine Hilfe hier und da.&lt;br /&gt;&lt;br /&gt;Und den Sponsor Brian Nelson für das Hochladen nach Debian.&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, ein auf Uhrzeit und Countdown basierendes Werkzeug zum Herunterfahren&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2013 Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Bitte benutzen Sie &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; oder &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt;, um Problemberichte zu melden.&lt;/p&gt;</translation>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2014, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p &gt;qshutdown, ein auf Uhrzeit und Countdown basierendes Werkzeug zum Herunterfahren&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2014 Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Bitte benutzen Sie &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; oder &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt;, um Problemberichte zu melden.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -490,10 +490,6 @@ zu deaktivieren bedeutet, dass qshutdown dann
 stattdessen beendet wird.</translation>
     </message>
     <message>
-        <source>&amp;Disable hiding</source>
-        <translation>&amp;Deaktiviere das Verstecken</translation>
-    </message>
-    <message>
         <source>General</source>
         <translation>Allgemein</translation>
     </message>
@@ -579,20 +575,39 @@ Maybe you just don&apos;t have the permissions to do so.</source>
 Vielleicht haben Sie dazu einfach keine Rechte.</translation>
     </message>
     <message>
-        <source>Welcome to qshutdown!
-If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
-Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
-        <translation>Willkommen bei qshutdown!
-Wenn Sie möchten, das qshutdown das System herunterfährt und Sie die Gnome Shell benuten, dann ist es wahrscheinlich, dass ein Shutdown-Dialog erscheint. Wenn Sie einen direkten Shutdown möchten, dann ziehen Sie bitte in Betracht in die Einstellungen zu gehen und die Shutdown-Methode auf ConsoleKit oder ähnliches zu stellen.
-Sie können gerne jederzeit https://launchpad.net/~hakaishi besuchen um Bugs oder alles was die Übersetzungen betrifft besuchen.</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
         <source>Please read this carefully!</source>
         <translation>Bitte lesen Sie dies sorgfältig!</translation>
+    </message>
+    <message>
+        <source>Welcome to qshutdown!
+If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
+
+Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
+        <translation>Willkommen bei qshutdown!
+Wenn Sie möchten, das qshutdown das System herunterfährt und Sie die Gnome Shell benuten, dann ist es wahrscheinlich, dass ein Shutdown-Dialog erscheint. Wenn Sie einen direkten Shutdown möchten, dann ziehen Sie bitte in Betracht in die Einstellungen zu gehen und die Shutdown-Methode auf ConsoleKit oder ähnliches zu stellen.
+Sie können gerne jederzeit https://launchpad.net/~hakaishi besuchen um Bugs oder alles was die Übersetzungen betrifft besuchen.</translation>
+    </message>
+    <message>
+        <source>Disabling the tray icon means that it is no longer
+possible to restore qshutdown from tray. Please
+consider also checking &quot;Quit on closing main
+window&quot; and &quot;Hide qshutdown at startup&quot;.
+If qshutdown is still running and you want it to
+reappear, then just execute qshutdown again,
+just as as you normally would. It will thus reappear.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disable tray &amp;icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Quit on closing main window</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

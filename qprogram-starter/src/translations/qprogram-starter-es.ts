@@ -187,18 +187,19 @@ Maybe you just don&apos;t have the permissions to do so.</source>
 Quizá no tiene los permisos para hacerlo.</translation>
     </message>
     <message>
-        <source>Welcome to qprogram-starter!
-If you want qprogram-starter to automatically shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
-Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
         <source>Please read this carefully!</source>
         <translation>Lea esto cuidadosamente.</translation>
+    </message>
+    <message>
+        <source>Welcome to qprogram-starter!
+If you want qprogram-starter to automatically shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
+
+Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
