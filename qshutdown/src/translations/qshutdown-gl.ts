@@ -25,11 +25,11 @@
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Agradecémoslle especialmente a:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler por ter axudado acó e acolá.&lt;br /&gt;&lt;br /&gt;E a Brian Nelson por auspiciar o envío a Debian.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;Agradecemento especial a:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler por axudar aquí e acolá.&lt;br /&gt;&lt;br /&gt;A Brian Nelson por responsabilizarse dos envíos a Debian.&lt;/p&gt;&lt;br /&gt;Tradutor ao galego: Marcos Lans, Miguel Anxo Bouzada&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2014, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, unha ferramenta de apagado baseada na conta atrás do tempo&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2014, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; ou &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; para informa dos fallos.&lt;/p&gt;</translation>
+        <translation>&lt;p &gt;O qshutdown é unha ferramenta de apagado en función da hora ou da conta atrás&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Dereitos de autor &amp;copy; 2010-2014, por Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; ou &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; para informar dos fallos.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -81,7 +81,7 @@
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation>Tempo de apagado:</translation>
+        <translation>Hora do apagado:</translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
@@ -89,7 +89,7 @@
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation>Tempo para o reinicio:</translation>
+        <translation>Hora do reinicio:</translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation>Tempo para a suspensión:</translation>
+        <translation>Hora da suspensión:</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
@@ -105,7 +105,7 @@
     </message>
     <message>
         <source>Hibernate-time:</source>
-        <translation>Tiempo para hibernar:</translation>
+        <translation>Hora da hibernación:</translation>
     </message>
     <message>
         <source>Minutes till hibernate:</source>
@@ -217,7 +217,7 @@
     </message>
     <message>
         <source>&amp;Preferences</source>
-        <translation>&amp;Preferéncias</translation>
+        <translation>&amp;Preferencias</translation>
     </message>
     <message>
         <source>&amp;Shutdown</source>
@@ -237,7 +237,7 @@
     </message>
     <message>
         <source>Lock settings after countdown started</source>
-        <translation>Bloquear a configuración despois de iniciada a conta atrás</translation>
+        <translation>Bloquear os axustes despois de iniciada a conta atrás</translation>
     </message>
     <message>
         <source>Calendar</source>
@@ -350,7 +350,7 @@
     </message>
     <message>
         <source>Target time:</source>
-        <translation>Hora obxectivo:</translation>
+        <translation>Hora da activación:</translation>
     </message>
     <message>
         <source>Minutes to countdown:</source>
@@ -374,7 +374,7 @@
     </message>
     <message>
         <source>Size for log file:</source>
-        <translation>Tamaño para o ficheiro de rexistro:</translation>
+        <translation>Tamaño do ficheiro de rexistro:</translation>
     </message>
     <message>
         <source>Reboot</source>
@@ -390,7 +390,7 @@
     </message>
     <message>
         <source>A&amp;utostart</source>
-        <translation>Iniciar a&amp;utomáticamente</translation>
+        <translation>Iniciar a&amp;utomaticamente</translation>
     </message>
     <message>
         <source>&amp;Hide qshutdown at startup</source>
@@ -414,7 +414,7 @@
     </message>
     <message>
         <source>Size for log file in KB</source>
-        <translation>Tamaño para o ficheiro de rexistro en KB</translation>
+        <translation>Tamaño do ficheiro de rexistro en KB</translation>
     </message>
     <message>
         <source>&quot;&amp;Lock after start?&quot;</source>
@@ -432,7 +432,7 @@ e o tempo que está en execución</translation>
     </message>
     <message>
         <source>L&amp;ogging</source>
-        <translation>Re&amp;xistrando</translation>
+        <translation>Re&amp;xistro</translation>
     </message>
     <message>
         <source>checkboxes and &quot;now!&quot; button</source>
@@ -453,8 +453,8 @@ e o tempo que está en execución</translation>
     <message>
         <source>What target time should be displayed
 by default at startup?</source>
-        <translation>Debería amosarse a hora obxectivo de
-xeito predeterminado no arrinque?</translation>
+        <translation>Que hora de activación desexa amosar
+de xeito predeterminado no arrinque?</translation>
     </message>
     <message>
         <source>How many minutes should be displayed
@@ -471,8 +471,9 @@ ao arrincar por primeira vez?</translation>
     <message>
         <source>Set if the checkbox for &quot;Lock after start?&quot;
 should be checked by default at startup</source>
-        <translation>Establece se a caixiña de comprobación «Bloquear despois de iniciar?»
-debe ser marcada de xeito predeterminado no arrinque</translation>
+        <translation>Estabelece se a caixiña de comprobación
+«Bloquear despois de iniciar?» debe ser
+marcada de xeito predeterminado no arrinque</translation>
     </message>
     <message>
         <source>Set if the checkbox for &quot;Warnings on?&quot;
@@ -484,9 +485,9 @@ debe ser marcada de xeito predeterminado no arrinque</translation>
         <source>The close button usually hides the main window.
 Disabling hiding means, that qshutdown will then
 quit instead.</source>
-        <translation>Normalmente, o botón de pechar agocha a xanela principal.
-Ao desactivar o agochamento sairase completamente do
-aplicativo ao premer o botón, no canto de agochalo.</translation>
+        <translation>Normalmente, o botón de pechar agocha a xanela
+principal. Ao desactivar o agochamento pecharase
+o aplicativo ao premer o botón.</translation>
     </message>
     <message>
         <source>General</source>
@@ -563,7 +564,7 @@ qshutdown debe pecharse despois rematar a conta atrás.</translation>
     <message>
         <source>Hide qshutdown at startup if
 &quot;Start countdown&quot; is checked.</source>
-        <translation>Agocha qshutdown no arrinque se
+        <translation>Agochar qshutdown no arrinque se
 está marcado «Iniciar a conta atrás».</translation>
     </message>
     <message>
@@ -586,7 +587,8 @@ If you want qshutdown e.g. to shutdown the system and you are using the Gnome Sh
 
 Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
         <translation>Benvido a qshutdown!
-Se quere que qshutdown p.ex. apague automaticamente o sistema e emprega o Gnome Shell, entón é probábel que obteña un diálogo de apagado. Se quere dspor dun apagado directo, vaia ás preferencias e estableza o método de apagado para ConsoleKit ou outro.
+Se quere que qshutdown p.ex. apague automaticamente o sistema e emprega o Gnome Shell, entón é probábel que obteña un diálogo de apagado. Se quere dispor dun apagado directo, vaia ás preferencias e estabeleza o método de apagado para ConsoleKit ou outro.
+
 Non dubide en visitar https://launchpad.net/~hakaishi para informar de erros, ou calquera outra cousa sobre as traducións.</translation>
     </message>
     <message>
@@ -597,22 +599,28 @@ window&quot; and &quot;Hide qshutdown at startup&quot;.
 If qshutdown is still running and you want it to
 reappear, then just execute qshutdown again,
 just as as you normally would. It will thus reappear.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se desactiva a icona da bandexa xa non poderá
+restabelecer o qshutdown desde a bandexa.
+Considere tamén marcar «Saír ao pechar a
+xanela principal» e «Agochar o qshutdown no arrinque».
+Se o programa está aínda en execución e desexa
+que reapareza, execute o qshutdown de novo,
+como faría normalmente.</translation>
     </message>
     <message>
         <source>Disable tray &amp;icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Desactivar a &amp;icona da bandexa</translation>
     </message>
     <message>
         <source>&amp;Quit on closing main window</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Saír ao pechar a xanela principal</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>qshutdown amosará por 3 veces un aviso se restan menos de 70 segundos no reloxo.&lt;br/&gt;&lt;br/&gt;Este programa utiliza qdbus enviar unha orde de apagado/reinicio/suspender/hibernar Ou unha solicitude de gnome- ou kde-session-manager, para HAL/ConsoleKit/DeviceKit/UPower e se ningún destes traballa, pode empregar a orde «sudo shutdown» (Teña en conta que ao enviar a solicitude de apagado a HAL ou a ConsoleKit, ou se se emprega a orde «shutdown», a sesión non se gardará nunca. De empregarse a orde «shutdown», o programa só será quen de apagar e reiniciar o sistema). Se non ocorre nada cando se acada o tempo do apagado ou reinicio, quere dicir que non se dispón dos permisos necesarios para executar a orde «shutdown». Neste caso pode facerse o seguinte:&lt;br/&gt;&lt;br/&gt;Pegue o seguinte nun terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;e engada esta liña:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;onde * substitúe o nome de usuario ou o nome do grupo %group.&lt;br/&gt;&lt;br/&gt;O número máximo de minutos na conta atrás é de 1440 (24 horas).&lt;br/&gt;O ficheiro de configuración (e o de rexistro) atopase en&lt;i&gt;~/.qshutdown/&lt;/i&gt; (en Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Para os administradores:&lt;/b&gt;&lt;br/&gt; Se quere que qshutdown se execute con «bloqueo de menores» para todos os usuarios, pode facer: «sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d» e estabelecer a opción «Lock_all» en «/root/.qshutdown/qshutdown.conf» como «true» (verdadeiro). Teña en conta que qshutdown ten que comezar unha vez para xerar o ficheiro qshutdown.conf. Ademais, é necesario engadir a seguinte liña aos «sudoers» (como a anterior):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;Se algunha vez esquece o conxunto de contrasinais, só ten que retirar, manualmente, toda a liña que comeza con «Password» do ficheiro «qshutdown.conf».&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Consellos de uso:&lt;/b&gt;&lt;br/&gt;Se quere que qshutdown deixe de «molestar», abonda con retirar a opción «Activar os avisos?»&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Atallos:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(esta) xanela de información&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Saír&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferencias&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;escribir unha vez o tempo de execución no ficheiro de rexistro (só funciona se qshutdown pecha. Para facelo permanente estabelézao nas preferencias).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;estabelecer o apagado&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;estabelecer o reinicio&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;estabelecer a suspensión na RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;estabelecer a hibernación&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;deter a conta atrás (só se xa comezou a conta atrás e o administrador non restrinxiu o acceso)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Maiús+E&lt;/td&gt;&lt;td&gt;para editar o ficheiro de configuración (para isto é preciso un contrasinal. Se vostede é un usuario, pode estabelecer un «contrasinal baleiro» (deixe o campo do contrasinal baleiro)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <translation>qshutdown amosará 3 veces un aviso se restan menos de 70 segundos no reloxo.&lt;br/&gt;&lt;br/&gt;Este programa utiliza qdbus para enviar unha orde de apagado/reinicio/suspensión/hibernación ou unha solicitude de gnome- ou kde-session-manager, para HAL/ConsoleKit/DeviceKit/UPower e se ningún destes traballa, pode empregar a orde «sudo shutdown» (Teña en conta que ao enviar a solicitude de apagado a HAL ou a ConsoleKit, ou se se emprega a orde «shutdown», a sesión non se gardará nunca. De empregarse a orde «shutdown», o programa só será quen de apagar e reiniciar o sistema). Se non ocorre nada cando se acada o tempo do apagado ou reinicio, quere dicir que non se dispón dos permisos necesarios para executar a orde «shutdown». Neste caso pode facerse o seguinte:&lt;br/&gt;&lt;br/&gt;Pegue o seguinte nun terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;e engada esta liña:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;onde * substitúe o nome de usuario ou o nome do grupo %group.&lt;br/&gt;&lt;br/&gt;O número máximo de minutos na conta atrás é de 1440 (24 horas).&lt;br/&gt;O ficheiro de configuración (e o de rexistro) atópase en&lt;i&gt;~/.qshutdown/&lt;/i&gt; (en Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Para os administradores:&lt;/b&gt;&lt;br/&gt; Se quere que qshutdown se execute con «bloqueo de menores» para todos os usuarios, pode facer: «sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d» e estabelecer a opción «Lock_all» en «/root/.qshutdown/qshutdown.conf» como «true» (verdadeiro). Teña en conta que qshutdown ten que comezar unha vez para xerar o ficheiro qshutdown.conf. Ademais, é necesario engadir a seguinte liña aos «sudoers» (como a anterior):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;Se algunha vez esquece o conxunto de contrasinais, só ten que retirar, manualmente, toda a liña que comeza con «Password» do ficheiro «qshutdown.conf».&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Consellos de uso:&lt;/b&gt;&lt;br/&gt;Se quere que qshutdown deixe de «molestar», abonda con retirar a opción «Activar os avisos?»&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Atallos:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(esta) xanela de información&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Saír&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferencias&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;escribir unha vez o tempo de execución no ficheiro de rexistro (só funciona se qshutdown pecha. Para facelo permanente estabelézao nas preferencias).&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;estabelecer o apagado&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;estabelecer o reinicio&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;estabelecer a suspensión na RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;estabelecer a hibernación&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;deter a conta atrás (só se xa comezou a conta atrás e o administrador non restrinxiu o acceso)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Maiús+E&lt;/td&gt;&lt;td&gt;para editar o ficheiro de configuración (para isto é preciso un contrasinal. Se vostede é un usuario, pode estabelecer un «contrasinal baleiro» (deixe o campo do contrasinal baleiro)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
 </context>
 </TS>
