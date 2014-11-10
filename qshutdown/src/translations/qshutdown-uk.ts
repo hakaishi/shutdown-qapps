@@ -588,6 +588,7 @@ If you want qshutdown e.g. to shutdown the system and you are using the Gnome Sh
 Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
         <translation>Вітаємо у qshutdown!
 Якщо ви хочете скористатися qprogram-starter для автоматичного вимикання системи і використовуєте Gnome Shell, ймовірно, діалогове вікно вимикання буде показано прямо зараз. Якщо ви хочете вимикати систему безпосередньо, будь ласка, відкрийте вікно налаштувань і встановіть у пункті способу вимикання ConsoleKit або щось інше.
+
 Щоб повідомити про ваду у програмі або перекладі, скористайтеся сторінкою https://launchpad.net/~hakaishi</translation>
     </message>
     <message>
@@ -598,15 +599,22 @@ window&quot; and &quot;Hide qshutdown at startup&quot;.
 If qshutdown is still running and you want it to
 reappear, then just execute qshutdown again,
 just as as you normally would. It will thus reappear.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вимикання піктограми у лотку призведе до
+неможливості відкрити вікно qshutdown з лотка.
+Вам варто також позначити пункти «Виходити
+після закриття головного вікна» та «Ховати вікно
+qshutdown після запуску». Якщо qshutdown
+працює, і вам потрібно відкрити вікно програми,
+просто ще раз віддайте команду qshutdown. У
+відповідь буде відкрито вікно програми.</translation>
     </message>
     <message>
         <source>Disable tray &amp;icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Вимкнути &amp;піктограму у лотку</translation>
     </message>
     <message>
         <source>&amp;Quit on closing main window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви&amp;ходити після закриття головного вікна</translation>
     </message>
 </context>
 <context>
