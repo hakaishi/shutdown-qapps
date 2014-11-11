@@ -47,6 +47,7 @@ TRANSLATIONS = src/translations/qshutdown-ast.ts\
                src/translations/qshutdown-ms.ts\
                src/translations/qshutdown-my.ts\
                src/translations/qshutdown-ro.ts\
+               src/translations/qshutdown-ru.ts\
                src/translations/qshutdown-tr.ts\
                src/translations/qshutdown-ug.ts\
                src/translations/qshutdown-uk.ts\
