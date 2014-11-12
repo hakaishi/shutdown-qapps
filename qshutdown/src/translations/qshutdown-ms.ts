@@ -602,15 +602,22 @@ window&quot; and &quot;Hide qshutdown at startup&quot;.
 If qshutdown is still running and you want it to
 reappear, then just execute qshutdown again,
 just as as you normally would. It will thus reappear.</source>
-        <translation type="unfinished"></translation>
+        <translation>Melumpuhkan ikon talam bermaksud ia tidak
+berupaya memulihkan qshutdown dari talam.
+Sila tanda &quot;Keluar jika menutup tetingkap utama&quot;
+dan &quot;Sembunyi qshutdown semasa permulaan&quot;.
+Jika qshutdown masih berjalan dan anda mahu ia
+hilang, hanya lakukan qshutdown sekali lagi,
+sepertimana anda biasa buat. Ia akan muncul
+semula.</translation>
     </message>
     <message>
         <source>Disable tray &amp;icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Lumpuhkan &amp;ikon talam</translation>
     </message>
     <message>
         <source>&amp;Quit on closing main window</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Keluar bila menutup tetingkap utama</translation>
     </message>
 </context>
 <context>
