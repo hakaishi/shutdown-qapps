@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>413</width>
-    <height>708</height>
+    <width>430</width>
+    <height>655</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -88,7 +88,7 @@
             <x>0</x>
             <y>0</y>
             <width>375</width>
-            <height>532</height>
+            <height>530</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -445,223 +445,6 @@ it was running</string>
        <string>Advanced</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="1">
-        <widget class="QComboBox" name="shutdownM">
-         <item>
-          <property name="text">
-           <string>automatic</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Gnome session</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>KDE session</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">HAL</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">ConsoleKit</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">sudo shutdown -P</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>user defined</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="6" column="0" colspan="2">
-        <widget class="QPlainTextEdit" name="userDef3">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="plainText">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="suspendML">
-         <property name="text">
-          <string>Suspend method:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QComboBox" name="rebootM">
-         <item>
-          <property name="text">
-           <string>automatic</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Gnome session</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>KDE session</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">HAL</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">ConsoleKit</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">sudo shutdown -r</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>user defined</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="hibernateML">
-         <property name="text">
-          <string>Hibernate method:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="shutdownML">
-         <property name="text">
-          <string>Shutdown method:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QComboBox" name="suspendM">
-         <item>
-          <property name="text">
-           <string>automatic</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Gnome session</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">HAL</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">UPower</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">DeviceKit</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>user defined</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="4" column="0" colspan="2">
-        <widget class="QPlainTextEdit" name="userDef1">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="horizontalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
-         </property>
-         <property name="plainText">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QComboBox" name="hibernateM">
-         <item>
-          <property name="text">
-           <string>automatic</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Gnome session</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">HAL</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">UPower</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string notr="true">DeviceKit</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>user defined</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="rebootML">
-         <property name="text">
-          <string>Reboot method:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0" colspan="2">
-        <widget class="QPlainTextEdit" name="userDef2">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="plainText">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0" colspan="2">
-        <widget class="QPlainTextEdit" name="userDef4">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="plainText">
-          <string/>
-         </property>
-        </widget>
-       </item>
        <item row="8" column="0" colspan="2">
         <widget class="QCheckBox" name="quitAfterCountdown">
          <property name="toolTip">
@@ -672,6 +455,242 @@ qshutdown should quit after the countdown ended.</string>
          <property name="text">
           <string>Quit qshutdown after countdown ended?</string>
          </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QScrollArea" name="scrollArea_2">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>365</width>
+            <height>464</height>
+           </rect>
+          </property>
+          <layout class="QFormLayout" name="formLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="shutdownML">
+             <property name="text">
+              <string>Shutdown method:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="shutdownM">
+             <item>
+              <property name="text">
+               <string>automatic</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Gnome session</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>KDE session</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">HAL</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">ConsoleKit</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">sudo shutdown -P</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>user defined</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="rebootML">
+             <property name="text">
+              <string>Reboot method:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="rebootM">
+             <item>
+              <property name="text">
+               <string>automatic</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Gnome session</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>KDE session</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">HAL</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">ConsoleKit</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">sudo shutdown -r</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>user defined</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="suspendML">
+             <property name="text">
+              <string>Suspend method:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="suspendM">
+             <item>
+              <property name="text">
+               <string>automatic</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Gnome session</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">HAL</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">UPower</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">DeviceKit</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>user defined</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="hibernateML">
+             <property name="text">
+              <string>Hibernate method:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QComboBox" name="hibernateM">
+             <item>
+              <property name="text">
+               <string>automatic</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Gnome session</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">HAL</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">UPower</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">DeviceKit</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>user defined</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <widget class="QPlainTextEdit" name="userDef1">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="plainText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0" colspan="2">
+            <widget class="QPlainTextEdit" name="userDef2">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="plainText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="2">
+            <widget class="QPlainTextEdit" name="userDef3">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="plainText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0" colspan="2">
+            <widget class="QPlainTextEdit" name="userDef4">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="plainText">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -705,14 +724,6 @@ qshutdown should quit after the countdown ended.</string>
   <tabstop>hideMe</tabstop>
   <tabstop>log</tabstop>
   <tabstop>lockS</tabstop>
-  <tabstop>shutdownM</tabstop>
-  <tabstop>rebootM</tabstop>
-  <tabstop>suspendM</tabstop>
-  <tabstop>hibernateM</tabstop>
-  <tabstop>userDef1</tabstop>
-  <tabstop>userDef2</tabstop>
-  <tabstop>userDef3</tabstop>
-  <tabstop>userDef4</tabstop>
   <tabstop>quitAfterCountdown</tabstop>
  </tabstops>
  <resources>

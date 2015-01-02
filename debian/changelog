@@ -3,6 +3,7 @@ shutdown-qapps (1.6.9) unstable; urgency=low
   * qshutdown
     -added feature to hide system tray icon (because of placement issue
      in Unity.
+    - fixed resizing problems in config menu
 
  -- Christian Metscher <hakaishi@web.de>  Mon, 10 Nov 2014 01:47:17 +0100
 
