@@ -52,8 +52,8 @@ class Gui : public QMainWindow, public Ui::Gui {
      bool            timeRunning;
      QPushButton     *minim;
      QTimer          *timer, *ti;
-     QDateTime       datetime;
-     QTime           localTime, futureTime, elapsedTime;
+     QDateTime       datetime, localDateTime, futureDateTime;
+     QTime           elapsedTime;
      QIcon           icon;
      QSystemTrayIcon *TIcon;
      QMenu           *menu;
@@ -64,7 +64,7 @@ class Gui : public QMainWindow, public Ui::Gui {
                      *reset_action, *info_action, *log_action, *pref_action;
      int             i; //number of seconds left
      double          bigI; //for more precise display
-     int             n; //to check if i==0 was skipped
+     const static int n = 10; //to check if i==0 was skipped
      QFont           *font1, *font2, *font3;
      double          logFileSize;
      Preferences     *pref;
@@ -84,7 +84,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      void showW();
      void set();
      void updateT();
-     void Time();
+     bool Time();
      void power_action(int action);
      void power(QAction *action);
      void reset();

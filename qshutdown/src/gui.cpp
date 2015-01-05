@@ -172,7 +172,7 @@ Gui::Gui(){
      connect(action_Configure, SIGNAL(triggered()), pref, SLOT(show()));
      connect(pref_action, SIGNAL(triggered()), pref, SLOT(show()));
      connect(pref, SIGNAL(starting()), ti, SLOT(stop()));
-     connect(pref, SIGNAL(finishing()), this, SLOT(warnings_on())); //start the Qtimer ti if timeRunning == false
+     connect(pref, SIGNAL(finishing()), this, SLOT(warnings_on())); //start the QTimer ti if timeRunning == false
      connect(pref, SIGNAL(changeFont()), this, SLOT(getFonts()));
      connect(pref, SIGNAL(editConf()), checkPassword, SLOT(show()));  //ask for password when button was pressed at preferences
      connect(pref, SIGNAL(removeTrayIcon(bool)), this, SLOT(hideTrayIcon(bool)));
@@ -371,6 +371,10 @@ void Gui::updateT(){
      if(hibernate_action->isChecked())
        tip1 = (tr("hibernate in "));
 
+     if(QDate::currentDate().daysTo(cal->setCalendarDate) < 0){ //reset if targeted date is already in the past.
+       reset();
+       return;
+     }
      if(QDate::currentDate().daysTo(cal->setCalendarDate) > 1){ //if the date difference between today and the selected day
                                                            //in the calendar is greater than one
      //if more than one year
@@ -404,7 +408,8 @@ void Gui::updateT(){
      }
      if(QDate::currentDate().daysTo(cal->setCalendarDate) == 1){ //if there is one more day to go
 
-       Time();
+       if(!Time())
+         return;
 
        if(i>=86400){ //if one day and some time to go
          tip2 = (">= 1 " + tr("day"));
@@ -443,7 +448,8 @@ void Gui::updateT(){
      }
      if(QDate::currentDate()==cal->setCalendarDate || cal->setCalendarDate.isNull()){ //if there was no date
                                              //set in the calendar or the set day is the current day
-       Time();
+       if(!Time())
+         return;
 
        if(warnings->isChecked() && (((i<=100) && (i>95)) || ((i<=40) && (i>35))) && !ti->isActive())
          ti->start(30000);
@@ -474,9 +480,7 @@ void Gui::updateT(){
        }
 
      //this will ensure that the shutdown-type will be executed in case a few seconds were skipped
-       if(i<=86390)
-         n = 10; //any number to keep i in check
-       if((i==0) || ((i>n) && (i>86390)))
+       if((i==0) || (i<(0-n)))
          finished_(); //execute shutdown-type
      }
      setWindowTitle(tip1 + tip2);
@@ -489,12 +493,11 @@ void Gui::set(){
      ti->stop();
      timer->start(1000);
 
-     localTime = QTime::currentTime(); //the time now
+     localDateTime = QDateTime::currentDateTime(); //the time now
      if(radio2->isChecked()) //if minute-countdown
-       futureTime = localTime.addSecs(spin->value()*60); //add spinbox-value to the current time
+       futureDateTime = localDateTime.addSecs(spin->value()*60); //add spinbox-value to the current time
      else
-       futureTime = timeEdit->time(); //else the future time is the time of the timeEdit
-     n = 86400; // any number bigger than i - just for initializing
+       futureDateTime = QDateTime(QDate::currentDate(),timeEdit->time()); //else the future time is the time of the timeEdit
 
      if(lock->isChecked() || editor->getLockAll()){       //when OK-button is clicked and lock is checked
        QList<QWidget*> list;
@@ -525,17 +528,19 @@ void Gui::set(){
        statusBar()->removeWidget(customL);*/
 }
 
-void Gui::Time(){
-     localTime = QTime::currentTime();
-     i = localTime.secsTo(futureTime); //the difference of the localTime and the future time
-     if(radio2->isChecked() && (QDate::currentDate().daysTo(cal->setCalendarDate) == 1))
-       i = ((23-localTime.hour())*3600 + (59-localTime.minute())*60 + spin->value()*60);
-     if(radio1->isChecked() && (QDate::currentDate().daysTo(cal->setCalendarDate) == 1))
-       i = ((23-localTime.hour())*3600 + (59-localTime.minute())*60 + timeEdit->time().hour()*3600
-           + timeEdit->time().minute()*60);
-     if(i<0)                           //if the date is on the next day
-       i += 86400; //add 1 day in seconds
-     bigI = i; //for more precise display with LCD
+bool Gui::Time(){
+     localDateTime = QDateTime::currentDateTime();
+     QDateTime futureDateTime10s = futureDateTime; //adding n (10 seconds) in case of hardware delay.
+     futureDateTime10s.addSecs(n);
+     if(QDateTime::currentDateTime() > futureDateTime10s){ //if targeted time for action is already in the past.
+       reset();
+       return false;
+     }
+     else{
+       i = localDateTime.secsTo(futureDateTime); //the difference of the localTime and the future time
+       bigI = i; //for more precise display with LCD
+       return true;
+     }
 }
 
 void Gui::saveLog(){
@@ -632,6 +637,7 @@ void Gui::finished_(){
            Power::mySuspend = pref->mySuspend;
          }
          if(pref->lockMyScreen){ Power::lockMyScreen = true; }
+         else Power::lockMyScreen = false;
          Power::suspend();
          break;
        case 3:
@@ -645,6 +651,7 @@ void Gui::finished_(){
            Power::myHibernate = pref->myHibernate;
          }
          if(pref->lockMyScreen){ Power::lockMyScreen = true; }
+         else Power::lockMyScreen = false;
          Power::hibernate();
          break;
        default:;
