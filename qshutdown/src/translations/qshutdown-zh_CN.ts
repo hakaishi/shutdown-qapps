@@ -28,8 +28,8 @@
         <translation>&lt;p &gt;特别感谢：&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler 的多处帮助。&lt;br /&gt;&lt;br /&gt;以及 Brian Nelson 协助上传到 Debian。&lt;br /&gt;&lt;br /&gt;翻译者: Wang Dianjin, Aron Xu, Wylmer Wang&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2014, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;qshutdown，一款基于时间和倒计时的关机工具&lt;/p&gt;&lt;p&gt;作者：Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p&gt;版权所有 &amp;copy; 2010-2014, Christian Metscher&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt; &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;请使用 &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt; &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; 或 &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; 来报告故障。&lt;/p&gt;</translation>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2015, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;qshutdown，一款基于时间和倒计时的关机工具&lt;/p&gt;&lt;p&gt;作者：Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p&gt;版权所有 &amp;copy; 2010-2015, Christian Metscher&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt; &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;请使用 &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt; &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; 或 &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; 来报告故障。&lt;/p&gt; {2010-2015,?} {0000f?} {0000f?} {0000f?}</translation>
     </message>
 </context>
 <context>
@@ -569,11 +569,11 @@ Maybe you just don&apos;t have the permissions to do so.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>Please read this carefully!</source>
-        <translation type="unfinished"></translation>
+        <translation>请仔细阅读！</translation>
     </message>
     <message>
         <source>Welcome to qshutdown!

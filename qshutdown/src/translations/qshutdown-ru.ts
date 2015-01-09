@@ -30,8 +30,8 @@
     </message>
     <message>
         <location filename="../about.cpp" line="32"/>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2014, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown позволяет осуществлять выключение по времени и обратному отсчёту&lt;/p&gt;&lt;p &gt;Автор: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Авторские права; 2010-2014, принадлежат Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Используйте &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; или &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; для отправки сообщений об ошибках.&lt;/p&gt;</translation>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2015, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p &gt;qshutdown позволяет осуществлять выключение по времени и обратному отсчёту&lt;/p&gt;&lt;p &gt;Автор: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Авторские права; 2010-2015, принадлежат Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Используйте &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; или &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; для отправки сообщений об ошибках.&lt;/p&gt; {2010-2015,?} {0000f?} {0000f?} {0000f?}</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="51"/>
@@ -93,14 +93,14 @@
     <message>
         <location filename="../ui/gui.ui" line="70"/>
         <location filename="../gui.cpp" line="261"/>
-        <location filename="../gui.cpp" line="769"/>
+        <location filename="../gui.cpp" line="776"/>
         <source>Minutes till shutdown:</source>
         <translation>Минут до выключения:</translation>
     </message>
     <message>
         <location filename="../ui/gui.ui" line="118"/>
         <location filename="../gui.cpp" line="260"/>
-        <location filename="../gui.cpp" line="768"/>
+        <location filename="../gui.cpp" line="775"/>
         <source>Shutdown-time:</source>
         <translation>Время выключения:</translation>
     </message>
@@ -156,12 +156,12 @@
     </message>
     <message>
         <location filename="../ui/gui.ui" line="290"/>
-        <location filename="../gui.cpp" line="428"/>
-        <location filename="../gui.cpp" line="429"/>
-        <location filename="../gui.cpp" line="453"/>
-        <location filename="../gui.cpp" line="462"/>
-        <location filename="../gui.cpp" line="463"/>
-        <location filename="../gui.cpp" line="842"/>
+        <location filename="../gui.cpp" line="433"/>
+        <location filename="../gui.cpp" line="434"/>
+        <location filename="../gui.cpp" line="459"/>
+        <location filename="../gui.cpp" line="468"/>
+        <location filename="../gui.cpp" line="469"/>
+        <location filename="../gui.cpp" line="849"/>
         <source>minutes</source>
         <translation>минуты</translation>
     </message>
@@ -283,37 +283,37 @@
     </message>
     <message>
         <location filename="../gui.cpp" line="264"/>
-        <location filename="../gui.cpp" line="773"/>
+        <location filename="../gui.cpp" line="780"/>
         <source>Reboot-time:</source>
         <translation>Время перезагрузки:</translation>
     </message>
     <message>
         <location filename="../gui.cpp" line="265"/>
-        <location filename="../gui.cpp" line="774"/>
+        <location filename="../gui.cpp" line="781"/>
         <source>Minutes till reboot:</source>
         <translation>Минут до перезагрузки:</translation>
     </message>
     <message>
         <location filename="../gui.cpp" line="268"/>
-        <location filename="../gui.cpp" line="778"/>
+        <location filename="../gui.cpp" line="785"/>
         <source>Suspend-time:</source>
         <translation>Время перехода в спящий режим:</translation>
     </message>
     <message>
         <location filename="../gui.cpp" line="269"/>
-        <location filename="../gui.cpp" line="779"/>
+        <location filename="../gui.cpp" line="786"/>
         <source>Minutes till suspend:</source>
         <translation>Минут до перехода в спящий режим:</translation>
     </message>
     <message>
         <location filename="../gui.cpp" line="272"/>
-        <location filename="../gui.cpp" line="783"/>
+        <location filename="../gui.cpp" line="790"/>
         <source>Hibernate-time:</source>
         <translation>Спящий режим-время:</translation>
     </message>
     <message>
         <location filename="../gui.cpp" line="273"/>
-        <location filename="../gui.cpp" line="784"/>
+        <location filename="../gui.cpp" line="791"/>
         <source>Minutes till hibernate:</source>
         <translation>Минут до перехода в спящий режим:</translation>
     </message>
@@ -358,48 +358,48 @@
         <translation>переход в спящий режим через </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="378"/>
-        <location filename="../gui.cpp" line="379"/>
+        <location filename="../gui.cpp" line="382"/>
+        <location filename="../gui.cpp" line="383"/>
         <source>years</source>
         <translation>лет</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="386"/>
-        <location filename="../gui.cpp" line="387"/>
+        <location filename="../gui.cpp" line="390"/>
+        <location filename="../gui.cpp" line="391"/>
         <source>months</source>
         <translation>месяцев</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="396"/>
-        <location filename="../gui.cpp" line="397"/>
-        <location filename="../gui.cpp" line="414"/>
+        <location filename="../gui.cpp" line="400"/>
+        <location filename="../gui.cpp" line="401"/>
+        <location filename="../gui.cpp" line="419"/>
         <source>days</source>
         <translation>дней</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="410"/>
-        <location filename="../gui.cpp" line="416"/>
+        <location filename="../gui.cpp" line="415"/>
+        <location filename="../gui.cpp" line="421"/>
         <source>day</source>
         <translation>день</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="419"/>
-        <location filename="../gui.cpp" line="420"/>
-        <location filename="../gui.cpp" line="452"/>
-        <location filename="../gui.cpp" line="454"/>
+        <location filename="../gui.cpp" line="424"/>
+        <location filename="../gui.cpp" line="425"/>
+        <location filename="../gui.cpp" line="458"/>
+        <location filename="../gui.cpp" line="460"/>
         <source>hours</source>
         <translation>часов</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="439"/>
-        <location filename="../gui.cpp" line="440"/>
-        <location filename="../gui.cpp" line="471"/>
-        <location filename="../gui.cpp" line="472"/>
+        <location filename="../gui.cpp" line="444"/>
+        <location filename="../gui.cpp" line="445"/>
+        <location filename="../gui.cpp" line="477"/>
+        <location filename="../gui.cpp" line="478"/>
         <source>seconds</source>
         <translation>секунды</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="657"/>
+        <location filename="../gui.cpp" line="664"/>
         <source>Res&amp;tore</source>
         <translation>&amp;Восстановить</translation>
     </message>
@@ -685,57 +685,57 @@ it was running</source>
         <translation>Дополнительные</translation>
     </message>
     <message>
-        <location filename="../ui/preferences.ui" line="452"/>
-        <location filename="../ui/preferences.ui" line="508"/>
-        <location filename="../ui/preferences.ui" line="561"/>
-        <location filename="../ui/preferences.ui" line="608"/>
+        <location filename="../ui/preferences.ui" line="486"/>
+        <location filename="../ui/preferences.ui" line="532"/>
+        <location filename="../ui/preferences.ui" line="578"/>
+        <location filename="../ui/preferences.ui" line="619"/>
         <source>automatic</source>
         <translation>автоматически</translation>
     </message>
     <message>
-        <location filename="../ui/preferences.ui" line="457"/>
-        <location filename="../ui/preferences.ui" line="513"/>
-        <location filename="../ui/preferences.ui" line="566"/>
-        <location filename="../ui/preferences.ui" line="613"/>
+        <location filename="../ui/preferences.ui" line="491"/>
+        <location filename="../ui/preferences.ui" line="537"/>
+        <location filename="../ui/preferences.ui" line="583"/>
+        <location filename="../ui/preferences.ui" line="624"/>
         <source>Gnome session</source>
         <translation>Сессия Gnome</translation>
     </message>
     <message>
-        <location filename="../ui/preferences.ui" line="462"/>
-        <location filename="../ui/preferences.ui" line="518"/>
+        <location filename="../ui/preferences.ui" line="496"/>
+        <location filename="../ui/preferences.ui" line="542"/>
         <source>KDE session</source>
         <translation>Сессия KDE</translation>
     </message>
     <message>
-        <location filename="../ui/preferences.ui" line="482"/>
-        <location filename="../ui/preferences.ui" line="538"/>
-        <location filename="../ui/preferences.ui" line="586"/>
-        <location filename="../ui/preferences.ui" line="633"/>
+        <location filename="../ui/preferences.ui" line="516"/>
+        <location filename="../ui/preferences.ui" line="562"/>
+        <location filename="../ui/preferences.ui" line="603"/>
+        <location filename="../ui/preferences.ui" line="644"/>
         <source>user defined</source>
         <translation>по выбору пользователя</translation>
     </message>
     <message>
-        <location filename="../ui/preferences.ui" line="500"/>
+        <location filename="../ui/preferences.ui" line="570"/>
         <source>Suspend method:</source>
         <translation>Переход в режим ожидания:</translation>
     </message>
     <message>
-        <location filename="../ui/preferences.ui" line="546"/>
+        <location filename="../ui/preferences.ui" line="611"/>
         <source>Hibernate method:</source>
         <translation>Переход в спящий режим:</translation>
     </message>
     <message>
-        <location filename="../ui/preferences.ui" line="553"/>
+        <location filename="../ui/preferences.ui" line="478"/>
         <source>Shutdown method:</source>
         <translation>Выключение:</translation>
     </message>
     <message>
-        <location filename="../ui/preferences.ui" line="641"/>
+        <location filename="../ui/preferences.ui" line="524"/>
         <source>Reboot method:</source>
         <translation>Перезагрузка:</translation>
     </message>
     <message>
-        <location filename="../ui/preferences.ui" line="668"/>
+        <location filename="../ui/preferences.ui" line="451"/>
         <source>Some systems block for example the shutdown
 because qshutdown is still running. Set a hook if
 qshutdown should quit after the countdown ended.</source>
@@ -745,7 +745,7 @@ qshutdown should quit after the countdown ended.</source>
 после окончания обратного отсчёта.</translation>
     </message>
     <message>
-        <location filename="../ui/preferences.ui" line="673"/>
+        <location filename="../ui/preferences.ui" line="456"/>
         <source>Quit qshutdown after countdown ended?</source>
         <translation>Завершить работу qshutdown после
 окончания обратного отсчёта?</translation>

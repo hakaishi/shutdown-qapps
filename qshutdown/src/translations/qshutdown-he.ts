@@ -28,8 +28,8 @@
         <translation>&lt;html dir=&quot;rtl&quot;&gt;&lt;p&gt;תודות מיוחדות לאנשים הבאים:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;Fabian Deuchler על עזרה פה ושם.&lt;/p&gt;&lt;p&gt;ל־ Brian Nelson על הטיפול בהעלאות לדביאן.&lt;/p&gt;&lt;p&gt;ולמתרגם: ירון שהרבני&lt;/p&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2014, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;html dir=&quot;rtl&quot;&gt;&lt;p&gt;qshutdown, כלי לכיבוי לפי תזמון או ספירה לאחור&lt;/p&gt;&lt;p&gt;יוצר: &amp;lt;Christian Metscher &amp;lt;hakaishi@web.de&lt;/p&gt;&lt;p&gt;כל הזכויות שמורות &amp;copy; 2010-‏2014, ל־Christian Metscher &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;נא להשתמש בכתובת &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot;  text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; או ב־ &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; כדי לדווח על תקלות.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2015, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;html dir=&quot;rtl&quot;&gt;&lt;p&gt;qshutdown, כלי לכיבוי לפי תזמון או ספירה לאחור&lt;/p&gt;&lt;p&gt;יוצר: &amp;lt;Christian Metscher &amp;lt;hakaishi@web.de&lt;/p&gt;&lt;p&gt;כל הזכויות שמורות &amp;copy; 2010-‏2015, ל־Christian Metscher &lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;נא להשתמש בכתובת &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot;  text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; או ב־ &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; כדי לדווח על תקלות.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; {2010-2015,?} {0000f?} {0000f?} {0000f?}</translation>
     </message>
 </context>
 <context>
@@ -574,18 +574,21 @@ Maybe you just don&apos;t have the permissions to do so.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>שגיאה</translation>
     </message>
     <message>
         <source>Please read this carefully!</source>
-        <translation type="unfinished"></translation>
+        <translation>נא לקרוא זאת בקפידה!</translation>
     </message>
     <message>
         <source>Welcome to qshutdown!
 If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
 
 Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
-        <translation type="unfinished"></translation>
+        <translation>ברוך בואך ל־qshutdown!
+אם ברצונך להשתמש ב־qshutdown לכבות את המערכת למשל והסביבה שלך היא Gnome Shell, אז תהיה לך אפשרות לקבל חלונית כיבוי מכאן. אם עדיף לך לכבות באופן ישיר, אז כדאי לך לשקול להיכנס להגדרות ולהגדיר את שיטת הכיבוי ל־ConsoleKit או משהו בסגנון.
+
+אפשר לבקר אותנו בכתובת https://launchpad.net/~hakaishi כדי לדווח על תקלות או כל דבר בנושא התרגום.</translation>
     </message>
     <message>
         <source>Disabling the tray icon means that it is no longer
@@ -595,15 +598,21 @@ window&quot; and &quot;Hide qshutdown at startup&quot;.
 If qshutdown is still running and you want it to
 reappear, then just execute qshutdown again,
 just as as you normally would. It will thus reappear.</source>
-        <translation type="unfinished"></translation>
+        <translation>נטרול סמל המערכת משמעו שלא תהיה יותר אפשרות
+לשחזר את qshutdown מאזור המערכת. נא לשקול
+לסמן גם את „לצאת עם סגירת החלון הראשי“ וגם את
+„להסתיר את qshutdown עם ההפעלה“.
+אם qshutdown עדיין פעיל וברצונך שיוצג שוב, אז עליך
+פשוט להפעיל את qshutdown פעם נוספת בדיוק
+כמו הפעלה רגילה ואז הוא יופיע שוב.</translation>
     </message>
     <message>
         <source>Disable tray &amp;icon</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;נטרול סמל באזור הדיווחים</translation>
     </message>
     <message>
         <source>&amp;Quit on closing main window</source>
-        <translation type="unfinished"></translation>
+        <translation>י&amp;ציאה עם סגירת החלון הראשי</translation>
     </message>
 </context>
 <context>

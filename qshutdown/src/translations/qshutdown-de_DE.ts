@@ -28,8 +28,8 @@
         <translation>&lt;p &gt;Besonderen Dank an:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler für seine Hilfe hier und da.&lt;br /&gt;&lt;br /&gt;Und den Sponsor Brian Nelson für das Hochladen nach Debian.&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2014, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;qshutdown, ein auf Uhrzeit und Countdown basierendes Werkzeug zum Herunterfahren&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2014 Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Bitte benutzen Sie &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; oder &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt;, um Problemberichte zu melden.&lt;/p&gt;</translation>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2015, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p &gt;qshutdown, ein auf Uhrzeit und Countdown basierendes Werkzeug zum Herunterfahren&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2015 Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Bitte benutzen Sie &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; oder &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt;, um Problemberichte zu melden.&lt;/p&gt; {2010-2015,?} {0000f?} {0000f?} {0000f?}</translation>
     </message>
 </context>
 <context>
@@ -599,15 +599,23 @@ window&quot; and &quot;Hide qshutdown at startup&quot;.
 If qshutdown is still running and you want it to
 reappear, then just execute qshutdown again,
 just as as you normally would. It will thus reappear.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Taskleistensymbol zu deaktivieren bedeutet, dass
+man qshutdown nicht mehr aus der Taskleiste
+wiederherstellen kann. Bitte erwäge auch &quot;Beenden
+beim Schließen des Hauptfensters&quot; und &quot;Starte
+Countdown bei Programmstart&quot; abzuhaken. Falls
+qshutdown noch läuft und Sie es wiederherstellen wollen,
+können Sie einfach qshutdown erneut ausführen so wie
+sie es gewöhnlich täten. Es wird sich dadurch
+wiederherstellen.</translation>
     </message>
     <message>
         <source>Disable tray &amp;icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Deakt&amp;iviere das Taskleistensymbol</translation>
     </message>
     <message>
         <source>&amp;Quit on closing main window</source>
-        <translation type="unfinished"></translation>
+        <translation>B&amp;eenden beim Schließen des Hauptfensters</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2014 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2015 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ About::About(QWidget *parent): QDialog(parent){
                                "sponsoring the uploads to Debian.</p>"));
      textBrowser->setText(tr("<p >qshutdown, a time and countdown based shutdown tool</p>"
                              "<p >Author: Christian Metscher &lt;hakaishi@web.de&gt;</p>"
-                             "<p >Copyright &copy; 2010-2014, by Christian Metscher</p>"
+                             "<p >Copyright &copy; 2010-2015, by Christian Metscher</p>"
                              "<p ><a href=\"https://launchpad.net/~hakaishi\">"
                              "<span style=\" text-decoration: underline; "
                              "color:#0000ff;\">https://launchpad.net/~hakaishi</span></a></p>"
