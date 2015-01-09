@@ -5,8 +5,6 @@ Changes in Release 1.7.0
  - fixed issues after manual/automatic standby mode (not caused by
    qshutdown)
  - added option to hide the system tray icon
- - turning back to Qt4 for now due to tray icon issues (will wait
-   with Qt5 till a fix is released)
  - updated Galician, Ukrainian, Asturian, Malay
  - added Russian
 
