@@ -1,3 +1,9 @@
+Changes in Release 1.7.0
+=========================
+
+ - added new shutdown/reboot/suspend/hibernate command (possibly
+   working on most debian based systems)
+
 Changes in Release 1.6.8
 =========================
 

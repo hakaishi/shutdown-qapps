@@ -467,7 +467,7 @@ qshutdown should quit after the countdown ended.</string>
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>365</width>
+            <width>382</width>
             <height>464</height>
            </rect>
           </property>
@@ -484,6 +484,11 @@ qshutdown should quit after the countdown ended.</string>
              <item>
               <property name="text">
                <string>automatic</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">login1</string>
               </property>
              </item>
              <item>
@@ -534,6 +539,11 @@ qshutdown should quit after the countdown ended.</string>
              </item>
              <item>
               <property name="text">
+               <string notr="true">login1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
                <string>Gnome session</string>
               </property>
              </item>
@@ -580,6 +590,11 @@ qshutdown should quit after the countdown ended.</string>
              </item>
              <item>
               <property name="text">
+               <string notr="true">login1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
                <string>Gnome session</string>
               </property>
              </item>
@@ -617,6 +632,11 @@ qshutdown should quit after the countdown ended.</string>
              <item>
               <property name="text">
                <string>automatic</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string notr="true">login1</string>
               </property>
              </item>
              <item>

@@ -1,6 +1,9 @@
 Changes in Release 1.7.0
 =========================
 
+ - added new shutdown/reboot/suspend/hibernate command (possibly
+   working on most debian based systems)
+ - code cleanup
  - fixed resizing problems in config menu
  - fixed issues after manual/automatic standby mode (not caused by
    qshutdown)

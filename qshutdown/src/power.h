@@ -42,6 +42,7 @@ QTextStream oput(stdout);
 
 bool lockMyScreen;
 bool automatic = false;
+bool login1 = false;
 bool gnome = false;
 bool kde = false;
 bool hal_ = false;
@@ -53,16 +54,16 @@ bool user = false;
 QString myShutdown, myReboot, mySuspend, myHibernate;
 #ifndef Q_OS_WIN32
 QDBusMessage response;
+QDBusInterface freedesktopLogin1("org.freedesktop.login1",
+  "/org/freedesktop/login1",
+  "org.freedesktop.login1.Manager", QDBusConnection::systemBus());
 #endif
 
 void shutdown(){
  #ifndef Q_OS_WIN32
   //variables for automatic mode
-  bool g = false; //gnome
-  bool k = false; //kde
   bool g_pwr1 = false;
   bool g_pwr2 = false;
-  bool hal = false;
 
   QStringList args;
   args << "-c" << myShutdown;
@@ -93,56 +94,68 @@ void shutdown(){
      if(verbose && !g_pwr1 && !g_pwr2)
        oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
             << endl;
-     if(!g_pwr1 && !g_pwr2){
-       response = gnomeSessionManager.call("RequestShutdown");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else g = true;
-       if(!g){
-         response = gnomeSessionManager.call("Shutdown");
-         if(response.type() == QDBusMessage::ErrorMessage){
-           if(verbose)
-             oput << "W: " << response.errorName() << ": "
-                  << response.errorMessage() << endl;
-         }
-         else g = true;
-       }
-     }
-     else g = true;
+     else if(g_pwr1 || g_pwr2)
+       return;
 
-     if(!g && !g_pwr1 && !g_pwr2){
-       response = kdeSessionManager.call("logout", 0, 2, 2);
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else k = true;
+     response = freedesktopLogin1.call("PowerOff", true);
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
 
-     if(!g && !g_pwr1 && !g_pwr2 && !k){
-       response = freedesktopHal.call("Shutdown");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else hal = true;
+     response = gnomeSessionManager.call("RequestShutdown");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
 
-     if(!g && !g_pwr1 && !g_pwr2 && !k && !hal){
-       response = freedesktopConsoleKit.call("Stop");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-         QProcess::startDetached("sudo shutdown -P now");
-         QProcess::startDetached("sudo shutdown -h -P now");
-       }
+     response = gnomeSessionManager.call("Shutdown");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
+
+     response = kdeSessionManager.call("logout", 0, 2, 2);
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
+     }
+     else return;
+
+     response = freedesktopHal.call("Shutdown");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
+     }
+     else return;
+
+     response = freedesktopConsoleKit.call("Stop");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
+     }
+     else return;
+
+     if(QProcess::startDetached("sudo shutdown -P now"))
+       return;
+     QProcess::startDetached("sudo shutdown -h -P now");
+  } //end of automatic
+  if(login1){
+    response = freedesktopLogin1.call("PowerOff", true);
+    if(response.type() == QDBusMessage::ErrorMessage){
+      if(verbose)
+        oput << "W: " << response.errorName() << ": "
+             << response.errorMessage() << endl;
+    }
   }
   if(gnome){
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
@@ -150,22 +163,22 @@ void shutdown(){
      if(verbose && !g_pwr1 && !g_pwr2)
        oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
             << endl;
-     if(!g_pwr1 && !g_pwr2){
-       response = gnomeSessionManager.call("RequestShutdown");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else g = true;
-       if(!g){
-         response = gnomeSessionManager.call("Shutdown");
-         if(response.type() == QDBusMessage::ErrorMessage){
-           if(verbose)
-             oput << "W: " << response.errorName() << ": "
-                  << response.errorMessage() << endl;
-         }
-       }
+     if(g_pwr1 || g_pwr2)
+       return;
+
+     response = gnomeSessionManager.call("RequestShutdown");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
+     }
+     else return;
+
+     response = gnomeSessionManager.call("Shutdown");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
   }
   if(kde){
@@ -195,7 +208,8 @@ void shutdown(){
   if(sudo){
      if(QProcess::startDetached("sudo /usr/bin/systemctl poweroff"))
        return;
-     QProcess::startDetached("sudo shutdown -P now");
+     if(QProcess::startDetached("sudo shutdown -P now"))
+       return;
      QProcess::startDetached("sudo shutdown -h -P now");
   }
   if(user)
@@ -204,6 +218,7 @@ void shutdown(){
 
   //resetting variables
   automatic = false;
+  login1 = false;
   gnome = false;
   kde = false;
   hal_ = false;
@@ -215,11 +230,8 @@ void shutdown(){
 
 void reboot(){
  #ifndef Q_OS_WIN32
-  bool g = false; //gnome
-  bool k = false; //kde
   bool g_pwr1 = false;
   bool g_pwr2 = false;
-  bool hal = false;
 
   QStringList args;
   args << "-c" << myReboot;
@@ -250,50 +262,60 @@ void reboot(){
      if(verbose && !g_pwr1 && !g_pwr2)
        oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
             << endl;
-     if(!g_pwr1 && !g_pwr2){
-       response = gnomeSessionManager.call("RequestReboot");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else g = true;
-     }
-     else g = true;
+     else if(g_pwr1 || g_pwr2)
+       return;
 
-     if(!g && !g_pwr1 && !g_pwr2){
-       QDBusInterface kdeSessionManager("org.kde.ksmserver", "/KSMServer",
-         "org.kde.KSMServerInterface", QDBusConnection::sessionBus());
-       response = kdeSessionManager.call("logout", 0, 2, 1);
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else
-         k = true;
+     response = freedesktopLogin1.call("Reboot", true);
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
 
-     if(!g && !g_pwr1 && !g_pwr2 && !k){
-       response = freedesktopHal.call("Reboot");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else
-         hal = true;
+     response = gnomeSessionManager.call("RequestReboot");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
 
-     if(!g && !g_pwr1 && !g_pwr2 && !k && !hal){
-       response = freedesktopConsoleKit.call("Restart");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-         QProcess::startDetached("sudo shutdown -r now");
-       }
+     QDBusInterface kdeSessionManager("org.kde.ksmserver", "/KSMServer",
+       "org.kde.KSMServerInterface", QDBusConnection::sessionBus());
+     response = kdeSessionManager.call("logout", 0, 2, 1);
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
+
+     response = freedesktopHal.call("Reboot");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
+     }
+     else return;
+
+     response = freedesktopConsoleKit.call("Restart");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
+     }
+     else return;
+
+     QProcess::startDetached("sudo shutdown -r now");
+  } //end of automatic
+  if(login1){
+    response = freedesktopLogin1.call("Reboot", true);
+    if(response.type() == QDBusMessage::ErrorMessage){
+      if(verbose)
+        oput << "W: " << response.errorName() << ": "
+             << response.errorMessage() << endl;
+    }
   }
   if(gnome){
     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh reboot");
@@ -301,13 +323,14 @@ void reboot(){
     if(verbose && !g_pwr1 && !g_pwr2)
       oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
            << endl;
-    if(!g_pwr1 && !g_pwr2){
-      response = gnomeSessionManager.call("RequestReboot");
-      if(response.type() == QDBusMessage::ErrorMessage){
-        if(verbose)
-          oput << "W: " << response.errorName() << ": "
-               << response.errorMessage() << endl;
-      }
+    if(g_pwr1 || g_pwr2)
+      return;
+
+    response = gnomeSessionManager.call("RequestReboot");
+    if(response.type() == QDBusMessage::ErrorMessage){
+      if(verbose)
+        oput << "W: " << response.errorName() << ": "
+             << response.errorMessage() << endl;
     }
   }
   if(kde){
@@ -345,6 +368,7 @@ void reboot(){
 
   //resetting variables
   automatic = false;
+  login1 = false;
   gnome = false;
   kde = false;
   hal_ = false;
@@ -358,8 +382,6 @@ void suspend(){
  #ifndef Q_OS_WIN32
   bool g_pwr1 = false;
   bool g_pwr2 = false;
-  bool hal = false;
-  bool upower = false;
 
   QStringList args;
   args << "-c" << mySuspend;
@@ -429,42 +451,53 @@ void suspend(){
    #else
      if(QProcess::startDetached("/usr/bin/systemctl suspend"))
        return;
+
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh suspend");
      g_pwr2 = QProcess::startDetached("gnome-power-cmd suspend");
      if(!g_pwr1 && !g_pwr2 && verbose)
        oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
             << endl;
+     else if(g_pwr1 || g_pwr2)
+       return;
 
-     if(!g_pwr1 && !g_pwr2){
-       response = freedesktopHal.call("Suspend",0);
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else
-         hal = true;
+     response = freedesktopLogin1.call("Suspend", true);
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
 
-     if(!hal && !g_pwr1 && !g_pwr2){
-       response = freedesktopUPower.call("Suspend");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else
-         upower = true;
+     response = freedesktopHal.call("Suspend",0);
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
 
-     if(!upower && !hal && !g_pwr1 && !g_pwr2){
-       response = freedesktopDeviceKit.call("Suspend");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
+     response = freedesktopUPower.call("Suspend");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
+
+     response = freedesktopDeviceKit.call("Suspend");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
+     }
+  } //end of automatic
+  if(login1){
+    response = freedesktopLogin1.call("Suspend", true);
+    if(response.type() == QDBusMessage::ErrorMessage){
+      if(verbose)
+        oput << "W: " << response.errorName() << ": "
+             << response.errorMessage() << endl;
+    }
   }
   if(gnome){
     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh suspend");
@@ -490,13 +523,11 @@ void suspend(){
     }
   }
   if(devicekit){
-    if(!upower && !hal && !g_pwr1 && !g_pwr2){
-      response = freedesktopDeviceKit.call("Suspend");
-      if(response.type() == QDBusMessage::ErrorMessage){
-        if(verbose)
-          oput << "W: " << response.errorName() << ": "
-               << response.errorMessage() << endl;
-      }
+    response = freedesktopDeviceKit.call("Suspend");
+    if(response.type() == QDBusMessage::ErrorMessage){
+      if(verbose)
+        oput << "W: " << response.errorName() << ": "
+             << response.errorMessage() << endl;
     }
   }
   if(user)
@@ -506,6 +537,7 @@ void suspend(){
 
   //resetting variables
   automatic = false;
+  login1 = false;
   gnome = false;
   hal_ = false;
   upower_ = false;
@@ -518,8 +550,6 @@ void hibernate(){
  #ifndef Q_OS_WIN32
   bool g_pwr1 = false;
   bool g_pwr2 = false;
-  bool hal = false;
-  bool upower = false;
 
   QStringList args;
   args << "-c" << myHibernate;
@@ -594,37 +624,47 @@ void hibernate(){
      if(!g_pwr1 && !g_pwr2 && verbose)
        oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
             << endl;
+     else if (g_pwr1 || g_pwr2)
+       return;
 
-     if(!g_pwr1 && !g_pwr2){
-       response = freedesktopHal.call("Hibernate");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else
-         hal = true;
+     response = freedesktopLogin1.call("Hibernate", true);
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
 
-     if(!hal && !g_pwr1 && !g_pwr2){
-       response = freedesktopUPower.call("Hibernate");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
-       else
-         upower = true;
+     response = freedesktopHal.call("Hibernate");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
 
-     if(!upower && !hal && !g_pwr1 && !g_pwr2){
-       response = freedesktopDeviceKit.call("Hibernate");
-       if(response.type() == QDBusMessage::ErrorMessage){
-         if(verbose)
-           oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
-       }
+     response = freedesktopUPower.call("Hibernate");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
      }
+     else return;
+
+     response = freedesktopDeviceKit.call("Hibernate");
+     if(response.type() == QDBusMessage::ErrorMessage){
+       if(verbose)
+         oput << "W: " << response.errorName() << ": "
+              << response.errorMessage() << endl;
+     }
+  } // end of automatic
+  if(login1){
+    response = freedesktopLogin1.call("Hibernate", true);
+    if(response.type() == QDBusMessage::ErrorMessage){
+      if(verbose)
+        oput << "W: " << response.errorName() << ": "
+             << response.errorMessage() << endl;
+    }
   }
   if(gnome){
     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh hibernate");
@@ -663,6 +703,7 @@ void hibernate(){
 
   //resetting variables
   automatic = false;
+  login1 = false;
   gnome = false;
   hal_ = false;
   upower_ = false;

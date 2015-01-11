@@ -27,6 +27,11 @@
      </item>
      <item>
       <property name="text">
+       <string notr="true">login1</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>Gnome session</string>
       </property>
      </item>

@@ -1,12 +1,15 @@
 shutdown-qapps (1.7.0) unstable; urgency=low
+  - added new shutdown/reboot/suspend/hibernate command (possibly
+    working on most debian based systems)
   * qshutdown
+    - code cleanup
     - added feature to hide system tray icon (because of placement issue
       in Unity.
     - fixed resizing problems in config menu
     - fixed issues after manual/automatic standby mode (not caused by
       qshutdown)
 
- -- Christian Metscher <hakaishi@web.de>  Fri, 09 Jan 2015 10:04:07 +0100
+ -- Christian Metscher <hakaishi@web.de>  Sun, 11 Jan 2015 15:01:08 +0100
 
 
 shutdown-qapps (1.6.8) unstable; urgency=low

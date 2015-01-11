@@ -301,6 +301,7 @@ void Gui::shutdown_or_message(){
        saveSettings();
 
       #ifndef Q_OS_WIN32
+       bool l = false;
        bool g = false; //gnome
        bool k = false; //kde
        bool g_pwr1 = false;
@@ -309,6 +310,9 @@ void Gui::shutdown_or_message(){
 
        QDBusMessage response;
 
+       QDBusInterface freedesktopLogin1("org.freedesktop.login1",
+        "/org/freedesktop/login1", "org.freedesktop.login1.Manager",
+        QDBusConnection::systemBus());
        QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
         "/org/gnome/SessionManager", "org.gnome.SessionManager",
         QDBusConnection::sessionBus());
@@ -338,7 +342,7 @@ void Gui::shutdown_or_message(){
            response = gnomeSessionManager.call("RequestShutdown");
            if(response.type() == QDBusMessage::ErrorMessage)
              *myOutput << "W: " << response.errorName() << ": "
-                     << response.errorMessage() << endl;
+                       << response.errorMessage() << endl;
            else g = true;
            if(!g){
              response = gnomeSessionManager.call("Shutdown");
@@ -351,6 +355,14 @@ void Gui::shutdown_or_message(){
          else g = true;
 
          if(!g){
+         response = freedesktopLogin1.call("PowerOff", true);
+           if(response.type() == QDBusMessage::ErrorMessage)
+             *myOutput << "W: " << response.errorName() << ": "
+                       << response.errorMessage() << endl;
+           else l = true;
+         }
+
+         if(!g &&!l){
            response = kdeSessionManager.call("logout", 0, 2, 2);
            if(response.type() == QDBusMessage::ErrorMessage)
              *myOutput << "W: " << response.errorName() << ": "
@@ -358,7 +370,7 @@ void Gui::shutdown_or_message(){
            else k = true;
          }
 
-         if(!g && !k){
+         if(!g && !l && !k){
            response = freedesktopHal.call("Shutdown");
            if(response.type() == QDBusMessage::ErrorMessage)
              *myOutput << "W: " << response.errorName() << ": "
@@ -366,7 +378,7 @@ void Gui::shutdown_or_message(){
            else hal = true;
          }
 
-         if(!g && !k && !hal){
+         if(!g && !l && !k && !hal){
            response = freedesktopConsoleKit.call("Stop");
            if(response.type() == QDBusMessage::ErrorMessage){
              *myOutput << "W: " << response.errorName() << ": "
@@ -376,7 +388,14 @@ void Gui::shutdown_or_message(){
          }
        } //end of automatic
 
-       if(pref->comboBox->currentIndex() == 1){ //gnome
+       if(pref->comboBox->currentIndex() == 1){
+         response = freedesktopLogin1.call("PowerOff", true);
+           if(response.type() == QDBusMessage::ErrorMessage)
+             *myOutput << "W: " << response.errorName() << ": "
+                       << response.errorMessage() << endl;
+       }
+
+       if(pref->comboBox->currentIndex() == 2){ //gnome
          g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
          g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
          if(!g_pwr1 && !g_pwr2){
@@ -396,28 +415,28 @@ void Gui::shutdown_or_message(){
          }
        }
 
-       if(pref->comboBox->currentIndex() == 2){ //kde
+       if(pref->comboBox->currentIndex() == 3){ //kde
          response = kdeSessionManager.call("logout", 0, 2, 2);
          if(response.type() == QDBusMessage::ErrorMessage)
            *myOutput << "W: " << response.errorName() << ": "
                      << response.errorMessage() << endl;
        }
 
-       if(pref->comboBox->currentIndex() == 3){ //hal
+       if(pref->comboBox->currentIndex() == 4){ //hal
          response = freedesktopHal.call("Shutdown");
          if(response.type() == QDBusMessage::ErrorMessage)
            *myOutput << "W: " << response.errorName() << ": "
                      << response.errorMessage() << endl;
        }
 
-       if(pref->comboBox->currentIndex() == 4){ //consoleKit
+       if(pref->comboBox->currentIndex() == 5){ //consoleKit
          response = freedesktopConsoleKit.call("Stop");
          if(response.type() == QDBusMessage::ErrorMessage)
            *myOutput << "W: " << response.errorName() << ": "
                      << response.errorMessage() << endl;
        }
 
-       if(pref->comboBox->currentIndex() == 5){ //sudo
+       if(pref->comboBox->currentIndex() == 6){ //sudo
          if(QProcess::startDetached("sudo /usr/bin/systemctl poweroff"))
            return;
          QProcess::startDetached("sudo shutdown -P now");

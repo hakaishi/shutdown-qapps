@@ -600,12 +600,13 @@ void Gui::finished_(){
      switch(comboBox->currentIndex()){
        case 0:
          if(pref->shutdownM->currentIndex()==0) { Power::automatic = true; }
-         if(pref->shutdownM->currentIndex()==1) { Power::gnome = true; }
-         if(pref->shutdownM->currentIndex()==2) { Power::kde = true; }
-         if(pref->shutdownM->currentIndex()==3) { Power::hal_ = true; }
-         if(pref->shutdownM->currentIndex()==4) { Power::consolekit = true; }
-         if(pref->shutdownM->currentIndex()==5) { Power::sudo = true; }
-         if(pref->shutdownM->currentIndex()==6) {
+         if(pref->shutdownM->currentIndex()==1) { Power::login1 = true; }
+         if(pref->shutdownM->currentIndex()==2) { Power::gnome = true; }
+         if(pref->shutdownM->currentIndex()==3) { Power::kde = true; }
+         if(pref->shutdownM->currentIndex()==4) { Power::hal_ = true; }
+         if(pref->shutdownM->currentIndex()==5) { Power::consolekit = true; }
+         if(pref->shutdownM->currentIndex()==6) { Power::sudo = true; }
+         if(pref->shutdownM->currentIndex()==7) {
            Power::user = true;
            Power::myShutdown = pref->myShutdown;
          }
@@ -614,12 +615,13 @@ void Gui::finished_(){
          break;
        case 1:
          if(pref->rebootM->currentIndex()==0) { Power::automatic = true; }
-         if(pref->rebootM->currentIndex()==1) { Power::gnome = true; }
-         if(pref->rebootM->currentIndex()==2) { Power::kde = true; }
-         if(pref->rebootM->currentIndex()==3) { Power::hal_ = true; }
-         if(pref->rebootM->currentIndex()==4) { Power::consolekit = true; }
-         if(pref->rebootM->currentIndex()==5) { Power::sudo = true; }
-         if(pref->rebootM->currentIndex()==6) {
+         if(pref->rebootM->currentIndex()==1) { Power::login1 = true; }
+         if(pref->rebootM->currentIndex()==2) { Power::gnome = true; }
+         if(pref->rebootM->currentIndex()==3) { Power::kde = true; }
+         if(pref->rebootM->currentIndex()==4) { Power::hal_ = true; }
+         if(pref->rebootM->currentIndex()==5) { Power::consolekit = true; }
+         if(pref->rebootM->currentIndex()==6) { Power::sudo = true; }
+         if(pref->rebootM->currentIndex()==7) {
            Power::user = true;
            Power::myReboot = pref->myReboot;
          }
@@ -628,11 +630,12 @@ void Gui::finished_(){
          break;
        case 2:
          if(pref->suspendM->currentIndex()==0) { Power::automatic = true; }
-         if(pref->suspendM->currentIndex()==1) { Power::gnome = true; }
-         if(pref->suspendM->currentIndex()==2) { Power::hal_ = true; }
-         if(pref->suspendM->currentIndex()==3) { Power::upower_ = true; }
-         if(pref->suspendM->currentIndex()==4) { Power::devicekit = true; }
-         if(pref->suspendM->currentIndex()==5) {
+         if(pref->suspendM->currentIndex()==1) { Power::login1 = true; }
+         if(pref->suspendM->currentIndex()==2) { Power::gnome = true; }
+         if(pref->suspendM->currentIndex()==3) { Power::hal_ = true; }
+         if(pref->suspendM->currentIndex()==4) { Power::upower_ = true; }
+         if(pref->suspendM->currentIndex()==5) { Power::devicekit = true; }
+         if(pref->suspendM->currentIndex()==6) {
            Power::user = true;
            Power::mySuspend = pref->mySuspend;
          }
@@ -642,11 +645,12 @@ void Gui::finished_(){
          break;
        case 3:
          if(pref->hibernateM->currentIndex()==0) { Power::automatic = true; }
-         if(pref->hibernateM->currentIndex()==1) { Power::gnome = true; }
-         if(pref->hibernateM->currentIndex()==2) { Power::hal_ = true; }
-         if(pref->hibernateM->currentIndex()==3) { Power::upower_ = true; }
-         if(pref->hibernateM->currentIndex()==4) { Power::devicekit = true; }
-         if(pref->hibernateM->currentIndex()==5) {
+         if(pref->hibernateM->currentIndex()==1) { Power::login1 = true; }
+         if(pref->hibernateM->currentIndex()==2) { Power::gnome = true; }
+         if(pref->hibernateM->currentIndex()==3) { Power::hal_ = true; }
+         if(pref->hibernateM->currentIndex()==4) { Power::upower_ = true; }
+         if(pref->hibernateM->currentIndex()==5) { Power::devicekit = true; }
+         if(pref->hibernateM->currentIndex()==6) {
            Power::user = true;
            Power::myHibernate = pref->myHibernate;
          }
