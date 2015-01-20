@@ -496,8 +496,12 @@ void Gui::set(){
      localDateTime = QDateTime::currentDateTime(); //the time now
      if(radio2->isChecked()) //if minute-countdown
        futureDateTime = localDateTime.addSecs(spin->value()*60); //add spinbox-value to the current time
-     else
-       futureDateTime = QDateTime(QDate::currentDate(),timeEdit->time()); //else the future time is the time of the timeEdit
+     else{ //else the future time is the time of the timeEdit
+       if(timeEdit->time() < QTime::currentTime()) //time is on next day
+         futureDateTime = QDateTime(QDate::currentDate().addDays(1),timeEdit->time()); //add 1 day
+       else
+         futureDateTime = QDateTime(QDate::currentDate(),timeEdit->time());
+     }
 
      if(lock->isChecked() || editor->getLockAll()){       //when OK-button is clicked and lock is checked
        QList<QWidget*> list;
