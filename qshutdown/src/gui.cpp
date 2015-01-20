@@ -491,7 +491,6 @@ void Gui::set(){
      timeRunning = true;
 
      ti->stop();
-     timer->start(1000);
 
      localDateTime = QDateTime::currentDateTime(); //the time now
      if(radio2->isChecked()) //if minute-countdown
@@ -502,6 +501,9 @@ void Gui::set(){
        else
          futureDateTime = QDateTime(QDate::currentDate(),timeEdit->time());
      }
+
+     updateT(); //Just updating time/interface for immediate display of remaining time.
+     timer->start(1000); //Update time/interface every second
 
      if(lock->isChecked() || editor->getLockAll()){       //when OK-button is clicked and lock is checked
        QList<QWidget*> list;
