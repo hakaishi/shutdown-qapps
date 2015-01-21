@@ -359,7 +359,7 @@ void Gui::keyPressEvent(QKeyEvent *kEvent){
 }
 
 void Gui::updateT(){
-     QDate myDate;
+     QDate myDate = QDate::currentDate();
      QString tip1, tip2;
 
      if(shutdown_action->isChecked())
@@ -374,7 +374,8 @@ void Gui::updateT(){
      if(QDate::currentDate().daysTo(cal->setCalendarDate) < 0){ //reset if targeted date is already in the past.
        reset();
        return;
-     }
+     } //end
+
      if(QDate::currentDate().daysTo(cal->setCalendarDate) > 1){ //if the date difference between today and the selected day
                                                            //in the calendar is greater than one
      //if more than one year
@@ -405,9 +406,9 @@ void Gui::updateT(){
            lcd->setDigitCount(3);
          lcd->display((double)QDate::currentDate().daysTo(cal->setCalendarDate));
        }
-     }
-     if(QDate::currentDate().daysTo(cal->setCalendarDate) == 1){ //if there is one more day to go
+     } //end of year/month
 
+     if(QDate::currentDate().daysTo(cal->setCalendarDate) == 1){ //if there is one more day to go
        if(!Time())
          return;
 
@@ -446,8 +447,7 @@ void Gui::updateT(){
          lcd->display(i);
        }
      }
-     if(QDate::currentDate()==cal->setCalendarDate || cal->setCalendarDate.isNull()){ //if there was no date
-                                             //set in the calendar or the set day is the current day
+     if(QDate::currentDate().daysTo(cal->setCalendarDate) == 0){
        if(!Time())
          return;
 
@@ -480,7 +480,7 @@ void Gui::updateT(){
        }
 
      //this will ensure that the shutdown-type will be executed in case a few seconds were skipped
-       if((i==0) || (i<(0-n)))
+       if((i<=0) && !(i<-n))
          finished_(); //execute shutdown-type
      }
      setWindowTitle(tip1 + tip2);
@@ -488,18 +488,29 @@ void Gui::updateT(){
 }
 
 void Gui::set(){
+     QDate date = QDate::currentDate(); //initializing date
      timeRunning = true;
-
      ti->stop();
+     if(!cal->setCalendarDate.isNull()) //if a date was set in the calendar
+       date = cal->setCalendarDate;
+     localDateTime = QDateTime::currentDateTime();
 
-     localDateTime = QDateTime::currentDateTime(); //the time now
-     if(radio2->isChecked()) //if minute-countdown
-       futureDateTime = localDateTime.addSecs(spin->value()*60); //add spinbox-value to the current time
-     else{ //else the future time is the time of the timeEdit
-       if(timeEdit->time() < QTime::currentTime()) //time is on next day
-         futureDateTime = QDateTime(QDate::currentDate().addDays(1),timeEdit->time()); //add 1 day
+     if(radio2->isChecked()){ //if minute-countdown
+       if(date == QDate::currentDate())
+         futureDateTime = localDateTime.addSecs(spin->value()*60); //add spinbox-value to the current time
        else
-         futureDateTime = QDateTime(QDate::currentDate(),timeEdit->time());
+         futureDateTime = QDateTime(date,QTime::currentTime().addSecs(spin->value()*60)); //add
+                                             // spinbox-value to the current time and the date in calendar
+     }
+     else{ //else the time of the timeEdit is used
+       if(date == QDate::currentDate()){
+         if(timeEdit->time() <= QTime::currentTime()) //time is on next day
+           futureDateTime = QDateTime(QDate::currentDate().addDays(1),timeEdit->time()); //add 1 day
+         else //time is (still) today
+           futureDateTime = QDateTime(QDate::currentDate(),timeEdit->time());
+       }
+       else //date is not today but in the future
+         futureDateTime = QDateTime(date,timeEdit->time());
      }
 
      updateT(); //Just updating time/interface for immediate display of remaining time.
@@ -538,7 +549,9 @@ bool Gui::Time(){
      localDateTime = QDateTime::currentDateTime();
      QDateTime futureDateTime10s = futureDateTime; //adding n (10 seconds) in case of hardware delay.
      futureDateTime10s.addSecs(n);
-     if(QDateTime::currentDateTime() > futureDateTime10s){ //if targeted time for action is already in the past.
+
+     if(QDateTime::currentDateTime() > futureDateTime10s){ //if targeted time for action is
+                          //already over 10 seconds in the past.
        reset();
        return false;
      }
@@ -853,7 +866,7 @@ void Gui::lockEverything(bool actual){
 void Gui::reset(){
      timer->stop();
      setWindowTitle("'qshutdown'");
-     toolButton->setText("Calendar");
+     toolButton->setText(tr("Calendar"));
      lcd->display(0);
      TIcon->setToolTip(NULL);
      lcdL->setText(tr("minutes"));
