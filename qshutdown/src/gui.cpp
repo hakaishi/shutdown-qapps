@@ -371,44 +371,44 @@ void Gui::updateT(){
      if(hibernate_action->isChecked())
        tip1 = (tr("hibernate in "));
 
-     if(QDate::currentDate().daysTo(cal->setCalendarDate) < 0){ //reset if targeted date is already in the past.
+     if(myDate.daysTo(futureDateTime.date()) < 0){ //reset if targeted date is already in the past.
        reset();
        return;
      } //end
 
-     if(QDate::currentDate().daysTo(cal->setCalendarDate) > 1){ //if the date difference between today and the selected day
+     if(myDate.daysTo(futureDateTime.date()) > 1){ //if the date difference between today and the selected day
                                                            //in the calendar is greater than one
      //if more than one year
-       if(QDate::currentDate().daysTo(cal->setCalendarDate) > myDate.daysInYear()){
-         tip2 = (QString::number(QDate::currentDate().daysTo(cal->setCalendarDate)/myDate.daysInYear()) + " " + tr("years"));
+       if(myDate.daysTo(futureDateTime.date()) > myDate.daysInYear()){
+         tip2 = (QString::number(myDate.daysTo(futureDateTime.date())/myDate.daysInYear()) + " " + tr("years"));
          lcdL->setText(tr("years"));
          lcd->setDigitCount(4);
-         lcd->display((double)QDate::currentDate().daysTo(cal->setCalendarDate)/myDate.daysInYear());
+         lcd->display((double)myDate.daysTo(futureDateTime.date())/myDate.daysInYear());
        }
      //if more than one month
-       if(QDate::currentDate().daysTo(cal->setCalendarDate) > myDate.daysInMonth()
-           && QDate::currentDate().daysTo(cal->setCalendarDate) <= myDate.daysInYear()){
-         tip2 = (QString::number(QDate::currentDate().daysTo(cal->setCalendarDate)/myDate.daysInMonth()) + " " + tr("months"));
+       if(myDate.daysTo(futureDateTime.date()) > myDate.daysInMonth()
+           && myDate.daysTo(futureDateTime.date()) <= myDate.daysInYear()){
+         tip2 = (QString::number(myDate.daysTo(futureDateTime.date())/myDate.daysInMonth()) + " " + tr("months"));
          lcdL->setText(tr("months"));
-         if((double)QDate::currentDate().daysTo(cal->setCalendarDate)/myDate.daysInMonth() >= 10)
+         if((double)myDate.daysTo(futureDateTime.date())/myDate.daysInMonth() >= 10)
            lcd->setDigitCount(4);
          else
            lcd->setDigitCount(3);
-         lcd->display((double)QDate::currentDate().daysTo(cal->setCalendarDate)/myDate.daysInMonth());
+         lcd->display((double)myDate.daysTo(futureDateTime.date())/myDate.daysInMonth());
        }
      //if less than days in Month
-       if(QDate::currentDate().daysTo(cal->setCalendarDate) <= myDate.daysInMonth()){
-         tip2 = (QString::number(QDate::currentDate().daysTo(cal->setCalendarDate)) + " " + tr("days"));
+       if(myDate.daysTo(futureDateTime.date()) <= myDate.daysInMonth()){
+         tip2 = (QString::number(myDate.daysTo(futureDateTime.date())) + " " + tr("days"));
          lcdL->setText(tr("days"));
-         if((double)QDate::currentDate().daysTo(cal->setCalendarDate) >= 10)
+         if((double)myDate.daysTo(futureDateTime.date()) >= 10)
            lcd->setDigitCount(4);
          else
            lcd->setDigitCount(3);
-         lcd->display((double)QDate::currentDate().daysTo(cal->setCalendarDate));
+         lcd->display((double)myDate.daysTo(futureDateTime.date()));
        }
      } //end of year/month
 
-     if(QDate::currentDate().daysTo(cal->setCalendarDate) == 1){ //if there is one more day to go
+     if(myDate.daysTo(futureDateTime.date()) == 1){ //if there is one more day to go
        if(!Time())
          return;
 
@@ -447,7 +447,7 @@ void Gui::updateT(){
          lcd->display(i);
        }
      }
-     if(QDate::currentDate().daysTo(cal->setCalendarDate) == 0){
+     if(myDate.daysTo(futureDateTime.date()) == 0){
        if(!Time())
          return;
 
