@@ -493,24 +493,19 @@ void Gui::set(){
      ti->stop();
      if(!cal->setCalendarDate.isNull()) //if a date was set in the calendar
        date = cal->setCalendarDate;
-     localDateTime = QDateTime::currentDateTime();
+     QTime localTime = QTime::currentTime();
 
-     if(radio2->isChecked()){ //if minute-countdown
-       if(date == QDate::currentDate())
-         futureDateTime = localDateTime.addSecs(spin->value()*60); //add spinbox-value to the current time
-       else
-         futureDateTime = QDateTime(date,QTime::currentTime().addSecs(spin->value()*60)); //add
-                                             // spinbox-value to the current time and the date in calendar
-     }
+     if(radio2->isChecked()) //if minute-countdown
+         futureDateTime = QDateTime(date,localTime.addSecs(spin->value()*60),Qt::LocalTime);
      else{ //else the time of the timeEdit is used
        if(date == QDate::currentDate()){
          if(timeEdit->time() <= QTime::currentTime()) //time is on next day
-           futureDateTime = QDateTime(QDate::currentDate().addDays(1),timeEdit->time()); //add 1 day
+           futureDateTime = QDateTime(QDate::currentDate().addDays(1),timeEdit->time(),Qt::LocalTime); //add 1 day
          else //time is (still) today
-           futureDateTime = QDateTime(QDate::currentDate(),timeEdit->time());
+           futureDateTime = QDateTime(QDate::currentDate(),timeEdit->time(),Qt::LocalTime);
        }
        else //date is not today but in the future
-         futureDateTime = QDateTime(date,timeEdit->time());
+         futureDateTime = QDateTime(date,timeEdit->time(),Qt::LocalTime);
      }
 
      updateT(); //Just updating time/interface for immediate display of remaining time.
