@@ -1,4 +1,4 @@
-shutdown-qapps (1.7.0) unstable; urgency=low
+shutdown-qapps (1.7.0-1) unstable; urgency=low
   - added new shutdown/reboot/suspend/hibernate command (possibly
     working on most debian based systems, if supported/activated)
   * qshutdown
@@ -13,7 +13,7 @@ shutdown-qapps (1.7.0) unstable; urgency=low
  -- Christian Metscher <hakaishi@web.de>  Tue, 20 Jan 2015 22:04:03 +0100
 
 
-shutdown-qapps (1.6.8) unstable; urgency=low
+shutdown-qapps (1.6.8-1) unstable; urgency=low
   * added systemctl command in "automatic" and "sudo"
   * qshutdown
     - complete Turkish translation and added Indonesian and Czech
