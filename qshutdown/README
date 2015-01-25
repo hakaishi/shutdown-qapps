@@ -4,7 +4,7 @@ qshutdown
 INSTALL:
 ========
 
-Dependencies: qt5-default, qttools5-dev-tools, build-essential
+Dependencies: qtbase5-dev, qttools5-dev-tools, build-essential
 
 If you want to install from source, open a terminal and change into this folder.
 To install type:
