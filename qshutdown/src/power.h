@@ -52,15 +52,10 @@ bool upower_ = false;
 bool devicekit = false;
 bool user = false;
 QString myShutdown, myReboot, mySuspend, myHibernate;
-#ifndef Q_OS_WIN32
-QDBusMessage response;
-QDBusInterface freedesktopLogin1("org.freedesktop.login1",
-  "/org/freedesktop/login1",
-  "org.freedesktop.login1.Manager", QDBusConnection::systemBus());
-#endif
 
 void shutdown(){
  #ifndef Q_OS_WIN32
+  QDBusMessage response;
   //variables for automatic mode
   bool g_pwr1 = false;
   bool g_pwr2 = false;
@@ -68,6 +63,9 @@ void shutdown(){
   QStringList args;
   args << "-c" << myShutdown;
 
+  QDBusInterface freedesktopLogin1("org.freedesktop.login1",
+    "/org/freedesktop/login1",
+    "org.freedesktop.login1.Manager", QDBusConnection::systemBus());
   QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
     "/org/gnome/SessionManager", "org.gnome.SessionManager",
     QDBusConnection::sessionBus());
@@ -230,12 +228,16 @@ void shutdown(){
 
 void reboot(){
  #ifndef Q_OS_WIN32
+  QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
 
   QStringList args;
   args << "-c" << myReboot;
 
+  QDBusInterface freedesktopLogin1("org.freedesktop.login1",
+    "/org/freedesktop/login1",
+    "org.freedesktop.login1.Manager", QDBusConnection::systemBus());
   QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
     "/org/gnome/SessionManager", "org.gnome.SessionManager",
     QDBusConnection::sessionBus());
@@ -380,12 +382,16 @@ void reboot(){
 
 void suspend(){
  #ifndef Q_OS_WIN32
+  QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
 
   QStringList args;
   args << "-c" << mySuspend;
 
+  QDBusInterface freedesktopLogin1("org.freedesktop.login1",
+    "/org/freedesktop/login1",
+    "org.freedesktop.login1.Manager", QDBusConnection::systemBus());
   QDBusInterface freedesktopHal("org.freedesktop.Hal",
     "/org/freedesktop/Hal/devices/computer",
     "org.freedesktop.Hal.Device.SystemPowerManagement",
@@ -548,12 +554,16 @@ void suspend(){
 
 void hibernate(){
  #ifndef Q_OS_WIN32
+  QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
 
   QStringList args;
   args << "-c" << myHibernate;
 
+  QDBusInterface freedesktopLogin1("org.freedesktop.login1",
+    "/org/freedesktop/login1",
+    "org.freedesktop.login1.Manager", QDBusConnection::systemBus());
   QDBusInterface freedesktopHal("org.freedesktop.Hal",
     "/org/freedesktop/Hal/devices/computer",
     "org.freedesktop.Hal.Device.SystemPowerManagement",
