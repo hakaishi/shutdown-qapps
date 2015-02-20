@@ -21,11 +21,12 @@ QMAKE_DISTCLEAN = src/translations/*.qm
 HEADERS = src/gui.h src/power.h src/info.h\
           src/calendar.h src/preferences.h\
           src/ch_passwd.h src/passwd.h src/editor.h\
-          src/about.h
+          src/about.h src/weekday.h src/weekdayitem.h
 SOURCES = src/gui.cpp src/main.cpp src/info.cpp\
           src/preferences.cpp src/calendar.cpp\
           src/ch_passwd.cpp src/passwd.cpp\
-          src/editor.cpp src/about.cpp
+          src/editor.cpp src/about.cpp src/weekday.cpp\
+          src/weekdayitem.cpp
 RESOURCES = ../qshutdown.qrc
 TRANSLATIONS = src/translations/qshutdown-ast.ts\
                src/translations/qshutdown-bg.ts\

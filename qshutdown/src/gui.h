@@ -50,10 +50,11 @@ class Gui : public QMainWindow, public Ui::Gui {
  
     private:
      bool            timeRunning;
+     bool            aWeeklyTimeWasSet;
      QPushButton     *minim;
      QTimer          *timer, *ti;
      QDateTime       datetime, localDateTime, futureDateTime;
-     QTime           elapsedTime;
+     QTime           elapsedTime, oldTime;
      QIcon           icon;
      QSystemTrayIcon *TIcon;
      QMenu           *menu;
@@ -63,6 +64,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      QAction         *minimize_restore_action, *quit_action,
                      *reset_action, *info_action, *log_action, *pref_action;
      int             i; //number of seconds left
+     int             oldComboBoxIndex;
      double          bigI; //for more precise display
      const static int n = 10; //to check if i==0 was skipped
      QFont           *font1, *font2, *font3;
@@ -93,6 +95,8 @@ class Gui : public QMainWindow, public Ui::Gui {
      void setInfoText();
      void getFonts();
      void showCalendarBox();
+     void saveOldTime(QTime time);
+     void saveOldComboBoxIndex(int i);
      void setDate();
      void lockEverything(bool actual);
      void updateLock();

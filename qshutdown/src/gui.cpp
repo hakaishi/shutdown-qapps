@@ -40,7 +40,10 @@ Gui::Gui(){
      timeEdit->setDisplayFormat(timeEditFormat);
 
      timeRunning = false;
+     aWeeklyTimeWasSet = false;
      logFileSize = 1.5;
+     oldComboBoxIndex = comboBox->currentIndex();
+     oldTime = timeEdit->time();
 
      datetime = QDateTime::currentDateTime();
      elapsedTime.start();
@@ -207,6 +210,9 @@ Gui::Gui(){
      connect(actionAbout_Qt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 
      connect(actionKeep_window_proportions, SIGNAL(toggled(bool)), this, SLOT(staticProportions(bool)));
+
+     connect(timeEdit, SIGNAL(timeChanged(QTime)), this, SLOT(saveOldTime(QTime)));
+     connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(saveOldComboBoxIndex(int)));
 }
 
 Gui::~Gui(){
@@ -237,7 +243,59 @@ void Gui::warnings_on(){
        ti->start();
 }
 
-void Gui::setDate(){ toolButton->setText(cal->setCalendarDate.toString(Qt::SystemLocaleShortDate)); }
+void Gui::saveOldTime(QTime time){
+     if(!aWeeklyTimeWasSet)
+       oldTime = time;
+}
+
+void Gui::saveOldComboBoxIndex(int i){
+     if(!aWeeklyTimeWasSet)
+       oldComboBoxIndex = i;
+}
+
+void Gui::setDate(){
+     if(!cal->weekly->isChecked() && !timeRunning)
+       toolButton->setText(cal->setCalendarDate.date().toString(Qt::SystemLocaleShortDate));
+     else if(!cal->setWeeklyDate.time().isNull() && !timeRunning){
+       toolButton->setText(cal->setWeeklyDate.date().toString("ddd"));
+       aWeeklyTimeWasSet = true;
+       timeEdit->setTime(cal->setWeeklyDate.time());
+
+       QDateTime myTime = cal->setWeeklyDate; //just for convenience
+       QList<WeekDayItem *> item; // get the objects of the matching day
+       if(myTime.date().dayOfWeek() == Qt::Monday)
+         item << cal->mon1 << cal->mon2 << cal->mon3 << cal->mon4 << cal->mon5;
+       if(myTime.date().dayOfWeek() == Qt::Tuesday)
+         item << cal->tue1 << cal->tue2 << cal->tue3 << cal->tue4 << cal->tue5;
+       if(myTime.date().dayOfWeek() == Qt::Wednesday)
+         item << cal->wed1 << cal->wed2 << cal->wed3 << cal->wed4 << cal->wed5;
+       if(myTime.date().dayOfWeek() == Qt::Thursday)
+         item << cal->thu1 << cal->thu2 << cal->thu3 << cal->thu4 << cal->thu5;
+       if(myTime.date().dayOfWeek() == Qt::Friday)
+         item << cal->fri1 << cal->fri2 << cal->fri3 << cal->fri4 << cal->fri5;
+       if(myTime.date().dayOfWeek() == Qt::Saturday)
+         item << cal->sat1 << cal->sat2 << cal->sat3 << cal->sat4 << cal->sat5;
+       if(myTime.date().dayOfWeek() == Qt::Sunday)
+         item << cal->sun1 << cal->sun2 << cal->sun3 << cal->sun4 << cal->sun5;
+       while(item[0]->timeEdit->time() != myTime.time()) //get the correct time from the object
+         item.removeAt(0); //just leave the matching time
+       if(item.count() != 0)
+         comboBox->setCurrentIndex(item[0]->comboBox->currentIndex());
+
+       radio1->setChecked(true);
+       radio2->setDisabled(true);
+       radio1->setDisabled(true);
+       timeEdit->setDisabled(true);
+       comboBox->setDisabled(true);
+     }
+     if((cal->setCalendarDate == QDateTime()) && (cal->setWeeklyDate == QDateTime()))
+       if(!timeRunning){
+          timeEdit->setTime(oldTime);
+          comboBox->setCurrentIndex(oldComboBoxIndex);
+          aWeeklyTimeWasSet = false;
+	     reset();
+       }
+}
 
 void Gui::center(){
      QDesktopWidget *desktop = qApp->desktop();
@@ -488,25 +546,30 @@ void Gui::updateT(){
 }
 
 void Gui::set(){
-     QDate date = QDate::currentDate(); //initializing date
+     QDateTime date;
+     date.setDate(QDate::currentDate()); //initializing date
      timeRunning = true;
      ti->stop();
-     if(!cal->setCalendarDate.isNull()) //if a date was set in the calendar
+     bool noCalendarDate = cal->setCalendarDate.isNull();
+     bool noWeeklyDate = cal->setWeeklyDate.isNull();
+     if(!noCalendarDate)
        date = cal->setCalendarDate;
+     if(!noWeeklyDate)
+       date = cal->setWeeklyDate;
      QTime localTime = QTime::currentTime();
 
-     if(radio2->isChecked()) //if minute-countdown
-         futureDateTime = QDateTime(date,localTime.addSecs(spin->value()*60),Qt::LocalTime);
-     else{ //else the time of the timeEdit is used
-       if(date == QDate::currentDate()){
-         if(timeEdit->time() <= QTime::currentTime()) //time is on next day
-           futureDateTime = QDateTime(QDate::currentDate().addDays(1),timeEdit->time(),Qt::LocalTime); //add 1 day
-         else //time is (still) today
-           futureDateTime = QDateTime(QDate::currentDate(),timeEdit->time(),Qt::LocalTime);
+     if(noWeeklyDate){
+       if(radio2->isChecked()) //if minute-countdown
+         futureDateTime = QDateTime(date.date(),localTime.addSecs(spin->value()*60),Qt::LocalTime);
+       if(radio1->isChecked()){ //if timeEdit
+         if(QDateTime(date.date(),timeEdit->time()) > (QDateTime(QDate::currentDate(),localTime))) //set time is greater than current time
+           futureDateTime = QDateTime(date.date(),timeEdit->time(),Qt::LocalTime);
+         if(noCalendarDate && (timeEdit->time() <= localTime))
+           futureDateTime = QDateTime(date.date().addDays(1),timeEdit->time(),Qt::LocalTime); //add 1 day
        }
-       else //date is not today but in the future
-         futureDateTime = QDateTime(date,timeEdit->time(),Qt::LocalTime);
      }
+     if(!noWeeklyDate)
+       futureDateTime = date; //the time can't be in the past. See calendar.cpp
 
      updateT(); //Just updating time/interface for immediate display of remaining time.
      timer->start(1000); //Update time/interface every second
@@ -514,7 +577,7 @@ void Gui::set(){
      if(lock->isChecked() || editor->getLockAll()){       //when OK-button is clicked and lock is checked
        QList<QWidget*> list;
        list << spin << radio1 << radio2 << lock << timeEdit << comboBox << targetTime
-            << minutes << pref->tab2;
+            << minutes << pref->tab2 << cal->weekly << cal->scrollAreaWidgetContents;
        foreach(QWidget * ptr, list)
          ptr->setDisabled(true);
        power_actions->setDisabled(true);
@@ -860,13 +923,16 @@ void Gui::lockEverything(bool actual){
 }
 void Gui::reset(){
      timer->stop();
+     cal->setWeeklyDate = QDateTime();
      setWindowTitle("'qshutdown'");
      toolButton->setText(tr("Calendar"));
      lcd->display(0);
      TIcon->setToolTip(NULL);
      lcdL->setText(tr("minutes"));
-     cal->setCalendarDate = QDate();
-     cal->calendarDate = QDate();
+     cal->setCalendarDate.setDate(QDate());
+     cal->calendarDate.setDate(QDate());
+     cal->weekly->setEnabled(true);
+     cal->scrollAreaWidgetContents->setEnabled(true);
      showNormal();
      if(!ti->isActive())
        ti->start(30000);
@@ -907,7 +973,7 @@ void Gui::showCalendarBox(){
      if(cal->setCalendarDate.isNull())
        cal->calendarWidget->setSelectedDate(QDate::currentDate());
      else
-       cal->calendarWidget->setSelectedDate(cal->setCalendarDate);
+       cal->calendarWidget->setSelectedDate(cal->setCalendarDate.date());
      if(editor->getLockAll() || (timeRunning && lock->isChecked()))
        cal->calendarWidget->blockSignals(true);
      else

@@ -43,7 +43,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
 
 #ifdef Q_OS_WIN32
      lockS->setDisabled(true); //if there is a command for locking the display in Windows, remove this line
-                               //and add the command to power.cpp
+                               //and add the command to power.h
      file = QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf";
 #else //!Q_OS_WIN32
      file = QDir::homePath() + "/.qshutdown/qshutdown.conf";

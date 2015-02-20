@@ -38,6 +38,18 @@
         <source>Calendar</source>
         <translation>Kalendar</translation>
     </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>activate weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please note that you might want to enable autostart and countdown at startup.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChangePassword</name>

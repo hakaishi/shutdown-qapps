@@ -18,7 +18,10 @@
 #define CALENDAR_H
 
 #include "ui_calendar.h"
-#include <QDate>
+#include <QDateTime>
+#include <QSettings>
+#include "weekday.h"
+#include "weekdayitem.h"
 
 class Calendar : public QDialog, public Ui::Calendar {
      Q_OBJECT
@@ -26,15 +29,46 @@ class Calendar : public QDialog, public Ui::Calendar {
     public:
      Calendar(QWidget *parent = 0);
      ~Calendar();
-     QDate setCalendarDate, calendarDate;
+     QDateTime setCalendarDate, calendarDate, setWeeklyDate;
      bool getClosed();
+     WeekDay     *mon, *tue, *wed, *thu, *fri,
+                 *sat, *sun;
+     WeekDayItem *mon1, *mon2, *mon3, *mon4, *mon5,
+                 *tue1, *tue2, *tue3, *tue4, *tue5,
+                 *wed1, *wed2, *wed3, *wed4, *wed5,
+                 *thu1, *thu2, *thu3, *thu4, *thu5,
+                 *fri1, *fri2, *fri3, *fri4, *fri5,
+                 *sat1, *sat2, *sat3, *sat4, *sat5,
+                 *sun1, *sun2, *sun3, *sun4, *sun5;
 
     private:
+     QVBoxLayout *scrollArea_layout;
      bool isClosed;
+     QList<WeekDayItem* > *mondayItems;
+     QList<WeekDayItem* > *tuesdayItems;
+     QList<WeekDayItem* > *wednesdayItems;
+     QList<WeekDayItem* > *thursdayItems;
+     QList<WeekDayItem* > *fridayItems;
+     QList<WeekDayItem* > *saturdayItems;
+     QList<WeekDayItem* > *sundayItems;
+     QSettings *settings;
+     QString file;
 
     private slots:
      void getDate(QDate date);
      void setDate();
+     void getSortedAndActivatedDays();
+     void getNearestTime(QList<int> calculatedDay);
+     QList<QTime> getSortedTimes();
+     void loadSettings();
+     void saveToConfFile();
+     void monday_addTimeEditAndActionBox(int i);
+     void tuesday_addTimeEditAndActionBox(int i);
+     void wednesday_addTimeEditAndActionBox(int i);
+     void thursday_addTimeEditAndActionBox(int i);
+     void friday_addTimeEditAndActionBox(int i);
+     void saturday_addTimeEditAndActionBox(int i);
+     void sunday_addTimeEditAndActionBox(int i);
 
     signals:
      void aDateWasSet();

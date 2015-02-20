@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="tr">
+<TS version="2.1" language="tr">
 <context>
     <name>About</name>
     <message>
@@ -37,6 +37,18 @@
     <message>
         <source>Calendar</source>
         <translation>Takvim</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>activate weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please note that you might want to enable autostart and countdown at startup.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
