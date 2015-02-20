@@ -5,6 +5,7 @@ Changes in Release 1.7.0
  - added new shutdown/reboot/suspend/hibernate command (possibly
    working on most debian based systems, if supported/activated)
  - code cleanup
+ - added weekly to the calendar
  - fixed resizing problems in config menu
  - fixed issues after manual/automatic standby mode (not caused by
    qshutdown)

@@ -24,12 +24,12 @@
         <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Nutzt Qt&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Besonderen Dank an:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler für seine Hilfe hier und da.&lt;br /&gt;&lt;br /&gt;Und den Sponsor Brian Nelson für das Hochladen nach Debian.&lt;/p&gt;</translation>
-    </message>
-    <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2015, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
         <translation>&lt;p &gt;qshutdown, ein auf Uhrzeit und Countdown basierendes Werkzeug zum Herunterfahren&lt;/p&gt;&lt;p &gt;Autor: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2015 Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Bitte benutzen Sie &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; oder &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt;, um Problemberichte zu melden.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;br /&gt;&lt;br /&gt;As well as to Miquel Banchs i Piqué for the idea of implementing a routine allowing custom settings for each day of the week.&lt;/p&gt;</source>
+        <translation>&lt;p &gt;Besonderen Dank an:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler für seine Hilfe hier und da.&lt;br /&gt;&lt;br /&gt;Und den Sponsor Brian Nelson für das Hochladen nach Debian.&lt;br /&gt;&lt;br /&gt;Ebenso wie Miquel Banchs i Piqué für seine Idee eine Routine zu implementieren, die für jeden Tag eine eigene Einstellung erlaubt.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -40,15 +40,15 @@
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Wöchentlich</translation>
     </message>
     <message>
         <source>activate weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>aktiviere wöchentlich</translation>
     </message>
     <message>
         <source>Please note that you might want to enable autostart and countdown at startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es sei darauf hingewiesen, dass Sie den Autostart und den Countdown bei Programmstart vermutlich aktivieren möchten.</translation>
     </message>
 </context>
 <context>

@@ -145,7 +145,7 @@ void Preferences::setFocusToUserDef(){
 }
 
 void Preferences::enableUserDef1(){
-     if(shutdownM->currentIndex() == 6){
+     if(shutdownM->currentIndex() == (shutdownM->count()-1)){
        userDef1->setEnabled(true);
        userDef1->setFocus();
        if(userDef1->toPlainText() == userDef1S)
@@ -160,7 +160,7 @@ void Preferences::enableUserDef1(){
 }
 
 void Preferences::enableUserDef2(){
-     if(rebootM->currentIndex() == 6){
+     if(rebootM->currentIndex() == (rebootM->count()-1)){
        userDef2->setEnabled(true);
        userDef2->setFocus();
        if(userDef2->toPlainText() == userDef2S)
@@ -175,7 +175,7 @@ void Preferences::enableUserDef2(){
 }
 
 void Preferences::enableUserDef3(){
-     if(suspendM->currentIndex() == 5){
+     if(suspendM->currentIndex() == (suspendM->count()-1)){
        userDef3->setEnabled(true);
        userDef3->setFocus();
        if(userDef3->toPlainText() == userDef3S)
@@ -190,7 +190,7 @@ void Preferences::enableUserDef3(){
 }
 
 void Preferences::enableUserDef4(){
-     if(hibernateM->currentIndex() == 5){
+     if(hibernateM->currentIndex() == (hibernateM->count()-1)){
        userDef4->setEnabled(true);
        userDef4->setFocus();
        if(userDef4->toPlainText() == userDef4S)

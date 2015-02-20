@@ -3,6 +3,7 @@ shutdown-qapps (1.7.0-1) unstable; urgency=low
     working on most debian based systems, if supported/activated)
   * qshutdown
     - code cleanup
+    - added weekly to calendar
     - time is now displayed immediately when OK is pressed
     - added feature to hide system tray icon (because of placement issue
       in Unity.
@@ -10,7 +11,7 @@ shutdown-qapps (1.7.0-1) unstable; urgency=low
     - fixed issues after manual/automatic standby mode (not caused by
       qshutdown)
 
- -- Christian Metscher <hakaishi@web.de>  Tue, 20 Jan 2015 22:04:03 +0100
+ -- Christian Metscher <hakaishi@web.de>  Fri, 20 Feb 2015 20:19:16 +0100
 
 
 shutdown-qapps (1.6.8-1) unstable; urgency=low

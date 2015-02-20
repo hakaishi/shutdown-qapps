@@ -874,6 +874,9 @@ void Gui::loadSettings(){
          break;
        default:;
      }
+
+     if(settings.contains("Weekly_is_set") && settings.value("Weekly_is_set").toBool())
+       cal->setDate();
 }
 
 void Gui::lockEverything(bool actual){

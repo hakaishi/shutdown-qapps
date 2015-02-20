@@ -25,16 +25,16 @@
     </message>
     <message>
         <location filename="../about.cpp" line="28"/>
-        <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;/p&gt;</source>
-        <translation>&lt;p &gt;Особые благодарности:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler за содействие в разных вопросах.&lt;br /&gt;&lt;br /&gt;А также Brian Nelson за помощь в выгрузке в Debian. А также переводчикам: Andrey Olykainen, Oleg Koptev, ☠Jay ZDLin☠.&lt;/p&gt;</translation>
+        <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;br /&gt;&lt;br /&gt;As well as to Miquel Banchs i Piqué for the idea of implementing a routine allowing custom settings for each day of the week.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="32"/>
+        <location filename="../about.cpp" line="35"/>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2015, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
         <translation>&lt;p &gt;qshutdown позволяет осуществлять выключение по времени и обратному отсчёту&lt;/p&gt;&lt;p &gt;Автор: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Авторские права; 2010-2015, принадлежат Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Используйте &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; или &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; для отправки сообщений об ошибках.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="51"/>
+        <location filename="../about.cpp" line="54"/>
         <source>Version </source>
         <translation>Версия </translation>
     </message>
@@ -108,39 +108,39 @@
     <name>Gui</name>
     <message>
         <location filename="../ui/gui.ui" line="70"/>
-        <location filename="../gui.cpp" line="268"/>
-        <location filename="../gui.cpp" line="801"/>
+        <location filename="../gui.cpp" line="319"/>
+        <location filename="../gui.cpp" line="857"/>
         <source>Minutes till shutdown:</source>
         <translation>Минут до выключения:</translation>
     </message>
     <message>
         <location filename="../ui/gui.ui" line="118"/>
-        <location filename="../gui.cpp" line="267"/>
-        <location filename="../gui.cpp" line="800"/>
+        <location filename="../gui.cpp" line="318"/>
+        <location filename="../gui.cpp" line="856"/>
         <source>Shutdown-time:</source>
         <translation>Время выключения:</translation>
     </message>
     <message>
         <location filename="../ui/gui.ui" line="173"/>
-        <location filename="../weekdayitem.cpp" line="28"/>
+        <location filename="../weekdayitem.cpp" line="37"/>
         <source>Shutdown</source>
         <translation>Выключить</translation>
     </message>
     <message>
         <location filename="../ui/gui.ui" line="178"/>
-        <location filename="../weekdayitem.cpp" line="29"/>
+        <location filename="../weekdayitem.cpp" line="38"/>
         <source>Reboot</source>
         <translation>Перезагрузить</translation>
     </message>
     <message>
         <location filename="../ui/gui.ui" line="183"/>
-        <location filename="../weekdayitem.cpp" line="30"/>
+        <location filename="../weekdayitem.cpp" line="39"/>
         <source>Suspend</source>
         <translation>Режим ожидания</translation>
     </message>
     <message>
         <location filename="../ui/gui.ui" line="188"/>
-        <location filename="../weekdayitem.cpp" line="31"/>
+        <location filename="../weekdayitem.cpp" line="40"/>
         <source>Hibernate</source>
         <translation>Спящий режим</translation>
     </message>
@@ -151,8 +151,7 @@
     </message>
     <message>
         <location filename="../ui/gui.ui" line="205"/>
-        <location filename="../gui.cpp" line="246"/>
-        <location filename="../gui.cpp" line="871"/>
+        <location filename="../gui.cpp" line="931"/>
         <source>Calendar</source>
         <translation>Календарь</translation>
     </message>
@@ -178,12 +177,12 @@
     </message>
     <message>
         <location filename="../ui/gui.ui" line="290"/>
-        <location filename="../gui.cpp" line="441"/>
-        <location filename="../gui.cpp" line="442"/>
-        <location filename="../gui.cpp" line="466"/>
-        <location filename="../gui.cpp" line="475"/>
-        <location filename="../gui.cpp" line="476"/>
-        <location filename="../gui.cpp" line="874"/>
+        <location filename="../gui.cpp" line="492"/>
+        <location filename="../gui.cpp" line="493"/>
+        <location filename="../gui.cpp" line="517"/>
+        <location filename="../gui.cpp" line="526"/>
+        <location filename="../gui.cpp" line="527"/>
+        <location filename="../gui.cpp" line="934"/>
         <source>minutes</source>
         <translation>минуты</translation>
     </message>
@@ -215,13 +214,13 @@
     </message>
     <message>
         <location filename="../ui/gui.ui" line="453"/>
-        <location filename="../gui.cpp" line="94"/>
+        <location filename="../gui.cpp" line="97"/>
         <source>&amp;Quit</source>
         <translation>&amp;Закончить</translation>
     </message>
     <message>
         <location filename="../ui/gui.ui" line="458"/>
-        <location filename="../gui.cpp" line="95"/>
+        <location filename="../gui.cpp" line="98"/>
         <source>&amp;Info</source>
         <translation>&amp;Информация</translation>
     </message>
@@ -232,7 +231,7 @@
     </message>
     <message>
         <location filename="../ui/gui.ui" line="468"/>
-        <location filename="../gui.cpp" line="98"/>
+        <location filename="../gui.cpp" line="101"/>
         <source>&amp;Preferences</source>
         <translation>&amp;Настройки</translation>
     </message>
@@ -243,7 +242,7 @@
     </message>
     <message>
         <location filename="../ui/gui.ui" line="489"/>
-        <location filename="../gui.cpp" line="96"/>
+        <location filename="../gui.cpp" line="99"/>
         <source>&amp;Logfile</source>
         <translation>&amp;Журнал</translation>
     </message>
@@ -263,165 +262,165 @@
         <translation>Информация о &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="67"/>
+        <location filename="../gui.cpp" line="70"/>
         <source>Version </source>
         <translation>Версия </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="92"/>
-        <location filename="../gui.cpp" line="221"/>
+        <location filename="../gui.cpp" line="95"/>
+        <location filename="../gui.cpp" line="227"/>
         <source>&amp;Minimize</source>
         <translation>&amp;Свернуть</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="93"/>
+        <location filename="../gui.cpp" line="96"/>
         <source>R&amp;eset</source>
         <translation>С&amp;брос</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="101"/>
+        <location filename="../gui.cpp" line="104"/>
         <source>&amp;Shutdown</source>
         <translation>&amp;Выключение</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="103"/>
+        <location filename="../gui.cpp" line="106"/>
         <source>&amp;Reboot</source>
         <translation>&amp;Перезагрузка</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="105"/>
+        <location filename="../gui.cpp" line="108"/>
         <source>S&amp;uspend</source>
         <translation>&amp;Ожидание</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="107"/>
+        <location filename="../gui.cpp" line="110"/>
         <source>&amp;Hibernate</source>
         <translation>С&amp;пящий режим</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="132"/>
+        <location filename="../gui.cpp" line="135"/>
         <source>&amp;Minimize!</source>
         <translation>&amp;Свернуть!</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="271"/>
-        <location filename="../gui.cpp" line="805"/>
+        <location filename="../gui.cpp" line="322"/>
+        <location filename="../gui.cpp" line="861"/>
         <source>Reboot-time:</source>
         <translation>Время перезагрузки:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="272"/>
-        <location filename="../gui.cpp" line="806"/>
+        <location filename="../gui.cpp" line="323"/>
+        <location filename="../gui.cpp" line="862"/>
         <source>Minutes till reboot:</source>
         <translation>Минут до перезагрузки:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="275"/>
-        <location filename="../gui.cpp" line="810"/>
+        <location filename="../gui.cpp" line="326"/>
+        <location filename="../gui.cpp" line="866"/>
         <source>Suspend-time:</source>
         <translation>Время перехода в спящий режим:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="276"/>
-        <location filename="../gui.cpp" line="811"/>
+        <location filename="../gui.cpp" line="327"/>
+        <location filename="../gui.cpp" line="867"/>
         <source>Minutes till suspend:</source>
         <translation>Минут до перехода в спящий режим:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="279"/>
-        <location filename="../gui.cpp" line="815"/>
+        <location filename="../gui.cpp" line="330"/>
+        <location filename="../gui.cpp" line="871"/>
         <source>Hibernate-time:</source>
         <translation>Спящий режим-время:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="280"/>
-        <location filename="../gui.cpp" line="816"/>
+        <location filename="../gui.cpp" line="331"/>
+        <location filename="../gui.cpp" line="872"/>
         <source>Minutes till hibernate:</source>
         <translation>Минут до перехода в спящий режим:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="301"/>
+        <location filename="../gui.cpp" line="352"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="301"/>
+        <location filename="../gui.cpp" line="352"/>
         <source>Action imminent!</source>
         <translation>Событие приближается!</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="306"/>
+        <location filename="../gui.cpp" line="357"/>
         <source>Information</source>
         <translation>Информация</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="306"/>
+        <location filename="../gui.cpp" line="357"/>
         <source>Countdown is not running!</source>
         <translation>Обратный отсчёт не запущен!</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="373"/>
+        <location filename="../gui.cpp" line="424"/>
         <source>shutdown in </source>
         <translation>выключение через </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="375"/>
+        <location filename="../gui.cpp" line="426"/>
         <source>reboot in </source>
         <translation>перезагрузка через </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="377"/>
+        <location filename="../gui.cpp" line="428"/>
         <source>suspend in </source>
         <translation>переход в ждущий режим через </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="379"/>
+        <location filename="../gui.cpp" line="430"/>
         <source>hibernate in </source>
         <translation>переход в спящий режим через </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="390"/>
-        <location filename="../gui.cpp" line="391"/>
+        <location filename="../gui.cpp" line="441"/>
+        <location filename="../gui.cpp" line="442"/>
         <source>years</source>
         <translation>лет</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="398"/>
-        <location filename="../gui.cpp" line="399"/>
+        <location filename="../gui.cpp" line="449"/>
+        <location filename="../gui.cpp" line="450"/>
         <source>months</source>
         <translation>месяцев</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="408"/>
-        <location filename="../gui.cpp" line="409"/>
-        <location filename="../gui.cpp" line="427"/>
+        <location filename="../gui.cpp" line="459"/>
+        <location filename="../gui.cpp" line="460"/>
+        <location filename="../gui.cpp" line="478"/>
         <source>days</source>
         <translation>дней</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="423"/>
-        <location filename="../gui.cpp" line="429"/>
+        <location filename="../gui.cpp" line="474"/>
+        <location filename="../gui.cpp" line="480"/>
         <source>day</source>
         <translation>день</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="432"/>
-        <location filename="../gui.cpp" line="433"/>
-        <location filename="../gui.cpp" line="465"/>
-        <location filename="../gui.cpp" line="467"/>
+        <location filename="../gui.cpp" line="483"/>
+        <location filename="../gui.cpp" line="484"/>
+        <location filename="../gui.cpp" line="516"/>
+        <location filename="../gui.cpp" line="518"/>
         <source>hours</source>
         <translation>часов</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="452"/>
-        <location filename="../gui.cpp" line="453"/>
-        <location filename="../gui.cpp" line="484"/>
-        <location filename="../gui.cpp" line="485"/>
+        <location filename="../gui.cpp" line="503"/>
+        <location filename="../gui.cpp" line="504"/>
+        <location filename="../gui.cpp" line="535"/>
+        <location filename="../gui.cpp" line="536"/>
         <source>seconds</source>
         <translation>секунды</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="689"/>
+        <location filename="../gui.cpp" line="745"/>
         <source>Res&amp;tore</source>
         <translation>&amp;Восстановить</translation>
     </message>

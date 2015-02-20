@@ -56,7 +56,6 @@ class Calendar : public QDialog, public Ui::Calendar {
 
     private slots:
      void getDate(QDate date);
-     void setDate();
      void getSortedAndActivatedDays();
      void getNearestTime(QList<int> calculatedDay);
      QList<QTime> getSortedTimes();
@@ -69,6 +68,9 @@ class Calendar : public QDialog, public Ui::Calendar {
      void friday_addTimeEditAndActionBox(int i);
      void saturday_addTimeEditAndActionBox(int i);
      void sunday_addTimeEditAndActionBox(int i);
+
+    public slots:
+     void setDate();
 
     signals:
      void aDateWasSet();

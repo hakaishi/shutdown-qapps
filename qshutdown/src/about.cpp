@@ -28,7 +28,10 @@ About::About(QWidget *parent): QDialog(parent){
      textBrowser_2->setHtml(tr("<p >Special thanks to:<br /></p>"
                                "<p >Fabian Deuchler for helping here and "
                                "there.<br /><br />And Brian Nelson for "
-                               "sponsoring the uploads to Debian.</p>"));
+                               "sponsoring the uploads to Debian.<br /><br />"
+                               "As well as to Miquel Banchs i Piqué for the idea of "
+                               "implementing a routine allowing custom settings for "
+                               "each day of the week.</p>"));
      textBrowser->setText(tr("<p >qshutdown, a time and countdown based shutdown tool</p>"
                              "<p >Author: Christian Metscher &lt;hakaishi@web.de&gt;</p>"
                              "<p >Copyright &copy; 2010-2015, by Christian Metscher</p>"
