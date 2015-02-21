@@ -74,9 +74,6 @@
        </item>
        <item>
         <widget class="QScrollArea" name="scrollArea">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
@@ -88,8 +85,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>98</width>
-            <height>28</height>
+            <width>283</width>
+            <height>180</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -149,22 +146,6 @@
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>weekly</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>scrollArea</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>149</x>
-     <y>65</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>149</x>
-     <y>181</y>
     </hint>
    </hints>
   </connection>

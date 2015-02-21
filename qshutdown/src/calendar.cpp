@@ -26,6 +26,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      setupUi(this);
 
      isClosed = true;
+     scrollAreaWidgetContents->setDisabled(true);
 
      setWindowFlags(Qt::Window);
 
@@ -149,6 +150,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      verticalLayout_3->setSpacing(0);
 
      connect(calendarWidget, SIGNAL(clicked(QDate)), this, SLOT(getDate(QDate)));
+     connect(weekly, SIGNAL(toggled(bool)), scrollAreaWidgetContents, SLOT(setEnabled(bool)));
      connect(buttonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked(bool)), this, SLOT(setDate()));
      connect(buttonBox->button(QDialogButtonBox::Ok), SIGNAL(clicked(bool)), this, SLOT(saveToConfFile()));
      connect(mon->spin, SIGNAL(valueChanged(int)), this, SLOT(monday_addTimeEditAndActionBox(int)));
