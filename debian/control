@@ -11,7 +11,7 @@ Homepage: https://launchpad.net/~hakaishi
 Package: qprogram-starter
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Suggests: hibernate
+Suggests: hibernate, pm-utils
 Description: Qt program to start programs or commands
  qprogram-starter is a Qt program to start programs or commands. You can
  set a time or date when the processes should start, log error output
