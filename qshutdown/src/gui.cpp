@@ -818,7 +818,6 @@ void Gui::loadSettings(){
      font2->setPointSize(settings.value("Fonts/font2",fontS2).toInt());
      font3->setPointSize(settings.value("Fonts/font3",fontS3).toInt());
 
-
      radio1->setChecked(settings.value("CheckBoxes/target_time",false).toBool());
      radio2->setChecked(settings.value("CheckBoxes/countdown",true).toBool());
      lock->setChecked(settings.value("CheckBoxes/lock",true).toBool());
@@ -826,6 +825,9 @@ void Gui::loadSettings(){
      warnings->setChecked(settings.value("CheckBoxes/warnings",true).toBool());
      log_action->setChecked(settings.value("Logfile/logging",false).toBool());
      logFileSize = settings.value("Logfile/size",1.5).toDouble();
+
+     //if(settings.contains("Weekly_is_set") && settings.value("Weekly_is_set").toBool())
+       cal->setDate();
 
      if(settings.value("Time/countdown_at_startup",false).toBool()){
        set();
@@ -874,9 +876,6 @@ void Gui::loadSettings(){
          break;
        default:;
      }
-
-     if(settings.contains("Weekly_is_set") && settings.value("Weekly_is_set").toBool())
-       cal->setDate();
 }
 
 void Gui::lockEverything(bool actual){

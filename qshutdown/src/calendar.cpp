@@ -162,6 +162,8 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
 
      if(!QFile::exists(file))
        saveToConfFile();
+     else
+       loadSettings();
 
 }
 
