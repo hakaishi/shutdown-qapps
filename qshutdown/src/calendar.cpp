@@ -26,6 +26,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      setupUi(this);
 
      isClosed = true;
+     timeRunning = false;
 
      setWindowFlags(Qt::Window);
 
@@ -678,7 +679,8 @@ void Calendar::loadSettings(){
      resize(settings->value("MainWindow/size",QSize(325,360)).toSize());
      tabWidget->setCurrentIndex(settings->value("Calendar_or_weekly",0).toInt());
      weekly->setChecked(settings->value("Weekly_is_set", false).toBool());
-     scrollAreaWidgetContents->setEnabled(weekly->isChecked());
+     if(!timeRunning)
+       scrollAreaWidgetContents->setEnabled(weekly->isChecked());
      mon->spin->setValue(settings->value("Monday/number_of_times",0).toInt());
      mon1->timeEdit->setTime(QTime::fromString(settings->value("Monday/time_1","22:00:00").toString(), "hh:mm:ss"));
      mon2->timeEdit->setTime(QTime::fromString(settings->value("Monday/time_2","22:00:00").toString(), "hh:mm:ss"));

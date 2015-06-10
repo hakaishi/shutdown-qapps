@@ -109,14 +109,14 @@
     <message>
         <location filename="../ui/gui.ui" line="70"/>
         <location filename="../gui.cpp" line="319"/>
-        <location filename="../gui.cpp" line="857"/>
+        <location filename="../gui.cpp" line="859"/>
         <source>Minutes till shutdown:</source>
         <translation>Минут до выключения:</translation>
     </message>
     <message>
         <location filename="../ui/gui.ui" line="118"/>
         <location filename="../gui.cpp" line="318"/>
-        <location filename="../gui.cpp" line="856"/>
+        <location filename="../gui.cpp" line="858"/>
         <source>Shutdown-time:</source>
         <translation>Время выключения:</translation>
     </message>
@@ -151,7 +151,7 @@
     </message>
     <message>
         <location filename="../ui/gui.ui" line="205"/>
-        <location filename="../gui.cpp" line="931"/>
+        <location filename="../gui.cpp" line="930"/>
         <source>Calendar</source>
         <translation>Календарь</translation>
     </message>
@@ -182,7 +182,7 @@
         <location filename="../gui.cpp" line="517"/>
         <location filename="../gui.cpp" line="526"/>
         <location filename="../gui.cpp" line="527"/>
-        <location filename="../gui.cpp" line="934"/>
+        <location filename="../gui.cpp" line="933"/>
         <source>minutes</source>
         <translation>минуты</translation>
     </message>
@@ -304,37 +304,37 @@
     </message>
     <message>
         <location filename="../gui.cpp" line="322"/>
-        <location filename="../gui.cpp" line="861"/>
+        <location filename="../gui.cpp" line="863"/>
         <source>Reboot-time:</source>
         <translation>Время перезагрузки:</translation>
     </message>
     <message>
         <location filename="../gui.cpp" line="323"/>
-        <location filename="../gui.cpp" line="862"/>
+        <location filename="../gui.cpp" line="864"/>
         <source>Minutes till reboot:</source>
         <translation>Минут до перезагрузки:</translation>
     </message>
     <message>
         <location filename="../gui.cpp" line="326"/>
-        <location filename="../gui.cpp" line="866"/>
+        <location filename="../gui.cpp" line="868"/>
         <source>Suspend-time:</source>
         <translation>Время перехода в спящий режим:</translation>
     </message>
     <message>
         <location filename="../gui.cpp" line="327"/>
-        <location filename="../gui.cpp" line="867"/>
+        <location filename="../gui.cpp" line="869"/>
         <source>Minutes till suspend:</source>
         <translation>Минут до перехода в спящий режим:</translation>
     </message>
     <message>
         <location filename="../gui.cpp" line="330"/>
-        <location filename="../gui.cpp" line="871"/>
+        <location filename="../gui.cpp" line="873"/>
         <source>Hibernate-time:</source>
         <translation>Спящий режим-время:</translation>
     </message>
     <message>
         <location filename="../gui.cpp" line="331"/>
-        <location filename="../gui.cpp" line="872"/>
+        <location filename="../gui.cpp" line="874"/>
         <source>Minutes till hibernate:</source>
         <translation>Минут до перехода в спящий режим:</translation>
     </message>

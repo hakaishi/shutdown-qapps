@@ -417,7 +417,7 @@ void Gui::keyPressEvent(QKeyEvent *kEvent){
 }
 
 void Gui::updateT(){
-     QDate myDate = QDate::currentDate();
+     QDateTime myDate = QDateTime::currentDateTime();
      QString tip1, tip2;
 
      if(shutdown_action->isChecked())
@@ -429,44 +429,44 @@ void Gui::updateT(){
      if(hibernate_action->isChecked())
        tip1 = (tr("hibernate in "));
 
-     if(myDate.daysTo(futureDateTime.date()) < 0){ //reset if targeted date is already in the past.
+     if(myDate.date().daysTo(futureDateTime.date()) < 0){ //reset if targeted date is already in the past.
        reset();
        return;
      } //end
 
-     if(myDate.daysTo(futureDateTime.date()) > 1){ //if the date difference between today and the selected day
+     if(myDate.date().daysTo(futureDateTime.date()) > 1){ //if the date difference between today and the selected day
                                                            //in the calendar is greater than one
      //if more than one year
-       if(myDate.daysTo(futureDateTime.date()) > myDate.daysInYear()){
-         tip2 = (QString::number(myDate.daysTo(futureDateTime.date())/myDate.daysInYear()) + " " + tr("years"));
+       if(myDate.date().daysTo(futureDateTime.date()) > myDate.date().daysInYear()){
+         tip2 = (QString::number(myDate.date().daysTo(futureDateTime.date())/myDate.date().daysInYear()) + " " + tr("years"));
          lcdL->setText(tr("years"));
          lcd->setDigitCount(4);
-         lcd->display((double)myDate.daysTo(futureDateTime.date())/myDate.daysInYear());
+         lcd->display((double)myDate.date().daysTo(futureDateTime.date())/myDate.date().daysInYear());
        }
      //if more than one month
-       if(myDate.daysTo(futureDateTime.date()) > myDate.daysInMonth()
-           && myDate.daysTo(futureDateTime.date()) <= myDate.daysInYear()){
-         tip2 = (QString::number(myDate.daysTo(futureDateTime.date())/myDate.daysInMonth()) + " " + tr("months"));
+       if(myDate.date().daysTo(futureDateTime.date()) > myDate.date().daysInMonth()
+           && myDate.date().daysTo(futureDateTime.date()) <= myDate.date().daysInYear()){
+         tip2 = (QString::number(myDate.date().daysTo(futureDateTime.date())/myDate.date().daysInMonth()) + " " + tr("months"));
          lcdL->setText(tr("months"));
-         if((double)myDate.daysTo(futureDateTime.date())/myDate.daysInMonth() >= 10)
+         if((double)myDate.date().daysTo(futureDateTime.date())/myDate.date().daysInMonth() >= 10)
            lcd->setDigitCount(4);
          else
            lcd->setDigitCount(3);
-         lcd->display((double)myDate.daysTo(futureDateTime.date())/myDate.daysInMonth());
+         lcd->display((double)myDate.date().daysTo(futureDateTime.date())/myDate.date().daysInMonth());
        }
      //if less than days in Month
-       if(myDate.daysTo(futureDateTime.date()) <= myDate.daysInMonth()){
-         tip2 = (QString::number(myDate.daysTo(futureDateTime.date())) + " " + tr("days"));
+       if(myDate.date().daysTo(futureDateTime.date()) <= myDate.date().daysInMonth()){
+         tip2 = (QString::number(myDate.date().daysTo(futureDateTime.date())) + " " + tr("days"));
          lcdL->setText(tr("days"));
-         if((double)myDate.daysTo(futureDateTime.date()) >= 10)
+         if((double)myDate.date().daysTo(futureDateTime.date()) >= 10)
            lcd->setDigitCount(4);
          else
            lcd->setDigitCount(3);
-         lcd->display((double)myDate.daysTo(futureDateTime.date()));
+         lcd->display((double)myDate.date().daysTo(futureDateTime.date()));
        }
      } //end of year/month
 
-     if(myDate.daysTo(futureDateTime.date()) == 1){ //if there is one more day to go
+     if(myDate.date().daysTo(futureDateTime.date()) == 1){ //if there is one more day to go
        if(!Time())
          return;
 
@@ -505,7 +505,7 @@ void Gui::updateT(){
          lcd->display(i);
        }
      }
-     if(myDate.daysTo(futureDateTime.date()) == 0){
+     if(myDate.date().daysTo(futureDateTime.date()) == 0){
        if(!Time())
          return;
 
@@ -546,30 +546,30 @@ void Gui::updateT(){
 }
 
 void Gui::set(){
-     QDateTime date;
-     date.setDate(QDate::currentDate()); //initializing date
+     QDateTime dateTime = QDateTime(QDate::currentDate(), QTime::currentTime(), Qt::LocalTime);
+     futureDateTime = dateTime; //initializing
      timeRunning = true;
+     cal->timeRunning = true;
      ti->stop();
      bool noCalendarDate = cal->setCalendarDate.isNull();
      bool noWeeklyDate = cal->setWeeklyDate.isNull();
      if(!noCalendarDate)
-       date = cal->setCalendarDate;
+       dateTime = cal->setCalendarDate;
      if(!noWeeklyDate)
-       date = cal->setWeeklyDate;
-     QTime localTime = QTime::currentTime();
+       dateTime = cal->setWeeklyDate;
 
      if(noWeeklyDate){
        if(radio2->isChecked()) //if minute-countdown
-         futureDateTime = QDateTime(date.date(),localTime.addSecs(spin->value()*60),Qt::LocalTime);
+         futureDateTime = dateTime.addSecs(spin->value()*60);
        if(radio1->isChecked()){ //if timeEdit
-         if(QDateTime(date.date(),timeEdit->time()) > (QDateTime(QDate::currentDate(),localTime))) //set time is greater than current time
-           futureDateTime = QDateTime(date.date(),timeEdit->time(),Qt::LocalTime);
-         if(noCalendarDate && (timeEdit->time() <= localTime))
-           futureDateTime = QDateTime(date.date().addDays(1),timeEdit->time(),Qt::LocalTime); //add 1 day
+         if(QDateTime(dateTime.date(),timeEdit->time()) > (QDateTime(QDate::currentDate(),dateTime.time()))) //set time is greater than current time
+           futureDateTime = QDateTime(dateTime.date(),timeEdit->time(),Qt::LocalTime);
+         if(noCalendarDate && (timeEdit->time() <= dateTime.time()))
+           futureDateTime = QDateTime(dateTime.date().addDays(1),timeEdit->time(),Qt::LocalTime); //add 1 day
        }
      }
      if(!noWeeklyDate)
-       futureDateTime = date; //the time can't be in the past. See calendar.cpp
+       futureDateTime.setDate(dateTime.date()); //the time can't be in the past. See calendar.cpp
 
      updateT(); //Just updating time/interface for immediate display of remaining time.
      timer->start(1000); //Update time/interface every second
@@ -939,6 +939,7 @@ void Gui::reset(){
      if(!ti->isActive())
        ti->start(30000);
      timeRunning = false;
+     cal->timeRunning = false;
      minim->hide();
      ok->show();
      pref->tab2->setEnabled(true);

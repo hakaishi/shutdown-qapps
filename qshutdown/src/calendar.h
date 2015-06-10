@@ -29,6 +29,7 @@ class Calendar : public QDialog, public Ui::Calendar {
     public:
      Calendar(QWidget *parent = 0);
      ~Calendar();
+     bool timeRunning;
      QDateTime setCalendarDate, calendarDate, setWeeklyDate;
      bool getClosed();
      WeekDay     *mon, *tue, *wed, *thu, *fri,

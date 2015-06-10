@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="bg">
+<TS version="2.0" language="bg">
 <context>
     <name>About</name>
     <message>
@@ -587,11 +587,11 @@ Maybe you just don&apos;t have the permissions to do so.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>خاتالىق</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Please read this carefully!</source>
-        <translation> بۇنى تەپسىلىي ئوقۇڭ !</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Welcome to qshutdown!
