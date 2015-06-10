@@ -47,9 +47,9 @@ class Gui : public QMainWindow, public Ui::Gui {
      void loadSettings();
      void center();
      QString information;
-     bool            timeRunning;
  
     private:
+     bool            timeRunning;
      bool            aWeeklyTimeWasSet;
      QPushButton     *minim;
      QTimer          *timer, *ti;
