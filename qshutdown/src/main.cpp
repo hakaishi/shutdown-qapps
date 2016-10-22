@@ -93,21 +93,25 @@ int main(int argc, char *argv[]){
      if(!args.empty()){
        QString arg = args[0];
        if(arg[0] == '-'){
-         if(arg.contains("h") || args.contains("--help"))
+         if(arg[1] == 'h' || arg == "--help")
            myOutput << "\nqshutdown [ options ... ]\n\nOptions are:\n\t-h "
                     << "or --help\tPrints this message.\n\t-i\t\tPrints "
                     << "information.\n\t-v\t\tPrints all errors and warnings.\n"
+                    << "\t-s or --start\tStarts the countdown for the set time."
                     << endl;
-         if(arg.contains("i"))
+         if(arg[1] == 'i')
            myOutput << info << endl;
        }
-       if(!((arg[0] == '-') && (arg.contains("h") || args.contains("-help")
-          || arg.contains("i") || arg.contains("v"))))
+       if(arg != "-h" && arg != "--help" && arg != "-i"
+        && !((arg[0] == '-' && (arg.contains("s") || arg.contains("v")))
+          || args.contains("--start")))
          myOutput << "Wrong options! Try qshutdown -h" << endl;
-       if(args.first() == "-v")
+       if(arg.contains("-") && arg.contains("-v"))
          verbose = true;
      }
-     if(!args.empty() && !(args.first() == "-v"))
+
+     if(!args.empty() && !((args[0][0] == '-' && (args[0].contains("v")
+       || args[0].contains("s"))) || args.contains("--start")))
        exit(0);
 
      Gui window; //Create the main widget
@@ -123,6 +127,9 @@ int main(int argc, char *argv[]){
          window.center();
          window.show();
          app.setQuitOnLastWindowClosed(false);
+         if(!args.empty() && ((args[0][0] == '-' && args[0].contains("s"))
+           || args.contains("--start")))
+           window.set();
 
          return app.exec();
 
@@ -146,7 +153,16 @@ int main(int argc, char *argv[]){
              myOutput << "QDBusInterface " << iface2.interface() << " seems to be valid... -> "
                       << (iface2.isValid()? "true":"false") << "\nW: " << response2.errorName()
                       << ": " << response2.errorMessage() << "\nPlease report this." << endl;
+           else if(!args.empty() && ((args[0][0] == '-' && args[0].contains("s"))
+             || args.contains("--start")))
+             iface2.call("set");
          }
+         else if(!args.empty() && ((args[0][0] == '-' && args[0].contains("s"))
+           || args.contains("--start")))
+           iface.call("set");
        }
+       if(!args.empty() && ((args[0][0] == '-' && args[0].contains("s"))
+           || args.contains("--start")))
+           myOutput << "Starting countdown!\n";
      #endif //Q_OS_WIN32
 }

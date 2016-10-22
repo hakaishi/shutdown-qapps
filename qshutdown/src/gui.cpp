@@ -45,7 +45,7 @@ Gui::Gui(){
      oldComboBoxIndex = comboBox->currentIndex();
      oldTime = timeEdit->time();
 
-     datetime = QDateTime::currentDateTime();
+     datetime = QDateTime::currentDateTimeUtc();
      elapsedTime.start();
 
    //Preferences
@@ -254,8 +254,10 @@ void Gui::saveOldComboBoxIndex(int i){
 }
 
 void Gui::setDate(){
-     if(!cal->weekly->isChecked() && !timeRunning)
-       toolButton->setText(cal->setCalendarDate.date().toString(Qt::SystemLocaleShortDate));
+     if(!cal->weekly->isChecked() && !timeRunning) {
+       if(cal->setCalendarDate.date() != QDate())
+         toolButton->setText(cal->setCalendarDate.date().toString(Qt::SystemLocaleShortDate));
+     }
      else if(!cal->setWeeklyDate.time().isNull() && !timeRunning){
        toolButton->setText(cal->setWeeklyDate.date().toString("ddd"));
        aWeeklyTimeWasSet = true;
@@ -265,17 +267,17 @@ void Gui::setDate(){
        QList<WeekDayItem *> item; // get the objects of the matching day
        if(myTime.date().dayOfWeek() == Qt::Monday)
          item << cal->mon1 << cal->mon2 << cal->mon3 << cal->mon4 << cal->mon5;
-       if(myTime.date().dayOfWeek() == Qt::Tuesday)
+       else if(myTime.date().dayOfWeek() == Qt::Tuesday)
          item << cal->tue1 << cal->tue2 << cal->tue3 << cal->tue4 << cal->tue5;
-       if(myTime.date().dayOfWeek() == Qt::Wednesday)
+       else if(myTime.date().dayOfWeek() == Qt::Wednesday)
          item << cal->wed1 << cal->wed2 << cal->wed3 << cal->wed4 << cal->wed5;
-       if(myTime.date().dayOfWeek() == Qt::Thursday)
+       else if(myTime.date().dayOfWeek() == Qt::Thursday)
          item << cal->thu1 << cal->thu2 << cal->thu3 << cal->thu4 << cal->thu5;
-       if(myTime.date().dayOfWeek() == Qt::Friday)
+       else if(myTime.date().dayOfWeek() == Qt::Friday)
          item << cal->fri1 << cal->fri2 << cal->fri3 << cal->fri4 << cal->fri5;
-       if(myTime.date().dayOfWeek() == Qt::Saturday)
+       else if(myTime.date().dayOfWeek() == Qt::Saturday)
          item << cal->sat1 << cal->sat2 << cal->sat3 << cal->sat4 << cal->sat5;
-       if(myTime.date().dayOfWeek() == Qt::Sunday)
+       else if(myTime.date().dayOfWeek() == Qt::Sunday)
          item << cal->sun1 << cal->sun2 << cal->sun3 << cal->sun4 << cal->sun5;
        while(item[0]->timeEdit->time() != myTime.time()) //get the correct time from the object
          item.removeAt(0); //just leave the matching time
@@ -293,7 +295,14 @@ void Gui::setDate(){
           timeEdit->setTime(oldTime);
           comboBox->setCurrentIndex(oldComboBoxIndex);
           aWeeklyTimeWasSet = false;
-	     reset();
+          radio2->setDisabled(false);
+          radio1->setDisabled(false);
+          if(radio1->isChecked())
+            timeEdit->setDisabled(false);
+          else
+            spin->setDisabled(false);
+          comboBox->setDisabled(false);
+          toolButton->setText(tr("Calendar"));
        }
 }
 
@@ -417,56 +426,58 @@ void Gui::keyPressEvent(QKeyEvent *kEvent){
 }
 
 void Gui::updateT(){
-     QDateTime myDate = QDateTime::currentDateTime();
+     QDateTime myDate = QDateTime::currentDateTimeUtc();
      QString tip1, tip2;
 
      if(shutdown_action->isChecked())
        tip1 = (tr("shutdown in "));
-     if(reboot_action->isChecked())
+     else if(reboot_action->isChecked())
        tip1 = (tr("reboot in "));
-     if(suspend_action->isChecked())
+     else if(suspend_action->isChecked())
        tip1 = (tr("suspend in "));
-     if(hibernate_action->isChecked())
+     else if(hibernate_action->isChecked())
        tip1 = (tr("hibernate in "));
 
-     if(myDate.date().daysTo(futureDateTime.date()) < 0){ //reset if targeted date is already in the past.
+     int dayDiff = myDate.date().daysTo(futureDateTime.date());
+
+     if(dayDiff < 0){ //reset if targeted date is already in the past.
        reset();
        return;
      } //end
 
-     if(myDate.date().daysTo(futureDateTime.date()) > 1){ //if the date difference between today and the selected day
+     else if(dayDiff > 1){ //if the date difference between today and the selected day
                                                            //in the calendar is greater than one
      //if more than one year
-       if(myDate.date().daysTo(futureDateTime.date()) > myDate.date().daysInYear()){
-         tip2 = (QString::number(myDate.date().daysTo(futureDateTime.date())/myDate.date().daysInYear()) + " " + tr("years"));
+       if(dayDiff > myDate.date().daysInYear()){
+         tip2 = (QString::number(dayDiff/myDate.date().daysInYear()) + " " + tr("years"));
          lcdL->setText(tr("years"));
          lcd->setDigitCount(4);
-         lcd->display((double)myDate.date().daysTo(futureDateTime.date())/myDate.date().daysInYear());
+         lcd->display((double)dayDiff/myDate.date().daysInYear());
        }
      //if more than one month
-       if(myDate.date().daysTo(futureDateTime.date()) > myDate.date().daysInMonth()
-           && myDate.date().daysTo(futureDateTime.date()) <= myDate.date().daysInYear()){
-         tip2 = (QString::number(myDate.date().daysTo(futureDateTime.date())/myDate.date().daysInMonth()) + " " + tr("months"));
+       else if(dayDiff > myDate.date().daysInMonth()
+           && dayDiff <= myDate.date().daysInYear()){
+         tip2 = (QString::number(dayDiff/myDate.date().daysInMonth()) + " " + tr("months"));
          lcdL->setText(tr("months"));
-         if((double)myDate.date().daysTo(futureDateTime.date())/myDate.date().daysInMonth() >= 10)
+         if((double)dayDiff/myDate.date().daysInMonth() >= 10)
            lcd->setDigitCount(4);
          else
            lcd->setDigitCount(3);
-         lcd->display((double)myDate.date().daysTo(futureDateTime.date())/myDate.date().daysInMonth());
+         lcd->display((double)dayDiff/myDate.date().daysInMonth());
        }
      //if less than days in Month
-       if(myDate.date().daysTo(futureDateTime.date()) <= myDate.date().daysInMonth()){
-         tip2 = (QString::number(myDate.date().daysTo(futureDateTime.date())) + " " + tr("days"));
+       else if(dayDiff <= myDate.date().daysInMonth()){
+         tip2 = (QString::number(dayDiff) + " " + tr("days"));
          lcdL->setText(tr("days"));
-         if((double)myDate.date().daysTo(futureDateTime.date()) >= 10)
+         if((double)dayDiff >= 10)
            lcd->setDigitCount(4);
          else
            lcd->setDigitCount(3);
-         lcd->display((double)myDate.date().daysTo(futureDateTime.date()));
+         lcd->display((double)dayDiff);
        }
      } //end of year/month
 
-     if(myDate.date().daysTo(futureDateTime.date()) == 1){ //if there is one more day to go
+     else if(dayDiff == 1){ //if there is one more day to go
        if(!Time())
          return;
 
@@ -479,7 +490,7 @@ void Gui::updateT(){
          else
            lcdL->setText(tr("day"));
        }
-       if(i<86400 && i>3600){ //if there is less than one day, show hours
+       else if(i<86400 && i>3600){ //if there is less than one day, show hours
          tip2 = (QString::number(i/3600) + " " + tr("hours"));
          lcdL->setText(tr("hours"));
          if(bigI/3600 >= 10)
@@ -488,7 +499,7 @@ void Gui::updateT(){
            lcd->setDigitCount(3);
          lcd->display(bigI/3600);
        }
-       if(i<=3600 && i>60){ //if less than one hour
+       else if(i<=3600 && i>60){ //if less than one hour
          tip2 = (QString::number(i/60) + " " + tr("minutes"));
          lcdL->setText(tr("minutes"));
          if(bigI/60 >= 10){
@@ -499,13 +510,13 @@ void Gui::updateT(){
            lcd->setDigitCount(3);
          lcd->display(bigI/60);
        }
-       if(i<=60){
+       else if(i<=60){
          tip2 = (QString::number(i) + " " + tr("seconds"));
          lcdL->setText(tr("seconds"));
          lcd->display(i);
        }
      }
-     if(myDate.date().daysTo(futureDateTime.date()) == 0){
+     else if(dayDiff == 0){
        if(!Time())
          return;
 
@@ -522,7 +533,7 @@ void Gui::updateT(){
            lcd->setDigitCount(3);
          lcd->display(bigI/3600);
        }
-       if(i<=3600 && i>=60){ //Display only minutes
+       else if(i<=3600 && i>=60){ //Display only minutes
          tip2 = (QString::number(i/60) + " " + tr("minutes"));
          lcdL->setText(tr("minutes"));
          if(bigI/60 >= 10)
@@ -531,14 +542,14 @@ void Gui::updateT(){
            lcd->setDigitCount(3);
          lcd->display(bigI/60);
        }
-       if(i<=60){ //Display only seconds
+       else if(i<=60){ //Display only seconds
          tip2 = (QString::number(i) + " " + tr("seconds"));
          lcdL->setText(tr("seconds"));
          lcd->display(i);
        }
 
      //this will ensure that the shutdown-type will be executed in case a few seconds were skipped
-       if((i<=0) && !(i<-n))
+       else if((i<=0) && !(i<-n))
          finished_(); //execute shutdown-type
      }
      setWindowTitle(tip1 + tip2);
@@ -546,7 +557,7 @@ void Gui::updateT(){
 }
 
 void Gui::set(){
-     QDateTime dateTime = QDateTime(QDate::currentDate(), QTime::currentTime(), Qt::LocalTime);
+     QDateTime dateTime = QDateTime::currentDateTime();
      futureDateTime = dateTime; //initializing
      timeRunning = true;
      cal->timeRunning = true;
@@ -554,22 +565,21 @@ void Gui::set(){
      bool noCalendarDate = cal->setCalendarDate.isNull();
      bool noWeeklyDate = cal->setWeeklyDate.isNull();
      if(!noCalendarDate)
-       dateTime = cal->setCalendarDate;
+       futureDateTime = cal->setCalendarDate;
      if(!noWeeklyDate)
-       dateTime = cal->setWeeklyDate;
+       futureDateTime = cal->setWeeklyDate;
 
      if(noWeeklyDate){
+       futureDateTime.setTime(dateTime.time());
        if(radio2->isChecked()) //if minute-countdown
-         futureDateTime = dateTime.addSecs(spin->value()*60);
-       if(radio1->isChecked()){ //if timeEdit
-         if(QDateTime(dateTime.date(),timeEdit->time()) > (QDateTime(QDate::currentDate(),dateTime.time()))) //set time is greater than current time
-           futureDateTime = QDateTime(dateTime.date(),timeEdit->time(),Qt::LocalTime);
-         if(noCalendarDate && (timeEdit->time() <= dateTime.time()))
-           futureDateTime = QDateTime(dateTime.date().addDays(1),timeEdit->time(),Qt::LocalTime); //add 1 day
+         futureDateTime = futureDateTime.addSecs(spin->value()*60);
+       else if(radio1->isChecked()){ //if timeEdit
+         if(QDateTime(futureDateTime.date(),timeEdit->time(), Qt::LocalTime) > dateTime) //set time is greater than current time
+           futureDateTime = QDateTime(futureDateTime.date(),timeEdit->time(),Qt::LocalTime);
+         else if(noCalendarDate && (timeEdit->time() <= dateTime.time()))
+           futureDateTime = QDateTime(futureDateTime.date().addDays(1),timeEdit->time(),Qt::LocalTime); //add 1 day
        }
      }
-     if(!noWeeklyDate)
-       futureDateTime.setDate(dateTime.date()); //the time can't be in the past. See calendar.cpp
 
      updateT(); //Just updating time/interface for immediate display of remaining time.
      timer->start(1000); //Update time/interface every second
@@ -604,11 +614,11 @@ void Gui::set(){
 }
 
 bool Gui::Time(){
-     localDateTime = QDateTime::currentDateTime();
+     localDateTime = QDateTime::currentDateTimeUtc();
      QDateTime futureDateTime10s = futureDateTime; //adding n (10 seconds) in case of hardware delay.
      futureDateTime10s.addSecs(n);
 
-     if(QDateTime::currentDateTime() > futureDateTime10s){ //if targeted time for action is
+     if(QDateTime::currentDateTimeUtc() > futureDateTime10s){ //if targeted time for action is
                           //already over 10 seconds in the past.
        reset();
        return false;
@@ -914,6 +924,14 @@ void Gui::lockEverything(bool actual){
        reset_action->setDisabled(true);
        action_Reset->setDisabled(true);
      }
+     
+     if(aWeeklyTimeWasSet){
+       radio1->setChecked(true);
+       radio2->setDisabled(true);
+       radio1->setDisabled(true);
+       timeEdit->setDisabled(true);
+       comboBox->setDisabled(true);
+     }
 
 /*   if(actual){
        if(!parentalLockL->isVisible())
@@ -927,7 +945,8 @@ void Gui::reset(){
      timer->stop();
      cal->setWeeklyDate = QDateTime();
      setWindowTitle("'qshutdown'");
-     toolButton->setText(tr("Calendar"));
+     if(!aWeeklyTimeWasSet)
+       toolButton->setText(tr("Calendar"));
      lcd->display(0);
      TIcon->setToolTip(NULL);
      lcdL->setText(tr("minutes"));

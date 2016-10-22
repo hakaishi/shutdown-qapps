@@ -9,3 +9,6 @@ override_dh_clean:
 	rm -f ./qshutdown/src/translations/*.qm
 	rm -f ./qprogram-starter/src/translations/*.qm
 	dh_clean
+
+override_dh_auto_configure:
+       dh_auto_configure -- $(shell dpkg-buildflags --export=configure)

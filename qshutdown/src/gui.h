@@ -84,7 +84,6 @@ class Gui : public QMainWindow, public Ui::Gui {
      void warnings_on();
      void iconActivated(QSystemTrayIcon::ActivationReason reason);
      void showW();
-     void set();
      void updateT();
      bool Time();
      void power_action(int action);
@@ -106,6 +105,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      void hideTrayIcon(bool dontShowTray);
     public slots:
      Q_SCRIPTABLE void showRunningProgram();
+     Q_SCRIPTABLE void set();
     protected:
      void keyPressEvent(QKeyEvent* kEvent);
      virtual void closeEvent(QCloseEvent* window_close);
