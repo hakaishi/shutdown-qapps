@@ -441,6 +441,7 @@ void Gui::updateT(){
      int dayDiff = myDate.date().daysTo(futureDateTime.date());
 
      if(dayDiff < 0){ //reset if targeted date is already in the past.
+        qDebug()<<"hallo";
        reset();
        return;
      } //end
@@ -542,7 +543,7 @@ void Gui::updateT(){
            lcd->setDigitCount(3);
          lcd->display(bigI/60);
        }
-       else if(i<=60){ //Display only seconds
+       else if(i<=60 && i > 0){ //Display only seconds
          tip2 = (QString::number(i) + " " + tr("seconds"));
          lcdL->setText(tr("seconds"));
          lcd->display(i);
@@ -621,6 +622,7 @@ bool Gui::Time(){
      if(QDateTime::currentDateTimeUtc() > futureDateTime10s){ //if targeted time for action is
                           //already over 10 seconds in the past.
        reset();
+       qDebug()<<"hallo2";
        return false;
      }
      else{
@@ -686,65 +688,83 @@ void Gui::finished_(){
        reset();
      switch(comboBox->currentIndex()){
        case 0:
-         if(pref->shutdownM->currentIndex()==0) { Power::automatic = true; }
-         if(pref->shutdownM->currentIndex()==1) { Power::login1 = true; }
-         if(pref->shutdownM->currentIndex()==2) { Power::gnome = true; }
-         if(pref->shutdownM->currentIndex()==3) { Power::kde = true; }
-         if(pref->shutdownM->currentIndex()==4) { Power::hal_ = true; }
-         if(pref->shutdownM->currentIndex()==5) { Power::consolekit = true; }
-         if(pref->shutdownM->currentIndex()==6) { Power::sudo = true; }
-         if(pref->shutdownM->currentIndex()==7) {
-           Power::user = true;
-           Power::myShutdown = pref->myShutdown;
+       case 1:
+         switch(pref->shutdownM->currentIndex()){
+            case 0:
+                Power::automatic = true;
+                break;
+            case 1:
+                Power::login1 = true;
+                break;
+            case 2:
+                Power::gnome = true;
+                break;
+            case 3:
+                Power::kde = true;
+                break;
+            case 4:
+                Power::hal_ = true;
+                break;
+            case 5:
+                Power::consolekit = true;
+                break;
+            case 6:
+                Power::sudo = true;
+                break;
+            case 7:
+                Power::user = true;
+                if(comboBox->currentIndex() == 0)
+                    Power::myShutdown = pref->myShutdown;
+                else if(comboBox->currentIndex() == 1)
+                    Power::myReboot = pref->myReboot;
+                break;
+            default:;
          }
          saveLog();
+         if(comboBox->currentIndex() == 0)
+            Power::shutdown();
+         else if(comboBox->currentIndex() == 1)
+            Power::reboot();
          Power::shutdown();
          break;
-       case 1:
-         if(pref->rebootM->currentIndex()==0) { Power::automatic = true; }
-         if(pref->rebootM->currentIndex()==1) { Power::login1 = true; }
-         if(pref->rebootM->currentIndex()==2) { Power::gnome = true; }
-         if(pref->rebootM->currentIndex()==3) { Power::kde = true; }
-         if(pref->rebootM->currentIndex()==4) { Power::hal_ = true; }
-         if(pref->rebootM->currentIndex()==5) { Power::consolekit = true; }
-         if(pref->rebootM->currentIndex()==6) { Power::sudo = true; }
-         if(pref->rebootM->currentIndex()==7) {
-           Power::user = true;
-           Power::myReboot = pref->myReboot;
-         }
-         saveLog();
-         Power::reboot();
-         break;
        case 2:
-         if(pref->suspendM->currentIndex()==0) { Power::automatic = true; }
-         if(pref->suspendM->currentIndex()==1) { Power::login1 = true; }
-         if(pref->suspendM->currentIndex()==2) { Power::gnome = true; }
-         if(pref->suspendM->currentIndex()==3) { Power::hal_ = true; }
-         if(pref->suspendM->currentIndex()==4) { Power::upower_ = true; }
-         if(pref->suspendM->currentIndex()==5) { Power::devicekit = true; }
-         if(pref->suspendM->currentIndex()==6) {
-           Power::user = true;
-           Power::mySuspend = pref->mySuspend;
-         }
-         if(pref->lockMyScreen){ Power::lockMyScreen = true; }
-         else Power::lockMyScreen = false;
-         Power::suspend();
-         break;
        case 3:
-         if(pref->hibernateM->currentIndex()==0) { Power::automatic = true; }
-         if(pref->hibernateM->currentIndex()==1) { Power::login1 = true; }
-         if(pref->hibernateM->currentIndex()==2) { Power::gnome = true; }
-         if(pref->hibernateM->currentIndex()==3) { Power::hal_ = true; }
-         if(pref->hibernateM->currentIndex()==4) { Power::upower_ = true; }
-         if(pref->hibernateM->currentIndex()==5) { Power::devicekit = true; }
-         if(pref->hibernateM->currentIndex()==6) {
-           Power::user = true;
-           Power::myHibernate = pref->myHibernate;
+         switch(pref->shutdownM->currentIndex()){
+            case 0:
+                Power::automatic = true;
+                break;
+            case 1:
+                Power::login1 = true;
+                break;
+            case 2:
+                Power::gnome = true;
+                break;
+            case 3:
+                Power::hal_ = true;
+                break;
+            case 4:
+                Power::upower_ = true;
+                break;
+            case 5:
+                Power::devicekit = true;
+                break;
+            case 6:
+                Power::user = true;
+                if(comboBox->currentIndex() == 2)
+                    Power::mySuspend = pref->mySuspend;
+                else if(comboBox->currentIndex() == 3)
+                    Power::myHibernate = pref->myHibernate;
+                break;
+            default:;
          }
          if(pref->lockMyScreen){ Power::lockMyScreen = true; }
          else Power::lockMyScreen = false;
-         Power::hibernate();
+         if(comboBox->currentIndex() == 2)
+            Power::suspend();
+         else if(comboBox->currentIndex() == 3)
+            Power::hibernate();
          break;
+
        default:;
      }
      if(pref->quitAfterCountdown->isChecked())
