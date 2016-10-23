@@ -441,7 +441,6 @@ void Gui::updateT(){
      int dayDiff = myDate.date().daysTo(futureDateTime.date());
 
      if(dayDiff < 0){ //reset if targeted date is already in the past.
-        qDebug()<<"hallo";
        reset();
        return;
      } //end
@@ -622,7 +621,6 @@ bool Gui::Time(){
      if(QDateTime::currentDateTimeUtc() > futureDateTime10s){ //if targeted time for action is
                           //already over 10 seconds in the past.
        reset();
-       qDebug()<<"hallo2";
        return false;
      }
      else{
