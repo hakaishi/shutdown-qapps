@@ -325,7 +325,7 @@ consider also checking &quot;Quit on closing main
 window&quot; and &quot;Hide qshutdown at startup&quot;.
 If qshutdown is still running and you want it to
 reappear, then just execute qshutdown again,
-just as as you normally would. It will thus reappear.</string>
+just as you normally would. It will thus reappear.</string>
                </property>
                <property name="text">
                 <string>Disable tray &amp;icon</string>

@@ -1,3 +1,12 @@
+shutdown-qapps (1.7.1-1) unstable; urgency=low
+  * qshutdown
+    fixed: "Weekly" not disabled eventhough the countdown is running.
+    fixed: From time to time strage behaviour causing countdown to
+     abbort (issue with two different time types).
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 10 Jun 2015 22:17:13 +0200
+
+
 shutdown-qapps (1.7.0-1) unstable; urgency=low
   - added new shutdown/reboot/suspend/hibernate command (possibly
     working on most debian based systems, if supported/activated)

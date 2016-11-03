@@ -1,3 +1,18 @@
+Changes in Release 1.7.2
+=========================
+
+ - code optimations
+ - fixed small bugs in calendar and "weekly"
+ - added DBus Interface method for starting qshutdown from scripts or other
+   programs. (Looking for a way to restart countdown after sleep...)
+
+Changes in Release 1.7.1
+=========================
+
+ - fixed: "Weekly" not disabled eventhough the countdown is running.
+ - fixed: From time to time strage behaviour causing countdown to
+   abbort (issue with two different time types).
+
 Changes in Release 1.7.0
 =========================
 
