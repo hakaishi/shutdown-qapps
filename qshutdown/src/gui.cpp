@@ -23,7 +23,6 @@
 #include "editor.h"
 #include "about.h"
 #include "power.h"
-#include <QTextStream>
 #include <QTimer>
 
 Gui::Gui(){
@@ -684,10 +683,10 @@ void Gui::saveLog(){
 void Gui::finished_(){
      if(!pref->quitAfterCountdown->isChecked())
        reset();
+
      switch(comboBox->currentIndex()){
-       case 0:
-       case 1:
-         switch(pref->shutdownM->currentIndex()){
+       case 0: //shutdown
+         switch(pref->shutdownM->currentIndex()){ //shutdown method settings
             case 0:
                 Power::automatic = true;
                 break;
@@ -711,23 +710,49 @@ void Gui::finished_(){
                 break;
             case 7:
                 Power::user = true;
-                if(comboBox->currentIndex() == 0)
-                    Power::myShutdown = pref->myShutdown;
-                else if(comboBox->currentIndex() == 1)
-                    Power::myReboot = pref->myReboot;
+                Power::myShutdown = pref->myShutdown;
                 break;
             default:;
          }
          saveLog();
-         if(comboBox->currentIndex() == 0)
-            Power::shutdown();
-         else if(comboBox->currentIndex() == 1)
-            Power::reboot();
          Power::shutdown();
          break;
-       case 2:
-       case 3:
-         switch(pref->shutdownM->currentIndex()){
+
+       case 1: //reboot
+         switch(pref->rebootM->currentIndex()){ //reboot method settings
+            case 0:
+                Power::automatic = true;
+                break;
+            case 1:
+                Power::login1 = true;
+                break;
+            case 2:
+                Power::gnome = true;
+                break;
+            case 3:
+                Power::kde = true;
+                break;
+            case 4:
+                Power::hal_ = true;
+                break;
+            case 5:
+                Power::consolekit = true;
+                break;
+            case 6:
+                Power::sudo = true;
+                break;
+            case 7:
+                Power::user = true;
+                Power::myReboot = pref->myReboot;
+                break;
+            default:;
+         }
+         saveLog();
+         Power::reboot();
+         break;
+
+       case 2: //sleep
+         switch(pref->suspendM->currentIndex()){ //sleep method settings
             case 0:
                 Power::automatic = true;
                 break;
@@ -748,19 +773,44 @@ void Gui::finished_(){
                 break;
             case 6:
                 Power::user = true;
-                if(comboBox->currentIndex() == 2)
-                    Power::mySuspend = pref->mySuspend;
-                else if(comboBox->currentIndex() == 3)
-                    Power::myHibernate = pref->myHibernate;
+                Power::mySuspend = pref->mySuspend;
                 break;
             default:;
          }
          if(pref->lockMyScreen){ Power::lockMyScreen = true; }
          else Power::lockMyScreen = false;
-         if(comboBox->currentIndex() == 2)
-            Power::suspend();
-         else if(comboBox->currentIndex() == 3)
-            Power::hibernate();
+         Power::suspend();
+         break;
+
+       case 3: //hibernate
+         switch(pref->hibernateM->currentIndex()){ //hibernate method settings
+            case 0:
+                Power::automatic = true;
+                break;
+            case 1:
+                Power::login1 = true;
+                break;
+            case 2:
+                Power::gnome = true;
+                break;
+            case 3:
+                Power::hal_ = true;
+                break;
+            case 4:
+                Power::upower_ = true;
+                break;
+            case 5:
+                Power::devicekit = true;
+                break;
+            case 6:
+                Power::user = true;
+                Power::myHibernate = pref->myHibernate;
+                break;
+            default:;
+         }
+         if(pref->lockMyScreen){ Power::lockMyScreen = true; }
+         else Power::lockMyScreen = false;
+         Power::hibernate();
          break;
 
        default:;
