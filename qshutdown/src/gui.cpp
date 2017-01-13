@@ -313,9 +313,8 @@ void Gui::center(){
 }
 
 void Gui::iconActivated(QSystemTrayIcon::ActivationReason reason){
-     if(reason == QSystemTrayIcon::Trigger){
-       tray_actions(); //hide or show
-     }
+     if(reason == QSystemTrayIcon::Trigger)
+        tray_actions(); //hide or show
 }
 
 void Gui::power_action(int action){
