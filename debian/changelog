@@ -7,7 +7,6 @@ shutdown-qapps (1.7.3-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 14 Jan 2017 13:08:42 +0900
 
-
 shutdown-qapps (1.7.2-1) unstable; urgency=low
 
   * qshutdown
@@ -19,7 +18,6 @@ shutdown-qapps (1.7.2-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Fri, 04 Nov 2016 01:06:32 +0900
 
-
 shutdown-qapps (1.7.1-1) unstable; urgency=low
 
   * qshutdown
@@ -28,7 +26,6 @@ shutdown-qapps (1.7.1-1) unstable; urgency=low
      abbort (issue with two different time types).
 
  -- Christian Metscher <hakaishi@web.de>  Wed, 10 Jun 2015 22:17:13 +0200
-
 
 shutdown-qapps (1.7.0-1) unstable; urgency=low
 
@@ -46,7 +43,6 @@ shutdown-qapps (1.7.0-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Fri, 20 Feb 2015 20:19:16 +0100
 
-
 shutdown-qapps (1.6.8-1) unstable; urgency=low
 
   * added systemctl command in "automatic" and "sudo"
@@ -55,13 +51,11 @@ shutdown-qapps (1.6.8-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 13 Apr 2014 15:19:48 +0200
 
-
 shutdown-qapps (1.6.7-2) unstable; urgency=low
 
   *switched to qt5
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 21 Sep 2013 13:08:24 +0200
-
 
 shutdown-qapps (1.6.7-1) unstable; urgency=low
 
@@ -73,7 +67,6 @@ shutdown-qapps (1.6.7-1) unstable; urgency=low
     - closes: #717102
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 11 Aug 2013 10:48:39 +0200
-
 
 shutdown-qapps (1.6.6-1) unstable; urgency=low
 
@@ -88,20 +81,17 @@ shutdown-qapps (1.6.6-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Thu, 30 May 2013 12:30:11 +0200
 
-
 shutdown-qapps (1.6.5-3) unstable; urgency=low
 
   * switched to debhelper 9
 
  -- Christian Metscher <hakaishi@web.de>  Thu, 25 Apr 2013 19:56:08 +0200
 
-
 shutdown-qapps (1.6.5-2) unstable; urgency=low
 
   *new upstream release
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 20 Apr 2013 13:23:13 +0200
-
 
 shutdown-qapps (1.6.5-1) unstable; urgency=low
 
@@ -120,7 +110,6 @@ shutdown-qapps (1.6.5-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 14 Apr 2013 12:45:57 +0200
 
-
 shutdown-qapps (1.6.4-1) unstable; urgency=low
 
   * qshutdown
@@ -135,7 +124,6 @@ shutdown-qapps (1.6.4-1) unstable; urgency=low
     - simplified the creation of the config file
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 29 Apr 2012 22:00:00 +0200
-
 
 shutdown-qapps (1.6.3-1) unstable; urgency=low
 
@@ -152,7 +140,6 @@ shutdown-qapps (1.6.3-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Thu, 08 Mar 2012 00:15:30 +0100
 
-
 shutdown-qapps (1.6.2-1) unstable; urgency=low
 
   * qshutdown & qprogram-starter
@@ -165,7 +152,6 @@ shutdown-qapps (1.6.2-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 08 Jan 2012 15:22:33 +0100
 
-
 shutdown-qapps (1.6.1-1) unstable; urgency=low
 
   * qshutdown
@@ -174,7 +160,6 @@ shutdown-qapps (1.6.1-1) unstable; urgency=low
     - now compileable on Windows
 
  -- Christian Metscher <hakaishi@web.de>  Wed, 28 Dec 2011 17:45:55 +0100
-
 
 shutdown-qapps (1.6.0-1) unstable; urgency=low
 
@@ -199,7 +184,6 @@ shutdown-qapps (1.6.0-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Tue, 27 Dec 2011 00:13:52 +0100
 
-
 shutdown-qapps (1.5.6-1) unstable; urgency=low
 
   * qshutdown
@@ -207,7 +191,6 @@ shutdown-qapps (1.5.6-1) unstable; urgency=low
     - added: more information about hotkeys (removed old ones)
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 23 Oct 2011 22:45:33 +0200
-
 
 shutdown-qapps (1.5.5-1) unstable; urgency=low
 
@@ -217,14 +200,12 @@ shutdown-qapps (1.5.5-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 08 Oct 2011 15:38:40 +0200
 
-
 shutdown-qapps (1.5.4-1) unstable; urgency=low
 
   * qshutdown
     - added: restore and minimize Button to the system tray icon.
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 26 Sep 2011 10:04:00 +0200
-
 
 shutdown-qapps (1.5.3-1) unstable; urgency=low
 
@@ -235,14 +216,12 @@ shutdown-qapps (1.5.3-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Mon, 22 Aug 2011 09:06:25 +0200
 
-
 shutdown-qapps (1.5.2-1) unstable; urgency=low
 
   * qshutdown
     - fixed timer problem (minor issue)
 
  -- Christian Metscher <hakaishi@web.de>  Mon, 27 Jun 2011 00:15:03 +0200
-
 
 shutdown-qapps (1.5.1-2) unstable; urgency=low
 
@@ -251,7 +230,6 @@ shutdown-qapps (1.5.1-2) unstable; urgency=low
       to the README and qshutdown man files
 
  -- Christian Metscher <hakaishi@web.de>  Tue, 14 Jun 2011 14:06:05 +0200
-
 
 shutdown-qapps (1.5.1-1) unstable; urgency=low
 
@@ -267,7 +245,6 @@ shutdown-qapps (1.5.1-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Tue, 24 May 2011 07:14:36 +0200
 
-
 shutdown-qapps (1.5.0-1) unstable; urgency=low
 
   * qshutdown
@@ -279,7 +256,6 @@ shutdown-qapps (1.5.0-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 07 May 2011 18:37:23 +0200
 
-
 shutdown-qapps (1.4.9-1) unstable; urgency=low
 
   * qshutdown
@@ -287,7 +263,6 @@ shutdown-qapps (1.4.9-1) unstable; urgency=low
       qshutdown_script.sh -> qshutdown_script
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 30 Apr 2011 12:05:43 +0200
-
 
 shutdown-qapps (1.4.8-1) unstable; urgency=low
 
@@ -297,14 +272,12 @@ shutdown-qapps (1.4.8-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 22 Jan 2011 02:12:03 +0100
 
-
 shutdown-qapps (1.4.7-1) unstable; urgency=low
 
   * fixed: missing line in power.cpp at hibernate()
   * integrated dbus command for locking screen
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 08 Jan 2011 01:25:56 +0100
-
 
 shutdown-qapps (1.4.6-1) unstable; urgency=low
 
@@ -317,13 +290,11 @@ shutdown-qapps (1.4.6-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 10 Oct 2010 16:49:10 +0200
 
-
 shutdown-qapps (1.4.5-2) unstable; urgency=low
 
   * fixed manpage(s) (qshutdown)
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 03 Oct 2010 12:32:10 +0200
-
 
 shutdown-qapps (1.4.5-1) unstable; urgency=low
 
@@ -338,7 +309,6 @@ shutdown-qapps (1.4.5-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Wed, 29 Sep 2010 13:43:43 +0200
 
-
 shutdown-qapps (1.4.4-1) unstable; urgency=low
 
   * fixed: if no date was set and the clock turned 12:00 AM
@@ -349,7 +319,6 @@ shutdown-qapps (1.4.4-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 12 Sep 2010 02:01:16 +0200
 
-
 shutdown-qapps (1.4.3-1) unstable; urgency=low
 
   * corrected a spelling mistake in qprogram-starter
@@ -357,7 +326,6 @@ shutdown-qapps (1.4.3-1) unstable; urgency=low
   * and some minor changes
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 04 Sep 2010 01:22:08 +0200
-
 
 shutdown-qapps (1.4.2-1) unstable; urgency=low
 
@@ -372,7 +340,6 @@ shutdown-qapps (1.4.1-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Mon, 30 Aug 2010 01:56:58 +0200
 
-
 shutdown-qapps (1.4.0-1) unstable; urgency=low
 
   * the DateTimeEdit from qprogram-starter was replaced through a
@@ -385,13 +352,11 @@ shutdown-qapps (1.4.0-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 29 Aug 2010 23:05:08 +0200
 
-
 shutdown-qapps (1.3.7-1) unstable; urgency=low
 
   * repacked "upstream" orig.tar.gz
 
  -- Christian Metscher <hakaishi@web.de>  Wed, 25 Aug 2010 09:13:31 +0200
-
 
 shutdown-qapps (1.3.6-1) unstable; urgency=low
 
@@ -399,13 +364,11 @@ shutdown-qapps (1.3.6-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Tue, 24 Aug 2010 02:04:01 +0200
 
-
 shutdown-qapps (1.3.5-1) unstable; urgency=low
 
   * bugfix for timeEdit
 
  -- Christian Metscher <hakaishi@web.de>  Tue, 24 Aug 2010 01:35:01 +0200
-
 
 shutdown-qapps (1.3.4-1) unstable; urgency=low
 
@@ -414,20 +377,17 @@ shutdown-qapps (1.3.4-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Mon, 23 Aug 2010 13:03:15 +0200
 
-
 shutdown-qapps (1.3.3-1) unstable; urgency=low
 
   * new design for preferences
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 22 Aug 2010 23:46:02 +0200
 
-
 shutdown-qapps (1.3.2-1) unstable; urgency=low
 
   * fixed and modified many things
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 22 Aug 2010 17:16:01 +0200
-
 
 shutdown-qapps (1.3.1-1) unstable; urgency=low
 
@@ -437,7 +397,6 @@ shutdown-qapps (1.3.1-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 22 Aug 2010 12:54:00 +0200
 
-
 shutdown-qapps (1.3.0-1) unstable; urgency=low
 
   * new Standards-Version 3.9.1
@@ -446,20 +405,17 @@ shutdown-qapps (1.3.0-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 21 Aug 2010 08:53:17 +0200
 
-
 shutdown-qapps (1.2.5-2) unstable; urgency=low
 
   * new Standards-Version 3.9.0
 
  -- Christian Metscher <hakaishi@web.de>  Wed, 30 Jun 2010 07:08:00 +0200
 
-
 shutdown-qapps (1.2.5-1) unstable; urgency=low
 
    *bugfix: Programwindow didn't reappear when starting twice
 
  -- Christian Metscher <hakaishi@web.de>  Sun, 20 Jun 2010 14:58:37 +0200
-
 
 shutdown-qapps (1.2.4-1) unstable; urgency=low
 
@@ -468,7 +424,6 @@ shutdown-qapps (1.2.4-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Tue, 08 Jun 2010 16:28:49 +0200
 
-
 shutdown-qapps (1.2.3-1) unstable; urgency=low
 
   * bugfix for "Lock_all" (gui.cpp -> loadSettings())
@@ -476,13 +431,11 @@ shutdown-qapps (1.2.3-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Tue, 20 Apr 2010 12:16:54 +0200
 
-
 shutdown-qapps (1.2.2-1) unstable; urgency=low
 
   * revised "Reset Settings" in preferences.cpp
 
  -- Christian Metscher <hakaishi@web.de>  Wed, 07 Apr 2010 14:20:48 +0200
-
 
 shutdown-qapps (1.2.1-1) unstable; urgency=low
 
@@ -490,7 +443,6 @@ shutdown-qapps (1.2.1-1) unstable; urgency=low
   * Switch to dpkg-source 3.0 (quilt) format
 
  -- Christian Metscher <hakaishi@web.de>  Mon, 05 Apr 2010 12:12:11 +0200
-
 
 shutdown-qapps (1.2.0-1) unstable; urgency=low
 
@@ -503,7 +455,6 @@ shutdown-qapps (1.2.0-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Wed, 24 Mar 2010 16:12:18 +0100
 
-
 shutdown-qapps (1.1.0-1) unstable; urgency=low
 
   * in qshutdown: Added tray-icon-contextmenus for
@@ -513,7 +464,6 @@ shutdown-qapps (1.1.0-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Wed, 17 Mar 2010 18:29:08 +0100
 
-
 shutdown-qapps (1.0.2-1) unstable; urgency=low
 
   * added dh_installmenu in debian/rules
@@ -521,14 +471,12 @@ shutdown-qapps (1.0.2-1) unstable; urgency=low
 
  -- Christian Metscher <hakaishi@web.de>  Thu, 11 Mar 2010 22:43:13 +0100
 
-
 shutdown-qapps (1.0.1-1) unstable; urgency=low
 
   * New upstream release (Closes: #572321)
   * Added Debian menus and corrected descriptions in control file
 
  -- Christian Metscher <hakaishi@web.de>  Wed, 03 Mar 2010 18:47:00 +0100
-
 
 shutdown-qapps (1.0.0-1) unstable; urgency=low
 
