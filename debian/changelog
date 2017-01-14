@@ -1,4 +1,5 @@
 shutdown-qapps (1.7.3-1) unstable; urgency=low
+
   * qshutdown
     - fixed bug for shutdown/reboot/suspend/hibernate settings caused by
       previous update.
@@ -8,6 +9,7 @@ shutdown-qapps (1.7.3-1) unstable; urgency=low
 
 
 shutdown-qapps (1.7.2-1) unstable; urgency=low
+
   * qshutdown
     - code optimations
     - fixed small bugs in calendar and "weekly"
@@ -19,6 +21,7 @@ shutdown-qapps (1.7.2-1) unstable; urgency=low
 
 
 shutdown-qapps (1.7.1-1) unstable; urgency=low
+
   * qshutdown
     fixed: "Weekly" not disabled eventhough the countdown is running.
     fixed: From time to time strage behaviour causing countdown to
@@ -28,6 +31,7 @@ shutdown-qapps (1.7.1-1) unstable; urgency=low
 
 
 shutdown-qapps (1.7.0-1) unstable; urgency=low
+
   - added new shutdown/reboot/suspend/hibernate command (possibly
     working on most debian based systems, if supported/activated)
   * qshutdown
@@ -44,6 +48,7 @@ shutdown-qapps (1.7.0-1) unstable; urgency=low
 
 
 shutdown-qapps (1.6.8-1) unstable; urgency=low
+
   * added systemctl command in "automatic" and "sudo"
   * qshutdown
     - complete Turkish translation and added Indonesian and Czech
@@ -52,12 +57,14 @@ shutdown-qapps (1.6.8-1) unstable; urgency=low
 
 
 shutdown-qapps (1.6.7-2) unstable; urgency=low
+
   *switched to qt5
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 21 Sep 2013 13:08:24 +0200
 
 
 shutdown-qapps (1.6.7-1) unstable; urgency=low
+
   closes: #716194
   * qprogram-starter
     - fixed not beeing able to start commands after first one failed
@@ -69,6 +76,7 @@ shutdown-qapps (1.6.7-1) unstable; urgency=low
 
 
 shutdown-qapps (1.6.6-1) unstable; urgency=low
+
   * qprogram-starter
     - new design and new options
     - added welcome dialog
@@ -82,18 +90,21 @@ shutdown-qapps (1.6.6-1) unstable; urgency=low
 
 
 shutdown-qapps (1.6.5-3) unstable; urgency=low
+
   * switched to debhelper 9
 
  -- Christian Metscher <hakaishi@web.de>  Thu, 25 Apr 2013 19:56:08 +0200
 
 
 shutdown-qapps (1.6.5-2) unstable; urgency=low
+
   *new upstream release
 
  -- Christian Metscher <hakaishi@web.de>  Sat, 20 Apr 2013 13:23:13 +0200
 
 
 shutdown-qapps (1.6.5-1) unstable; urgency=low
+
   - new watch file
   * qshutdown
     - minor fix for the preferences, the password and the about dialog
