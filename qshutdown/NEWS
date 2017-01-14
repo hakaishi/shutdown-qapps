@@ -1,3 +1,9 @@
+Changes in Release 1.7.3
+=========================
+
+ - fixed bug for shutdown/reboot/suspend/hibernate settings caused by
+   previous update.
+
 Changes in Release 1.7.2
 =========================
 
