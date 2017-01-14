@@ -16,7 +16,7 @@ shutdown-qapps (1.7.2-1) unstable; urgency=low
     - some new translated strings and fixes for translations
 
  -- Christian Metscher <hakaishi@web.de>  Fri, 04 Nov 2016 01:06:32 +0900
- 
+
 
 shutdown-qapps (1.7.1-1) unstable; urgency=low
   * qshutdown

@@ -1,16 +1,16 @@
-This package was debianized by:
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: shutdown-qapps
+Source: https://launchpad.net/qt-shutdown-p/shutdown-qapps/debian-release
 
-    Christian Metscher <hakaishi@web.de> on Sat, 14 Jan 2017 13:08:42 +0900
+Files: *
+Copyright: Christian Metscher <hakaishi@web.de>
+License: GPL-3
 
-Upstream Author:
+Files: debian/*
+Copyright: Christian Metscher <hakaishi@web.de>
+License: GPL-3
 
-    Christian Metscher <hakaishi@web.de>
-
-Copyright:
-
-    Copyright (C) 2010-2017 Christian Metscher <hakaishi@web.de>
-
-License:
+License: GPL-3
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,10 +26,5 @@ License:
     along with this package; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-
-The Debian packaging is:
-
-    Copyright (C) 2010-2017 Christian Metscher <hakaishi@web.de>
-
-and is licensed under the GPL version 3, see `/usr/share/common-licenses/GPL-3'.
+Licensed under the GPL version 3, see `/usr/share/common-licenses/GPL-3'.
 
