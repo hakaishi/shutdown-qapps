@@ -44,7 +44,7 @@ Gui::Gui(){
      oldComboBoxIndex = comboBox->currentIndex();
      oldTime = timeEdit->time();
 
-     datetime = QDateTime::currentDateTimeUtc();
+     localDatetime = QDateTime::currentDateTime();
      elapsedTime.start();
 
    //Preferences
@@ -555,29 +555,31 @@ void Gui::updateT(){
 }
 
 void Gui::set(){
-     QDateTime dateTime = QDateTime::currentDateTime();
-     futureDateTime = dateTime; //initializing
+     QDateTime localDT = QDateTime::currentDateTime();
+     QDateTime localFutureDateTime = localDT; //initializing
      timeRunning = true;
      cal->timeRunning = true;
      ti->stop();
      bool noCalendarDate = cal->setCalendarDate.isNull();
      bool noWeeklyDate = cal->setWeeklyDate.isNull();
      if(!noCalendarDate)
-       futureDateTime = cal->setCalendarDate;
+       localFutureDateTime = cal->setCalendarDate;
      if(!noWeeklyDate)
-       futureDateTime = cal->setWeeklyDate;
+       localFutureDateTime = cal->setWeeklyDate;
 
      if(noWeeklyDate){
-       futureDateTime.setTime(dateTime.time());
+       localFutureDateTime.setTime(localDT.time());
        if(radio2->isChecked()) //if minute-countdown
-         futureDateTime = futureDateTime.addSecs(spin->value()*60);
+         localFutureDateTime = localFutureDateTime.addSecs(spin->value()*60);
        else if(radio1->isChecked()){ //if timeEdit
-         if(QDateTime(futureDateTime.date(),timeEdit->time(), Qt::LocalTime) > dateTime) //set time is greater than current time
-           futureDateTime = QDateTime(futureDateTime.date(),timeEdit->time(),Qt::LocalTime);
-         else if(noCalendarDate && (timeEdit->time() <= dateTime.time()))
-           futureDateTime = QDateTime(futureDateTime.date().addDays(1),timeEdit->time(),Qt::LocalTime); //add 1 day
+         if(QDateTime(localFutureDateTime.date(),timeEdit->time(), Qt::LocalTime) > localDT) //set time is greater than current time
+           localFutureDateTime = QDateTime(localFutureDateTime.date(),timeEdit->time(),Qt::LocalTime);
+         else if(noCalendarDate && (timeEdit->time() <= localDT.time()))
+           localFutureDateTime = QDateTime(localFutureDateTime.date().addDays(1),timeEdit->time(),Qt::LocalTime); //add 1 day
        }
      }
+
+     futureDateTime = localFutureDateTime.toUTC(); //convert to UTC time in order to avoid calculating with local times
 
      updateT(); //Just updating time/interface for immediate display of remaining time.
      timer->start(1000); //Update time/interface every second
@@ -612,7 +614,6 @@ void Gui::set(){
 }
 
 bool Gui::Time(){
-     localDateTime = QDateTime::currentDateTimeUtc();
      QDateTime futureDateTime10s = futureDateTime; //adding n (10 seconds) in case of hardware delay.
      futureDateTime10s.addSecs(n);
 
@@ -622,7 +623,7 @@ bool Gui::Time(){
        return false;
      }
      else{
-       i = localDateTime.secsTo(futureDateTime); //the difference of the localTime and the future time
+       i = QDateTime::currentDateTimeUtc().secsTo(futureDateTime); //the difference of the localTime and the future time
        bigI = i; //for more precise display with LCD
        return true;
      }
@@ -655,7 +656,7 @@ void Gui::saveLog(){
        QTextStream out(&logfile);
        while(!logfile.atEnd())
          out.readLine();
-       out << "[" << datetime.toString("yyyy.MM.dd hh:mm") << "] "
+       out << "[" << localDatetime.toString("yyyy.MM.dd hh:mm") << "] "
            << 1/(60000.0/elapsedTime.elapsed()) << " minutes uptime\n";
        logfile.close();
 

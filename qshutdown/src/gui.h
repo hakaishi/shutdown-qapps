@@ -53,7 +53,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      bool            aWeeklyTimeWasSet;
      QPushButton     *minim;
      QTimer          *timer, *ti;
-     QDateTime       datetime, localDateTime, futureDateTime;
+     QDateTime       localDatetime, futureDateTime;
      QTime           elapsedTime, oldTime;
      QIcon           icon;
      QSystemTrayIcon *TIcon;
