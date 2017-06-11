@@ -614,8 +614,7 @@ void Gui::set(){
 }
 
 bool Gui::Time(){
-     QDateTime futureDateTime10s = futureDateTime; //adding n (10 seconds) in case of hardware delay.
-     futureDateTime10s.addSecs(n);
+     QDateTime futureDateTime10s = futureDateTime.addSecs(n); //adding n (10 seconds) in case of hardware delay.
 
      if(QDateTime::currentDateTimeUtc() > futureDateTime10s){ //if targeted time for action is
                           //already over 10 seconds in the past.

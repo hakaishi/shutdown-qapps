@@ -74,7 +74,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      msgBox->setInformativeText(tr("The File \"%1\" is not writable!\n"
      "Maybe you just don't have the permissions to do so.").arg(file));
 
-     if(settings->value("first_start", true).toBool())
+     if(QSettings().value("first_start", true).toBool())
      {
        infoBox = new QMessageBox(this);
        infoBox->setWindowTitle(tr("Please read this carefully!"));
@@ -89,7 +89,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
          "concerning translations."));
        infoBox->setStandardButtons(QMessageBox::Ok);
        infoBox->show();
-       settings->setValue("first_start", false);
+       QSettings().setValue("first_start", false);
      }
 
      connect(this, SIGNAL(accepted()), this, SLOT(saveToConfFile()));
