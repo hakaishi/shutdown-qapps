@@ -2,11 +2,7 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: shutdown-qapps
 Source: https://launchpad.net/qt-shutdown-p/shutdown-qapps/debian-release
 
-Files: *
-Copyright: Christian Metscher <hakaishi@web.de>
-License: GPL-3
-
-Files: debian/*
+Files: ../*
 Copyright: Christian Metscher <hakaishi@web.de>
 License: GPL-3
 

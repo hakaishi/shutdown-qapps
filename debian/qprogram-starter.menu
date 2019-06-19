@@ -1,6 +1,0 @@
-?package(qprogram-starter):\
-  needs="X11"\
-  section="Applications/System/Administration"\
-  title="qprogram-starter"\
-  icon="/usr/share/pixmaps/qprogram-starter.xpm"\
-  command="/usr/bin/qprogram-starter"

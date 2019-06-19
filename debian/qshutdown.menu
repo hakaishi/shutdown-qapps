@@ -1,6 +1,0 @@
-?package(qshutdown):\
-  needs="X11"\
-  section="Applications/System/Administration"\
-  title="qshutdown"\
-  icon="/usr/share/pixmaps/red_glasses.xpm"\
-  command="/usr/bin/qshutdown"

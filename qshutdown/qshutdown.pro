@@ -11,7 +11,7 @@ MOC_DIR = build
 UI_DIR = build
 RCC_DIR = build
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += widgets gui
 
 system(lrelease qshutdown.pro)
 
