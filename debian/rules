@@ -12,4 +12,3 @@ override_dh_clean:
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(shell dpkg-buildflags --export=configure)
-
