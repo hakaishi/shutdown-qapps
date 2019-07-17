@@ -1,10 +1,13 @@
 shutdown-qapps (1.7.4-1) unstable; urgency=low
+
   - switched to QT 5
   - Standards-Version update
   - closes: #928901
+    Fix FTCBFS: Missing Build-Depends: qt5-qmake:native for running
+    lrelease (By Helmut Grohne <helmut@subdivi.de>)
   * qshutdown
     - fixed bug in time calculation caused by local/utc time conversion
-    - updated date for copy right
+    - updated date for copyright
 
  -- Christian Metscher <hakaishi@web.de>  Tue, 11 Jun 2019 23:12:24 +0900
 
