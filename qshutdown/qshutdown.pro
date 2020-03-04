@@ -63,8 +63,8 @@ FORMS = src/ui/gui.ui src/ui/preferences.ui\
 !win32{
 # install
 target.path = /usr/bin
-icon.files = src/pixmap/red_glasses*
-icon.path = /usr/share/pixmaps
+icon.files = src/pixmap/red_glasses.xpm
+icon.path = /usr/share/icons/hicolor/32x32/apps
 translation.files = src/translations/*.qm
 translation.path = /usr/share/qshutdown/translations
 autostart1.files = autostart/qshutdown.desktop

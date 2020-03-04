@@ -41,7 +41,7 @@ translation.path = /usr/share/qprogram-starter/translations
 autostart.files = autostart/qprogram-starter.desktop
 autostart.path = /usr/share/applications
 icon.files = src/pixmap/qprogram-starter.xpm
-icon.path = /usr/share/pixmaps
+icon.path = /usr/share/icons/hicolor/32x32/apps
 
 INSTALLS = target translation autostart icon
 

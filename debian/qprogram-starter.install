@@ -1,4 +1,4 @@
 qprogram-starter/bin/* usr/bin
 qprogram-starter/src/translations/*.qm usr/share/qprogram-starter/translations
-qprogram-starter/src/pixmap/* usr/share/pixmaps
+qprogram-starter/src/pixmap/* usr/share/icons/hicolor/32x32/apps
 qprogram-starter/autostart/* usr/share/applications
