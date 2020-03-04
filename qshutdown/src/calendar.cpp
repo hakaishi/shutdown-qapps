@@ -175,8 +175,8 @@ void Calendar::getDate(QDate date){ calendarDate.setDate(date); }
 void Calendar::setDate(){
      if(calendarWidget->selectedDate() != QDate::currentDate())
         calendarDate.setDate(calendarWidget->selectedDate());
-     if(!weekly->isChecked() && !calendarDate.isNull()
-       && !(calendarDate.date() == QDate::currentDate())) //if a day was selected
+     if(!weekly->isChecked() && calendarDate.isValid()
+       && calendarDate.date() != QDate::currentDate()) //if a day was selected
        setCalendarDate = calendarDate; //don't touch calendarDate!
      else
        setCalendarDate = QDateTime();

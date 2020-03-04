@@ -560,8 +560,8 @@ void Gui::set(){
      timeRunning = true;
      cal->timeRunning = true;
      ti->stop();
-     bool noCalendarDate = cal->setCalendarDate.isNull();
-     bool noWeeklyDate = cal->setWeeklyDate.isNull();
+     bool noCalendarDate = !cal->setCalendarDate.isValid();
+     bool noWeeklyDate = !cal->setWeeklyDate.isValid();
      if(!noCalendarDate)
        localFutureDateTime = cal->setCalendarDate;
      if(!noWeeklyDate)
