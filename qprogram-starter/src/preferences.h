@@ -38,6 +38,7 @@ class Preferences : public QDialog, public Ui::Preferences {
      void setupMsgBoxes();
      void loadSettings();
      void saveToConfFile();
+     void clearHistory();
 
     protected:
      virtual void showEvent(QShowEvent* show_pref);

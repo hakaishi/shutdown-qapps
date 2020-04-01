@@ -39,6 +39,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      loadSettings();
 
      connect(buttonBox, SIGNAL(accepted()), this, SLOT(saveToConfFile()));
+     connect(clearHistBtn, SIGNAL(clicked(bool)), this, SLOT(clearHistory()));
 }
 
 void Preferences::setupMsgBoxes(){
@@ -85,6 +86,12 @@ void Preferences::loadSettings(){
 
      if(!settings->contains("shutdown_method"))
        settings->setValue("shutdown_method", 0);
+     if(!settings->contains("reboot_method"))
+       settings->setValue("reboot_method", 0);
+     if(!settings->contains("suspend_method"))
+       settings->setValue("suspend_method", 0);
+     if(!settings->contains("hibernate_method"))
+       settings->setValue("hibernate_method", 0);
      if(!settings->contains("CheckBoxes/atDate"))
        settings->setValue("CheckBoxes/atDate", false);
      if(!settings->contains("CheckBoxes/logging"))
@@ -93,15 +100,27 @@ void Preferences::loadSettings(){
        settings->setValue("CheckBoxes/shutdown", false);
      if(!settings->contains("CheckBoxes/quitWithLastProcess"))
        settings->setValue("CheckBoxes/quitWithLastProcess", false);
-     if(!settings->contains("Text/text1"))
-       settings->setValue("Text/text1", QString());
-     if(!settings->contains("Text/text2"))
-       settings->setValue("Text/text2", QString());
+     if(!settings->contains("Text/text"))
+       settings->setValue("Text/text", QString());
+     if(!settings->contains("History/max"))
+        settings->setValue("History/max", 10);
 
 //read settings
-     comboBox->setCurrentIndex(settings->value("shutdown_method", 0).toInt());
+     shutdownCB->setCurrentIndex(settings->value("shutdown_method", 0).toInt());
+     rebootCB->setCurrentIndex(settings->value("reboot_method", 0).toInt());
+     suspendCB->setCurrentIndex(settings->value("suspend_method", 0).toInt());
+     hibernateCB->setCurrentIndex(settings->value("hibernate_method", 0).toInt());
+     maxHistSpin->setValue(settings->value("History/max", 10).toInt());
 }
 
 void Preferences::saveToConfFile(){
-     settings->setValue("shutdown_method",comboBox->currentIndex());
+     settings->setValue("shutdown_method",shutdownCB->currentIndex());
+     settings->setValue("reboot_method",rebootCB->currentIndex());
+     settings->setValue("suspend_method",suspendCB->currentIndex());
+     settings->setValue("hibernate_method",hibernateCB->currentIndex());
+     settings->setValue("History/max", maxHistSpin->value());
+}
+
+void Preferences::clearHistory(){
+    settings->setValue("History/text", QString());    
 }

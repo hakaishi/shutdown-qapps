@@ -24,6 +24,7 @@
 #include <QtGlobal>
 #include <QProcess>
 #include <QTextStream>
+#include <QListWidget>
 
 class Preferences;
 
@@ -38,36 +39,37 @@ class Gui : public QMainWindow, public Ui::Gui {
      private:
       Preferences    *pref;
       QTimer         *dateTimeTimer, *timer;
-      QProcess       *process1, *process2;
+      QList<QProcess *>       *processes;
       QDateTime      nextDate, timeInTheFuture;
       double         secondsToTimeInTheFuture;
-      QTextEdit      *hintMsgBox, *logBox1, *logBox2;
-      QString        shell, file, errProcess1, errProcess2,
-                     outputProcess1, outputProcess2;
-      QStringList    processArgs1, processArgs2;
-      QString        program1, program2;
-      bool           process2Started;
+      QTextEdit      *hintMsgBox, *logBox;
+      QString        shell, file, errProcess,
+                     outputProcess;
+      QStringList    *processArgs;
+      QString        program;
       bool           aborted;
       QTextStream    *myOutput;
+      QListWidget    *historyList;
 
      private slots:
       void currentDateAndTime(); //for the current minimum date and time
       void check();       //checks if the time that was set is reached
-      void getProgram1();
-      void getProgram2();
+      void getProgram();
       void run();         //runs the process
       void abortProcesses();       //aborts all running processes
-      void output1();      //prints output into a file if loggingCheckBox is checked
-      void output2();
-      void errorOutput1(); //prints errorOutput into a file if loggingCheckBox is checked
-      void errorOutput2();
+      void output();      //prints output into a file if loggingCheckBox is checked
+      void errorOutput(); //prints errorOutput into a file if loggingCheckBox is checked
       void message();     //shows a messageBox if the process is finished, or if errors occured
-      void checkForProcess2(); //if textEdit2 !=0 a second process will be started
+      void next();
       void shutdown_or_message(); //either shuts down the system or shows if the process is finished
       void info_hint();   //shows a InfoMessageBox
       void saveData();
       void saveSettings();
       void showLogs();
+      void showHistory();
+      void saveHistory();
+      void replaceEditorContent(QListWidgetItem *item);
+      void setQuit(int idx);
 
      signals:
       void finished();

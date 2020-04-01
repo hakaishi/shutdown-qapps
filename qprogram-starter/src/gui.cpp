@@ -18,6 +18,7 @@
 
 #include "gui.h"
 #include "preferences.h"
+#include "power.h"
 #include <QMessageBox>
 #include <QSettings>
 #include <QFile>
@@ -49,7 +50,6 @@ Gui::Gui(){
      versionFile.close();
 
      aborted = false;
-     process2Started = false;
 
      dateEdit->setMinimumDate(QDate::currentDate());
      dateTimeTimer = new QTimer(this);
@@ -57,20 +57,11 @@ Gui::Gui(){
 
      timer = new QTimer(this);
 
-     process1 = new QProcess(this);
-     process2 = new QProcess(this);
-
-     logBox1 = new QTextEdit;
-     logBox1->setReadOnly(true);
-     logBox1->resize(520,450);
-     logBox1->setWindowTitle("error log 1");
-     logBox1->setWindowModality(Qt::NonModal);
-
-     logBox2 = new QTextEdit;
-     logBox2->setReadOnly(true);
-     logBox2->resize(520,450);
-     logBox2->setWindowTitle("error log 2");
-     logBox2->setWindowModality(Qt::NonModal);
+     logBox = new QTextEdit;
+     logBox->setReadOnly(true);
+     logBox->resize(520,450);
+     logBox->setWindowTitle("error log 1");
+     logBox->setWindowModality(Qt::NonModal);
 
      hintMsgBox = new QTextEdit;
      hintMsgBox->setReadOnly(true);
@@ -78,6 +69,8 @@ Gui::Gui(){
      hintMsgBox->setWindowTitle("Info");
      hintMsgBox->setWindowModality(Qt::NonModal);
      hintMsgBox->setHtml(tr("The command in the second text editor (if there is any) will be executed after the first one. The message boxes will close themselves after 10 seconds.<br/>To start a program just type i.e. \"firefox\" or \"firefox www.google.com\" and then click on Start. Commands etc. can be linked by \"&&\" etc. <br/><br/>If the process is \"finished\" although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.<br/><br/>When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).<br/><br/>make examples:<br/>&nbsp;make -C /path/to/project<br/>&nbsp;make clean -C /path/to/project<br/><br/>About Errors:<br/>Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at <i>~/.qprogram-starter/</i>.<br/><br/>If the shutdown won't work, it means that \"sudo shutdown -P now\" is used. This needs root permissions. You can do the this:<br/><br/>Post the following in a terminal:<pre>EDITOR=nano sudo -E visudo</pre> and add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre> whereas * replaces the username or %groupname.<br/><br/>The configuration-file can be found at <i>~/.qprogram-starter/</i>."));
+     
+     historyList = new QListWidget;
 
      connect(action_Configure, SIGNAL(triggered(bool)), pref, SLOT(show()));
      connect(dateTimeTimer, SIGNAL(timeout()), this, SLOT(currentDateAndTime()));
@@ -85,22 +78,19 @@ Gui::Gui(){
      connect(abortB, SIGNAL(clicked(bool)), this, SLOT(abortProcesses()));
      connect(saveButton, SIGNAL(clicked(bool)), this, SLOT(saveData()));
      connect(timer, SIGNAL(timeout()), this, SLOT(check()));
-     connect(browse1, SIGNAL(clicked(bool)), this, SLOT(getProgram1()));
-     connect(browse2, SIGNAL(clicked(bool)), this, SLOT(getProgram2()));
-     connect(process1, SIGNAL(readyReadStandardOutput()), this, SLOT(output1()));
-     connect(process1, SIGNAL(readyReadStandardError()), this, SLOT(errorOutput1()));
-     connect(process1, SIGNAL(finished(int)), this, SLOT(checkForProcess2()));
-     connect(process1, SIGNAL(error(QProcess::ProcessError)), this, SLOT(message()));
-     connect(process2, SIGNAL(readyReadStandardOutput()), this, SLOT(output2()));
-     connect(process2, SIGNAL(readyReadStandardError()), this, SLOT(errorOutput2()));
-     connect(process2, SIGNAL(finished(int)), this, SLOT(shutdown_or_message()));
-     connect(process2, SIGNAL(error(QProcess::ProcessError)), this, SLOT(message()));
+     connect(browse, SIGNAL(clicked(bool)), this, SLOT(getProgram()));
      connect(this, SIGNAL(finished()), this, SLOT(shutdown_or_message()));
      connect(action_Hints, SIGNAL(triggered(bool)), this, SLOT(info_hint()));
      connect(showLogsButton, SIGNAL(clicked(bool)), this, SLOT(showLogs()));
+     connect(historyBtn, SIGNAL(clicked(bool)), this, SLOT(showHistory()));
+     connect(historyList, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
+        this, SLOT(replaceEditorContent(QListWidgetItem*)));
+     connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setQuit(int)));
 }
 
-Gui::~Gui(){ delete hintMsgBox; }
+Gui::~Gui(){ delete hintMsgBox; delete historyList; delete logBox;}
+
+void Gui::setQuit(int idx) {quitCheckBox->setDisabled(idx > 0); }
 
 void Gui::closeEvent(QCloseEvent* window_close){
      if(!pref->settings->isWritable())
@@ -123,22 +113,15 @@ void Gui::info_hint(){ hintMsgBox->show(); }
 void Gui::check(){ //To check if start time is reached
      secondsToTimeInTheFuture = QDateTime::currentDateTime().secsTo(timeInTheFuture);
      if(secondsToTimeInTheFuture <= 0){
-       processArgs1 << "-c" << plainTextEdit->toPlainText();
-       process1->start(shell, processArgs1);
        timer->stop();
+       if(processes->length() > 0) processes->first()->start(processArgs->first());
      }
 }
 
-void Gui::getProgram1(){
-     program1 = QFileDialog::getOpenFileName(this, tr("Select a program"), "/usr/bin");
-     plainTextEdit->insertPlainText(program1);
+void Gui::getProgram(){
+     program = QFileDialog::getOpenFileName(this, tr("Select a program"), "/usr/bin");
+     plainTextEdit->insertPlainText(program);
      plainTextEdit->setFocus();
-}
-
-void Gui::getProgram2(){
-     program2 = QFileDialog::getOpenFileName(this, tr("Select a program"), "/usr/bin");
-     plainTextEdit2->insertPlainText(program2);
-     plainTextEdit2->setFocus();
 }
 
 void Gui::run(){ //To start either the timer or start the process
@@ -149,12 +132,44 @@ void Gui::run(){ //To start either the timer or start the process
        atDateCheckBox->setDisabled(true);
        dateEdit->setDisabled(true);
        timeEdit->setDisabled(true);
+
+       QStringList list = plainTextEdit->toPlainText().split("\n", QString::SkipEmptyParts);
+       QStringList cmd;
+       QStringList pices;
+       foreach( QString line, list ) {
+         line = line.trimmed();
+         if(line.right(1) == "\\"){
+           line.chop(1);
+           pices << line;
+         }
+         else{
+           if(pices.length() > 0){
+             pices << line;
+             cmd << pices.join(" ");
+             pices.clear();
+           }
+           else cmd << line;
+         }
+       }
+            
+       processes = new QList<QProcess* >;
+       processArgs = new QStringList;
+         
+       foreach(QString p, cmd){
+          QProcess* proc = new QProcess(this);
+          connect(proc, SIGNAL(readyReadStandardOutput()), this, SLOT(output()));
+          connect(proc, SIGNAL(readyReadStandardError()), this, SLOT(errorOutput()));
+          connect(proc, SIGNAL(error(QProcess::ProcessError)), this, SLOT(message()));
+          connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(next()));
+          *processes << proc;
+            
+          *processArgs << p;
+       }
+
        if(atDateCheckBox->isChecked())
          timer->start(1000);
-       else{
-         processArgs1 << "-c" << plainTextEdit->toPlainText();
-         process1->start(shell, processArgs1);
-       }
+       else
+         if(processes->length() > 0) processes->first()->start(processArgs->first());
      }
      else{
        QMessageBox msgBox;
@@ -165,21 +180,26 @@ void Gui::run(){ //To start either the timer or start the process
        QTimer::singleShot(6000, &msgBox, SLOT(close()));
        msgBox.exec();
      }
-     outputProcess1 = "";
-     outputProcess2 = "";
-     errProcess1 = "";
-     errProcess2 = "";
+     outputProcess = "";
+     errProcess = "";
+}
+
+void Gui::next(){
+    //bool isLast = processes->length() == 1;
+    if(processes->length() > 1 && processes->first()->exitCode()==0 && processes->first()->exitStatus()==0){
+        processes->removeFirst();
+        processArgs->removeFirst();
+        processes->first()->start(processArgs->first());
+    }
+    else shutdown_or_message();
+    
 }
 
 void Gui::abortProcesses(){
      timer->stop();
      aborted = true;
-
-     process1->close();
-     process2->close();
-
-     processArgs1.clear();
-     processArgs2.clear();
+     
+     foreach(QProcess *p, *processes) p->close();
 
      QMessageBox msgBox;
      msgBox.setWindowTitle(tr("Information"));
@@ -196,101 +216,52 @@ void Gui::abortProcesses(){
        timeEdit->setEnabled(true);
      }
      plainTextEdit->setEnabled(true);
-     plainTextEdit2->setEnabled(true);
 
      aborted = false;
 }
 
-void Gui::checkForProcess2(){ //check if there is a second command
-     if(process1->exitCode()==0 && process1->exitStatus()==0 && process1->error()==5
-       && !plainTextEdit2->toPlainText().isEmpty() && !aborted){
-       processArgs2 << "-c" << plainTextEdit2->toPlainText();
-       process2->start(shell, processArgs2);
-       process2Started = true;
-       plainTextEdit2->setDisabled(true);
-     }
-     else
-       finished();
-}
-
-void Gui::output1(){ //write output into a file if loggingCheckBox is checked
-     QString string = QString::fromLocal8Bit(process1->readAllStandardOutput());
-     outputProcess1 += string;
+void Gui::output(){ //write output into a file if loggingCheckBox is checked
+     QString string = QString::fromLocal8Bit(processes->first()->readAllStandardOutput());
+     outputProcess += string;
 
      if(loggingCheckBox->isChecked()){
-       QFile outputLog1(QDir::homePath() + "/.qprogram-starter/outputLog1.txt");
-       if(!outputLog1.open(QIODevice::Append))
+       QFile outputLog(QDir::homePath() + "/.qprogram-starter/outputLog.txt");
+       if(!outputLog.open(QIODevice::Append))
          return;
-       QTextStream str(&outputLog1);
+       QTextStream str(&outputLog);
        str << string;
-       outputLog1.close();
+       outputLog.close();
      }
 }
 
-void Gui::output2(){ //write output into a file if loggingCheckBox is checked
-     QString string = QString::fromLocal8Bit(process2->readAllStandardOutput());
-     outputProcess2 += string;
+void Gui::errorOutput(){ //write error output into a file if loggingCheckBox is checked
+     QString string = QString::fromLocal8Bit(processes->first()->readAllStandardError());
+     errProcess += string;
 
      if(loggingCheckBox->isChecked()){
-       QFile outputLog2(QDir::homePath() + "/.qprogram-starter/outputLog2.txt");
-       if(!outputLog2.open(QIODevice::Append))
+       QFile errorLog(QDir::homePath() + "/.qprogram-starter/errorLog.txt");
+       if(!errorLog.open(QIODevice::Append))
          return;
-       QTextStream str(&outputLog2);
+       QTextStream str(&errorLog);
        str << string;
-       outputLog2.close();
-     }
-}
-
-void Gui::errorOutput1(){ //write error output into a file if loggingCheckBox is checked
-     QString string = QString::fromLocal8Bit(process1->readAllStandardError());
-     errProcess1 += string;
-
-     if(loggingCheckBox->isChecked()){
-       QFile errorLog1(QDir::homePath() + "/.qprogram-starter/errorLog1.txt");
-       if(!errorLog1.open(QIODevice::Append))
-         return;
-       QTextStream str(&errorLog1);
-       str << string;
-       errorLog1.close();
-     }
-}
-
-void Gui::errorOutput2(){ //write error output into a file if loggingCheckBox is checked
-     QString string = QString::fromLocal8Bit(process2->readAllStandardError());
-     errProcess2 += string;
-
-     if(loggingCheckBox->isChecked()){
-       QFile errorLog2(QDir::homePath() + "/.qprogram-starter/errorLog2.txt");
-       if(!errorLog2.open(QIODevice::Append))
-         return;
-       QTextStream str(&errorLog2);
-       str << string;
-       errorLog2.close();
+       errorLog.close();
      }
 }
 
 void Gui::showLogs(){
-     if(!outputProcess1.isEmpty() || !errProcess1.isEmpty()
-       || !outputProcess2.isEmpty() || !errProcess2.isEmpty()){
-       if(!outputProcess1.isEmpty())
-         logBox1->append(outputProcess1);
-       if(!errProcess1.isEmpty())
-         logBox1->append(errProcess1);
-       logBox1->show();
-
-       if(process1->exitCode()==0 && process1->exitStatus()==0
-         && process1->error()==5 && !plainTextEdit2->toPlainText().isEmpty() && !aborted){
-         if(!outputProcess2.isEmpty())
-           logBox2->append(outputProcess2);
-         if(!errProcess2.isEmpty())
-           logBox2->append(errProcess2);
-         logBox2->show();
-       }
+     if(!outputProcess.isEmpty() || !errProcess.isEmpty()){
+       if(!outputProcess.isEmpty())
+         logBox->append(outputProcess);
+       if(!errProcess.isEmpty())
+         logBox->append(errProcess);
+       logBox->show();
      }
 }     
 
 void Gui::shutdown_or_message(){
-     if(!shutdownCheckBox->isChecked() || aborted)
+     saveHistory();
+     
+     if(comboBox->currentIndex() == 0 || aborted)
      {
         message();
         return;
@@ -300,205 +271,171 @@ void Gui::shutdown_or_message(){
 
        saveSettings();
 
-      #ifndef Q_OS_WIN32
-       bool l = false;
-       bool g = false; //gnome
-       bool k = false; //kde
-       bool g_pwr1 = false;
-       bool g_pwr2 = false;
-       bool hal = false;
-
-       QDBusMessage response;
-
-       QDBusInterface freedesktopLogin1("org.freedesktop.login1",
-        "/org/freedesktop/login1", "org.freedesktop.login1.Manager",
-        QDBusConnection::systemBus());
-       QDBusInterface gnomeSessionManager("org.gnome.SessionManager",
-        "/org/gnome/SessionManager", "org.gnome.SessionManager",
-        QDBusConnection::sessionBus());
-       QDBusInterface kdeSessionManager("org.kde.ksmserver", "/KSMServer",
-        "org.kde.KSMServerInterface", QDBusConnection::sessionBus());
-       QDBusInterface freedesktopHal("org.freedesktop.Hal",
-        "/org/freedesktop/Hal/devices/computer",
-        "org.freedesktop.Hal.Device.SystemPowerManagement",
-        QDBusConnection::systemBus());
-       QDBusInterface freedesktopConsoleKit("org.freedesktop.ConsoleKit",
-        "/org/freedesktop/ConsoleKit/Manager",
-        "org.freedesktop.ConsoleKit.Manager",
-        QDBusConnection::systemBus());
-      #else
-       QProcess::startDetached("shutdown -r -f -t 00"); // Windows command to reboot immediately
-       }
-      #endif
-
-       if(pref->comboBox->currentIndex() == 0){ //automatic
-         if(QProcess::startDetached("/usr/bin/systemctl poweroff"))
-           return;
-         g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
-         g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
-         if(!g_pwr1 && !g_pwr2){
-           *myOutput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-                     << endl;
-           response = gnomeSessionManager.call("RequestShutdown");
-           if(response.type() == QDBusMessage::ErrorMessage)
-             *myOutput << "W: " << response.errorName() << ": "
-                       << response.errorMessage() << endl;
-           else g = true;
-           if(!g){
-             response = gnomeSessionManager.call("Shutdown");
-             if(response.type() == QDBusMessage::ErrorMessage)
-               *myOutput << "W: " << response.errorName() << ": "
-                         << response.errorMessage() << endl;
-             else g = true;
-           }
+     switch(comboBox->currentIndex()){
+       case 1: //shutdown
+         switch(pref->shutdownCB->currentIndex()){ //shutdown method settings
+            case 0:
+                Power::automatic = true;
+                break;
+            case 1:
+                Power::login1 = true;
+                break;
+            case 2:
+                Power::gnome = true;
+                break;
+            case 3:
+                Power::kde = true;
+                break;
+            case 4:
+                Power::hal_ = true;
+                break;
+            case 5:
+                Power::consolekit = true;
+                break;
+            case 6:
+                Power::sudo = true;
+                break;
+            //case 7:
+            //    Power::user = true;
+            //    Power::myShutdown = pref->myShutdown;
+            //    break;
+            default:;
          }
-         else g = true;
+         Power::shutdown();
+         break;
 
-         if(!g){
-         response = freedesktopLogin1.call("PowerOff", true);
-           if(response.type() == QDBusMessage::ErrorMessage)
-             *myOutput << "W: " << response.errorName() << ": "
-                       << response.errorMessage() << endl;
-           else l = true;
+       case 2: //reboot
+         switch(pref->rebootCB->currentIndex()){ //reboot method settings
+            case 0:
+                Power::automatic = true;
+                break;
+            case 1:
+                Power::login1 = true;
+                break;
+            case 2:
+                Power::gnome = true;
+                break;
+            case 3:
+                Power::kde = true;
+                break;
+            case 4:
+                Power::hal_ = true;
+                break;
+            case 5:
+                Power::consolekit = true;
+                break;
+            case 6:
+                Power::sudo = true;
+                break;
+            //case 7:
+            //    Power::user = true;
+            //    Power::myReboot = pref->myReboot;
+            //    break;
+            default:;
          }
+         Power::reboot();
+         break;
 
-         if(!g &&!l){
-           response = kdeSessionManager.call("logout", 0, 2, 2);
-           if(response.type() == QDBusMessage::ErrorMessage)
-             *myOutput << "W: " << response.errorName() << ": "
-                       << response.errorMessage() << endl;
-           else k = true;
+       case 3: //sleep
+         switch(pref->suspendCB->currentIndex()){ //sleep method settings
+            case 0:
+                Power::automatic = true;
+                break;
+            case 1:
+                Power::login1 = true;
+                break;
+            case 2:
+                Power::gnome = true;
+                break;
+            case 3:
+                Power::hal_ = true;
+                break;
+            case 4:
+                Power::upower_ = true;
+                break;
+            case 5:
+                Power::devicekit = true;
+                break;
+            //case 6:
+            //    Power::user = true;
+            //    Power::mySuspend = pref->mySuspend;
+            //    break;
+            default:;
          }
+         Power::lockMyScreen = true;
+         Power::suspend();
+         break;
 
-         if(!g && !l && !k){
-           response = freedesktopHal.call("Shutdown");
-           if(response.type() == QDBusMessage::ErrorMessage)
-             *myOutput << "W: " << response.errorName() << ": "
-                       << response.errorMessage() << endl;
-           else hal = true;
+       case 4: //hibernate
+         switch(pref->hibernateCB->currentIndex()){ //hibernate method settings
+            case 0:
+                Power::automatic = true;
+                break;
+            case 1:
+                Power::login1 = true;
+                break;
+            case 2:
+                Power::gnome = true;
+                break;
+            case 3:
+                Power::hal_ = true;
+                break;
+            case 4:
+                Power::upower_ = true;
+                break;
+            case 5:
+                Power::devicekit = true;
+                break;
+            //case 6:
+            //    Power::user = true;
+            //    Power::myHibernate = pref->myHibernate;
+            //    break;
+            default:;
          }
+         Power::lockMyScreen = true;
+         Power::hibernate();
+         break;
 
-         if(!g && !l && !k && !hal){
-           response = freedesktopConsoleKit.call("Stop");
-           if(response.type() == QDBusMessage::ErrorMessage){
-             *myOutput << "W: " << response.errorName() << ": "
-                       << response.errorMessage() << endl;
-             QProcess::startDetached("sudo shutdown -P now");
-           }
-         }
-       } //end of automatic
-
-       if(pref->comboBox->currentIndex() == 1){
-         response = freedesktopLogin1.call("PowerOff", true);
-           if(response.type() == QDBusMessage::ErrorMessage)
-             *myOutput << "W: " << response.errorName() << ": "
-                       << response.errorMessage() << endl;
-       }
-
-       if(pref->comboBox->currentIndex() == 2){ //gnome
-         g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
-         g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
-         if(!g_pwr1 && !g_pwr2){
-           *myOutput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-                     << endl;
-           response = gnomeSessionManager.call("RequestShutdown");
-           if(response.type() == QDBusMessage::ErrorMessage)
-             *myOutput << "W: " << response.errorName() << ": "
-                     << response.errorMessage() << endl;
-           else g = true;
-           if(!g){
-             response = gnomeSessionManager.call("Shutdown");
-             if(response.type() == QDBusMessage::ErrorMessage)
-               *myOutput << "W: " << response.errorName() << ": "
-                         << response.errorMessage() << endl;
-           }
-         }
-       }
-
-       if(pref->comboBox->currentIndex() == 3){ //kde
-         response = kdeSessionManager.call("logout", 0, 2, 2);
-         if(response.type() == QDBusMessage::ErrorMessage)
-           *myOutput << "W: " << response.errorName() << ": "
-                     << response.errorMessage() << endl;
-       }
-
-       if(pref->comboBox->currentIndex() == 4){ //hal
-         response = freedesktopHal.call("Shutdown");
-         if(response.type() == QDBusMessage::ErrorMessage)
-           *myOutput << "W: " << response.errorName() << ": "
-                     << response.errorMessage() << endl;
-       }
-
-       if(pref->comboBox->currentIndex() == 5){ //consoleKit
-         response = freedesktopConsoleKit.call("Stop");
-         if(response.type() == QDBusMessage::ErrorMessage)
-           *myOutput << "W: " << response.errorName() << ": "
-                     << response.errorMessage() << endl;
-       }
-
-       if(pref->comboBox->currentIndex() == 6){ //sudo
-         if(QProcess::startDetached("sudo /usr/bin/systemctl poweroff"))
-           return;
-         QProcess::startDetached("sudo shutdown -P now");
-         QProcess::startDetached("sudo shutdown -h -P now");
-       }
+       default:;
+     }
+     
      }
 
-     processArgs1.clear();
-     processArgs2.clear();
+     processes->clear();
+     processArgs->clear();
      qApp->quit(); //otherwise some systems might prompt to quit the program
 }
 
 void Gui::message(){
+     const QProcess *p = processes->first();
      if(!aborted){
        QMessageBox msgBox;
-       if(process1->exitCode()==0 && process1->exitStatus()==0 && process1->error()==5){
-         if(plainTextEdit2->toPlainText().isEmpty()){
+       if(p->exitCode()==0 && p->exitStatus()==0 && p->error()==QProcess::UnknownError){
            msgBox.setWindowTitle(tr("Information"));
            msgBox.setIcon(QMessageBox::Information);
-           msgBox.setInformativeText(tr("<b>process 1 finished!</b>"));
-         }
-       }
-       if(process2Started && process2->exitCode()==0 && process2->exitStatus()==0 && process2->error()==5){
-         msgBox.setWindowTitle(tr("Information"));
-         msgBox.setIcon(QMessageBox::Information);
-         msgBox.setInformativeText(tr("<b>process 1 & 2 finished!</b>"));
+           msgBox.setInformativeText(tr("<b>process finished!</b>"));
        }
 
-       if((process1->exitCode()!=0 || process1->error()!=5) ||
-          (process2->exitCode()!=0 || process2->error()!=5)){
+       if(p->exitCode()!=0 || p->error()!=QProcess::UnknownError){
          msgBox.setWindowTitle(tr("Error"));
          msgBox.setIcon(QMessageBox::Critical);
-         if(process1->error()==0 || process2->error()==0){
+         if(p->error()==0){
            msgBox.setInformativeText(tr("<b>Failed to start!</b><br/>"
             "No such program or command."));
            if(loggingCheckBox->isChecked()){
-             if(process1->error()==0){
-               QFile errorLog1(QDir::homePath() + "/.qprogram-starter/errorLog1.txt");
-               if(!errorLog1.open(QIODevice::Append))
+             if(p->error()==0){
+               QFile errorLog(QDir::homePath() + "/.qprogram-starter/errorLog.txt");
+               if(!errorLog.open(QIODevice::Append))
                  return;
-               QTextStream err1(&errorLog1);
+               QTextStream err1(&errorLog);
                err1 << tr("\"%1\": Failed to start! No such program or "
                           "command.\n").arg(plainTextEdit->toPlainText());
-               errorLog1.close();
-             }
-
-             if(process2->error()==0){
-               QFile errorLog2(QDir::homePath() + "/.qprogram-starter/errorLog2.txt");
-               if(!errorLog2.open(QIODevice::Append))
-                 return;
-               QTextStream err2(&errorLog2);
-               err2 << tr("\"%1\": Failed to start! No such program or "
-                          "command.\n").arg(plainTextEdit2->toPlainText());
-               errorLog2.close();
+               errorLog.close();
              }
            }
          }
-         else if(process1->error()==1 || process1->exitCode()==1)
-           msgBox.setInformativeText(tr("<b>process 1 crashed!</b><br/>"
-           "This could be caused by invalid parameters or options."));
-         else if(process2->error()==1 || process2->exitCode()==1)
-           msgBox.setInformativeText(tr("<b>process 2 crashed!</b><br/>"
+         else if(p->error()==1 || p->exitCode()==1)
+           msgBox.setInformativeText(tr("<b>process crashed!</b><br/>"
            "This could be caused by invalid parameters or options."));
          else
            msgBox.setInformativeText(tr("<b>Unknown error!</b><br/>"
@@ -516,32 +453,58 @@ void Gui::message(){
        timeEdit->setEnabled(true);
      }
      plainTextEdit->setEnabled(true);
-     plainTextEdit2->setEnabled(true);
 
      if(quitCheckBox->isChecked() && !aborted)
        close();
 
-     processArgs1.clear();
-     processArgs2.clear();
+     processes->clear();
+     processArgs->clear();
+}
+
+void Gui::showHistory(){
+    QJsonDocument json = QJsonDocument::fromJson(pref->settings->value("History/text", QString()).toByteArray());
+    QJsonArray jsonArr = json.array();
+    
+    historyList->clear();
+    
+    for(int i = 0; i < jsonArr.size(); i++){
+        historyList->addItem(jsonArr[i].toString().replace(QString("\n"), QString("\\n")));
+    }
+    historyList->show();   
+
+}
+
+void Gui::replaceEditorContent(QListWidgetItem *item){
+    plainTextEdit->setPlainText(item->text().replace(QString("\\n"), QString("\n")));
+}
+
+void Gui::saveHistory(){
+    QJsonDocument json = QJsonDocument::fromJson(pref->settings->value("History/text", QString()).toByteArray());
+    QJsonArray jsonArr = json.array();
+    jsonArr << plainTextEdit->toPlainText();
+    
+    int max = pref->settings->value("History/max", 10).toInt();
+    
+    while(jsonArr.size() >= max) jsonArr.removeFirst();
+    
+    pref->settings->setValue("History/text", QJsonDocument(jsonArr).toJson(QJsonDocument::Compact));
 }
 
 void Gui::saveData(){
-     pref->settings->setValue("Text/text1", plainTextEdit->toPlainText());
-     pref->settings->setValue("Text/text2", plainTextEdit2->toPlainText());
+     pref->settings->setValue("Text/text", plainTextEdit->toPlainText());
 }
 
 void Gui::saveSettings(){
      pref->settings->setValue("CheckBoxes/atDate", atDateCheckBox->isChecked());
      pref->settings->setValue("CheckBoxes/logging", loggingCheckBox->isChecked());
-     pref->settings->setValue("CheckBoxes/shutdown", shutdownCheckBox->isChecked());
+     pref->settings->setValue("CheckBoxes/shutdown", comboBox->currentIndex());
      pref->settings->setValue("CheckBoxes/quitWithLastProcess", quitCheckBox->isChecked());
 }
 
 void Gui::loadSettings(){
      atDateCheckBox->setChecked(pref->settings->value("CheckBoxes/atDate").toBool());
      loggingCheckBox->setChecked(pref->settings->value("CheckBoxes/logging").toBool());
-     shutdownCheckBox->setChecked(pref->settings->value("CheckBoxes/shutdown").toBool());
+     comboBox->setCurrentIndex(pref->settings->value("CheckBoxes/shutdown").toInt());
      quitCheckBox->setChecked(pref->settings->value("CheckBoxes/quitWithLastProcess").toBool());
-     plainTextEdit->setPlainText(pref->settings->value("Text/text1").toString());
-     plainTextEdit2->setPlainText(pref->settings->value("Text/text2").toString());
+     plainTextEdit->setPlainText(pref->settings->value("Text/text").toString());
 }
