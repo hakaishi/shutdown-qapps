@@ -42,6 +42,8 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      connect(clearHistBtn, SIGNAL(clicked(bool)), this, SLOT(clearHistory()));
 }
 
+Preferences::~Preferences(){ delete settings; }
+
 void Preferences::setupMsgBoxes(){
      msgBox = new QMessageBox(this);
      msgBox->setWindowTitle(tr("Error"));

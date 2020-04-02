@@ -66,7 +66,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      int             i; //number of seconds left
      int             oldComboBoxIndex;
      double          bigI; //for more precise display
-     const static int n = 10; //to check if i==0 was skipped
+     const static int n = 30; //to check if i==0 was skipped
      QFont           *font1, *font2, *font3;
      double          logFileSize;
      Preferences     *pref;

@@ -229,7 +229,8 @@ void Gui::output(){ //write output into a file if loggingCheckBox is checked
        if(!outputLog.open(QIODevice::Append))
          return;
        QTextStream str(&outputLog);
-       str << string;
+       str << QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")
+           << ": " << processArgs->first() << ":" << endl << string << endl;
        outputLog.close();
      }
 }
@@ -243,7 +244,8 @@ void Gui::errorOutput(){ //write error output into a file if loggingCheckBox is 
        if(!errorLog.open(QIODevice::Append))
          return;
        QTextStream str(&errorLog);
-       str << string;
+       str << QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")
+           << ": " << processArgs->first() << ":" << endl << string << endl;
        errorLog.close();
      }
 }
@@ -427,9 +429,12 @@ void Gui::message(){
                QFile errorLog(QDir::homePath() + "/.qprogram-starter/errorLog.txt");
                if(!errorLog.open(QIODevice::Append))
                  return;
-               QTextStream err1(&errorLog);
-               err1 << tr("\"%1\": Failed to start! No such program or "
-                          "command.\n").arg(plainTextEdit->toPlainText());
+               QTextStream err(&errorLog);
+               err << QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")
+                   << ": " << processArgs->first() << ":" << endl
+                   << tr("\"%1\": Failed to start! No such program or "
+                          "command.\n").arg(plainTextEdit->toPlainText())
+                   << endl;
                errorLog.close();
              }
            }
