@@ -179,7 +179,9 @@ void Gui::run(){ //To start either the timer or start the process
        msgBox.setIcon(QMessageBox::Warning);
        msgBox.setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Window);
        msgBox.setInformativeText(tr("The first text edit is empty!"));
-       QTimer::singleShot(6000, &msgBox, SLOT(close()));
+       singleShot = new QTimer(this);
+       singleShot->singleShot(6000, &msgBox, SLOT(close()));
+       connect(&msgBox, SIGNAL(closeEvent(QCloseEvent)), singleShot, SLOT(stop()));
        msgBox.exec();
      }
      outputProcess = "";
@@ -209,7 +211,9 @@ void Gui::abortProcesses(){
      msgBox.setInformativeText(tr("Processes aborted"));
      msgBox.setWindowModality(Qt::NonModal);
      msgBox.setWindowFlags(Qt::WindowStaysOnTopHint);
-     QTimer::singleShot(10000, &msgBox, SLOT(close()));
+     singleShot = new QTimer(this);
+     singleShot->singleShot(10000, &msgBox, SLOT(close()));
+     connect(&msgBox, SIGNAL(closeEvent(QCloseEvent)), singleShot, SLOT(stop()));
      msgBox.exec();
 
      atDateCheckBox->setEnabled(true);

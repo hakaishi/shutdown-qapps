@@ -38,7 +38,7 @@ class Gui : public QMainWindow, public Ui::Gui {
 
      private:
       Preferences    *pref;
-      QTimer         *dateTimeTimer, *timer;
+      QTimer         *dateTimeTimer, *timer, *singleShot;
       QList<QProcess *>       *processes;
       QDateTime      nextDate, timeInTheFuture;
       double         secondsToTimeInTheFuture;
