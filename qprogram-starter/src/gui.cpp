@@ -59,18 +59,20 @@ Gui::Gui(){
 
      logBox = new QTextEdit;
      logBox->setReadOnly(true);
-     logBox->resize(520,450);
-     logBox->setWindowTitle("error log 1");
+     logBox->resize(600,400);
+     logBox->setWindowTitle(tr("Protokoll"));
      logBox->setWindowModality(Qt::NonModal);
 
      hintMsgBox = new QTextEdit;
      hintMsgBox->setReadOnly(true);
-     hintMsgBox->resize(520,450);
-     hintMsgBox->setWindowTitle("Info");
+     hintMsgBox->resize(600,400);
+     hintMsgBox->setWindowTitle(tr("Info"));
      hintMsgBox->setWindowModality(Qt::NonModal);
      hintMsgBox->setHtml(tr("The command in the second text editor (if there is any) will be executed after the first one. The message boxes will close themselves after 10 seconds.<br/>To start a program just type i.e. \"firefox\" or \"firefox www.google.com\" and then click on Start. Commands etc. can be linked by \"&&\" etc. <br/><br/>If the process is \"finished\" although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.<br/><br/>When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).<br/><br/>make examples:<br/>&nbsp;make -C /path/to/project<br/>&nbsp;make clean -C /path/to/project<br/><br/>About Errors:<br/>Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at <i>~/.qprogram-starter/</i>.<br/><br/>If the shutdown won't work, it means that \"sudo shutdown -P now\" is used. This needs root permissions. You can do the this:<br/><br/>Post the following in a terminal:<pre>EDITOR=nano sudo -E visudo</pre> and add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre> whereas * replaces the username or %groupname.<br/><br/>The configuration-file can be found at <i>~/.qprogram-starter/</i>."));
      
      historyList = new QListWidget;
+     historyList->setWindowTitle(tr("History"));
+     historyList->resize(600,400);
 
      connect(action_Configure, SIGNAL(triggered(bool)), pref, SLOT(show()));
      connect(dateTimeTimer, SIGNAL(timeout()), this, SLOT(currentDateAndTime()));
@@ -270,6 +272,10 @@ void Gui::shutdown_or_message(){
      }
      else
      {
+       
+       if(pref->settings->value("CheckBoxes/no_quit_action_on_shutdown", false).toBool()
+            && processes->first()->exitCode() != 0 && processes->first()->exitStatus() != 0)
+         return;
 
        saveSettings();
 
@@ -459,7 +465,10 @@ void Gui::message(){
      }
      plainTextEdit->setEnabled(true);
 
-     if(quitCheckBox->isChecked() && !aborted)
+     if(quitCheckBox->isChecked() && !aborted && 
+        ((pref->settings->value("CheckBoxes/no_quit_action_on_shutdown", false).toBool()
+        && processes->first()->exitCode() == 0 && processes->first()->exitStatus() == 0)
+        || !pref->settings->value("CheckBoxes/no_quit_action_on_shutdown", false).toBool()))
        close();
 
      processes->clear();
