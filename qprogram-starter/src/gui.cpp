@@ -56,6 +56,10 @@ Gui::Gui(){
      dateTimeTimer->start(1000);
 
      timer = new QTimer(this);
+     
+     countdown = new QTimer(this);
+     updCountdown = new QTimer(this);
+     countdownInt = 0;
 
      logBox = new QTextEdit;
      logBox->setReadOnly(true);
@@ -81,7 +85,6 @@ Gui::Gui(){
      connect(saveButton, SIGNAL(clicked(bool)), this, SLOT(saveData()));
      connect(timer, SIGNAL(timeout()), this, SLOT(check()));
      connect(browse, SIGNAL(clicked(bool)), this, SLOT(getProgram()));
-     connect(this, SIGNAL(finished()), this, SLOT(shutdown_or_message()));
      connect(action_Hints, SIGNAL(triggered(bool)), this, SLOT(info_hint()));
      connect(showLogsButton, SIGNAL(clicked(bool)), this, SLOT(showLogs()));
      connect(historyBtn, SIGNAL(clicked(bool)), this, SLOT(showHistory()));
@@ -161,7 +164,7 @@ void Gui::run(){ //To start either the timer or start the process
           QProcess* proc = new QProcess(this);
           connect(proc, SIGNAL(readyReadStandardOutput()), this, SLOT(output()));
           connect(proc, SIGNAL(readyReadStandardError()), this, SLOT(errorOutput()));
-          connect(proc, SIGNAL(error(QProcess::ProcessError)), this, SLOT(message()));
+          connect(proc, SIGNAL(error(QProcess::ProcessError)), this, SLOT(errorOutput()));
           connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(next()));
           *processes << proc;
             
@@ -178,10 +181,9 @@ void Gui::run(){ //To start either the timer or start the process
        msgBox.setWindowTitle("Error");
        msgBox.setIcon(QMessageBox::Warning);
        msgBox.setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Window);
-       msgBox.setInformativeText(tr("The first text edit is empty!"));
+       msgBox.setInformativeText(tr("The text edit is empty!"));
        singleShot = new QTimer(this);
        singleShot->singleShot(6000, &msgBox, SLOT(close()));
-       connect(&msgBox, SIGNAL(closeEvent(QCloseEvent)), singleShot, SLOT(stop()));
        msgBox.exec();
      }
      outputProcess = "";
@@ -190,17 +192,35 @@ void Gui::run(){ //To start either the timer or start the process
 
 void Gui::next(){
     //bool isLast = processes->length() == 1;
-    if(processes->length() > 1 && processes->first()->exitCode()==0 && processes->first()->exitStatus()==0){
+    if(processes->length() > 1 && processes->first()->exitCode()==0
+        && processes->first()->exitStatus()==0
+        && processes->first()->error()==QProcess::UnknownError){
         processes->removeFirst();
         processArgs->removeFirst();
         processes->first()->start(processArgs->first());
     }
-    else shutdown_or_message();
+    else{
+        message();
+        countdown->singleShot(1000*10, this, SLOT(shutdown_or_message()));
+        countdownInt = 10; //seconds
+        updCountdown->start(1000);
+        connect(updCountdown, SIGNAL(timeout()), this, SLOT(displayCountdown()));
+    }
     
 }
 
+void Gui::displayCountdown(){
+    statusBar()->showMessage(QString::number(countdownInt--), 1000);
+}
+
 void Gui::abortProcesses(){
-     timer->stop();
+     if(countdownInt > 0) {
+         timer->stop();
+         countdown->stop();
+         updCountdown->stop();
+         countdownInt = 0;
+     }
+     
      aborted = true;
      
      foreach(QProcess *p, *processes) p->close();
@@ -213,7 +233,6 @@ void Gui::abortProcesses(){
      msgBox.setWindowFlags(Qt::WindowStaysOnTopHint);
      singleShot = new QTimer(this);
      singleShot->singleShot(10000, &msgBox, SLOT(close()));
-     connect(&msgBox, SIGNAL(closeEvent(QCloseEvent)), singleShot, SLOT(stop()));
      msgBox.exec();
 
      atDateCheckBox->setEnabled(true);
@@ -254,6 +273,8 @@ void Gui::errorOutput(){ //write error output into a file if loggingCheckBox is 
            << ": " << processArgs->first() << ":" << endl << string << endl;
        errorLog.close();
      }
+     
+     next();
 }
 
 void Gui::showLogs(){
@@ -267,155 +288,159 @@ void Gui::showLogs(){
 }     
 
 void Gui::shutdown_or_message(){
-     saveHistory();
-     
-     if(comboBox->currentIndex() == 0 || aborted)
-     {
-        message();
-        return;
-     }
-     else
-     {
-       
-       if(pref->settings->value("CheckBoxes/no_quit_action_on_shutdown", false).toBool()
-            && processes->first()->exitCode() != 0 && processes->first()->exitStatus() != 0)
-         return;
+    countdown->stop();
+    updCountdown->stop();
+    
+    countdownInt = 0;
+    statusBar()->clearMessage();
 
+    saveHistory();
+     
+    if(pref->settings->value("CheckBoxes/no_quit_action_or_shutdown_on_error", false).toBool()
+        && processes->first()->exitCode() != 0 && processes->first()->exitStatus() != 0){
+        
+        processes->clear();
+        processArgs->clear();
+        return;
+    }
+       
+    if(comboBox->currentIndex() > 0)
+    {
        saveSettings();
 
-     switch(comboBox->currentIndex()){
-       case 1: //shutdown
-         switch(pref->shutdownCB->currentIndex()){ //shutdown method settings
-            case 0:
-                Power::automatic = true;
-                break;
-            case 1:
-                Power::login1 = true;
-                break;
-            case 2:
-                Power::gnome = true;
-                break;
-            case 3:
-                Power::kde = true;
-                break;
-            case 4:
-                Power::hal_ = true;
-                break;
-            case 5:
-                Power::consolekit = true;
-                break;
-            case 6:
-                Power::sudo = true;
-                break;
-            //case 7:
-            //    Power::user = true;
-            //    Power::myShutdown = pref->myShutdown;
-            //    break;
-            default:;
-         }
-         Power::shutdown();
-         break;
+       switch(comboBox->currentIndex()){
+         case 1: //shutdown
+           switch(pref->shutdownCB->currentIndex()){ //shutdown method settings
+              case 0:
+                  Power::automatic = true;
+                  break;
+              case 1:
+                  Power::login1 = true;
+                  break;
+              case 2:
+                  Power::gnome = true;
+                  break;
+              case 3:
+                  Power::kde = true;
+                  break;
+              case 4:
+                  Power::hal_ = true;
+                  break;
+              case 5:
+                  Power::consolekit = true;
+                  break;
+              case 6:
+                  Power::sudo = true;
+                  break;
+              //case 7:
+              //    Power::user = true;
+              //    Power::myShutdown = pref->myShutdown;
+              //    break;
+              default:;
+           }
+           Power::shutdown();
+           break;
 
-       case 2: //reboot
-         switch(pref->rebootCB->currentIndex()){ //reboot method settings
-            case 0:
-                Power::automatic = true;
-                break;
-            case 1:
-                Power::login1 = true;
-                break;
-            case 2:
-                Power::gnome = true;
-                break;
-            case 3:
-                Power::kde = true;
-                break;
-            case 4:
-                Power::hal_ = true;
-                break;
-            case 5:
-                Power::consolekit = true;
-                break;
-            case 6:
-                Power::sudo = true;
-                break;
-            //case 7:
-            //    Power::user = true;
-            //    Power::myReboot = pref->myReboot;
-            //    break;
-            default:;
-         }
-         Power::reboot();
-         break;
-
-       case 3: //sleep
-         switch(pref->suspendCB->currentIndex()){ //sleep method settings
-            case 0:
-                Power::automatic = true;
-                break;
-            case 1:
-                Power::login1 = true;
-                break;
-            case 2:
-                Power::gnome = true;
-                break;
-            case 3:
-                Power::hal_ = true;
-                break;
-            case 4:
-                Power::upower_ = true;
-                break;
-            case 5:
-                Power::devicekit = true;
-                break;
-            //case 6:
-            //    Power::user = true;
-            //    Power::mySuspend = pref->mySuspend;
-            //    break;
-            default:;
-         }
-         Power::lockMyScreen = true;
-         Power::suspend();
-         break;
-
-       case 4: //hibernate
-         switch(pref->hibernateCB->currentIndex()){ //hibernate method settings
-            case 0:
-                Power::automatic = true;
-                break;
-            case 1:
-                Power::login1 = true;
-                break;
-            case 2:
-                Power::gnome = true;
-                break;
-            case 3:
-                Power::hal_ = true;
-                break;
-            case 4:
-                Power::upower_ = true;
-                break;
-            case 5:
-                Power::devicekit = true;
-                break;
-            //case 6:
-            //    Power::user = true;
-            //    Power::myHibernate = pref->myHibernate;
-            //    break;
-            default:;
-         }
-         Power::lockMyScreen = true;
-         Power::hibernate();
-         break;
-
-       default:;
-     }
-     
-     }
-
-     processes->clear();
-     processArgs->clear();
-     qApp->quit(); //otherwise some systems might prompt to quit the program
+         case 2: //reboot
+           switch(pref->rebootCB->currentIndex()){ //reboot method settings
+              case 0:
+                  Power::automatic = true;
+                  break;
+              case 1:
+                  Power::login1 = true;
+                  break;
+              case 2:
+                  Power::gnome = true;
+                  break;
+              case 3:
+                  Power::kde = true;
+                  break;
+              case 4:
+                  Power::hal_ = true;
+                  break;
+              case 5:
+                  Power::consolekit = true;
+                  break;
+              case 6:
+                  Power::sudo = true;
+                  break;
+              //case 7:
+              //    Power::user = true;
+              //    Power::myReboot = pref->myReboot;
+              //    break;
+              default:;
+           }
+           Power::reboot();
+           break;
+         
+         case 3: //sleep
+           switch(pref->suspendCB->currentIndex()){ //sleep method settings
+              case 0:
+                  Power::automatic = true;
+                  break;
+              case 1:
+                  Power::login1 = true;
+                  break;
+              case 2:
+                  Power::gnome = true;
+                  break;
+              case 3:
+                  Power::hal_ = true;
+                  break;
+              case 4:
+                  Power::upower_ = true;
+                  break;
+              case 5:
+                  Power::devicekit = true;
+                  break;
+              //case 6:
+              //    Power::user = true;
+              //    Power::mySuspend = pref->mySuspend;
+              //    break;
+              default:;
+           }
+           Power::lockMyScreen = true;
+           Power::suspend();
+           break;
+         
+         case 4: //hibernate
+           switch(pref->hibernateCB->currentIndex()){ //hibernate method settings
+              case 0:
+                  Power::automatic = true;
+                  break;
+              case 1:
+                  Power::login1 = true;
+                  break;
+              case 2:
+                  Power::gnome = true;
+                  break;
+              case 3:
+                  Power::hal_ = true;
+                  break;
+              case 4:
+                  Power::upower_ = true;
+                  break;
+              case 5:
+                  Power::devicekit = true;
+                  break;
+              //case 6:
+              //    Power::user = true;
+              //    Power::myHibernate = pref->myHibernate;
+              //    break;
+              default:;
+           }
+           Power::lockMyScreen = true;
+           Power::hibernate();
+           break;
+         
+         default:;
+       }
+    }
+    if((quitCheckBox->isChecked() && !aborted) || comboBox->currentIndex() > 0){
+        processes->clear();
+        processArgs->clear();
+        qApp->quit();
+    }
 }
 
 void Gui::message(){
@@ -468,15 +493,6 @@ void Gui::message(){
        timeEdit->setEnabled(true);
      }
      plainTextEdit->setEnabled(true);
-
-     if(quitCheckBox->isChecked() && !aborted && 
-        ((pref->settings->value("CheckBoxes/no_quit_action_on_shutdown", false).toBool()
-        && processes->first()->exitCode() == 0 && processes->first()->exitStatus() == 0)
-        || !pref->settings->value("CheckBoxes/no_quit_action_on_shutdown", false).toBool()))
-       close();
-
-     processes->clear();
-     processArgs->clear();
 }
 
 void Gui::showHistory(){

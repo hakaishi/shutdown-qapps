@@ -100,8 +100,8 @@ void Preferences::loadSettings(){
        settings->setValue("CheckBoxes/logging", false);
      if(!settings->contains("CheckBoxes/shutdown"))
        settings->setValue("CheckBoxes/shutdown", false);
-     if(!settings->contains("CheckBoxes/no_quit_action_on_shutdown"))
-       settings->setValue("CheckBoxes/no_quit_action_on_shutdown", false);
+     if(!settings->contains("CheckBoxes/no_quit_action_or_shutdown_on_error"))
+       settings->setValue("CheckBoxes/no_quit_action_or_shutdown_on_error", false);
      if(!settings->contains("CheckBoxes/quitWithLastProcess"))
        settings->setValue("CheckBoxes/quitWithLastProcess", false);
      if(!settings->contains("Text/text"))
@@ -115,7 +115,7 @@ void Preferences::loadSettings(){
      suspendCB->setCurrentIndex(settings->value("suspend_method", 0).toInt());
      hibernateCB->setCurrentIndex(settings->value("hibernate_method", 0).toInt());
      maxHistSpin->setValue(settings->value("History/max", 10).toInt());
-     noActionCB->setChecked(settings->value("CheckBoxes/no_quit_action_on_shutdown", false).toBool());
+     noActionCB->setChecked(settings->value("CheckBoxes/no_quit_action_or_shutdown_on_error", false).toBool());
 }
 
 void Preferences::saveToConfFile(){
@@ -124,7 +124,7 @@ void Preferences::saveToConfFile(){
      settings->setValue("suspend_method",suspendCB->currentIndex());
      settings->setValue("hibernate_method",hibernateCB->currentIndex());
      settings->setValue("History/max", maxHistSpin->value());
-     settings->setValue("CheckBoxes/no_quit_action_on_shutdown", noActionCB->isChecked());
+     settings->setValue("CheckBoxes/no_quit_action_or_shutdown_on_error", noActionCB->isChecked());
 }
 
 void Preferences::clearHistory(){

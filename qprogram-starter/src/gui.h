@@ -38,7 +38,9 @@ class Gui : public QMainWindow, public Ui::Gui {
 
      private:
       Preferences    *pref;
-      QTimer         *dateTimeTimer, *timer, *singleShot;
+      QTimer         *dateTimeTimer, *timer, *singleShot,
+                     *countdown, *updCountdown;
+      int            countdownInt; //remaining seconds
       QList<QProcess *>       *processes;
       QDateTime      nextDate, timeInTheFuture;
       double         secondsToTimeInTheFuture;
@@ -70,6 +72,7 @@ class Gui : public QMainWindow, public Ui::Gui {
       void saveHistory();
       void replaceEditorContent(QListWidgetItem *item);
       void setQuit(int idx);
+      void displayCountdown();
 
      signals:
       void finished();
