@@ -19,7 +19,6 @@
 #include "gui.h"
 #include "preferences.h"
 #include "power.h"
-#include <QMessageBox>
 #include <QSettings>
 #include <QFile>
 
@@ -48,8 +47,8 @@ Gui::Gui(){
      QTextStream in(&versionFile);
      statusBar()->showMessage(tr("Version ") + in.readLine(),15000);
      versionFile.close();
-
-     aborted = false;
+     
+     messages = new QMessageBox;
 
      dateEdit->setMinimumDate(QDate::currentDate());
      dateTimeTimer = new QTimer(this);
@@ -93,7 +92,7 @@ Gui::Gui(){
      connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setQuit(int)));
 }
 
-Gui::~Gui(){ delete hintMsgBox; delete historyList; delete logBox;}
+Gui::~Gui(){ delete hintMsgBox; delete historyList; delete logBox; delete messages; }
 
 void Gui::setQuit(int idx) {quitCheckBox->setDisabled(idx > 0); }
 
@@ -130,6 +129,7 @@ void Gui::getProgram(){
 }
 
 void Gui::run(){ //To start either the timer or start the process
+     aborted = false;
      if(!plainTextEdit->toPlainText().isEmpty()){
        nextDate = dateEdit->dateTime();
        timeInTheFuture = nextDate.addSecs(timeEdit->time().hour()*3600 + timeEdit->time().minute()*60 + timeEdit->time().second());
@@ -177,21 +177,19 @@ void Gui::run(){ //To start either the timer or start the process
          if(processes->length() > 0) processes->first()->start(processArgs->first());
      }
      else{
-       QMessageBox msgBox;
-       msgBox.setWindowTitle("Error");
-       msgBox.setIcon(QMessageBox::Warning);
-       msgBox.setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Window);
-       msgBox.setInformativeText(tr("The text edit is empty!"));
+       messages->setWindowTitle("Error");
+       messages->setIcon(QMessageBox::Warning);
+       messages->setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Window);
+       messages->setInformativeText(tr("The text edit is empty!"));
        singleShot = new QTimer(this);
-       singleShot->singleShot(6000, &msgBox, SLOT(close()));
-       msgBox.exec();
+       singleShot->singleShot(6000, messages, SLOT(hide()));
+       messages->show();
      }
      outputProcess = "";
      errProcess = "";
 }
 
 void Gui::next(){
-    //bool isLast = processes->length() == 1;
     if(processes->length() > 1 && processes->first()->exitCode()==0
         && processes->first()->exitStatus()==0
         && processes->first()->error()==QProcess::UnknownError){
@@ -201,39 +199,53 @@ void Gui::next(){
     }
     else{
         message();
-        countdown->singleShot(1000*10, this, SLOT(shutdown_or_message()));
-        countdownInt = 10; //seconds
-        updCountdown->start(1000);
-        connect(updCountdown, SIGNAL(timeout()), this, SLOT(displayCountdown()));
+
+        if(quitCheckBox->isChecked() || comboBox->currentIndex() != 0){
+            if(pref->settings->value("CheckBoxes/no_quit_action_or_shutdown_on_error", false).toBool()
+                && (processes->first()->exitCode() != 0 || processes->first()->exitStatus() != 0
+                || processes->first()->error() != QProcess::UnknownError)){
+                
+                processes->clear();
+                processArgs->clear();
+                return;
+            }
+            else{
+                countdown->singleShot(
+                    1000 * pref->settings->value("countdown_before_action", 10).toInt(),
+                    this, SLOT(shutdown_or_message()));
+                //timeout after 1 sec ==> minus 1 sec.
+                countdownInt = pref->settings->value("countdown_before_action", 10).toInt() - 1; //seconds
+                updCountdown->start(1000);
+                connect(updCountdown, SIGNAL(timeout()), this, SLOT(displayCountdown()));
+            }
+        }
     }
-    
 }
 
 void Gui::displayCountdown(){
-    statusBar()->showMessage(QString::number(countdownInt--), 1000);
+    if(countdownInt > 0) statusBar()->showMessage(QString::number(countdownInt--), 0);
 }
 
 void Gui::abortProcesses(){
-     if(countdownInt > 0) {
-         timer->stop();
-         countdown->stop();
-         updCountdown->stop();
-         countdownInt = 0;
-     }
+     timer->stop();
+     countdown->stop();
+     updCountdown->stop();
+     countdownInt = 0;
+     
+     statusBar()->clearMessage();
      
      aborted = true;
      
      foreach(QProcess *p, *processes) p->close();
 
-     QMessageBox msgBox;
-     msgBox.setWindowTitle(tr("Information"));
-     msgBox.setIcon(QMessageBox::Information);
-     msgBox.setInformativeText(tr("Processes aborted"));
-     msgBox.setWindowModality(Qt::NonModal);
-     msgBox.setWindowFlags(Qt::WindowStaysOnTopHint);
+     messages->setWindowTitle(tr("Information"));
+     messages->setIcon(QMessageBox::Information);
+     messages->setInformativeText(tr("Processes aborted"));
+     messages->setWindowModality(Qt::NonModal);
+     messages->setWindowFlags(Qt::WindowStaysOnTopHint);
      singleShot = new QTimer(this);
-     singleShot->singleShot(10000, &msgBox, SLOT(close()));
-     msgBox.exec();
+     singleShot->singleShot(10000, messages, SLOT(hide()));
+     messages->show();
 
      atDateCheckBox->setEnabled(true);
      if(atDateCheckBox->isChecked()){
@@ -241,8 +253,6 @@ void Gui::abortProcesses(){
        timeEdit->setEnabled(true);
      }
      plainTextEdit->setEnabled(true);
-
-     aborted = false;
 }
 
 void Gui::output(){ //write output into a file if loggingCheckBox is checked
@@ -293,17 +303,14 @@ void Gui::shutdown_or_message(){
     
     countdownInt = 0;
     statusBar()->clearMessage();
-
-    saveHistory();
-     
-    if(pref->settings->value("CheckBoxes/no_quit_action_or_shutdown_on_error", false).toBool()
-        && processes->first()->exitCode() != 0 && processes->first()->exitStatus() != 0){
-        
-        processes->clear();
-        processArgs->clear();
+    
+    if(aborted){
+        aborted = false;
         return;
     }
-       
+
+    saveHistory();
+
     if(comboBox->currentIndex() > 0)
     {
        saveSettings();
@@ -436,7 +443,7 @@ void Gui::shutdown_or_message(){
          default:;
        }
     }
-    if((quitCheckBox->isChecked() && !aborted) || comboBox->currentIndex() > 0){
+    if(quitCheckBox->isChecked() || comboBox->currentIndex() > 0){
         processes->clear();
         processArgs->clear();
         qApp->quit();
@@ -446,18 +453,17 @@ void Gui::shutdown_or_message(){
 void Gui::message(){
      const QProcess *p = processes->first();
      if(!aborted){
-       QMessageBox msgBox;
        if(p->exitCode()==0 && p->exitStatus()==0 && p->error()==QProcess::UnknownError){
-           msgBox.setWindowTitle(tr("Information"));
-           msgBox.setIcon(QMessageBox::Information);
-           msgBox.setInformativeText(tr("<b>process finished!</b>"));
+           messages->setWindowTitle(tr("Information"));
+           messages->setIcon(QMessageBox::Information);
+           messages->setInformativeText(tr("<b>process finished!</b>"));
        }
 
        if(p->exitCode()!=0 || p->error()!=QProcess::UnknownError){
-         msgBox.setWindowTitle(tr("Error"));
-         msgBox.setIcon(QMessageBox::Critical);
+         messages->setWindowTitle(tr("Error"));
+         messages->setIcon(QMessageBox::Critical);
          if(p->error()==0){
-           msgBox.setInformativeText(tr("<b>Failed to start!</b><br/>"
+           messages->setInformativeText(tr("<b>Failed to start!</b><br/>"
             "No such program or command."));
            if(loggingCheckBox->isChecked()){
              if(p->error()==0){
@@ -475,16 +481,16 @@ void Gui::message(){
            }
          }
          else if(p->error()==1 || p->exitCode()==1)
-           msgBox.setInformativeText(tr("<b>process crashed!</b><br/>"
+           messages->setInformativeText(tr("<b>process crashed!</b><br/>"
            "This could be caused by invalid parameters or options."));
          else
-           msgBox.setInformativeText(tr("<b>Unknown error!</b><br/>"
+           messages->setInformativeText(tr("<b>Unknown error!</b><br/>"
            "This could be caused by invalid parameters or options."));
        }
-       msgBox.setWindowModality(Qt::NonModal);
-       msgBox.setWindowFlags(Qt::WindowStaysOnTopHint);
-       QTimer::singleShot(10000, &msgBox, SLOT(close()));
-       msgBox.exec();
+       messages->setWindowModality(Qt::NonModal);
+       messages->setWindowFlags(Qt::WindowStaysOnTopHint);
+       QTimer::singleShot(10000, messages, SLOT(hide()));
+       messages->show();
      }
 
      atDateCheckBox->setEnabled(true);

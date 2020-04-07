@@ -25,6 +25,7 @@
 #include <QProcess>
 #include <QTextStream>
 #include <QListWidget>
+#include <QMessageBox>
 
 class Preferences;
 
@@ -52,6 +53,7 @@ class Gui : public QMainWindow, public Ui::Gui {
       bool           aborted;
       QTextStream    *myOutput;
       QListWidget    *historyList;
+      QMessageBox    *messages;
 
      private slots:
       void currentDateAndTime(); //for the current minimum date and time

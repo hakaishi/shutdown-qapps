@@ -94,6 +94,8 @@ void Preferences::loadSettings(){
        settings->setValue("suspend_method", 0);
      if(!settings->contains("hibernate_method"))
        settings->setValue("hibernate_method", 0);
+     if(!settings->contains("countdown_before_action"))
+       settings->setValue("countdown_before_action", 10);
      if(!settings->contains("CheckBoxes/atDate"))
        settings->setValue("CheckBoxes/atDate", false);
      if(!settings->contains("CheckBoxes/logging"))
@@ -115,6 +117,7 @@ void Preferences::loadSettings(){
      suspendCB->setCurrentIndex(settings->value("suspend_method", 0).toInt());
      hibernateCB->setCurrentIndex(settings->value("hibernate_method", 0).toInt());
      maxHistSpin->setValue(settings->value("History/max", 10).toInt());
+     countdownSpin->setValue(settings->value("countdown_before_action", 10).toInt());
      noActionCB->setChecked(settings->value("CheckBoxes/no_quit_action_or_shutdown_on_error", false).toBool());
 }
 
@@ -124,6 +127,7 @@ void Preferences::saveToConfFile(){
      settings->setValue("suspend_method",suspendCB->currentIndex());
      settings->setValue("hibernate_method",hibernateCB->currentIndex());
      settings->setValue("History/max", maxHistSpin->value());
+     settings->setValue("countdown_before_action", countdownSpin->value());
      settings->setValue("CheckBoxes/no_quit_action_or_shutdown_on_error", noActionCB->isChecked());
 }
 
