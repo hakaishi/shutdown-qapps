@@ -57,6 +57,7 @@ Gui::Gui(){
      timer = new QTimer(this);
      
      countdown = new QTimer(this);
+     countdown->setSingleShot(true);
      updCountdown = new QTimer(this);
      countdownInt = 0;
 
@@ -193,6 +194,7 @@ void Gui::next(){
     if(processes->length() > 1 && processes->first()->exitCode()==0
         && processes->first()->exitStatus()==0
         && processes->first()->error()==QProcess::UnknownError){
+        processes->first()->disconnect();
         processes->removeFirst();
         processArgs->removeFirst();
         processes->first()->start(processArgs->first());
@@ -205,14 +207,17 @@ void Gui::next(){
                 && (processes->first()->exitCode() != 0 || processes->first()->exitStatus() != 0
                 || processes->first()->error() != QProcess::UnknownError)){
                 
+                processes->first()->disconnect();
                 processes->clear();
                 processArgs->clear();
                 return;
             }
             else{
-                countdown->singleShot(
-                    1000 * pref->settings->value("countdown_before_action", 10).toInt(),
-                    this, SLOT(shutdown_or_message()));
+                processes->first()->disconnect();
+                countdown->setInterval(
+                    1000 * pref->settings->value("countdown_before_action", 10).toInt());
+                connect(countdown, SIGNAL(timeout()), this, SLOT(shutdown_or_message()));
+                countdown->start();
                 //timeout after 1 sec ==> minus 1 sec.
                 countdownInt = pref->settings->value("countdown_before_action", 10).toInt() - 1; //seconds
                 updCountdown->start(1000);
@@ -223,20 +228,26 @@ void Gui::next(){
 }
 
 void Gui::displayCountdown(){
-    if(countdownInt > 0) statusBar()->showMessage(QString::number(countdownInt--), 0);
+    if(countdownInt >= 0) statusBar()->showMessage(QString::number(countdownInt--), 0);
 }
 
 void Gui::abortProcesses(){
+     aborted = true;
      timer->stop();
      countdown->stop();
+     countdown->disconnect();
      updCountdown->stop();
+     updCountdown->disconnect();
      countdownInt = 0;
      
      statusBar()->clearMessage();
      
-     aborted = true;
-     
-     foreach(QProcess *p, *processes) p->close();
+     foreach(QProcess *p, *processes){
+        p->close();
+        p->disconnect();
+     }
+     processes->clear();
+     processArgs->clear();
 
      messages->setWindowTitle(tr("Information"));
      messages->setIcon(QMessageBox::Information);
@@ -299,17 +310,16 @@ void Gui::showLogs(){
 
 void Gui::shutdown_or_message(){
     countdown->stop();
+    countdown->disconnect();
     updCountdown->stop();
-    
+    updCountdown->disconnect();
     countdownInt = 0;
     statusBar()->clearMessage();
     
-    if(aborted){
-        aborted = false;
-        return;
-    }
-
     saveHistory();
+    
+    processes->clear();
+    processArgs->clear();
 
     if(comboBox->currentIndex() > 0)
     {
@@ -444,8 +454,6 @@ void Gui::shutdown_or_message(){
        }
     }
     if(quitCheckBox->isChecked() || comboBox->currentIndex() > 0){
-        processes->clear();
-        processArgs->clear();
         qApp->quit();
     }
 }
