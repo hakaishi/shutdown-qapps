@@ -27,12 +27,8 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      setupUi(this);
 
      QString file;
-   #ifdef Q_OS_WIN32
-     file = QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qprogram-starter/qprogram-starter.conf";
-   #else //!Q_OS_WIN32
-     file = QDir::homePath() + "/.qprogram-starter/qprogram-starter.conf";
-   #endif
-     settings = new QSettings(file, QSettings::IniFormat);
+
+     settings = new QSettings(this);
 
      setupMsgBoxes();
 

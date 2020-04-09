@@ -20,10 +20,15 @@
 #include <QApplication>
 #include <QTranslator>
 #include <QLibraryInfo>
+#include <QSettings>
 
 int main (int argc, char *argv[]){
 
      QApplication app(argc, argv);
+     app.setApplicationName("qprogram-starter");
+     //app.setOrganizationName("qprogram-starter");
+     
+     QSettings::setDefaultFormat(QSettings::IniFormat);
 
      //Qt translations
      QTranslator qtTranslator;

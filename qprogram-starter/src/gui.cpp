@@ -21,6 +21,8 @@
 #include "power.h"
 #include <QSettings>
 #include <QFile>
+#include <QDir>
+#include <QStandardPaths>
 
 #ifndef Q_OS_WIN32
   #include <QtDBus>
@@ -271,7 +273,11 @@ void Gui::output(){ //write output into a file if loggingCheckBox is checked
      outputProcess += string;
 
      if(loggingCheckBox->isChecked()){
-       QFile outputLog(QDir::homePath() + "/.qprogram-starter/outputLog.txt");
+       QString path = QDir().toNativeSeparators(
+         QStandardPaths::standardLocations(
+            QStandardPaths::DataLocation).first());
+       if(!QDir(path).exists()) QDir().mkpath(path);
+       QFile outputLog(QDir().toNativeSeparators(path + QDir::separator() + "outputLog.txt"));
        if(!outputLog.open(QIODevice::Append))
          return;
        QTextStream str(&outputLog);
@@ -284,14 +290,20 @@ void Gui::output(){ //write output into a file if loggingCheckBox is checked
 void Gui::errorOutput(){ //write error output into a file if loggingCheckBox is checked
      QString string = QString::fromLocal8Bit(processes->first()->readAllStandardError());
      errProcess += string;
-
+     
      if(loggingCheckBox->isChecked()){
-       QFile errorLog(QDir::homePath() + "/.qprogram-starter/errorLog.txt");
+       QString path = QDir().toNativeSeparators(
+         QStandardPaths::standardLocations(
+            QStandardPaths::DataLocation).first());
+       if(!QDir(path).exists()) QDir().mkpath(path);
+       QFile errorLog(QDir().toNativeSeparators(path + QDir::separator() + "errorLog.txt"));
        if(!errorLog.open(QIODevice::Append))
          return;
        QTextStream str(&errorLog);
        str << QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")
-           << ": " << processArgs->first() << ":" << endl << string << endl;
+           << ": " << processArgs->first() << ":" << endl 
+           << (string.isEmpty() ? "Unknown error. No such program?" : string)
+           << endl << endl;
        errorLog.close();
      }
      
@@ -473,20 +485,22 @@ void Gui::message(){
          if(p->error()==0){
            messages->setInformativeText(tr("<b>Failed to start!</b><br/>"
             "No such program or command."));
-           if(loggingCheckBox->isChecked()){
-             if(p->error()==0){
-               QFile errorLog(QDir::homePath() + "/.qprogram-starter/errorLog.txt");
-               if(!errorLog.open(QIODevice::Append))
-                 return;
-               QTextStream err(&errorLog);
-               err << QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")
-                   << ": " << processArgs->first() << ":" << endl
-                   << tr("\"%1\": Failed to start! No such program or "
-                          "command.\n").arg(plainTextEdit->toPlainText())
-                   << endl;
-               errorLog.close();
-             }
-           }
+           /*if(loggingCheckBox->isChecked()){
+             QString path = QDir().toNativeSeparators(
+               QStandardPaths::standardLocations(
+                  QStandardPaths::DataLocation).first());
+             if(!QDir(path).exists()) QDir().mkpath(path);
+             QFile errorLog(QDir().toNativeSeparators(path + QDir::separator() + "errorLog.txt"));
+             if(!errorLog.open(QIODevice::Append))
+               return;
+             QTextStream err(&errorLog);
+             err << QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")
+                 << ": " << processArgs->first() << ":" << endl
+                 << tr("\"%1\": Failed to start! No such program or "
+                        "command.\n").arg(plainTextEdit->toPlainText())
+                 << endl;
+             errorLog.close();
+           }*/
          }
          else if(p->error()==1 || p->exitCode()==1)
            messages->setInformativeText(tr("<b>process crashed!</b><br/>"
