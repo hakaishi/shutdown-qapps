@@ -140,6 +140,7 @@ void Gui::run(){ //To start either the timer or start the process
        atDateCheckBox->setDisabled(true);
        dateEdit->setDisabled(true);
        timeEdit->setDisabled(true);
+       startB->setDisabled(true);
 
        QStringList list = plainTextEdit->toPlainText().split("\n", QString::SkipEmptyParts);
        QStringList cmd;
@@ -209,10 +210,7 @@ void Gui::next(){
                 && (processes->first()->exitCode() != 0 || processes->first()->exitStatus() != 0
                 || processes->first()->error() != QProcess::UnknownError)){
                 
-                processes->first()->disconnect();
-                processes->clear();
-                processArgs->clear();
-                return;
+                cleanUp();
             }
             else{
                 processes->first()->disconnect();
@@ -226,7 +224,27 @@ void Gui::next(){
                 connect(updCountdown, SIGNAL(timeout()), this, SLOT(displayCountdown()));
             }
         }
+        else{
+            cleanUp();
+        }
     }
+}
+
+void Gui::cleanUp(){
+    foreach(QProcess *p, *processes){
+        p->close();
+        p->disconnect();
+    }
+    processes->clear();
+    processArgs->clear();
+        
+    atDateCheckBox->setEnabled(true);
+    if(atDateCheckBox->isChecked()){
+        dateEdit->setEnabled(true);
+        timeEdit->setEnabled(true);
+    }
+    plainTextEdit->setEnabled(true);
+    startB->setEnabled(true);
 }
 
 void Gui::displayCountdown(){
@@ -243,13 +261,6 @@ void Gui::abortProcesses(){
      countdownInt = 0;
      
      statusBar()->clearMessage();
-     
-     foreach(QProcess *p, *processes){
-        p->close();
-        p->disconnect();
-     }
-     processes->clear();
-     processArgs->clear();
 
      messages->setWindowTitle(tr("Information"));
      messages->setIcon(QMessageBox::Information);
@@ -260,12 +271,7 @@ void Gui::abortProcesses(){
      singleShot->singleShot(10000, messages, SLOT(hide()));
      messages->show();
 
-     atDateCheckBox->setEnabled(true);
-     if(atDateCheckBox->isChecked()){
-       dateEdit->setEnabled(true);
-       timeEdit->setEnabled(true);
-     }
-     plainTextEdit->setEnabled(true);
+     cleanUp();
 }
 
 void Gui::output(){ //write output into a file if loggingCheckBox is checked
@@ -330,8 +336,7 @@ void Gui::shutdown_or_message(){
     
     saveHistory();
     
-    processes->clear();
-    processArgs->clear();
+    cleanUp();
 
     if(comboBox->currentIndex() > 0)
     {
@@ -514,13 +519,6 @@ void Gui::message(){
        QTimer::singleShot(10000, messages, SLOT(hide()));
        messages->show();
      }
-
-     atDateCheckBox->setEnabled(true);
-     if(atDateCheckBox->isChecked()){
-       dateEdit->setEnabled(true);
-       timeEdit->setEnabled(true);
-     }
-     plainTextEdit->setEnabled(true);
 }
 
 void Gui::showHistory(){
