@@ -59,7 +59,7 @@ void Preferences::setupMsgBoxes(){
          "shutdown dialog from there. If you want a direct shutdown, then "
          "please consider going into the preferences and setting the shutdown "
          "method to ConsoleKit or something else.\n\nPlease feel free to visit "
-         "https://launchpad.net/~hakaishi to report bugs or for anyting "
+         "https://launchpad.net/~hakaishi to report bugs or for anything "
          "concerning translations."));
        infoBox->setStandardButtons(QMessageBox::Ok);
      }

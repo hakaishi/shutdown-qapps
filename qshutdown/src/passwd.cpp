@@ -29,12 +29,7 @@ PassWord::PassWord(QWidget *parent): QDialog(parent){
 
      setWindowFlags(Qt::Window);    //always in front
 
-#ifdef Q_OS_WIN32
-     file = QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf";
-#else //!Q_OS_WIN32
-     file = QDir::homePath() + "/.qshutdown/qshutdown.conf";
-#endif //Q_OS_WIN32
-     settings = new QSettings(file, QSettings::IniFormat);
+     settings = new QSettings(this);
 
      msgBox = new QMessageBox(this);
      msgBox->setWindowTitle("Error");

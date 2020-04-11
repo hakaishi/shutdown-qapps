@@ -41,14 +41,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
 
 /***************** load settings from the conf file *****************/
 
-#ifdef Q_OS_WIN32
-     lockS->setDisabled(true); //if there is a command for locking the display in Windows, remove this line
-                               //and add the command to power.h
-     file = QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf";
-#else //!Q_OS_WIN32
-     file = QDir::homePath() + "/.qshutdown/qshutdown.conf";
-#endif //Q_OS_WIN32
-     settings = new QSettings(file, QSettings::IniFormat);
+     settings = new QSettings(this);
 
 #ifdef Q_OS_WIN32
      fonts = "Times New Roman";

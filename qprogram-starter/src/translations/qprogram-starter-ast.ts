@@ -198,7 +198,7 @@ Seique nun tenga permisos pa facelo.</translation>
         <source>Welcome to qprogram-starter!
 If you want qprogram-starter to automatically shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
 
-Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
+Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anything concerning translations.</source>
         <translation>¡Bienveníu a qprogram-starter!
 Si quier que qprogram-starter apague&apos;l sistema de mou automáticu y ta usando Gnome Shell, posiblemente recibirá un diálogu d&apos;apagáu de la mesma. Si quier un apagáu direutu, por favor, considere entrar nes preferencies y configurar el métodu d&apos;apagáu a ConsoleKit o daqué distinto.
 Visite con total llibertá https://launchpad.net/~hakaishi si quier informar de fallos o  de cualquier cosa tocante a les traducciones.</translation>

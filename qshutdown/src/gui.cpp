@@ -629,22 +629,19 @@ bool Gui::Time(){
 }
 
 void Gui::saveLog(){
-   #ifdef Q_OS_WIN32
-     QString file(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf");
-   #else //!Q_OS_WIN32
-     QString file(QDir::homePath() + "/.qshutdown/qshutdown.conf");
-   #endif //Q_OS_WIN32
-     QSettings settings(file, QSettings::IniFormat);
+     QSettings settings(this);
 
      settings.setValue("MainWindow/size",size());
      settings.setValue("MainWindow/keep_proportions",actionKeep_window_proportions->isChecked());
 
      if(log_action->isChecked()){ //if logfile is set in the icon contextmenu
-     #ifdef Q_OS_WIN32
-       QFile logfile(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/log.txt");
-     #else //!Q_OS_WIN32
-       QFile logfile(QDir::homePath() + "/.qshutdown/log.txt");
-     #endif //Q_OS_WIN32
+       QString path = QDir().toNativeSeparators(
+         QStandardPaths::standardLocations(
+           QStandardPaths::DataLocation).first());
+       if(!QDir(path).exists()) QDir().mkpath(path);
+       QFile logfile(QDir().toNativeSeparators(path + QDir::separator() + "log.txt"));
+     
+     
        if(!logfile.open(QIODevice::ReadWrite | QIODevice::Text)){
          QTextStream myOutput;
          myOutput << "E: Can not open log.txt!" << endl;
@@ -843,12 +840,7 @@ void Gui::beforeQuit(){
 
 void Gui::loadSettings(){
 /***************** create file and it's entries *****************/
-#ifdef Q_OS_WIN32
-     QString file(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf");
-#else //!Q_OS_WIN32
-     QString file(QDir::homePath() + "/.qshutdown/qshutdown.conf");
-#endif //Q_OS_WIN32
-     QSettings settings(file, QSettings::IniFormat);
+     QSettings settings(this);
 
      if(!settings.isWritable()){
        QTextStream myOutput;

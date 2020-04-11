@@ -23,6 +23,7 @@
 #include <QDesktopWidget>
 #include <QTextDocumentFragment>
 #include <QDesktopServices>
+#include <QDir>
 
 #ifndef Q_OS_WIN32
   #include <QtDBus>

@@ -29,11 +29,7 @@ Editor::Editor(QWidget *parent): QDialog(parent){
 
      setWindowFlags(Qt::Window);    //always in front
 
-    #ifdef Q_OS_WIN32
-     confFile = new QFile(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf");
-    #else //!Q_OS_WIN32
-     confFile = new QFile(QDir::homePath() + "/.qshutdown/qshutdown.conf");
-    #endif //Q_OS_WIN32
+     confFile = new QFile(QSettings().fileName());
 
      plainTextEdit->setFocus();
 
@@ -73,12 +69,7 @@ void Editor::closeEvent(QCloseEvent* close_editor){
 bool Editor::getClosed(){ return isClosed; }
 
 bool Editor::getLockAll(){
-#ifdef Q_OS_WIN32
-     QString file(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf");
-#else //!Q_OS_WIN32
-     QString file(QDir::homePath() + "/.qshutdown/qshutdown.conf");
-#endif //Q_OS_WIN32
-     QSettings settings(file, QSettings::IniFormat);
+     QSettings settings(this);
      return settings.value("Lock_all").toBool();
 }
 

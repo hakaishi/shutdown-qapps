@@ -30,12 +30,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
 
      setWindowFlags(Qt::Window);
 
-#ifdef Q_OS_WIN32
-     file = QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf";
-#else //!Q_OS_WIN32
-     file = QDir::homePath() + "/.qshutdown/qshutdown.conf";
-#endif //Q_OS_WIN32
-     settings = new QSettings(file, QSettings::IniFormat);
+     settings = new QSettings(this);
 
      calendarWidget->setMinimumDate(QDate::currentDate());
 
