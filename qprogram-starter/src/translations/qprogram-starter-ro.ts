@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>S&amp;hutdown</source>
-        <translation>Înc&amp;hidere</translation>
+        <translation type="vanished">Înc&amp;hidere</translation>
     </message>
     <message>
         <source>&amp;Hints</source>
@@ -37,7 +37,7 @@
     </message>
     <message>
         <source>Shutdown the computer after all commands finished</source>
-        <translation>Închide calculator după ce toate comenzile s-au încheiat</translation>
+        <translation type="vanished">Închide calculator după ce toate comenzile s-au încheiat</translation>
     </message>
     <message>
         <source>The contents will be restored on every start of qprogram-starter</source>
@@ -73,7 +73,7 @@
     </message>
     <message>
         <source>The first text edit is empty!</source>
-        <translation>Prima editare de text este goală!</translation>
+        <translation type="vanished">Prima editare de text este goală!</translation>
     </message>
     <message>
         <source>Information</source>
@@ -85,11 +85,11 @@
     </message>
     <message>
         <source>&lt;b&gt;process 1 finished!&lt;/b&gt;</source>
-        <translation>&lt;b&gt;procesul1 s-a încheiat!&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;procesul1 s-a încheiat!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;process 1 &amp; 2 finished!&lt;/b&gt;</source>
-        <translation>&lt;b&gt;procesele 1 &amp; 2 s-au încheiat!&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;procesele 1 &amp; 2 s-au încheiat!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Error</source>
@@ -101,11 +101,11 @@
     </message>
     <message>
         <source>&lt;b&gt;process 1 crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
-        <translation>&lt;b&gt;procesul 1 s-a încheiat neasteptat!&lt;/b&gt;&lt;br/&gt;Acest lucru ar putea fi cauzat de parametri sau opțiuni invalide.</translation>
+        <translation type="vanished">&lt;b&gt;procesul 1 s-a încheiat neasteptat!&lt;/b&gt;&lt;br/&gt;Acest lucru ar putea fi cauzat de parametri sau opțiuni invalide.</translation>
     </message>
     <message>
         <source>&lt;b&gt;process 2 crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
-        <translation>&lt;b&gt;procesul 2 s-a încheiat neasteptat!&lt;/b&gt;&lt;br/&gt;Acest lucru ar putea fi cauzat de parametri sau opțiuni invalide.</translation>
+        <translation type="vanished">&lt;b&gt;procesul 2 s-a încheiat neasteptat!&lt;/b&gt;&lt;br/&gt;Acest lucru ar putea fi cauzat de parametri sau opțiuni invalide.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Unknown error!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
@@ -114,12 +114,12 @@
     <message>
         <source>&quot;%1&quot;: Failed to start! No such program or command.
 </source>
-        <translation>&quot;%1&quot;: Nu a reușit să înceapă! Nu există un astfel de program sau de comandă.
+        <translation type="vanished">&quot;%1&quot;: Nu a reușit să înceapă! Nu există un astfel de program sau de comandă.
 </translation>
     </message>
     <message>
         <source>The command in the second text editor (if there is any) will be executed after the first one. The message boxes will close themselves after 10 seconds.&lt;br/&gt;To start a program just type i.e. &quot;firefox&quot; or &quot;firefox www.google.com&quot; and then click on Start. Commands etc. can be linked by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;If the process is &quot;finished&quot; although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.&lt;br/&gt;&lt;br/&gt;When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).&lt;br/&gt;&lt;br/&gt;make examples:&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;About Errors:&lt;br/&gt;Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;If the shutdown won&apos;t work, it means that &quot;sudo shutdown -P now&quot; is used. This needs root permissions. You can do the this:&lt;br/&gt;&lt;br/&gt;Post the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; whereas * replaces the username or %groupname.&lt;br/&gt;&lt;br/&gt;The configuration-file can be found at &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.</source>
-        <translation>Comandă în al doilea editor de text (dacă există) va fi executată dupa prima. Casete de mesaj se vor închide după 10 secunde.&lt;br/&gt;Pentru a porni un program, doar tastați i.e. &quot;firefox&quot; ori &quot;firefox www.google.com&quot; și apoi click pe Start. Comenzile etc. pot fi legate prin by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;Dacă procesul este &quot;încheiat&quot; deși acesta este încă în desfășurare, atunci încercați opțiunea --nofork (i.e. kopete --nofork). Rețineți că acest lucru va avea loc, de asemenea, pentru unele programe, cum ar fi gedit, firefox sau gnome-terminal în cazul în care acestea sunt deja în  funcționare.&lt;br/&gt;&lt;br/&gt;Când doriți să porniți un program sau comandă cu sudo, folosiți de exemplu gksu(do) sau kdesu(do).&lt;br/&gt;&lt;br/&gt;Exemple make:&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;Despre erori:&lt;br/&gt;Pentru că aproape fiecare program oferă un cod de eroare diferit, este imposibil de spus ce sa intamplat. Deci, conectați doar ieșirea și a se vedea ce fel de eroare s-a produs. Fișierele de ieșire pot fi găsite la &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;În cazul în care închiderea nu va funcționa, înseamnă că &quot;sudo shutdown -P now&quot; este utilizată. Acest lucru are nevoie de permisiuni de root. Puteți să faceți asta:&lt;br/&gt;&lt;br/&gt;Inserați următoarele într-un terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; și adăugați această linie:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; unde * înlocuiește numele de utilizator sau numele de grup.&lt;br/&gt;&lt;br/&gt;Fișierul de configurare poate fi găsit la &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.</translation>
+        <translation type="vanished">Comandă în al doilea editor de text (dacă există) va fi executată dupa prima. Casete de mesaj se vor închide după 10 secunde.&lt;br/&gt;Pentru a porni un program, doar tastați i.e. &quot;firefox&quot; ori &quot;firefox www.google.com&quot; și apoi click pe Start. Comenzile etc. pot fi legate prin by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;Dacă procesul este &quot;încheiat&quot; deși acesta este încă în desfășurare, atunci încercați opțiunea --nofork (i.e. kopete --nofork). Rețineți că acest lucru va avea loc, de asemenea, pentru unele programe, cum ar fi gedit, firefox sau gnome-terminal în cazul în care acestea sunt deja în  funcționare.&lt;br/&gt;&lt;br/&gt;Când doriți să porniți un program sau comandă cu sudo, folosiți de exemplu gksu(do) sau kdesu(do).&lt;br/&gt;&lt;br/&gt;Exemple make:&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;Despre erori:&lt;br/&gt;Pentru că aproape fiecare program oferă un cod de eroare diferit, este imposibil de spus ce sa intamplat. Deci, conectați doar ieșirea și a se vedea ce fel de eroare s-a produs. Fișierele de ieșire pot fi găsite la &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;În cazul în care închiderea nu va funcționa, înseamnă că &quot;sudo shutdown -P now&quot; este utilizată. Acest lucru are nevoie de permisiuni de root. Puteți să faceți asta:&lt;br/&gt;&lt;br/&gt;Inserați următoarele într-un terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; și adăugați această linie:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; unde * înlocuiește numele de utilizator sau numele de grup.&lt;br/&gt;&lt;br/&gt;Fișierul de configurare poate fi găsit la &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -156,6 +156,54 @@
     <message>
         <source>Ctrl+H</source>
         <translation>Ctrl+H</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shutdown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reboot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Protokoll</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;General:&lt;/b&gt;&lt;br/&gt;Each line in the text editor will be executed as one seperate process. Put a backslash at the end of the line for a multiline command.&lt;br/&gt;&lt;br/&gt; The message boxes will close themselves after 10 seconds.&lt;br/&gt;To start a program just type i.e. &quot;firefox&quot; or &quot;firefox www.google.com&quot; and then click on Start. Commands etc. can be linked by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;If the process is &quot;finished&quot; although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.&lt;br/&gt;&lt;br/&gt;When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Files:&lt;/b&gt;&lt;br/&gt;The configuration-file can be found at &lt;i&gt;%2&lt;/i&gt;.&lt;br/&gt;The log files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;make examples:&lt;/b&gt;&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;&lt;b&gt;About Errors:&lt;/b&gt;&lt;br/&gt;Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;If the shutdown won&apos;t work, it might mean that &quot;sudo shutdown -P now&quot; is used. This needs admin permissions. You can do the this:&lt;br/&gt;&lt;br/&gt;Post the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; whereas * replaces the username or %groupname.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The text edit is empty!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;process finished!&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;process crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -202,6 +250,58 @@ Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for 
         <translation>Bun venit la qprogram-starter!
 Dacă doriți qprogram-starter să oprească automat sistemul și utilizați Gnome Shell, atunci vă sunt susceptibile de a primi un dialog de oprire de acolo. Dacă doriți o închidere directă, atunci vă rugăm să luați în considerare de a merge în preferințele și stabilirea metodei de închidere pentru ConsoleKit sau altceva.
 Vă rugăm să nu ezitați să vizitați https://launchpad.net/~hakaishi pentr a raporta buguri sau pentru orice cu privire la traduceri.</translation>
+    </message>
+    <message>
+        <source>login1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HAL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>UPower</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DeviceKit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend Method:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reboot Method:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ConsoleKit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sudo shutdown -r now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum History saved:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate Method:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t quit or shutdown on error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Countdown before action:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

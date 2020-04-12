@@ -196,6 +196,7 @@ void Gui::run(){ //To start either the timer or start the process
 }
 
 void Gui::next(){
+    bool force = false;
     if(processes->length() > 1 && processes->first()->exitCode()==0
         && processes->first()->exitStatus()==0
         && processes->first()->error()==QProcess::UnknownError){
@@ -212,7 +213,7 @@ void Gui::next(){
                 && (processes->first()->exitCode() != 0 || processes->first()->exitStatus() != 0
                 || processes->first()->error() != QProcess::UnknownError)){
                 
-                cleanUp();
+                cleanUp(force);
             }
             else{
                 processes->first()->disconnect();
@@ -227,14 +228,17 @@ void Gui::next(){
             }
         }
         else{
-            cleanUp();
+            cleanUp(force);
         }
     }
 }
 
-void Gui::cleanUp(){
+void Gui::cleanUp(bool force){
     foreach(QProcess *p, *processes){
-        p->close();
+        if(force)
+            p->kill();
+        else
+            p->close();
         p->disconnect();
     }
     processes->clear();
@@ -272,8 +276,10 @@ void Gui::abortProcesses(){
      singleShot = new QTimer(this);
      singleShot->singleShot(10000, messages, SLOT(hide()));
      messages->show();
+     
+     bool force = true;
 
-     cleanUp();
+     cleanUp(force);
 }
 
 void Gui::output(){ //write output into a file if loggingCheckBox is checked
@@ -338,7 +344,7 @@ void Gui::shutdown_or_message(){
     
     saveHistory();
     
-    cleanUp();
+    cleanUp(false);
 
     if(comboBox->currentIndex() > 0)
     {
