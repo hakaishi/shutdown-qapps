@@ -75,7 +75,7 @@ class Gui : public QMainWindow, public Ui::Gui {
       void replaceEditorContent(QListWidgetItem *item);
       void setQuit(int idx);
       void displayCountdown();
-      void cleanUp();
+      void cleanUp(bool force);
 
      signals:
       void finished();

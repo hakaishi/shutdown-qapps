@@ -136,6 +136,7 @@ void Gui::getProgram(){
 void Gui::run(){ //To start either the timer or start the process
      aborted = false;
      if(!plainTextEdit->toPlainText().isEmpty()){
+       saveHistory();
        nextDate = dateEdit->dateTime();
        timeInTheFuture = nextDate.addSecs(timeEdit->time().hour()*3600 + timeEdit->time().minute()*60 + timeEdit->time().second());
        plainTextEdit->setDisabled(true);
@@ -238,7 +239,7 @@ void Gui::cleanUp(bool force){
         if(force)
             p->kill();
         else
-            p->close();
+            p->terminate();
         p->disconnect();
     }
     processes->clear();
@@ -341,8 +342,6 @@ void Gui::shutdown_or_message(){
     updCountdown->disconnect();
     countdownInt = 0;
     statusBar()->clearMessage();
-    
-    saveHistory();
     
     cleanUp(false);
 
