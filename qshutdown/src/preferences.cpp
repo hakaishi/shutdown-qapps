@@ -203,7 +203,7 @@ void Preferences::loadSettings(){
      comboBox->setCurrentIndex(settings->value("Power/comboBox",0).toInt());
      timeEdit->setTime(QTime(settings->value("Time/time_hour",22).toInt(),settings->value("Time/time_minute",00).toInt()));
      spin->setValue(settings->value("Time/countdown_minutes",60).toInt());
-     quitOnCloseMain->setChecked(settings->value("Quit_on_close",false).toBool());
+     quitOnCloseMain->setChecked(settings->value("Quit_on_close",true).toBool());
      countdown->setChecked(settings->value("Time/countdown_at_startup",false).toBool());
      hideMe->setChecked(settings->value("Hide_at_startup",false).toBool());
      fontComboBox->setCurrentFont(settings->value("Fonts/font_type",fonts).toString());
@@ -288,7 +288,7 @@ void Preferences::resetSettings(){
        timeEdit->setTime(QTime(22,00));
        countdown->setChecked(false);
        disableTray->setChecked(false);
-       quitOnCloseMain->setChecked(false);
+       quitOnCloseMain->setChecked(true);
        hideMe->setChecked(false);
        spin->setValue(60);
        fontComboBox->setCurrentFont(QFont(fonts));

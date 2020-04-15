@@ -86,12 +86,12 @@
         <translation>Старый пароль:</translation>
     </message>
     <message>
-        <location filename="../ch_passwd.cpp" line="45"/>
+        <location filename="../ch_passwd.cpp" line="40"/>
         <source>The current password is not correct!</source>
         <translation>Текущий пароль не верен!</translation>
     </message>
     <message>
-        <location filename="../ch_passwd.cpp" line="51"/>
+        <location filename="../ch_passwd.cpp" line="46"/>
         <source>The retyped password doesn&apos;t match!</source>
         <translation>Пароли не совпадают!</translation>
     </message>
@@ -107,320 +107,321 @@
 <context>
     <name>Gui</name>
     <message>
-        <location filename="../ui/gui.ui" line="70"/>
-        <location filename="../gui.cpp" line="319"/>
-        <location filename="../gui.cpp" line="859"/>
+        <location filename="../ui/gui.ui" line="79"/>
+        <location filename="../gui.cpp" line="326"/>
+        <location filename="../gui.cpp" line="928"/>
         <source>Minutes till shutdown:</source>
         <translation>Минут до выключения:</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="118"/>
-        <location filename="../gui.cpp" line="318"/>
-        <location filename="../gui.cpp" line="858"/>
+        <location filename="../ui/gui.ui" line="137"/>
+        <location filename="../gui.cpp" line="325"/>
+        <location filename="../gui.cpp" line="927"/>
         <source>Shutdown-time:</source>
         <translation>Время выключения:</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="173"/>
+        <location filename="../ui/gui.ui" line="192"/>
         <location filename="../weekdayitem.cpp" line="37"/>
         <source>Shutdown</source>
         <translation>Выключить</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="178"/>
+        <location filename="../ui/gui.ui" line="197"/>
         <location filename="../weekdayitem.cpp" line="38"/>
         <source>Reboot</source>
         <translation>Перезагрузить</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="183"/>
+        <location filename="../ui/gui.ui" line="202"/>
         <location filename="../weekdayitem.cpp" line="39"/>
         <source>Suspend</source>
         <translation>Режим ожидания</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="188"/>
+        <location filename="../ui/gui.ui" line="207"/>
         <location filename="../weekdayitem.cpp" line="40"/>
         <source>Hibernate</source>
         <translation>Спящий режим</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="202"/>
+        <location filename="../ui/gui.ui" line="221"/>
         <source>You can set a date in the calendar</source>
         <translation>Вы можете установить дату в календаре</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="205"/>
-        <location filename="../gui.cpp" line="930"/>
+        <location filename="../ui/gui.ui" line="224"/>
+        <location filename="../gui.cpp" line="304"/>
+        <location filename="../gui.cpp" line="1008"/>
         <source>Calendar</source>
         <translation>Календарь</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="223"/>
+        <location filename="../ui/gui.ui" line="242"/>
         <source>Lock settings after countdown started</source>
         <translation>Заблокировать настройки после начала обратного отсчёта</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="226"/>
+        <location filename="../ui/gui.ui" line="245"/>
         <source>&amp;Lock after start?</source>
         <translation>&amp;Блокировать после запуска?</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="245"/>
+        <location filename="../ui/gui.ui" line="264"/>
         <source>Turns on/off all warnings</source>
         <translation>Вкл/Выкл все предупреждения</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="248"/>
+        <location filename="../ui/gui.ui" line="267"/>
         <source>&amp;Warnings on?</source>
         <translation>&amp;Включить предупреждения?</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="290"/>
-        <location filename="../gui.cpp" line="492"/>
-        <location filename="../gui.cpp" line="493"/>
-        <location filename="../gui.cpp" line="517"/>
+        <location filename="../ui/gui.ui" line="309"/>
+        <location filename="../gui.cpp" line="501"/>
+        <location filename="../gui.cpp" line="502"/>
         <location filename="../gui.cpp" line="526"/>
-        <location filename="../gui.cpp" line="527"/>
-        <location filename="../gui.cpp" line="933"/>
+        <location filename="../gui.cpp" line="535"/>
+        <location filename="../gui.cpp" line="536"/>
+        <location filename="../gui.cpp" line="1011"/>
         <source>minutes</source>
         <translation>минуты</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="332"/>
+        <location filename="../ui/gui.ui" line="351"/>
         <source>&amp;OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="399"/>
+        <location filename="../ui/gui.ui" line="418"/>
         <source>&amp;Now!</source>
         <translation>&amp;Сейчас!</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="424"/>
+        <location filename="../ui/gui.ui" line="443"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="431"/>
+        <location filename="../ui/gui.ui" line="450"/>
         <source>&amp;Help</source>
         <translation>&amp;Справка</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="439"/>
-        <location filename="../ui/gui.ui" line="473"/>
+        <location filename="../ui/gui.ui" line="458"/>
+        <location filename="../ui/gui.ui" line="492"/>
         <source>&amp;Settings</source>
         <translation>&amp;Настройки</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="453"/>
-        <location filename="../gui.cpp" line="97"/>
+        <location filename="../ui/gui.ui" line="472"/>
+        <location filename="../gui.cpp" line="96"/>
         <source>&amp;Quit</source>
         <translation>&amp;Закончить</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="458"/>
-        <location filename="../gui.cpp" line="98"/>
+        <location filename="../ui/gui.ui" line="477"/>
+        <location filename="../gui.cpp" line="97"/>
         <source>&amp;Info</source>
         <translation>&amp;Информация</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="463"/>
+        <location filename="../ui/gui.ui" line="482"/>
         <source>&amp;About</source>
         <translation>&amp;О программе</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="468"/>
-        <location filename="../gui.cpp" line="101"/>
+        <location filename="../ui/gui.ui" line="487"/>
+        <location filename="../gui.cpp" line="100"/>
         <source>&amp;Preferences</source>
         <translation>&amp;Настройки</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="481"/>
+        <location filename="../ui/gui.ui" line="500"/>
         <source>&amp;Reset</source>
         <translation>&amp;Сброс</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="489"/>
-        <location filename="../gui.cpp" line="99"/>
+        <location filename="../ui/gui.ui" line="508"/>
+        <location filename="../gui.cpp" line="98"/>
         <source>&amp;Logfile</source>
         <translation>&amp;Журнал</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="494"/>
+        <location filename="../ui/gui.ui" line="513"/>
         <source>&amp;Configure</source>
         <translation>&amp;Параметры</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="505"/>
+        <location filename="../ui/gui.ui" line="524"/>
         <source>&amp;Keep proportions</source>
         <translation>&amp;Сохранять пропорции</translation>
     </message>
     <message>
-        <location filename="../ui/gui.ui" line="510"/>
+        <location filename="../ui/gui.ui" line="529"/>
         <source>About &amp;Qt</source>
         <translation>Информация о &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="70"/>
+        <location filename="../gui.cpp" line="69"/>
         <source>Version </source>
         <translation>Версия </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="95"/>
-        <location filename="../gui.cpp" line="227"/>
+        <location filename="../gui.cpp" line="94"/>
+        <location filename="../gui.cpp" line="226"/>
         <source>&amp;Minimize</source>
         <translation>&amp;Свернуть</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="96"/>
+        <location filename="../gui.cpp" line="95"/>
         <source>R&amp;eset</source>
         <translation>С&amp;брос</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="104"/>
+        <location filename="../gui.cpp" line="103"/>
         <source>&amp;Shutdown</source>
         <translation>&amp;Выключение</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="106"/>
+        <location filename="../gui.cpp" line="105"/>
         <source>&amp;Reboot</source>
         <translation>&amp;Перезагрузка</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="108"/>
+        <location filename="../gui.cpp" line="107"/>
         <source>S&amp;uspend</source>
         <translation>&amp;Ожидание</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="110"/>
+        <location filename="../gui.cpp" line="109"/>
         <source>&amp;Hibernate</source>
         <translation>С&amp;пящий режим</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="135"/>
+        <location filename="../gui.cpp" line="134"/>
         <source>&amp;Minimize!</source>
         <translation>&amp;Свернуть!</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="322"/>
-        <location filename="../gui.cpp" line="863"/>
+        <location filename="../gui.cpp" line="329"/>
+        <location filename="../gui.cpp" line="932"/>
         <source>Reboot-time:</source>
         <translation>Время перезагрузки:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="323"/>
-        <location filename="../gui.cpp" line="864"/>
+        <location filename="../gui.cpp" line="330"/>
+        <location filename="../gui.cpp" line="933"/>
         <source>Minutes till reboot:</source>
         <translation>Минут до перезагрузки:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="326"/>
-        <location filename="../gui.cpp" line="868"/>
+        <location filename="../gui.cpp" line="333"/>
+        <location filename="../gui.cpp" line="937"/>
         <source>Suspend-time:</source>
         <translation>Время перехода в спящий режим:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="327"/>
-        <location filename="../gui.cpp" line="869"/>
+        <location filename="../gui.cpp" line="334"/>
+        <location filename="../gui.cpp" line="938"/>
         <source>Minutes till suspend:</source>
         <translation>Минут до перехода в спящий режим:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="330"/>
-        <location filename="../gui.cpp" line="873"/>
+        <location filename="../gui.cpp" line="337"/>
+        <location filename="../gui.cpp" line="942"/>
         <source>Hibernate-time:</source>
         <translation>Спящий режим-время:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="331"/>
-        <location filename="../gui.cpp" line="874"/>
+        <location filename="../gui.cpp" line="338"/>
+        <location filename="../gui.cpp" line="943"/>
         <source>Minutes till hibernate:</source>
         <translation>Минут до перехода в спящий режим:</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="352"/>
+        <location filename="../gui.cpp" line="359"/>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="352"/>
+        <location filename="../gui.cpp" line="359"/>
         <source>Action imminent!</source>
         <translation>Событие приближается!</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="357"/>
+        <location filename="../gui.cpp" line="364"/>
         <source>Information</source>
         <translation>Информация</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="357"/>
+        <location filename="../gui.cpp" line="364"/>
         <source>Countdown is not running!</source>
         <translation>Обратный отсчёт не запущен!</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="424"/>
+        <location filename="../gui.cpp" line="431"/>
         <source>shutdown in </source>
         <translation>выключение через </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="426"/>
+        <location filename="../gui.cpp" line="433"/>
         <source>reboot in </source>
         <translation>перезагрузка через </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="428"/>
+        <location filename="../gui.cpp" line="435"/>
         <source>suspend in </source>
         <translation>переход в ждущий режим через </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="430"/>
+        <location filename="../gui.cpp" line="437"/>
         <source>hibernate in </source>
         <translation>переход в спящий режим через </translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="441"/>
-        <location filename="../gui.cpp" line="442"/>
+        <location filename="../gui.cpp" line="450"/>
+        <location filename="../gui.cpp" line="451"/>
         <source>years</source>
         <translation>лет</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="449"/>
-        <location filename="../gui.cpp" line="450"/>
+        <location filename="../gui.cpp" line="458"/>
+        <location filename="../gui.cpp" line="459"/>
         <source>months</source>
         <translation>месяцев</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="459"/>
-        <location filename="../gui.cpp" line="460"/>
-        <location filename="../gui.cpp" line="478"/>
+        <location filename="../gui.cpp" line="468"/>
+        <location filename="../gui.cpp" line="469"/>
+        <location filename="../gui.cpp" line="487"/>
         <source>days</source>
         <translation>дней</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="474"/>
-        <location filename="../gui.cpp" line="480"/>
+        <location filename="../gui.cpp" line="483"/>
+        <location filename="../gui.cpp" line="489"/>
         <source>day</source>
         <translation>день</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="483"/>
-        <location filename="../gui.cpp" line="484"/>
-        <location filename="../gui.cpp" line="516"/>
-        <location filename="../gui.cpp" line="518"/>
+        <location filename="../gui.cpp" line="492"/>
+        <location filename="../gui.cpp" line="493"/>
+        <location filename="../gui.cpp" line="525"/>
+        <location filename="../gui.cpp" line="527"/>
         <source>hours</source>
         <translation>часов</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="503"/>
-        <location filename="../gui.cpp" line="504"/>
-        <location filename="../gui.cpp" line="535"/>
-        <location filename="../gui.cpp" line="536"/>
+        <location filename="../gui.cpp" line="512"/>
+        <location filename="../gui.cpp" line="513"/>
+        <location filename="../gui.cpp" line="544"/>
+        <location filename="../gui.cpp" line="545"/>
         <source>seconds</source>
         <translation>секунды</translation>
     </message>
     <message>
-        <location filename="../gui.cpp" line="745"/>
+        <location filename="../gui.cpp" line="819"/>
         <source>Res&amp;tore</source>
         <translation>&amp;Восстановить</translation>
     </message>
@@ -451,12 +452,12 @@
         <translation>Пароль:</translation>
     </message>
     <message>
-        <location filename="../passwd.cpp" line="43"/>
+        <location filename="../passwd.cpp" line="38"/>
         <source>The password is not correct!</source>
         <translation>Неправильный пароль!</translation>
     </message>
     <message>
-        <location filename="../passwd.cpp" line="76"/>
+        <location filename="../passwd.cpp" line="71"/>
         <source>&amp;Change password</source>
         <translation>&amp;Изменить пароль</translation>
     </message>
@@ -772,44 +773,44 @@ qshutdown should quit after the countdown ended.</source>
 окончания обратного отсчёта?</translation>
     </message>
     <message>
-        <location filename="../preferences.cpp" line="65"/>
+        <location filename="../preferences.cpp" line="58"/>
         <source>Please input an user specified command for shutdown here</source>
         <translation>Задайте команду для выключения</translation>
     </message>
     <message>
-        <location filename="../preferences.cpp" line="66"/>
+        <location filename="../preferences.cpp" line="59"/>
         <source>Please input an user specified command for reboot here</source>
         <translation>Задайте команду для перезагрузки</translation>
     </message>
     <message>
-        <location filename="../preferences.cpp" line="67"/>
+        <location filename="../preferences.cpp" line="60"/>
         <source>Please input an user specified command for suspend here</source>
         <translation>Задайте команду для перехода в режим ожидания</translation>
     </message>
     <message>
-        <location filename="../preferences.cpp" line="68"/>
+        <location filename="../preferences.cpp" line="61"/>
         <source>Please input an user specified command for hibernate here</source>
         <translation>Задайте команду для перехода в спящий режим</translation>
     </message>
     <message>
-        <location filename="../preferences.cpp" line="71"/>
+        <location filename="../preferences.cpp" line="64"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../preferences.cpp" line="74"/>
+        <location filename="../preferences.cpp" line="67"/>
         <source>The File &quot;%1&quot; is not writable!
 Maybe you just don&apos;t have the permissions to do so.</source>
         <translation>Файл &quot;%1&quot; не доступен для записи!
 Возможно, отсутствуют права на данную операцию.</translation>
     </message>
     <message>
-        <location filename="../preferences.cpp" line="80"/>
+        <location filename="../preferences.cpp" line="73"/>
         <source>Please read this carefully!</source>
         <translation>Прочтите внимательно!</translation>
     </message>
     <message>
-        <location filename="../preferences.cpp" line="82"/>
+        <location filename="../preferences.cpp" line="75"/>
         <source>Welcome to qshutdown!
 If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
 
@@ -823,9 +824,13 @@ Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for 
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main.cpp" line="52"/>
         <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>qshutdown покажет предупреждение 3 раза, когда будет оставаться менее 70 секунд.&lt;br/&gt;&lt;br/&gt;Программа использует qdbus для отправки запроса shutdown/reboot/suspend/hibernate менеджеру gnome- или kde-session-manager, в HAL/ConsoleKit/DeviceKit/UPower; а если это не сработает, то будет использована команда &apos;sudo shutdown&apos;. (Внимание: при отправке запроса на выключение в HAL или ConsoleKit, а также при использовании команды shutdown, сессия не сохраняется. Если используется команда shutdown, то программа может только завершить работу и выполнить перезагрузку.) Если после наступления времени отключения или перезагрузки ничего не происходит, то это означает отсутствие прав на использование команды shutdown. В этом случае можно поступить следующим образом:&lt;br/&gt;&lt;br/&gt;Скопируйте следующее в терминал:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;и добавьте строку:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;, где * заменяет имя пользователя или группы %group.&lt;br/&gt;&lt;br/&gt;Максимальное время обратного отсчёта составляет 1440 минут (24 часа).&lt;br/&gt;Файл конфигурации (и системного журнала) находится по адресу &lt;i&gt;~/.qshutdown/&lt;/i&gt; (в системах Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Для администраторов:&lt;/b&gt;&lt;br/&gt;Если вы хотите запустить qshutdown с функцией &quot;родительского контроля&quot; для всех пользователей, то вы можете выполнить &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; и установить параметру Lock_all в /root/.qshutdown/qshutdown.conf значение true. Следует помнить, что необходимо запустить qshutdown один раз, чтобы создать qshutdown.conf. Потом необходимо добавить следующую строку для sudoers (как описано выше):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;Если вы забыли пароль, то просто удалите всю строку, начиная со слова &quot;Password&quot;, вручную из qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Советы по использованию:&lt;/b&gt;&lt;br/&gt;Чтобы qshutdown вам не надоедал, отключите функцию &quot;Включить предупреждения?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Горячие клавиши:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;Окно информации&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Завершить&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Параметры&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;Запись информации о работе в журнал (только при завершении работы qshutdown. Чтобы данное действие выполнялось постоянно, необходимо настроить журналирование в параметрах.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;Выключение&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;Перезапуск&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;Режим ожидания с сохранением в RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;Спящий режим&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;Остановка обратного отсчёта (только если обратный отсчёт запущен, а доступ не ограничен администратором)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;Редактирование файла конфигурации (требуется пароль. Если вы пользователь, то можете установить &quot;без пароля&quot; (оставив поле пароля пустым)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <translation type="vanished">qshutdown покажет предупреждение 3 раза, когда будет оставаться менее 70 секунд.&lt;br/&gt;&lt;br/&gt;Программа использует qdbus для отправки запроса shutdown/reboot/suspend/hibernate менеджеру gnome- или kde-session-manager, в HAL/ConsoleKit/DeviceKit/UPower; а если это не сработает, то будет использована команда &apos;sudo shutdown&apos;. (Внимание: при отправке запроса на выключение в HAL или ConsoleKit, а также при использовании команды shutdown, сессия не сохраняется. Если используется команда shutdown, то программа может только завершить работу и выполнить перезагрузку.) Если после наступления времени отключения или перезагрузки ничего не происходит, то это означает отсутствие прав на использование команды shutdown. В этом случае можно поступить следующим образом:&lt;br/&gt;&lt;br/&gt;Скопируйте следующее в терминал:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;и добавьте строку:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;, где * заменяет имя пользователя или группы %group.&lt;br/&gt;&lt;br/&gt;Максимальное время обратного отсчёта составляет 1440 минут (24 часа).&lt;br/&gt;Файл конфигурации (и системного журнала) находится по адресу &lt;i&gt;~/.qshutdown/&lt;/i&gt; (в системах Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Для администраторов:&lt;/b&gt;&lt;br/&gt;Если вы хотите запустить qshutdown с функцией &quot;родительского контроля&quot; для всех пользователей, то вы можете выполнить &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; и установить параметру Lock_all в /root/.qshutdown/qshutdown.conf значение true. Следует помнить, что необходимо запустить qshutdown один раз, чтобы создать qshutdown.conf. Потом необходимо добавить следующую строку для sudoers (как описано выше):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;Если вы забыли пароль, то просто удалите всю строку, начиная со слова &quot;Password&quot;, вручную из qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Советы по использованию:&lt;/b&gt;&lt;br/&gt;Чтобы qshutdown вам не надоедал, отключите функцию &quot;Включить предупреждения?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Горячие клавиши:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;Окно информации&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Завершить&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Параметры&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;Запись информации о работе в журнал (только при завершении работы qshutdown. Чтобы данное действие выполнялось постоянно, необходимо настроить журналирование в параметрах.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;Выключение&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;Перезапуск&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;Режим ожидания с сохранением в RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;Спящий режим&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;Остановка обратного отсчёта (только если обратный отсчёт запущен, а доступ не ограничен администратором)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;Редактирование файла конфигурации (требуется пароль. Если вы пользователь, то можете установить &quot;без пароля&quot; (оставив поле пароля пустым)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="58"/>
+        <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file is located at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;The log file is located at %2&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in the ini file to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

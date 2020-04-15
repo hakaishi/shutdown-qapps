@@ -355,13 +355,11 @@ void Gui::power(QAction *action){
 void Gui::showW(){
      if(warnings->isChecked()){ //warnings is checked
        if(timeRunning){
-         QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::MessageIcon(3);
-         TIcon->showMessage(tr("Warning"), tr("Action imminent!"), icon, 5000);
+         TIcon->showMessage(tr("Warning"), tr("Action imminent!"), QIcon(":warn"), 5000);
          showRunningProgram();
        }
        else{
-         QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::MessageIcon(1);
-         TIcon->showMessage(tr("Information"), tr("Countdown is not running!"), icon, 5000);
+         TIcon->showMessage(tr("Information"), tr("Countdown is not running!"), QIcon(":info"), 5000);
        }
      }
 }
@@ -549,12 +547,15 @@ void Gui::updateT(){
      //this will ensure that the shutdown-type will be executed in case a few seconds were skipped
        else if((i<=0) && !(i<-n))
          finished_(); //execute shutdown-type
+       else
+         reset();
      }
      setWindowTitle(tip1 + tip2);
      TIcon->setToolTip(tip1 + tip2);
 }
 
 void Gui::set(){
+     TIcon->setIcon(QIcon(":running"));
      QDateTime localDT = QDateTime::currentDateTime();
      QDateTime localFutureDateTime = localDT; //initializing
      timeRunning = true;
@@ -1001,12 +1002,14 @@ void Gui::lockEverything(bool actual){
        statusBar()->removeWidget(parentalLockL);*/
 }
 void Gui::reset(){
+     TIcon->setIcon(QIcon(":red_glasses"));
      timer->stop();
      cal->setWeeklyDate = QDateTime();
      setWindowTitle("'qshutdown'");
      if(!aWeeklyTimeWasSet)
        toolButton->setText(tr("Calendar"));
-     lcd->display(0);
+     lcd->setDigitCount(4);
+     lcd->display(8888);
      TIcon->setToolTip(NULL);
      lcdL->setText(tr("minutes"));
      cal->setCalendarDate.setDate(QDate());

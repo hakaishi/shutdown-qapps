@@ -3,5 +3,8 @@
         <file alias="version">version.txt</file>
         <file alias="red_glasses">qshutdown/src/pixmap/red_glasses.xpm</file>
         <file alias="red_glasses_image">qshutdown/src/pixmap/red_glasses.png</file>
+        <file alias="info">qshutdown/src/pixmap/info.svg</file>
+        <file alias="warn">qshutdown/src/pixmap/warn.svg</file>
+        <file alias="running">qshutdown/src/pixmap/running.svg</file>
     </qresource>
 </RCC>

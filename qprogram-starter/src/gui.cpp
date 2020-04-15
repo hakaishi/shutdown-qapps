@@ -18,6 +18,7 @@
 
 #include "gui.h"
 #include "preferences.h"
+#include "history.h"
 #include "power.h"
 #include <QSettings>
 #include <QFile>
@@ -33,6 +34,8 @@ Gui::Gui(){
      setupUi(this);
 
      pref = new Preferences(this);
+     
+     history = new History(this);
 
      myOutput = new QTextStream(stdout);
 
@@ -77,10 +80,6 @@ Gui::Gui(){
      hintMsgBox->setHtml(tr("<b>General:</b><br/>Each line in the text editor will be executed as one seperate process. Put a backslash at the end of the line for a multiline command.<br/><br/> The message boxes will close themselves after 10 seconds.<br/>To start a program just type i.e. \"firefox\" or \"firefox www.google.com\" and then click on Start. Commands etc. can be linked by \"&&\" etc. <br/><br/>If the process is \"finished\" although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.<br/><br/>When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).<br/><br/><b>Files:</b><br/>The configuration-file can be found at <i>%2</i>.<br/>The log files can be found at <i>%1</i>.<br/><br/><b>make examples:</b><br/>&nbsp;make -C /path/to/project<br/>&nbsp;make clean -C /path/to/project<br/><br/><b>About Errors:</b><br/>Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at <i>%1</i>.<br/><br/>If the shutdown won't work, it might mean that \"sudo shutdown -P now\" is used. This needs admin permissions. You can do the this:<br/><br/>Post the following in a terminal:<pre>EDITOR=nano sudo -E visudo</pre> and add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre> whereas * replaces the username or %groupname.")
      .arg(QDir().toNativeSeparators(QStandardPaths::standardLocations(QStandardPaths::DataLocation).first()))
      .arg(QSettings().fileName()));
-     
-     historyList = new QListWidget;
-     historyList->setWindowTitle(tr("History"));
-     historyList->resize(600,400);
 
      connect(action_Configure, SIGNAL(triggered(bool)), pref, SLOT(show()));
      connect(dateTimeTimer, SIGNAL(timeout()), this, SLOT(currentDateAndTime()));
@@ -92,12 +91,12 @@ Gui::Gui(){
      connect(action_Hints, SIGNAL(triggered(bool)), this, SLOT(info_hint()));
      connect(showLogsButton, SIGNAL(clicked(bool)), this, SLOT(showLogs()));
      connect(historyBtn, SIGNAL(clicked(bool)), this, SLOT(showHistory()));
-     connect(historyList, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
+     connect(history->historyList, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
         this, SLOT(replaceEditorContent(QListWidgetItem*)));
      connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setQuit(int)));
 }
 
-Gui::~Gui(){ delete hintMsgBox; delete historyList; delete logBox; delete messages; }
+Gui::~Gui(){ delete hintMsgBox; delete logBox; delete messages; }
 
 void Gui::setQuit(int idx) {quitCheckBox->setDisabled(idx > 0); }
 
@@ -532,12 +531,12 @@ void Gui::showHistory(){
     QJsonDocument json = QJsonDocument::fromJson(pref->settings->value("History/text", QString()).toByteArray());
     QJsonArray jsonArr = json.array();
     
-    historyList->clear();
+    history->historyList->clear();
     
     for(int i = 0; i < jsonArr.size(); i++){
-        historyList->addItem(jsonArr[i].toString().replace(QString("\n"), QString("\\n")));
+        history->historyList->addItem(jsonArr[i].toString().replace(QString("\n"), QString("\\n")));
     }
-    historyList->show();   
+    history->show();   
 
 }
 

@@ -28,6 +28,7 @@
 #include <QMessageBox>
 
 class Preferences;
+class History;
 
 class Gui : public QMainWindow, public Ui::Gui {
      Q_OBJECT // important for creating own singals and slots
@@ -52,8 +53,8 @@ class Gui : public QMainWindow, public Ui::Gui {
       QString        program;
       bool           aborted;
       QTextStream    *myOutput;
-      QListWidget    *historyList;
       QMessageBox    *messages;
+      History        *history;
 
      private slots:
       void currentDateAndTime(); //for the current minimum date and time
