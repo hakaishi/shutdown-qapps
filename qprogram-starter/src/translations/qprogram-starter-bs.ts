@@ -12,14 +12,6 @@
         <translation>dddd dd.MM.yyyy</translation>
     </message>
     <message>
-        <source>Sho&amp;w Logs</source>
-        <translation>Pri&amp;kaži izvještaje</translation>
-    </message>
-    <message>
-        <source>S&amp;hutdown</source>
-        <translation type="vanished">U&amp;gasi</translation>
-    </message>
-    <message>
         <source>&amp;Hints</source>
         <translation>&amp;Savjeti</translation>
     </message>
@@ -36,28 +28,12 @@
         <translation>&amp;Bilježenje</translation>
     </message>
     <message>
-        <source>Shutdown the computer after all commands finished</source>
-        <translation type="vanished">Ugasi računar nakon što se izvrše sve komande</translation>
-    </message>
-    <message>
-        <source>The contents will be restored on every start of qprogram-starter</source>
-        <translation>Sadržaj će biti povraćen nakon svakog pokretanja qprogram-startera</translation>
-    </message>
-    <message>
         <source>&amp;Start</source>
         <translation>&amp;Pokreni</translation>
     </message>
     <message>
-        <source>&amp;Abort</source>
-        <translation>&amp;Prekini</translation>
-    </message>
-    <message>
         <source>Browse...</source>
         <translation>Pretraži...</translation>
-    </message>
-    <message>
-        <source>Save text editors &amp;contents</source>
-        <translation>Sačuvaj s&amp;adržaj uređivača teksta</translation>
     </message>
     <message>
         <source>Start the commands to this time and date</source>
@@ -72,24 +48,12 @@
         <translation>Odaberite program</translation>
     </message>
     <message>
-        <source>The first text edit is empty!</source>
-        <translation type="vanished">Prvo uređivanje teksta je prazno!</translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation>Informacije</translation>
     </message>
     <message>
         <source>Processes aborted</source>
         <translation>Proces je prekinut</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;process 1 finished!&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;proces 1 završen!&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;process 1 &amp; 2 finished!&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;procesi 1 i 2 završeni!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,22 +64,8 @@
         <translation>&lt;b&gt;Neuspjelo pokretanje!&lt;/b&gt;&lt;br/&gt;Ne postoji takav program ili komanda.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;process 1 crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
-        <translation type="vanished">&lt;b&gt;proces 1 je krahirao!&lt;/b&gt;&lt;br/&gt;Moguće je da je ovo prouzrokovano netačnim parametrima ili opcijama.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;process 2 crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
-        <translation type="vanished">&lt;b&gt;proces 2 je krahirao!&lt;/b&gt;&lt;br/&gt;Moguće je da je ovo prouzrokovano netačnim parametrima ili opcijama.</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Unknown error!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
         <translation>&lt;b&gt;Nepoznata greška!&lt;/b&gt;&lt;br/&gt;Moguće je da je ovo prouzrokovano netačnim parametrima ili opcijama.</translation>
-    </message>
-    <message>
-        <source>&quot;%1&quot;: Failed to start! No such program or command.
-</source>
-        <translation type="vanished">&quot;%1&quot;: Nije moguće pokrenuti! Ne postoji takav program ili komanda.
-</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -154,10 +104,6 @@
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <source>Choose an action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation type="unfinished"></translation>
     </message>
@@ -175,10 +121,6 @@
     </message>
     <message>
         <source>History</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Protokoll</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -201,6 +143,57 @@
         <source>&lt;b&gt;process crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Save errors and output into files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No Action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse commands and insert into the text editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Kill Processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Displays all output &amp; errors in a seperate window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Display Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display and restore previously executed commands</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The current text will be the default value for all future starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set text editor content as default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>History</name>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click restores item to the text editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Preferences</name>
@@ -211,14 +204,6 @@
     <message>
         <source>automatic</source>
         <translation>automatski</translation>
-    </message>
-    <message>
-        <source>Gnome session</source>
-        <translation>Gnome sesija</translation>
-    </message>
-    <message>
-        <source>KDE session</source>
-        <translation>KDE sesija</translation>
     </message>
     <message>
         <source>Shutdown Method:</source>
@@ -248,35 +233,11 @@ Ako želite da qprogram-starter vrši automatsko gašenje vašeg sistema a koris
 Prijave i primjedbe za greške i prijevode možete izvršiti na https://launchpad.net/~hakaishi</translation>
     </message>
     <message>
-        <source>login1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HAL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Suspend Method:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Reboot Method:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

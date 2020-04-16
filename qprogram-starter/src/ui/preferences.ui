@@ -32,12 +32,12 @@
      </item>
      <item>
       <property name="text">
-       <string>Gnome session</string>
+       <string notr="true">Gnome session</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>KDE session</string>
+       <string notr="true">KDE session</string>
       </property>
      </item>
      <item>
@@ -76,27 +76,27 @@
      </item>
      <item>
       <property name="text">
-       <string>login1</string>
+       <string notr="true">login1</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Gnome session</string>
+       <string notr="true">Gnome session</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>HAL</string>
+       <string notr="true">HAL</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>UPower</string>
+       <string notr="true">UPower</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>DeviceKit</string>
+       <string notr="true">DeviceKit</string>
       </property>
      </item>
     </widget>
@@ -127,32 +127,32 @@
      </item>
      <item>
       <property name="text">
-       <string>login1</string>
+       <string notr="true">login1</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Gnome session</string>
+       <string notr="true">Gnome session</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>KDE session</string>
+       <string notr="true">KDE session</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>HAL</string>
+       <string notr="true">HAL</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>ConsoleKit</string>
+       <string notr="true">ConsoleKit</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>sudo shutdown -r now</string>
+       <string notr="true">sudo shutdown -r now</string>
       </property>
      </item>
     </widget>
@@ -193,27 +193,27 @@
      </item>
      <item>
       <property name="text">
-       <string>login1</string>
+       <string notr="true">login1</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Gnome session</string>
+       <string notr="true">Gnome session</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>HAL</string>
+       <string notr="true">HAL</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>UPower</string>
+       <string notr="true">UPower</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>DeviceKit</string>
+       <string notr="true">DeviceKit</string>
       </property>
      </item>
     </widget>

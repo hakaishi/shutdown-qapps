@@ -12,14 +12,6 @@
         <translation>dddd dd.MM.yyyy</translation>
     </message>
     <message>
-        <source>Sho&amp;w Logs</source>
-        <translation>Mos&amp;trar registros</translation>
-    </message>
-    <message>
-        <source>S&amp;hutdown</source>
-        <translation type="vanished">A&amp;pagar</translation>
-    </message>
-    <message>
         <source>&amp;Hints</source>
         <translation type="unfinished"></translation>
     </message>
@@ -36,24 +28,12 @@
         <translation>&amp;Registro</translation>
     </message>
     <message>
-        <source>The contents will be restored on every start of qprogram-starter</source>
-        <translation>El contenido será restaurado en cada inicio de qprogram-starter</translation>
-    </message>
-    <message>
         <source>&amp;Start</source>
         <translation>&amp;Iniciar</translation>
     </message>
     <message>
-        <source>&amp;Abort</source>
-        <translation>&amp;Interrumpir</translation>
-    </message>
-    <message>
         <source>Browse...</source>
         <translation>Examinar…</translation>
-    </message>
-    <message>
-        <source>Save text editors &amp;contents</source>
-        <translation>Guardar el &amp;contenido de los editores de texto</translation>
     </message>
     <message>
         <source>Start the commands to this time and date</source>
@@ -76,14 +56,6 @@
         <translation>Procesos interrumpidos</translation>
     </message>
     <message>
-        <source>&lt;b&gt;process 1 finished!&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;el proceso 1 ha finalizado&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;process 1 &amp; 2 finished!&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;los procesos 1 y 2 han finalizado&lt;/b&gt;</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -94,12 +66,6 @@
     <message>
         <source>&lt;b&gt;Unknown error!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&quot;%1&quot;: Failed to start! No such program or command.
-</source>
-        <translation type="vanished">«%1»: Falló al iniciarse. No existe ese programa u orden.
-</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -138,10 +104,6 @@
         <translation>Ctrl+H</translation>
     </message>
     <message>
-        <source>Choose an action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Shutdown</source>
         <translation type="unfinished"></translation>
     </message>
@@ -159,10 +121,6 @@
     </message>
     <message>
         <source>History</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Protokoll</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -185,6 +143,57 @@
         <source>&lt;b&gt;process crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Save errors and output into files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No Action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse commands and insert into the text editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Kill Processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Displays all output &amp; errors in a seperate window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Display Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display and restore previously executed commands</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The current text will be the default value for all future starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set text editor content as default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>History</name>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click restores item to the text editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Preferences</name>
@@ -195,14 +204,6 @@
     <message>
         <source>automatic</source>
         <translation>automático</translation>
-    </message>
-    <message>
-        <source>Gnome session</source>
-        <translation>Sesión de Gnome</translation>
-    </message>
-    <message>
-        <source>KDE session</source>
-        <translation>Sesión de KDE</translation>
     </message>
     <message>
         <source>Shutdown Method:</source>
@@ -230,35 +231,11 @@ Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>login1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HAL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>UPower</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>DeviceKit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Suspend Method:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Reboot Method:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ConsoleKit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sudo shutdown -r now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

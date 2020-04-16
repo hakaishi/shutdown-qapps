@@ -69,7 +69,7 @@ Gui::Gui(){
      logBox = new QTextEdit;
      logBox->setReadOnly(true);
      logBox->resize(600,400);
-     logBox->setWindowTitle(tr("Protokoll"));
+     logBox->setWindowTitle(tr("Log"));
      logBox->setWindowModality(Qt::NonModal);
 
      hintMsgBox = new QTextEdit;
