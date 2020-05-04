@@ -9,6 +9,7 @@ shutdown-qapps (1.8.0-1) unstable; urgency=low
     Ubuntu/Xubuntu etc.)
   - fixed calendar date problems
   - fixed message box "bad window" message
+  - disable "warinings on" as default
  * qprogram-starter
   - replaced second text editor with more efficient functinality
     (see below)

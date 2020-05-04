@@ -46,10 +46,10 @@ void Editor::showEvent(QShowEvent* show_editor){
      isClosed = false;
      if(!confFile->open(QIODevice::ReadWrite | QIODevice::Text)){
        QTextStream myOutput(stdout);
-       myOutput << "E: Can not open qshutdown.conf!" << endl;
+       myOutput << "E: Can not open qshutdown settings file!" << endl;
        return;
      }
-     QString text;                      //reading content of qshutdown.conf
+     QString text;                      //reading content of qshutdown settings
      QTextStream in(confFile);
      text = in.readAll();
      plainTextEdit->setPlainText(text);
@@ -84,10 +84,10 @@ void Editor::keyPressEvent(QKeyEvent *kEvent){
 void Editor::saveChanges(){
      if(!confFile->open(QIODevice::ReadWrite | QIODevice::Text)){
        QTextStream myOutput(stdout);
-       myOutput << "E: Can not open qshutdown.conf!";
+       myOutput << "E: Can not open qshutdown settings file!";
        return;
      }
-     QString newContent;                //writing content of editor to qshutdown.conf
+     QString newContent;                //writing content of editor to qshutdown settings
      newContent = plainTextEdit->toPlainText();
      QTextStream out(confFile);
      out << newContent;

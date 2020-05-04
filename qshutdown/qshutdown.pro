@@ -28,7 +28,7 @@ SOURCES = src/gui.cpp src/main.cpp src/info.cpp\
           src/editor.cpp src/about.cpp src/weekday.cpp\
           src/weekdayitem.cpp
 RESOURCES = ../qshutdown.qrc
-TRANSLATIONS = src/translations/qshutdown-ast.ts\
+TRANSLATIONS = src/translations/qshutdown-ast_ES.ts\
                src/translations/qshutdown-bg.ts\
                src/translations/qshutdown-bs.ts\
                src/translations/qshutdown-cs.ts\

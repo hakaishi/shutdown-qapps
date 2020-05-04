@@ -420,7 +420,7 @@ void Gui::keyPressEvent(QKeyEvent *kEvent){
      }
      if(kEvent->modifiers() == Qt::ShiftModifier){
        if(kEvent->key() == Qt::Key_E)
-         checkPassword->show(); //ask for password to edit qshutdown.conf
+         checkPassword->show(); //ask for password to edit qshutdown settings
      }
 }
 
@@ -848,7 +848,7 @@ void Gui::loadSettings(){
 
      if(!settings.isWritable()){
        QTextStream myOutput;
-       myOutput << "W: qshutdown.conf is not writable!" << endl;
+       myOutput << "W: qshutdown settings is not writable!" << endl;
      }
 
      if(!settings.contains("Lock_all"))

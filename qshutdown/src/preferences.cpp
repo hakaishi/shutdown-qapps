@@ -72,14 +72,15 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
        infoBox = new QMessageBox(this);
        infoBox->setWindowTitle(tr("Please read this carefully!"));
        infoBox->setIcon(QMessageBox::Information);
-       infoBox->setInformativeText(tr("Welcome to qshutdown!\n"
+       infoBox->setInformativeText(QString(QObject::tr("Welcome to qshutdown!\n"
          "If you want qshutdown e.g. to shutdown the system "
          "and you are using the Gnome Shell, then you are likely to get a "
          "shutdown dialog from there. If you want a direct shutdown, then "
          "please consider going into the preferences and setting the shutdown "
          "method to ConsoleKit or something else.\n\nPlease feel free to visit "
          "https://launchpad.net/~hakaishi to report bugs or for anyting "
-         "concerning translations."));
+         "concerning translations.\n\nThe settings file is located at %1.\n"
+         "For futher information see the info window.").arg(QSettings().fileName())));
        infoBox->setStandardButtons(QMessageBox::Ok);
        infoBox->show();
        QSettings().setValue("first_start", false);
@@ -215,7 +216,7 @@ void Preferences::loadSettings(){
      radio1->setChecked(settings->value("CheckBoxes/target_time",false).toBool());
      radio2->setChecked(settings->value("CheckBoxes/countdown",true).toBool());
      lock->setChecked(settings->value("CheckBoxes/lock",true).toBool());
-     warn->setChecked(settings->value("CheckBoxes/warnings",true).toBool());
+     warn->setChecked(settings->value("CheckBoxes/warnings",false).toBool());
      log->setChecked(settings->value("Logfile/logging",false).toBool());
      lockS->setChecked(settings->value("Lock_screen",true).toBool());
      autostart->setChecked(settings->value("Autostart").toBool());
@@ -351,7 +352,7 @@ void Preferences::autostartFile(){
        }
        if(!autostartFile.open(QIODevice::ReadWrite | QIODevice::Text)){
          QTextStream myOutput(stdout);
-         myOutput << "E: Can not open qshutdown.conf!" << endl;
+         myOutput << "E: Can not open qshutdown settings file!" << endl;
          return;
        }
          QString autostartContent("[Desktop Entry]\nName=qshutdown\n"
