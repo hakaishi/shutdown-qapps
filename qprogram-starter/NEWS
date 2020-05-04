@@ -1,3 +1,16 @@
+Changes in Release 1.8.0
+=========================
+
+ - replaced second text editor with more efficient functinality
+   (see below)
+ - run each line in the text editor as a seperate process unless
+   the line ends with a backslash
+ - the default settings and log files location has changed (see
+   the info window for more information)
+ - added command history
+ - other small fixes
+
+
 Changes in Release 1.7.0
 =========================
 

@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown the shutdown/reboot/suspend/hibernate
- * Copyright (C) 2010-2019 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2020 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,6 +28,9 @@
 Gui::Gui(){
 
      setupUi(this);
+
+     //init lcd
+     lcd->display("----");
 
    //Seconds won't be recognized, thus removing them (just in case).
      QString timeEditFormat;
@@ -1009,7 +1012,7 @@ void Gui::reset(){
      if(!aWeeklyTimeWasSet)
        toolButton->setText(tr("Calendar"));
      lcd->setDigitCount(4);
-     lcd->display(8888);
+     lcd->display("----");
      TIcon->setToolTip(NULL);
      lcdL->setText(tr("minutes"));
      cal->setCalendarDate.setDate(QDate());
