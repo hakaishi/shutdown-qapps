@@ -77,6 +77,7 @@ class Gui : public QMainWindow, public Ui::Gui {
       void setQuit(int idx);
       void displayCountdown();
       void cleanUp(bool force);
+      void handleMessageEvent(int a);
 
      signals:
       void finished();

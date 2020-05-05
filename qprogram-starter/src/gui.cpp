@@ -54,6 +54,7 @@ Gui::Gui(){
      versionFile.close();
      
      messages = new QMessageBox;
+     connect(messages, SIGNAL(finished(int)), this, SLOT(handleMessageEvent(int)));
 
      dateEdit->setMinimumDate(QDate::currentDate());
      dateTimeTimer = new QTimer(this);
@@ -98,11 +99,16 @@ Gui::Gui(){
 
 Gui::~Gui(){ delete hintMsgBox; delete logBox; delete messages; }
 
+void Gui::handleMessageEvent(int a){
+    singleShot->stop();
+    delete singleShot;
+}
+
 void Gui::setQuit(int idx) {quitCheckBox->setDisabled(idx > 0); }
 
 void Gui::closeEvent(QCloseEvent* window_close){
      if(!pref->settings->isWritable())
-       *myOutput << "W: qprogram-starter.conf is not writable!" << endl;
+       *myOutput << "W: qprogram-starter settings file is not writable!" << endl;
      else
        saveSettings();
      //qApp->quit();
@@ -188,7 +194,9 @@ void Gui::run(){ //To start either the timer or start the process
        messages->setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Window);
        messages->setInformativeText(tr("The text edit is empty!"));
        singleShot = new QTimer(this);
-       singleShot->singleShot(6000, messages, SLOT(hide()));
+       singleShot->setSingleShot(true);
+       connect(singleShot, SIGNAL(timeout()), messages, SLOT(hide()));
+       singleShot->start(10000);
        messages->show();
      }
      outputProcess = "";
@@ -274,7 +282,9 @@ void Gui::abortProcesses(){
      messages->setWindowModality(Qt::NonModal);
      messages->setWindowFlags(Qt::WindowStaysOnTopHint);
      singleShot = new QTimer(this);
-     singleShot->singleShot(10000, messages, SLOT(hide()));
+     singleShot->setSingleShot(true);
+     connect(singleShot, SIGNAL(timeout()), messages, SLOT(hide()));
+     singleShot->start(10000);
      messages->show();
      
      bool force = true;
@@ -321,16 +331,30 @@ void Gui::errorOutput(){ //write error output into a file if loggingCheckBox is 
        errorLog.close();
      }
      
-     next();
+     //next();
 }
 
 void Gui::showLogs(){
      if(!outputProcess.isEmpty() || !errProcess.isEmpty()){
+       logBox->setPlainText("");
        if(!outputProcess.isEmpty())
          logBox->append(outputProcess);
        if(!errProcess.isEmpty())
          logBox->append(errProcess);
        logBox->show();
+     }
+     else{
+        messages->setWindowTitle(tr("Information"));
+        messages->setIcon(QMessageBox::Information);
+        messages->setInformativeText(tr("<b>No Output!</b><br/>"
+           "There is still no data in the output or error stream"));
+        messages->setWindowModality(Qt::NonModal);
+        messages->setWindowFlags(Qt::WindowStaysOnTopHint);
+        singleShot = new QTimer(this);
+        singleShot->setSingleShot(true);
+        connect(singleShot, SIGNAL(timeout()), messages, SLOT(hide()));
+        singleShot->start(10000);
+        messages->show();
      }
 }     
 
@@ -522,7 +546,10 @@ void Gui::message(){
        }
        messages->setWindowModality(Qt::NonModal);
        messages->setWindowFlags(Qt::WindowStaysOnTopHint);
-       QTimer::singleShot(10000, messages, SLOT(hide()));
+       singleShot = new QTimer(this);
+       singleShot->setSingleShot(true);
+       connect(singleShot, SIGNAL(timeout()), messages, SLOT(hide()));
+       singleShot->start(10000);
        messages->show();
      }
 }
@@ -557,7 +584,18 @@ void Gui::saveHistory(){
 }
 
 void Gui::saveData(){
-     pref->settings->setValue("Text/text", plainTextEdit->toPlainText());
+    pref->settings->setValue("Text/text", plainTextEdit->toPlainText());
+
+    messages->setWindowTitle(tr("Information"));
+    messages->setIcon(QMessageBox::Information);
+    messages->setInformativeText(tr("Content saved for future startups."));
+    messages->setWindowModality(Qt::NonModal);
+    messages->setWindowFlags(Qt::WindowStaysOnTopHint);
+    singleShot = new QTimer(this);
+    singleShot->setSingleShot(true);
+    connect(singleShot, SIGNAL(timeout()), messages, SLOT(hide()));
+    singleShot->start(10000);
+    messages->show();
 }
 
 void Gui::saveSettings(){

@@ -46,7 +46,7 @@ If you want qshutdown to run with "parental lock" for every user, you can do
 .PP
 \& $ sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/
 .PP
-and set the option Lock_all in \fI/root/.qshutdown/qshutdown.conf\fR to \fBtrue\fR. Note that qshutdown has to start once  to generate the qshutdown.conf. Furthermore there is a need to do
+and set the option Lock_all in the root users settings file to \fBtrue\fR. Note that qshutdown has to start once to generate the settings file. Furthermore there is a need to do
 .PP
 \& $ EDITOR=nano sudo \-E visudo
 .PP
@@ -54,7 +54,7 @@ and add the following line to the sudoers:
 .PP
 \& * ALL = NOPASSWD:/usr/bin/qshutdown
 .PP
-If you should ever forget your set password, just remove the whole line starting with \fBPassword\fR manually from the qshutdown.conf.
+If you should ever forget your set password, just remove the whole line starting with \fBPassword\fR manually from the settings file.
 .PP
 .SH FILES
 The configurationfile (and logfile) is located at \fI~/.qshutdown/\fR (under Linux/Unix).
