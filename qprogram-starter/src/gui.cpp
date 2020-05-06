@@ -53,6 +53,9 @@ Gui::Gui(){
      statusBar()->showMessage(tr("Version ") + in.readLine(),15000);
      versionFile.close();
      
+     processes = new QList<QProcess* >;
+     processArgs = new QStringList;
+     
      messages = new QMessageBox;
      connect(messages, SIGNAL(finished(int)), this, SLOT(handleMessageEvent(int)));
 
@@ -97,7 +100,7 @@ Gui::Gui(){
      connect(comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setQuit(int)));
 }
 
-Gui::~Gui(){ delete hintMsgBox; delete logBox; delete messages; }
+Gui::~Gui(){ delete hintMsgBox; delete logBox; delete messages; delete processes; delete processArgs; }
 
 void Gui::handleMessageEvent(int a){
     singleShot->stop();
@@ -168,9 +171,6 @@ void Gui::run(){ //To start either the timer or start the process
            else cmd << line;
          }
        }
-            
-       processes = new QList<QProcess* >;
-       processArgs = new QStringList;
          
        foreach(QString p, cmd){
           QProcess* proc = new QProcess(this);
@@ -266,6 +266,19 @@ void Gui::displayCountdown(){
 }
 
 void Gui::abortProcesses(){
+     if(processes->length() == 0){
+        messages->setWindowTitle(tr("Information"));
+        messages->setIcon(QMessageBox::Information);
+        messages->setInformativeText(tr("No running processes"));
+        messages->setWindowModality(Qt::NonModal);
+        messages->setWindowFlags(Qt::WindowStaysOnTopHint);
+        singleShot = new QTimer(this);
+        singleShot->setSingleShot(true);
+        connect(singleShot, SIGNAL(timeout()), messages, SLOT(hide()));
+        singleShot->start(10000);
+        messages->show();
+        return;
+     }
      aborted = true;
      timer->stop();
      countdown->stop();

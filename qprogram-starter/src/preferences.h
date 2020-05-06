@@ -34,6 +34,7 @@ class Preferences : public QDialog, public Ui::Preferences {
     private:
      QMessageBox *msgBox;
      QMessageBox *infoBox;
+     QMessageBox *histBox;
 
     private slots:
      void setupMsgBoxes();

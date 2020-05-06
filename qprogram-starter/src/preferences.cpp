@@ -128,5 +128,14 @@ void Preferences::saveToConfFile(){
 }
 
 void Preferences::clearHistory(){
-    settings->setValue("History/text", QString());    
+    settings->setValue("History/text", QString()); 
+    
+    histBox = new QMessageBox(this);
+    histBox->setWindowTitle(tr("Information"));
+    histBox->setIcon(QMessageBox::Information);
+    histBox->setInformativeText(tr("History cleared!"));
+    histBox->setWindowModality(Qt::NonModal);
+    histBox->setWindowFlags(Qt::WindowStaysOnTopHint | Qt::Window);
+    QTimer::singleShot(10000, histBox, SLOT(close()));
+    histBox->show();
 }
