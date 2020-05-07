@@ -7,7 +7,7 @@ Changes in Release 1.8.0
    more information.
  - added default value instead of "0"
  - added custom icons for system tray (because of heavy trouble under Ubuntu/Xubuntu etc.)
- - disable "warinings on" as default
+ - disable "warnings on" as default
 
 Changes in Release 1.7.3
 =========================

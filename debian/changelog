@@ -21,7 +21,7 @@ shutdown-qapps (1.8.0-1) unstable; urgency=low
   - fixed message box "bad window" message
   - revision of button names / tooltip texts etc.
 
- -- Christian Metscher <hakaishi@web.de>  Mon, 04 May 2020 23:29:23 +0900
+ -- Christian Metscher <hakaishi@web.de>  Wed, 06 May 2020 22:55:29 +0900
 
 shutdown-qapps (1.7.4-1) unstable; urgency=low
 

@@ -3,7 +3,7 @@ Upstream-Name: shutdown-qapps
 Source: https://launchpad.net/qt-shutdown-p/shutdown-qapps/debian-release
 
 Files: *
-Copyright: 2019 Christian Metscher <hakaishi@web.de>
+Copyright: 2020 Christian Metscher <hakaishi@web.de>
 License: GPL-3
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
