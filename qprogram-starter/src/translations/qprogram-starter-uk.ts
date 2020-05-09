@@ -128,10 +128,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;General:&lt;/b&gt;&lt;br/&gt;Each line in the text editor will be executed as one seperate process. Put a backslash at the end of the line for a multiline command.&lt;br/&gt;&lt;br/&gt; The message boxes will close themselves after 10 seconds.&lt;br/&gt;To start a program just type i.e. &quot;firefox&quot; or &quot;firefox www.google.com&quot; and then click on Start. Commands etc. can be linked by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;If the process is &quot;finished&quot; although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.&lt;br/&gt;&lt;br/&gt;When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Files:&lt;/b&gt;&lt;br/&gt;The configuration-file can be found at &lt;i&gt;%2&lt;/i&gt;.&lt;br/&gt;The log files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;make examples:&lt;/b&gt;&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;&lt;b&gt;About Errors:&lt;/b&gt;&lt;br/&gt;Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;If the shutdown won&apos;t work, it might mean that &quot;sudo shutdown -P now&quot; is used. This needs admin permissions. You can do the this:&lt;br/&gt;&lt;br/&gt;Post the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; whereas * replaces the username or %groupname.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The text edit is empty!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -181,6 +177,22 @@
     </message>
     <message>
         <source>Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;General:&lt;/b&gt;&lt;br/&gt;Each line in the text editor will be executed as one seperate process. Put a backslash at the end of the line for a multiline command.&lt;br/&gt;&lt;br/&gt;The message boxes will close themselves after 10 seconds.&lt;br/&gt;To start a program just type i.e. &quot;firefox&quot; or &quot;firefox www.google.com&quot; and then click on Start. Commands etc. can be linked by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;If the process is &quot;finished&quot; although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.&lt;br/&gt;&lt;br/&gt;When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Files:&lt;/b&gt;&lt;br/&gt;The configuration-file can be found at &lt;i&gt;%2&lt;/i&gt;.&lt;br/&gt;The log files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;make examples:&lt;/b&gt;&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;&lt;b&gt;About Errors:&lt;/b&gt;&lt;br/&gt;Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;If the shutdown won&apos;t work, it might mean that &quot;sudo shutdown -P now&quot; is used. This needs admin permissions. You can do the this:&lt;br/&gt;&lt;br/&gt;Post the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; whereas * replaces the username or %groupname.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No running processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;No Output!&lt;/b&gt;&lt;br/&gt;There is still no data in the output or error stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content saved for future startups.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -258,6 +270,14 @@ Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for 
     </message>
     <message>
         <source>Countdown before action:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Відомості</translation>
+    </message>
+    <message>
+        <source>History cleared!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

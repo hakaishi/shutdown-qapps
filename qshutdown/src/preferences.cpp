@@ -78,7 +78,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
          "shutdown dialog from there. If you want a direct shutdown, then "
          "please consider going into the preferences and setting the shutdown "
          "method to ConsoleKit or something else.\n\nPlease feel free to visit "
-         "https://launchpad.net/~hakaishi to report bugs or for anyting "
+         "https://launchpad.net/~hakaishi to report bugs or for anything "
          "concerning translations.\n\nThe settings file is located at %1.\n"
          "For futher information see the info window.").arg(QSettings().fileName())));
        infoBox->setStandardButtons(QMessageBox::Ok);
