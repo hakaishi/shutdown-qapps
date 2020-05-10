@@ -68,7 +68,7 @@ int main(int argc, char *argv[]){
        "add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre>whereas * replaces the "
        "user name or %group name.<br/><br/>The maximum Number of countdown_minutes is "
        "1440 (24 hours).<br/>The configuration file is located at "
-       "<i>%1</i>.<br/>The log file is located at %2<br/><br/><b>For admins:</b><br/>If you want "
+       "<i>%1</i>.<br/>The log file is located at <i>%2</i><br/><br/><b>For admins:</b><br/>If you want "
        "qshutdown to run with \"parental lock\" for every user, you can do "
        "\"sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/\" "
        "and set the option Lock_all in the ini file to true. Note that "

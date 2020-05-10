@@ -27,7 +27,7 @@ About::About(QWidget *parent): QDialog(parent){
 
      textBrowser_2->setHtml(tr("<p >Special thanks to:<br /></p>"
                                "<p >Fabian Deuchler for helping here and "
-                               "there.<br /><br />And Brian Nelson for "
+                               "there.<br /><br />And Brian Nelson & Dr. Tobias Quathamer for "
                                "sponsoring the uploads to Debian.<br /><br />"
                                "As well as to Miquel Banchs i Piqué for the idea of "
                                "implementing a routine allowing custom settings for "
