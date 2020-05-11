@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>History</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../../qprogram-starter.qrc">
+    <normaloff>:/pix</normaloff>:/pix</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
@@ -26,6 +30,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../qprogram-starter.qrc"/>
+ </resources>
  <connections/>
 </ui>
