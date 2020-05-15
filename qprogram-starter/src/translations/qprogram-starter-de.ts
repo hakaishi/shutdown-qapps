@@ -177,23 +177,23 @@
     </message>
     <message>
         <source>No running processes</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine laufenden Prozesse</translation>
     </message>
     <message>
         <source>&lt;b&gt;No Output!&lt;/b&gt;&lt;br/&gt;There is still no data in the output or error stream</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Kein Output!&lt;/b&gt;&lt;br/&gt;Es gibt noch keine Daten im Output- oder Error-Stream</translation>
     </message>
     <message>
         <source>Content saved for future startups.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhalt für künftige starts gespeichert.</translation>
     </message>
     <message>
         <source>Displays all output &amp; errors in a separate window</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeigt sämtliche Ausgaben &amp; Fehler in einem separaten Fenster an</translation>
     </message>
     <message>
         <source>&lt;b&gt;General:&lt;/b&gt;&lt;br/&gt;Each line in the text editor will be executed as one separate process. Put a backslash at the end of the line for a multiline command.&lt;br/&gt;&lt;br/&gt;The message boxes will close themselves after 10 seconds.&lt;br/&gt;To start a program just type i.e. &quot;firefox&quot; or &quot;firefox www.google.com&quot; and then click on Start. Commands etc. can be linked by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;If the process is &quot;finished&quot; although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occur for some programs like gedit, firefox or gnome-terminal if they are already running.&lt;br/&gt;&lt;br/&gt;When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Files:&lt;/b&gt;&lt;br/&gt;The configuration-file can be found at &lt;i&gt;%2&lt;/i&gt;.&lt;br/&gt;The log files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;make examples:&lt;/b&gt;&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;&lt;b&gt;About Errors:&lt;/b&gt;&lt;br/&gt;Because almost every program gives a different error code, it is impossible to say what happened. So just log the output and see what kind of error occurred. The output files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;If the shutdown won&apos;t work, it might mean that &quot;sudo shutdown -P now&quot; is used. This needs admin permissions. You can do the this:&lt;br/&gt;&lt;br/&gt;Post the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; whereas * replaces the username or %groupname.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Allgemein:&lt;/b&gt;&lt;br/&gt;Jede Zeile im Texteditor wird als ein separater Prozess ausgeführt. Stelle ein Backslash an das Zeilenende um ein mehrzeiligen Befehl als einen Prozess auszuführen.&lt;br/&gt;&lt;br/&gt;Die Hinweisfenster werden sich nach 10 Sekunden selbst beenden.&lt;br/&gt;Um ein Programm zu starten, gib einfach z.B. &quot;firefox&quot; oder &quot;firefox www.google.de&quot; ein und klicke dann auf Start. Befehle etc. können mit &quot;&amp;&amp;&quot; etc. verkettet werden.&lt;br/&gt;&lt;br/&gt;Wenn der Prozess &quot;beendet&quot; ist, obwohl er noch läuft, probiere die --nofork Option (z.B. kopete --nofork). Beachte, dass dies auch bei einigen Programmen wie gedit, firefox oder gnome-terminal auftritt, wenn sie bereits laufen.&lt;br/&gt;&lt;br/&gt;Wenn man ein Programm oder ein Kommando mit sudo starten möchte, benutze bitte z.B. gksu(do) oder kdesu(do).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Dateien:&lt;/b&gt;&lt;br/&gt;Die Konfigurationsdatei befindet sich hier &lt;i&gt;%2&lt;/i&gt;.&lt;br/&gt;Die Protokolle befinden sich hier &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;b&gt;make Beispiele:&lt;/b&gt;&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Über die Fehler:&lt;/b&gt;&lt;br/&gt;Weil fast jedes Programm unterschiedliche Fehlerkodes ausgeben, ist es unmöglich zu sagen was passiert ist. Protokolliere also einfach die Ausgaben und sieh was für eine Art Fehler aufgetreten ist. Die Ausgabedateien kann man unter &lt;i&gt;%1&lt;/i&gt; finden.&lt;br/&gt;&lt;br/&gt;Falls der Shutdown nich funktioniert, bedeutet das, dass &quot;sudo shutdown -P now&quot; benutzt wird. Dies benötigt Root-Rechte. Dies kann man machen:&lt;br/&gt;&lt;br/&gt;Füge das Folgende in ein Terminal ein:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;und füge diese Zeile hinzu:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;wobei * den Benutzernamen oder %Gruppennamen ersetzt.</translation>
     </message>
 </context>
 <context>
@@ -274,11 +274,11 @@ Sie können gerne jederzeit https://launchpad.net/~hakaishi besuchen um Bugs ode
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Information</translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>History cleared!</source>
-        <translation type="unfinished"></translation>
+        <translation>Verlauf gelöscht!</translation>
     </message>
 </context>
 </TS>
