@@ -80,7 +80,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
          "method to ConsoleKit or something else.\n\nPlease feel free to visit "
          "https://launchpad.net/~hakaishi to report bugs or for anything "
          "concerning translations.\n\nThe settings file is located at %1.\n"
-         "For futher information see the info window.").arg(QSettings().fileName())));
+         "For further information see the info window.").arg(QSettings().fileName())));
        infoBox->setStandardButtons(QMessageBox::Ok);
        infoBox->show();
        QSettings().setValue("first_start", false);

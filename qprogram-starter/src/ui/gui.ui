@@ -148,7 +148,7 @@
       <item>
        <widget class="QPushButton" name="showLogsButton">
         <property name="toolTip">
-         <string>Displays all output &amp; errors in a seperate window</string>
+         <string>Displays all output &amp; errors in a separate window</string>
         </property>
         <property name="text">
          <string>&amp;Display Output</string>
