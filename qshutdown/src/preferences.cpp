@@ -20,7 +20,6 @@
 #include <QTimer>
 #include <QTextStream>
 #include <QFile>
-#include <QDesktopServices>
 
 Preferences::Preferences(QWidget *parent): QDialog(parent){
 

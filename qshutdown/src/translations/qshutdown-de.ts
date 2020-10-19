@@ -44,11 +44,11 @@
     </message>
     <message>
         <source>activate weekly</source>
-        <translation>aktiviere wöchentlich</translation>
+        <translation>wöchentlich aktivieren</translation>
     </message>
     <message>
         <source>Please note that you might want to enable autostart and countdown at startup.</source>
-        <translation>Es sei darauf hingewiesen, dass Sie den Autostart und den Countdown bei Programmstart vermutlich aktivieren möchten.</translation>
+        <translation>Sie werden vermutlich sowohl den Autostart als auch den automatischen Start des Countdowns bei Programmstart aktivieren wollen.</translation>
     </message>
 </context>
 <context>
@@ -75,7 +75,7 @@
     </message>
     <message>
         <source>The retyped password doesn&apos;t match!</source>
-        <translation>Die Passwörter stimmen nicht überein!</translation>
+        <translation>Das wiederholte Passwort stimmt nicht überein!</translation>
     </message>
 </context>
 <context>
@@ -93,39 +93,39 @@
     </message>
     <message>
         <source>Shutdown-time:</source>
-        <translation>Shutdown-Zeitpunkt:</translation>
+        <translation>Abschaltzeit:</translation>
     </message>
     <message>
         <source>Minutes till shutdown:</source>
-        <translation>Minuten zum Shutdown:</translation>
+        <translation>Minuten bis zur Abschaltung:</translation>
     </message>
     <message>
         <source>Reboot-time:</source>
-        <translation>Neustart-Zeitpunkt:</translation>
+        <translation>Neustart-Zeit:</translation>
     </message>
     <message>
         <source>Minutes till reboot:</source>
-        <translation>Minuten zum Neustart:</translation>
+        <translation>Minuten bis  zum Neustart:</translation>
     </message>
     <message>
         <source>Suspend-time:</source>
-        <translation>Standby-Zeitpunkt:</translation>
+        <translation>Standby-Zeit:</translation>
     </message>
     <message>
         <source>Minutes till suspend:</source>
-        <translation>Minuten zum Standby:</translation>
+        <translation>Minuten bis zum Standby:</translation>
     </message>
     <message>
         <source>Hibernate-time:</source>
-        <translation>Ruhezustand-Zeitpunkt:</translation>
+        <translation>Ruhezustand-Zeit:</translation>
     </message>
     <message>
         <source>Minutes till hibernate:</source>
-        <translation>Minuten zum Ruhezustand:</translation>
+        <translation>Minuten bis zum Ruhezustand:</translation>
     </message>
     <message>
         <source>shutdown in </source>
-        <translation>Shutdown in </translation>
+        <translation>abschalten in </translation>
     </message>
     <message>
         <source>reboot in </source>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Shutdown</translation>
+        <translation>Abschalten</translation>
     </message>
     <message>
         <source>Reboot</source>
@@ -193,7 +193,7 @@
     </message>
     <message>
         <source>&amp;Lock after start?</source>
-        <translation>Nach dem Start &amp;sperren?</translation>
+        <translation>&amp;Nach Start sperren?</translation>
     </message>
     <message>
         <source>&amp;Warnings on?</source>
@@ -205,7 +205,7 @@
     </message>
     <message>
         <source>You can set a date in the calendar</source>
-        <translation>Sie können ein Datum im Kalender einstellen</translation>
+        <translation>Sie können ein Datum im Kalender festlegen</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -213,11 +213,11 @@
     </message>
     <message>
         <source>R&amp;eset</source>
-        <translation>R&amp;eset</translation>
+        <translation>&amp;Zurücksetzen</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>Be&amp;enden</translation>
+        <translation>&amp;Beenden</translation>
     </message>
     <message>
         <source>&amp;Info</source>
@@ -225,7 +225,7 @@
     </message>
     <message>
         <source>&amp;Logfile</source>
-        <translation>Protoko&amp;lldatei</translation>
+        <translation>&amp;Protokolldatei</translation>
     </message>
     <message>
         <source>&amp;Preferences</source>
@@ -233,11 +233,11 @@
     </message>
     <message>
         <source>&amp;Shutdown</source>
-        <translation>&amp;Shutdown</translation>
+        <translation>&amp;Abschalten</translation>
     </message>
     <message>
         <source>&amp;Reboot</source>
-        <translation>Neusta&amp;rt</translation>
+        <translation>&amp;Neustarten</translation>
     </message>
     <message>
         <source>S&amp;uspend</source>
@@ -273,7 +273,7 @@
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation>&amp;Reset</translation>
+        <translation>&amp;Zurücksetzen</translation>
     </message>
     <message>
         <source>&amp;Configure</source>
@@ -281,7 +281,7 @@
     </message>
     <message>
         <source>&amp;Keep proportions</source>
-        <translation>&amp;Behalte Proportionen bei</translation>
+        <translation>Pr&amp;oportionen beibehalten</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -305,7 +305,7 @@
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>Über &amp;Qt</translation>
+        <translation>Ü&amp;ber Qt</translation>
     </message>
     <message>
         <source>Version </source>
@@ -331,7 +331,7 @@
     </message>
     <message>
         <source>Password:</source>
-        <translation>Passwort :</translation>
+        <translation>Passwort:</translation>
     </message>
     <message>
         <source>The password is not correct!</source>
@@ -354,11 +354,11 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Shutdown</translation>
+        <translation>Abschalten</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
-        <translation>Shutdown-Art:</translation>
+        <translation>Abschalt-Methode:</translation>
     </message>
     <message>
         <source>Target time:</source>
@@ -460,7 +460,7 @@ und wie lange es gelaufen ist</translation>
     </message>
     <message>
         <source>Set a font</source>
-        <translation>Setze eine Schriftart</translation>
+        <translation>Lege eine Schriftart fest</translation>
     </message>
     <message>
         <source>What target time should be displayed
@@ -511,7 +511,7 @@ stattdessen beendet wird.</translation>
     </message>
     <message>
         <source>Suspend method:</source>
-        <translation>Befehlsmethode für Standby:</translation>
+        <translation>Methode für den Standby:</translation>
     </message>
     <message>
         <source>automatic</source>
@@ -523,31 +523,31 @@ stattdessen beendet wird.</translation>
     </message>
     <message>
         <source>Hibernate method:</source>
-        <translation>Befehlsmethode für Ruhezustand:</translation>
+        <translation>Methode für den Ruhezustand:</translation>
     </message>
     <message>
         <source>Shutdown method:</source>
-        <translation>Befehlsmethode für Shutdown:</translation>
+        <translation>Methode zum Abschalten:</translation>
     </message>
     <message>
         <source>Reboot method:</source>
-        <translation>Befehlsmethode für Neustart:</translation>
+        <translation>Methode zum Neustarten:</translation>
     </message>
     <message>
         <source>Please input an user specified command for suspend here</source>
-        <translation>Bitte geben sie hier einen benutzerdefinierten Befehl für den Standby ein</translation>
+        <translation>Bitte geben sie hier einen benutzerdefinierten Befehl für den Neustart ein</translation>
     </message>
     <message>
         <source>Gnome session</source>
-        <translation>Gnome Sitzung</translation>
+        <translation>Gnome Session</translation>
     </message>
     <message>
         <source>KDE session</source>
-        <translation>KDE Sitzung</translation>
+        <translation>KDE Session</translation>
     </message>
     <message>
         <source>Please input an user specified command for shutdown here</source>
-        <translation>Bitte geben sie hier einen benutzerdefinierten Befehl für den Shutdown ein</translation>
+        <translation>Bitte geben sie hier einen benutzerdefinierten Befehl für das Abschalten ein</translation>
     </message>
     <message>
         <source>Please input an user specified command for reboot here</source>

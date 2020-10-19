@@ -24,6 +24,7 @@
 #include "about.h"
 #include "power.h"
 #include <QTimer>
+#include <QStandardPaths>
 
 Gui::Gui(){
 

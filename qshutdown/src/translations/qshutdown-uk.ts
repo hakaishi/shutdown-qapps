@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>About</name>
     <message>
@@ -25,11 +25,11 @@
     </message>
     <message>
         <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2020, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;qshutdown — програма для вимикання комп’ютера у певний момент часу або за відліком&lt;/p&gt;&lt;p &gt;Автор: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;&amp;copy; Christian Metscher, 2010–2019&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Повідомлення про вади можна залишати на &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; або &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;qshutdown — програма для вимикання комп’ютера у певний момент часу або за відліком&lt;/p&gt;&lt;p &gt;Автор: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;&amp;copy; Christian Metscher, 2010–2020&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Повідомлення про вади можна залишати на &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; або &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson &amp; Dr. Tobias Quathamer for sponsoring the uploads to Debian.&lt;br /&gt;&lt;br /&gt;As well as to Miquel Banchs i Piqué for the idea of implementing a routine allowing custom settings for each day of the week.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;Особливі подяки:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;Фабіану Дойхлеру (Fabian Deuchler) за допомогою.&lt;br /&gt;&lt;br /&gt;І Браяну Нельсону (Brian Nelson) та д-ру Тобіасу Кватгамеру (Tobias Quathamer) за спонсорування вивантаження до Debian.&lt;br /&gt;&lt;br /&gt;а також Мікелю Банхсу-і-Піке (Miquel Banchs i Piqué) за ідею щодо реалізації підпрограми для нетипових параметрів кожного дня тижня.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -40,15 +40,15 @@
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Щотижня</translation>
     </message>
     <message>
         <source>activate weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>активувати щотижня</translation>
     </message>
     <message>
         <source>Please note that you might want to enable autostart and countdown at startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, зауважте, що вам варто увімкнути авто запуск і відлік при запуску.</translation>
     </message>
 </context>
 <context>
@@ -269,7 +269,7 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;Про програму</translation>
+        <translation>Пр&amp;о програму</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
@@ -354,7 +354,7 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Вимикання</translation>
+        <translation>Вимкнути</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
@@ -390,15 +390,15 @@
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Перезавантаження</translation>
+        <translation>Перезавантажити</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Призупинка</translation>
+        <translation>Призупинити</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Присипляння</translation>
+        <translation>Приспати</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
@@ -633,7 +633,13 @@ Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for 
 
 The settings file is located at %1.
 For further information see the info window.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вітаємо у qshutdown!
+Якщо ви хочете скористатися qprogram-starter для автоматичного вимикання системи і використовуєте Gnome Shell, ймовірно, діалогове вікно вимикання буде показано прямо зараз. Якщо ви хочете вимикати систему безпосередньо, будь ласка, відкрийте вікно налаштувань і встановіть у пункті способу вимикання ConsoleKit або щось інше.
+
+Щоб повідомити про ваду у програмі або перекладі, скористайтеся сторінкою https://launchpad.net/~hakaishi.
+
+Файл параметрів зберігається тут: %1.
+Подальші відомості можна знайти у вікні відомостей.</translation>
     </message>
 </context>
 </TS>

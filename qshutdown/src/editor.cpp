@@ -19,7 +19,6 @@
 #include <QDir>
 #include <QPushButton>
 #include <QTextStream>
-#include <QDesktopServices>
 
 Editor::Editor(QWidget *parent): QDialog(parent){
 

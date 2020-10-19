@@ -84,13 +84,13 @@ void shutdown(){
 
   if(automatic){
    #ifdef Q_OS_WIN32
-     QProcess::startDetached("shutdown -s -f -t 00"); // Windows command to shutdown immediately
+     QProcess::startDetached("shutdown", QStringList() << "-s" << "-f" << "-t" << "00"); // Windows command to shutdown immediately
      }
    #else
-     if(QProcess::startDetached("/usr/bin/systemctl poweroff"))
+     if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "poweroff"))
        return;
-     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
-     g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
+     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh", QStringList() << "shutdown");
+     g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "shutdown");
      if(verbose && !g_pwr1 && !g_pwr2)
        oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
             << endl;
@@ -145,9 +145,9 @@ void shutdown(){
      }
      else return;
 
-     if(QProcess::startDetached("sudo shutdown -P now"))
+     if(QProcess::startDetached("sudo", QStringList() << "shutdown"<< "-P" << "now"))
        return;
-     QProcess::startDetached("sudo shutdown -h -P now");
+     QProcess::startDetached("sudo", QStringList() << "shutdown" << "-h" << "-P" << "now");
   } //end of automatic
   else if(login1){
     response = freedesktopLogin1.call("PowerOff", true);
@@ -158,8 +158,8 @@ void shutdown(){
     }
   }
   else if(gnome){
-     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh shutdown");
-     g_pwr2 = QProcess::startDetached("gnome-power-cmd shutdown");
+     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh", QStringList() << "shutdown");
+     g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "shutdown");
      if(verbose && !g_pwr1 && !g_pwr2)
        oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
             << endl;
@@ -206,11 +206,11 @@ void shutdown(){
     }
   }
   else if(sudo){
-     if(QProcess::startDetached("sudo /usr/bin/systemctl poweroff"))
+     if(QProcess::startDetached("sudo", QStringList() << "/usr/bin/systemctl" << "poweroff"))
        return;
-     if(QProcess::startDetached("sudo shutdown -P now"))
+     if(QProcess::startDetached("sudo", QStringList() << "shutdown" << "-P" << "now"))
        return;
-     QProcess::startDetached("sudo shutdown -h -P now");
+     QProcess::startDetached("sudo", QStringList() << "shutdown" << "-h" << "-P" << "now");
   }
   //else if(user)
   //  if(!shell.isEmpty())
@@ -256,13 +256,13 @@ void reboot(){
 
   if(automatic){
    #ifdef Q_OS_WIN32
-     QProcess::startDetached("shutdown -r -f -t 00"); // Windows command to reboot immediately
+     QProcess::startDetached("shutdown", QStringList() << "-r" << "-f" << "-t" << "00"); // Windows command to reboot immediately
      }
    #else
-     if(QProcess::startDetached("/usr/bin/systemctl reboot"))
+     if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "reboot"))
        return;
-     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh reboot");
-     g_pwr2 = QProcess::startDetached("gnome-power-cmd reboot");
+     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh", QStringList() << "reboot");
+     g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "reboot");
      if(verbose && !g_pwr1 && !g_pwr2)
        oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
             << endl;
@@ -311,7 +311,7 @@ void reboot(){
      }
      else return;
 
-     QProcess::startDetached("sudo shutdown -r now");
+     QProcess::startDetached("sudo", QStringList() << "shutdown" << "-r" << "now");
   } //end of automatic
   else if(login1){
     response = freedesktopLogin1.call("Reboot", true);
@@ -322,8 +322,8 @@ void reboot(){
     }
   }
   else if(gnome){
-    g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh reboot");
-    g_pwr2 = QProcess::startDetached("gnome-power-cmd reboot");
+    g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh", QStringList() << "reboot");
+    g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "reboot");
     if(verbose && !g_pwr1 && !g_pwr2)
       oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
            << endl;
@@ -362,9 +362,9 @@ void reboot(){
     }
   }
   else if(sudo){
-    if(QProcess::startDetached("sudo /usr/bin/systemctl reboot"))
+    if(QProcess::startDetached("sudo", QStringList() << "/usr/bin/systemctl" << "reboot"))
       return;
-    QProcess::startDetached("sudo shutdown -r now");
+    QProcess::startDetached("sudo", QStringList() << "shutdown" << "-r" << "now");
   }
   //else if(user)
   //  if(!shell.isEmpty())
@@ -421,28 +421,28 @@ void suspend(){
          lock_works = true;
 
        if(!lock_works){
-         if(!QProcess::startDetached("gnome-screensaver-command -l")){
+         if(!QProcess::startDetached("gnome-screensaver-command", QStringList() << "-l")){
            if(verbose) oput << "W: gnome-screensaver-command -l didn't work"
                             << endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
-         if(!QProcess::startDetached("qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock")){
+         if(!QProcess::startDetached("qdbus", QStringList() << "org.freedesktop.ScreenSaver" << "/ScreenSaver" << "Lock")){
            if(verbose) oput << "W: qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock didn't work"
                             << endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
-         if(!QProcess::startDetached("dcop kdesktop KScreensaverIface lock")){
+         if(!QProcess::startDetached("dcop", QStringList() << "kdesktop" << "KScreensaverIface" << "lock")){
            if(verbose) oput << "W: dcop kdesktop KScreensaverIface lock didn't work"
                             << endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
-         if(!QProcess::startDetached("xscreensaver-command -lock")){
+         if(!QProcess::startDetached("xscreensaver-command", QStringList() << "-lock")){
            if(verbose) oput << "W: xscreensaver-command -lock didn't work"
                             << endl;
           }
@@ -453,15 +453,15 @@ void suspend(){
 
   if(automatic){
    #ifdef Q_OS_WIN32
-     QProcess::startDetached("powercfg -hibernate off"); // enable suspend
-     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState");
+     QProcess::startDetached("powercfg", QStringList() << "-hibernate" << "off"); // enable suspend
+     QProcess::startDetached("rundll32", QStringList() << "powrprof.dll,SetSuspendState");
      }
    #else
-     if(QProcess::startDetached("/usr/bin/systemctl suspend"))
+     if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "suspend"))
        return;
 
-     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh suspend");
-     g_pwr2 = QProcess::startDetached("gnome-power-cmd suspend");
+     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh", QStringList() << "suspend");
+     g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "suspend");
      if(!g_pwr1 && !g_pwr2 && verbose)
        oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
             << endl;
@@ -508,8 +508,8 @@ void suspend(){
     }
   }
   else if(gnome){
-    g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh suspend");
-    g_pwr2 = QProcess::startDetached("gnome-power-cmd suspend");
+    g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh", QStringList() << "suspend");
+    g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "suspend");
     if(!g_pwr1 && !g_pwr2 && verbose)
       oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
            << endl;
@@ -593,28 +593,28 @@ void hibernate(){
          lock_works = true;
 
        if(!lock_works){
-         if(!QProcess::startDetached("gnome-screensaver-command -l")){
+         if(!QProcess::startDetached("gnome-screensaver-command", QStringList() << "-l")){
            if(verbose) oput << "W: gnome-screensaver-command -l didn't work"
                             << endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
-         if(!QProcess::startDetached("qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock")){
+         if(!QProcess::startDetached("qdbus", QStringList() << "org.freedesktop.ScreenSaver" << "/ScreenSaver" << "Lock")){
            if(verbose) oput << "W: qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock didn't work"
                             << endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
-         if(!QProcess::startDetached("dcop kdesktop KScreensaverIface lock")){
+         if(!QProcess::startDetached("dcop", QStringList() << "kdesktop" << "KScreensaverIface" << "lock")){
            if(verbose) oput << "W: dcop kdesktop KScreensaverIface lock didn't work"
                             << endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
-         if(!QProcess::startDetached("xscreensaver-command -lock")){
+         if(!QProcess::startDetached("xscreensaver-command", QStringList() << "-lock")){
            if(verbose) oput << "W: xscreensaver-command -lock didn't work"
                             << endl;
           }
@@ -625,14 +625,14 @@ void hibernate(){
 
   if(automatic){
    #ifdef Q_OS_WIN32
-     QProcess::startDetached("powercfg -hibernate on"); // enable hibernate
+     QProcess::startDetached("powercfg", QStringList() << "-hibernate" << "on"); // enable hibernate
      QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState");
      }
    #else
-     if(QProcess::startDetached("/usr/bin/systemctl hibernate"))
+     if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "hibernate"))
        return;
-     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh hibernate");
-     g_pwr2 = QProcess::startDetached("gnome-power-cmd hibernate");
+     g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh", QStringList() << "hibernate");
+     g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "hibernate");
      if(!g_pwr1 && !g_pwr2 && verbose)
        oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
             << endl;
@@ -679,8 +679,8 @@ void hibernate(){
     }
   }
   else if(gnome){
-    g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh hibernate");
-    g_pwr2 = QProcess::startDetached("gnome-power-cmd hibernate");
+    g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh", QStringList() << "hibernate");
+    g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "hibernate");
     if(!g_pwr1 && !g_pwr2 && verbose)
       oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
            << endl;

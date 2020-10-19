@@ -20,6 +20,7 @@
 #include <QTextStream>
 #include <QProcessEnvironment>
 #include <QSettings>
+#include <QStandardPaths>
 
 bool verbose = false; //this is a global variable needed in power.cpp
 QString shell;

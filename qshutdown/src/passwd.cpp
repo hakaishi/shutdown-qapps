@@ -19,7 +19,6 @@
 #include "ch_passwd.h"
 #include <QDir>
 #include <QCryptographicHash>
-#include <QDesktopServices>
 
 PassWord::PassWord(QWidget *parent): QDialog(parent){
 

@@ -131,7 +131,7 @@ void Gui::check(){ //To check if start time is reached
      secondsToTimeInTheFuture = QDateTime::currentDateTime().secsTo(timeInTheFuture);
      if(secondsToTimeInTheFuture <= 0){
        timer->stop();
-       if(processes->length() > 0) processes->first()->start(processArgs->first());
+       if(processes->length() > 0) processes->first()->start(shell, QStringList() << "-c" << processArgs->first());
      }
 }
 
@@ -186,7 +186,7 @@ void Gui::run(){ //To start either the timer or start the process
        if(atDateCheckBox->isChecked())
          timer->start(1000);
        else
-         if(processes->length() > 0) processes->first()->start(processArgs->first());
+         if(processes->length() > 0) processes->first()->start(shell, QStringList() << "-c" << processArgs->first());
      }
      else{
        messages->setWindowTitle("Error");
@@ -211,7 +211,7 @@ void Gui::next(){
         processes->first()->disconnect();
         processes->removeFirst();
         processArgs->removeFirst();
-        processes->first()->start(processArgs->first());
+        processes->first()->start(shell, QStringList() << "-c" << processArgs->first());
     }
     else{
         message();
@@ -587,11 +587,11 @@ void Gui::replaceEditorContent(QListWidgetItem *item){
 void Gui::saveHistory(){
     QJsonDocument json = QJsonDocument::fromJson(pref->settings->value("History/text", QString()).toByteArray());
     QJsonArray jsonArr = json.array();
-    jsonArr << plainTextEdit->toPlainText();
+    jsonArr.prepend(plainTextEdit->toPlainText());
     
     int max = pref->settings->value("History/max", 10).toInt();
     
-    while(jsonArr.size() >= max) jsonArr.removeFirst();
+    while(jsonArr.size() >= max) jsonArr.removeLast();
     
     pref->settings->setValue("History/text", QJsonDocument(jsonArr).toJson(QJsonDocument::Compact));
 }

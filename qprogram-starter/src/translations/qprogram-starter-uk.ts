@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>Gui</name>
     <message>
@@ -105,106 +105,106 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Вимкнути</translation>
     </message>
     <message>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Перезавантажити</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation type="unfinished"></translation>
+        <translation>Призупинити</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation type="unfinished"></translation>
+        <translation>Приспати</translation>
     </message>
     <message>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Журнал</translation>
     </message>
     <message>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Відомості</translation>
     </message>
     <message>
         <source>The text edit is empty!</source>
-        <translation type="unfinished"></translation>
+        <translation>Поле для редагування тексту є порожнім!</translation>
     </message>
     <message>
         <source>&lt;b&gt;process finished!&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;процес завершив роботу!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;process crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;аварійне завершення процесу!&lt;/b&gt;&lt;br/&gt;Це може бути спричинено некоректними параметрами або аргументами.</translation>
     </message>
     <message>
         <source>Save errors and output into files</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберігати помилки і виводити їх до файлів</translation>
     </message>
     <message>
         <source>No Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Без дій</translation>
     </message>
     <message>
         <source>Browse commands and insert into the text editor</source>
-        <translation type="unfinished"></translation>
+        <translation>Навігація командами і вставлення до текстового редактора</translation>
     </message>
     <message>
         <source>&amp;Kill Processes</source>
-        <translation type="unfinished"></translation>
+        <translation>В&amp;бити процеси</translation>
     </message>
     <message>
         <source>&amp;Display Output</source>
-        <translation type="unfinished"></translation>
+        <translation>По&amp;казати виведення</translation>
     </message>
     <message>
         <source>Display and restore previously executed commands</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати і відновлювати попередньо виконані команди</translation>
     </message>
     <message>
         <source>The current text will be the default value for all future starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Поточний текст буде типовим для усіх наступних запусків</translation>
     </message>
     <message>
         <source>Set text editor content as default</source>
-        <translation type="unfinished"></translation>
+        <translation>Встановити вміст текстового поля як типовий</translation>
     </message>
     <message>
         <source>Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Журнал</translation>
     </message>
     <message>
         <source>No running processes</source>
-        <translation type="unfinished"></translation>
+        <translation>Немає запущених процесів</translation>
     </message>
     <message>
         <source>&lt;b&gt;No Output!&lt;/b&gt;&lt;br/&gt;There is still no data in the output or error stream</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Немає виведених даних!&lt;/b&gt;&lt;br/&gt;Немає даних у потоці повідомлень та помилок</translation>
     </message>
     <message>
         <source>Content saved for future startups.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дані збережено для наступних запусків.</translation>
     </message>
     <message>
         <source>Displays all output &amp; errors in a separate window</source>
-        <translation type="unfinished"></translation>
+        <translation>Показувати усі виведені повідомлення і помилки в окремому вікні</translation>
     </message>
     <message>
         <source>&lt;b&gt;General:&lt;/b&gt;&lt;br/&gt;Each line in the text editor will be executed as one separate process. Put a backslash at the end of the line for a multiline command.&lt;br/&gt;&lt;br/&gt;The message boxes will close themselves after 10 seconds.&lt;br/&gt;To start a program just type i.e. &quot;firefox&quot; or &quot;firefox www.google.com&quot; and then click on Start. Commands etc. can be linked by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;If the process is &quot;finished&quot; although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occur for some programs like gedit, firefox or gnome-terminal if they are already running.&lt;br/&gt;&lt;br/&gt;When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Files:&lt;/b&gt;&lt;br/&gt;The configuration-file can be found at &lt;i&gt;%2&lt;/i&gt;.&lt;br/&gt;The log files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;make examples:&lt;/b&gt;&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;&lt;b&gt;About Errors:&lt;/b&gt;&lt;br/&gt;Because almost every program gives a different error code, it is impossible to say what happened. So just log the output and see what kind of error occurred. The output files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;If the shutdown won&apos;t work, it might mean that &quot;sudo shutdown -P now&quot; is used. This needs admin permissions. You can do the this:&lt;br/&gt;&lt;br/&gt;Post the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; whereas * replaces the username or %groupname.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Загальне:&lt;/b&gt;&lt;br/&gt;Кожен рядок у текстовому редакторі буде виконано як окремий процес. Багаторядкову команду можна записати за допомогою додавання наприкінці рядка символ зворотної похилої риски.&lt;br/&gt;&lt;br/&gt;Вікна повідомлень закриватимуться за 10 секунд.&lt;br/&gt;Щоб запустити програму, просто введіть, наприклад, «firefox» або «firefox www.google.com», а потім клацніть на кнопці «Запустити». Команди можна поєднувати за допомогою «&amp;&amp;». &lt;br/&gt;&lt;br/&gt;Якщо процес «завершив роботу», хоча все ще працює, спробуйте параметр --nofork (наприклад, kopete --nofork). Зауважте, що таке трапляється для деяких програм, зокрема gedit, firefox та gnome-terminal, якщо їх вже запущено.&lt;br/&gt;&lt;br/&gt;Якщо ви хочете запустити програму або команду з sudo, будь ласка, використовуйте gksu(do) або kdesu(do).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Файли:&lt;/b&gt;&lt;br/&gt;Файл налаштувань зберігається у &lt;i&gt;%2&lt;/i&gt;.&lt;br/&gt;Файли журналів можна знайти у &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Приклади з make:&lt;/b&gt;&lt;br/&gt;&amp;nbsp;make -C /шлях/до/проєкту&lt;br/&gt;&amp;nbsp;make clean -C /шлях/до/проєкту&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Про помилки:&lt;/b&gt;&lt;br/&gt;Оскільки майже у кожної програми є власні коди помилок, майже неможливо визначити, що саме сталося. Тому запишіть до журналу виведені повідомлення і ознайомтеся з ними для виявлення причини помилки. Виведені файли буде записано до &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;Якщо вимикання не працює, це може значати, що використано «sudo shutdown -P now». Така команда потребує прав доступу адміністратора. Налаштувати ці права доступу можна так:&lt;br/&gt;&lt;br/&gt;Вставте таку команду до термінала:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; і допишіть такий рядок:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;, оскільки * замінює ім&apos;я користувача або %groupname.</translation>
     </message>
 </context>
 <context>
     <name>History</name>
     <message>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Журнал</translation>
     </message>
     <message>
         <source>Double click restores item to the text editor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Подвійне клацання відновлює запис у текстовому редакторі.</translation>
     </message>
 </context>
 <context>
@@ -241,44 +241,45 @@ If you want qprogram-starter to automatically shutdown the system and you are us
 
 Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anything concerning translations.</source>
         <translation>Вітаємо у qprogram-starter!
-Якщо ви хочете скористатися qprogram-starter для автоматичного вимикання системи і використовуєте Gnome Shell, ймовірно, діалогове вікно вимикання буде показано прямо зараз. Якщо ви хочете вимикати систему безпосередньо, будь ласка, відкрийте вікно налаштувань і встановіть у пункті способу вимикання  ConsoleKit або щось інше.
+Якщо ви хочете скористатися qprogram-starter для автоматичного вимикання системи і використовуєте Gnome Shell, ймовірно, діалогове вікно вимикання буде показано прямо зараз Якщо ви хочете вимикати систему безпосередньо, будь ласка, відкрийте вікно налаштувань і встановіть у пункті способу вимикання ConsoleKit або щось інше.
+
 Щоб повідомити про ваду у програмі або перекладі, скористайтеся сторінкою https://launchpad.net/~hakaishi</translation>
     </message>
     <message>
         <source>Suspend Method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Спосіб призупинки:</translation>
     </message>
     <message>
         <source>Reboot Method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Спосіб перезавантаження:</translation>
     </message>
     <message>
         <source>Maximum History saved:</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимальний розмір журналу:</translation>
     </message>
     <message>
         <source>Hibernate Method:</source>
-        <translation type="unfinished"></translation>
+        <translation>Спосіб присипляння:</translation>
     </message>
     <message>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Спорожнити журнал</translation>
     </message>
     <message>
         <source>Don&apos;t quit or shutdown on error</source>
-        <translation type="unfinished"></translation>
+        <translation>Не виходити і не вимикати при помилці</translation>
     </message>
     <message>
         <source>Countdown before action:</source>
-        <translation type="unfinished"></translation>
+        <translation>Відлік перед дією:</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Відомості</translation>
+        <translation>Відомості</translation>
     </message>
     <message>
         <source>History cleared!</source>
-        <translation type="unfinished"></translation>
+        <translation>Журнал спорожнено!</translation>
     </message>
 </context>
 </TS>

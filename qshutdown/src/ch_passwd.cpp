@@ -18,7 +18,6 @@
 #include "ch_passwd.h"
 #include <QDir>
 #include <QCryptographicHash>
-#include <QDesktopServices>
 
 ChangePassword::ChangePassword(QWidget *parent): QDialog(parent){
 

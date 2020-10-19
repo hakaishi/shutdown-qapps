@@ -22,8 +22,8 @@
 #include <QSystemTrayIcon>
 #include <QDesktopWidget>
 #include <QTextDocumentFragment>
-#include <QDesktopServices>
 #include <QDir>
+#include <QElapsedTimer>
 
 #ifndef Q_OS_WIN32
   #include <QtDBus>
@@ -55,7 +55,8 @@ class Gui : public QMainWindow, public Ui::Gui {
      QPushButton     *minim;
      QTimer          *timer, *ti;
      QDateTime       localDatetime, futureDateTime;
-     QTime           elapsedTime, oldTime;
+     QTime           oldTime;
+     QElapsedTimer   elapsedTime;
      QIcon           icon;
      QSystemTrayIcon *TIcon;
      QMenu           *menu;
