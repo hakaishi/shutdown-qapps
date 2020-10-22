@@ -2,6 +2,10 @@
 QT += dbus
 }
 
+win32 {
+RC_FILE += icon.rc
+}
+
 TEMPLATE = app
 TARGET = bin/qshutdown
 DEPENDPATH = . src src/translations
