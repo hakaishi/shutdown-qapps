@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Christian Metscher <hakaishi@web.de>
 Build-Depends: debhelper (>= 9), qtbase5-dev, qttools5-dev-tools, qt5-qmake:native
-Standards-Version: 4.3.0
+Standards-Version: 4.5.0
 Vcs-Git: https://github.com/hakaishi/shutdown-qapps.git
 Vcs-browser: https://github.com/hakaishi/shutdown-qapps
 Homepage: https://launchpad.net/~hakaishi

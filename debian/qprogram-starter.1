@@ -1,4 +1,4 @@
-.TH qprogram-starter 1 "2010-09-29"
+.TH qprogram-starter 1 "2020-05-04"
 .SH NAME
 qprogram-starter \- A program starter tool
 .SH SYNOPSIS
@@ -6,7 +6,9 @@ qprogram-starter \- A program starter tool
 .br
 .SH DESCRIPTION
 .B qprogram-starter
-is a simple Qt4 program to start a program or process. If you like with the options to set a start date, to log output and errors, and to shutdown after finish.
+is a simple Qt5 program to start a program or process. If you like, there are options to set a start date, to log output and errors, and to shutdown after finish.
+.PP
+Every line in the text editor is handled (and logged) as a serperate process unless the line ends with a backslash.
 .PP
 This program uses qdbus to send a shutdown request to the gnome- or kde-session-manager. If it won't do gnome-power-cmd or gnome-power-cmd.sh will be used. When this also fails then qdbus will send the shutdown request to HAL or ConsoleKit (note that when sending the request to HAL or ConsoleKit the session will never be saved). And if this won't do as well, the sudo shutdown command will be used. In this case you need root-rights, so one can to do the following:
 .PP
@@ -14,8 +16,8 @@ Post the following in a terminal:
 "EDITOR=nano sudo \-E visudo" and add this line:
 "* ALL = NOPASSWD:/sbin/shutdown" whereas * replaces the username or %groupname.
 .PP
-.SH Configurationfile qprogram-starter.conf
-The configurationfile (and logfiles) is located at ~/.qprogram-starter
+.SH Configurationfile
+The configurationfile's (and logfiles) location can be seen in the info window inside the app
 .PP
 .SH KNOWN ISSUES
 .PP

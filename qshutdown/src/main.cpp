@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2019 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2020 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,6 +19,8 @@
 #include <QLibraryInfo>
 #include <QTextStream>
 #include <QProcessEnvironment>
+#include <QSettings>
+#include <QStandardPaths>
 
 bool verbose = false; //this is a global variable needed in power.cpp
 QString shell;
@@ -27,6 +29,11 @@ int main(int argc, char *argv[]){
 
      // here the QT_program is created
      QApplication app(argc, argv);
+     
+     app.setApplicationName("qshutdown");
+     app.setOrganizationName("shutdown_qapps");
+     
+     QSettings::setDefaultFormat(QSettings::IniFormat);
 
      //Qt translations
      QTranslator qtTranslator;
@@ -61,18 +68,19 @@ int main(int argc, char *argv[]){
        "<br/><br/>Paste the following in a terminal:<pre>EDITOR=nano sudo -E visudo</pre>and "
        "add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre>whereas * replaces the "
        "user name or %group name.<br/><br/>The maximum Number of countdown_minutes is "
-       "1440 (24 hours).<br/>The configuration file (and logfile) is located at "
-       "<i>~/.qshutdown/</i> (under Linux/Unix).<br/><br/><b>For admins:</b><br/>If you want "
+       "1440 (24 hours).<br/>The configuration file is located at "
+       "<i>%1</i>.<br/>The log file is located at <i>%2</i><br/><br/><b>For admins:</b><br/>If you want "
        "qshutdown to run with \"parental lock\" for every user, you can do "
        "\"sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/\" "
-       "and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that "
-       "qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a "
+       "and set the option Lock_all in the ini file to true. Note that "
+       "qshutdown has to start once to generate the qshutdown settings file. Furthermore there is a "
        "need to add the following line to the sudoers (as above):"
        "<pre>* ALL = NOPASSWD:/usr/bin/qshutdown</pre><br/>If you should ever forget "
        "your set password, just remove the whole line starting with \"Password\" manually from "
-       "the qshutdown.conf.<br/><br/><b>Hints on usage:</b><br/>If you want qshutdown to stop "
+       "the qshutdown settings.<br/><br/><b>Hints on usage:</b><br/>If you want qshutdown to stop "
        "\"bugging\" you, just remove the hook from "
-       "\"warnings on?\".<br/><br/><b>Hotkeys:</b><table border=\"1\"><tr><td>Ctrl+I</td><td>(this)"
+       "\"warnings on?\".To make that permanent, just do the same in the preferences."
+       "<br/><br/><b>Hotkeys:</b><table border=\"1\"><tr><td>Ctrl+I</td><td>(this)"
        " information window</td></tr><tr><td>Ctrl+Q</td><td>Quit</td></tr><tr><td>Ctrl+P</td>"
        "<td>Preferences</td></tr><tr><td>Ctrl+L</td><td>write the run time once into the logfile (works "
        "only if qshutdown quits. To make it permanent set it in the preferences.)</td></tr><tr>"
@@ -81,7 +89,8 @@ int main(int argc, char *argv[]){
        "</td></tr><tr><td>Ctrl+E</td><td>stop countdown (only if the countdown has started and the admin "
        "didn't restrict the access)</td></tr><tr><td>Shift+E</td><td>to edit the configuration file (for "
        "this a password is necessary. If you are a user, you can set an \"empty password\" (leave the "
-       "password field empty)).</td></tr></table>"));
+       "password field empty)).</td></tr></table>").arg(QSettings().fileName())
+       .arg(QDir().toNativeSeparators(QStandardPaths::standardLocations(QStandardPaths::DataLocation).first())));
      QTextDocumentFragment infoDoc;
      infoDoc = QTextDocumentFragment::fromHtml(infoStr);
      QString info = infoDoc.toPlainText();

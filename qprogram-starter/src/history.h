@@ -16,34 +16,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PREFERENCES_H
-#define PREFERENCES_H
+#ifndef HISTORY_H
+#define HISTORY_H
 
-#include "ui_preferences.h"
-#include <QSettings>
-#include <QMessageBox>
+#include "ui_history.h"
 
-class Preferences : public QDialog, public Ui::Preferences {
+class History : public QDialog, public Ui::History {
      Q_OBJECT
  
     public:
-     Preferences(QWidget *parent = 0);
-     ~Preferences();
-     QSettings *settings;
-
-    private:
-     QMessageBox *msgBox;
-     QMessageBox *infoBox;
-     QMessageBox *histBox;
-
-    private slots:
-     void setupMsgBoxes();
-     void loadSettings();
-     void saveToConfFile();
-     void clearHistory();
-
-    protected:
-     virtual void showEvent(QShowEvent* show_pref);
+     History(QWidget *parent = 0);
+     ~History();
+     
+     //QListWidget *historyList;
 };
 
-#endif //PREFERENCES_H
+#endif //HISTORY_H

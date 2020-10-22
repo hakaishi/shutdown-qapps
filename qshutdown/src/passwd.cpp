@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2019 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2020 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,6 @@
 #include "ch_passwd.h"
 #include <QDir>
 #include <QCryptographicHash>
-#include <QDesktopServices>
 
 PassWord::PassWord(QWidget *parent): QDialog(parent){
 
@@ -29,12 +28,7 @@ PassWord::PassWord(QWidget *parent): QDialog(parent){
 
      setWindowFlags(Qt::Window);    //always in front
 
-#ifdef Q_OS_WIN32
-     file = QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf";
-#else //!Q_OS_WIN32
-     file = QDir::homePath() + "/.qshutdown/qshutdown.conf";
-#endif //Q_OS_WIN32
-     settings = new QSettings(file, QSettings::IniFormat);
+     settings = new QSettings(this);
 
      msgBox = new QMessageBox(this);
      msgBox->setWindowTitle("Error");

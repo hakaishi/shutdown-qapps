@@ -7,3 +7,4 @@ Type=Application
 Icon=qprogram-starter
 Categories=Utility;
 Name[en_US]=qprogram-starter
+Comment=A program starter with shutdown options, start time setting etc

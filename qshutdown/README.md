@@ -1,51 +1,47 @@
-qshutdown
+# qshutdown
 
 
-INSTALL:
-========
+## INSTALL:
 
 Dependencies: qtbase5-dev, qttools5-dev-tools, build-essential
 
 If you want to install from source, open a terminal and change into this folder.
 To install type:
 
-qmake
-sudo make install distclean
+`qmake`
+`sudo make install distclean`
 
 
 For admins:
 You can enable "parental lock" for every user if you do the following:
 
-sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/
+`sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/`
 
 now add the following line to the sudoers (for example with "EDITOR=nano sudo -E visudo"):
 
-* ALL = NOPASSWD:/usr/bin/qshutdown
+`* ALL = NOPASSWD:/usr/bin/qshutdown`
 
 the * replaces the username or %groupname (Don't forget the % if it's a group).
 
 And one more thing:
-Edit the /root/.qshutdown/qshutdown.conf (after starting qshutdown once as root) and set
-the option Lock_all to true.
+Edit the qshutdown settings file (after starting qshutdown once as root) and set
+the option Lock_all to true. (path to file can be seen in the qshutdown info window)
 
 If you should ever forget your set password, just remove the whole line
-starting with "Password" manually from the qshutdown.conf.
+starting with "Password" manually from the qshutdown settings file.
 
 
-UNINSTALL:
-==========
+## UNINSTALL:
 
 To uninstall type:
 
-qmake     (if the Makefile has been removed)
-sudo make deinstall
+`qmake`     (if the Makefile has been removed)
+`sudo make deinstall`
 
-(note that ~/.qshutdown/qshutdown.conf and
- ~/.qshutdown/log.txt won't be removed)
+(please note that the users settings and log files won't be removed)
 
 
-KNOWN ISSUES:
-=============
+## KNOWN ISSUES:
 
 There is no system tray icon for qshutdown in Ubuntu 11.04.
 SOLUTION: Type the following line in a terminal:
@@ -54,7 +50,7 @@ gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"
 
 In case you want to use the sudo shutdown command and you have set
 the rights in the sudoers, but it still doesn't work, please specify
-your own command in the preferences and try if "sudo shutdown -hP" now works.
+your own command in the preferences and try if "sudo shutdown -hP now" works.
 
 For most systems using the Gnome Shell a certain DBus method has been removed,
 thus a shutdown dialog will be likely to appear if qshutdown's methods have
@@ -63,24 +59,24 @@ shutdown dialog to appear, please use ConsoleKit or something else.
 
 
 
-HINTS ON USAGE:
-===============
+## HINTS ON USAGE:
 
 One can not close qshutdown, but only quit it using the sytem tray icon (indicator) or
 the key combination Ctrl+Q (see shortcuts). If you want qshutdown to stop bugging you,
 just remove the hook from warnings on?
 
 
-HOTKEYS:
-==========
+## HOTKEYS:
 
-Ctrl+I	information window
-Ctrl+Q	Quit
-Ctrl+P	Prefereces
-Ctrl+L	write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)
-Ctrl+S	set to shutdown
-Ctrl+R	set to restart
-Ctrl+U	set to suspend to RAM
-Ctrl+H	set to hibernate
-Ctrl+E	stop timer (only if the countdown has started and the admin didn't restrict the access)
-Shift+E	to edit the config file (for this a password is necessary. If you are a user, you can set an "empty password" (leave the password field empty)).
+|Sequence|Function|
+| :--- | :--- |
+|Ctrl+I|information window|
+|Ctrl+Q|Quit|
+|Ctrl+P|Prefereces|
+|Ctrl+L|write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)|
+|Ctrl+S|set to shutdown|
+|Ctrl+R|set to restart|
+|Ctrl+U|set to suspend to RAM|
+|Ctrl+H|set to hibernate|
+|Ctrl+E|stop timer (only if the countdown has started and the admin didn't restrict the access)|
+|Shift+E|to edit the config file (for this a password is necessary. If you are a user, you can set an "empty password" (leave the password field empty)).|

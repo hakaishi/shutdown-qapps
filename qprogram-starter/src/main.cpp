@@ -1,6 +1,6 @@
 /* qprogram-starter, a program to start programs or commands, with
    the option to log output and errors and to shutdown the system.
- * Copyright (C) 2010-2019 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2020 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,10 +20,15 @@
 #include <QApplication>
 #include <QTranslator>
 #include <QLibraryInfo>
+#include <QSettings>
 
 int main (int argc, char *argv[]){
 
      QApplication app(argc, argv);
+     app.setApplicationName("qprogram-starter");
+     app.setOrganizationName("shutdown_qapps");
+     
+     QSettings::setDefaultFormat(QSettings::IniFormat);
 
      //Qt translations
      QTranslator qtTranslator;

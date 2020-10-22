@@ -24,12 +24,12 @@
         <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;使用 Qt&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2019, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;qshutdown，一款基于时间和倒计时的关机工具&lt;/p&gt;&lt;p&gt;作者：Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p&gt;版权所有 &amp;copy; 2010-2019, Christian Metscher&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt; &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;请使用 &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt; &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; 或 &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; 来报告故障。&lt;/p&gt;</translation>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2020, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;qshutdown，一款基于时间和倒计时的关机工具&lt;/p&gt;&lt;p&gt;作者：Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p&gt;版权所有 &amp;copy; 2010-2020, Christian Metscher&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt; &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;请使用 &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt; &lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; 或 &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; 来报告故障。&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;br /&gt;&lt;br /&gt;As well as to Miquel Banchs i Piqué for the idea of implementing a routine allowing custom settings for each day of the week.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson &amp; Dr. Tobias Quathamer for sponsoring the uploads to Debian.&lt;br /&gt;&lt;br /&gt;As well as to Miquel Banchs i Piqué for the idea of implementing a routine allowing custom settings for each day of the week.&lt;/p&gt;</source>
+        <translation>&lt;p &gt;特别感谢：:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler 在个方面的帮助。&lt;br /&gt;&lt;br /&gt;以及 Brian Nelson 和 Dr. Tobias Quathamer 赞助上传至 Debian。&lt;br /&gt;&lt;br /&gt;以及 Miquel Banchs i Piqué for 实施允许在一周中的每一天进行自定义设置例程的想法。&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -40,15 +40,15 @@
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>每周</translation>
     </message>
     <message>
         <source>activate weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>每周激活</translation>
     </message>
     <message>
         <source>Please note that you might want to enable autostart and countdown at startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>请注意，您可能希望在启动时启用自动启动和倒计时。</translation>
     </message>
 </context>
 <context>
@@ -305,7 +305,7 @@
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>关于 &amp;Qt</translation>
+        <translation>关于 Qt(&amp;Q)</translation>
     </message>
     <message>
         <source>Version </source>
@@ -418,7 +418,7 @@
     </message>
     <message>
         <source>Enable the minute &amp;countdown at startup</source>
-        <translation>启动时开启分钟和倒计时(&amp;C)</translation>
+        <translation>启动时开启分钟倒计时(&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Reset settings</source>
@@ -571,7 +571,7 @@ qshutdown should quit after the countdown ended.</source>
         <source>Hide qshutdown at startup if
 &quot;Start countdown&quot; is checked.</source>
         <translation>若选择了“启动倒计时”则
-在启动时隐藏 qshutdown</translation>
+在启动时隐藏 qshutdown。</translation>
     </message>
     <message>
         <source>The File &quot;%1&quot; is not writable!
@@ -588,13 +588,6 @@ Maybe you just don&apos;t have the permissions to do so.</source>
         <translation>请仔细阅读！</translation>
     </message>
     <message>
-        <source>Welcome to qshutdown!
-If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
-
-Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Disabling the tray icon means that it is no longer
 possible to restore qshutdown from tray. Please
 consider also checking &quot;Quit on closing main
@@ -602,22 +595,42 @@ window&quot; and &quot;Hide qshutdown at startup&quot;.
 If qshutdown is still running and you want it to
 reappear, then just execute qshutdown again,
 just as you normally would. It will thus reappear.</source>
-        <translation type="unfinished"></translation>
+        <translation>禁用托盘图标意味着将无法再从托盘恢复 qshutdown。
+请考虑检查“关闭主窗口时退出”和“启动时隐藏 qshutdown”。
+如果 qshutdown 仍在运行并且您希望它重新出现，那么只需
+再次执行 qshutdown ，就像您平时一样。它将再次出现。</translation>
     </message>
     <message>
         <source>Disable tray &amp;icon</source>
-        <translation type="unfinished"></translation>
+        <translation>禁用托盘图标(&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Quit on closing main window</source>
-        <translation type="unfinished"></translation>
+        <translation>关闭主窗口时退出(&amp;Q)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>在剩余不到 70 秒时，qshutdown 会显示 3 次。&lt;br/&gt;&lt;br/&gt;该程序使用 qdbus 来向 gnome- 或 kde-session-manager 或 HAL/ConsoleKit/DeviceKit/UPower 发送 关机/重启/挂起/休眠 请求。如果都不行，则使用“sudo shutdown”命令(注意，在向 HAL 或 ConsoleKit 发送请求，或使用 shutdown 命令时，会话将不能保存。 使用 shutdown 命令时，程序只能关机或重启)。因此，如果关机或重启时间到了，却没有动作，说明用户没有执行 shutdown 命令的权限。这种情况下，用户可以这样做：&lt;br/&gt;&lt;br/&gt;将以下命令粘贴到终端中：&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;添加这一行命令&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;其中 * 用用户名或 %group 名替换。&lt;br/&gt;&lt;br/&gt;关机倒计时最多 1440 分钟(24 小时)。&lt;br/&gt;配置文件(和日志文件)位于 &lt;i&gt;~/.qshutdown/&lt;/i&gt;(Linux/Unix 环境下)。&lt;br/&gt;&lt;br/&gt;&lt;b&gt;对于管理员：&lt;/b&gt;&lt;br/&gt;如果您想让每位用户以带“家长控制”的方式运行 qshutdown，您可以执行“sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/”并将 /root/.qshutdown/qshutdown.conf 中的 Lock_all 选项设为 true。注意 qshutdown 必须启动一次来生成 qshutdown.conf。另外还需要向 sudoers 中添加一行(和上面一样)：&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;如果您不小心忘记了自己设置的密码，从 qshutdown.conf 中删除带有“Password”的那一行即可。&lt;br/&gt;&lt;br/&gt;&lt;b&gt;用法提示：&lt;/b&gt;&lt;br/&gt;如果您不想让 qshutdown “骚扰”您，只需从“开启警告？”中移除这个钩子。&lt;br/&gt;&lt;br/&gt;&lt;b&gt;快捷键：&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(这个)信息窗口&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;退出&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;首选项&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;将运行时间写入日志文件一次(只有 qshutdown 退出才有效。想永久设置请在首选项中修改。)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;设置为关机&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;设置为重启&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;设置为挂起到内存&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;设置为休眠&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;停止倒计时(只有倒计时已启动且管理员未作限制时才有效)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;编辑配置文件(这需要一个密码。如果只有您一位用户，您可以设置一个“空密码”(密码字段不填))。&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file is located at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;The log file is located at &lt;i&gt;%2&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in the ini file to true. Note that qshutdown has to start once to generate the qshutdown settings file. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown settings.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.To make that permanent, just do the same in the preferences.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation>在剩余不到 70 秒时，qshutdown 会显示 3 次。&lt;br/&gt;&lt;br/&gt;该程序使用 qdbus 来向 gnome- 或 kde-session-manager 或 HAL/ConsoleKit/DeviceKit/UPower 发送 关机/重启/挂起/休眠 请求。如果都不行，则使用“sudo shutdown”命令(注意，在向 HAL 或 ConsoleKit 发送请求，或使用 shutdown 命令时，会话将不能保存。 使用 shutdown 命令时，程序只能关机或重启)。因此，如果关机或重启时间到了，却没有动作，说明用户没有执行 shutdown 命令的权限。这种情况下，用户可以这样做：&lt;br/&gt;&lt;br/&gt;将以下命令粘贴到终端中：&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;添加这一行命令&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;其中 * 用用户名或 %group 名替换。&lt;br/&gt;&lt;br/&gt;关机倒计时最多 1440 分钟(24 小时)。&lt;br/&gt;配置文件位于 &lt;i&gt;%1&lt;/i&gt;。&lt;br/&gt;日志文件位于%2&lt;br/&gt;&lt;br/&gt;&lt;b&gt;对于管理员：&lt;/b&gt;&lt;br/&gt;如果您想让每位用户以带“家长控制”的方式运行 qshutdown，您可以执行“sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/”并将 ini 中的 Lock_all 选项设为 true。注意 qshutdown 必须启动一次来生成 qshutdown 设置文件。另外还需要向 sudoers 中添加一行(和上面一样)：&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;如果您不小心忘记了自己设置的密码，从 qshutdown 设置中删除带有“Password”的那一行即可。&lt;br/&gt;&lt;br/&gt;&lt;b&gt;用法提示：&lt;/b&gt;&lt;br/&gt;如果您不想让 qshutdown “骚扰”您，只需从“开启警告？”中移除这个钩子。要使其永久存在，只需在首选项中执行相同的操作。&lt;br/&gt;&lt;br/&gt;&lt;b&gt;快捷键：&lt;/b&gt;&lt;table border=\&quot;1\&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(这个)信息窗口&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;退出&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;首选项&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;将运行时间写入日志文件一次(只有 qshutdown 退出才有效。想永久设置请在首选项中修改。)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;设置为关机&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;设置为重启&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;设置为挂起到内存&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;设置为休眠&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;停止倒计时(只有倒计时已启动且管理员未作限制时才有效)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;编辑配置文件(这需要一个密码。如果只有您一位用户，您可以设置一个“空密码”(密码字段不填))。&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+    </message>
+    <message>
+        <source>Welcome to qshutdown!
+If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
+
+Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anything concerning translations.
+
+The settings file is located at %1.
+For further information see the info window.</source>
+        <translation>欢迎使用 qshutdown！
+
+如果您想要使用 qshutdown，例如关闭系统，并且您正在使用 Gnome Shell，那么您可能会从那里得到一个关闭对话框。如果您想要直接关机，那么请考虑进入首选项并将关机方法设置为 ConsoleKit 或其他方式。
+
+欢迎随时访问 https://launchpad.net/~hakaishi 报告错误或提交有关翻译的信息。
+
+设置文件位于 %1。
+有关更多详情，请参见信息窗口。</translation>
     </message>
 </context>
 </TS>

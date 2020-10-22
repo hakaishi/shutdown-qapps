@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2019 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2020 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,6 @@
 #include <QDir>
 #include <QPushButton>
 #include <QTextStream>
-#include <QDesktopServices>
 
 Editor::Editor(QWidget *parent): QDialog(parent){
 
@@ -29,11 +28,7 @@ Editor::Editor(QWidget *parent): QDialog(parent){
 
      setWindowFlags(Qt::Window);    //always in front
 
-    #ifdef Q_OS_WIN32
-     confFile = new QFile(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf");
-    #else //!Q_OS_WIN32
-     confFile = new QFile(QDir::homePath() + "/.qshutdown/qshutdown.conf");
-    #endif //Q_OS_WIN32
+     confFile = new QFile(QSettings().fileName());
 
      plainTextEdit->setFocus();
 
@@ -50,10 +45,10 @@ void Editor::showEvent(QShowEvent* show_editor){
      isClosed = false;
      if(!confFile->open(QIODevice::ReadWrite | QIODevice::Text)){
        QTextStream myOutput(stdout);
-       myOutput << "E: Can not open qshutdown.conf!" << endl;
+       myOutput << "E: Can not open qshutdown settings file!" << endl;
        return;
      }
-     QString text;                      //reading content of qshutdown.conf
+     QString text;                      //reading content of qshutdown settings
      QTextStream in(confFile);
      text = in.readAll();
      plainTextEdit->setPlainText(text);
@@ -73,12 +68,7 @@ void Editor::closeEvent(QCloseEvent* close_editor){
 bool Editor::getClosed(){ return isClosed; }
 
 bool Editor::getLockAll(){
-#ifdef Q_OS_WIN32
-     QString file(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf");
-#else //!Q_OS_WIN32
-     QString file(QDir::homePath() + "/.qshutdown/qshutdown.conf");
-#endif //Q_OS_WIN32
-     QSettings settings(file, QSettings::IniFormat);
+     QSettings settings(this);
      return settings.value("Lock_all").toBool();
 }
 
@@ -93,10 +83,10 @@ void Editor::keyPressEvent(QKeyEvent *kEvent){
 void Editor::saveChanges(){
      if(!confFile->open(QIODevice::ReadWrite | QIODevice::Text)){
        QTextStream myOutput(stdout);
-       myOutput << "E: Can not open qshutdown.conf!";
+       myOutput << "E: Can not open qshutdown settings file!";
        return;
      }
-     QString newContent;                //writing content of editor to qshutdown.conf
+     QString newContent;                //writing content of editor to qshutdown settings
      newContent = plainTextEdit->toPlainText();
      QTextStream out(confFile);
      out << newContent;

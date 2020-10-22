@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>History</class>
+ <widget class="QDialog" name="History">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>History</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../qprogram-starter.qrc">
+    <normaloff>:/pix</normaloff>:/pix</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Double click restores item to the text editor.</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QListWidget" name="historyList"/>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../../qprogram-starter.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>About</name>
     <message>
@@ -24,12 +24,12 @@
         <translation>&lt;p &gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;qshutdown&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;З використанням Qt&lt;/span&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2019, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;qshutdown — програма для вимикання комп’ютера у певний момент часу або за відліком&lt;/p&gt;&lt;p &gt;Автор: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;&amp;copy; Christian Metscher, 2010–2019&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Повідомлення про вади можна залишати на &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; або &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;</translation>
+        <source>&lt;p &gt;qshutdown, a time and countdown based shutdown tool&lt;/p&gt;&lt;p &gt;Author: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;Copyright &amp;copy; 2010-2020, by Christian Metscher&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p &gt;Please use &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; or &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt; to report bugs.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;qshutdown — програма для вимикання комп’ютера у певний момент часу або за відліком&lt;/p&gt;&lt;p &gt;Автор: Christian Metscher &amp;lt;hakaishi@web.de&amp;gt;&lt;/p&gt;&lt;p &gt;&amp;copy; Christian Metscher, 2010–2020&lt;/p&gt;&lt;p &gt;&lt;a href=&quot;https://launchpad.net/~hakaishi&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://launchpad.net/~hakaishi&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Повідомлення про вади можна залишати на &lt;a href=&quot;https://bugs.launchpad.net/qt-shutdown-p&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://bugs.launchpad.net/qt-shutdown-p&lt;/span&gt;&lt;/a&gt; або &lt;a href=&quot;http://www.debian.org/Bugs/Reporting&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.debian.org/Bugs/Reporting&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;</translation>
     </message>
     <message>
-        <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson for sponsoring the uploads to Debian.&lt;br /&gt;&lt;br /&gt;As well as to Miquel Banchs i Piqué for the idea of implementing a routine allowing custom settings for each day of the week.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;p &gt;Special thanks to:&lt;br /&gt;&lt;/p&gt;&lt;p &gt;Fabian Deuchler for helping here and there.&lt;br /&gt;&lt;br /&gt;And Brian Nelson &amp; Dr. Tobias Quathamer for sponsoring the uploads to Debian.&lt;br /&gt;&lt;br /&gt;As well as to Miquel Banchs i Piqué for the idea of implementing a routine allowing custom settings for each day of the week.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Особливі подяки:&lt;br /&gt;&lt;/p&gt;&lt;p&gt;Фабіану Дойхлеру (Fabian Deuchler) за допомогою.&lt;br /&gt;&lt;br /&gt;І Браяну Нельсону (Brian Nelson) та д-ру Тобіасу Кватгамеру (Tobias Quathamer) за спонсорування вивантаження до Debian.&lt;br /&gt;&lt;br /&gt;а також Мікелю Банхсу-і-Піке (Miquel Banchs i Piqué) за ідею щодо реалізації підпрограми для нетипових параметрів кожного дня тижня.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -40,15 +40,15 @@
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>Щотижня</translation>
     </message>
     <message>
         <source>activate weekly</source>
-        <translation type="unfinished"></translation>
+        <translation>активувати щотижня</translation>
     </message>
     <message>
         <source>Please note that you might want to enable autostart and countdown at startup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Будь ласка, зауважте, що вам варто увімкнути авто запуск і відлік при запуску.</translation>
     </message>
 </context>
 <context>
@@ -269,7 +269,7 @@
     </message>
     <message>
         <source>&amp;About</source>
-        <translation>&amp;Про програму</translation>
+        <translation>Пр&amp;о програму</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
@@ -354,7 +354,7 @@
     </message>
     <message>
         <source>Shutdown</source>
-        <translation>Вимикання</translation>
+        <translation>Вимкнути</translation>
     </message>
     <message>
         <source>Shutdown type:</source>
@@ -390,15 +390,15 @@
     </message>
     <message>
         <source>Reboot</source>
-        <translation>Перезавантаження</translation>
+        <translation>Перезавантажити</translation>
     </message>
     <message>
         <source>Suspend</source>
-        <translation>Призупинка</translation>
+        <translation>Призупинити</translation>
     </message>
     <message>
         <source>Hibernate</source>
-        <translation>Присипляння</translation>
+        <translation>Приспати</translation>
     </message>
     <message>
         <source>A&amp;utostart</source>
@@ -594,16 +594,6 @@ Maybe you just don&apos;t have the permissions to do so.</source>
         <translation>Будь ласка, ознайомтеся з цією інформацією!</translation>
     </message>
     <message>
-        <source>Welcome to qshutdown!
-If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
-
-Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
-        <translation>Вітаємо у qshutdown!
-Якщо ви хочете скористатися qprogram-starter для автоматичного вимикання системи і використовуєте Gnome Shell, ймовірно, діалогове вікно вимикання буде показано прямо зараз. Якщо ви хочете вимикати систему безпосередньо, будь ласка, відкрийте вікно налаштувань і встановіть у пункті способу вимикання ConsoleKit або щось інше.
-
-Щоб повідомити про ваду у програмі або перекладі, скористайтеся сторінкою https://launchpad.net/~hakaishi</translation>
-    </message>
-    <message>
         <source>Disabling the tray icon means that it is no longer
 possible to restore qshutdown from tray. Please
 consider also checking &quot;Quit on closing main
@@ -632,8 +622,24 @@ qshutdown після запуску». Якщо qshutdown
 <context>
     <name>QObject</name>
     <message>
-        <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file (and logfile) is located at &lt;i&gt;~/.qshutdown/&lt;/i&gt; (under Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in /root/.qshutdown/qshutdown.conf to true. Note that qshutdown has to start once to generate the qshutdown.conf. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation>qshutdown показуватиме своє вікно тричі як попередження, якщо залишилося менше за 70 секунд.&lt;br/&gt;&lt;br/&gt;Ця програма використовує qdbus для надсилання запитів щодо завершення роботи, перезавантаження, призупинки та присипляння до засобу керування сеансом gnome або kde або до HAL/ConsoleKit/DeviceKit/UPower. Якщо ж жоден з цих способів не працює, буде використано команду &apos;«udo shutdown» (зауважте, що у разі надсилання запиту щодо завершення роботи до HAL або ConsoleKit або використання команди shutdown, дані сеансу не зберігатимуться. Якщо буде використано команду shutdown, програма зможе лише завершити роботу або перезавантажити комп’ютер). Отже, якщо нічого не трапиться, коли настане момент завершення роботи або перезавантаження, це означатиме, що у вашого користувача недостатньо прав на виконання команди shutdown. Ви можете скористатися таким способом, щоб виправити це:&lt;br/&gt;&lt;br/&gt;Виконайте таку команду у вікні термінала:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;і додайте такий рядок:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;де * слід замінити на ім’я користувача або %groupname.&lt;br/&gt;&lt;br/&gt;Максимальним значенням countdown_minutes є 1440 (24 години).&lt;br/&gt;Файл налаштувань і файл журналу зберігаються у &lt;i&gt;~/.qshutdown/&lt;/i&gt; (у Linux/Unix).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Для адміністраторів:&lt;/b&gt;&lt;br/&gt;Якщо вам потрібно, щоб qshutdown працювала як «батьківське блокування» для всіх користувачів, ви можете віддати команду «sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/» і встановити для параметра Lock_all у /root/.qshutdown/qshutdown.conf значення true. Зауважте, що qshutdown перед цим слід запустити принаймні один раз, щоб було створено qshutdown.conf. Крім того, слід додати такий рядок до файла sudoers (спосіб відкриття цього файла для редагування описано вище):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;Якщо ви забули ваш пароль, прости вилучіть весь рядок, що починається з «Password», вручну з файла qshutdown.conf.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Підказки:&lt;/b&gt;&lt;br/&gt;Якщо ви хочете, щоб qshutdown припинила вас турбувати, просто зніміть позначку з пункту «Попереджати?».&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Клавіші керування:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(це) інформаційне вікно&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Вийти&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Параметри&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;записати час запуску один раз до файла журналу (працює, лише якщо qshutdown завершує роботу. Сталі налаштування можна встановити за допомогою пункту «Параметри».)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;встановити завершення роботи&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;встановити перезапуск&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;встановити призупинку&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;встановити присипляння&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;припинити відлік (лише якщо відлік було розпочато і адміністратором не було обмежено доступ до припинення відліку)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;редагувати файл налаштувань (потрібен пароль. Якщо виконується від імені простого користувача, можна встановити порожній пароль (не заповнювати поле пароля)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
+        <source>qshutdown will show itself 3 times as a warning if there are less than 70 seconds left.&lt;br/&gt;&lt;br/&gt;This program uses qdbus to send a shutdown/reboot/suspend/hibernate request to either the gnome- or kde-session-manager, to HAL/ConsoleKit/DeviceKit/UPower and if none of these works, the command &apos;sudo shutdown&apos; will be used (note that when sending the shutdown request to HAL or ConsoleKit, or the shutdown command is used, the Session will never be saved. If the shutdown command is used, the program will only be able to shutdown and reboot). So if nothing happens when the shutdown- or reboot-time is reached, it means that one lacks the rights for the shutdown command. In this case one can do the following:&lt;br/&gt;&lt;br/&gt;Paste the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt;and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt;whereas * replaces the user name or %group name.&lt;br/&gt;&lt;br/&gt;The maximum Number of countdown_minutes is 1440 (24 hours).&lt;br/&gt;The configuration file is located at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;The log file is located at &lt;i&gt;%2&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;&lt;b&gt;For admins:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to run with &quot;parental lock&quot; for every user, you can do &quot;sudo cp /usr/share/qshutdown/autostart/99qshutdown /etc/X11/Xsession.d/&quot; and set the option Lock_all in the ini file to true. Note that qshutdown has to start once to generate the qshutdown settings file. Furthermore there is a need to add the following line to the sudoers (as above):&lt;pre&gt;* ALL = NOPASSWD:/usr/bin/qshutdown&lt;/pre&gt;&lt;br/&gt;If you should ever forget your set password, just remove the whole line starting with &quot;Password&quot; manually from the qshutdown settings.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hints on usage:&lt;/b&gt;&lt;br/&gt;If you want qshutdown to stop &quot;bugging&quot; you, just remove the hook from &quot;warnings on?&quot;.To make that permanent, just do the same in the preferences.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Hotkeys:&lt;/b&gt;&lt;table border=&quot;1&quot;&gt;&lt;tr&gt;&lt;td&gt;Ctrl+I&lt;/td&gt;&lt;td&gt;(this) information window&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+Q&lt;/td&gt;&lt;td&gt;Quit&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+P&lt;/td&gt;&lt;td&gt;Preferences&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+L&lt;/td&gt;&lt;td&gt;write the run time once into the logfile (works only if qshutdown quits. To make it permanent set it in the preferences.)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+S&lt;/td&gt;&lt;td&gt;set to shutdown&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+R&lt;/td&gt;&lt;td&gt;set to restart&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+U&lt;/td&gt;&lt;td&gt;set to suspend to RAM&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+H&lt;/td&gt;&lt;td&gt;set to hibernate&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Ctrl+E&lt;/td&gt;&lt;td&gt;stop countdown (only if the countdown has started and the admin didn&apos;t restrict the access)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Shift+E&lt;/td&gt;&lt;td&gt;to edit the configuration file (for this a password is necessary. If you are a user, you can set an &quot;empty password&quot; (leave the password field empty)).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome to qshutdown!
+If you want qshutdown e.g. to shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
+
+Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anything concerning translations.
+
+The settings file is located at %1.
+For further information see the info window.</source>
+        <translation>Вітаємо у qshutdown!
+Якщо ви хочете скористатися qprogram-starter для автоматичного вимикання системи і використовуєте Gnome Shell, ймовірно, діалогове вікно вимикання буде показано прямо зараз. Якщо ви хочете вимикати систему безпосередньо, будь ласка, відкрийте вікно налаштувань і встановіть у пункті способу вимикання ConsoleKit або щось інше.
+
+Щоб повідомити про ваду у програмі або перекладі, скористайтеся сторінкою https://launchpad.net/~hakaishi.
+
+Файл параметрів зберігається тут: %1.
+Подальші відомості можна знайти у вікні відомостей.</translation>
     </message>
 </context>
 </TS>

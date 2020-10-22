@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2019 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2020 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,6 @@
 #include <QTimer>
 #include <QTextStream>
 #include <QFile>
-#include <QDesktopServices>
 
 Preferences::Preferences(QWidget *parent): QDialog(parent){
 
@@ -41,14 +40,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
 
 /***************** load settings from the conf file *****************/
 
-#ifdef Q_OS_WIN32
-     lockS->setDisabled(true); //if there is a command for locking the display in Windows, remove this line
-                               //and add the command to power.h
-     file = QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf";
-#else //!Q_OS_WIN32
-     file = QDir::homePath() + "/.qshutdown/qshutdown.conf";
-#endif //Q_OS_WIN32
-     settings = new QSettings(file, QSettings::IniFormat);
+     settings = new QSettings(this);
 
 #ifdef Q_OS_WIN32
      fonts = "Times New Roman";
@@ -79,14 +71,15 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
        infoBox = new QMessageBox(this);
        infoBox->setWindowTitle(tr("Please read this carefully!"));
        infoBox->setIcon(QMessageBox::Information);
-       infoBox->setInformativeText(tr("Welcome to qshutdown!\n"
+       infoBox->setInformativeText(QString(QObject::tr("Welcome to qshutdown!\n"
          "If you want qshutdown e.g. to shutdown the system "
          "and you are using the Gnome Shell, then you are likely to get a "
          "shutdown dialog from there. If you want a direct shutdown, then "
          "please consider going into the preferences and setting the shutdown "
          "method to ConsoleKit or something else.\n\nPlease feel free to visit "
-         "https://launchpad.net/~hakaishi to report bugs or for anyting "
-         "concerning translations."));
+         "https://launchpad.net/~hakaishi to report bugs or for anything "
+         "concerning translations.\n\nThe settings file is located at %1.\n"
+         "For further information see the info window.").arg(QSettings().fileName())));
        infoBox->setStandardButtons(QMessageBox::Ok);
        infoBox->show();
        QSettings().setValue("first_start", false);
@@ -210,7 +203,7 @@ void Preferences::loadSettings(){
      comboBox->setCurrentIndex(settings->value("Power/comboBox",0).toInt());
      timeEdit->setTime(QTime(settings->value("Time/time_hour",22).toInt(),settings->value("Time/time_minute",00).toInt()));
      spin->setValue(settings->value("Time/countdown_minutes",60).toInt());
-     quitOnCloseMain->setChecked(settings->value("Quit_on_close",false).toBool());
+     quitOnCloseMain->setChecked(settings->value("Quit_on_close",true).toBool());
      countdown->setChecked(settings->value("Time/countdown_at_startup",false).toBool());
      hideMe->setChecked(settings->value("Hide_at_startup",false).toBool());
      fontComboBox->setCurrentFont(settings->value("Fonts/font_type",fonts).toString());
@@ -222,7 +215,7 @@ void Preferences::loadSettings(){
      radio1->setChecked(settings->value("CheckBoxes/target_time",false).toBool());
      radio2->setChecked(settings->value("CheckBoxes/countdown",true).toBool());
      lock->setChecked(settings->value("CheckBoxes/lock",true).toBool());
-     warn->setChecked(settings->value("CheckBoxes/warnings",true).toBool());
+     warn->setChecked(settings->value("CheckBoxes/warnings",false).toBool());
      log->setChecked(settings->value("Logfile/logging",false).toBool());
      lockS->setChecked(settings->value("Lock_screen",true).toBool());
      autostart->setChecked(settings->value("Autostart").toBool());
@@ -295,7 +288,7 @@ void Preferences::resetSettings(){
        timeEdit->setTime(QTime(22,00));
        countdown->setChecked(false);
        disableTray->setChecked(false);
-       quitOnCloseMain->setChecked(false);
+       quitOnCloseMain->setChecked(true);
        hideMe->setChecked(false);
        spin->setValue(60);
        fontComboBox->setCurrentFont(QFont(fonts));
@@ -358,7 +351,7 @@ void Preferences::autostartFile(){
        }
        if(!autostartFile.open(QIODevice::ReadWrite | QIODevice::Text)){
          QTextStream myOutput(stdout);
-         myOutput << "E: Can not open qshutdown.conf!" << endl;
+         myOutput << "E: Can not open qshutdown settings file!" << endl;
          return;
        }
          QString autostartContent("[Desktop Entry]\nName=qshutdown\n"

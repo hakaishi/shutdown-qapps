@@ -33,10 +33,12 @@
 #include <QProcess>
 #include <QTextStream>
 
-extern bool verbose;
-extern QString shell;
+//extern bool verbose;
+//extern QString shell;
 
 namespace Power{
+
+bool verbose = true;
 
 QTextStream oput(stdout);
 
@@ -143,7 +145,7 @@ void shutdown(){
      }
      else return;
 
-     if(QProcess::startDetached("sudo", QStringList() << "shutdown" << "-P" << "now"))
+     if(QProcess::startDetached("sudo", QStringList() << "shutdown"<< "-P" << "now"))
        return;
      QProcess::startDetached("sudo", QStringList() << "shutdown" << "-h" << "-P" << "now");
   } //end of automatic
@@ -210,9 +212,9 @@ void shutdown(){
        return;
      QProcess::startDetached("sudo", QStringList() << "shutdown" << "-h" << "-P" << "now");
   }
-  else if(user)
-    if(!shell.isEmpty())
-      QProcess::startDetached(shell, args);
+  //else if(user)
+  //  if(!shell.isEmpty())
+  //    QProcess::startDetached(shell, args);
 
   //resetting variables
   automatic = false;
@@ -364,9 +366,9 @@ void reboot(){
       return;
     QProcess::startDetached("sudo", QStringList() << "shutdown" << "-r" << "now");
   }
-  else if(user)
-    if(!shell.isEmpty())
-      QProcess::startDetached(shell, args);
+  //else if(user)
+  //  if(!shell.isEmpty())
+  //    QProcess::startDetached(shell, args);
 
   //resetting variables
   automatic = false;
@@ -426,7 +428,7 @@ void suspend(){
 	  else lock_works = true;
         }
        if(!lock_works){
-         if(!QProcess::startDetached("qdbus", QStringList() << "org.freedesktop.ScreenSaver" << "/ScreenSaver Lock")){
+         if(!QProcess::startDetached("qdbus", QStringList() << "org.freedesktop.ScreenSaver" << "/ScreenSaver" << "Lock")){
            if(verbose) oput << "W: qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock didn't work"
                             << endl;
           }
@@ -536,9 +538,9 @@ void suspend(){
              << response.errorMessage() << endl;
     }
   }
-  else if(user)
-    if(!shell.isEmpty())
-      QProcess::startDetached(shell, args);
+  //else if(user)
+  //  if(!shell.isEmpty())
+  //    QProcess::startDetached(shell, args);
 
 
   //resetting variables
@@ -624,7 +626,7 @@ void hibernate(){
   if(automatic){
    #ifdef Q_OS_WIN32
      QProcess::startDetached("powercfg", QStringList() << "-hibernate" << "on"); // enable hibernate
-     QProcess::startDetached("rundll32", QStringList() << "powrprof.dll,SetSuspendState");
+     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState");
      }
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "hibernate"))
@@ -707,9 +709,9 @@ void hibernate(){
              << response.errorMessage() << endl;
     }
   }
-  else if(user)
-    if(!shell.isEmpty())
-      QProcess::startDetached(shell, args);
+  //else if(user)
+  //  if(!shell.isEmpty())
+  //    QProcess::startDetached(shell, args);
 
   //resetting variables
   automatic = false;

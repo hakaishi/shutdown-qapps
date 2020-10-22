@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2019 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2020 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,6 @@
 #include <QPushButton>
 #include <QFile>
 #include <QDir>
-#include <QDesktopServices>
 
 Calendar::Calendar(QWidget *parent): QDialog(parent){
 
@@ -30,12 +29,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
 
      setWindowFlags(Qt::Window);
 
-#ifdef Q_OS_WIN32
-     file = QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf";
-#else //!Q_OS_WIN32
-     file = QDir::homePath() + "/.qshutdown/qshutdown.conf";
-#endif //Q_OS_WIN32
-     settings = new QSettings(file, QSettings::IniFormat);
+     settings = new QSettings(this);
 
      calendarWidget->setMinimumDate(QDate::currentDate());
 
@@ -48,7 +42,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      sundayItems = new QList<WeekDayItem* >;
 
      mon = new WeekDay(this);
-     mon->label->setText(QDate::longDayName(Qt::Monday));
+     mon->label->setText(QLocale::system().dayName(Qt::Monday, QLocale::LongFormat));
      mon1 = new WeekDayItem(this);
      mon2 = new WeekDayItem(this);
      mon3 = new WeekDayItem(this);
@@ -56,7 +50,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      mon5 = new WeekDayItem(this);
      *mondayItems << mon1 << mon2 << mon3 << mon4 << mon5;
      tue = new WeekDay(this);
-     tue->label->setText(QDate::longDayName(Qt::Tuesday));
+     tue->label->setText(QLocale::system().dayName(Qt::Tuesday, QLocale::LongFormat));
      tue1 = new WeekDayItem(this);
      tue2 = new WeekDayItem(this);
      tue3 = new WeekDayItem(this);
@@ -64,7 +58,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      tue5 = new WeekDayItem(this);
      *tuesdayItems << tue1 << tue2 << tue3 << tue4 << tue5;
      wed = new WeekDay(this);
-     wed->label->setText(QDate::longDayName(Qt::Wednesday));
+     wed->label->setText(QLocale::system().dayName(Qt::Wednesday, QLocale::LongFormat));
      wed1 = new WeekDayItem(this);
      wed2 = new WeekDayItem(this);
      wed3 = new WeekDayItem(this);
@@ -72,7 +66,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      wed5 = new WeekDayItem(this);
      *wednesdayItems << wed1 << wed2 << wed3 << wed4 << wed5;
      thu = new WeekDay(this);
-     thu->label->setText(QDate::longDayName(Qt::Thursday));
+     thu->label->setText(QLocale::system().dayName(Qt::Thursday, QLocale::LongFormat));
      thu1 = new WeekDayItem(this);
      thu2 = new WeekDayItem(this);
      thu3 = new WeekDayItem(this);
@@ -80,7 +74,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      thu5 = new WeekDayItem(this);
      *thursdayItems << thu1 << thu2 << thu3 << thu4 << thu5;
      fri = new WeekDay(this);
-     fri->label->setText(QDate::longDayName(Qt::Friday));
+     fri->label->setText(QLocale::system().dayName(Qt::Friday, QLocale::LongFormat));
      fri1 = new WeekDayItem(this);
      fri2 = new WeekDayItem(this);
      fri3 = new WeekDayItem(this);
@@ -88,7 +82,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      fri5 = new WeekDayItem(this);
      *fridayItems << fri1 << fri2 << fri3 << fri4 << fri5;
      sat = new WeekDay(this);
-     sat->label->setText(QDate::longDayName(Qt::Saturday));
+     sat->label->setText(QLocale::system().dayName(Qt::Saturday, QLocale::LongFormat));
      sat1 = new WeekDayItem(this);
      sat2 = new WeekDayItem(this);
      sat3 = new WeekDayItem(this);
@@ -96,7 +90,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      sat5 = new WeekDayItem(this);
      *saturdayItems << sat1 << sat2 << sat3 << sat4 << sat5;
      sun = new WeekDay(this);
-     sun->label->setText(QDate::longDayName(Qt::Sunday));
+     sun->label->setText(QLocale::system().dayName(Qt::Sunday, QLocale::LongFormat));
      sun1 = new WeekDayItem(this);
      sun2 = new WeekDayItem(this);
      sun3 = new WeekDayItem(this);
@@ -223,7 +217,7 @@ void Calendar::getSortedAndActivatedDays(){
        return;
      }
 
-     qSort(calculatedDay);
+     std::sort(calculatedDay.begin(), calculatedDay.end());
      setWeeklyDate = QDateTime::currentDateTime().addDays(calculatedDay[0]);
 
      getNearestTime(calculatedDay);

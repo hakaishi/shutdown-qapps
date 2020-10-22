@@ -12,14 +12,6 @@
         <translation>dddd dd.MM.yyyy</translation>
     </message>
     <message>
-        <source>Sho&amp;w Logs</source>
-        <translation>Pok&amp;aż dziennik</translation>
-    </message>
-    <message>
-        <source>S&amp;hutdown</source>
-        <translation>W&amp;yłącz</translation>
-    </message>
-    <message>
         <source>&amp;Hints</source>
         <translation>&amp;Podpowiedzi</translation>
     </message>
@@ -36,28 +28,12 @@
         <translation>&amp;Dziennik</translation>
     </message>
     <message>
-        <source>Shutdown the computer after all commands finished</source>
-        <translation>Wyłącz komputer po wykonaniu wszystkich poleceń</translation>
-    </message>
-    <message>
-        <source>The contents will be restored on every start of qprogram-starter</source>
-        <translation>Zawartość zostanie odtworzona przy każdym uruchomieniu qprogram-starter</translation>
-    </message>
-    <message>
         <source>&amp;Start</source>
         <translation>&amp;Start</translation>
     </message>
     <message>
-        <source>&amp;Abort</source>
-        <translation>&amp;Przerwij</translation>
-    </message>
-    <message>
         <source>Browse...</source>
         <translation>Przeglądaj...</translation>
-    </message>
-    <message>
-        <source>Save text editors &amp;contents</source>
-        <translation>Zapisz &amp;zawartość edytora tekstu</translation>
     </message>
     <message>
         <source>Start the commands to this time and date</source>
@@ -72,24 +48,12 @@
         <translation>Wybierz program</translation>
     </message>
     <message>
-        <source>The first text edit is empty!</source>
-        <translation>Pierwsze pole tekstowe jest puste!</translation>
-    </message>
-    <message>
         <source>Information</source>
         <translation>Informacja</translation>
     </message>
     <message>
         <source>Processes aborted</source>
         <translation>Procesy przerwane</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;process 1 finished!&lt;/b&gt;</source>
-        <translation>&lt;b&gt;proces 1 zakończony!&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;process 1 &amp; 2 finished!&lt;/b&gt;</source>
-        <translation>&lt;b&gt;procesy 1 i 2 zakończone!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Error</source>
@@ -100,26 +64,8 @@
         <translation>&lt;b&gt;Uruchomienie nie powiodło się!&lt;/b&gt;&lt;br/&gt;Brak takiego programu bądź polecenia.</translation>
     </message>
     <message>
-        <source>&lt;b&gt;process 1 crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
-        <translation>&lt;b&gt;proces 1 został niespodziewanie zakończony!&lt;/b&gt;&lt;br/&gt;Może to być spowodowane niewłaściwymi parametrami lub opcjami.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;process 2 crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
-        <translation>&lt;b&gt;proces 2 został niespodziewanie zakończony!&lt;/b&gt;&lt;br/&gt;Może to być spowodowane niewłaściwymi parametrami lub opcjami.</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Unknown error!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
         <translation>&lt;b&gt;Nieznany błąd!&lt;/b&gt;&lt;br/&gt;Może być spowodowany niewłaściwymi parametrami lub opcjami.</translation>
-    </message>
-    <message>
-        <source>&quot;%1&quot;: Failed to start! No such program or command.
-</source>
-        <translation>&quot;%1&quot;: Uruchomienie nie powiodło się! Brak takiego programu bądź polecenia.
-</translation>
-    </message>
-    <message>
-        <source>The command in the second text editor (if there is any) will be executed after the first one. The message boxes will close themselves after 10 seconds.&lt;br/&gt;To start a program just type i.e. &quot;firefox&quot; or &quot;firefox www.google.com&quot; and then click on Start. Commands etc. can be linked by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;If the process is &quot;finished&quot; although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occure for some programs like gedit, firefox or gnome-terminal if they are already running.&lt;br/&gt;&lt;br/&gt;When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).&lt;br/&gt;&lt;br/&gt;make examples:&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;About Errors:&lt;br/&gt;Because almost every program gives a different error code, it is impossible to say what happend. So just log the output and see what kind of error occured. The output files can be found at &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;If the shutdown won&apos;t work, it means that &quot;sudo shutdown -P now&quot; is used. This needs root permissions. You can do the this:&lt;br/&gt;&lt;br/&gt;Post the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; whereas * replaces the username or %groupname.&lt;br/&gt;&lt;br/&gt;The configuration-file can be found at &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.</source>
-        <translation>Polecenie z drugiego pola tekstowego (jeśli pole jest wypełnione) zostanie wykonane po pierwszym. Powiadomienia zamkną się po 10 sekundach.&lt;br/&gt;By uruchomić program wpisz np. &quot;firefox&quot; lub &quot;firefox www.google.com&quot; i kliknij Start. Polecenia mogą być łączone znakiem &quot;&amp;&amp;&quot;.&lt;br/&gt;&lt;br/&gt;Jeśli proces został &quot;zakończony&quot; miomo, że wciąż działa, wypróbuj opcję --nofork (np. kopete --nofork). Zauważ, że taka sytuacja będzie miała miejsce dla niektórych programów takich jak gedit, firefox, czy gnome-terminal jeśli są już uruchomione.&lt;br/&gt;&lt;br/&gt;Jeśli chcesz uruchomić program z uprawnieniami administratora (sudo), używaj gksu(do) lub kdesu(do).&lt;br/&gt;&lt;br/&gt;Przykład dla make:&lt;br/&gt;&amp;nbsp;make -C /ścieżka/do/projektu&lt;br/&gt;&amp;nbsp;make clean -C /ścieżka/do/projektu&lt;br/&gt;&lt;br/&gt;O błedach:&lt;br/&gt;Ponieważ prawie każdy program zwraca inny kod błędu niemożliwe jest określenie co się stało. Zapisz wyjście programu i zobacz jaki rodzaj błedu się pojawił. Pliki z wyjściami można znaleźć w katalogu &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;Jeśli wyłączanie komputera nie działa oznacza to, że używane jest &quot;sudo shutdown -P now&quot;. To polecenie wymaga uprawnień administratora. Można to rozwiązać w następujący sposób:&lt;br/&gt;&lt;br/&gt;Wykonaj następujące polecenie w terminalu:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; i dodaj tą linijkę: &lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; gdzie * zastępuję nazwę użytkownika lub %grupy.&lt;br/&gt;&lt;br/&gt;Plik konfiguracyjny można znaleźć w katalogu &lt;i&gt;~/.qprogram-starter/&lt;/i&gt;.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -157,6 +103,109 @@
         <source>Ctrl+H</source>
         <translation>Ctrl+H</translation>
     </message>
+    <message>
+        <source>Shutdown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reboot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Suspend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The text edit is empty!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;process finished!&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;process crashed!&lt;/b&gt;&lt;br/&gt;This could be caused by invalid parameters or options.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save errors and output into files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No Action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse commands and insert into the text editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Kill Processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Display Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display and restore previously executed commands</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The current text will be the default value for all future starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set text editor content as default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No running processes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;No Output!&lt;/b&gt;&lt;br/&gt;There is still no data in the output or error stream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Content saved for future startups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Displays all output &amp; errors in a separate window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;General:&lt;/b&gt;&lt;br/&gt;Each line in the text editor will be executed as one separate process. Put a backslash at the end of the line for a multiline command.&lt;br/&gt;&lt;br/&gt;The message boxes will close themselves after 10 seconds.&lt;br/&gt;To start a program just type i.e. &quot;firefox&quot; or &quot;firefox www.google.com&quot; and then click on Start. Commands etc. can be linked by &quot;&amp;&amp;&quot; etc. &lt;br/&gt;&lt;br/&gt;If the process is &quot;finished&quot; although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occur for some programs like gedit, firefox or gnome-terminal if they are already running.&lt;br/&gt;&lt;br/&gt;When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Files:&lt;/b&gt;&lt;br/&gt;The configuration-file can be found at &lt;i&gt;%2&lt;/i&gt;.&lt;br/&gt;The log files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;make examples:&lt;/b&gt;&lt;br/&gt;&amp;nbsp;make -C /path/to/project&lt;br/&gt;&amp;nbsp;make clean -C /path/to/project&lt;br/&gt;&lt;br/&gt;&lt;b&gt;About Errors:&lt;/b&gt;&lt;br/&gt;Because almost every program gives a different error code, it is impossible to say what happened. So just log the output and see what kind of error occurred. The output files can be found at &lt;i&gt;%1&lt;/i&gt;.&lt;br/&gt;&lt;br/&gt;If the shutdown won&apos;t work, it might mean that &quot;sudo shutdown -P now&quot; is used. This needs admin permissions. You can do the this:&lt;br/&gt;&lt;br/&gt;Post the following in a terminal:&lt;pre&gt;EDITOR=nano sudo -E visudo&lt;/pre&gt; and add this line:&lt;pre&gt;* ALL = NOPASSWD:/sbin/shutdown&lt;/pre&gt; whereas * replaces the username or %groupname.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>History</name>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click restores item to the text editor.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Preferences</name>
@@ -167,14 +216,6 @@
     <message>
         <source>automatic</source>
         <translation>automatyczna</translation>
-    </message>
-    <message>
-        <source>Gnome session</source>
-        <translation>Sesja Gnome</translation>
-    </message>
-    <message>
-        <source>KDE session</source>
-        <translation>Sesja KDE</translation>
     </message>
     <message>
         <source>Shutdown Method:</source>
@@ -198,10 +239,46 @@ Być może nie masz po prostu uprawnień do wykonania tej akcji.</translation>
         <source>Welcome to qprogram-starter!
 If you want qprogram-starter to automatically shutdown the system and you are using the Gnome Shell, then you are likely to get a shutdown dialog from there. If you want a direct shutdown, then please consider going into the preferences and setting the shutdown method to ConsoleKit or something else.
 
-Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anyting concerning translations.</source>
+Please feel free to visit https://launchpad.net/~hakaishi to report bugs or for anything concerning translations.</source>
         <translation>Witaj w qprogram-starter!
 Jeśli chcesz by qprogram-starter automatycznie zamykał system i używasz Gnome Shell, prawdopodobnie uzyskasz stąd dialog zamknięcia. Jeśli chcesz bezpośredniego zamknięcia, rozważ ustawienie metody zamknięcia w preferencjach na ConsoleKit lub coś innego.
 Odwiedź https://launchpad.net/~hakaishi w celu zgłoszenia błędów lub w sprawach dotyczących tłumaczeń.</translation>
+    </message>
+    <message>
+        <source>Suspend Method:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reboot Method:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum History saved:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernate Method:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t quit or shutdown on error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Countdown before action:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informacja</translation>
+    </message>
+    <message>
+        <source>History cleared!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

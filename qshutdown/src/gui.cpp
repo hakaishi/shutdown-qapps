@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown the shutdown/reboot/suspend/hibernate
- * Copyright (C) 2010-2019 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2020 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,10 +24,14 @@
 #include "about.h"
 #include "power.h"
 #include <QTimer>
+#include <QStandardPaths>
 
 Gui::Gui(){
 
      setupUi(this);
+
+     //init lcd
+     lcd->display("----");
 
    //Seconds won't be recognized, thus removing them (just in case).
      QString timeEditFormat;
@@ -355,13 +359,11 @@ void Gui::power(QAction *action){
 void Gui::showW(){
      if(warnings->isChecked()){ //warnings is checked
        if(timeRunning){
-         QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::MessageIcon(3);
-         TIcon->showMessage(tr("Warning"), tr("Action imminent!"), icon, 5000);
+         TIcon->showMessage(tr("Warning"), tr("Action imminent!"), QIcon(":warn"), 5000);
          showRunningProgram();
        }
        else{
-         QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::MessageIcon(1);
-         TIcon->showMessage(tr("Information"), tr("Countdown is not running!"), icon, 5000);
+         TIcon->showMessage(tr("Information"), tr("Countdown is not running!"), QIcon(":info"), 5000);
        }
      }
 }
@@ -419,7 +421,7 @@ void Gui::keyPressEvent(QKeyEvent *kEvent){
      }
      if(kEvent->modifiers() == Qt::ShiftModifier){
        if(kEvent->key() == Qt::Key_E)
-         checkPassword->show(); //ask for password to edit qshutdown.conf
+         checkPassword->show(); //ask for password to edit qshutdown settings
      }
 }
 
@@ -549,12 +551,15 @@ void Gui::updateT(){
      //this will ensure that the shutdown-type will be executed in case a few seconds were skipped
        else if((i<=0) && !(i<-n))
          finished_(); //execute shutdown-type
+       else
+         reset();
      }
      setWindowTitle(tip1 + tip2);
      TIcon->setToolTip(tip1 + tip2);
 }
 
 void Gui::set(){
+     TIcon->setIcon(QIcon(":running"));
      QDateTime localDT = QDateTime::currentDateTime();
      QDateTime localFutureDateTime = localDT; //initializing
      timeRunning = true;
@@ -629,22 +634,19 @@ bool Gui::Time(){
 }
 
 void Gui::saveLog(){
-   #ifdef Q_OS_WIN32
-     QString file(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf");
-   #else //!Q_OS_WIN32
-     QString file(QDir::homePath() + "/.qshutdown/qshutdown.conf");
-   #endif //Q_OS_WIN32
-     QSettings settings(file, QSettings::IniFormat);
+     QSettings settings(this);
 
      settings.setValue("MainWindow/size",size());
      settings.setValue("MainWindow/keep_proportions",actionKeep_window_proportions->isChecked());
 
      if(log_action->isChecked()){ //if logfile is set in the icon contextmenu
-     #ifdef Q_OS_WIN32
-       QFile logfile(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/log.txt");
-     #else //!Q_OS_WIN32
-       QFile logfile(QDir::homePath() + "/.qshutdown/log.txt");
-     #endif //Q_OS_WIN32
+       QString path = QDir().toNativeSeparators(
+         QStandardPaths::standardLocations(
+           QStandardPaths::DataLocation).first());
+       if(!QDir(path).exists()) QDir().mkpath(path);
+       QFile logfile(QDir().toNativeSeparators(path + QDir::separator() + "log.txt"));
+     
+     
        if(!logfile.open(QIODevice::ReadWrite | QIODevice::Text)){
          QTextStream myOutput;
          myOutput << "E: Can not open log.txt!" << endl;
@@ -843,16 +845,11 @@ void Gui::beforeQuit(){
 
 void Gui::loadSettings(){
 /***************** create file and it's entries *****************/
-#ifdef Q_OS_WIN32
-     QString file(QDesktopServices::storageLocation(QDesktopServices::DataLocation) + "/qshutdown/qshutdown.conf");
-#else //!Q_OS_WIN32
-     QString file(QDir::homePath() + "/.qshutdown/qshutdown.conf");
-#endif //Q_OS_WIN32
-     QSettings settings(file, QSettings::IniFormat);
+     QSettings settings(this);
 
      if(!settings.isWritable()){
        QTextStream myOutput;
-       myOutput << "W: qshutdown.conf is not writable!" << endl;
+       myOutput << "W: qshutdown settings is not writable!" << endl;
      }
 
      if(!settings.contains("Lock_all"))
@@ -1009,12 +1006,14 @@ void Gui::lockEverything(bool actual){
        statusBar()->removeWidget(parentalLockL);*/
 }
 void Gui::reset(){
+     TIcon->setIcon(QIcon(":red_glasses"));
      timer->stop();
      cal->setWeeklyDate = QDateTime();
      setWindowTitle("'qshutdown'");
      if(!aWeeklyTimeWasSet)
        toolButton->setText(tr("Calendar"));
-     lcd->display(0);
+     lcd->setDigitCount(4);
+     lcd->display("----");
      TIcon->setToolTip(NULL);
      lcdL->setText(tr("minutes"));
      cal->setCalendarDate.setDate(QDate());

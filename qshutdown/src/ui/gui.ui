@@ -327,6 +327,9 @@
            <property name="segmentStyle">
             <enum>QLCDNumber::Flat</enum>
            </property>
+           <property name="value" stdset="0">
+            <double>0.000000000000000</double>
+           </property>
           </widget>
          </item>
         </layout>
@@ -435,7 +438,7 @@
      <x>0</x>
      <y>0</y>
      <width>330</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

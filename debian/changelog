@@ -1,3 +1,28 @@
+shutdown-qapps (1.8.0-1) unstable; urgency=low
+ * qshutdown
+  - increased time-skip-check to 30 seconds. If your system goes to sleep
+    etc. please wait 30 seconds until you wakeup or start your system again.
+  - changed default settings and log file location. See the info window for
+    more information.
+  - added default value instead of "0"
+  - added custom icons for system tray (because of heavy trouble under
+    Ubuntu/Xubuntu etc.)
+  - fixed calendar date problems
+  - fixed message box "bad window" message
+  - disable "warinings on" as default
+ * qprogram-starter
+  - replaced second text editor with more efficient functinality
+    (see below)
+  - run each line in the text editor as a separate process unless
+    the line ends with a backslash
+  - the default settings and log files location has changed (see
+    the info window for more information)
+  - added command history
+  - fixed message box "bad window" message
+  - revision of button names / tooltip texts etc.
+
+ -- Christian Metscher <hakaishi@web.de>  Wed, 06 May 2020 22:55:29 +0900
+
 shutdown-qapps (1.7.4-1) unstable; urgency=low
 
   - switched to QT 5

@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown/reboot/suspend/hibernate the system
- * Copyright (C) 2010-2019 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2020 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,8 @@
 #include <QSystemTrayIcon>
 #include <QDesktopWidget>
 #include <QTextDocumentFragment>
-#include <QDesktopServices>
+#include <QDir>
+#include <QElapsedTimer>
 
 #ifndef Q_OS_WIN32
   #include <QtDBus>
@@ -54,7 +55,8 @@ class Gui : public QMainWindow, public Ui::Gui {
      QPushButton     *minim;
      QTimer          *timer, *ti;
      QDateTime       localDatetime, futureDateTime;
-     QTime           elapsedTime, oldTime;
+     QTime           oldTime;
+     QElapsedTimer   elapsedTime;
      QIcon           icon;
      QSystemTrayIcon *TIcon;
      QMenu           *menu;
@@ -66,7 +68,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      int             i; //number of seconds left
      int             oldComboBoxIndex;
      double          bigI; //for more precise display
-     const static int n = 10; //to check if i==0 was skipped
+     const static int n = 30; //to check if i==0 was skipped
      QFont           *font1, *font2, *font3;
      double          logFileSize;
      Preferences     *pref;
