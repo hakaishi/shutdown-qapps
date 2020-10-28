@@ -81,11 +81,11 @@ void shutdown(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined(Q_OS_WIN32)
      QProcess::startDetached("shutdown", QStringList() << "-s" << "-f" << "-t" << "00"); // Windows command to shutdown immediately
      }
-    #elif Q_OS_MACOS
-       QProcess::startDetached("osascript, QStringList() << "-e" << "\'tell app \"System Events\" to shut down\'");
+    #elif defined(Q_OS_MACOS)
+       QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to shut down");
     }
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "poweroff"))
@@ -256,11 +256,11 @@ void reboot(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined(Q_OS_WIN32)
      QProcess::startDetached("shutdown", QStringList() << "-r" << "-f" << "-t" << "00"); // Windows command to reboot immediately
 }
-   #elif Q_OS_MACOS
-      QProcess::startDetached("osascript, QStringList() << "-e" << "\'tell app \"System Events\" to restart\'");
+   #elif defined(Q_OS_MACOS)
+      QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to restart");
 }
 
    #else
@@ -457,13 +457,13 @@ void suspend(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined(Q_OS_WIN32)
      QProcess::startDetached("powercfg", QStringList() << "-hibernate" << "off"); // enable suspend
      QProcess::startDetached("rundll32", QStringList() << "powrprof.dll,SetSuspendState");
      }
 
-    #elif Q_OS_MACOS
-       QProcess::startDetached("osascript, QStringList() << "-e" << "\'tell app \"System Events\" to sleep\'");
+    #elif defined(Q_OS_MACOS)
+      QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to sleep");
     }
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "suspend"))
@@ -633,12 +633,12 @@ void hibernate(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined (Q_OS_WIN32)
      QProcess::startDetached("powercfg", QStringList() << "-hibernate" << "on"); // enable hibernate
      QProcess::startDetached("rundll32", QStringList() << "powrprof.dll,SetSuspendState");
      }
-    #elif Q_OS_MACOS
-       QProcess::startDetached("osascript, QStringList() << "-e" << "\'tell app \"System Events\" to sleep\'");
+    #elif defined(Q_OS_MACOS)
+       QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to sleep");
     }
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "hibernate"))

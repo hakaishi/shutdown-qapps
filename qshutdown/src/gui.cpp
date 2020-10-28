@@ -866,12 +866,12 @@ void Gui::loadSettings(){
 
      pref->autostartFile();
 
-#ifdef Q_OS_WIN32
+#if defined(Q_OS_WIN32)
      QString fonts = "Times New Roman";
      int fontS1 = 13;
      int fontS2 = 18;
      int fontS3 = 11;
-#elif Q_OS_MACOS
+#elif defined(Q_OS_MACOS)
     QString fonts = "San Francisco";
     int fontS1 = 13;
     int fontS2 = 18;
