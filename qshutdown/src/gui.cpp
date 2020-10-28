@@ -837,10 +837,10 @@ void Gui::closeEvent(QCloseEvent* window_close){
 
 void Gui::beforeQuit(){
      saveLog();
-  #ifndef Q_OS_WIN32
+  #ifdef Q_OS_LINUX
      QDBusConnection::sessionBus().unregisterObject(OBJECT_NAME, QDBusConnection::UnregisterNode);
      QDBusConnection::sessionBus().unregisterService(SERVICE_NAME);
-  #endif //Q_OS_WIN32
+  #endif //Q_OS_LINUX
 }
 
 void Gui::loadSettings(){
@@ -856,7 +856,7 @@ void Gui::loadSettings(){
        settings.setValue("Lock_all",false);
      if(!settings.contains("MainWindow/keep_proportions"))
        settings.setValue("MainWindow/keep_proportions",true);
-    #ifndef Q_OS_WIN32
+    #ifdef Q_OS_LINUX
      QFile autostartFile(QDir::homePath() + "/.config/autostart/qshutdown.desktop");
      if(autostartFile.exists())
        settings.setValue("Autostart",true);
@@ -866,11 +866,16 @@ void Gui::loadSettings(){
 
      pref->autostartFile();
 
-#ifdef Q_OS_WIN32
+#if defined(Q_OS_WIN32)
      QString fonts = "Times New Roman";
      int fontS1 = 13;
      int fontS2 = 18;
      int fontS3 = 11;
+#elif defined(Q_OS_MACOS)
+    QString fonts = "San Francisco";
+    int fontS1 = 13;
+    int fontS2 = 18;
+    int fontS3 = 11;
 #else
      QString fonts = "DejaVu Sans";
      int fontS1 = 11;

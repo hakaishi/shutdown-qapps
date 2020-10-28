@@ -1,4 +1,4 @@
-!win32{
+linux{
 QT += dbus
 }
 
@@ -60,7 +60,7 @@ FORMS = src/ui/gui.ui src/ui/preferences.ui\
         src/ui/passwd.ui src/ui/editor.ui\
         src/ui/about.ui
 
-!win32{
+linux{
 # install
 target.path = /usr/bin
 icon.files = src/pixmap/red_glasses.xpm

@@ -342,7 +342,7 @@ void Preferences::resetFont(){
 }
 
 void Preferences::autostartFile(){
-    #ifndef Q_OS_WIN32
+    #ifdef Q_OS_LINUX
      QFile autostartFile(QDir::homePath() + "/.config/autostart/qshutdown.desktop");
      if(settings->value("Autostart").toBool() && !autostartFile.exists()){
        if(!QDir(QDir::homePath() + "/.config/autostart").exists()){

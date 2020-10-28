@@ -26,7 +26,7 @@
 #ifndef POWER_H
 #define POWER_H
 
-#ifndef Q_OS_WIN32
+#ifdef Q_OS_LINUX
   #include <QtDBus>
 #endif
 
@@ -54,7 +54,7 @@ bool user = false;
 QString myShutdown, myReboot, mySuspend, myHibernate;
 
 void shutdown(){
- #ifndef Q_OS_WIN32
+ #ifdef Q_OS_LINUX
   QDBusMessage response;
   //variables for automatic mode
   bool g_pwr1 = false;
@@ -81,9 +81,12 @@ void shutdown(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined(Q_OS_WIN32)
      QProcess::startDetached("shutdown", QStringList() << "-s" << "-f" << "-t" << "00"); // Windows command to shutdown immediately
      }
+    #elif defined(Q_OS_MACOS)
+       QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to shut down");
+    }
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "poweroff"))
        return;
@@ -227,7 +230,7 @@ void shutdown(){
 }
 
 void reboot(){
- #ifndef Q_OS_WIN32
+ #ifdef Q_OS_LINUX
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
@@ -253,9 +256,13 @@ void reboot(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined(Q_OS_WIN32)
      QProcess::startDetached("shutdown", QStringList() << "-r" << "-f" << "-t" << "00"); // Windows command to reboot immediately
-     }
+}
+   #elif defined(Q_OS_MACOS)
+      QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to restart");
+}
+
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "reboot"))
        return;
@@ -381,7 +388,7 @@ void reboot(){
 }
 
 void suspend(){
- #ifndef Q_OS_WIN32
+ #ifdef Q_OS_LINUX
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
@@ -450,10 +457,14 @@ void suspend(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined(Q_OS_WIN32)
      QProcess::startDetached("powercfg", QStringList() << "-hibernate" << "off"); // enable suspend
      QProcess::startDetached("rundll32", QStringList() << "powrprof.dll,SetSuspendState");
      }
+
+    #elif defined(Q_OS_MACOS)
+      QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to sleep");
+    }
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "suspend"))
        return;
@@ -553,7 +564,7 @@ void suspend(){
 }
 
 void hibernate(){
- #ifndef Q_OS_WIN32
+ #ifdef Q_OS_LINUX
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
@@ -622,10 +633,13 @@ void hibernate(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined (Q_OS_WIN32)
      QProcess::startDetached("powercfg", QStringList() << "-hibernate" << "on"); // enable hibernate
      QProcess::startDetached("rundll32", QStringList() << "powrprof.dll,SetSuspendState");
      }
+    #elif defined(Q_OS_MACOS)
+       QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to sleep");
+    }
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "hibernate"))
        return;

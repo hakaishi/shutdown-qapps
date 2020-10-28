@@ -25,7 +25,7 @@
 #include <QDir>
 #include <QElapsedTimer>
 
-#ifndef Q_OS_WIN32
+#ifdef Q_OS_LINUX
   #include <QtDBus>
 #endif
 
