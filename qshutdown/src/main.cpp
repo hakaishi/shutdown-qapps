@@ -125,12 +125,12 @@ int main(int argc, char *argv[]){
 
      Gui window; //Create the main widget
 
-     #ifndef Q_OS_WIN32
+     #ifdef Q_OS_LINUX
        QDBusConnection::sessionBus().registerObject(OBJECT_NAME, &window,
          QDBusConnection::ExportScriptableSlots);
        if(QDBusConnection::sessionBus().registerService(SERVICE_NAME)){
          //if possible register qshutdown as a service in the session bus
-     #endif //Q_OS_WIN32
+     #endif //Q_OS_LINUX
          window.information = infoStr;
          window.loadSettings();
          window.center();
@@ -142,7 +142,7 @@ int main(int argc, char *argv[]){
 
          return app.exec();
 
-     #ifndef Q_OS_WIN32
+     #ifdef Q_OS_LINUX
        }
        else{ //if registering qshutdown fails (also because it is already
              // registered, show window
@@ -173,5 +173,5 @@ int main(int argc, char *argv[]){
        if(!args.empty() && ((args[0][0] == '-' && args[0].contains("s"))
            || args.contains("--start")))
            myOutput << "Starting countdown!\n";
-     #endif //Q_OS_WIN32
+     #endif //Q_OS_LINUX
 }
