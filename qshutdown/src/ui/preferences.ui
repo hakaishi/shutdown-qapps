@@ -86,9 +86,9 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
-            <width>375</width>
-            <height>530</height>
+            <y>-125</y>
+            <width>400</width>
+            <height>588</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -101,7 +101,16 @@
            <property name="spacing">
             <number>6</number>
            </property>
-           <property name="margin">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
             <number>0</number>
            </property>
            <item>
@@ -391,6 +400,13 @@ should be checked by default at startup</string>
               </widget>
              </item>
              <item>
+              <widget class="QCheckBox" name="disableCndPop">
+               <property name="text">
+                <string>Disable popup about countdown not running</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QCheckBox" name="countdown">
                <property name="toolTip">
                 <string/>
@@ -466,9 +482,9 @@ qshutdown should quit after the countdown ended.</string>
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
-            <width>382</width>
-            <height>464</height>
+            <y>-74</y>
+            <width>367</width>
+            <height>530</height>
            </rect>
           </property>
           <layout class="QFormLayout" name="formLayout">
@@ -720,9 +736,6 @@ qshutdown should quit after the countdown ended.</string>
   </layout>
  </widget>
  <tabstops>
-  <tabstop>reset</tabstop>
-  <tabstop>confEditButton</tabstop>
-  <tabstop>buttonBox</tabstop>
   <tabstop>tabWidget</tabstop>
   <tabstop>scrollArea</tabstop>
   <tabstop>comboBox</tabstop>
@@ -740,11 +753,23 @@ qshutdown should quit after the countdown ended.</string>
   <tabstop>autostart</tabstop>
   <tabstop>lock</tabstop>
   <tabstop>warn</tabstop>
+  <tabstop>disableCndPop</tabstop>
   <tabstop>countdown</tabstop>
   <tabstop>hideMe</tabstop>
   <tabstop>log</tabstop>
   <tabstop>lockS</tabstop>
+  <tabstop>scrollArea_2</tabstop>
+  <tabstop>shutdownM</tabstop>
+  <tabstop>rebootM</tabstop>
+  <tabstop>suspendM</tabstop>
+  <tabstop>hibernateM</tabstop>
+  <tabstop>userDef1</tabstop>
+  <tabstop>userDef2</tabstop>
+  <tabstop>userDef3</tabstop>
+  <tabstop>userDef4</tabstop>
   <tabstop>quitAfterCountdown</tabstop>
+  <tabstop>reset</tabstop>
+  <tabstop>confEditButton</tabstop>
  </tabstops>
  <resources>
   <include location="../../../qshutdown.qrc"/>

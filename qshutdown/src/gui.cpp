@@ -362,9 +362,9 @@ void Gui::showW(){
          TIcon->showMessage(tr("Warning"), tr("Action imminent!"), QIcon(":warn"), 5000);
          showRunningProgram();
        }
-       else{
+     }
+     if(pref->showNotRunning && !timeRunning){
          TIcon->showMessage(tr("Information"), tr("Countdown is not running!"), QIcon(":info"), 5000);
-       }
      }
 }
 
@@ -856,6 +856,9 @@ void Gui::loadSettings(){
        settings.setValue("Lock_all",false);
      if(!settings.contains("MainWindow/keep_proportions"))
        settings.setValue("MainWindow/keep_proportions",true);
+
+     pref->showNotRunning = !settings.value("CheckBoxes/dont_show_not_running",false).toBool();
+       
     #ifdef Q_OS_LINUX
      QFile autostartFile(QDir::homePath() + "/.config/autostart/qshutdown.desktop");
      if(autostartFile.exists())

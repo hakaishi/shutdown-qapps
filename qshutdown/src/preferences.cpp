@@ -216,6 +216,7 @@ void Preferences::loadSettings(){
      radio2->setChecked(settings->value("CheckBoxes/countdown",true).toBool());
      lock->setChecked(settings->value("CheckBoxes/lock",true).toBool());
      warn->setChecked(settings->value("CheckBoxes/warnings",false).toBool());
+     disableCndPop->setChecked(settings->value("CheckBoxes/dont_show_not_running",false).toBool());
      log->setChecked(settings->value("Logfile/logging",false).toBool());
      lockS->setChecked(settings->value("Lock_screen",true).toBool());
      autostart->setChecked(settings->value("Autostart").toBool());
@@ -229,6 +230,8 @@ void Preferences::loadSettings(){
      userDef4->setPlainText(settings->value("Methods/myHibernate",userDef4S).toString());
      lockMyScreen = settings->value("Lock_screen").toBool();
      quitAfterCountdown->setChecked(settings->value("Quit_after_countdown_ended",false).toBool());
+     
+     showNotRunning = !disableCndPop->isChecked();
 }
 
 void Preferences::saveToConfFile(){
@@ -250,6 +253,7 @@ void Preferences::saveToConfFile(){
        settings->setValue("CheckBoxes/countdown",radio2->isChecked());
        settings->setValue("CheckBoxes/lock",lock->isChecked());
        settings->setValue("CheckBoxes/warnings",warn->isChecked());
+       settings->setValue("CheckBoxes/dont_show_not_running",disableCndPop->isChecked());
        settings->setValue("Logfile/logging",log->isChecked());
        settings->setValue("Lock_screen",lockS->isChecked());
        settings->setValue("Autostart",autostart->isChecked());
@@ -278,6 +282,8 @@ void Preferences::saveToConfFile(){
      if(userDef4->isEnabled())
        myHibernate = userDef4->toPlainText();
      else mySuspend = "";
+     
+     showNotRunning = !disableCndPop->isChecked();
 
      this->close();
 }
@@ -300,6 +306,7 @@ void Preferences::resetSettings(){
        radio2->setChecked(true);
        lock->setChecked(true);
        warn->setChecked(true);
+       disableCndPop->setChecked(false);
        log->setChecked(false);
        lockS->setChecked(true);
        shutdownM->setCurrentIndex(0);
