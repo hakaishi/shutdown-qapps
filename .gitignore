@@ -4,5 +4,6 @@ qshutdown/Makefile
 qprogram-starter/bin/
 qprogram-starter/build/
 qprogram-starter/Makefile
+debian/upstream/
 **.qm
 **.stash
