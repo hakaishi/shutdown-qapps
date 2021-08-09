@@ -57,7 +57,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      QDateTime       localDatetime, futureDateTime;
      QTime           oldTime;
      QElapsedTimer   elapsedTime;
-     QIcon           icon;
+     QPixmap         icon;
      QSystemTrayIcon *TIcon;
      QMenu           *menu;
      QActionGroup    *power_actions;

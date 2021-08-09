@@ -89,7 +89,7 @@ Gui::Gui(){
      about = new About(this);
 
    //TrayIcon
-     icon = QIcon(":red_glasses");
+     icon = QPixmap(":red_glasses");
      TIcon = new QSystemTrayIcon(this);
      TIcon->setIcon(icon);
 
@@ -359,12 +359,12 @@ void Gui::power(QAction *action){
 void Gui::showW(){
      if(pref->showEndOfCountdown){ //warnings is checked
        if(timeRunning){
-         TIcon->showMessage(tr("Warning"), tr("Action imminent!"), QIcon(":warn"), 5000);
+         TIcon->showMessage(tr("Warning"), tr("Action imminent!"), QPixmap(":warn"), 5000);
          showRunningProgram();
        }
      }
      if(pref->showNotRunning && !timeRunning){
-         TIcon->showMessage(tr("Information"), tr("Countdown is not running!"), QIcon(":info"), 5000);
+         TIcon->showMessage(tr("Information"), tr("Countdown is not running!"), QPixmap(":info"), 5000);
      }
 }
 
@@ -559,7 +559,7 @@ void Gui::updateT(){
 }
 
 void Gui::set(){
-     TIcon->setIcon(QIcon(":running"));
+     TIcon->setIcon(QPixmap(":running"));
      QDateTime localDT = QDateTime::currentDateTime();
      QDateTime localFutureDateTime = localDT; //initializing
      timeRunning = true;
@@ -1012,7 +1012,7 @@ void Gui::lockEverything(bool actual){
        statusBar()->removeWidget(parentalLockL);*/
 }
 void Gui::reset(){
-     TIcon->setIcon(QIcon(":red_glasses"));
+     TIcon->setIcon(QPixmap(":red_glasses"));
      timer->stop();
      cal->setWeeklyDate = QDateTime();
      setWindowTitle("'qshutdown'");
