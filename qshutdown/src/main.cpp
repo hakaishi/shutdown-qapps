@@ -107,14 +107,14 @@ int main(int argc, char *argv[]){
                     << "or --help\tPrints this message.\n\t-i\t\tPrints "
                     << "information.\n\t-v\t\tPrints all errors and warnings.\n"
                     << "\t-s or --start\tStarts the countdown for the set time."
-                    << endl;
+                    << Qt::endl;
          if(arg[1] == 'i')
-           myOutput << info << endl;
+           myOutput << info << Qt::endl;
        }
        if(arg != "-h" && arg != "--help" && arg != "-i"
         && !((arg[0] == '-' && (arg.contains("s") || arg.contains("v")))
           || args.contains("--start")))
-         myOutput << "Wrong options! Try qshutdown -h" << endl;
+         myOutput << "Wrong options! Try qshutdown -h" << Qt::endl;
        if(arg.contains("-") && arg.contains("-v"))
          verbose = true;
      }
@@ -146,7 +146,7 @@ int main(int argc, char *argv[]){
        }
        else{ //if registering qshutdown fails (also because it is already
              // registered, show window
-         myOutput << "\nqshutdown is already running!\n" << endl;
+         myOutput << "\nqshutdown is already running!\n" << Qt::endl;
          QDBusInterface iface(SERVICE_NAME, OBJECT_NAME, "",
            QDBusConnection::sessionBus(), &window);
          QDBusMessage response = iface.call("showRunningProgram");
@@ -154,14 +154,14 @@ int main(int argc, char *argv[]){
            if(verbose)
              myOutput << "QDBusInterface " << iface.interface() << " seems to be valid... -> "
                       << (iface.isValid()? "true":"false") << "\nW: " << response.errorName()
-                      << ": " << response.errorMessage() << "\nYou can ignore this.\n\n" << endl;
+                      << ": " << response.errorMessage() << "\nYou can ignore this.\n\n" << Qt::endl;
            QDBusInterface iface2(SERVICE_NAME, OBJECT_NAME, "local.Gui",
              QDBusConnection::sessionBus(), &window);
            QDBusMessage response2 = iface2.call("showRunningProgram");
            if(response2.type() == QDBusMessage::ErrorMessage)
              myOutput << "QDBusInterface " << iface2.interface() << " seems to be valid... -> "
                       << (iface2.isValid()? "true":"false") << "\nW: " << response2.errorName()
-                      << ": " << response2.errorMessage() << "\nPlease report this." << endl;
+                      << ": " << response2.errorMessage() << "\nPlease report this." << Qt::endl;
            else if(!args.empty() && ((args[0][0] == '-' && args[0].contains("s"))
              || args.contains("--start")))
              iface2.call("set");

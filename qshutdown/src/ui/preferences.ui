@@ -86,7 +86,7 @@
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
+            <y>-123</y>
             <width>400</width>
             <height>588</height>
            </rect>
@@ -395,14 +395,14 @@ should be checked by default at startup</string>
 should be checked by default at startup</string>
                </property>
                <property name="text">
-                <string>&quot;&amp;Warnings on?&quot;</string>
+                <string>&amp;Warn before end of countdown</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QCheckBox" name="disableCndPop">
+              <widget class="QCheckBox" name="remindCndPop">
                <property name="text">
-                <string>Disable popup about countdown not running</string>
+                <string>&amp;Remind me when countdown is not running</string>
                </property>
               </widget>
              </item>
@@ -753,7 +753,7 @@ qshutdown should quit after the countdown ended.</string>
   <tabstop>autostart</tabstop>
   <tabstop>lock</tabstop>
   <tabstop>warn</tabstop>
-  <tabstop>disableCndPop</tabstop>
+  <tabstop>remindCndPop</tabstop>
   <tabstop>countdown</tabstop>
   <tabstop>hideMe</tabstop>
   <tabstop>log</tabstop>

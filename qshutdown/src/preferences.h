@@ -34,6 +34,7 @@ class Preferences : public QDialog, public Ui::Preferences {
      bool getClosed();
      bool lockMyScreen;
      bool showNotRunning;
+     bool showEndOfCountdown;
 
     private:
      bool        isClosed;

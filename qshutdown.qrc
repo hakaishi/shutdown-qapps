@@ -5,6 +5,6 @@
         <file alias="red_glasses_image">qshutdown/src/pixmap/red_glasses.png</file>
         <file alias="info">qshutdown/src/pixmap/info.svg</file>
         <file alias="warn">qshutdown/src/pixmap/warn.svg</file>
-        <file alias="running">qshutdown/src/pixmap/running.svg</file>
+        <file alias="running">qshutdown/src/pixmap/running.png</file>
     </qresource>
 </RCC>

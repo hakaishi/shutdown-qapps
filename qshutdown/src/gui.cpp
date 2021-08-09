@@ -357,7 +357,7 @@ void Gui::power(QAction *action){
 }
 
 void Gui::showW(){
-     if(warnings->isChecked()){ //warnings is checked
+     if(pref->showEndOfCountdown){ //warnings is checked
        if(timeRunning){
          TIcon->showMessage(tr("Warning"), tr("Action imminent!"), QIcon(":warn"), 5000);
          showRunningProgram();
@@ -520,7 +520,7 @@ void Gui::updateT(){
        if(!Time())
          return;
 
-       if(warnings->isChecked() && (((i<=100) && (i>95)) || ((i<=40) && (i>35))) && !ti->isActive())
+       if(pref->showEndOfCountdown && (((i<=100) && (i>95)) || ((i<=40) && (i>35))) && !ti->isActive())
          ti->start(30000);
 
        if(i > 3600){ //Display hours and minutes
@@ -649,7 +649,7 @@ void Gui::saveLog(){
      
        if(!logfile.open(QIODevice::ReadWrite | QIODevice::Text)){
          QTextStream myOutput;
-         myOutput << "E: Can not open log.txt!" << endl;
+         myOutput << "E: Can not open log.txt!" << Qt::endl;
          return;
        }
 
@@ -849,7 +849,7 @@ void Gui::loadSettings(){
 
      if(!settings.isWritable()){
        QTextStream myOutput;
-       myOutput << "W: qshutdown settings is not writable!" << endl;
+       myOutput << "W: qshutdown settings is not writable!" << Qt::endl;
      }
 
      if(!settings.contains("Lock_all"))
@@ -904,7 +904,6 @@ void Gui::loadSettings(){
      radio2->setChecked(settings.value("CheckBoxes/countdown",true).toBool());
      lock->setChecked(settings.value("CheckBoxes/lock",true).toBool());
      comboBox->setCurrentIndex(settings.value("Power/comboBox",0).toInt());
-     warnings->setChecked(settings.value("CheckBoxes/warnings",true).toBool());
      log_action->setChecked(settings.value("Logfile/logging",false).toBool());
      logFileSize = settings.value("Logfile/size",1.5).toDouble();
 
@@ -930,7 +929,6 @@ void Gui::loadSettings(){
        ptr->setFont(*font1);
      ok->setFont(*font2);
      minim->setFont(*font2);
-     warnings->setFont(*font3);
      lock->setFont(*font3);
      now->setFont(*font3);
      toolButton->setFont(*font3);
@@ -1059,7 +1057,6 @@ void Gui::getFonts(){
        ptr->setFont(*font1);
      ok->setFont(*font2);
      minim->setFont(*font2);
-     warnings->setFont(*font3);
      lock->setFont(*font3);
      now->setFont(*font3);
      toolButton->setFont(*font3);

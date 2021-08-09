@@ -45,7 +45,7 @@ void Editor::showEvent(QShowEvent* show_editor){
      isClosed = false;
      if(!confFile->open(QIODevice::ReadWrite | QIODevice::Text)){
        QTextStream myOutput(stdout);
-       myOutput << "E: Can not open qshutdown settings file!" << endl;
+       myOutput << "E: Can not open qshutdown settings file!" << Qt::endl;
        return;
      }
      QString text;                      //reading content of qshutdown settings

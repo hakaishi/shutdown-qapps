@@ -215,8 +215,8 @@ void Preferences::loadSettings(){
      radio1->setChecked(settings->value("CheckBoxes/target_time",false).toBool());
      radio2->setChecked(settings->value("CheckBoxes/countdown",true).toBool());
      lock->setChecked(settings->value("CheckBoxes/lock",true).toBool());
-     warn->setChecked(settings->value("CheckBoxes/warnings",false).toBool());
-     disableCndPop->setChecked(settings->value("CheckBoxes/dont_show_not_running",false).toBool());
+     warn->setChecked(settings->value("CheckBoxes/warn_before_end_of_countdown",false).toBool());
+     remindCndPop->setChecked(settings->value("CheckBoxes/remind_not_running",true).toBool());
      log->setChecked(settings->value("Logfile/logging",false).toBool());
      lockS->setChecked(settings->value("Lock_screen",true).toBool());
      autostart->setChecked(settings->value("Autostart").toBool());
@@ -231,7 +231,8 @@ void Preferences::loadSettings(){
      lockMyScreen = settings->value("Lock_screen").toBool();
      quitAfterCountdown->setChecked(settings->value("Quit_after_countdown_ended",false).toBool());
      
-     showNotRunning = !disableCndPop->isChecked();
+     showNotRunning = remindCndPop->isChecked();
+     showEndOfCountdown = warn->isChecked();
 }
 
 void Preferences::saveToConfFile(){
@@ -252,8 +253,8 @@ void Preferences::saveToConfFile(){
        settings->setValue("CheckBoxes/target_time",radio1->isChecked());
        settings->setValue("CheckBoxes/countdown",radio2->isChecked());
        settings->setValue("CheckBoxes/lock",lock->isChecked());
-       settings->setValue("CheckBoxes/warnings",warn->isChecked());
-       settings->setValue("CheckBoxes/dont_show_not_running",disableCndPop->isChecked());
+       settings->setValue("CheckBoxes/warn_before_end_of_countdown",warn->isChecked());
+       settings->setValue("CheckBoxes/remind_not_running",remindCndPop->isChecked());
        settings->setValue("Logfile/logging",log->isChecked());
        settings->setValue("Lock_screen",lockS->isChecked());
        settings->setValue("Autostart",autostart->isChecked());
@@ -283,7 +284,8 @@ void Preferences::saveToConfFile(){
        myHibernate = userDef4->toPlainText();
      else mySuspend = "";
      
-     showNotRunning = !disableCndPop->isChecked();
+     showNotRunning = remindCndPop->isChecked();
+     showEndOfCountdown = warn->isChecked();
 
      this->close();
 }
@@ -306,7 +308,7 @@ void Preferences::resetSettings(){
        radio2->setChecked(true);
        lock->setChecked(true);
        warn->setChecked(true);
-       disableCndPop->setChecked(false);
+       remindCndPop->setChecked(true);
        log->setChecked(false);
        lockS->setChecked(true);
        shutdownM->setCurrentIndex(0);
@@ -358,7 +360,7 @@ void Preferences::autostartFile(){
        }
        if(!autostartFile.open(QIODevice::ReadWrite | QIODevice::Text)){
          QTextStream myOutput(stdout);
-         myOutput << "E: Can not open qshutdown settings file!" << endl;
+         myOutput << "E: Can not open qshutdown settings file!" << Qt::endl;
          return;
        }
          QString autostartContent("[Desktop Entry]\nName=qshutdown\n"

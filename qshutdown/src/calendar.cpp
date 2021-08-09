@@ -284,7 +284,7 @@ QList<QTime> Calendar::getSortedTimes(){
      for(int i=0; i < times.count()-1; i++){   //sort all available times
        for(int x=0; x < times.count()-1; x++){
          if(times[x] > times[x+1])
-           times.swap(x,x+1);
+           times.swapItemsAt(x,x+1);
        }
      }
 
