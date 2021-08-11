@@ -90,7 +90,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      connect(font1Spin, SIGNAL(valueChanged(int)), this, SLOT(fontSize1Changed(int)));
      connect(font2Spin, SIGNAL(valueChanged(int)), this, SLOT(fontSize2Changed(int)));
      connect(font3Spin, SIGNAL(valueChanged(int)), this, SLOT(fontSize3Changed(int)));
-     connect(fontComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(fontChanged(QString)));
+     connect(fontComboBox, SIGNAL(currentFontChanged(QFont)), this, SLOT(fontChanged(QFont)));
      connect(confEditButton, SIGNAL(clicked(bool)), this, SIGNAL(editConf()));
      connect(shutdownM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef1()));
      connect(rebootM, SIGNAL(currentIndexChanged(int)), this, SLOT(enableUserDef2()));
@@ -334,7 +334,7 @@ void Preferences::closeEvent(QCloseEvent* close_pref){
 
 bool Preferences::getClosed(){ return isClosed; }
 
-void Preferences::fontChanged(QString font){ fonts = font; changeFont(); }
+void Preferences::fontChanged(QFont font){ fonts = font.toString(); changeFont(); }
 
 void Preferences::fontSize1Changed(int f1){ fontS1 = f1; changeFont(); }
 

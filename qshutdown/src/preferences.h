@@ -46,7 +46,7 @@ class Preferences : public QDialog, public Ui::Preferences {
      void loadSettings();
      void saveToConfFile();
      void resetSettings();
-     void fontChanged(QString font);
+     void fontChanged(QFont font);
      void resetFont();
      void fontSize1Changed(int f1);
      void fontSize2Changed(int f2);

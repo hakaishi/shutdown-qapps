@@ -20,7 +20,9 @@
 #include "ui_gui.h"
 #include <QtGlobal>
 #include <QSystemTrayIcon>
+#if QT_VERSION < 0x060000
 #include <QDesktopWidget>
+#endif
 #include <QTextDocumentFragment>
 #include <QDir>
 #include <QElapsedTimer>

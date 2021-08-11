@@ -24,6 +24,9 @@
 #include <QFile>
 #include <QDir>
 #include <QStandardPaths>
+#include <QTimer>
+#include <QJsonDocument>
+#include <QJsonArray>
 
 #ifndef Q_OS_WIN32
   #include <QtDBus>
@@ -82,7 +85,11 @@ Gui::Gui(){
      hintMsgBox->setWindowTitle(tr("Info"));
      hintMsgBox->setWindowModality(Qt::NonModal);
      hintMsgBox->setHtml(tr("<b>General:</b><br/>Each line in the text editor will be executed as one separate process. Put a backslash at the end of the line for a multiline command.<br/><br/>The message boxes will close themselves after 10 seconds.<br/>To start a program just type i.e. \"firefox\" or \"firefox www.google.com\" and then click on Start. Commands etc. can be linked by \"&&\" etc. <br/><br/>If the process is \"finished\" although it is still running, then try the --nofork option (i.e. kopete --nofork). Note that this will also occur for some programs like gedit, firefox or gnome-terminal if they are already running.<br/><br/>When you want to start a program or command with sudo, please use for example gksu(do) or kdesu(do).<br/><br/><b>Files:</b><br/>The configuration-file can be found at <i>%2</i>.<br/>The log files can be found at <i>%1</i>.<br/><br/><b>make examples:</b><br/>&nbsp;make -C /path/to/project<br/>&nbsp;make clean -C /path/to/project<br/><br/><b>About Errors:</b><br/>Because almost every program gives a different error code, it is impossible to say what happened. So just log the output and see what kind of error occurred. The output files can be found at <i>%1</i>.<br/><br/>If the shutdown won't work, it might mean that \"sudo shutdown -P now\" is used. This needs admin permissions. You can do the this:<br/><br/>Post the following in a terminal:<pre>EDITOR=nano sudo -E visudo</pre> and add this line:<pre>* ALL = NOPASSWD:/sbin/shutdown</pre> whereas * replaces the username or %groupname.")
-     .arg(QDir().toNativeSeparators(QStandardPaths::standardLocations(QStandardPaths::DataLocation).first()))
+                    #if QT_VERSION >= 0x060000
+     .arg(QDir().toNativeSeparators(QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).first()))
+                    #else
+                         .arg(QDir().toNativeSeparators(QStandardPaths::standardLocations(QStandardPaths::DataLocation).first()))
+                    #endif
      .arg(QSettings().fileName()));
 
      connect(action_Configure, SIGNAL(triggered(bool)), pref, SLOT(show()));
@@ -103,6 +110,7 @@ Gui::Gui(){
 Gui::~Gui(){ delete hintMsgBox; delete logBox; delete messages; delete processes; delete processArgs; }
 
 void Gui::handleMessageEvent(int a){
+    Q_UNUSED(a);
     singleShot->stop();
     delete singleShot;
 }
@@ -111,7 +119,7 @@ void Gui::setQuit(int idx) {quitCheckBox->setDisabled(idx > 0); }
 
 void Gui::closeEvent(QCloseEvent* window_close){
      if(!pref->settings->isWritable())
-       *myOutput << "W: qprogram-starter settings file is not writable!" << endl;
+       *myOutput << "W: qprogram-starter settings file is not writable!" << Qt::endl;
      else
        saveSettings();
      //qApp->quit();
@@ -153,7 +161,11 @@ void Gui::run(){ //To start either the timer or start the process
        timeEdit->setDisabled(true);
        startB->setDisabled(true);
 
+       #if QT_VERSION >= 0x060000
+       QStringList list = plainTextEdit->toPlainText().split("\n", Qt::SkipEmptyParts);
+#else
        QStringList list = plainTextEdit->toPlainText().split("\n", QString::SkipEmptyParts);
+#endif
        QStringList cmd;
        QStringList pices;
        foreach( QString line, list ) {
@@ -312,14 +324,18 @@ void Gui::output(){ //write output into a file if loggingCheckBox is checked
      if(loggingCheckBox->isChecked()){
        QString path = QDir().toNativeSeparators(
          QStandardPaths::standardLocations(
-            QStandardPaths::DataLocation).first());
+                #if QT_VERSION >= 0x060000
+            QStandardPaths::AppDataLocation).first());
+#else
+                       QStandardPaths::DataLocation).first());
+                #endif
        if(!QDir(path).exists()) QDir().mkpath(path);
        QFile outputLog(QDir().toNativeSeparators(path + QDir::separator() + "outputLog.txt"));
        if(!outputLog.open(QIODevice::Append))
          return;
        QTextStream str(&outputLog);
        str << QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")
-           << ": " << processArgs->first() << ":" << endl << string << endl;
+           << ": " << processArgs->first() << ":" << Qt::endl << string << Qt::endl;
        outputLog.close();
      }
 }
@@ -331,16 +347,20 @@ void Gui::errorOutput(){ //write error output into a file if loggingCheckBox is 
      if(loggingCheckBox->isChecked()){
        QString path = QDir().toNativeSeparators(
          QStandardPaths::standardLocations(
-            QStandardPaths::DataLocation).first());
+                #if QT_VERSION >= 0x060000
+            QStandardPaths::AppDataLocation).first());
+#else
+                       QStandardPaths::DataLocation).first());
+                #endif
        if(!QDir(path).exists()) QDir().mkpath(path);
        QFile errorLog(QDir().toNativeSeparators(path + QDir::separator() + "errorLog.txt"));
        if(!errorLog.open(QIODevice::Append))
          return;
        QTextStream str(&errorLog);
        str << QDateTime::currentDateTime().toString("yyyy/MM/dd hh:mm:ss")
-           << ": " << processArgs->first() << ":" << endl 
+           << ": " << processArgs->first() << ":" << Qt::endl
            << (string.isEmpty() ? "Unknown error. No such program?" : string)
-           << endl << endl;
+           << Qt::endl << Qt::endl;
        errorLog.close();
      }
      

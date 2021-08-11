@@ -90,7 +90,12 @@ int main(int argc, char *argv[]){
        "didn't restrict the access)</td></tr><tr><td>Shift+E</td><td>to edit the configuration file (for "
        "this a password is necessary. If you are a user, you can set an \"empty password\" (leave the "
        "password field empty)).</td></tr></table>").arg(QSettings().fileName())
-       .arg(QDir().toNativeSeparators(QStandardPaths::standardLocations(QStandardPaths::DataLocation).first())));
+                          #if QT_VERSION >= 0x060000
+                               .arg(QDir().toNativeSeparators(QStandardPaths::standardLocations(QStandardPaths::AppDataLocation).first())));
+
+#else
+                                  .arg(QDir().toNativeSeparators(QStandardPaths::standardLocations(QStandardPaths::DataLocation).first())));
+#endif
      QTextDocumentFragment infoDoc;
      infoDoc = QTextDocumentFragment::fromHtml(infoStr);
      QString info = infoDoc.toPlainText();

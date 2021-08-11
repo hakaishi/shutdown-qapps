@@ -25,6 +25,7 @@
 #include "power.h"
 #include <QTimer>
 #include <QStandardPaths>
+#include <QActionGroup>
 
 Gui::Gui(){
 
@@ -259,7 +260,7 @@ void Gui::saveOldComboBoxIndex(int i){
 void Gui::setDate(){
      if(!cal->weekly->isChecked() && !timeRunning) {
        if(cal->setCalendarDate.date() != QDate())
-         toolButton->setText(cal->setCalendarDate.date().toString(Qt::SystemLocaleShortDate));
+         toolButton->setText(QLocale::system().toString(cal->setCalendarDate.date(),QLocale::ShortFormat));
      }
      else if(!cal->setWeeklyDate.time().isNull() && !timeRunning){
        toolButton->setText(cal->setWeeklyDate.date().toString("ddd"));
@@ -310,10 +311,11 @@ void Gui::setDate(){
 }
 
 void Gui::center(){
-     QDesktopWidget *desktop = qApp->desktop();
-     QPoint pos((desktop->width() - frameGeometry().width()) / 2,
-                (desktop->height() - frameGeometry().height()) / 2);
-     move(pos);
+#if QT_VERSION >= 0x060000
+        move(QWidget::screen()->geometry().center() - rect().center());
+#else
+        move(QApplication::desktop()->rect().center() - rect().center());
+#endif
 }
 
 void Gui::iconActivated(QSystemTrayIcon::ActivationReason reason){
@@ -642,7 +644,11 @@ void Gui::saveLog(){
      if(log_action->isChecked()){ //if logfile is set in the icon contextmenu
        QString path = QDir().toNativeSeparators(
          QStandardPaths::standardLocations(
-           QStandardPaths::DataLocation).first());
+                        #if QT_VERSION >= 0x060000
+           QStandardPaths::AppDataLocation).first());
+#else
+   QStandardPaths::DataLocation).first());
+                #endif
        if(!QDir(path).exists()) QDir().mkpath(path);
        QFile logfile(QDir().toNativeSeparators(path + QDir::separator() + "log.txt"));
      
