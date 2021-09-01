@@ -7,13 +7,13 @@ Dependencies: qtbase5-dev, qttools5-dev-tools, build-essential
 If you want to install from source, open a terminal and change into this folder.
 To install type:
 
-`qmake`
+`qmake`  
 `sudo make install distclean`
 
 ## UNINSTALL
 To uninstall type:
 
-`qmake`     (if the Makefile has been removed)
+`qmake`     (if the Makefile has been removed)  
 `sudo make deinstall`
 
 (please note that the users qprogram-starter settings file and

@@ -8,7 +8,7 @@ Dependencies: qtbase5-dev, qttools5-dev-tools, build-essential
 If you want to install from source, open a terminal and change into this folder.
 To install type:
 
-`qmake`
+`qmake`  
 `sudo make install distclean`
 
 
@@ -35,7 +35,7 @@ starting with "Password" manually from the qshutdown settings file.
 
 To uninstall type:
 
-`qmake`     (if the Makefile has been removed)
+`qmake`     (if the Makefile has been removed)  
 `sudo make deinstall`
 
 (please note that the users settings and log files won't be removed)
@@ -43,14 +43,9 @@ To uninstall type:
 
 ## KNOWN ISSUES:
 
-There is no system tray icon for qshutdown in Ubuntu 11.04.
-SOLUTION: Type the following line in a terminal:
-
-gsettings set com.canonical.Unity.Panel systray-whitelist "['all']"
-
 In case you want to use the sudo shutdown command and you have set
 the rights in the sudoers, but it still doesn't work, please specify
-your own command in the preferences and try if "sudo shutdown -hP now" works.
+your own command in the preferences and try if `sudo shutdown -hP now` works.
 
 For most systems using the Gnome Shell a certain DBus method has been removed,
 thus a shutdown dialog will be likely to appear if qshutdown's methods have
