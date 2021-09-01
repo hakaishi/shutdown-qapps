@@ -17,12 +17,12 @@ To install from the repositories of Debian based systems like Ubuntu:
 There is a launchpad ppa repository as well, but be aware that the builds are more unstable.
 For qshutdown:
 
-1. `sudo apt-add repository ppa:hakaishi/qshutdown`
+1. `sudo apt-add-repository ppa:hakaishi/qshutdown`
 2. `sudo apt-get update && sudo apt-get install qshutdown`
 
 For qprogram-starter:
 
-1. `sudo apt-add repository ppa:hakaishi/qprogram-starter`
+1. `sudo apt-add-repository ppa:hakaishi/qprogram-starter`
 2. `sudo apt-get update && sudo apt-get install qprogram-starter`
 
 ### Windows
