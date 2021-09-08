@@ -11,6 +11,10 @@ MOC_DIR = build
 UI_DIR = build
 RCC_DIR = build
 
+win32 {
+RC_FILE += icon.rc
+}
+
 QT += widgets gui
 
 system(lrelease qshutdown.pro)

@@ -188,7 +188,7 @@ void Gui::run(){ //To start either the timer or start the process
           QProcess* proc = new QProcess(this);
           connect(proc, SIGNAL(readyReadStandardOutput()), this, SLOT(output()));
           connect(proc, SIGNAL(readyReadStandardError()), this, SLOT(errorOutput()));
-          connect(proc, SIGNAL(error(QProcess::ProcessError)), this, SLOT(errorOutput()));
+          connect(proc, &QProcess::errorOccurred, this,&Gui::errorOutput);
           connect(proc, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(next()));
           *processes << proc;
             
