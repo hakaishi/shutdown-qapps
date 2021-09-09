@@ -26,7 +26,7 @@
 #ifndef POWER_H
 #define POWER_H
 
-#ifndef Q_OS_WIN32
+#ifdef Q_OS_LINUX
   #include <QtDBus>
 #endif
 
@@ -56,7 +56,7 @@ bool user = false;
 QString myShutdown, myReboot, mySuspend, myHibernate;
 
 void shutdown(){
- #ifndef Q_OS_WIN32
+ #ifdef Q_OS_LINUX
   QDBusMessage response;
   //variables for automatic mode
   bool g_pwr1 = false;
@@ -83,9 +83,12 @@ void shutdown(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined(Q_OS_WIN32)
      QProcess::startDetached("shutdown", QStringList() << "-s" << "-f" << "-t" << "00"); // Windows command to shutdown immediately
      }
+    #elif defined(Q_OS_MACOS)
+       QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to shut down");
+    }
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "poweroff"))
        return;
@@ -93,7 +96,7 @@ void shutdown(){
      g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "shutdown");
      if(verbose && !g_pwr1 && !g_pwr2)
        oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
-            << endl;
+            << Qt::endl;
      else if(g_pwr1 || g_pwr2)
        return;
 
@@ -101,7 +104,7 @@ void shutdown(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -109,7 +112,7 @@ void shutdown(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -117,7 +120,7 @@ void shutdown(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -125,7 +128,7 @@ void shutdown(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -133,7 +136,7 @@ void shutdown(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -141,11 +144,11 @@ void shutdown(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
-     if(QProcess::startDetached("sudo", QStringList() << "shutdown"<< "-P" << "now"))
+     if(QProcess::startDetached("sudo", QStringList() << "shutdown" << "-P" << "now"))
        return;
      QProcess::startDetached("sudo", QStringList() << "shutdown" << "-h" << "-P" << "now");
   } //end of automatic
@@ -154,7 +157,7 @@ void shutdown(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(gnome){
@@ -162,7 +165,7 @@ void shutdown(){
      g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "shutdown");
      if(verbose && !g_pwr1 && !g_pwr2)
        oput << "W: gnome-power-cmd, gnome-power-cmd.sh and gnome-session-quit didn't work"
-            << endl;
+            << Qt::endl;
      if(g_pwr1 || g_pwr2)
        return;
 
@@ -170,7 +173,7 @@ void shutdown(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -178,7 +181,7 @@ void shutdown(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
   }
   else if(kde){
@@ -186,7 +189,7 @@ void shutdown(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
       }
   }
   else if(hal_){
@@ -194,7 +197,7 @@ void shutdown(){
     if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
        }
   }
   else if(consolekit){
@@ -202,7 +205,7 @@ void shutdown(){
     if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
     }
   }
   else if(sudo){
@@ -229,7 +232,7 @@ void shutdown(){
 }
 
 void reboot(){
- #ifndef Q_OS_WIN32
+ #ifdef Q_OS_LINUX
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
@@ -255,9 +258,13 @@ void reboot(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined(Q_OS_WIN32)
      QProcess::startDetached("shutdown", QStringList() << "-r" << "-f" << "-t" << "00"); // Windows command to reboot immediately
-     }
+}
+   #elif defined(Q_OS_MACOS)
+      QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to restart");
+}
+
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "reboot"))
        return;
@@ -265,7 +272,7 @@ void reboot(){
      g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "reboot");
      if(verbose && !g_pwr1 && !g_pwr2)
        oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-            << endl;
+            << Qt::endl;
      else if(g_pwr1 || g_pwr2)
        return;
 
@@ -273,7 +280,7 @@ void reboot(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -281,7 +288,7 @@ void reboot(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -291,7 +298,7 @@ void reboot(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -299,7 +306,7 @@ void reboot(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -307,7 +314,7 @@ void reboot(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -318,7 +325,7 @@ void reboot(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(gnome){
@@ -326,7 +333,7 @@ void reboot(){
     g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "reboot");
     if(verbose && !g_pwr1 && !g_pwr2)
       oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-           << endl;
+           << Qt::endl;
     if(g_pwr1 || g_pwr2)
       return;
 
@@ -334,7 +341,7 @@ void reboot(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(kde){
@@ -342,7 +349,7 @@ void reboot(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(hal_){
@@ -350,7 +357,7 @@ void reboot(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(consolekit){
@@ -358,7 +365,7 @@ void reboot(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(sudo){
@@ -383,7 +390,7 @@ void reboot(){
 }
 
 void suspend(){
- #ifndef Q_OS_WIN32
+ #ifdef Q_OS_LINUX
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
@@ -415,7 +422,7 @@ void suspend(){
        if(response.type() == QDBusMessage::ErrorMessage){
          if(verbose)
            oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
+                << response.errorMessage() << Qt::endl;
        }
        else
          lock_works = true;
@@ -423,28 +430,28 @@ void suspend(){
        if(!lock_works){
          if(!QProcess::startDetached("gnome-screensaver-command", QStringList() << "-l")){
            if(verbose) oput << "W: gnome-screensaver-command -l didn't work"
-                            << endl;
+                            << Qt::endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
-         if(!QProcess::startDetached("qdbus", QStringList() << "org.freedesktop.ScreenSaver" << "/ScreenSaver" << "Lock")){
+         if(!QProcess::startDetached("qdbus", QStringList() << "org.freedesktop.ScreenSaver" << "/ScreenSaver Lock")){
            if(verbose) oput << "W: qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock didn't work"
-                            << endl;
+                            << Qt::endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
          if(!QProcess::startDetached("dcop", QStringList() << "kdesktop" << "KScreensaverIface" << "lock")){
            if(verbose) oput << "W: dcop kdesktop KScreensaverIface lock didn't work"
-                            << endl;
+                            << Qt::endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
          if(!QProcess::startDetached("xscreensaver-command", QStringList() << "-lock")){
            if(verbose) oput << "W: xscreensaver-command -lock didn't work"
-                            << endl;
+                            << Qt::endl;
           }
 	  else lock_works = true;
         }
@@ -452,10 +459,14 @@ void suspend(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined(Q_OS_WIN32)
      QProcess::startDetached("powercfg", QStringList() << "-hibernate" << "off"); // enable suspend
      QProcess::startDetached("rundll32", QStringList() << "powrprof.dll,SetSuspendState");
      }
+
+    #elif defined(Q_OS_MACOS)
+      QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to sleep");
+    }
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "suspend"))
        return;
@@ -464,7 +475,7 @@ void suspend(){
      g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "suspend");
      if(!g_pwr1 && !g_pwr2 && verbose)
        oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-            << endl;
+            << Qt::endl;
      else if(g_pwr1 || g_pwr2)
        return;
 
@@ -472,7 +483,7 @@ void suspend(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -480,7 +491,7 @@ void suspend(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -488,7 +499,7 @@ void suspend(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -496,7 +507,7 @@ void suspend(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
   } //end of automatic
   else if(login1){
@@ -504,7 +515,7 @@ void suspend(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(gnome){
@@ -512,14 +523,14 @@ void suspend(){
     g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "suspend");
     if(!g_pwr1 && !g_pwr2 && verbose)
       oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-           << endl;
+           << Qt::endl;
   }
   else if(hal_){
     response = freedesktopHal.call("Suspend",0);
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(upower_){
@@ -527,7 +538,7 @@ void suspend(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(devicekit){
@@ -535,7 +546,7 @@ void suspend(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   //else if(user)
@@ -555,7 +566,7 @@ void suspend(){
 }
 
 void hibernate(){
- #ifndef Q_OS_WIN32
+ #ifdef Q_OS_LINUX
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
@@ -587,7 +598,7 @@ void hibernate(){
        if(response.type() == QDBusMessage::ErrorMessage){
          if(verbose)
            oput << "W: " << response.errorName() << ": "
-                << response.errorMessage() << endl;
+                << response.errorMessage() << Qt::endl;
        }
        else
          lock_works = true;
@@ -595,28 +606,28 @@ void hibernate(){
        if(!lock_works){
          if(!QProcess::startDetached("gnome-screensaver-command", QStringList() << "-l")){
            if(verbose) oput << "W: gnome-screensaver-command -l didn't work"
-                            << endl;
+                            << Qt::endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
          if(!QProcess::startDetached("qdbus", QStringList() << "org.freedesktop.ScreenSaver" << "/ScreenSaver" << "Lock")){
            if(verbose) oput << "W: qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock didn't work"
-                            << endl;
+                            << Qt::endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
          if(!QProcess::startDetached("dcop", QStringList() << "kdesktop" << "KScreensaverIface" << "lock")){
            if(verbose) oput << "W: dcop kdesktop KScreensaverIface lock didn't work"
-                            << endl;
+                            << Qt::endl;
           }
 	  else lock_works = true;
         }
        if(!lock_works){
          if(!QProcess::startDetached("xscreensaver-command", QStringList() << "-lock")){
            if(verbose) oput << "W: xscreensaver-command -lock didn't work"
-                            << endl;
+                            << Qt::endl;
           }
 	  else lock_works = true;
         }
@@ -624,10 +635,13 @@ void hibernate(){
  #endif
 
   if(automatic){
-   #ifdef Q_OS_WIN32
+   #if defined (Q_OS_WIN32)
      QProcess::startDetached("powercfg", QStringList() << "-hibernate" << "on"); // enable hibernate
-     QProcess::startDetached("rundll32 powrprof.dll,SetSuspendState");
+     QProcess::startDetached("rundll32", QStringList() << "powrprof.dll,SetSuspendState");
      }
+    #elif defined(Q_OS_MACOS)
+       QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to sleep");
+    }
    #else
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "hibernate"))
        return;
@@ -635,7 +649,7 @@ void hibernate(){
      g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "hibernate");
      if(!g_pwr1 && !g_pwr2 && verbose)
        oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-            << endl;
+            << Qt::endl;
      else if (g_pwr1 || g_pwr2)
        return;
 
@@ -643,7 +657,7 @@ void hibernate(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -651,7 +665,7 @@ void hibernate(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -659,7 +673,7 @@ void hibernate(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
      else return;
 
@@ -667,7 +681,7 @@ void hibernate(){
      if(response.type() == QDBusMessage::ErrorMessage){
        if(verbose)
          oput << "W: " << response.errorName() << ": "
-              << response.errorMessage() << endl;
+              << response.errorMessage() << Qt::endl;
      }
   } // end of automatic
   else if(login1){
@@ -675,7 +689,7 @@ void hibernate(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(gnome){
@@ -683,14 +697,14 @@ void hibernate(){
     g_pwr2 = QProcess::startDetached("gnome-power-cmd", QStringList() << "hibernate");
     if(!g_pwr1 && !g_pwr2 && verbose)
       oput << "W: gnome-power-cmd and gnome-power-cmd.sh didn't work"
-           << endl;
+           << Qt::endl;
   }
   else if(hal_){
     response = freedesktopHal.call("Hibernate");
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(upower_){
@@ -698,7 +712,7 @@ void hibernate(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   else if(devicekit){
@@ -706,7 +720,7 @@ void hibernate(){
     if(response.type() == QDBusMessage::ErrorMessage){
       if(verbose)
         oput << "W: " << response.errorName() << ": "
-             << response.errorMessage() << endl;
+             << response.errorMessage() << Qt::endl;
     }
   }
   //else if(user)
