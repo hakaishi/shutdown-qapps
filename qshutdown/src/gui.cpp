@@ -863,7 +863,7 @@ void Gui::loadSettings(){
      if(!settings.contains("MainWindow/keep_proportions"))
        settings.setValue("MainWindow/keep_proportions",true);
 
-     pref->showNotRunning = !settings.value("CheckBoxes/dont_show_not_running",false).toBool();
+     pref->showNotRunning = settings.value("CheckBoxes/remind_not_running",true).toBool();
        
     #ifdef Q_OS_LINUX
      QFile autostartFile(QDir::homePath() + "/.config/autostart/qshutdown.desktop");
