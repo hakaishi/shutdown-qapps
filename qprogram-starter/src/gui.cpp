@@ -16,6 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#if defined(Q_OS_WIN32)
+#include <Windows.h>
+#endif
 #include "gui.h"
 #include "preferences.h"
 #include "history.h"
@@ -42,12 +45,16 @@ Gui::Gui(){
 
      myOutput = new QTextStream(stdout);
 
+#if defined(Q_OS_LINUX)
      if(!QProcessEnvironment().isEmpty())
         shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
      if(shell.isEmpty() && QFile("/bin/bash").exists())
         shell = "/bin/bash";
      else
        *myOutput << "E: No shells found! qprogram-starter might not work as expected...";
+#elif defined(Q_OS_WIN32)
+     shell = "C:\\Windows\\System32\\cmd.exe";
+#endif
 
    //Versioning
      QFile versionFile(":version");
@@ -139,7 +146,11 @@ void Gui::check(){ //To check if start time is reached
      secondsToTimeInTheFuture = QDateTime::currentDateTime().secsTo(timeInTheFuture);
      if(secondsToTimeInTheFuture <= 0){
        timer->stop();
-       if(processes->length() > 0) processes->first()->start(shell, QStringList() << "-c" << processArgs->first());
+       QString console = "-c";
+#if defined(Q_OS_WIN32)
+       console = "/C";
+#endif
+       if(processes->length() > 0) processes->first()->start(shell, QStringList() << console << processArgs->first());
      }
 }
 
@@ -186,6 +197,13 @@ void Gui::run(){ //To start either the timer or start the process
          
        foreach(QString p, cmd){
           QProcess* proc = new QProcess(this);
+#if defined(Q_OS_WIN32)
+          proc->setCreateProcessArgumentsModifier(
+                          [](QProcess::CreateProcessArguments *args) {
+                  args->flags |= CREATE_NEW_CONSOLE;
+                  args->startupInfo->dwFlags &=~ STARTF_USESTDHANDLES;
+          });
+#endif
           connect(proc, SIGNAL(readyReadStandardOutput()), this, SLOT(output()));
           connect(proc, SIGNAL(readyReadStandardError()), this, SLOT(errorOutput()));
           connect(proc, &QProcess::errorOccurred, this,&Gui::errorOutput);
@@ -197,8 +215,13 @@ void Gui::run(){ //To start either the timer or start the process
 
        if(atDateCheckBox->isChecked())
          timer->start(1000);
-       else
-         if(processes->length() > 0) processes->first()->start(shell, QStringList() << "-c" << processArgs->first());
+       else{
+         QString console = "-c";
+#if defined(Q_OS_WIN32)
+         console = "/C";
+#endif
+         if(processes->length() > 0) processes->first()->start(shell, QStringList() << console << processArgs->first());
+       }
      }
      else{
        messages->setWindowTitle("Error");
