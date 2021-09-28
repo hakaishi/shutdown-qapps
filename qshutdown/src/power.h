@@ -26,7 +26,7 @@
 #ifndef POWER_H
 #define POWER_H
 
-#ifdef Q_OS_LINUX
+#if defined(Q_OS_LINUX)
   #include <QtDBus>
 #endif
 
@@ -54,7 +54,7 @@ bool user = false;
 QString myShutdown, myReboot, mySuspend, myHibernate;
 
 void shutdown(){
- #ifdef Q_OS_LINUX
+ #if defined(Q_OS_LINUX)
   QDBusMessage response;
   //variables for automatic mode
   bool g_pwr1 = false;
@@ -230,7 +230,7 @@ void shutdown(){
 }
 
 void reboot(){
- #ifdef Q_OS_LINUX
+ #if defined(Q_OS_LINUX)
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
@@ -388,7 +388,7 @@ void reboot(){
 }
 
 void suspend(){
- #ifdef Q_OS_LINUX
+ #if defined(Q_OS_LINUX)
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
@@ -564,7 +564,7 @@ void suspend(){
 }
 
 void hibernate(){
- #ifdef Q_OS_LINUX
+ #if defined(Q_OS_LINUX)
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;

@@ -37,8 +37,13 @@ int main(int argc, char *argv[]){
 
      //Qt translations
      QTranslator qtTranslator;
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+     qtTranslator.load("qt_" + QLocale::system().name(),
+       QLibraryInfo::path(QLibraryInfo::TranslationsPath));
+#else
      qtTranslator.load("qt_" + QLocale::system().name(),
        QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+#endif
      app.installTranslator(&qtTranslator);
 
      //My translations
@@ -130,7 +135,7 @@ int main(int argc, char *argv[]){
 
      Gui window; //Create the main widget
 
-     #ifdef Q_OS_LINUX
+     #if defined(Q_OS_LINUX)
        QDBusConnection::sessionBus().registerObject(OBJECT_NAME, &window,
          QDBusConnection::ExportScriptableSlots);
        if(QDBusConnection::sessionBus().registerService(SERVICE_NAME)){
@@ -147,7 +152,7 @@ int main(int argc, char *argv[]){
 
          return app.exec();
 
-     #ifdef Q_OS_LINUX
+     #if defined(Q_OS_LINUX)
        }
        else{ //if registering qshutdown fails (also because it is already
              // registered, show window

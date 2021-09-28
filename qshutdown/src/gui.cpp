@@ -843,7 +843,7 @@ void Gui::closeEvent(QCloseEvent* window_close){
 
 void Gui::beforeQuit(){
      saveLog();
-  #ifdef Q_OS_LINUX
+  #if defined(Q_OS_LINUX)
      QDBusConnection::sessionBus().unregisterObject(OBJECT_NAME, QDBusConnection::UnregisterNode);
      QDBusConnection::sessionBus().unregisterService(SERVICE_NAME);
   #endif //Q_OS_LINUX
@@ -865,7 +865,7 @@ void Gui::loadSettings(){
 
      pref->showNotRunning = settings.value("CheckBoxes/remind_not_running",true).toBool();
        
-    #ifdef Q_OS_LINUX
+    #if defined(Q_OS_LINUX)
      QFile autostartFile(QDir::homePath() + "/.config/autostart/qshutdown.desktop");
      if(autostartFile.exists())
        settings.setValue("Autostart",true);

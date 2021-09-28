@@ -15,7 +15,7 @@ win32 {
 RC_FILE += icon.rc
 }
 
-QT += widgets gui core
+QT += widgets gui
 
 system(lrelease qshutdown.pro)
 

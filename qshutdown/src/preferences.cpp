@@ -42,7 +42,7 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
 
      settings = new QSettings(this);
 
-#ifdef Q_OS_WIN32
+#if defined(Q_OS_WIN32)
      fonts = "Times New Roman";
      fontS1 = 13;
      fontS2 = 18;
@@ -351,7 +351,7 @@ void Preferences::resetFont(){
 }
 
 void Preferences::autostartFile(){
-    #ifdef Q_OS_LINUX
+    #if defined(Q_OS_LINUX)
      QFile autostartFile(QDir::homePath() + "/.config/autostart/qshutdown.desktop");
      if(settings->value("Autostart").toBool() && !autostartFile.exists()){
        if(!QDir(QDir::homePath() + "/.config/autostart").exists()){

@@ -16,9 +16,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#if defined(Q_OS_WIN32)
-#include <Windows.h>
-#endif
 #include "gui.h"
 #include "preferences.h"
 #include "history.h"
@@ -33,6 +30,8 @@
 
 #ifndef Q_OS_WIN32
   #include <QtDBus>
+#else
+  #include <Windows.h>
 #endif
 
 Gui::Gui(){
