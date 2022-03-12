@@ -354,6 +354,16 @@ quit instead.</string>
               </widget>
              </item>
              <item>
+              <widget class="QCheckBox" name="rememberOnClose">
+               <property name="toolTip">
+                <string>Remember last settings for the next program start.</string>
+               </property>
+               <property name="text">
+                <string>R&amp;emember last settings</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QRadioButton" name="radio1">
                <property name="text">
                 <string>Enable the &amp;target time at startup</string>
@@ -748,6 +758,7 @@ qshutdown should quit after the countdown ended.</string>
   <tabstop>spinBox</tabstop>
   <tabstop>disableTray</tabstop>
   <tabstop>quitOnCloseMain</tabstop>
+  <tabstop>rememberOnClose</tabstop>
   <tabstop>radio1</tabstop>
   <tabstop>radio2</tabstop>
   <tabstop>autostart</tabstop>

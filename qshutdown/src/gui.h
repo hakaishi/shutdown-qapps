@@ -106,6 +106,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      void showEditor();
      void staticProportions(bool var);
      void saveLog();
+     void saveLast();
      void hideTrayIcon(bool dontShowTray);
     public slots:
      Q_SCRIPTABLE void showRunningProgram();

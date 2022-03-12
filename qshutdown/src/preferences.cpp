@@ -204,6 +204,7 @@ void Preferences::loadSettings(){
      timeEdit->setTime(QTime(settings->value("Time/time_hour",22).toInt(),settings->value("Time/time_minute",00).toInt()));
      spin->setValue(settings->value("Time/countdown_minutes",60).toInt());
      quitOnCloseMain->setChecked(settings->value("Quit_on_close",true).toBool());
+     rememberOnClose->setChecked(settings->value("MainWindow/remember_last", false).toBool());
      countdown->setChecked(settings->value("Time/countdown_at_startup",false).toBool());
      hideMe->setChecked(settings->value("Hide_at_startup",false).toBool());
      fontComboBox->setCurrentFont(settings->value("Fonts/font_type",fonts).toString());
@@ -241,6 +242,7 @@ void Preferences::saveToConfFile(){
        settings->setValue("Time/time_hour",timeEdit->time().hour());
        settings->setValue("Time/time_minute",timeEdit->time().minute());
        settings->setValue("Quit_on_close",quitOnCloseMain->isChecked());
+       settings->setValue("MainWindow/remember_last",rememberOnClose->isChecked());
        settings->setValue("Time/countdown_at_startup",countdown->isChecked());
        settings->setValue("Hide_at_startup",hideMe->isChecked());
        settings->setValue("Time/countdown_minutes",spin->value());
@@ -297,6 +299,7 @@ void Preferences::resetSettings(){
        countdown->setChecked(false);
        disableTray->setChecked(false);
        quitOnCloseMain->setChecked(true);
+       rememberOnClose->setChecked(false);
        hideMe->setChecked(false);
        spin->setValue(60);
        fontComboBox->setCurrentFont(QFont(fonts));

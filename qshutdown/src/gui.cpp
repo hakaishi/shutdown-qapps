@@ -687,7 +687,21 @@ void Gui::saveLog(){
      }
 }
 
+void Gui::saveLast(){
+    QSettings settings(this);
+    if(settings.value("MainWindow/remember_last", false).toBool()){
+        settings.setValue("LastSetting/time_hour", timeEdit->time().hour());
+        settings.setValue("LastSetting/time_minute", timeEdit->time().minute());
+        settings.setValue("LastSetting/countdown_minutes", spin->value());
+        settings.setValue("LastSetting/target_time", radio1->isChecked());
+        settings.setValue("LastSetting/countdown", radio2->isChecked());
+        settings.setValue("LastSetting/lock", lock->isChecked());
+        settings.setValue("LastSetting/action", comboBox->currentIndex());
+    }
+}
+
 void Gui::finished_(){
+     saveLast();
      if(!pref->quitAfterCountdown->isChecked())
        reset();
 
@@ -843,6 +857,7 @@ void Gui::closeEvent(QCloseEvent* window_close){
 
 void Gui::beforeQuit(){
      saveLog();
+     saveLast();
   #if defined(Q_OS_LINUX)
      QDBusConnection::sessionBus().unregisterObject(OBJECT_NAME, QDBusConnection::UnregisterNode);
      QDBusConnection::sessionBus().unregisterService(SERVICE_NAME);
@@ -862,6 +877,8 @@ void Gui::loadSettings(){
        settings.setValue("Lock_all",false);
      if(!settings.contains("MainWindow/keep_proportions"))
        settings.setValue("MainWindow/keep_proportions",true);
+     if(!settings.contains("MainWindow/remember_last"))
+       settings.setValue("MainWindow/remember_last",false);
 
      pref->showNotRunning = settings.value("CheckBoxes/remind_not_running",true).toBool();
        
@@ -895,8 +912,22 @@ void Gui::loadSettings(){
 
 
 /***************** read files entries *****************/
-     timeEdit->setTime(QTime(settings.value("Time/time_hour",22).toInt(),settings.value("Time/time_minute",00).toInt()));
-     spin->setValue(settings.value("Time/countdown_minutes",60).toInt());
+     if(settings.value("MainWindow/remember_last",false).toBool()){
+         timeEdit->setTime(QTime(settings.value("LastSetting/time_hour",22).toInt(),settings.value("LastSetting/time_minute",00).toInt()));
+         spin->setValue(settings.value("LastSetting/countdown_minutes",60).toInt());
+         radio1->setChecked(settings.value("LastSetting/target_time",false).toBool());
+         radio2->setChecked(settings.value("LastSetting/countdown",true).toBool());
+         lock->setChecked(settings.value("LastSetting/lock",true).toBool());
+         comboBox->setCurrentIndex(settings.value("LastSetting/action",0).toInt());
+     }
+     else{
+         timeEdit->setTime(QTime(settings.value("Time/time_hour",22).toInt(),settings.value("Time/time_minute",00).toInt()));
+         spin->setValue(settings.value("Time/countdown_minutes",60).toInt());
+         radio1->setChecked(settings.value("CheckBoxes/target_time",false).toBool());
+         radio2->setChecked(settings.value("CheckBoxes/countdown",true).toBool());
+         lock->setChecked(settings.value("CheckBoxes/lock",true).toBool());
+         comboBox->setCurrentIndex(settings.value("Power/comboBox",0).toInt());
+     }
      resize(settings.value("MainWindow/size",QSize(290,280)).toSize());
      actionKeep_window_proportions->setChecked(settings.value("MainWindow/keep_proportions",true).toBool());
      font1->setFamily(settings.value("Fonts/font_type",fonts).toString());
@@ -906,10 +937,6 @@ void Gui::loadSettings(){
      font2->setPointSize(settings.value("Fonts/font2",fontS2).toInt());
      font3->setPointSize(settings.value("Fonts/font3",fontS3).toInt());
 
-     radio1->setChecked(settings.value("CheckBoxes/target_time",false).toBool());
-     radio2->setChecked(settings.value("CheckBoxes/countdown",true).toBool());
-     lock->setChecked(settings.value("CheckBoxes/lock",true).toBool());
-     comboBox->setCurrentIndex(settings.value("Power/comboBox",0).toInt());
      log_action->setChecked(settings.value("Logfile/logging",false).toBool());
      logFileSize = settings.value("Logfile/size",1.5).toDouble();
 
