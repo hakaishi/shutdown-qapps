@@ -252,39 +252,61 @@ void Calendar::getNearestTime(QList<int> calculatedDay){
 
 QList<QTime> Calendar::getSortedTimes(){
      QList<QTime> times;
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Monday) //Which day of week is the choosen day?
-       foreach(WeekDayItem *item, *mondayItems)
-         if(item->isEnabled()) //get all items if they are visible/enabled.
+     if(setWeeklyDate.date().dayOfWeek() == Qt::Monday){ //Which day of week is the choosen day?
+       foreach(WeekDayItem *item, *mondayItems){
+         if(item->isEnabled()){ //get all items if they are visible/enabled.
            times << item->timeEdit->time();
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Tuesday)
-       foreach(WeekDayItem *item, *tuesdayItems)
-         if(item->isEnabled())
+         }
+       }
+     }
+     if(setWeeklyDate.date().dayOfWeek() == Qt::Tuesday){
+       foreach(WeekDayItem *item, *tuesdayItems){
+         if(item->isEnabled()){
            times << item->timeEdit->time();
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Wednesday)
-       foreach(WeekDayItem *item, *wednesdayItems)
-         if(item->isEnabled())
+         }
+       }
+     }
+     if(setWeeklyDate.date().dayOfWeek() == Qt::Wednesday){
+       foreach(WeekDayItem *item, *wednesdayItems){
+         if(item->isEnabled()){
            times << item->timeEdit->time();
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Thursday)
-       foreach(WeekDayItem *item, *thursdayItems)
-         if(item->isEnabled())
+         }
+       }
+     }
+     if(setWeeklyDate.date().dayOfWeek() == Qt::Thursday){
+       foreach(WeekDayItem *item, *thursdayItems){
+         if(item->isEnabled()){
            times << item->timeEdit->time();
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Friday)
-       foreach(WeekDayItem *item, *fridayItems)
-         if(item->isEnabled())
+         }
+       }
+     }
+     if(setWeeklyDate.date().dayOfWeek() == Qt::Friday){
+       foreach(WeekDayItem *item, *fridayItems){
+         if(item->isEnabled()){
            times << item->timeEdit->time();
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Saturday)
-       foreach(WeekDayItem *item, *saturdayItems)
-         if(item->isEnabled())
+         }
+       }
+     }
+     if(setWeeklyDate.date().dayOfWeek() == Qt::Saturday){
+       foreach(WeekDayItem *item, *saturdayItems){
+         if(item->isEnabled()){
            times << item->timeEdit->time();
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Sunday)
-       foreach(WeekDayItem *item, *sundayItems)
-         if(item->isEnabled())
+         }
+       }
+     }
+     if(setWeeklyDate.date().dayOfWeek() == Qt::Sunday){
+       foreach(WeekDayItem *item, *sundayItems){
+         if(item->isEnabled()){
            times << item->timeEdit->time();
+         }
+       }
+     }
 
      for(int i=0; i < times.count()-1; i++){   //sort all available times
        for(int x=0; x < times.count()-1; x++){
-         if(times[x] > times[x+1])
+         if(times[x] > times[x+1]){
            times.swapItemsAt(x,x+1);
+         }
        }
      }
 

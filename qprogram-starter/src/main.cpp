@@ -23,7 +23,6 @@
 #include <QSettings>
 
 int main (int argc, char *argv[]){
-
      QApplication app(argc, argv);
      app.setApplicationName("qprogram-starter");
      app.setOrganizationName("shutdown_qapps");
@@ -33,19 +32,21 @@ int main (int argc, char *argv[]){
      //Qt translations
      QTranslator qtTranslator;
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-     qtTranslator.load("qt_" + QLocale::system().name(),
+     bool qtLanguageLoaded = qtTranslator.load("qt_" + QLocale::system().name(),
        QLibraryInfo::path(QLibraryInfo::TranslationsPath));
 #else
-     qtTranslator.load("qt_" + QLocale::system().name(),
+     bool qtLanguageLoaded = qtTranslator.load("qt_" + QLocale::system().name(),
        QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 #endif
      app.installTranslator(&qtTranslator);
+     Q_UNUSED(qtLanguageLoaded);
 
      //My translations
      QTranslator translator;
      QString trDir = "/usr/share/qprogram-starter/translations/";
-     translator.load(trDir + "qprogram-starter-" + QLocale::system().name());
+     bool languageLoaded = translator.load(trDir + "qprogram-starter-" + QLocale::system().name());
      app.installTranslator(&translator);
+     Q_UNUSED(languageLoaded);
 
      Gui window;
      window.loadSettings();

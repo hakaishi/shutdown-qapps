@@ -7,3 +7,4 @@ qprogram-starter/Makefile
 debian/upstream/
 **.qm
 **.stash
+**.pro.user

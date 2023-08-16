@@ -26,7 +26,6 @@ bool verbose = false; //this is a global variable needed in power.cpp
 QString shell;
 
 int main(int argc, char *argv[]){
-
      // here the QT_program is created
      QApplication app(argc, argv);
      
@@ -38,18 +37,20 @@ int main(int argc, char *argv[]){
      //Qt translations
      QTranslator qtTranslator;
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
-     qtTranslator.load("qt_" + QLocale::system().name(),
+     bool qtLanguageLoaded = qtTranslator.load("qt_" + QLocale::system().name(),
        QLibraryInfo::path(QLibraryInfo::TranslationsPath));
 #else
-     qtTranslator.load("qt_" + QLocale::system().name(),
+     bool qtLanguageLoaded = qtTranslator.load("qt_" + QLocale::system().name(),
        QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 #endif
      app.installTranslator(&qtTranslator);
+     Q_UNUSED(qtLanguageLoaded);
 
      //My translations
      QTranslator translator;
      QString trDir = "/usr/share/qshutdown/translations/";
-     translator.load(trDir + "qshutdown-" + QLocale::system().name());
+     bool languageLoaded = translator.load(trDir + "qshutdown-" + QLocale::system().name());
+     Q_UNUSED(languageLoaded);
      app.installTranslator(&translator);
 
      QTextStream myOutput(stdout);
