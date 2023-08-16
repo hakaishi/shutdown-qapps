@@ -1,5 +1,5 @@
 /* qshutdown, a program to shutdown the shutdown/reboot/suspend/hibernate
- * Copyright (C) 2010-2020 Christian Metscher <hakaishi@web.de>
+ * Copyright (C) 2010-2023 Christian Metscher <hakaishi@web.de>
 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
