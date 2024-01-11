@@ -30,6 +30,9 @@
   #include <QtDBus>
 #endif
 
+#if defined(Q_OS_WIN32)
+    #include "suspend_win.h"
+#endif
 #include <QProcess>
 #include <QTextStream>
 
@@ -54,14 +57,17 @@ bool user = false;
 QString myShutdown, myReboot, mySuspend, myHibernate;
 
 void shutdown(){
+
+    QStringList args;
+    args << "-c" << myShutdown;
+
  #if defined(Q_OS_LINUX)
   QDBusMessage response;
   //variables for automatic mode
   bool g_pwr1 = false;
   bool g_pwr2 = false;
 
-  QStringList args;
-  args << "-c" << myShutdown;
+
 
   QDBusInterface freedesktopLogin1("org.freedesktop.login1",
     "/org/freedesktop/login1",
@@ -87,7 +93,7 @@ void shutdown(){
     #elif defined(Q_OS_MACOS)
        QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to shut down");
     }
-   #else
+#elif defined(Q_OS_LINUX)
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "poweroff"))
        return;
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh", QStringList() << "shutdown");
@@ -213,6 +219,7 @@ void shutdown(){
        return;
      QProcess::startDetached("sudo", QStringList() << "shutdown" << "-h" << "-P" << "now");
   }
+   #endif
   else if(user)
     if(!shell.isEmpty())
       QProcess::startDetached(shell, args);
@@ -226,17 +233,20 @@ void shutdown(){
   consolekit = false;
   sudo = false;
   user = false;
-   #endif
+
 }
 
 void reboot(){
+
+    QStringList args;
+    args << "-c" << myReboot;
+
  #if defined(Q_OS_LINUX)
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
 
-  QStringList args;
-  args << "-c" << myReboot;
+
 
   QDBusInterface freedesktopLogin1("org.freedesktop.login1",
     "/org/freedesktop/login1",
@@ -263,7 +273,7 @@ void reboot(){
       QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to restart");
 }
 
-   #else
+#elif defined(Q_OS_LINUX)
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "reboot"))
        return;
      g_pwr1 = QProcess::startDetached("gnome-power-cmd.sh", QStringList() << "reboot");
@@ -371,6 +381,7 @@ void reboot(){
       return;
     QProcess::startDetached("sudo", QStringList() << "shutdown" << "-r" << "now");
   }
+    #endif
   else if(user)
     if(!shell.isEmpty())
       QProcess::startDetached(shell, args);
@@ -384,17 +395,18 @@ void reboot(){
   consolekit = false;
   sudo = false;
   user = false;
-   #endif
+
 }
 
 void suspend(){
+
+    QStringList args;
+    args << "-c" << mySuspend;
+
  #if defined(Q_OS_LINUX)
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
-
-  QStringList args;
-  args << "-c" << mySuspend;
 
   QDBusInterface freedesktopLogin1("org.freedesktop.login1",
     "/org/freedesktop/login1",
@@ -458,14 +470,13 @@ void suspend(){
 
   if(automatic){
    #if defined(Q_OS_WIN32)
-     QProcess::startDetached("powercfg", QStringList() << "-hibernate" << "off"); // enable suspend
-     QProcess::startDetached("rundll32", QStringList() << "powrprof.dll,SetSuspendState");
+      windowsSuspend();
      }
 
     #elif defined(Q_OS_MACOS)
       QProcess::startDetached("/usr/bin/osascript",QStringList() << "-e" << "tell application \"System Events\" to sleep");
     }
-   #else
+#elif defined(Q_OS_LINUX)
      if(QProcess::startDetached("/usr/bin/systemctl", QStringList() << "suspend"))
        return;
 
@@ -547,9 +558,12 @@ void suspend(){
              << response.errorMessage() << Qt::endl;
     }
   }
+#endif
+
   else if(user)
     if(!shell.isEmpty())
-      QProcess::startDetached(shell, args);
+      //QProcess::startDetached(shell, args);
+        QProcess::startDetached(mySuspend);
 
 
   //resetting variables
@@ -560,17 +574,17 @@ void suspend(){
   upower_ = false;
   devicekit = false;
   user = false;
-   #endif
 }
 
 void hibernate(){
+
+    QStringList args;
+    args << "-c" << myHibernate;
+
  #if defined(Q_OS_LINUX)
   QDBusMessage response;
   bool g_pwr1 = false;
   bool g_pwr2 = false;
-
-  QStringList args;
-  args << "-c" << myHibernate;
 
   QDBusInterface freedesktopLogin1("org.freedesktop.login1",
     "/org/freedesktop/login1",
@@ -721,6 +735,8 @@ void hibernate(){
              << response.errorMessage() << Qt::endl;
     }
   }
+#endif
+
   else if(user)
     if(!shell.isEmpty())
       QProcess::startDetached(shell, args);
@@ -733,7 +749,6 @@ void hibernate(){
   upower_ = false;
   devicekit = false;
   user = false;
-   #endif
 }
 
 }

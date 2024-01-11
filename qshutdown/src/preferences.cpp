@@ -284,7 +284,7 @@ void Preferences::saveToConfFile(){
      else mySuspend = "";
      if(userDef4->isEnabled())
        myHibernate = userDef4->toPlainText();
-     else mySuspend = "";
+     else myHibernate = "";
      
      showNotRunning = remindCndPop->isChecked();
      showEndOfCountdown = warn->isChecked();
