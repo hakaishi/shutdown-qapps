@@ -37,6 +37,11 @@ class Preferences : public QDialog, public Ui::Preferences {
      bool showEndOfCountdown;
 
     private:
+
+
+     void removeLinuxItems(QComboBox* comboBox);
+
+
      bool        isClosed;
      QString     file;
      QSettings   *settings;
