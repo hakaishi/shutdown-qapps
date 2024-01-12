@@ -54,6 +54,13 @@ Preferences::Preferences(QWidget *parent): QDialog(parent){
      fontS3 = 9;
 #endif
 
+#if defined(Q_OS_WIN32) || defined(Q_OS_MAC)
+     removeLinuxItems(shutdownM);
+     removeLinuxItems(hibernateM);
+     removeLinuxItems(suspendM);
+     removeLinuxItems(rebootM);
+#endif
+
      userDef1S = tr("Please input an user specified command for shutdown here");
      userDef2S = tr("Please input an user specified command for reboot here");
      userDef3S = tr("Please input an user specified command for suspend here");
@@ -336,6 +343,20 @@ void Preferences::closeEvent(QCloseEvent* close_pref){
 }
 
 bool Preferences::getClosed(){ return isClosed; }
+
+/*static*/ void Preferences::removeLinuxItems(QComboBox *comboBox)
+{
+            for (int i = 0; i < comboBox->count(); ++i) {
+            QString currentItemText = comboBox->itemText(i);
+
+                if (!(currentItemText == tr("automatic") || currentItemText == tr("user defined"))) {
+                comboBox->removeItem(i);
+
+                // Adjust the index as you've removed an item
+                --i;
+            }
+        }
+}
 
 void Preferences::fontChanged(QFont font){ fonts = font.toString(); changeFont(); }
 
