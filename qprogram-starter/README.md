@@ -26,3 +26,10 @@ For most systems using the Gnome Shell a certain DBus method has been removed,
 thus a shutdown dialog will be likely to appear if qshutdown's methods have
 been set to automatic or to Gnome session. If you do not want this
 shutdown dialog to appear, please use ConsoleKit or something else.
+
+## LICENES:
+
+The Debian distribution is licensed under GPLv3.  
+The Windows binaries include suspend_win.h which is licensed under BSD-2-clause.
+Note that either of them includes Qt sources which are licensed under various licenses
+depending on the modules used. See [here](https://doc.qt.io/archives/qt-5.15/licenses-used-in-qt.html) for details.

@@ -46,13 +46,26 @@ Gui::Gui(){
 
 #if defined(Q_OS_LINUX)
      if(!QProcessEnvironment().isEmpty())
-        shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+          shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
      if(shell.isEmpty() && QFile("/bin/bash").exists())
-        shell = "/bin/bash";
+          shell = "/bin/bash";
      else
-       *myOutput << "E: No shells found! qprogram-starter might not work as expected...";
+         *myOutput << "E: No shells found! qprogram-starter might not work as expected...";
 #elif defined(Q_OS_WIN32)
      shell = "C:\\Windows\\System32\\cmd.exe";
+#elif defined(Q_OS_WIN32)
+     shell = "C:\\Windows\\System32\\cmd.exe";
+     
+#elif defined(Q_OS_MACOS)
+     if (!QProcessEnvironment().isEmpty()) {
+         shell = QProcess::systemEnvironment().value("SHELL", "/bin/bash");
+     }
+     else
+     {
+         shell = "/bin/bash";
+     }
+#else
+     shell = "";
 #endif
 
    //Versioning

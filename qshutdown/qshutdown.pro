@@ -19,7 +19,7 @@ HEADERS += src/suspend_win.h
 
 QT += widgets gui
 
-system(lrelease qshutdown.pro)
+system($$[QT_HOST_BINS]/lrelease qshutdown.pro)
 
 QMAKE_DISTCLEAN = src/translations/*.qm
 
@@ -84,3 +84,6 @@ deinstall.depends = uninstall FORCE
 deinstall.commands = rm -R /usr/share/qshutdown
 QMAKE_EXTRA_TARGETS = deinstall
 }
+OTHER_FILES += \
+    icon.rc \
+    src/pixmap/icon.ico

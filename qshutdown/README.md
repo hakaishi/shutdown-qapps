@@ -75,3 +75,10 @@ just remove the hook from warnings on?
 |Ctrl+H|set to hibernate|
 |Ctrl+E|stop timer (only if the countdown has started and the admin didn't restrict the access)|
 |Shift+E|to edit the config file (for this a password is necessary. If you are a user, you can set an "empty password" (leave the password field empty)).|
+
+## LICENES:
+
+The Debian distribution is licensed under GPLv3.  
+The Windows binaries include suspend_win.h which is licensed under BSD-2-clause.
+Note that either of them includes Qt sources which are licensed under various licenses
+depending on the modules used. See [here](https://doc.qt.io/archives/qt-5.15/licenses-used-in-qt.html) for details.
