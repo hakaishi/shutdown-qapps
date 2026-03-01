@@ -1,8 +1,9 @@
-shutdown-qapps (1.8.1-1) unstable; urgency=low
+shutdown-qapps (1.9.0-1) unstable; urgency=low
+  - move to Qt 6
   - added remember last settings feature
   - fixed custom commands not working for suspend
-
- -- Christian Metscher <hakaishi@web.de>  Sun, 27 Mar 2022 00:15:36 +0900
+  
+ -- Christian Metscher <hakaishi@web.de>  Mon, 02 Mar 2026 01:24:39 +0900
 
 shutdown-qapps (1.8.0-1) unstable; urgency=low
   - added support for QT6

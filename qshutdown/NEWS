@@ -1,3 +1,10 @@
+Changes in Release 1.9.0
+=========================
+
+- move to Qt 6
+- fix suspend for windows
+
+
 Changes in Release 1.8.0
 =========================
 

@@ -3,7 +3,7 @@
 
 ## INSTALL:
 
-Dependencies: qtbase5-dev, qttools5-dev-tools, build-essential
+Dependencies: qt6-base-dev, qt6-tools-dev-tools, qmake6, build-essential
 
 If you want to install from source, open a terminal and change into this folder.
 To install type:
@@ -81,4 +81,4 @@ just remove the hook from warnings on?
 The Debian distribution is licensed under GPLv3.  
 The Windows binaries include suspend_win.h which is licensed under BSD-2-clause.
 Note that either of them includes Qt sources which are licensed under various licenses
-depending on the modules used. See [here](https://doc.qt.io/archives/qt-5.15/licenses-used-in-qt.html) for details.
+depending on the modules used. See [here](https://doc.qt.io/qt-6/licensing.html) for details.
