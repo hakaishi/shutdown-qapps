@@ -1,5 +1,5 @@
-qshutdown/bin/* usr/bin
-qshutdown/src/translations/*.qm usr/share/qshutdown/translations
-qshutdown/src/pixmap/red_glasses.xpm usr/share/icons/hicolor/32x32/apps
-qshutdown/autostart/qshutdown.desktop usr/share/applications
-qshutdown/autostart/99qshutdown usr/share/qshutdown/autostart
+usr/bin/qshutdown
+usr/share/qshutdown/translations/*.qm
+usr/share/icons/hicolor/32x32/apps/red_glasses.xpm
+usr/share/applications/qshutdown.desktop
+usr/share/qshutdown/autostart/99qshutdown
