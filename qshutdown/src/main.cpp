@@ -55,12 +55,28 @@ int main(int argc, char *argv[]){
 
      QTextStream myOutput(stdout);
 
+#if defined(Q_OS_LINUX)
      if(!QProcessEnvironment().isEmpty())
-       shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
+         shell = QProcess::systemEnvironment().filter("SHELL").first().remove("SHELL=");
      if(shell.isEmpty() && QFile("/bin/bash").exists())
-       shell = "/bin/bash";
+         shell = "/bin/bash";
      else
-       myOutput << "E: No shell found! Custom commands won't work!";
+         myOutput << "E: No shells found! qprogram-starter might not work as expected...";
+#elif defined(Q_OS_WIN32)
+    shell = "C:\\Windows\\System32\\cmd.exe";
+
+#elif defined(Q_OS_MACOS)
+     if (!QProcessEnvironment().isEmpty()) {
+         shell = QProcess::systemEnvironment().value("SHELL", "/bin/bash");
+     }
+     else
+     {
+         shell = "/bin/bash";
+     }
+#else
+     shell = "";
+#endif
+
 
      QString infoStr = QString(QObject::tr("qshutdown will show itself 3 times as a warning "
        "if there are less than 70 seconds left.<br/><br/>This program uses qdbus to send a "

@@ -1,7 +1,7 @@
 # qprogram-starter
 
 ## INSTALL
-Dependencies: qtbase5-dev, qttools5-dev-tools, build-essential
+Dependencies: qt6-base-dev, qt6-tools-dev-tools, qmake6, build-essential
 
 
 If you want to install from source, open a terminal and change into this folder.
@@ -26,3 +26,10 @@ For most systems using the Gnome Shell a certain DBus method has been removed,
 thus a shutdown dialog will be likely to appear if qshutdown's methods have
 been set to automatic or to Gnome session. If you do not want this
 shutdown dialog to appear, please use ConsoleKit or something else.
+
+## LICENES:
+
+The Debian distribution is licensed under GPLv3.  
+The Windows binaries include suspend_win.h which is licensed under BSD-2-clause.
+Note that either of them includes Qt sources which are licensed under various licenses
+depending on the modules used. See [here](https://doc.qt.io/qt-6/licensing.html) for details.

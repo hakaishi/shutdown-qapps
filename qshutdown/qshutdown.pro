@@ -13,26 +13,28 @@ RCC_DIR = build
 
 win32 {
 RC_FILE += icon.rc
+HEADERS += src/suspend_win.h
+
 }
 
 QT += widgets gui
 
-system(lrelease qshutdown.pro)
+system($$[QT_HOST_BINS]/lrelease qshutdown.pro)
 
 QMAKE_DISTCLEAN = src/translations/*.qm
 
 # Input
-HEADERS = src/gui.h src/power.h src/info.h\
+HEADERS += src/gui.h src/power.h src/info.h\
           src/calendar.h src/preferences.h\
           src/ch_passwd.h src/passwd.h src/editor.h\
           src/about.h src/weekday.h src/weekdayitem.h
-SOURCES = src/gui.cpp src/main.cpp src/info.cpp\
+SOURCES += src/gui.cpp src/main.cpp src/info.cpp\
           src/preferences.cpp src/calendar.cpp\
           src/ch_passwd.cpp src/passwd.cpp\
           src/editor.cpp src/about.cpp src/weekday.cpp\
           src/weekdayitem.cpp
-RESOURCES = ../qshutdown.qrc
-TRANSLATIONS = src/translations/qshutdown-ast.ts\
+RESOURCES += ../qshutdown.qrc
+TRANSLATIONS += src/translations/qshutdown-ast.ts\
                src/translations/qshutdown-bg.ts\
                src/translations/qshutdown-bs.ts\
                src/translations/qshutdown-cs.ts\
@@ -59,7 +61,7 @@ TRANSLATIONS = src/translations/qshutdown-ast.ts\
                src/translations/qshutdown-uz.ts\
                src/translations/qshutdown-zh_CN.ts\
                src/translations/qshutdown-zh_TW.ts
-FORMS = src/ui/gui.ui src/ui/preferences.ui\
+FORMS += src/ui/gui.ui src/ui/preferences.ui\
         src/ui/calendar.ui src/ui/ch_passwd.ui\
         src/ui/passwd.ui src/ui/editor.ui\
         src/ui/about.ui
@@ -82,3 +84,6 @@ deinstall.depends = uninstall FORCE
 deinstall.commands = rm -R /usr/share/qshutdown
 QMAKE_EXTRA_TARGETS = deinstall
 }
+OTHER_FILES += \
+    icon.rc \
+    src/pixmap/icon.ico

@@ -1,4 +1,4 @@
-!win32{
+linux{
 QT += dbus
 }
 TEMPLATE = app
@@ -12,20 +12,21 @@ RCC_DIR = build
 
 win32 {
 RC_FILE += icon.rc
+HEADERS += src/suspend_win.h
 }
 
 QT += widgets gui
 
-system(lrelease qprogram-starter.pro)
+system($$[QT_HOST_BINS]/lrelease qprogram-starter.pro)
 
 QMAKE_DISTCLEAN = src/translations/*.qm
 
 # Input
-HEADERS = src/gui.h src/preferences.h src/history.h
-FORMS = src/ui/gui.ui src/ui/preferences.ui src/ui/history.ui
-SOURCES = src/main.cpp src/gui.cpp src/preferences.cpp src/history.cpp
-RESOURCES = ../qprogram-starter.qrc
-TRANSLATIONS = src/translations/qprogram-starter-ast.ts\
+HEADERS += src/gui.h src/preferences.h src/history.h
+FORMS *= src/ui/gui.ui src/ui/preferences.ui src/ui/history.ui
+SOURCES += src/main.cpp src/gui.cpp src/preferences.cpp src/history.cpp
+RESOURCES += ../qprogram-starter.qrc
+TRANSLATIONS += src/translations/qprogram-starter-ast.ts\
                src/translations/qprogram-starter-bs.ts\
                src/translations/qprogram-starter-de.ts\
                src/translations/qprogram-starter-en_GB.ts\
@@ -38,6 +39,8 @@ TRANSLATIONS = src/translations/qprogram-starter-ast.ts\
                src/translations/qprogram-starter-ro.ts\
                src/translations/qprogram-starter-uk.ts
 
+
+!win32{
 # install
 target.path = /usr/bin
 translation.files = src/translations/*.qm
@@ -52,3 +55,7 @@ INSTALLS = target translation autostart icon
 deinstall.depends = uninstall FORCE
 deinstall.commands = rmdir /usr/share/qprogram-starter
 QMAKE_EXTRA_TARGETS = deinstall
+}
+OTHER_FILES += \
+    icon.rc \
+    src/pixmap/icon.ico
