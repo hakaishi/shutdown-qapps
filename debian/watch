@@ -1,3 +1,0 @@
-version=3
-opts=pgpsigurlmangle=s/$/.asc/ \
-https://launchpad.net/qt-shutdown-p/+download .*/shutdown-qapps_(\d.*)\.orig\.tar\.gz
