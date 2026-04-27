@@ -101,6 +101,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      void saveOldTime(QTime time);
      void saveOldComboBoxIndex(int i);
      void setDate();
+    bool restartRecurringSleepCountdown();
      void lockEverything(bool actual);
      void updateLock();
      void showEditor();

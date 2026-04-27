@@ -33,6 +33,7 @@ class Preferences : public QDialog, public Ui::Preferences {
      int fontS1, fontS2, fontS3;
      bool getClosed();
      bool lockMyScreen;
+     bool restartRecurringSleepAfterResume;
      bool showNotRunning;
      bool showEndOfCountdown;
 

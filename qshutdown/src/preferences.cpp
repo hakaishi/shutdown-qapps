@@ -213,6 +213,7 @@ void Preferences::loadSettings(){
      quitOnCloseMain->setChecked(settings->value("Quit_on_close",true).toBool());
      rememberOnClose->setChecked(settings->value("MainWindow/remember_last", false).toBool());
      countdown->setChecked(settings->value("Time/countdown_at_startup",false).toBool());
+    restartSleepCountdown->setChecked(settings->value("Time/restart_recurring_sleep_countdown_after_resume",false).toBool());
      hideMe->setChecked(settings->value("Hide_at_startup",false).toBool());
      fontComboBox->setCurrentFont(settings->value("Fonts/font_type",fonts).toString());
      font1Spin->setValue(settings->value("Fonts/font1",fontS1).toInt());
@@ -238,6 +239,7 @@ void Preferences::loadSettings(){
      userDef4->setPlainText(settings->value("Methods/myHibernate",userDef4S).toString());
      lockMyScreen = settings->value("Lock_screen").toBool();
      quitAfterCountdown->setChecked(settings->value("Quit_after_countdown_ended",false).toBool());
+    restartRecurringSleepAfterResume = restartSleepCountdown->isChecked();
      
      showNotRunning = remindCndPop->isChecked();
      showEndOfCountdown = warn->isChecked();
@@ -251,6 +253,7 @@ void Preferences::saveToConfFile(){
        settings->setValue("Quit_on_close",quitOnCloseMain->isChecked());
        settings->setValue("MainWindow/remember_last",rememberOnClose->isChecked());
        settings->setValue("Time/countdown_at_startup",countdown->isChecked());
+      settings->setValue("Time/restart_recurring_sleep_countdown_after_resume",restartSleepCountdown->isChecked());
        settings->setValue("Hide_at_startup",hideMe->isChecked());
        settings->setValue("Time/countdown_minutes",spin->value());
        settings->setValue("Fonts/font_type",fontComboBox->currentText());
@@ -279,6 +282,7 @@ void Preferences::saveToConfFile(){
      }
      autostartFile(); //to create or to delete the autostart file
      lockScreen();    //set lockMyScreen to true or false according to lockS
+     restartRecurringSleepAfterResume = restartSleepCountdown->isChecked();
 
      if(userDef1->isEnabled())
        myShutdown = userDef1->toPlainText();
@@ -308,6 +312,7 @@ void Preferences::resetSettings(){
        quitOnCloseMain->setChecked(true);
        rememberOnClose->setChecked(false);
        hideMe->setChecked(false);
+      restartSleepCountdown->setChecked(false);
        spin->setValue(60);
        fontComboBox->setCurrentFont(QFont(fonts));
        font1Spin->setValue(fontS1);

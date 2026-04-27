@@ -625,6 +625,8 @@ bool Gui::Time(){
 
      if(QDateTime::currentDateTimeUtc() > futureDateTime10s){ //if targeted time for action is
                           //already over 10 seconds in the past.
+       if(restartRecurringSleepCountdown())
+         return false;
        reset();
        return false;
      }
@@ -633,6 +635,28 @@ bool Gui::Time(){
        bigI = i; //for more precise display with LCD
        return true;
      }
+}
+
+bool Gui::restartRecurringSleepCountdown(){
+     if(!timeRunning || !aWeeklyTimeWasSet || !cal->weekly->isChecked())
+       return false;
+
+     if(!pref->restartRecurringSleepAfterResume)
+       return false;
+
+     // Only rearm if suspend or hibernate is selected (not shutdown/reboot)
+     if(!(suspend_action->isChecked() || hibernate_action->isChecked()))
+       return false;
+
+     timeRunning = false;
+     cal->timeRunning = false;
+     cal->setDate();
+
+     if(!cal->setWeeklyDate.isValid())
+       return false;
+
+     set();
+     return true;
 }
 
 void Gui::saveLog(){
