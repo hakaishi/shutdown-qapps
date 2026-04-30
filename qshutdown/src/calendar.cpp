@@ -155,7 +155,15 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      connect(sat->spin, SIGNAL(valueChanged(int)), this, SLOT(saturday_addTimeEditAndActionBox(int)));
      connect(sun->spin, SIGNAL(valueChanged(int)), this, SLOT(sunday_addTimeEditAndActionBox(int)));
 
-     if(!QFile::exists(file))
+     // Use the actual QSettings backing-file path so we only write defaults
+     // when no settings file exists yet. The 'file' member was previously
+     // never assigned, which made QFile::exists(file) always false and caused
+     // saveToConfFile() to overwrite saved weekly settings on every startup
+     // with the widgets' default (empty) values.
+     file = settings->fileName();
+
+     if(!QFile::exists(file)
+        || !settings->contains("Weekly_is_set"))
        saveToConfFile();
      else
        loadSettings();
