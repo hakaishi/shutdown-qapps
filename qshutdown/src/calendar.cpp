@@ -19,6 +19,48 @@
 #include <QPushButton>
 #include <QFile>
 #include <QDir>
+#include <QDebug>
+
+namespace {
+
+int defaultWeeklyActionIndex(){
+     QSettings settings;
+     int actionIndex = settings.value("Power/comboBox", 0).toInt();
+     if(actionIndex < 0 || actionIndex > 3)
+       actionIndex = 0;
+     return actionIndex;
+}
+
+void updateWeekDayItems(const QList<WeekDayItem *> &addItemList,
+                        const QList<WeekDayItem *> &removeItemList){
+     const int defaultAction = defaultWeeklyActionIndex();
+
+     foreach(WeekDayItem *item, addItemList){
+       const bool wasVisible = item->isVisible();
+       item->setVisible(true);
+       item->setEnabled(true);
+       if(!wasVisible)
+         item->comboBox->setCurrentIndex(defaultAction);
+     }
+     foreach(WeekDayItem *item, removeItemList){
+       item->setVisible(false);
+       item->setEnabled(false);
+       item->comboBox->setCurrentIndex(defaultAction);
+     }
+}
+
+void saveDayMethods(QSettings *settings, const QString &day,
+                    const QList<WeekDayItem *> &items, int activeCount){
+     for(int i = 0; i < items.count(); ++i){
+       QString key = QString("%1/method_%2").arg(day).arg(i + 1);
+       if(i < activeCount)
+         settings->setValue(key, items[i]->comboBox->currentIndex());
+       else
+         settings->remove(key);
+     }
+}
+
+}
 
 Calendar::Calendar(QWidget *parent): QDialog(parent){
 
@@ -175,6 +217,7 @@ Calendar::~Calendar(){ delete settings; }
 void Calendar::getDate(QDate date){ calendarDate.setDate(date); }
 
 void Calendar::setDate(){
+     qDebug() << "[setDate] Called at" << QDateTime::currentDateTime();
      if(calendarWidget->selectedDate() != QDate::currentDate())
         calendarDate.setDate(calendarWidget->selectedDate());
      if(!weekly->isChecked() && calendarDate.isValid()
@@ -182,10 +225,14 @@ void Calendar::setDate(){
        setCalendarDate = calendarDate; //don't touch calendarDate!
      else
        setCalendarDate = QDateTime();
-     if(weekly->isChecked())
+     if(weekly->isChecked()){
+       qDebug() << "[setDate] Weekly is checked, calling getSortedAndActivatedDays()";
        getSortedAndActivatedDays();
-     else
+     }
+     else{
+       qDebug() << "[setDate] Weekly is NOT checked, clearing setWeeklyDate";
        setWeeklyDate = QDateTime();
+     }
 
      aDateWasSet();
 }
@@ -208,6 +255,7 @@ void Calendar::getSortedAndActivatedDays(){
        activatedDays[6] = Qt::Sunday;
 
      int todaysDayOfWeek = QDate::currentDate().dayOfWeek();
+     qDebug() << "[getSortedAndActivatedDays] todaysDayOfWeek=" << todaysDayOfWeek << "(" << QDate::currentDate().toString("dddd") << ")";
 
      QList<int> calculatedDay;
      for(int i=0; i < 7; i++){
@@ -216,17 +264,21 @@ void Calendar::getSortedAndActivatedDays(){
          if(x < 0)
            x += 7;
          calculatedDay << x;
+         qDebug() << "[getSortedAndActivatedDays]   day offset +" << x << "for day of week" << activatedDays[i];
        }
      } //note that all calculated days are in the future. Only if it is today, the time can be in the past!
 
      if(calculatedDay.isEmpty()){
+       qDebug() << "[getSortedAndActivatedDays] No activated days found";
        setWeeklyDate = QDateTime();
        aDateWasSet();
        return;
      }
 
      std::sort(calculatedDay.begin(), calculatedDay.end());
+     qDebug() << "[getSortedAndActivatedDays] Sorted calculated days:" << calculatedDay;
      setWeeklyDate = QDateTime::currentDateTime().addDays(calculatedDay[0]);
+     qDebug() << "[getSortedAndActivatedDays] setWeeklyDate initialized to" << setWeeklyDate << "(today +" << calculatedDay[0] << "days)";
 
      getNearestTime(calculatedDay);
 }
@@ -234,79 +286,94 @@ void Calendar::getSortedAndActivatedDays(){
 void Calendar::getNearestTime(QList<int> calculatedDay){
      QList<QTime> times = getSortedTimes();
 
-     if(QDateTime(setWeeklyDate.date(),times[0]) > QDateTime::currentDateTime())
+     qDebug() << "[getNearestTime] After getSortedTimes():"
+              << "day of week=" << setWeeklyDate.date().dayOfWeek()
+              << "times count=" << times.count()
+              << "times=" << times
+              << "setWeeklyDate=" << setWeeklyDate
+              << "current time=" << QDateTime::currentDateTime();
+
+     // Guard: if no enabled times were found for the chosen day (can happen
+     // if widget enabled-state and spin value got out of sync, e.g. on
+     // startup before all parents are enabled), bail out cleanly instead of
+     // crashing on times[0].
+     if(times.isEmpty()){
+       qDebug() << "[getNearestTime] Times list is empty, bailing out";
+       setWeeklyDate = QDateTime();
+       aDateWasSet();
+       return;
+     }
+
+     if(QDateTime(setWeeklyDate.date(),times[0]) > QDateTime::currentDateTime()){
+       qDebug() << "[getNearestTime] First time" << times[0] << "is in future, using it";
        setWeeklyDate.setTime(times[0]);
+     }
      else{
        int i = 0; //first index for the list of the sorted times
-       while((QDateTime(setWeeklyDate.date(),times[i]) <= QDateTime::currentDateTime())
-             && (i < times.count())){ //as long as we have a next position and the time is in the past: i+1
+       qDebug() << "[getNearestTime] First time is in past, searching for next future time...";
+       // Note: bounds check MUST come before times[i] access (short-circuit
+       // evaluation), otherwise the last iteration reads past the end.
+       while((i < times.count())
+             && (QDateTime(setWeeklyDate.date(),times[i]) <= QDateTime::currentDateTime())){
+         qDebug() << "[getNearestTime]   times[" << i << "]=" << times[i] << "is in past, continuing";
          ++i;
        } //at this point we have either a matching time or nothing. Nothing would be bad...
-       if(i < times.count()) //there has been a matching time...
+       if(i < times.count()){ //there has been a matching time...
+         qDebug() << "[getNearestTime] Found future time at index" << i << ":" << times[i];
          setWeeklyDate.setTime(times[i]);
+       }
        if(i >= times.count()){ //there was no matching time, but there still might be one on another day.
+         qDebug() << "[getNearestTime] No more times today (i=" << i << "), checking next days...";
          if(calculatedDay.count() > 1){ //if there is at least another day...
+           qDebug() << "[getNearestTime]   Using next day (calculatedDay[1]=" << calculatedDay[1] << ")";
            setWeeklyDate = QDateTime::currentDateTime().addDays(calculatedDay[1]); //take another day...
            times = getSortedTimes();      //and get the new times list.
+           if(times.isEmpty()){
+             qDebug() << "[getNearestTime]   Times empty for next day, bailing";
+             setWeeklyDate = QDateTime();
+             aDateWasSet();
+             return;
+           }
+           qDebug() << "[getNearestTime]   Using first time of next day:" << times[0];
            setWeeklyDate.setTime(times[0]); //the first time setting will do.
          }
          else{ // there is no other day => +7
+           qDebug() << "[getNearestTime]   No more days this week, using same day next week +" << calculatedDay[0];
            setWeeklyDate = QDateTime::currentDateTime().addDays(7);
            setWeeklyDate.setTime(times[0]);
          }
        }
      }
+     qDebug() << "[getNearestTime] Final result: setWeeklyDate=" << setWeeklyDate;
 }
 
 QList<QTime> Calendar::getSortedTimes(){
      QList<QTime> times;
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Monday){ //Which day of week is the choosen day?
-       foreach(WeekDayItem *item, *mondayItems){
-         if(item->isEnabled()){ //get all items if they are visible/enabled.
-           times << item->timeEdit->time();
-         }
-       }
-     }
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Tuesday){
-       foreach(WeekDayItem *item, *tuesdayItems){
-         if(item->isEnabled()){
-           times << item->timeEdit->time();
-         }
-       }
-     }
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Wednesday){
-       foreach(WeekDayItem *item, *wednesdayItems){
-         if(item->isEnabled()){
-           times << item->timeEdit->time();
-         }
-       }
-     }
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Thursday){
-       foreach(WeekDayItem *item, *thursdayItems){
-         if(item->isEnabled()){
-           times << item->timeEdit->time();
-         }
-       }
-     }
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Friday){
-       foreach(WeekDayItem *item, *fridayItems){
-         if(item->isEnabled()){
-           times << item->timeEdit->time();
-         }
-       }
-     }
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Saturday){
-       foreach(WeekDayItem *item, *saturdayItems){
-         if(item->isEnabled()){
-           times << item->timeEdit->time();
-         }
-       }
-     }
-     if(setWeeklyDate.date().dayOfWeek() == Qt::Sunday){
-       foreach(WeekDayItem *item, *sundayItems){
-         if(item->isEnabled()){
-           times << item->timeEdit->time();
-         }
+     // Use spin->value() as the authoritative count of active items for the
+     // day, instead of item->isEnabled(). isEnabled() returns false whenever
+     // ANY ancestor widget is disabled (e.g. scrollAreaWidgetContents during
+     // startup before weekly toggling has propagated), which would yield an
+     // empty list even though the saved spin values say items are active.
+     int dow = setWeeklyDate.date().dayOfWeek();
+     QList<WeekDayItem *> *items = nullptr;
+     int count = 0;
+     QString dayName;
+     if(dow == Qt::Monday){       items = mondayItems;    count = mon->spin->value(); dayName = "Monday"; }
+     else if(dow == Qt::Tuesday){ items = tuesdayItems;   count = tue->spin->value(); dayName = "Tuesday"; }
+     else if(dow == Qt::Wednesday){ items = wednesdayItems; count = wed->spin->value(); dayName = "Wednesday"; }
+     else if(dow == Qt::Thursday){items = thursdayItems;  count = thu->spin->value(); dayName = "Thursday"; }
+     else if(dow == Qt::Friday){  items = fridayItems;    count = fri->spin->value(); dayName = "Friday"; }
+     else if(dow == Qt::Saturday){items = saturdayItems;  count = sat->spin->value(); dayName = "Saturday"; }
+     else if(dow == Qt::Sunday){  items = sundayItems;    count = sun->spin->value(); dayName = "Sunday"; }
+
+     qDebug() << "[getSortedTimes] day=" << dayName << "dow=" << dow << "spin->value()=" << count << "items->size()=" << (items ? items->size() : 0);
+
+     if(items){
+       int n = qMin(count, items->size());
+       for(int i = 0; i < n; ++i){
+         QTime t = items->at(i)->timeEdit->time();
+         times << t;
+         qDebug() << "[getSortedTimes]   added time[" << i << "]=" << t;
        }
      }
 
@@ -318,6 +385,7 @@ QList<QTime> Calendar::getSortedTimes(){
        }
      }
 
+     qDebug() << "[getSortedTimes] Final sorted times:" << times;
      return times;
 }
 
@@ -366,14 +434,7 @@ void Calendar::monday_addTimeEditAndActionBox(int i){
        default:;
      }
 
-     foreach(WeekDayItem *item, addItemList){
-       item->setVisible(true);
-       item->setEnabled(true);
-     }
-     foreach(WeekDayItem *item, removeItemList){
-       item->setVisible(false);
-       item->setEnabled(false);
-     }
+     updateWeekDayItems(addItemList, removeItemList);
 }
 
 void Calendar::tuesday_addTimeEditAndActionBox(int i){
@@ -406,14 +467,7 @@ void Calendar::tuesday_addTimeEditAndActionBox(int i){
        default:;
      }
 
-     foreach(WeekDayItem *item, addItemList){
-       item->setVisible(true);
-       item->setEnabled(true);
-     }
-     foreach(WeekDayItem *item, removeItemList){
-       item->setVisible(false);
-       item->setEnabled(false);
-     }
+     updateWeekDayItems(addItemList, removeItemList);
 }
 
 void Calendar::wednesday_addTimeEditAndActionBox(int i){
@@ -446,14 +500,7 @@ void Calendar::wednesday_addTimeEditAndActionBox(int i){
        default:;
      }
 
-     foreach(WeekDayItem *item, addItemList){
-       item->setVisible(true);
-       item->setEnabled(true);
-     }
-     foreach(WeekDayItem *item, removeItemList){
-       item->setVisible(false);
-       item->setEnabled(false);
-     }
+     updateWeekDayItems(addItemList, removeItemList);
 }
 
 void Calendar::thursday_addTimeEditAndActionBox(int i){
@@ -486,14 +533,7 @@ void Calendar::thursday_addTimeEditAndActionBox(int i){
        default:;
      }
 
-     foreach(WeekDayItem *item, addItemList){
-       item->setVisible(true);
-       item->setEnabled(true);
-     }
-     foreach(WeekDayItem *item, removeItemList){
-       item->setVisible(false);
-       item->setEnabled(false);
-     }
+     updateWeekDayItems(addItemList, removeItemList);
 }
 
 void Calendar::friday_addTimeEditAndActionBox(int i){
@@ -526,14 +566,7 @@ void Calendar::friday_addTimeEditAndActionBox(int i){
        default:;
      }
 
-     foreach(WeekDayItem *item, addItemList){
-       item->setVisible(true);
-       item->setEnabled(true);
-     }
-     foreach(WeekDayItem *item, removeItemList){
-       item->setVisible(false);
-       item->setEnabled(false);
-     }
+     updateWeekDayItems(addItemList, removeItemList);
 }
 
 void Calendar::saturday_addTimeEditAndActionBox(int i){
@@ -566,14 +599,7 @@ void Calendar::saturday_addTimeEditAndActionBox(int i){
        default:;
      }
 
-     foreach(WeekDayItem *item, addItemList){
-       item->setVisible(true);
-       item->setEnabled(true);
-     }
-     foreach(WeekDayItem *item, removeItemList){
-       item->setVisible(false);
-       item->setEnabled(false);
-     }
+     updateWeekDayItems(addItemList, removeItemList);
 }
 
 void Calendar::sunday_addTimeEditAndActionBox(int i){
@@ -606,14 +632,7 @@ void Calendar::sunday_addTimeEditAndActionBox(int i){
        default:;
      }
 
-     foreach(WeekDayItem *item, addItemList){
-       item->setVisible(true);
-       item->setEnabled(true);
-     }
-     foreach(WeekDayItem *item, removeItemList){
-       item->setVisible(false);
-       item->setEnabled(false);
-     }
+     updateWeekDayItems(addItemList, removeItemList);
 }
 
 void Calendar::saveToConfFile(){
@@ -627,81 +646,66 @@ void Calendar::saveToConfFile(){
        settings->setValue("Monday/time_3",mon3->timeEdit->time().toString());
        settings->setValue("Monday/time_4",mon4->timeEdit->time().toString());
        settings->setValue("Monday/time_5",mon5->timeEdit->time().toString());
-       settings->setValue("Monday/method_1",mon1->comboBox->currentIndex());
-       settings->setValue("Monday/method_2",mon2->comboBox->currentIndex());
-       settings->setValue("Monday/method_3",mon3->comboBox->currentIndex());
-       settings->setValue("Monday/method_4",mon4->comboBox->currentIndex());
-       settings->setValue("Monday/method_5",mon5->comboBox->currentIndex());
+       saveDayMethods(settings, "Monday", *mondayItems, mon->spin->value());
        settings->setValue("Tuesday/number_of_times",tue->spin->value());
        settings->setValue("Tuesday/time_1",tue1->timeEdit->time().toString());
        settings->setValue("Tuesday/time_2",tue2->timeEdit->time().toString());
        settings->setValue("Tuesday/time_3",tue3->timeEdit->time().toString());
        settings->setValue("Tuesday/time_4",tue4->timeEdit->time().toString());
        settings->setValue("Tuesday/time_5",tue5->timeEdit->time().toString());
-       settings->setValue("Tuesday/method_1",tue1->comboBox->currentIndex());
-       settings->setValue("Tuesday/method_2",tue2->comboBox->currentIndex());
-       settings->setValue("Tuesday/method_3",tue3->comboBox->currentIndex());
-       settings->setValue("Tuesday/method_4",tue4->comboBox->currentIndex());
-       settings->setValue("Tuesday/method_5",tue5->comboBox->currentIndex());
+       saveDayMethods(settings, "Tuesday", *tuesdayItems, tue->spin->value());
        settings->setValue("Wednesday/number_of_times",wed->spin->value());
        settings->setValue("Wednesday/time_1",wed1->timeEdit->time().toString());
        settings->setValue("Wednesday/time_2",wed2->timeEdit->time().toString());
        settings->setValue("Wednesday/time_3",wed3->timeEdit->time().toString());
        settings->setValue("Wednesday/time_4",wed4->timeEdit->time().toString());
        settings->setValue("Wednesday/time_5",wed5->timeEdit->time().toString());
-       settings->setValue("Wednesday/method_1",wed1->comboBox->currentIndex());
-       settings->setValue("Wednesday/method_2",wed2->comboBox->currentIndex());
-       settings->setValue("Wednesday/method_3",wed3->comboBox->currentIndex());
-       settings->setValue("Wednesday/method_4",wed4->comboBox->currentIndex());
-       settings->setValue("Wednesday/method_5",wed5->comboBox->currentIndex());
+       saveDayMethods(settings, "Wednesday", *wednesdayItems, wed->spin->value());
        settings->setValue("Thursday/number_of_times",thu->spin->value());
        settings->setValue("Thursday/time_1",thu1->timeEdit->time().toString());
        settings->setValue("Thursday/time_2",thu2->timeEdit->time().toString());
        settings->setValue("Thursday/time_3",thu3->timeEdit->time().toString());
        settings->setValue("Thursday/time_4",thu4->timeEdit->time().toString());
        settings->setValue("Thursday/time_5",thu5->timeEdit->time().toString());
-       settings->setValue("Thursday/method_1",thu1->comboBox->currentIndex());
-       settings->setValue("Thursday/method_2",thu2->comboBox->currentIndex());
-       settings->setValue("Thursday/method_3",thu3->comboBox->currentIndex());
-       settings->setValue("Thursday/method_4",thu4->comboBox->currentIndex());
-       settings->setValue("Thursday/method_5",thu5->comboBox->currentIndex());
+       saveDayMethods(settings, "Thursday", *thursdayItems, thu->spin->value());
        settings->setValue("Friday/number_of_times",fri->spin->value());
        settings->setValue("Friday/time_1",fri1->timeEdit->time().toString());
        settings->setValue("Friday/time_2",fri2->timeEdit->time().toString());
        settings->setValue("Friday/time_3",fri3->timeEdit->time().toString());
        settings->setValue("Friday/time_4",fri4->timeEdit->time().toString());
        settings->setValue("Friday/time_5",fri5->timeEdit->time().toString());
-       settings->setValue("Friday/method_1",fri1->comboBox->currentIndex());
-       settings->setValue("Friday/method_2",fri2->comboBox->currentIndex());
-       settings->setValue("Friday/method_3",fri3->comboBox->currentIndex());
-       settings->setValue("Friday/method_4",fri4->comboBox->currentIndex());
-       settings->setValue("Friday/method_5",fri5->comboBox->currentIndex());
+       saveDayMethods(settings, "Friday", *fridayItems, fri->spin->value());
        settings->setValue("Saturday/number_of_times",sat->spin->value());
        settings->setValue("Saturday/time_1",sat1->timeEdit->time().toString());
        settings->setValue("Saturday/time_2",sat2->timeEdit->time().toString());
        settings->setValue("Saturday/time_3",sat3->timeEdit->time().toString());
        settings->setValue("Saturday/time_4",sat4->timeEdit->time().toString());
        settings->setValue("Saturday/time_5",sat5->timeEdit->time().toString());
-       settings->setValue("Saturday/method_1",sat1->comboBox->currentIndex());
-       settings->setValue("Saturday/method_2",sat2->comboBox->currentIndex());
-       settings->setValue("Saturday/method_3",sat3->comboBox->currentIndex());
-       settings->setValue("Saturday/method_4",sat4->comboBox->currentIndex());
-       settings->setValue("Saturday/method_5",sat5->comboBox->currentIndex());
+       saveDayMethods(settings, "Saturday", *saturdayItems, sat->spin->value());
        settings->setValue("Sunday/number_of_times",sun->spin->value());
        settings->setValue("Sunday/time_1",sun1->timeEdit->time().toString());
        settings->setValue("Sunday/time_2",sun2->timeEdit->time().toString());
        settings->setValue("Sunday/time_3",sun3->timeEdit->time().toString());
        settings->setValue("Sunday/time_4",sun4->timeEdit->time().toString());
        settings->setValue("Sunday/time_5",sun5->timeEdit->time().toString());
-       settings->setValue("Sunday/method_1",sun1->comboBox->currentIndex());
-       settings->setValue("Sunday/method_2",sun2->comboBox->currentIndex());
-       settings->setValue("Sunday/method_3",sun3->comboBox->currentIndex());
-       settings->setValue("Sunday/method_4",sun4->comboBox->currentIndex());
-       settings->setValue("Sunday/method_5",sun5->comboBox->currentIndex());
+       saveDayMethods(settings, "Sunday", *sundayItems, sun->spin->value());
      }
 }
 
 void Calendar::loadSettings(){
+     // Helper: only override the per-item action comboBox if a saved value
+     // actually exists. Otherwise leave it at the user's "default shutdown
+     // type" from preferences (set by WeekDayItem's constructor).
+     auto loadMethod = [this](QComboBox *box, const QString &key){
+       if(settings->contains(key))
+         box->setCurrentIndex(settings->value(key).toInt());
+     };
+     auto resetInactiveMethods = [](const QList<WeekDayItem *> &items, int activeCount){
+       const int defaultAction = defaultWeeklyActionIndex();
+       for(int i = activeCount; i < items.count(); ++i)
+         items[i]->comboBox->setCurrentIndex(defaultAction);
+     };
+
      resize(settings->value("MainWindow/size",QSize(325,360)).toSize());
      tabWidget->setCurrentIndex(settings->value("Calendar_or_weekly",0).toInt());
      weekly->setChecked(settings->value("Weekly_is_set", false).toBool());
@@ -713,75 +717,82 @@ void Calendar::loadSettings(){
      mon3->timeEdit->setTime(QTime::fromString(settings->value("Monday/time_3","22:00:00").toString(), "hh:mm:ss"));
      mon4->timeEdit->setTime(QTime::fromString(settings->value("Monday/time_4","22:00:00").toString(), "hh:mm:ss"));
      mon5->timeEdit->setTime(QTime::fromString(settings->value("Monday/time_5","22:00:00").toString(), "hh:mm:ss"));
-     mon1->comboBox->setCurrentIndex(settings->value("Monday/method_1",0).toInt());
-     mon2->comboBox->setCurrentIndex(settings->value("Monday/method_2",0).toInt());
-     mon3->comboBox->setCurrentIndex(settings->value("Monday/method_3",0).toInt());
-     mon4->comboBox->setCurrentIndex(settings->value("Monday/method_4",0).toInt());
-     mon5->comboBox->setCurrentIndex(settings->value("Monday/method_5",0).toInt());
+     loadMethod(mon1->comboBox, "Monday/method_1");
+     loadMethod(mon2->comboBox, "Monday/method_2");
+     loadMethod(mon3->comboBox, "Monday/method_3");
+     loadMethod(mon4->comboBox, "Monday/method_4");
+     loadMethod(mon5->comboBox, "Monday/method_5");
+    resetInactiveMethods(*mondayItems, mon->spin->value());
      tue->spin->setValue(settings->value("Tuesday/number_of_times",0).toInt());
      tue1->timeEdit->setTime(QTime::fromString(settings->value("Tuesday/time_1","22:00:00").toString(), "hh:mm:ss"));
      tue2->timeEdit->setTime(QTime::fromString(settings->value("Tuesday/time_2","22:00:00").toString(), "hh:mm:ss"));
      tue3->timeEdit->setTime(QTime::fromString(settings->value("Tuesday/time_3","22:00:00").toString(), "hh:mm:ss"));
      tue4->timeEdit->setTime(QTime::fromString(settings->value("Tuesday/time_4","22:00:00").toString(), "hh:mm:ss"));
      tue5->timeEdit->setTime(QTime::fromString(settings->value("Tuesday/time_5","22:00:00").toString(), "hh:mm:ss"));
-     tue1->comboBox->setCurrentIndex(settings->value("Tuesday/method_1",0).toInt());
-     tue2->comboBox->setCurrentIndex(settings->value("Tuesday/method_2",0).toInt());
-     tue3->comboBox->setCurrentIndex(settings->value("Tuesday/method_3",0).toInt());
-     tue4->comboBox->setCurrentIndex(settings->value("Tuesday/method_4",0).toInt());
-     tue5->comboBox->setCurrentIndex(settings->value("Tuesday/method_5",0).toInt());
+     loadMethod(tue1->comboBox, "Tuesday/method_1");
+     loadMethod(tue2->comboBox, "Tuesday/method_2");
+     loadMethod(tue3->comboBox, "Tuesday/method_3");
+     loadMethod(tue4->comboBox, "Tuesday/method_4");
+     loadMethod(tue5->comboBox, "Tuesday/method_5");
+    resetInactiveMethods(*tuesdayItems, tue->spin->value());
      wed->spin->setValue(settings->value("Wednesday/number_of_times",0).toInt());
      wed1->timeEdit->setTime(QTime::fromString(settings->value("Wednesday/time_1","22:00:00").toString(), "hh:mm:ss"));
      wed2->timeEdit->setTime(QTime::fromString(settings->value("Wednesday/time_2","22:00:00").toString(), "hh:mm:ss"));
      wed3->timeEdit->setTime(QTime::fromString(settings->value("Wednesday/time_3","22:00:00").toString(), "hh:mm:ss"));
      wed4->timeEdit->setTime(QTime::fromString(settings->value("Wednesday/time_4","22:00:00").toString(), "hh:mm:ss"));
      wed5->timeEdit->setTime(QTime::fromString(settings->value("Wednesday/time_5","22:00:00").toString(), "hh:mm:ss"));
-     wed1->comboBox->setCurrentIndex(settings->value("Wednesday/method_1",0).toInt());
-     wed2->comboBox->setCurrentIndex(settings->value("Wednesday/method_2",0).toInt());
-     wed3->comboBox->setCurrentIndex(settings->value("Wednesday/method_3",0).toInt());
-     wed4->comboBox->setCurrentIndex(settings->value("Wednesday/method_4",0).toInt());
-     wed5->comboBox->setCurrentIndex(settings->value("Wednesday/method_5",0).toInt());
+     loadMethod(wed1->comboBox, "Wednesday/method_1");
+     loadMethod(wed2->comboBox, "Wednesday/method_2");
+     loadMethod(wed3->comboBox, "Wednesday/method_3");
+     loadMethod(wed4->comboBox, "Wednesday/method_4");
+     loadMethod(wed5->comboBox, "Wednesday/method_5");
+    resetInactiveMethods(*wednesdayItems, wed->spin->value());
      thu->spin->setValue(settings->value("Thursday/number_of_times",0).toInt());
      thu1->timeEdit->setTime(QTime::fromString(settings->value("Thursday/time_1","22:00:00").toString(), "hh:mm:ss"));
      thu2->timeEdit->setTime(QTime::fromString(settings->value("Thursday/time_2","22:00:00").toString(), "hh:mm:ss"));
      thu3->timeEdit->setTime(QTime::fromString(settings->value("Thursday/time_3","22:00:00").toString(), "hh:mm:ss"));
      thu4->timeEdit->setTime(QTime::fromString(settings->value("Thursday/time_4","22:00:00").toString(), "hh:mm:ss"));
      thu5->timeEdit->setTime(QTime::fromString(settings->value("Thursday/time_5","22:00:00").toString(), "hh:mm:ss"));
-     thu1->comboBox->setCurrentIndex(settings->value("Thursday/method_1",0).toInt());
-     thu2->comboBox->setCurrentIndex(settings->value("Thursday/method_2",0).toInt());
-     thu3->comboBox->setCurrentIndex(settings->value("Thursday/method_3",0).toInt());
-     thu4->comboBox->setCurrentIndex(settings->value("Thursday/method_4",0).toInt());
-     thu5->comboBox->setCurrentIndex(settings->value("Thursday/method_5",0).toInt());
+     loadMethod(thu1->comboBox, "Thursday/method_1");
+     loadMethod(thu2->comboBox, "Thursday/method_2");
+     loadMethod(thu3->comboBox, "Thursday/method_3");
+     loadMethod(thu4->comboBox, "Thursday/method_4");
+     loadMethod(thu5->comboBox, "Thursday/method_5");
+    resetInactiveMethods(*thursdayItems, thu->spin->value());
      fri->spin->setValue(settings->value("Friday/number_of_times",0).toInt());
      fri1->timeEdit->setTime(QTime::fromString(settings->value("Friday/time_1","22:00:00").toString(), "hh:mm:ss"));
      fri2->timeEdit->setTime(QTime::fromString(settings->value("Friday/time_2","22:00:00").toString(), "hh:mm:ss"));
      fri3->timeEdit->setTime(QTime::fromString(settings->value("Friday/time_3","22:00:00").toString(), "hh:mm:ss"));
      fri4->timeEdit->setTime(QTime::fromString(settings->value("Friday/time_4","22:00:00").toString(), "hh:mm:ss"));
      fri5->timeEdit->setTime(QTime::fromString(settings->value("Friday/time_5","22:00:00").toString(), "hh:mm:ss"));
-     fri1->comboBox->setCurrentIndex(settings->value("Friday/method_1",0).toInt());
-     fri2->comboBox->setCurrentIndex(settings->value("Friday/method_2",0).toInt());
-     fri3->comboBox->setCurrentIndex(settings->value("Friday/method_3",0).toInt());
-     fri4->comboBox->setCurrentIndex(settings->value("Friday/method_4",0).toInt());
-     fri5->comboBox->setCurrentIndex(settings->value("Friday/method_5",0).toInt());
+     loadMethod(fri1->comboBox, "Friday/method_1");
+     loadMethod(fri2->comboBox, "Friday/method_2");
+     loadMethod(fri3->comboBox, "Friday/method_3");
+     loadMethod(fri4->comboBox, "Friday/method_4");
+     loadMethod(fri5->comboBox, "Friday/method_5");
+    resetInactiveMethods(*fridayItems, fri->spin->value());
      sat->spin->setValue(settings->value("Saturday/number_of_times",0).toInt());
      sat1->timeEdit->setTime(QTime::fromString(settings->value("Saturday/time_1","22:00:00").toString(), "hh:mm:ss"));
      sat2->timeEdit->setTime(QTime::fromString(settings->value("Saturday/time_2","22:00:00").toString(), "hh:mm:ss"));
      sat3->timeEdit->setTime(QTime::fromString(settings->value("Saturday/time_3","22:00:00").toString(), "hh:mm:ss"));
      sat4->timeEdit->setTime(QTime::fromString(settings->value("Saturday/time_4","22:00:00").toString(), "hh:mm:ss"));
      sat5->timeEdit->setTime(QTime::fromString(settings->value("Saturday/time_5","22:00:00").toString(), "hh:mm:ss"));
-     sat1->comboBox->setCurrentIndex(settings->value("Saturday/method_1",0).toInt());
-     sat2->comboBox->setCurrentIndex(settings->value("Saturday/method_2",0).toInt());
-     sat3->comboBox->setCurrentIndex(settings->value("Saturday/method_3",0).toInt());
-     sat4->comboBox->setCurrentIndex(settings->value("Saturday/method_4",0).toInt());
-     sat5->comboBox->setCurrentIndex(settings->value("Saturday/method_5",0).toInt());
+     loadMethod(sat1->comboBox, "Saturday/method_1");
+     loadMethod(sat2->comboBox, "Saturday/method_2");
+     loadMethod(sat3->comboBox, "Saturday/method_3");
+     loadMethod(sat4->comboBox, "Saturday/method_4");
+     loadMethod(sat5->comboBox, "Saturday/method_5");
+    resetInactiveMethods(*saturdayItems, sat->spin->value());
      sun->spin->setValue(settings->value("Sunday/number_of_times",0).toInt());
      sun1->timeEdit->setTime(QTime::fromString(settings->value("Sunday/time_1","22:00:00").toString(), "hh:mm:ss"));
      sun2->timeEdit->setTime(QTime::fromString(settings->value("Sunday/time_2","22:00:00").toString(), "hh:mm:ss"));
      sun3->timeEdit->setTime(QTime::fromString(settings->value("Sunday/time_3","22:00:00").toString(), "hh:mm:ss"));
      sun4->timeEdit->setTime(QTime::fromString(settings->value("Sunday/time_4","22:00:00").toString(), "hh:mm:ss"));
      sun5->timeEdit->setTime(QTime::fromString(settings->value("Sunday/time_5","22:00:00").toString(), "hh:mm:ss"));
-     sun1->comboBox->setCurrentIndex(settings->value("Sunday/method_1",0).toInt());
-     sun2->comboBox->setCurrentIndex(settings->value("Sunday/method_2",0).toInt());
-     sun3->comboBox->setCurrentIndex(settings->value("Sunday/method_3",0).toInt());
-     sun4->comboBox->setCurrentIndex(settings->value("Sunday/method_4",0).toInt());
-     sun5->comboBox->setCurrentIndex(settings->value("Sunday/method_5",0).toInt());
+     loadMethod(sun1->comboBox, "Sunday/method_1");
+     loadMethod(sun2->comboBox, "Sunday/method_2");
+     loadMethod(sun3->comboBox, "Sunday/method_3");
+     loadMethod(sun4->comboBox, "Sunday/method_4");
+     loadMethod(sun5->comboBox, "Sunday/method_5");
+    resetInactiveMethods(*sundayItems, sun->spin->value());
 }

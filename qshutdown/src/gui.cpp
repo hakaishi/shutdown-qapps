@@ -26,6 +26,7 @@
 #include <QTimer>
 #include <QStandardPaths>
 #include <QActionGroup>
+#include <QDebug>
 
 Gui::Gui(){
 
@@ -638,30 +639,53 @@ bool Gui::Time(){
 }
 
 bool Gui::restartRecurringSleepCountdown(){
-     if(!timeRunning || !aWeeklyTimeWasSet || !cal->weekly->isChecked())
-       return false;
+     qDebug() << "[restartRecurringSleepCountdown] Checking restart conditions...";
 
-     if(!pref->restartRecurringSleepAfterResume)
+     if(!timeRunning || !aWeeklyTimeWasSet || !cal->weekly->isChecked()){
+       qDebug() << "[restartRecurringSleepCountdown] FAILED: timeRunning=" << timeRunning
+                << "aWeeklyTimeWasSet=" << aWeeklyTimeWasSet
+                << "weekly->isChecked()=" << cal->weekly->isChecked();
        return false;
+     }
+
+     if(!pref->restartRecurringSleepAfterResume){
+       qDebug() << "[restartRecurringSleepCountdown] FAILED: pref restartRecurringSleepAfterResume is false";
+       return false;
+     }
 
      // Only rearm if suspend or hibernate is selected (not shutdown/reboot)
-     if(!(suspend_action->isChecked() || hibernate_action->isChecked()))
+     if(!(suspend_action->isChecked() || hibernate_action->isChecked())){
+       qDebug() << "[restartRecurringSleepCountdown] FAILED: action is not suspend/hibernate";
        return false;
+     }
 
+     qDebug() << "[restartRecurringSleepCountdown] All initial checks passed, calling cal->setDate()...";
      timeRunning = false;
      cal->timeRunning = false;
      cal->setDate();
 
-     if(!cal->setWeeklyDate.isValid())
-       return false;
+     qDebug() << "[restartRecurringSleepCountdown] After cal->setDate():"
+              << "setWeeklyDate=" << cal->setWeeklyDate
+              << "current time=" << QDateTime::currentDateTime()
+              << "seconds to next=" << QDateTime::currentDateTime().secsTo(cal->setWeeklyDate);
 
-     // Grace period: if the next scheduled time is too close (<= 180s),
-     // skip it to prevent a suspend loop after wake-up where the OS hasn't
-     // finished logging back in before the next countdown expires.
-     const int graceSeconds = 180;
-     if(QDateTime::currentDateTime().secsTo(cal->setWeeklyDate) <= graceSeconds)
+     if(!cal->setWeeklyDate.isValid()){
+       qDebug() << "[restartRecurringSleepCountdown] FAILED: setWeeklyDate is invalid";
        return false;
+     }
 
+     // Only suppress effectively-immediate retriggers after wake.
+     const int graceSeconds = 10;
+     int secsToNext = QDateTime::currentDateTime().secsTo(cal->setWeeklyDate);
+     qDebug() << "[restartRecurringSleepCountdown] Grace check: secsToNext=" << secsToNext
+              << "graceSeconds=" << graceSeconds
+              << "check passes=" << (secsToNext > graceSeconds);
+     if(secsToNext <= graceSeconds){
+       qDebug() << "[restartRecurringSleepCountdown] FAILED: grace period check";
+       return false;
+     }
+
+     qDebug() << "[restartRecurringSleepCountdown] SUCCESS: calling set() to restart countdown";
      set();
      return true;
 }
@@ -734,13 +758,13 @@ void Gui::saveLast(){
 void Gui::finished_(){
      saveLast();
 
-     // Capture the action to be performed NOW, in case any later code
-     // ends up mutating comboBox to reflect the next recurrence's action.
+     // Capture the action to be performed NOW, before the rearm path may
+     // mutate comboBox to reflect the next occurrence's action.
      int currentActionIndex = comboBox->currentIndex();
 
      // Detect: should we rearm a recurring weekly countdown for the next
-     // occurrence after Power::suspend() / Power::hibernate() returns
-     // post-resume? Otherwise the countdown is dead after wake-up.
+     // occurrence? Without rearming, the countdown is dead after wake-up
+     // because reset() would have stopped the timer.
      bool rearmRecurringSleep =
          pref->restartRecurringSleepAfterResume
          && aWeeklyTimeWasSet
@@ -748,12 +772,84 @@ void Gui::finished_(){
          && !pref->quitAfterCountdown->isChecked()
          && (suspend_action->isChecked() || hibernate_action->isChecked());
 
-     // If we are NOT rearming, behave like before: reset the UI/timer now.
-     // If we ARE rearming, intentionally skip reset() so timeRunning/state stays
-     // intact across the suspend/hibernate call and the post-wake rearm can
-     // simply retarget futureDateTime in place.
-     if(!rearmRecurringSleep && !pref->quitAfterCountdown->isChecked())
+     qDebug() << "[finished_] rearmRecurringSleep conditions:"
+              << "restartRecurringSleepAfterResume=" << pref->restartRecurringSleepAfterResume
+              << "aWeeklyTimeWasSet=" << aWeeklyTimeWasSet
+              << "weekly->isChecked()=" << cal->weekly->isChecked()
+              << "quitAfterCountdown=" << pref->quitAfterCountdown->isChecked()
+              << "suspend/hibernate=" << (suspend_action->isChecked() || hibernate_action->isChecked())
+              << "=> rearmRecurringSleep=" << rearmRecurringSleep;
+
+     bool didRearm = false;
+     if(rearmRecurringSleep){
+       qDebug() << "[finished_] Attempting to rearm for next weekly occurrence...";
+       // Recalculate the next weekly occurrence from "now" so it picks the
+       // *next* time slot, not the one we're triggering this very moment.
+       cal->setDate();
+
+       qDebug() << "[finished_] After cal->setDate():"
+                << "setWeeklyDate=" << cal->setWeeklyDate
+                << "current time=" << QDateTime::currentDateTime()
+                << "seconds to next=" << QDateTime::currentDateTime().secsTo(cal->setWeeklyDate);
+
+       // Safety check: only rearm if the next occurrence is genuinely in the
+       // future (not in the past, and not within a very tight window that
+       // suggests we're about to trigger it immediately again on wake).
+       // We use 1 second as the minimum to account for rounding and normal timer jitter.
+       const int minSecToNext = 1;
+       if(cal->setWeeklyDate.isValid()
+          && QDateTime::currentDateTime().secsTo(cal->setWeeklyDate) > minSecToNext){
+         qDebug() << "[finished_] Grace check PASSED: next event is sufficiently in future";
+         // Retarget the still-running countdown in place (no reset()).
+         // The timer keeps running; we just point futureDateTime to the next
+         // occurrence so the user sees the new countdown immediately on wake.
+         futureDateTime = cal->setWeeklyDate.toUTC();
+         TIcon->setIcon(QPixmap(":running"));
+
+         // Propagate next occurrence's per-item action to the main comboBox
+         // (Gui::setDate() skips this while timeRunning==true, so do it here).
+         {
+           QList<WeekDayItem *> items;
+           int dow = cal->setWeeklyDate.date().dayOfWeek();
+           if(dow == Qt::Monday)
+             items << cal->mon1 << cal->mon2 << cal->mon3 << cal->mon4 << cal->mon5;
+           else if(dow == Qt::Tuesday)
+             items << cal->tue1 << cal->tue2 << cal->tue3 << cal->tue4 << cal->tue5;
+           else if(dow == Qt::Wednesday)
+             items << cal->wed1 << cal->wed2 << cal->wed3 << cal->wed4 << cal->wed5;
+           else if(dow == Qt::Thursday)
+             items << cal->thu1 << cal->thu2 << cal->thu3 << cal->thu4 << cal->thu5;
+           else if(dow == Qt::Friday)
+             items << cal->fri1 << cal->fri2 << cal->fri3 << cal->fri4 << cal->fri5;
+           else if(dow == Qt::Saturday)
+             items << cal->sat1 << cal->sat2 << cal->sat3 << cal->sat4 << cal->sat5;
+           else if(dow == Qt::Sunday)
+             items << cal->sun1 << cal->sun2 << cal->sun3 << cal->sun4 << cal->sun5;
+           QTime nextTime = cal->setWeeklyDate.time();
+           foreach(WeekDayItem *it, items){
+             if(it->timeEdit->time() == nextTime){
+               comboBox->setCurrentIndex(it->comboBox->currentIndex());
+               break;
+             }
+           }
+         }
+
+         updateT();    // refresh LCD with new countdown immediately
+         didRearm = true;
+         qDebug() << "[finished_] Rearm SUCCESSFUL: futureDateTime set to" << futureDateTime;
+       } else {
+         qDebug() << "[finished_] Grace check FAILED: next event too close or invalid"
+                  << "isValid=" << cal->setWeeklyDate.isValid()
+                  << "secsTo=" << QDateTime::currentDateTime().secsTo(cal->setWeeklyDate);
+       }
+     }
+
+     if(!didRearm && !pref->quitAfterCountdown->isChecked()){
+       qDebug() << "[finished_] Calling reset() (no rearm happened)";
        reset();
+     } else if(didRearm) {
+       qDebug() << "[finished_] Skipping reset() because rearm was successful";
+     }
 
      switch(currentActionIndex){
        case 0: //shutdown
@@ -887,61 +983,16 @@ void Gui::finished_(){
        default:;
      }
 
-     // Post-resume rearm: this code only executes after Power::suspend() /
-     // Power::hibernate() has returned (i.e. the system has woken up again).
-     // For shutdown/reboot, this code is unreachable because the OS kills us
-     // before the call returns.
-     if(rearmRecurringSleep){
-       cal->setDate();   // recalculate next weekly occurrence from "now"
-
-       // Grace period: skip rearm if next occurrence is within 180s, to
-       // prevent a suspend loop on wake-up when the user has multiple times
-       // scheduled close together (e.g. 23:11 and 23:13 on the same day).
-       const int graceSeconds = 180;
-       if(cal->setWeeklyDate.isValid()
-          && QDateTime::currentDateTime().secsTo(cal->setWeeklyDate) > graceSeconds){
-         // Retarget the countdown in place: keep timeRunning state, just
-         // point futureDateTime to the next occurrence and refresh the LCD.
-         futureDateTime = cal->setWeeklyDate.toUTC();
-         TIcon->setIcon(QPixmap(":running"));
-
-         // Propagate next occurrence's per-item action to the main comboBox
-         // so the next trigger uses the correct power action.
-         QList<WeekDayItem *> items;
-         int dow = cal->setWeeklyDate.date().dayOfWeek();
-         if(dow == Qt::Monday)
-           items << cal->mon1 << cal->mon2 << cal->mon3 << cal->mon4 << cal->mon5;
-         else if(dow == Qt::Tuesday)
-           items << cal->tue1 << cal->tue2 << cal->tue3 << cal->tue4 << cal->tue5;
-         else if(dow == Qt::Wednesday)
-           items << cal->wed1 << cal->wed2 << cal->wed3 << cal->wed4 << cal->wed5;
-         else if(dow == Qt::Thursday)
-           items << cal->thu1 << cal->thu2 << cal->thu3 << cal->thu4 << cal->thu5;
-         else if(dow == Qt::Friday)
-           items << cal->fri1 << cal->fri2 << cal->fri3 << cal->fri4 << cal->fri5;
-         else if(dow == Qt::Saturday)
-           items << cal->sat1 << cal->sat2 << cal->sat3 << cal->sat4 << cal->sat5;
-         else if(dow == Qt::Sunday)
-           items << cal->sun1 << cal->sun2 << cal->sun3 << cal->sun4 << cal->sun5;
-         QTime nextTime = cal->setWeeklyDate.time();
-         foreach(WeekDayItem *it, items){
-           if(it->timeEdit->time() == nextTime){
-             comboBox->setCurrentIndex(it->comboBox->currentIndex());
-             break;
-           }
-         }
-
-         // Force a fresh OS-level QTimer (after suspend its underlying timer
-         // can be in a stale state on Windows). stop()+start() guarantees a
-         // clean re-arm.
-         timer->stop();
-         timer->start(1000);
-         updateT();   // refresh LCD with new countdown immediately
-       }
-       else{
-         // No valid next occurrence (or within grace) -> behave as before.
-         reset();
-       }
+     // Post-resume safety net: after Power::suspend() / Power::hibernate()
+     // returns (i.e. the system has woken up again), if we rearmed for a
+     // future recurring occurrence, make sure the QTimer is still alive
+     // and force a fresh display refresh. On Windows the QTimer's
+     // underlying OS timer can be in a stale state after wake.
+     if(didRearm){
+       qDebug() << "[finished_] Running post-resume safety net: timer stop/start";
+       timer->stop();
+       timer->start(1000);
+       updateT();
      }
 
      if(pref->quitAfterCountdown->isChecked())
