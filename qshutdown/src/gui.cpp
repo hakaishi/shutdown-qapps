@@ -792,13 +792,45 @@ void Gui::finished_(){
                 << "current time=" << QDateTime::currentDateTime()
                 << "seconds to next=" << QDateTime::currentDateTime().secsTo(cal->setWeeklyDate);
 
-       // Safety check: only rearm if the next occurrence is genuinely in the
-       // future (not in the past, and not within a very tight window that
-       // suggests we're about to trigger it immediately again on wake).
-       // We use 1 second as the minimum to account for rounding and normal timer jitter.
-       const int minSecToNext = 1;
-       if(cal->setWeeklyDate.isValid()
-          && QDateTime::currentDateTime().secsTo(cal->setWeeklyDate) > minSecToNext){
+       // Safety check: only rearm if the next occurrence is strictly after the
+       // original event that just fired.  We compare against futureDateTime
+       // (the original deadline, in local time) rather than currentDateTime()
+       // because on Linux the 1-second QTimer tick can fire a few milliseconds
+       // before the integer-second boundary.  In that case currentDateTime() is
+       // still the same second as the firing event, secsTo() truncates to 0, and
+       // the check would wrongly fail even though the next event is minutes away.
+       QDateTime originalEventLocal = futureDateTime.toLocalTime();
+       qint64 secsAfterOriginal = originalEventLocal.secsTo(cal->setWeeklyDate);
+       qDebug() << "[finished_] Grace check: originalEvent=" << originalEventLocal
+                << "secsAfterOriginal=" << secsAfterOriginal;
+
+       // If cal->setDate() returned the same event (secsAfterOriginal == 0),
+       // it means the current time is still slightly before the event time.
+       // This can happen after suspend/resume if the user resumes very quickly.
+       // In this case, try to find the next time slot on the same day.
+       if(cal->setWeeklyDate.isValid() && secsAfterOriginal == 0){
+         QList<QTime> times = cal->getSortedTimes();
+         QTime originalTime = originalEventLocal.time();
+         QTime nextTime = QTime();
+
+         for(const QTime &t : times){
+           if(t > originalTime){
+             nextTime = t;
+             break;
+           }
+         }
+
+         if(nextTime.isValid()){
+           cal->setWeeklyDate.setTime(nextTime);
+           secsAfterOriginal = originalEventLocal.secsTo(cal->setWeeklyDate);
+           qDebug() << "[finished_] Same event returned, advanced to next time on same day:" << nextTime
+                    << "secsAfterOriginal=" << secsAfterOriginal;
+         } else {
+           qDebug() << "[finished_] Same event returned, no later times found today";
+         }
+       }
+
+       if(cal->setWeeklyDate.isValid() && secsAfterOriginal > 0){
          qDebug() << "[finished_] Grace check PASSED: next event is sufficiently in future";
          // Retarget the still-running countdown in place (no reset()).
          // The timer keeps running; we just point futureDateTime to the next
@@ -840,6 +872,7 @@ void Gui::finished_(){
        } else {
          qDebug() << "[finished_] Grace check FAILED: next event too close or invalid"
                   << "isValid=" << cal->setWeeklyDate.isValid()
+                  << "secsAfterOriginal=" << secsAfterOriginal
                   << "secsTo=" << QDateTime::currentDateTime().secsTo(cal->setWeeklyDate);
        }
      }
