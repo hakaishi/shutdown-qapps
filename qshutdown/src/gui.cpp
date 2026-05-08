@@ -639,53 +639,53 @@ bool Gui::Time(){
 }
 
 bool Gui::restartRecurringSleepCountdown(){
-     qDebug() << "[restartRecurringSleepCountdown] Checking restart conditions...";
+     qDebug() << "Gui::restartRecurringSleepCountdown(): Checking restart conditions...";
 
      if(!timeRunning || !aWeeklyTimeWasSet || !cal->weekly->isChecked()){
-       qDebug() << "[restartRecurringSleepCountdown] FAILED: timeRunning=" << timeRunning
+       qDebug() << "Gui::restartRecurringSleepCountdown(): Failed: timeRunning=" << timeRunning
                 << "aWeeklyTimeWasSet=" << aWeeklyTimeWasSet
                 << "weekly->isChecked()=" << cal->weekly->isChecked();
        return false;
      }
 
      if(!pref->restartRecurringSleepAfterResume){
-       qDebug() << "[restartRecurringSleepCountdown] FAILED: pref restartRecurringSleepAfterResume is false";
+       qDebug() << "Gui::restartRecurringSleepCountdown(): Failed: pref restartRecurringSleepAfterResume is false";
        return false;
      }
 
      // Only rearm if suspend or hibernate is selected (not shutdown/reboot)
      if(!(suspend_action->isChecked() || hibernate_action->isChecked())){
-       qDebug() << "[restartRecurringSleepCountdown] FAILED: action is not suspend/hibernate";
+       qDebug() << "Gui::restartRecurringSleepCountdown(): Failed: action is not suspend/hibernate";
        return false;
      }
 
-     qDebug() << "[restartRecurringSleepCountdown] All initial checks passed, calling cal->setDate()...";
+     qDebug() << "Gui::restartRecurringSleepCountdown(): All initial checks passed, calling cal->setDate()...";
      timeRunning = false;
      cal->timeRunning = false;
      cal->setDate();
 
-     qDebug() << "[restartRecurringSleepCountdown] After cal->setDate():"
+     qDebug() << "Gui::restartRecurringSleepCountdown(): After cal->setDate():"
               << "setWeeklyDate=" << cal->setWeeklyDate
               << "current time=" << QDateTime::currentDateTime()
               << "seconds to next=" << QDateTime::currentDateTime().secsTo(cal->setWeeklyDate);
 
      if(!cal->setWeeklyDate.isValid()){
-       qDebug() << "[restartRecurringSleepCountdown] FAILED: setWeeklyDate is invalid";
+       qDebug() << "Gui::restartRecurringSleepCountdown(): Failed: setWeeklyDate is invalid";
        return false;
      }
 
      // Only suppress effectively-immediate retriggers after wake.
      const int graceSeconds = 10;
      int secsToNext = QDateTime::currentDateTime().secsTo(cal->setWeeklyDate);
-     qDebug() << "[restartRecurringSleepCountdown] Grace check: secsToNext=" << secsToNext
+     qDebug() << "Gui::restartRecurringSleepCountdown(): Grace check: secsToNext=" << secsToNext
               << "graceSeconds=" << graceSeconds
               << "check passes=" << (secsToNext > graceSeconds);
      if(secsToNext <= graceSeconds){
-       qDebug() << "[restartRecurringSleepCountdown] FAILED: grace period check";
+       qDebug() << "Gui::restartRecurringSleepCountdown(): Failed: grace period check";
        return false;
      }
 
-     qDebug() << "[restartRecurringSleepCountdown] SUCCESS: calling set() to restart countdown";
+     qDebug() << "Gui::restartRecurringSleepCountdown(): Success: calling set() to restart countdown";
      set();
      return true;
 }
@@ -772,7 +772,7 @@ void Gui::finished_(){
          && !pref->quitAfterCountdown->isChecked()
          && (suspend_action->isChecked() || hibernate_action->isChecked());
 
-     qDebug() << "[finished_] rearmRecurringSleep conditions:"
+     qDebug() << "Gui::finished_(): rearmRecurringSleep conditions:"
               << "restartRecurringSleepAfterResume=" << pref->restartRecurringSleepAfterResume
               << "aWeeklyTimeWasSet=" << aWeeklyTimeWasSet
               << "weekly->isChecked()=" << cal->weekly->isChecked()
@@ -782,12 +782,12 @@ void Gui::finished_(){
 
      bool didRearm = false;
      if(rearmRecurringSleep){
-       qDebug() << "[finished_] Attempting to rearm for next weekly occurrence...";
+       qDebug() << "Gui::finished_(): Attempting to rearm for next weekly occurrence...";
        // Recalculate the next weekly occurrence from "now" so it picks the
        // *next* time slot, not the one we're triggering this very moment.
        cal->setDate();
 
-       qDebug() << "[finished_] After cal->setDate():"
+       qDebug() << "Gui::finished_(): After cal->setDate():"
                 << "setWeeklyDate=" << cal->setWeeklyDate
                 << "current time=" << QDateTime::currentDateTime()
                 << "seconds to next=" << QDateTime::currentDateTime().secsTo(cal->setWeeklyDate);
@@ -801,7 +801,7 @@ void Gui::finished_(){
        // the check would wrongly fail even though the next event is minutes away.
        QDateTime originalEventLocal = futureDateTime.toLocalTime();
        qint64 secsAfterOriginal = originalEventLocal.secsTo(cal->setWeeklyDate);
-       qDebug() << "[finished_] Grace check: originalEvent=" << originalEventLocal
+       qDebug() << "Gui::finished_(): Grace check: originalEvent=" << originalEventLocal
                 << "secsAfterOriginal=" << secsAfterOriginal;
 
        // If cal->setDate() returned the same event (secsAfterOriginal == 0),
@@ -823,15 +823,15 @@ void Gui::finished_(){
          if(nextTime.isValid()){
            cal->setWeeklyDate.setTime(nextTime);
            secsAfterOriginal = originalEventLocal.secsTo(cal->setWeeklyDate);
-           qDebug() << "[finished_] Same event returned, advanced to next time on same day:" << nextTime
+           qDebug() << "Gui::finished_(): Same event returned, advanced to next time on same day:" << nextTime
                     << "secsAfterOriginal=" << secsAfterOriginal;
          } else {
-           qDebug() << "[finished_] Same event returned, no later times found today";
+           qDebug() << "Gui::finished_(): Same event returned, no later times found today";
          }
        }
 
        if(cal->setWeeklyDate.isValid() && secsAfterOriginal > 0){
-         qDebug() << "[finished_] Grace check PASSED: next event is sufficiently in future";
+         qDebug() << "Gui::finished_(): Grace check passed: next event is sufficiently in future";
          // Retarget the still-running countdown in place (no reset()).
          // The timer keeps running; we just point futureDateTime to the next
          // occurrence so the user sees the new countdown immediately on wake.
@@ -868,9 +868,9 @@ void Gui::finished_(){
 
          updateT();    // refresh LCD with new countdown immediately
          didRearm = true;
-         qDebug() << "[finished_] Rearm SUCCESSFUL: futureDateTime set to" << futureDateTime;
+         qDebug() << "Gui::finished_(): Rearm successful: futureDateTime set to" << futureDateTime;
        } else {
-         qDebug() << "[finished_] Grace check FAILED: next event too close or invalid"
+         qDebug() << "Gui::finished_(): Grace check failed: next event too close or invalid"
                   << "isValid=" << cal->setWeeklyDate.isValid()
                   << "secsAfterOriginal=" << secsAfterOriginal
                   << "secsTo=" << QDateTime::currentDateTime().secsTo(cal->setWeeklyDate);
@@ -878,10 +878,10 @@ void Gui::finished_(){
      }
 
      if(!didRearm && !pref->quitAfterCountdown->isChecked()){
-       qDebug() << "[finished_] Calling reset() (no rearm happened)";
+       qDebug() << "Gui::finished_(): Calling reset() (no rearm happened)";
        reset();
      } else if(didRearm) {
-       qDebug() << "[finished_] Skipping reset() because rearm was successful";
+       qDebug() << "Gui::finished_(): Skipping reset() because rearm was successful";
      }
 
      switch(currentActionIndex){
@@ -1022,7 +1022,7 @@ void Gui::finished_(){
      // and force a fresh display refresh. On Windows the QTimer's
      // underlying OS timer can be in a stale state after wake.
      if(didRearm){
-       qDebug() << "[finished_] Running post-resume safety net: timer stop/start";
+       qDebug() << "Gui::finished_(): Running post-resume safety net: timer stop/start";
        timer->stop();
        timer->start(1000);
        updateT();

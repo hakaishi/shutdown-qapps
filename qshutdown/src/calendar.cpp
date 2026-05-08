@@ -217,7 +217,7 @@ Calendar::~Calendar(){ delete settings; }
 void Calendar::getDate(QDate date){ calendarDate.setDate(date); }
 
 void Calendar::setDate(){
-     qDebug() << "[setDate] Called at" << QDateTime::currentDateTime();
+       qDebug() << "Calendar::setDate(): Called at" << QDateTime::currentDateTime();
      if(calendarWidget->selectedDate() != QDate::currentDate())
         calendarDate.setDate(calendarWidget->selectedDate());
      if(!weekly->isChecked() && calendarDate.isValid()
@@ -226,11 +226,11 @@ void Calendar::setDate(){
      else
        setCalendarDate = QDateTime();
      if(weekly->isChecked()){
-       qDebug() << "[setDate] Weekly is checked, calling getSortedAndActivatedDays()";
+       qDebug() << "Calendar::setDate(): Weekly is checked, calling getSortedAndActivatedDays()";
        getSortedAndActivatedDays();
      }
      else{
-       qDebug() << "[setDate] Weekly is NOT checked, clearing setWeeklyDate";
+       qDebug() << "Calendar::setDate(): Weekly is not checked, clearing setWeeklyDate";
        setWeeklyDate = QDateTime();
      }
 
@@ -255,7 +255,7 @@ void Calendar::getSortedAndActivatedDays(){
        activatedDays[6] = Qt::Sunday;
 
      int todaysDayOfWeek = QDate::currentDate().dayOfWeek();
-     qDebug() << "[getSortedAndActivatedDays] todaysDayOfWeek=" << todaysDayOfWeek << "(" << QDate::currentDate().toString("dddd") << ")";
+     qDebug() << "Calendar::getSortedAndActivatedDays(): todaysDayOfWeek=" << todaysDayOfWeek << "(" << QDate::currentDate().toString("dddd") << ")";
 
      QList<int> calculatedDay;
      for(int i=0; i < 7; i++){
@@ -264,21 +264,21 @@ void Calendar::getSortedAndActivatedDays(){
          if(x < 0)
            x += 7;
          calculatedDay << x;
-         qDebug() << "[getSortedAndActivatedDays]   day offset +" << x << "for day of week" << activatedDays[i];
+         qDebug() << "Calendar::getSortedAndActivatedDays():   day offset +" << x << "for day of week" << activatedDays[i];
        }
      } //note that all calculated days are in the future. Only if it is today, the time can be in the past!
 
      if(calculatedDay.isEmpty()){
-       qDebug() << "[getSortedAndActivatedDays] No activated days found";
+       qDebug() << "Calendar::getSortedAndActivatedDays(): No activated days found";
        setWeeklyDate = QDateTime();
        aDateWasSet();
        return;
      }
 
      std::sort(calculatedDay.begin(), calculatedDay.end());
-     qDebug() << "[getSortedAndActivatedDays] Sorted calculated days:" << calculatedDay;
+     qDebug() << "Calendar::getSortedAndActivatedDays(): Sorted calculated days:" << calculatedDay;
      setWeeklyDate = QDateTime::currentDateTime().addDays(calculatedDay[0]);
-     qDebug() << "[getSortedAndActivatedDays] setWeeklyDate initialized to" << setWeeklyDate << "(today +" << calculatedDay[0] << "days)";
+     qDebug() << "Calendar::getSortedAndActivatedDays(): setWeeklyDate initialized to" << setWeeklyDate << "(today +" << calculatedDay[0] << "days)";
 
      getNearestTime(calculatedDay);
 }
@@ -286,7 +286,7 @@ void Calendar::getSortedAndActivatedDays(){
 void Calendar::getNearestTime(QList<int> calculatedDay){
      QList<QTime> times = getSortedTimes();
 
-     qDebug() << "[getNearestTime] After getSortedTimes():"
+     qDebug() << "Calendar::getNearestTime(): After getSortedTimes():"
               << "day of week=" << setWeeklyDate.date().dayOfWeek()
               << "times count=" << times.count()
               << "times=" << times
@@ -298,53 +298,53 @@ void Calendar::getNearestTime(QList<int> calculatedDay){
      // startup before all parents are enabled), bail out cleanly instead of
      // crashing on times[0].
      if(times.isEmpty()){
-       qDebug() << "[getNearestTime] Times list is empty, bailing out";
+       qDebug() << "Calendar::getNearestTime(): Times list is empty, bailing out";
        setWeeklyDate = QDateTime();
        aDateWasSet();
        return;
      }
 
      if(QDateTime(setWeeklyDate.date(),times[0]) > QDateTime::currentDateTime()){
-       qDebug() << "[getNearestTime] First time" << times[0] << "is in future, using it";
+       qDebug() << "Calendar::getNearestTime(): First time" << times[0] << "is in future, using it";
        setWeeklyDate.setTime(times[0]);
      }
      else{
        int i = 0; //first index for the list of the sorted times
-       qDebug() << "[getNearestTime] First time is in past, searching for next future time...";
+       qDebug() << "Calendar::getNearestTime(): First time is in past, searching for next future time...";
        // Note: bounds check MUST come before times[i] access (short-circuit
        // evaluation), otherwise the last iteration reads past the end.
        while((i < times.count())
              && (QDateTime(setWeeklyDate.date(),times[i]) <= QDateTime::currentDateTime())){
-         qDebug() << "[getNearestTime]   times[" << i << "]=" << times[i] << "is in past, continuing";
+         qDebug() << "Calendar::getNearestTime():   times[" << i << "]=" << times[i] << "is in past, continuing";
          ++i;
        } //at this point we have either a matching time or nothing. Nothing would be bad...
        if(i < times.count()){ //there has been a matching time...
-         qDebug() << "[getNearestTime] Found future time at index" << i << ":" << times[i];
+         qDebug() << "Calendar::getNearestTime(): Found future time at index" << i << ":" << times[i];
          setWeeklyDate.setTime(times[i]);
        }
        if(i >= times.count()){ //there was no matching time, but there still might be one on another day.
-         qDebug() << "[getNearestTime] No more times today (i=" << i << "), checking next days...";
+         qDebug() << "Calendar::getNearestTime(): No more times today (i=" << i << "), checking next days...";
          if(calculatedDay.count() > 1){ //if there is at least another day...
-           qDebug() << "[getNearestTime]   Using next day (calculatedDay[1]=" << calculatedDay[1] << ")";
+           qDebug() << "Calendar::getNearestTime():   Using next day (calculatedDay[1]=" << calculatedDay[1] << ")";
            setWeeklyDate = QDateTime::currentDateTime().addDays(calculatedDay[1]); //take another day...
            times = getSortedTimes();      //and get the new times list.
            if(times.isEmpty()){
-             qDebug() << "[getNearestTime]   Times empty for next day, bailing";
+             qDebug() << "Calendar::getNearestTime():   Times empty for next day, bailing";
              setWeeklyDate = QDateTime();
              aDateWasSet();
              return;
            }
-           qDebug() << "[getNearestTime]   Using first time of next day:" << times[0];
+           qDebug() << "Calendar::getNearestTime():   Using first time of next day:" << times[0];
            setWeeklyDate.setTime(times[0]); //the first time setting will do.
          }
          else{ // there is no other day => +7
-           qDebug() << "[getNearestTime]   No more days this week, using same day next week +" << calculatedDay[0];
+           qDebug() << "Calendar::getNearestTime():   No more days this week, using same day next week +" << calculatedDay[0];
            setWeeklyDate = QDateTime::currentDateTime().addDays(7);
            setWeeklyDate.setTime(times[0]);
          }
        }
      }
-     qDebug() << "[getNearestTime] Final result: setWeeklyDate=" << setWeeklyDate;
+     qDebug() << "Calendar::getNearestTime(): Final result: setWeeklyDate=" << setWeeklyDate;
 }
 
 QList<QTime> Calendar::getSortedTimes(){
@@ -366,14 +366,14 @@ QList<QTime> Calendar::getSortedTimes(){
      else if(dow == Qt::Saturday){items = saturdayItems;  count = sat->spin->value(); dayName = "Saturday"; }
      else if(dow == Qt::Sunday){  items = sundayItems;    count = sun->spin->value(); dayName = "Sunday"; }
 
-     qDebug() << "[getSortedTimes] day=" << dayName << "dow=" << dow << "spin->value()=" << count << "items->size()=" << (items ? items->size() : 0);
+     qDebug() << "Calendar::getSortedTimes(): day=" << dayName << "dow=" << dow << "spin->value()=" << count << "items->size()=" << (items ? items->size() : 0);
 
      if(items){
        int n = qMin(count, items->size());
        for(int i = 0; i < n; ++i){
          QTime t = items->at(i)->timeEdit->time();
          times << t;
-         qDebug() << "[getSortedTimes]   added time[" << i << "]=" << t;
+         qDebug() << "Calendar::getSortedTimes():   added time[" << i << "]=" << t;
        }
      }
 
@@ -385,7 +385,7 @@ QList<QTime> Calendar::getSortedTimes(){
        }
      }
 
-     qDebug() << "[getSortedTimes] Final sorted times:" << times;
+     qDebug() << "Calendar::getSortedTimes(): Final sorted times:" << times;
      return times;
 }
 
