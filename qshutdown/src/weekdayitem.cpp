@@ -17,6 +17,7 @@
 
 #include "weekdayitem.h"
 #include <QCoreApplication>
+#include <QSettings>
 
 WeekDayItem::WeekDayItem(QWidget *parent) : QWidget(parent){
      itemL = new QHBoxLayout(this);
@@ -39,6 +40,15 @@ WeekDayItem::WeekDayItem(QWidget *parent) : QWidget(parent){
          << QCoreApplication::translate("Gui", "Suspend", 0)
          << QCoreApplication::translate("Gui", "Hibernate", 0)
         );
+     // Initialise to the user's default action from preferences
+     // ("Power/comboBox"), so freshly-opened weekday rows match what the
+     // user picked as the default shutdown type, rather than always Shutdown.
+     {
+       QSettings s;
+       int def = s.value("Power/comboBox", 0).toInt();
+       if(def < 0 || def > 3) def = 0;
+       comboBox->setCurrentIndex(def);
+     }
 
      itemL->addItem(h2);
      itemL->addWidget(timeEdit);

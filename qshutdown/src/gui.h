@@ -56,7 +56,7 @@ class Gui : public QMainWindow, public Ui::Gui {
      bool            aWeeklyTimeWasSet;
      QPushButton     *minim;
      QTimer          *timer, *ti;
-     QDateTime       localDatetime, futureDateTime;
+     QDateTime       localDatetime, futureDateTime, executedDT;
      QTime           oldTime;
      QElapsedTimer   elapsedTime;
      QPixmap         icon;
@@ -101,6 +101,8 @@ class Gui : public QMainWindow, public Ui::Gui {
      void saveOldTime(QTime time);
      void saveOldComboBoxIndex(int i);
      void setDate();
+     bool isRearmOrReset();
+     bool restartRecurringSleepCountdown();
      void lockEverything(bool actual);
      void updateLock();
      void showEditor();

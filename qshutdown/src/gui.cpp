@@ -442,13 +442,21 @@ void Gui::updateT(){
 
      int dayDiff = myDate.date().daysTo(futureDateTime.date());
 
-     if(dayDiff < 0){ //reset if targeted date is already in the past.
-       reset();
-       return;
-     } //end
+     if (executedDT.isValid() && myDate <= executedDT) {
+         return; // current DT should never be smaller than the last execution DT
+     }
+
+     if (restartRecurringSleepCountdown()) {
+         return;
+     }
+
+     if (dayDiff < 0) { // reset if targeted date is already in the past.
+         reset();
+         return;
+     } // end
 
      else if(dayDiff > 1){ //if the date difference between today and the selected day
-                                                           //in the calendar is greater than one
+                           //in the calendar is greater than one
      //if more than one year
        if(dayDiff > myDate.date().daysInYear()){
          tip2 = (QString::number(dayDiff/myDate.date().daysInYear()) + " " + tr("years"));
@@ -635,6 +643,27 @@ bool Gui::Time(){
      }
 }
 
+bool Gui::isRearmOrReset() //true for rearm
+{
+    return pref->restartRecurringSleepAfterResume && (suspend_action->isChecked() || hibernate_action->isChecked()) && !pref->quitAfterCountdown->isChecked();
+}
+
+bool Gui::restartRecurringSleepCountdown()
+{
+    if (isRearmOrReset()) {
+        if (futureDateTime < QDateTime::currentDateTimeUtc()) {
+            timeRunning = false;
+            cal->timeRunning = false;
+            cal->setDate();
+            setDate();
+            set();
+            elapsedTime.restart();
+            return true;
+        }
+    }
+    return false;
+}
+
 void Gui::saveLog(){
      QSettings settings(this);
 
@@ -702,8 +731,10 @@ void Gui::saveLast(){
 
 void Gui::finished_(){
      saveLast();
-     if(!pref->quitAfterCountdown->isChecked())
-       reset();
+     executedDT = QDateTime::currentDateTimeUtc();
+     if (!isRearmOrReset()) {
+         reset();
+     }
 
      switch(comboBox->currentIndex()){
        case 0: //shutdown
@@ -836,6 +867,18 @@ void Gui::finished_(){
 
        default:;
      }
+
+     // Post-resume safety net: after Power::suspend() / Power::hibernate()
+     // returns (i.e. the system has woken up again), if we rearmed for a
+     // future recurring occurrence, make sure the QTimer is still alive
+     // and force a fresh display refresh. On Windows the QTimer's
+     // underlying OS timer can be in a stale state after wake.
+     if(isRearmOrReset()){
+       timer->stop();
+       timer->start(1000);
+       updateT();
+     }
+
      if(pref->quitAfterCountdown->isChecked())
        qApp->quit();
 }
@@ -940,15 +983,6 @@ void Gui::loadSettings(){
      log_action->setChecked(settings.value("Logfile/logging",false).toBool());
      logFileSize = settings.value("Logfile/size",1.5).toDouble();
 
-     //if(settings.contains("Weekly_is_set") && settings.value("Weekly_is_set").toBool())
-       cal->setDate();
-
-     if(settings.value("Time/countdown_at_startup",false).toBool()){
-       set();
-       if(settings.value("Hide_at_startup",false).toBool())
-         QTimer::singleShot(2000, this, SLOT(hide()));
-     }
-
      hideTrayIcon(settings.value("CheckBoxes/Disable_tray_icon", false).toBool());
 
      staticProportions(settings.value("MainWindow/keep_proportions",true).toBool());
@@ -988,6 +1022,15 @@ void Gui::loadSettings(){
          hibernate_action->setChecked(true);
          break;
        default:;
+     }
+     
+     cal->setDate();
+     setDate();
+
+     if (settings.value("Time/countdown_at_startup", false).toBool()) {
+         set();
+         if (settings.value("Hide_at_startup", false).toBool())
+             QTimer::singleShot(2000, this, SLOT(hide()));
      }
 }
 

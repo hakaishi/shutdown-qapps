@@ -427,6 +427,16 @@ should be checked by default at startup</string>
               </widget>
              </item>
              <item>
+              <widget class="QCheckBox" name="restartSleepCountdown">
+               <property name="toolTip">
+                <string>After a recurring suspend or hibernate, qshutdown may still be running when the computer wakes up. Restart the recurring countdown automatically in that case.</string>
+               </property>
+               <property name="text">
+                <string>Restart recurring suspend/hibernate countdown after wake-up</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QCheckBox" name="hideMe">
                <property name="enabled">
                 <bool>false</bool>

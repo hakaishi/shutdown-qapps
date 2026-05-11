@@ -32,6 +32,7 @@ class Calendar : public QDialog, public Ui::Calendar {
      bool timeRunning;
      QDateTime setCalendarDate, calendarDate, setWeeklyDate;
      bool getClosed();
+     QList<QTime> getSortedTimes();
      WeekDay     *mon, *tue, *wed, *thu, *fri,
                  *sat, *sun;
      WeekDayItem *mon1, *mon2, *mon3, *mon4, *mon5,
@@ -59,7 +60,6 @@ class Calendar : public QDialog, public Ui::Calendar {
      void getDate(QDate date);
      void getSortedAndActivatedDays();
      void getNearestTime(QList<int> calculatedDay);
-     QList<QTime> getSortedTimes();
      void loadSettings();
      void saveToConfFile();
      void monday_addTimeEditAndActionBox(int i);
