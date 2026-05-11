@@ -639,7 +639,6 @@ void Calendar::saveToConfFile(){
      if(settings->isWritable()){
        settings->setValue("Calendar/size",size());
        settings->setValue("Calendar_or_weekly",tabWidget->currentIndex());
-       settings->setValue("Weekly_is_set",weekly->isChecked());
        settings->setValue("Monday/number_of_times",mon->spin->value());
        settings->setValue("Monday/time_1",mon1->timeEdit->time().toString());
        settings->setValue("Monday/time_2",mon2->timeEdit->time().toString());
@@ -708,7 +707,6 @@ void Calendar::loadSettings(){
 
      resize(settings->value("MainWindow/size",QSize(325,360)).toSize());
      tabWidget->setCurrentIndex(settings->value("Calendar_or_weekly",0).toInt());
-     weekly->setChecked(settings->value("Weekly_is_set", false).toBool());
      if(!timeRunning)
        scrollAreaWidgetContents->setEnabled(weekly->isChecked());
      mon->spin->setValue(settings->value("Monday/number_of_times",0).toInt());

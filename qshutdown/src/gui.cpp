@@ -645,7 +645,10 @@ bool Gui::Time(){
 
 bool Gui::isRearmOrReset() //true for rearm
 {
-    return pref->restartRecurringSleepAfterResume && (suspend_action->isChecked() || hibernate_action->isChecked()) && !pref->quitAfterCountdown->isChecked();
+    return cal->weekly->isChecked()
+        && pref->restartRecurringSleepAfterResume
+        && (suspend_action->isChecked() || hibernate_action->isChecked())
+        && !pref->quitAfterCountdown->isChecked();
 }
 
 bool Gui::restartRecurringSleepCountdown()
@@ -719,6 +722,7 @@ void Gui::saveLog(){
 void Gui::saveLast(){
     QSettings settings(this);
     if(settings.value("MainWindow/remember_last", false).toBool()){
+        settings.setValue("LastSetting/weekly", cal->weekly->isChecked());
         settings.setValue("LastSetting/time_hour", timeEdit->time().hour());
         settings.setValue("LastSetting/time_minute", timeEdit->time().minute());
         settings.setValue("LastSetting/countdown_minutes", spin->value());
@@ -873,11 +877,13 @@ void Gui::finished_(){
      // future recurring occurrence, make sure the QTimer is still alive
      // and force a fresh display refresh. On Windows the QTimer's
      // underlying OS timer can be in a stale state after wake.
-     if(isRearmOrReset()){
-       timer->stop();
-       timer->start(1000);
-       updateT();
-     }
+//if defined(Q_OS_WIN32)
+     // if(isRearmOrReset()){
+     //   timer->stop();
+     //   timer->start(1000);
+     //   updateT();
+     // }
+//enif
 
      if(pref->quitAfterCountdown->isChecked())
        qApp->quit();
@@ -956,6 +962,7 @@ void Gui::loadSettings(){
 
 /***************** read files entries *****************/
      if(settings.value("MainWindow/remember_last",false).toBool()){
+         cal->weekly->setChecked(settings.value("LastSetting/weekly", false).toBool());
          timeEdit->setTime(QTime(settings.value("LastSetting/time_hour",22).toInt(),settings.value("LastSetting/time_minute",00).toInt()));
          spin->setValue(settings.value("LastSetting/countdown_minutes",60).toInt());
          radio1->setChecked(settings.value("LastSetting/target_time",false).toBool());
@@ -964,6 +971,7 @@ void Gui::loadSettings(){
          comboBox->setCurrentIndex(settings.value("LastSetting/action",0).toInt());
      }
      else{
+         cal->weekly->setChecked(false);
          timeEdit->setTime(QTime(settings.value("Time/time_hour",22).toInt(),settings.value("Time/time_minute",00).toInt()));
          spin->setValue(settings.value("Time/countdown_minutes",60).toInt());
          radio1->setChecked(settings.value("CheckBoxes/target_time",false).toBool());
