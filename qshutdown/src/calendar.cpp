@@ -205,7 +205,7 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      file = settings->fileName();
 
      if(!QFile::exists(file)
-        || !settings->contains("Weekly_is_set"))
+        || !settings->contains("Calendar/initialized"))
        saveToConfFile();
      else
        loadSettings();
@@ -688,6 +688,7 @@ void Calendar::saveToConfFile(){
        settings->setValue("Sunday/time_4",sun4->timeEdit->time().toString());
        settings->setValue("Sunday/time_5",sun5->timeEdit->time().toString());
        saveDayMethods(settings, "Sunday", *sundayItems, sun->spin->value());
+       settings->setValue("Calendar/initialized", true);
      }
 }
 
