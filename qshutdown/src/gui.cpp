@@ -1085,7 +1085,6 @@ void Gui::lockEverything(bool actual){
 void Gui::reset(){
      TIcon->setIcon(QPixmap(":red_glasses"));
      timer->stop();
-     cal->setWeeklyDate = QDateTime();
      setWindowTitle("'qshutdown'");
      if(!aWeeklyTimeWasSet)
        toolButton->setText(tr("Calendar"));
