@@ -442,13 +442,21 @@ void Gui::updateT(){
 
      int dayDiff = myDate.date().daysTo(futureDateTime.date());
 
-     if(dayDiff < 0){ //reset if targeted date is already in the past.
-       reset();
-       return;
-     } //end
+     if (executedDT.isValid() && myDate <= executedDT) {
+         return; // current DT should never be smaller than the last execution DT
+     }
+
+     if (restartRecurringSleepCountdown()) {
+         return;
+     }
+
+     if (dayDiff < 0) { // reset if targeted date is already in the past.
+         reset();
+         return;
+     } // end
 
      else if(dayDiff > 1){ //if the date difference between today and the selected day
-                                                           //in the calendar is greater than one
+                           //in the calendar is greater than one
      //if more than one year
        if(dayDiff > myDate.date().daysInYear()){
          tip2 = (QString::number(dayDiff/myDate.date().daysInYear()) + " " + tr("years"));
@@ -635,6 +643,30 @@ bool Gui::Time(){
      }
 }
 
+bool Gui::isRearmOrReset() //true for rearm
+{
+    return cal->weekly->isChecked()
+        && pref->restartRecurringSleepAfterResume
+        && (suspend_action->isChecked() || hibernate_action->isChecked())
+        && !pref->quitAfterCountdown->isChecked();
+}
+
+bool Gui::restartRecurringSleepCountdown()
+{
+    if (isRearmOrReset()) {
+        if (futureDateTime < QDateTime::currentDateTimeUtc()) {
+            timeRunning = false;
+            cal->timeRunning = false;
+            cal->setDate();
+            setDate();
+            set();
+            elapsedTime.restart();
+            return true;
+        }
+    }
+    return false;
+}
+
 void Gui::saveLog(){
      QSettings settings(this);
 
@@ -690,6 +722,7 @@ void Gui::saveLog(){
 void Gui::saveLast(){
     QSettings settings(this);
     if(settings.value("MainWindow/remember_last", false).toBool()){
+        settings.setValue("LastSetting/weekly", cal->weekly->isChecked());
         settings.setValue("LastSetting/time_hour", timeEdit->time().hour());
         settings.setValue("LastSetting/time_minute", timeEdit->time().minute());
         settings.setValue("LastSetting/countdown_minutes", spin->value());
@@ -702,8 +735,10 @@ void Gui::saveLast(){
 
 void Gui::finished_(){
      saveLast();
-     if(!pref->quitAfterCountdown->isChecked())
-       reset();
+     executedDT = QDateTime::currentDateTimeUtc();
+     if (!isRearmOrReset()) {
+         reset();
+     }
 
      switch(comboBox->currentIndex()){
        case 0: //shutdown
@@ -836,6 +871,7 @@ void Gui::finished_(){
 
        default:;
      }
+
      if(pref->quitAfterCountdown->isChecked())
        qApp->quit();
 }
@@ -913,6 +949,7 @@ void Gui::loadSettings(){
 
 /***************** read files entries *****************/
      if(settings.value("MainWindow/remember_last",false).toBool()){
+         cal->weekly->setChecked(settings.value("LastSetting/weekly", false).toBool());
          timeEdit->setTime(QTime(settings.value("LastSetting/time_hour",22).toInt(),settings.value("LastSetting/time_minute",00).toInt()));
          spin->setValue(settings.value("LastSetting/countdown_minutes",60).toInt());
          radio1->setChecked(settings.value("LastSetting/target_time",false).toBool());
@@ -921,6 +958,7 @@ void Gui::loadSettings(){
          comboBox->setCurrentIndex(settings.value("LastSetting/action",0).toInt());
      }
      else{
+         cal->weekly->setChecked(false);
          timeEdit->setTime(QTime(settings.value("Time/time_hour",22).toInt(),settings.value("Time/time_minute",00).toInt()));
          spin->setValue(settings.value("Time/countdown_minutes",60).toInt());
          radio1->setChecked(settings.value("CheckBoxes/target_time",false).toBool());
@@ -939,15 +977,6 @@ void Gui::loadSettings(){
 
      log_action->setChecked(settings.value("Logfile/logging",false).toBool());
      logFileSize = settings.value("Logfile/size",1.5).toDouble();
-
-     //if(settings.contains("Weekly_is_set") && settings.value("Weekly_is_set").toBool())
-       cal->setDate();
-
-     if(settings.value("Time/countdown_at_startup",false).toBool()){
-       set();
-       if(settings.value("Hide_at_startup",false).toBool())
-         QTimer::singleShot(2000, this, SLOT(hide()));
-     }
 
      hideTrayIcon(settings.value("CheckBoxes/Disable_tray_icon", false).toBool());
 
@@ -988,6 +1017,15 @@ void Gui::loadSettings(){
          hibernate_action->setChecked(true);
          break;
        default:;
+     }
+     
+     cal->setDate();
+     setDate();
+
+     if (settings.value("Time/countdown_at_startup", false).toBool()) {
+         set();
+         if (settings.value("Hide_at_startup", false).toBool())
+             QTimer::singleShot(2000, this, SLOT(hide()));
      }
 }
 
@@ -1047,7 +1085,6 @@ void Gui::lockEverything(bool actual){
 void Gui::reset(){
      TIcon->setIcon(QPixmap(":red_glasses"));
      timer->stop();
-     cal->setWeeklyDate = QDateTime();
      setWindowTitle("'qshutdown'");
      if(!aWeeklyTimeWasSet)
        toolButton->setText(tr("Calendar"));

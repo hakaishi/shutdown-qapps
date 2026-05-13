@@ -31,6 +31,7 @@ int main(int argc, char *argv[]){
      
      app.setApplicationName("qshutdown");
      app.setOrganizationName("shutdown_qapps");
+     app.setOrganizationDomain("shutdown_qapps");
      
      QSettings::setDefaultFormat(QSettings::IniFormat);
 
