@@ -872,19 +872,6 @@ void Gui::finished_(){
        default:;
      }
 
-     // Post-resume safety net: after Power::suspend() / Power::hibernate()
-     // returns (i.e. the system has woken up again), if we rearmed for a
-     // future recurring occurrence, make sure the QTimer is still alive
-     // and force a fresh display refresh. On Windows the QTimer's
-     // underlying OS timer can be in a stale state after wake.
-//if defined(Q_OS_WIN32)
-     // if(isRearmOrReset()){
-     //   timer->stop();
-     //   timer->start(1000);
-     //   updateT();
-     // }
-//enif
-
      if(pref->quitAfterCountdown->isChecked())
        qApp->quit();
 }
