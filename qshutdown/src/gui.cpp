@@ -258,11 +258,12 @@ void Gui::saveOldComboBoxIndex(int i){
 }
 
 void Gui::setDate(){
-     if(!cal->weekly->isChecked() && !timeRunning) {
+     if(timeRunning) return;
+     if(!cal->weekly->isChecked()) {
        if(cal->setCalendarDate.date() != QDate())
          toolButton->setText(QLocale::system().toString(cal->setCalendarDate.date(),QLocale::ShortFormat));
      }
-     else if(!cal->setWeeklyDate.time().isNull() && !timeRunning){
+     else if(!cal->setWeeklyDate.time().isNull()){
        toolButton->setText(cal->setWeeklyDate.date().toString("ddd"));
        aWeeklyTimeWasSet = true;
        timeEdit->setTime(cal->setWeeklyDate.time());
@@ -569,6 +570,14 @@ void Gui::updateT(){
 }
 
 void Gui::set(){
+     if(!lock->isChecked() && timeRunning){
+      QDate tdate = cal->calendarDate.date();
+      reset();
+      if(cal->weekly->isChecked() || tdate.isValid()){
+        cal->calendarDate.setDate(tdate);
+        cal->setDate();
+      }
+     }
      TIcon->setIcon(QPixmap(":running"));
      QDateTime localDT = QDateTime::currentDateTime();
      QDateTime localFutureDateTime = localDT; //initializing
@@ -1066,7 +1075,7 @@ void Gui::lockEverything(bool actual){
        action_Reset->setDisabled(true);
      }
      
-     if(cal->weekly->isChecked() && aWeeklyTimeWasSet){
+     if(cal->weekly->isChecked()){
        radio1->setChecked(true);
        radio2->setDisabled(true);
        radio1->setDisabled(true);
