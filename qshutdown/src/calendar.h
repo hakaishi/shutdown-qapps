@@ -30,6 +30,7 @@ class Calendar : public QDialog, public Ui::Calendar {
      Calendar(QWidget *parent = 0);
      ~Calendar();
      bool timeRunning;
+     bool oldWeekly;
      QDateTime setCalendarDate, calendarDate, setWeeklyDate;
      bool getClosed();
      QList<QTime> getSortedTimes();
