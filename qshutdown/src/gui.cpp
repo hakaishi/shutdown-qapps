@@ -258,7 +258,7 @@ void Gui::saveOldComboBoxIndex(int i){
 }
 
 void Gui::setDate(){
-     if(timeRunning) return;
+     //if(timeRunning) return;
      if(!cal->weekly->isChecked()) {
        if(cal->setCalendarDate.date() != QDate())
          toolButton->setText(QLocale::system().toString(cal->setCalendarDate.date(),QLocale::ShortFormat));
@@ -295,8 +295,8 @@ void Gui::setDate(){
        timeEdit->setDisabled(true);
        comboBox->setDisabled(true);
      }
-     if((cal->setCalendarDate == QDateTime()) && (cal->setWeeklyDate == QDateTime()))
-       if(!timeRunning){
+     if(cal->setCalendarDate == QDateTime() && 
+       cal->setWeeklyDate == QDateTime() && !cal->weekly->isChecked()){
           timeEdit->setTime(oldTime);
           comboBox->setCurrentIndex(oldComboBoxIndex);
           aWeeklyTimeWasSet = false;
@@ -308,7 +308,7 @@ void Gui::setDate(){
             spin->setDisabled(false);
           comboBox->setDisabled(false);
           toolButton->setText(tr("Calendar"));
-       }
+     }
 }
 
 void Gui::center(){
