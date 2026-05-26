@@ -198,6 +198,10 @@ Calendar::Calendar(QWidget *parent): QDialog(parent){
      connect(sun->spin, SIGNAL(valueChanged(int)), this, SLOT(sunday_addTimeEditAndActionBox(int)));
 
      loadSettings();
+     if(settings->value("MainWindow/remember_last",false).toBool()){
+       weekly->setChecked(settings->value("LastSetting/weekly", false).toBool());
+     }
+     oldWeekly = weekly->isChecked();
 
 }
 
@@ -206,6 +210,7 @@ Calendar::~Calendar(){ delete settings; }
 void Calendar::getDate(QDate date){ calendarDate.setDate(date); }
 
 void Calendar::setDate(){
+     oldWeekly = weekly->isChecked();
        qDebug() << "Calendar::setDate(): Called at" << QDateTime::currentDateTime();
      if(calendarWidget->selectedDate() != QDate::currentDate())
         calendarDate.setDate(calendarWidget->selectedDate());
@@ -380,6 +385,7 @@ QList<QTime> Calendar::getSortedTimes(){
 
 void Calendar::showEvent(QShowEvent* show_calendar){
      isClosed = false;
+     weekly->setChecked(oldWeekly); //recover previously used weekly setting
      starting();
      loadSettings();
      QDialog::showEvent(show_calendar);

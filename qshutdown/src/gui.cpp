@@ -258,11 +258,12 @@ void Gui::saveOldComboBoxIndex(int i){
 }
 
 void Gui::setDate(){
-     if(!cal->weekly->isChecked() && !timeRunning) {
+     //if(timeRunning) return;
+     if(!cal->weekly->isChecked()) {
        if(cal->setCalendarDate.date() != QDate())
          toolButton->setText(QLocale::system().toString(cal->setCalendarDate.date(),QLocale::ShortFormat));
      }
-     else if(!cal->setWeeklyDate.time().isNull() && !timeRunning){
+     else if(!cal->setWeeklyDate.time().isNull()){
        toolButton->setText(cal->setWeeklyDate.date().toString("ddd"));
        aWeeklyTimeWasSet = true;
        timeEdit->setTime(cal->setWeeklyDate.time());
@@ -294,8 +295,8 @@ void Gui::setDate(){
        timeEdit->setDisabled(true);
        comboBox->setDisabled(true);
      }
-     if((cal->setCalendarDate == QDateTime()) && (cal->setWeeklyDate == QDateTime()))
-       if(!timeRunning){
+     if(cal->setCalendarDate == QDateTime() && 
+       cal->setWeeklyDate == QDateTime() && !cal->weekly->isChecked()){
           timeEdit->setTime(oldTime);
           comboBox->setCurrentIndex(oldComboBoxIndex);
           aWeeklyTimeWasSet = false;
@@ -307,7 +308,7 @@ void Gui::setDate(){
             spin->setDisabled(false);
           comboBox->setDisabled(false);
           toolButton->setText(tr("Calendar"));
-       }
+     }
 }
 
 void Gui::center(){
@@ -569,6 +570,14 @@ void Gui::updateT(){
 }
 
 void Gui::set(){
+     if(!lock->isChecked() && timeRunning){
+      QDate tdate = cal->calendarDate.date();
+      reset();
+      if(cal->weekly->isChecked() || tdate.isValid()){
+        cal->calendarDate.setDate(tdate);
+        cal->setDate();
+      }
+     }
      TIcon->setIcon(QPixmap(":running"));
      QDateTime localDT = QDateTime::currentDateTime();
      QDateTime localFutureDateTime = localDT; //initializing
@@ -602,7 +611,8 @@ void Gui::set(){
      if(lock->isChecked() || editor->getLockAll()){       //when OK-button is clicked and lock is checked
        QList<QWidget*> list;
        list << spin << radio1 << radio2 << lock << timeEdit << comboBox << targetTime
-            << minutes << pref->tab2 << cal->weekly << cal->scrollAreaWidgetContents;
+            << minutes << pref->tab2 << cal->weekly << cal->scrollAreaWidgetContents
+            << cal->calendarWidget;
        foreach(QWidget * ptr, list)
          ptr->setDisabled(true);
        power_actions->setDisabled(true);
@@ -658,7 +668,6 @@ bool Gui::restartRecurringSleepCountdown()
             timeRunning = false;
             cal->timeRunning = false;
             cal->setDate();
-            setDate();
             set();
             elapsedTime.restart();
             return true;
@@ -1020,7 +1029,6 @@ void Gui::loadSettings(){
      }
      
      cal->setDate();
-     setDate();
 
      if (settings.value("Time/countdown_at_startup", false).toBool()) {
          set();
@@ -1046,7 +1054,8 @@ void Gui::lockEverything(bool actual){
                 << minutes << pref->comboBox << pref->timeEdit << pref->spin
                 << pref->radio1 << pref->radio2 << pref->quitOnCloseMain
                 << pref->autostart << pref->lock << pref->countdown
-                << pref->log << pref->reset << pref->spinBox << pref->tab2;
+                << pref->log << pref->reset << pref->spinBox << pref->tab2
+                << cal->weekly << cal->scrollAreaWidgetContents << cal->calendarWidget;
      foreach(QWidget * widgetPtr, widgetList)
        widgetPtr->setDisabled(actual);
 
@@ -1066,7 +1075,7 @@ void Gui::lockEverything(bool actual){
        action_Reset->setDisabled(true);
      }
      
-     if(aWeeklyTimeWasSet){
+     if(cal->weekly->isChecked()){
        radio1->setChecked(true);
        radio2->setDisabled(true);
        radio1->setDisabled(true);
@@ -1092,10 +1101,8 @@ void Gui::reset(){
      lcd->display("----");
      TIcon->setToolTip(NULL);
      lcdL->setText(tr("minutes"));
-     cal->setCalendarDate.setDate(QDate());
+     cal->setCalendarDate = QDateTime();
      cal->calendarDate.setDate(QDate());
-     cal->weekly->setEnabled(true);
-     cal->scrollAreaWidgetContents->setEnabled(true);
      showNormal();
      if(!ti->isActive())
        ti->start(30000);
