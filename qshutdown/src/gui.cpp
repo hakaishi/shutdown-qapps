@@ -751,7 +751,8 @@ void Gui::finished_(){
 
      switch(comboBox->currentIndex()){
        case 0: //shutdown
-         switch(pref->shutdownM->currentIndex()){ //shutdown method settings
+         switch(pref->shutdownM->currentIndex() == pref->shutdownM->count()-1
+                ? 7 : pref->shutdownM->currentIndex()){ //shutdown method settings
             case 0:
                 Power::automatic = true;
                 break;
@@ -784,7 +785,8 @@ void Gui::finished_(){
          break;
 
        case 1: //reboot
-         switch(pref->rebootM->currentIndex()){ //reboot method settings
+         switch(pref->rebootM->currentIndex() == pref->rebootM->count()-1
+                ? 7 : pref->rebootM->currentIndex()){ //reboot method settings
             case 0:
                 Power::automatic = true;
                 break;
@@ -817,7 +819,8 @@ void Gui::finished_(){
          break;
 
        case 2: //sleep
-         switch(pref->suspendM->currentIndex()){ //sleep method settings
+         switch(pref->suspendM->currentIndex() == pref->suspendM->count()-1
+                ? 6 : pref->suspendM->currentIndex()){ //sleep method settings
             case 0:
                 Power::automatic = true;
                 break;
@@ -848,7 +851,8 @@ void Gui::finished_(){
          break;
 
        case 3: //hibernate
-         switch(pref->hibernateM->currentIndex()){ //hibernate method settings
+         switch(pref->hibernateM->currentIndex() == pref->hibernateM->count()-1
+                ? 6 : pref->hibernateM->currentIndex()){ //hibernate method settings
             case 0:
                 Power::automatic = true;
                 break;

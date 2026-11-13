@@ -41,6 +41,12 @@ extern QString shell;
 
 namespace Power{
 
+#if defined(Q_OS_WIN32)
+const char *const shellCommandOption = "/c";
+#else
+const char *const shellCommandOption = "-c";
+#endif
+
 QTextStream oput(stdout);
 
 bool lockMyScreen;
@@ -59,7 +65,7 @@ QString myShutdown, myReboot, mySuspend, myHibernate;
 void shutdown(){
 
     QStringList args;
-    args << "-c" << myShutdown;
+    args << shellCommandOption << myShutdown;
 
  #if defined(Q_OS_LINUX)
   QDBusMessage response;
@@ -239,7 +245,7 @@ void shutdown(){
 void reboot(){
 
     QStringList args;
-    args << "-c" << myReboot;
+    args << shellCommandOption << myReboot;
 
  #if defined(Q_OS_LINUX)
   QDBusMessage response;
@@ -401,7 +407,7 @@ void reboot(){
 void suspend(){
 
     QStringList args;
-    args << "-c" << mySuspend;
+    args << shellCommandOption << mySuspend;
 
  #if defined(Q_OS_LINUX)
   QDBusMessage response;
@@ -562,8 +568,7 @@ void suspend(){
 
   else if(user)
     if(!shell.isEmpty())
-      //QProcess::startDetached(shell, args);
-        QProcess::startDetached(mySuspend);
+      QProcess::startDetached(shell, args);
 
 
   //resetting variables
@@ -579,7 +584,7 @@ void suspend(){
 void hibernate(){
 
     QStringList args;
-    args << "-c" << myHibernate;
+    args << shellCommandOption << myHibernate;
 
  #if defined(Q_OS_LINUX)
   QDBusMessage response;
